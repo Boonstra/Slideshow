@@ -1,0 +1,82 @@
+.slideshow_container {
+	background: #000;
+}
+
+.slideshow_container .slideshow { }
+
+.slideshow_container img { }
+
+.slideshow_container .slide {
+	margin-right: 2px;
+}
+
+.slideshow_container .transparent {
+	filter: alpha(opacity = 50);
+	opacity: 0.5;
+}
+
+.slideshow_container .transparent:hover {
+	filter: alpha(opacity = 80);
+	opacity: 0.8;
+}
+
+.slideshow_container .description {
+	background: #000;
+}
+
+.slideshow_container .controlPanel {
+	width: 20px;
+	height: 20px;
+}
+
+.slideshow_container .controlPanel ul { }
+
+.slideshow_container .controlPanel ul li {
+	margin: 3px;
+	width: 20px;
+	height: 20px;
+}
+
+.slideshow_container .controlPanel ul li:hover { }
+
+.slideshow_container .play {
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-controlpanel.png') 0 0 no-repeat;
+}
+
+.slideshow_container .pause {
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-controlpanel.png') -20px 0 no-repeat;
+}
+
+.slideshow_container .button {
+	margin-top: -50px;
+	height: 100px;
+	width: 24px;
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-arrows.png') no-repeat;
+}
+
+.slideshow_container .previous { }
+
+.slideshow_container .next {
+	background-position: -24px 0;
+}
+
+.slideshow_container a {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+}
+
+.slideshow_container .description h2,
+.slideshow_container .description p {
+	color: #fff;
+}
+
+.slideshow_container h2 {
+	margin: 5px;
+	font-size: 25px;
+}
+
+.slideshow_container p {
+	margin: 7px;
+	font-size: 15px;
+}

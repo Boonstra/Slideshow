@@ -1,0 +1,1 @@
+<input type="button" id="slideshow-insert-image-slide" class="button" value="<?php _e('Image slide', 'slideshow-plugin'); ?>" />

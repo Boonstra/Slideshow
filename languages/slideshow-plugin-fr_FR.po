@@ -1,0 +1,501 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slideshow Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-06 18:46+0100\n"
+"PO-Revision-Date: 2012-12-06 18:54+0100\n"
+"Last-Translator: Murat Demir <demir.murat1@gmail.com>\n"
+"Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/SlideshowPluginPostType.php:32
+msgid "Slideshows"
+msgstr "Diaporamas"
+
+#: classes/SlideshowPluginPostType.php:33
+#: views/SlideshowPluginWidget/form.php:7
+msgid "Slideshow"
+msgstr "Diaporama"
+
+#: classes/SlideshowPluginPostType.php:34
+msgid "Add New Slideshow"
+msgstr "Ajouter un nouveau diaporama"
+
+#: classes/SlideshowPluginPostType.php:35
+msgid "Edit slideshow"
+msgstr "Modifier le diaporama"
+
+#: classes/SlideshowPluginPostType.php:36
+msgid "New slideshow"
+msgstr "Nouveau diaporama"
+
+#: classes/SlideshowPluginPostType.php:37
+msgid "View slideshow"
+msgstr "Voir le diaporama"
+
+#: classes/SlideshowPluginPostType.php:38
+msgid "Search slideshows"
+msgstr "Chercher un diaporama"
+
+#: classes/SlideshowPluginPostType.php:39
+#: classes/SlideshowPluginPostType.php:40
+msgid "No slideshows found"
+msgstr "Aucun diaporama trouvé"
+
+#: classes/SlideshowPluginPostType.php:95
+msgid "Information"
+msgstr "Information"
+
+#: classes/SlideshowPluginPostType.php:104
+msgid "Slides List"
+msgstr "Liste de diapos"
+
+#: classes/SlideshowPluginPostType.php:113
+msgid "Slideshow Style"
+msgstr "Style du diaporama"
+
+#: classes/SlideshowPluginPostType.php:122
+msgid "Slideshow Settings"
+msgstr "Réglages du diaporama"
+
+#: classes/SlideshowPluginSettingsHandler.php:309
+#: classes/SlideshowPluginSettingsHandler.php:374
+#: classes/SlideshowPluginUpdater.php:183
+msgid "Yes"
+msgstr "Oui"
+
+#: classes/SlideshowPluginSettingsHandler.php:310
+#: classes/SlideshowPluginSettingsHandler.php:375
+#: classes/SlideshowPluginUpdater.php:184
+msgid "No"
+msgstr "Non"
+
+#: classes/SlideshowPluginSettingsHandler.php:337
+#: classes/SlideshowPluginUpdater.php:188
+msgid "Animation used for transition between slides"
+msgstr "Animation utilisée pour la transition entre diapos"
+
+#: classes/SlideshowPluginSettingsHandler.php:337
+#: classes/SlideshowPluginUpdater.php:188
+msgid "Slide"
+msgstr "Diapo"
+
+#: classes/SlideshowPluginSettingsHandler.php:337
+#: classes/SlideshowPluginUpdater.php:188
+msgid "Fade"
+msgstr "Effacement"
+
+#: classes/SlideshowPluginSettingsHandler.php:337
+#: classes/SlideshowPluginSettingsHandler.php:338
+#: classes/SlideshowPluginSettingsHandler.php:339
+#: classes/SlideshowPluginSettingsHandler.php:340
+#: classes/SlideshowPluginUpdater.php:188
+#: classes/SlideshowPluginUpdater.php:189
+#: classes/SlideshowPluginUpdater.php:190
+#: classes/SlideshowPluginUpdater.php:191
+msgid "Animation"
+msgstr "Animation"
+
+#: classes/SlideshowPluginSettingsHandler.php:338
+#: classes/SlideshowPluginUpdater.php:189
+msgid "Number of seconds the slide takes to slide in"
+msgstr "Nombres de secondes pour que la diapo glisse"
+
+#: classes/SlideshowPluginSettingsHandler.php:339
+#: classes/SlideshowPluginUpdater.php:190
+msgid "Number of seconds the description takes to slide in"
+msgstr "Nombres de secondes pour que la description glisse"
+
+#: classes/SlideshowPluginSettingsHandler.php:340
+#: classes/SlideshowPluginUpdater.php:191
+msgid "Seconds between changing slides"
+msgstr "Secondes entre le changement de diapos"
+
+#: classes/SlideshowPluginSettingsHandler.php:341
+#: classes/SlideshowPluginUpdater.php:192
+msgid "Number of slides to fit into one slide"
+msgstr "Nombre de diapositives à placer dans un diaporama"
+
+#: classes/SlideshowPluginSettingsHandler.php:341
+#: classes/SlideshowPluginSettingsHandler.php:342
+#: classes/SlideshowPluginSettingsHandler.php:343
+#: classes/SlideshowPluginSettingsHandler.php:344
+#: classes/SlideshowPluginSettingsHandler.php:345
+#: classes/SlideshowPluginSettingsHandler.php:346
+#: classes/SlideshowPluginSettingsHandler.php:347
+#: classes/SlideshowPluginUpdater.php:192
+#: classes/SlideshowPluginUpdater.php:193
+#: classes/SlideshowPluginUpdater.php:194
+#: classes/SlideshowPluginUpdater.php:195
+#: classes/SlideshowPluginUpdater.php:196
+#: classes/SlideshowPluginUpdater.php:197
+#: classes/SlideshowPluginUpdater.php:198
+msgid "Display"
+msgstr "Affichage"
+
+#: classes/SlideshowPluginSettingsHandler.php:342
+#: classes/SlideshowPluginUpdater.php:193
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr "Largeur du diaporama, s'adapte au parent lorsqu'égale à 0"
+
+#: classes/SlideshowPluginSettingsHandler.php:343
+#: classes/SlideshowPluginUpdater.php:194
+msgid "Height of the slideshow"
+msgstr "Hauteur du diaporama"
+
+#: classes/SlideshowPluginSettingsHandler.php:344
+#: classes/SlideshowPluginUpdater.php:195
+msgid "Height of the description boxes"
+msgstr "Hauteur de la boite de description"
+
+#: classes/SlideshowPluginSettingsHandler.php:345
+#: classes/SlideshowPluginUpdater.php:196
+msgid "Fit image into slide (stretching it)"
+msgstr "Adapter l'image dans la diapo (en l'étirant)"
+
+#: classes/SlideshowPluginSettingsHandler.php:346
+#: classes/SlideshowPluginUpdater.php:197
+msgid "Show title and description"
+msgstr "Montrer le titre et la description"
+
+#: classes/SlideshowPluginSettingsHandler.php:347
+#: classes/SlideshowPluginUpdater.php:198
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr ""
+"Masquer le champ de description, ne le faire apparaître que lorsque le "
+"curseur de la souris passe sur la diapositive"
+
+#: classes/SlideshowPluginSettingsHandler.php:348
+#: classes/SlideshowPluginUpdater.php:199
+msgid "Automatically slide to the next slide"
+msgstr "Passer automatiquement à la diapo suivante"
+
+#: classes/SlideshowPluginSettingsHandler.php:348
+#: classes/SlideshowPluginSettingsHandler.php:349
+#: classes/SlideshowPluginSettingsHandler.php:350
+#: classes/SlideshowPluginSettingsHandler.php:351
+#: classes/SlideshowPluginUpdater.php:199
+#: classes/SlideshowPluginUpdater.php:200
+#: classes/SlideshowPluginUpdater.php:201
+#: classes/SlideshowPluginUpdater.php:202
+msgid "Control"
+msgstr "Controle"
+
+#: classes/SlideshowPluginSettingsHandler.php:349
+#: classes/SlideshowPluginUpdater.php:200
+msgid "Return to the beginning of the slideshow after last slide"
+msgstr "Retour au début du diaporama après la dernière diapositive"
+
+#: classes/SlideshowPluginSettingsHandler.php:350
+#: classes/SlideshowPluginUpdater.php:201
+msgid "Activate buttons (so the user can scroll through the slides)"
+msgstr ""
+"Activer les boutons ( l'utilisateur pourra naviger à travers les diapos)"
+
+#: classes/SlideshowPluginSettingsHandler.php:351
+#: classes/SlideshowPluginUpdater.php:202
+msgid "Show control panel (play and pause button)"
+msgstr "Montrer le panneau de contrôle (bouton play et pause) "
+
+#: classes/SlideshowPluginSettingsHandler.php:352
+msgid "Randomize slides"
+msgstr "Diapos aléatoires"
+
+#: classes/SlideshowPluginSettingsHandler.php:352
+#: classes/SlideshowPluginSettingsHandler.php:353
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#: classes/SlideshowPluginSettingsHandler.php:353
+#, php-format
+msgid "Avoid content filter (disable if '%s' is shown)"
+msgstr "Éviter filtre de contenu (désactiver si '%s' est affiché)"
+
+#: classes/SlideshowPluginSettingsHandler.php:386
+#: classes/SlideshowPluginUpdater.php:186
+msgid "The style used for this slideshow"
+msgstr "Le style utilisé pour ce diaporama"
+
+#: classes/SlideshowPluginSettingsHandler.php:386
+#: classes/SlideshowPluginUpdater.php:186
+msgid "Light"
+msgstr "Clair"
+
+#: classes/SlideshowPluginSettingsHandler.php:386
+#: classes/SlideshowPluginUpdater.php:186
+msgid "Dark"
+msgstr "Sombre"
+
+#: classes/SlideshowPluginSettingsHandler.php:386
+#: classes/SlideshowPluginUpdater.php:186
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: classes/SlideshowPluginSettingsHandler.php:387
+#: classes/SlideshowPluginUpdater.php:187
+msgid "Custom style editor"
+msgstr "Editeur de style personnalisé"
+
+#: classes/SlideshowPluginShortcode.php:130
+msgid "No slideshow selected."
+msgstr "Aucun diaporama choisi"
+
+#: classes/SlideshowPluginSlideInserter.php:148
+#: views/SlideshowPluginPostType/slides.php:2
+msgid "Insert"
+msgstr "Insérer"
+
+#: classes/SlideshowPluginSlideInserter.php:157
+msgid "Load more results"
+msgstr "Afficher plus de résultats"
+
+#: classes/SlideshowPluginSlideInserter.php:166
+msgid "No images were found, click here to upload some."
+msgstr "Aucune image trouvée, cliquer ici pour en charger"
+
+#: classes/SlideshowPluginSlideInserter.php:227
+msgid "Are you sure you want to delete this slide?"
+msgstr "Etes-vous sur de supprimer cette diapo ? "
+
+#: classes/SlideshowPluginWidget.php:20
+msgid "Enables you to show your slideshows in the widget area of your website."
+msgstr "Afficher vos présentations dans la zone de widgets de votre site web."
+
+#: classes/SlideshowPluginWidget.php:26
+msgid "Slideshow Widget"
+msgstr "Widget diaporama"
+
+#: views/SlideshowPluginPostType/information.php:1
+msgid ""
+"To use this slideshow in your website either add this piece of shortcode to "
+"your posts or pages"
+msgstr ""
+"Pour utiliser ce diaporama sur votre site web, ajoutez ce morceau de code "
+"dans vos articles ou pages"
+
+#: views/SlideshowPluginPostType/information.php:5
+msgid ""
+"Or add this piece of code to where ever in your website you want to place "
+"the slideshow"
+msgstr ""
+"Ou ajoutez ce morceau de code là où vous souhaitez afficher le diaporama"
+
+#: views/SlideshowPluginPostType/information.php:9
+#, php-format
+msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
+msgstr ""
+
+#: views/SlideshowPluginPostType/settings.php:12
+msgid "settings"
+msgstr "réglages"
+
+#: views/SlideshowPluginPostType/settings.php:26
+#: views/SlideshowPluginPostType/style-settings.php:8
+msgid "Default"
+msgstr "Par défaut"
+
+#: views/SlideshowPluginPostType/slides.php:9
+msgid "Add slides to this slideshow by using one of the buttons above."
+msgstr ""
+
+#: views/SlideshowPluginPostType/slides.php:51
+#: views/SlideshowPluginPostType/slides.php:156
+#: views/SlideshowPluginWidget/form.php:2
+msgid "Title"
+msgstr "Titre"
+
+#: views/SlideshowPluginPostType/slides.php:52
+#: views/SlideshowPluginPostType/slides.php:157
+msgid "Description"
+msgstr "Description"
+
+#: views/SlideshowPluginPostType/slides.php:53
+#: views/SlideshowPluginPostType/slides.php:158
+msgid "Background color"
+msgstr "Couleur du fond"
+
+#: views/SlideshowPluginPostType/slides.php:59
+#: views/SlideshowPluginPostType/slides.php:124
+#: views/SlideshowPluginPostType/slides.php:164
+#: views/SlideshowPluginPostType/slides.php:212
+msgid "Same window"
+msgstr "Même fenetre"
+
+#: views/SlideshowPluginPostType/slides.php:60
+#: views/SlideshowPluginPostType/slides.php:125
+#: views/SlideshowPluginPostType/slides.php:165
+#: views/SlideshowPluginPostType/slides.php:213
+msgid "New window"
+msgstr "Nouvelle fenetre"
+
+#: views/SlideshowPluginPostType/slides.php:64
+#: views/SlideshowPluginPostType/slides.php:129
+#: views/SlideshowPluginPostType/slides.php:169
+#: views/SlideshowPluginPostType/slides.php:217
+msgid "URL"
+msgstr "URL"
+
+#: views/SlideshowPluginPostType/slides.php:80
+#: views/SlideshowPluginPostType/slides.php:185
+msgid "Youtube Video ID"
+msgstr "ID Vidéo Youtube"
+
+#: views/SlideshowPluginPostType/slides.php:108
+#: views/SlideshowPluginPostType/slides.php:115
+msgid "Edit"
+msgstr "Modifier"
+
+#: views/SlideshowPluginPostType/slides.php:140
+msgid ""
+"An error occurred while loading this slide, and it will not be present in "
+"the slideshow"
+msgstr ""
+"Une erreur s'est produite lors du chargement de cette diapositive, et il ne "
+"sera pas présent dans le diaporama"
+
+#: views/SlideshowPluginPostType/slides.php:145
+#: views/SlideshowPluginPostType/slides.php:177
+#: views/SlideshowPluginPostType/slides.php:192
+#: views/SlideshowPluginPostType/slides.php:226
+msgid "Delete slide"
+msgstr "Supprimer la diapositive"
+
+#: views/SlideshowPluginPostType/support-plugin.php:3
+msgid "Help to keep this plugin free!"
+msgstr "Aidez à maintenir ce plugin gratuit"
+
+#: views/SlideshowPluginPostType/support-plugin.php:6
+msgid ""
+"In order to keep you provided with the newest features, forum support, and "
+"bug-fixes, a lot of motivation is required. Therefore I'm kindly asking you "
+"to consider making a small donation to the plugin or rating it as 5-stars on "
+"Wordpress.org. Thank you in advance!"
+msgstr ""
+"Améliorer ce plugin, maintenir le forum d'aide et pousser des corrections "
+"demande beaucoup de motivation. En conséquence, pouvez-vous envisager une "
+"petite donation ou alors attribuer 5 étoiles à ce plugin sur Wordpress.org. "
+"Merci à vous !"
+
+#: views/SlideshowPluginPostType/support-plugin.php:15
+msgid "Rate on Wordpress.org"
+msgstr "Evaluer sur Wordpress.org"
+
+#: views/SlideshowPluginPostType/support-plugin.php:24
+msgid "Questions / Suggestions"
+msgstr "Questions / Suggestions"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:4
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:9
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:16
+msgid "Insert a Slideshow"
+msgstr "Insérer un diaporama"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:6
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:50
+msgid "Insert Slideshow"
+msgstr "Insérer diaporama"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:26
+msgid "Select a slideshow"
+msgstr "Sélectionner un diaporama"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:35
+#: views/SlideshowPluginWidget/form.php:12
+msgid "Untitled slideshow"
+msgstr "Diaporama sans nom"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:55
+msgid "Cancel"
+msgstr "Annuler"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:66
+#, php-format
+msgid ""
+"It seems you haven't created any slideshows yet. %sYou can create a "
+"slideshow here!%s"
+msgstr ""
+"Il semble que vous n'avez pas encore crée de diaporama.  %sVous pouvez le "
+"faire ici%s"
+
+#: views/SlideshowPluginSlideInserter/insert-image-button.php:1
+msgid "Image slide"
+msgstr "Diapositive image"
+
+#: views/SlideshowPluginSlideInserter/insert-text-button.php:1
+msgid "Text slide"
+msgstr "Diapositive texte"
+
+#: views/SlideshowPluginSlideInserter/insert-video-button.php:1
+msgid "Video slide"
+msgstr "Diapositive vidéo"
+
+#: views/SlideshowPluginSlideInserter/search-popup.php:6
+msgid "Search"
+msgstr "Recherche"
+
+#: views/SlideshowPluginSlideInserter/search-popup.php:7
+msgid "Search images by title or ID"
+msgstr "Chercher les images par titre ou ID"
+
+#: views/SlideshowPluginUpload/upload-button.php:1
+msgid "Upload/Manage Images"
+msgstr "Upload/Gestion des images"
+
+#: views/SlideshowPluginWidget/form.php:9
+msgid "Random Slideshow"
+msgstr "Diaporama aléatoire"
+
+#~ msgid "light"
+#~ msgstr "clair"
+
+#~ msgid "slide"
+#~ msgstr "diapo"
+
+#~ msgid "Custom style editor (Does not work with a Strict Doctype)"
+#~ msgstr "Aangepaste stijl bewerker (Werkt niet met een Strict Doctype)"
+
+#~ msgid "Has the Slideshow plugin helped you?"
+#~ msgstr "Heeft de Slideshow plugin je geholpen?"
+
+#~ msgid "Help it back!"
+#~ msgstr "Help hem terug!"
+
+#~ msgid ""
+#~ "If this plugin has filled you with happiness, please support the upkeep "
+#~ "of the plugin by rating it on Wordpress, posting a suggestion for "
+#~ "improvement on the support forum, or making a donation."
+#~ msgstr ""
+#~ "Als deze plugin je met blijdschap heeft vervuld, zou ik het enorm "
+#~ "waarderen als je de plugin wilt beoordelen op Wordpress, een suggestie "
+#~ "wilt maken voor verbetering, of een donatie doen wilt."
+
+#~ msgid "Click on an image to insert it as a slide"
+#~ msgstr "Klik op een plaatje om deze in te voegen als slide"
+
+#~ msgid "Width of the slideshow"
+#~ msgstr "Breedte van de slideshow"
+
+#~ msgid "Defaults to parent's width."
+#~ msgstr "Standaard ingesteld op de breedte van het bovenliggende element."
+
+#~ msgid "Send user to image URL on click"
+#~ msgstr ""
+#~ "Wanner de gebruiker op de afbeelding klikt, stuur hem naar de URL van het "
+#~ "plaatje"
+
+#~ msgid "Style"
+#~ msgstr "Style"
+
+#~ msgid "Custom style"
+#~ msgstr "Aangepaste stijl"
+
+#~ msgid "Leave any field open to use default value."
+#~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."
