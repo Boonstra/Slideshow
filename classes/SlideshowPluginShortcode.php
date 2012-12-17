@@ -51,7 +51,7 @@ class SlideshowPluginShortcode {
 			$postId = $atts['id'];
 
 		$output = '';
-		$settings = SlideshowPluginSettingsHandler::getSettings($postId);
+		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($postId);
 		if($settings['avoidFilter'] == 'true'){
 			// Filter content after all Wordpress HTML parsers are done, then replace bookmarks with raw HTML
 			add_filter('the_content', array(__CLASS__, 'insertSlideshow'), 999);

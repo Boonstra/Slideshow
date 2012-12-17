@@ -31,7 +31,7 @@
 			$order = $slide['order'];
 
 		// The name is used to prefix a setting name with
-		$name = SlideshowPluginSettingsHandler::$slidesKey . '[' . $key . ']';
+		$name = SlideshowPluginSlideshowSettingsHandler::$slidesKey . '[' . $key . ']';
 		?>
 
 		<li class="widefat sortable-slides-list-item">

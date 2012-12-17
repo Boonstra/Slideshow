@@ -3,8 +3,9 @@
  * SlideshowPluginPostType creates a post type specifically designed for
  * slideshows and their individual settings
  *
+ * @since 1.0.0
  * @author: Stefan Boonstra
- * @version: 06-12-12
+ * @version: 17-12-12
  */
 class SlideshowPluginPostType {
 
@@ -14,15 +15,19 @@ class SlideshowPluginPostType {
 	/**
 	 * Initialize Slideshow post type.
 	 * Called on load of plugin
+	 *
+	 * @since 1.3.0
 	 */
-	static function initialize(){
+	static function init(){
 		add_action('init', array(__CLASS__, 'registerSlideshowPostType'));
 		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueue'));
-		add_action('save_post', array('SlideshowPluginSettingsHandler', 'save'));
+		add_action('save_post', array('SlideshowPluginSlideshowSettingsHandler', 'save'));
 	}
 
 	/**
 	 * Registers new posttype slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function registerSlideshowPostType(){
 		register_post_type(
@@ -59,6 +64,8 @@ class SlideshowPluginPostType {
 	/**
 	 * Enqueues scripts and stylesheets for when the admin page
 	 * is a slideshow edit page.
+	 *
+	 * @since 2.1.11
 	 */
 	static function enqueue(){
         // Return when not on a slideshow edit page.
@@ -88,6 +95,8 @@ class SlideshowPluginPostType {
 
 	/**
 	 * Adds custom meta boxes to slideshow post type.
+	 *
+	 * @since 1.0.0
 	 */
 	static function registerMetaBoxes(){
 		add_meta_box(
@@ -133,6 +142,8 @@ class SlideshowPluginPostType {
 
 	/**
 	 * Shows the support plugin message
+	 *
+	 * @since 2.0.0
 	 */
 	static function supportPluginMessage(){
 		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php');
@@ -140,6 +151,8 @@ class SlideshowPluginPostType {
 
 	/**
 	 * Shows some information about this slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function informationMetaBox(){
 		global $post;
@@ -152,12 +165,14 @@ class SlideshowPluginPostType {
 
 	/**
 	 * Shows slides currently in slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function slidesMetaBox(){
 		global $post;
 
 		// Get slides
-		$slides = SlideshowPluginSettingsHandler::getSlides($post->ID);
+		$slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
 
 		// Stores highest slide id.
 		$highestSlideId = count($slides) - 1;
@@ -171,12 +186,14 @@ class SlideshowPluginPostType {
 
 	/**
 	 * Shows style used for slideshow
+	 *
+	 * @since 1.3.0
 	 */
 	static function styleMetaBox(){
 		global $post;
 
 		// Get settings
-		$settings = SlideshowPluginSettingsHandler::getStyleSettings($post->ID, true);
+		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
 
 		// Fill custom style with default css if empty
 		if(isset($settings['custom']) && isset($settings['custom']['value']) && empty($settings['custom']['value'])){
@@ -191,12 +208,14 @@ class SlideshowPluginPostType {
 
 	/**
 	 * Shows settings for particular slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function settingsMetaBox(){
 		global $post;
 
 		// Get settings
-		$settings = SlideshowPluginSettingsHandler::getSettings($post->ID, true);
+		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
 
 		// Include
 		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php');

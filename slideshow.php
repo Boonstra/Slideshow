@@ -16,7 +16,7 @@
  * base path/url returning method.
  *
  * @author Stefan Boonstra
- * @version 06-12-12
+ * @version 17-12-12
  */
 class SlideshowPluginMain {
 
@@ -36,6 +36,12 @@ class SlideshowPluginMain {
 		// For ajax requests
 		SlideshowPluginAjax::init();
 
+		// Register slideshow post type
+		SlideshowPluginPostType::init();
+
+		// Add general settings page
+		SlideshowPluginGeneralSettings::init();
+
 		// Deploy slideshow on do_action('slideshow_deploy'); hook.
 		add_action('slideshow_deploy', array('SlideshowPlugin', 'deploy'));
 
@@ -44,9 +50,6 @@ class SlideshowPluginMain {
 
 		// Register widget
 		add_action('widgets_init', array('SlideshowPluginWidget', 'registerWidget'));
-
-		// Register slideshow post type
-		SlideshowPluginPostType::initialize();
 
 		// Initialize plugin updater
 		SlideshowPluginUpdater::init();
@@ -93,7 +96,7 @@ class SlideshowPluginMain {
 			$file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $name . '.php';
 
 			if(is_file($file))
-				require_once($file);
+				require_once $file;
 		}
 
 		spl_autoload_register('slideshowPluginAutoLoader');

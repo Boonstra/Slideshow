@@ -4,7 +4,7 @@
  * to version without losing any data.
  *
  * @author Stefan Boonstra
- * @version 06-12-12
+ * @version 17-12-12
  */
 class SlideshowPluginUpdater {
 
@@ -12,34 +12,37 @@ class SlideshowPluginUpdater {
 	private static $versionKey = 'slideshow-jquery-image-gallery-plugin-version';
 
 	/**
-	 * The init function checks
+	 * Determines whether or not to perform an update to the plugin.
+	 * Checks are only performed when on admin pages as not to slow down the website.
+	 *
+	 * @since 2.1.20
 	 */
 	static function init(){
 		if(!is_admin())
 			return;
 
-		// Transfer if no version number is set, or the current version number is greater than the on saved in the database
-		$oldVersion = get_option(self::$versionKey, null);
-		if($oldVersion == null || SlideshowPluginMain::$version > $oldVersion)
-			self::update($oldVersion);
+		// Transfer if no version number is set, or the new version number is greater than the current one saved in the database
+		$currentVersion = get_option(self::$versionKey, null);
+		if($currentVersion == null || self::firstVersionGreaterThanSecond(SlideshowPluginMain::$version, $currentVersion))
+			self::update($currentVersion);
 	}
 
 	/**
 	 * Updates user to correct version
 	 *
 	 * @since 2.1.20
-	 * @param string $oldVersion
+	 * @param string $currentVersion
 	 */
-	private static function update($oldVersion){
+	private static function update($currentVersion){
 		// Version numbers are registered after version 2.1.20
-		if($oldVersion == null){
+		if($currentVersion == null){
 			self::updateV1toV2();
 			self::updateV2toV2_1_20();
 		}
 
-		// This gives better performance to the update, since lower version updates can be skipped.
-//		if('1.33.7' > $oldVersion || $oldVersion == null)
-//			update();
+		// This gives better performance to the update, since lower version migrations can be skipped.
+		if(self::firstVersionGreaterThanSecond('2.1.22', $currentVersion) || $currentVersion == null)
+			; // Update
 
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
@@ -282,5 +285,43 @@ class SlideshowPluginUpdater {
 		}
 
 		update_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1', 'updated');
+	}
+
+	/**
+	 * Checks if the version input first is greater than the version input second.
+	 *
+	 * Version numbers are noted as such: x.x.x
+	 *
+	 * @param String $firstVersion
+	 * @param String $secondVersion
+	 * @return boolean $firstGreaterThanSecond
+	 */
+	private static function firstVersionGreaterThanSecond($firstVersion, $secondVersion){
+
+		// Return false if $firstVersion is not set
+		if(empty($firstVersion) || !is_string($firstVersion))
+			return false;
+
+		// Return true if $secondVersion is not set
+		if(empty($secondVersion) || !is_string($secondVersion))
+			return true;
+
+		// Separate main, sub and bug-fix version number from one another.
+		$firstVersion = explode('.', $firstVersion);
+		$secondVersion = explode('.', $secondVersion);
+
+		// Compare version numbers per piece
+		for($i = 0; $i < count($firstVersion); $i++){
+			if(isset($firstVersion[$i], $secondVersion[$i])){
+				if($firstVersion[$i] > $secondVersion[$i])
+					return true;
+				elseif($firstVersion[$i] < $secondVersion[$i])
+					return false;
+			}
+			else return false;
+		}
+
+		// Return false by default
+		return false;
 	}
 }

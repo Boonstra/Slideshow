@@ -70,13 +70,13 @@ class SlideshowPlugin {
 		$log = array();
 
 		// Get slides
-		$slides = SlideshowPluginSettingsHandler::getSlides($post->ID);
+		$slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
 		if(!is_array($slides) || count($slides) <= 0)
 			$log[] = 'No slides were found';
 
 		// Get settings
-		$settings = SlideshowPluginSettingsHandler::getSettings($post->ID);
-		$styleSettings = SlideshowPluginSettingsHandler::getStyleSettings($post->ID);
+		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
+		$styleSettings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID);
 
 		// Randomize if setting is true.
 		if(isset($settings['random']) && $settings['random'] == 'true')

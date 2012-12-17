@@ -1,12 +1,12 @@
 <?php
 /**
- * Class SlideshowPluginSettingsHandler handles all database/settings interactions.
+ * Class SlideshowPluginSlideshowSettingsHandler handles all database/settings interactions for the slideshows.
  *
  * @since 2.1.20
  * @author Stefan Boonstra
  * @version 06-12-12
  */
-class SlideshowPluginSettingsHandler {
+class SlideshowPluginSlideshowSettingsHandler {
 
 	/** Setting keys */
 	static $settingsKey = 'settings';
