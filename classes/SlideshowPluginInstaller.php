@@ -5,7 +5,7 @@
  *
  * @since 2.1.20
  * @author Stefan Boonstra
- * @version 17-12-12
+ * @version 18-12-12
  */
 class SlideshowPluginInstaller {
 

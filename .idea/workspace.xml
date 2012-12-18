@@ -1,36 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/SlideshowPluginPostType/adminIcon32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\classes\SlideshowPluginUpload.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginAjax.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginAjax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" afterPath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
-    </list>
+    <list default="true" readonly="true" id="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" name="Default" comment="" />
     <list id="6f5b02dc-cecf-4c7e-bc44-388dfbdcee10" name="private" comment="Previous commit shows the changes, this is simply">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1355830218283" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1355870136080" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,19 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="slideshow.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.4903846">
+              <folding>
+                <element signature="e#6#499#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="readme.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="29" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.019517796">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,20 +150,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -203,14 +169,14 @@
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="263" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="46" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="282" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="231" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="230" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../test/slideshowv3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="231" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="906" />
@@ -564,19 +530,23 @@
       <created>1355241415125</created>
       <updated>1355241415125</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Added French translation.&#10;Added a &quot;General Settings&quot; page, containing user capability settings.&#10;Cleaned up unnecessary settings that were showing on page.&#10;Replaced the, in WordPress 3.5, deprecated function 'wp_get_single_post' with the 'get_post' function.&#10;Added an on-page error logger to be able to solve back-end issues faster. Nothing is shown when no errors exist, doesn't affect SEO.">
+      <created>1355869820117</created>
+      <updated>1355869820117</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790446" sideWeight="0.49786323" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2013889" sideWeight="0.32700893" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21771611" sideWeight="0.67209554" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22038421" sideWeight="0.67209554" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33816963" sideWeight="0.49839744" order="11" side_tool="true" content_ui="tabs" />
@@ -628,7 +598,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added French translation by Wptheme (http://wptheme.fr/)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added French translation.&#10;Added a &quot;General Settings&quot; page, containing user capability settings.&#10;Cleaned up unnecessary settings that were showing on page.&#10;Replaced the, in WordPress 3.5, deprecated function 'wp_get_single_post' with the 'get_post' function.&#10;Added an on-page error logger to be able to solve back-end issues faster. Nothing is shown when no errors exist, doesn't affect SEO." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -641,7 +611,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Moved slideshow activation to the footer script. Footer jQuery scripts are now supported." />
     <MESSAGE value="Added more compensation space in the calculation of the slideshow div element." />
     <MESSAGE value="Changed manufacturer line" />
     <MESSAGE value="Added Russian translation by Oleg Fritz. Thankyou Oleg!" />
@@ -666,6 +635,7 @@
     <MESSAGE value="Fixed: Query filters will no longer alter the output of the slideshow.&#10;Fixed: All images will now show, even if they don't have thumbnails.&#10;Compatibility with WordPress 3.5 confirmed.&#10;First back-end increment toward version 2.2.0, introducing a more efficient way to store and retrieve slideshow settings and slides." />
     <MESSAGE value="Fixed: Adding new slides was made impossible by a faulty setting.&#10;Fixed: Image tag placed on multiple lines caused some sites to not display images correctly due to an inserted break character." />
     <MESSAGE value="Added French translation by Wptheme (http://wptheme.fr/)" />
+    <MESSAGE value="Added French translation.&#10;Added a &quot;General Settings&quot; page, containing user capability settings.&#10;Cleaned up unnecessary settings that were showing on page.&#10;Replaced the, in WordPress 3.5, deprecated function 'wp_get_single_post' with the 'get_post' function.&#10;Added an on-page error logger to be able to solve back-end issues faster. Nothing is shown when no errors exist, doesn't affect SEO." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -738,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
@@ -754,8 +717,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="29" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.019517796">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.4903846">
+          <folding>
+            <element signature="e#6#499#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -17,7 +17,7 @@
  *
  * @since 1.0.0
  * @author Stefan Boonstra
- * @version 17-12-12
+ * @version 18-12-12
  */
 class SlideshowPluginMain {
 
