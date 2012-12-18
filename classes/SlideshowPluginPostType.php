@@ -35,7 +35,7 @@ class SlideshowPluginPostType {
 			array(
 				'labels' => array(
 					'name' => __('Slideshows', 'slideshow-plugin'),
-					'singlular_name' => __('Slideshow', 'slideshow-plugin'),
+					'singular_name' => __('Slideshow', 'slideshow-plugin'),
 					'add_new_item' => __('Add New Slideshow', 'slideshow-plugin'),
 					'edit_item' => __('Edit slideshow', 'slideshow-plugin'),
 					'new_item' => __('New slideshow', 'slideshow-plugin'),
@@ -51,6 +51,23 @@ class SlideshowPluginPostType {
 				'query_var' => true,
 				'rewrite' => true,
 				'capability_type' => 'post',
+				'capabilities' => array(
+					'edit_post' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'read_post' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'delete_post' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'edit_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_others_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'publish_posts' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'read_private_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+
+					'read' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'delete_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_private_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_published_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_others_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'edit_private_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_published_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+				),
 				'has_archive' => true,
 				'hierarchical' => false,
 				'menu_position' => null,

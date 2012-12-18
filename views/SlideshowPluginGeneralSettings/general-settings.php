@@ -45,12 +45,12 @@ $capabilities = array(
 
 								<input
 									type="checkbox"
-									name="<?php echo $capability; ?>[<?php echo $roleSlug; ?>]"
-									id="<?php echo htmlspecialchars($roleSlug); ?>"
+									name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
+									id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
 									<?php echo $disabled; ?>
 									<?php echo $checked; ?>
 								/>
-								<label for="<?php echo $roleSlug; ?>"><?php echo $name; ?></label>
+								<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
 								<br />
 
 							<?php endforeach; ?>

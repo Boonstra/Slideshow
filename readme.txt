@@ -110,7 +110,8 @@ slideshow may not be styled.
 
 = 2.1.22 =
 *   Added French translation.
-*   Cleaned up unnecessarily output settings that were showing on page.
+*   Added a "General Settings" page, containing user capability settings.
+*   Cleaned up unnecessary settings that were showing on page.
 *   Replaced the, in WordPress 3.5, deprecated function 'wp_get_single_post' with the 'get_post' function.
 *   Added an on-page error logger to be able to solve back-end issues faster. Nothing is shown when no errors exist, doesn't affect SEO.
 
