@@ -1,12 +1,13 @@
 <?php
 /**
- * SlideshowPluginVersionConverter helps users transfer from version
- * to version without losing any data.
+ * SlideshowPluginInstaller takes care of setting up slideshow setting values and transferring to newer version without
+ * losing any settings.
  *
+ * @since 2.1.20
  * @author Stefan Boonstra
  * @version 17-12-12
  */
-class SlideshowPluginUpdater {
+class SlideshowPluginInstaller {
 
 	/** Version option key */
 	private static $versionKey = 'slideshow-jquery-image-gallery-plugin-version';
@@ -18,6 +19,8 @@ class SlideshowPluginUpdater {
 	 * @since 2.1.20
 	 */
 	static function init(){
+
+		// Only check versions in admin
 		if(!is_admin())
 			return;
 
@@ -25,6 +28,13 @@ class SlideshowPluginUpdater {
 		$currentVersion = get_option(self::$versionKey, null);
 		if($currentVersion == null || self::firstVersionGreaterThanSecond(SlideshowPluginMain::$version, $currentVersion))
 			self::update($currentVersion);
+
+		// New installation
+		if($currentVersion == null){
+
+			// Set up capabilities
+			self::setCapabilities();
+		}
 	}
 
 	/**
@@ -34,18 +44,56 @@ class SlideshowPluginUpdater {
 	 * @param string $currentVersion
 	 */
 	private static function update($currentVersion){
+
 		// Version numbers are registered after version 2.1.20
 		if($currentVersion == null){
 			self::updateV1toV2();
 			self::updateV2toV2_1_20();
 		}
 
-		// This gives better performance to the update, since lower version migrations can be skipped.
+		// Update to version 2.1.22
 		if(self::firstVersionGreaterThanSecond('2.1.22', $currentVersion) || $currentVersion == null)
-			; // Update
+			self::setCapabilities();
 
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Sets capabilities for the default users that have access to creating, updating and deleting slideshows.
+	 *
+	 * @since 2.1.22
+	 */
+	private static function setCapabilities(){
+
+		// Check if update has already been done
+		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22') !== false)
+			return;
+
+		// Capabilities
+		$addSlideshows = 'slideshow-jquery-image-gallery-add-slideshows';
+		$editSlideshows = 'slideshow-jquery-image-gallery-edit-slideshows';
+		$deleteSlideshow = 'slideshow-jquery-image-gallery-delete-slideshows';
+
+		// Add capabilities to roles
+		$roles = array('administrator', 'editor', 'author');
+		foreach($roles as $roleName){
+
+			// Get role
+			$role = get_role($roleName);
+
+			// Continue on non-existent role
+			if($role == null)
+				continue;
+
+			// Add capability to role
+			$role->add_cap($addSlideshows);
+			$role->add_cap($editSlideshows);
+			$role->add_cap($deleteSlideshow);
+		}
+
+		// Register as updated
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22', 'updated');
 	}
 
 	/**
@@ -55,6 +103,7 @@ class SlideshowPluginUpdater {
 	 * @since 2.1.20
 	 */
 	private static function updateV2toV2_1_20(){
+
 		// Check if this has already been done
 		if(get_option('slideshow-plugin-updated-from-v2-to-v2-1-20') !== false)
 			return;
@@ -66,17 +115,17 @@ class SlideshowPluginUpdater {
 			'post_type' => 'slideshow'
 		));
 
-		// Loop through slideshow
+		// Loop through slideshows
 		if(is_array($slideshows) && count($slideshows > 0)){
 			foreach($slideshows as $slideshow){
 				// Get settings
-				$settings = get_post_meta(
+				$settings = maybe_unserialize(get_post_meta(
 					$slideshow->ID,
 					'settings',
 					true
-				);
-				if(!is_array($settings))
-					$settings = array();
+				));
+				if(!is_array($settings) || count($settings) <= 0)
+					continue;
 
 				// Old prefixes
 				$settingsPrefix = 'setting_';
@@ -149,6 +198,7 @@ class SlideshowPluginUpdater {
 	 * @since 2.0.1
 	 */
 	private static function updateV1toV2(){
+
 		// Check if this has already been done
 		if(get_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1') !== false)
 			return;
@@ -292,6 +342,7 @@ class SlideshowPluginUpdater {
 	 *
 	 * Version numbers are noted as such: x.x.x
 	 *
+	 * @since 2.1.22
 	 * @param String $firstVersion
 	 * @param String $secondVersion
 	 * @return boolean $firstGreaterThanSecond

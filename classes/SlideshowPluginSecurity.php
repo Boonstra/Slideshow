@@ -2,9 +2,9 @@
 /**
  * The SlideshowPluginSecurity class contains functions for sanitizing in- and output.
  *
- * @author Stefan Boonstra
  * @since 2.1.16
- * @updated 2.1.16
+ * @author Stefan Boonstra
+ * @version 17-12-12
  */
 class SlideshowPluginSecurity {
 
@@ -55,7 +55,6 @@ class SlideshowPluginSecurity {
 	 * allows the exceptions defined in this class.
 	 *
 	 * @since 2.1.16
-	 * @updated 2.1.16
 	 */
 	static function htmlspecialchars_allow_exceptions($text){
 		$text = htmlspecialchars(htmlspecialchars_decode($text));

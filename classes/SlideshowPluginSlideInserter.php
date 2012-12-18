@@ -4,6 +4,7 @@
  *
  * TODO This class will probably need to be renamed to SlideshowPluginSlideHandler to explain more functionality
  * TODO than just inserting slides. (Show and delete functionality should be applied here as well)
+ * @since 2.0.0
  * @author Stefan Boonstra
  * @version 03-10-2012
  */
@@ -16,6 +17,7 @@ class SlideshowPluginSlideInserter {
 	 * Returns the html for showing the image insert button.
 	 * Enqueues scripts unless $enqueueFiles is set to false.
 	 *
+	 * @since 2.0.0
 	 * @param boolean $enqueueFiles
 	 * @return String $button
 	 */
@@ -36,6 +38,7 @@ class SlideshowPluginSlideInserter {
 	 * Returns the html for showing the text insert button.
 	 * Enqueues scripts unless $enqueueFiles is set to false.
 	 *
+	 * @since 2.0.0
 	 * @param boolean $enqueueFiles
 	 * @return String $button
 	 */
@@ -53,6 +56,7 @@ class SlideshowPluginSlideInserter {
 	 * Returns the html for showing the video insert button.
 	 * Enqueues scripts unless $enqueueFiles is set to false.
 	 *
+	 * @since 2.1.0
 	 * @param boolean $enqueueFiles
 	 * @return String $button
 	 */
@@ -68,7 +72,9 @@ class SlideshowPluginSlideInserter {
 
 	/**
 	 * This function is registered in the SlideshowPluginAjax class
-	 * and deletes slides with a particular $_POST['slideId']
+	 * and deletes slides with a particular $_POST['slideId'].
+	 *
+	 * @since 2.0.0
 	 */
 	static function deleteSlide(){
 		if((!isset($_POST['slideId']) || !is_numeric($_POST['slideId'])) ||
@@ -89,7 +95,9 @@ class SlideshowPluginSlideInserter {
 
 	/**
 	 * This function is registered in the SlideshowPluginAjax class
-	 * and prints the results from the search query
+	 * and prints the results from the search query.
+	 *
+	 * @since 2.0.0
 	 */
 	static function printSearchResults(){
 		// Numberposts and offset
@@ -175,6 +183,7 @@ class SlideshowPluginSlideInserter {
 	/**
 	 * Applies a where clause on the get_posts call from self::printSearchResults()
 	 *
+	 * @since 2.0.0
 	 * @param string $where
 	 * @return string $where
 	 */
@@ -193,6 +202,8 @@ class SlideshowPluginSlideInserter {
 
 	/**
 	 * Include popup, needs to be called in the footer
+	 *
+	 * @since 2.0.0
 	 */
 	static function includePopup(){
 		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/search-popup.php');
@@ -200,6 +211,8 @@ class SlideshowPluginSlideInserter {
 
 	/**
 	 * Enqueues styles and scripts necessary for the media upload button.
+	 *
+	 * @since 2.0.0
 	 */
 	static function enqueueFiles(){
         // Return when not on a slideshow edit page, or files have already been included.

@@ -15,6 +15,7 @@
  * methods for the other classes to use like the auto-includer and the
  * base path/url returning method.
  *
+ * @since 1.0.0
  * @author Stefan Boonstra
  * @version 17-12-12
  */
@@ -52,7 +53,7 @@ class SlideshowPluginMain {
 		add_action('widgets_init', array('SlideshowPluginWidget', 'registerWidget'));
 
 		// Initialize plugin updater
-		SlideshowPluginUpdater::init();
+		SlideshowPluginInstaller::init();
 	}
 
 	/**

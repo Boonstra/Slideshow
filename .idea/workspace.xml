@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/SlideshowPluginPostType/adminIcon32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" />
+      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\classes\SlideshowPluginUpload.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginAjax.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginAjax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginUpdater.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginUpdater.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" afterPath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
     </list>
     <list id="6f5b02dc-cecf-4c7e-bc44-388dfbdcee10" name="private" comment="Previous commit shows the changes, this is simply">
@@ -11,7 +29,7 @@
     </list>
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1355259694447" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1355830218283" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +52,7 @@
       <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -43,7 +61,7 @@
       <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="29" selection-start="4507" selection-end="4507" vertical-scroll-proportion="0.19517796">
+            <state line="111" column="29" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.31228474">
               <folding />
             </state>
           </provider>
@@ -52,11 +70,8 @@
       <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="-4.576923">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,9 +80,7 @@
         <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1354837374707" expanded="true" signature="215:5931" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -176,7 +189,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -189,14 +202,14 @@
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="263" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="46" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="282" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="231" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="230" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../test/slideshowv3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="231" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="906" />
@@ -555,13 +568,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790446" sideWeight="0.49786323" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2013889" sideWeight="0.32700893" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21344717" sideWeight="0.67209554" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21558164" sideWeight="0.67209554" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33816963" sideWeight="0.49839744" order="11" side_tool="true" content_ui="tabs" />
@@ -572,7 +586,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790446" sideWeight="0.49786323" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -720,32 +733,27 @@
     <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding>
-            <marker date="1354837374707" expanded="true" signature="215:5931" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+        <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="-4.576923">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="29" selection-start="4507" selection-end="4507" vertical-scroll-proportion="0.19517796">
+        <state line="111" column="29" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.31228474">
           <folding />
         </state>
       </provider>

@@ -2,6 +2,7 @@
 /**
  * Class SlideshowPluginWidget allows showing one of your slideshows in your widget area.
  *
+ * @since 1.2.0
  * @author: Stefan Boonstra
  * @version: 04-10-12
  */
@@ -12,6 +13,8 @@ class SlideshowPluginWidget extends WP_Widget {
 
 	/**
 	 * Initializes the widget
+	 *
+	 * @since 1.2.0
 	 */
 	function SlideshowPluginWidget(){
 		// Settings
@@ -31,6 +34,7 @@ class SlideshowPluginWidget extends WP_Widget {
 	/**
 	 * The widget as shown to the user.
 	 *
+	 * @since 1.2.0
 	 * @param mixed array $args
 	 * @param mixed array $instance
 	 */
@@ -68,6 +72,7 @@ class SlideshowPluginWidget extends WP_Widget {
 	/**
 	 * The form shown on the admins widget page. Here settings can be changed.
 	 *
+	 * @since 1.2.0
 	 * @param mixed array $instance
 	 * @return string
 	 */
@@ -95,6 +100,7 @@ class SlideshowPluginWidget extends WP_Widget {
 	/**
 	 * Updates widget's settings.
 	 *
+	 * @since 1.2.0
 	 * @param mixed array $newInstance
 	 * @param mixed array $instance
 	 * @return mixed array $instance
@@ -114,6 +120,8 @@ class SlideshowPluginWidget extends WP_Widget {
 
 	/**
 	 * Registers this widget (should be called upon widget_init action hook)
+	 *
+	 * @since 1.2.0
 	 */
 	static function registerWidget(){
 		register_widget(__CLASS__);

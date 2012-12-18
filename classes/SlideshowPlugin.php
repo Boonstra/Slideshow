@@ -3,6 +3,7 @@
  * Class SlideslowPlugin is called whenever a slideshow do_action tag is come across.
  * Responsible for outputting the slideshow's HTML, CSS and Javascript.
  *
+ * @since 1.0.0
  * @author: Stefan Boonstra
  * @version: 06-12-12
  */
@@ -14,6 +15,7 @@ class SlideshowPlugin {
 	/**
 	 * Function deploy prints out the prepared html
 	 *
+	 * @since 1.2.0
 	 * @param int $postId
 	 */
 	static function deploy($postId = null){
@@ -27,6 +29,7 @@ class SlideshowPlugin {
 	 * Passing this function no parameter or passing it a negative one will
 	 * result in a random pick of slideshow
 	 *
+	 * @since 2.1.0
 	 * @param int $postId
 	 * @return String $output
 	 */
