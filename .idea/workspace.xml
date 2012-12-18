@@ -8,7 +8,7 @@
     </list>
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1355870136080" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1355870159210" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="slideshow.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.4903846">
+            <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="-15.692307">
               <folding>
                 <element signature="e#6#499#0" expanded="true" />
               </folding>
@@ -39,26 +39,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.txt" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlideshowPluginPostType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -708,9 +690,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="-15.692307">
+          <folding>
+            <element signature="e#6#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+        <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.1408284">
           <folding />
         </state>
       </provider>
@@ -719,15 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.4903846">
-          <folding>
-            <element signature="e#6#499#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
