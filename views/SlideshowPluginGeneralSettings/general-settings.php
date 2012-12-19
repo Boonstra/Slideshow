@@ -73,19 +73,42 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 		<table class="form-table default-slideshow-settings" style="display: none;">
 
 			<tr>
-				<th colspan="2">
-					<h3><?php _e('Default settings', 'slideshow-plugin'); ?></h3>
-				</th>
+				<td colspan="2">
+					<h3><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></h3>
+				</td>
 			</tr>
 
 			<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
 
 			<tr>
-				<th>
+				<td>
 					<?php echo $defaultSettingValue['description']; ?>
-				</th>
+				</td>
 				<td>
 					<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultSettings, $defaultSettingKey, $defaultSettingValue) ?>
+				</td>
+			</tr>
+
+			<?php endforeach; ?>
+
+		</table>
+
+		<table class="form-table default-slideshow-settings" style="display: none;">
+
+			<tr>
+				<td colspan="2">
+					<h3><?php _e('Default Slideshow Style', 'slideshow-plugin'); ?></h3>
+				</td>
+			</tr>
+
+			<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
+
+			<tr>
+				<td>
+					<?php echo $defaultStyleSettingValue['description']; ?>
+				</td>
+				<td>
+					<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultStyleSettings, $defaultStyleSettingKey, $defaultStyleSettingValue) ?>
 				</td>
 			</tr>
 

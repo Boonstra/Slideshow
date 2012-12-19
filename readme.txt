@@ -108,6 +108,10 @@ slideshow may not be styled.
 
 == Changelog ==
 
+= 2.1.23 =
+*   Default settings and styles can now be changed from the 'General Settings' page.
+*   Adapted the 'Dark' style to be more compatible with the WordPress TwentyTwelve theme.
+
 = 2.1.22 =
 *   Added French translation.
 *   Added a "General Settings" page, containing user capability settings.

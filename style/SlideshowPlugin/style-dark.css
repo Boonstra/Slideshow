@@ -60,15 +60,12 @@
 	background-position: -24px 0;
 }
 
+.slideshow_container h2,
+.slideshow_container p,
 .slideshow_container a {
 	text-decoration: none;
 	color: #fff;
 	text-align: center;
-}
-
-.slideshow_container .description h2,
-.slideshow_container .description p {
-	color: #fff;
 }
 
 .slideshow_container h2 {

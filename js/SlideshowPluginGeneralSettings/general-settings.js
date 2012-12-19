@@ -18,7 +18,14 @@ jQuery(document).ready(function(){
 
 		// Show newly activate tab
 		jQuery(thisTab.attr('href').replace('#', '.')).css('display', 'table');
+
+		// Set referrer value to the current page to be able to return there after saving
+		var referrer = jQuery('input[name=_wp_http_referer]');
+		referrer.attr('value', referrer.attr('value').split('#').shift() + thisTab.attr('href'));
 	});
+
+	// Navigate to correct tab by firing a click event on it. Click event needs to have already been registered on '.nav-tab'.
+	jQuery('a[href="#' + document.URL.split('#').pop() + '"]').trigger('click');
 
 	/**
 	 * ==== User Capabilities ====

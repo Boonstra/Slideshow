@@ -5,7 +5,7 @@
  *
  * @since 2.1.22
  * @author Stefan Boonstra
- * @version 18-12-12
+ * @version 19-12-12
  */
 class SlideshowPluginGeneralSettings {
 
@@ -84,13 +84,8 @@ class SlideshowPluginGeneralSettings {
 		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
 
 		// Register default slideshow settings
-		register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'test'));
+		register_setting(self::$settingsGroup, self::$defaultSettings);
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
-	}
-	static function test($test){
-		var_dump($test);
-
-		die;
 	}
 
 	/**
@@ -99,6 +94,14 @@ class SlideshowPluginGeneralSettings {
 	 * @since 2.1.22
 	 */
 	static function enqueue(){
+
+		// Enqueue general settings stylesheet
+		wp_enqueue_style(
+			'slideshow-jquery-image-gallery-general-settings',
+			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/general-settings.css',
+			array(),
+			SlideshowPluginMain::$version
+		);
 
 		// Enqueue general settings script
 		wp_enqueue_script(

@@ -1,0 +1,10 @@
+.default-slideshow-settings {
+	margin-top: 20px;
+	width: auto !important;
+
+	border: 1px solid #ccc;
+}
+
+.default-slideshow-settings td {
+	padding: 3px 8px !important;
+}

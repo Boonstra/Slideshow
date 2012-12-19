@@ -4,7 +4,7 @@
  *
  * @since 2.1.20
  * @author Stefan Boonstra
- * @version 06-12-12
+ * @version 19-12-12
  */
 class SlideshowPluginSlideshowSettingsHandler {
 
@@ -282,15 +282,20 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * build up as follows:
 	 * array([settingsKey] => array([settingName] => array('type' => [inputType], 'value' => [value], 'default' => [default], 'description' => [description], 'options' => array([options]), 'dependsOn' => array([dependsOn], [onValue]), 'group' => [groupName])))
 	 *
+	 * Finally, when you require the defaults as they were programmed in,
+	 * set this parameter to false. When set to true, the database will
+	 * first be consulted for user-customized defaults. Defaults to true.
+	 *
 	 * @since 2.1.20
 	 * @param mixed $key (optional, defaults to null, getting all keys)
 	 * @param boolean $fullDefinition (optional, defaults to false)
+	 * @param boolean $fromDatabase (optional, defaults to true)
 	 * @return mixed $data
 	 */
-	static function getAllDefaults($key = null, $fullDefinition = false){
+	static function getAllDefaults($key = null, $fullDefinition = false, $fromDatabase = true){
 		$data = array();
-		$data[self::$settingsKey] = self::getDefaultSettings($fullDefinition);
-		$data[self::$styleSettingsKey] = self::getDefaultStyleSettings($fullDefinition);
+		$data[self::$settingsKey] = self::getDefaultSettings($fullDefinition, $fromDatabase);
+		$data[self::$styleSettingsKey] = self::getDefaultStyleSettings($fullDefinition, $fromDatabase);
 
 		return $data;
 	}
@@ -302,9 +307,10 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 *
 	 * @since 2.1.20
 	 * @param boolean $fullDefinition (optional, defaults to false)
+	 * @param boolean $fromDatabase (optional, defaults to true)
 	 * @return mixed $data
 	 */
-	static function getDefaultSettings($fullDefinition = false){
+	static function getDefaultSettings($fullDefinition = false, $fromDatabase = true){
 		// Much used data for translation
 		$yes = __('Yes', 'slideshow-plugin');
 		$no = __('No', 'slideshow-plugin');
@@ -329,6 +335,13 @@ class SlideshowPluginSlideshowSettingsHandler {
 			'random' => 'false',
 			'avoidFilter' => 'true'
 		);
+
+		// Read defaults from database and merge with $data, when $fromDatabase is set to true
+		if($fromDatabase)
+			$data = array_merge(
+				$data,
+				$customData = get_option(SlideshowPluginGeneralSettings::$defaultSettings, array())
+			);
 
 		// Full definition
 		if($fullDefinition){
@@ -364,9 +377,10 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 *
 	 * @since 2.1.20
 	 * @param boolean $fullDefinition (optional, defaults to false)
+	 * @param boolean $fromDatabase (optional, defaults to true)
 	 * @return mixed $data
 	 */
-	static function getDefaultStyleSettings($fullDefinition = false){
+	static function getDefaultStyleSettings($fullDefinition = false, $fromDatabase = true){
 		// Much used data for translation
 		$yes = __('Yes', 'slideshow-plugin');
 		$no = __('No', 'slideshow-plugin');
