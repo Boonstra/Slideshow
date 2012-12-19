@@ -14,6 +14,12 @@ $capabilities = array(
 $defaultSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
 $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
 
+// Custom styles
+$customStyles = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
+$customStyles = array(
+	'slideshow-jquery-image-gallery-custom-style_0' => 'Name',
+	'slideshow-jquery-image-gallery-custom-style_1' => 'Other name'
+);
 ?>
 
 <div class="wrap">
@@ -24,8 +30,8 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 		<div class="icon32" style="background: url('<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon32.png'; ?>');"></div>
 		<h2 class="nav-tab-wrapper">
 			<a href="#user-capabilities" class="nav-tab nav-tab-active"><?php _e('User Capabilities', 'slideshow-plugin'); ?></a>
-			<a href="#default-slideshow-settings" class="nav-tab"><?php _e('Default Slideshow Values', 'slideshow-plugin'); ?></a>
-			<!--<a href="#custom-styles" class="nav-tab">--><?php //_e('Custom Styles', 'slideshow-plugin'); ?><!--</a>-->
+			<a href="#default-slideshow-settings" class="nav-tab"><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></a>
+			<a href="#custom-styles" class="nav-tab"><?php _e('Custom Styles', 'slideshow-plugin'); ?></a>
 
 			<?php submit_button(null, 'primary', null, false, 'style="float: right;"'); ?>
 		</h2>
@@ -35,35 +41,35 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 
 			<?php foreach($capabilities as $capability => $capabilityName): ?>
 
-				<tr valign="top">
-					<th><?php echo $capabilityName; ?></th>
-					<td>
-						<?php
+			<tr valign="top">
+				<th><?php echo $capabilityName; ?></th>
+				<td>
+					<?php
 
-						if(isset($wp_roles->roles) && is_array($wp_roles->roles)):
-							foreach($wp_roles->roles as $roleSlug => $values):
+					if(isset($wp_roles->roles) && is_array($wp_roles->roles)):
+					foreach($wp_roles->roles as $roleSlug => $values):
 
-								$disabled = ($roleSlug == 'administrator') ? 'disabled="disabled"' : '';
-								$checked = ((isset($values['capabilities']) && array_key_exists($capability, $values['capabilities']) && $values['capabilities'][$capability] == true) || $roleSlug == 'administrator') ? 'checked="checked"' : '';
-								$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-plugin');
+					$disabled = ($roleSlug == 'administrator') ? 'disabled="disabled"' : '';
+					$checked = ((isset($values['capabilities']) && array_key_exists($capability, $values['capabilities']) && $values['capabilities'][$capability] == true) || $roleSlug == 'administrator') ? 'checked="checked"' : '';
+					$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-plugin');
 
-								?>
+					?>
 
-								<input
-									type="checkbox"
-									name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
-									id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
-									<?php echo $disabled; ?>
-									<?php echo $checked; ?>
-								/>
-								<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
-								<br />
+					<input
+						type="checkbox"
+						name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
+						id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
+						<?php echo $disabled; ?>
+						<?php echo $checked; ?>
+					/>
+					<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
+					<br />
 
-							<?php endforeach; ?>
-						<?php endif; ?>
+					<?php endforeach; ?>
+					<?php endif; ?>
 
-					</td>
-				</tr>
+				</td>
+			</tr>
 
 			<?php endforeach; ?>
 
@@ -117,9 +123,31 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 		</table>
 
 		<!-- ==== ==== Custom styles ==== ==== -->
-		<table class="form-table custom-styles" style="display: none;">
+		<div class="custom-styles" style="display: none; float: left; padding-right: 10px; margin: 10px; border-right: 1px solid #ccc;">
 
-		</table>
+			<ul style="">
+
+				<?php foreach($customStyles as $customStyleSlug => $customStyleName): ?>
+
+				<li>
+
+					<?php echo $customStyleName; ?> <span style="display: block;text-align: right;">Edit</span>
+
+				</li>
+
+				<?php endforeach; ?>
+
+			</ul>
+
+		</div>
+
+		<div class="custom-styles" style="display: none; float: left;">
+
+			Other stuff, editor and crap.
+
+		</div>
+
+		<div style="clear: both;"></div>
 
 		<?php submit_button(); ?>
 	</form>

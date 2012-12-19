@@ -9,7 +9,7 @@
  */
 class SlideshowPluginGeneralSettings {
 
-	/** settingsGroup */
+	/** Settings Group */
 	static $settingsGroup = 'slideshow-jquery-image-gallery-general-settings';
 
 	/** User capability settings */
@@ -22,6 +22,9 @@ class SlideshowPluginGeneralSettings {
 	/** Default slideshow settings */
 	static $defaultSettings = 'slideshow-jquery-image-gallery-default-settings';
 	static $defaultStyleSettings = 'slideshow-jquery-image-gallery-default-style-settings';
+
+	/** List of pointers to custom style options */
+	static $customStyles = 'slideshow-jquery-image-gallery-custom-styles';
 
 	/**
 	 * Initializes the slideshow post type's general settings.

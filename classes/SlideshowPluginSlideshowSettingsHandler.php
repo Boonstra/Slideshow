@@ -391,6 +391,13 @@ class SlideshowPluginSlideshowSettingsHandler {
 			'custom' => ''
 		);
 
+		// Read defaults from database and merge with $data, when $fromDatabase is set to true
+		if($fromDatabase)
+			$data = array_merge(
+				$data,
+				$customData = get_option(SlideshowPluginGeneralSettings::$defaultStyleSettings, array())
+			);
+
 		// Full definition
 		if($fullDefinition){
 			$data = array(

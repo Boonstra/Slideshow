@@ -1,3 +1,5 @@
+/* ==== ==== ==== Default slideshow settings ==== ==== ==== */
+
 .default-slideshow-settings {
 	margin-top: 20px;
 	width: auto !important;
@@ -8,3 +10,6 @@
 .default-slideshow-settings td {
 	padding: 3px 8px !important;
 }
+
+/* ==== ==== ==== Custom styles ==== ==== ==== */
+

@@ -14,10 +14,10 @@ jQuery(document).ready(function(){
 		thisTab.addClass('nav-tab-active');
 
 		// Hide previously active tab's content
-		jQuery(activeTab.attr('href').replace('#', '.')).css('display', 'none');
+		jQuery(activeTab.attr('href').replace('#', '.')).hide();
 
 		// Show newly activate tab
-		jQuery(thisTab.attr('href').replace('#', '.')).css('display', 'table');
+		jQuery(thisTab.attr('href').replace('#', '.')).show();
 
 		// Set referrer value to the current page to be able to return there after saving
 		var referrer = jQuery('input[name=_wp_http_referer]');
