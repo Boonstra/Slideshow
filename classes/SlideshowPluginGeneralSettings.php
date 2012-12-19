@@ -19,6 +19,10 @@ class SlideshowPluginGeneralSettings {
 		'deleteSlideshows' => 'slideshow-jquery-image-gallery-delete-slideshows'
 	);
 
+	/** Default slideshow settings */
+	static $defaultSettings = 'slideshow-jquery-image-gallery-default-settings';
+	static $defaultStyleSettings = 'slideshow-jquery-image-gallery-default-style-settings';
+
 	/**
 	 * Initializes the slideshow post type's general settings.
 	 *
@@ -74,10 +78,19 @@ class SlideshowPluginGeneralSettings {
 		if(array_pop(explode('/', $_SERVER['PHP_SELF'])) != 'options.php')
 			return;
 
-		// Register settings, saving capabilities only has to be called once.
+		// Register user capability settings, saving capabilities only has to be called once.
 		register_setting(self::$settingsGroup, self::$capabilities['addSlideshows']);
 		register_setting(self::$settingsGroup, self::$capabilities['editSlideshows']);
 		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
+
+		// Register default slideshow settings
+		register_setting(self::$settingsGroup, self::$defaultSettings, array(__CLASS__, 'test'));
+		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
+	}
+	static function test($test){
+		var_dump($test);
+
+		die;
 	}
 
 	/**
@@ -121,7 +134,7 @@ class SlideshowPluginGeneralSettings {
 			return $capability;
 
 		// Roles
-		global $wp_roles;var_dump($wp_roles);
+		global $wp_roles;
 
 		// Loop through available user roles
 		foreach($wp_roles->roles as $roleSlug => $roleValues){

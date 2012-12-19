@@ -10,19 +10,25 @@ $capabilities = array(
 	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin')
 );
 
+// Default settings
+$defaultSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
+$defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
+
 ?>
 
 <div class="wrap">
 
-	<div class="icon32" style="background: url('<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon32.png'; ?>');"></div>
-	<h2 class="nav-tab-wrapper">
-		<a href="#user-capabilities" class="nav-tab nav-tab-active"><?php _e('User Capabilities', 'slideshow-plugin'); ?></a>
-<!--		<a href="#default-slideshow-settings" class="nav-tab">--><?php //_e('Default Slideshow Values', 'slideshow-plugin'); ?><!--</a>-->
-<!--		<a href="#custom-styles" class="nav-tab">--><?php //_e('Custom Styles', 'slideshow-plugin'); ?><!--</a>-->
-	</h2>
-
 	<form method="post" action="options.php">
 		<?php settings_fields(SlideshowPluginGeneralSettings::$settingsGroup); ?>
+
+		<div class="icon32" style="background: url('<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon32.png'; ?>');"></div>
+		<h2 class="nav-tab-wrapper">
+			<a href="#user-capabilities" class="nav-tab nav-tab-active"><?php _e('User Capabilities', 'slideshow-plugin'); ?></a>
+			<a href="#default-slideshow-settings" class="nav-tab"><?php _e('Default Slideshow Values', 'slideshow-plugin'); ?></a>
+			<!--<a href="#custom-styles" class="nav-tab">--><?php //_e('Custom Styles', 'slideshow-plugin'); ?><!--</a>-->
+
+			<?php submit_button(null, 'primary', null, false, 'style="float: right;"'); ?>
+		</h2>
 
 		<!-- ==== ==== User capabilities ==== ==== -->
 		<table class="form-table user-capabilities">
@@ -64,9 +70,28 @@ $capabilities = array(
 		</table>
 
 		<!-- ==== ==== Defaults slideshow settings ==== ==== -->
-        <table class="form-table default-slideshow-settings" style="display: none;">
+		<table class="form-table default-slideshow-settings" style="display: none;">
 
-        </table>
+			<tr>
+				<th colspan="2">
+					<h3><?php _e('Default settings', 'slideshow-plugin'); ?></h3>
+				</th>
+			</tr>
+
+			<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
+
+			<tr>
+				<th>
+					<?php echo $defaultSettingValue['description']; ?>
+				</th>
+				<td>
+					<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultSettings, $defaultSettingKey, $defaultSettingValue) ?>
+				</td>
+			</tr>
+
+			<?php endforeach; ?>
+
+		</table>
 
 		<!-- ==== ==== Custom styles ==== ==== -->
 		<table class="form-table custom-styles" style="display: none;">
