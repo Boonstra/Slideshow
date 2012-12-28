@@ -58,7 +58,8 @@ class SlideshowPlugin {
 				'numberposts' => 1,
 				'offset' => 0,
 				'orderby' => 'rand',
-				'post_type' => SlideshowPluginPostType::$postType
+				'post_type' => SlideshowPluginPostType::$postType,
+				'suppress_filters' => true
 			));
 
 			if(is_array($post))
