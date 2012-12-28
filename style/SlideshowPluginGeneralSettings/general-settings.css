@@ -2,9 +2,9 @@
 
 .default-slideshow-settings {
 	margin-top: 20px;
-	width: auto !important;
+	padding-bottom: 20px;
 
-	border: 1px solid #ccc;
+	width: auto !important;
 }
 
 .default-slideshow-settings td {
@@ -13,3 +13,49 @@
 
 /* ==== ==== ==== Custom styles ==== ==== ==== */
 
+.custom-styles {
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+.custom-styles .styles-list {
+	float: left;
+
+	width: 20%;
+	min-width: 150px;
+	max-width: 300px;
+
+	padding-right: 10px;
+
+	border-right: 1px solid #dfdfdf;
+}
+
+.custom-styles .styles-list li {
+	float: none;
+}
+
+.custom-styles .styles-list li .style-title {
+	float: left;
+}
+
+.custom-styles .styles-list li .style-action {
+	 float: right;
+
+	 color: #21759B;
+ }
+
+.custom-styles .styles-list li .style-action:hover {
+	text-decoration: underline;
+	cursor: pointer;
+
+	color: #D54E21;
+}
+
+.custom-styles .styles-editor {
+	float: left;
+
+	width: 80%;
+
+	padding-left: 10px;
+	margin-right: -21px;
+}

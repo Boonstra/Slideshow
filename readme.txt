@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 2.1.22
+Stable tag: 2.1.23
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -111,6 +111,7 @@ slideshow may not be styled.
 = 2.1.23 =
 *   Default settings and styles can now be changed from the 'General Settings' page.
 *   Adapted the 'Dark' style to be more compatible with the WordPress TwentyTwelve theme.
+*   Changed 'Insert Slideshow' link to appear as a button.
 
 = 2.1.22 =
 *   Added French translation.

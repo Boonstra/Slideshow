@@ -1,13 +1,15 @@
 <a
 	href="#TB_inline?width=450&inlineId=insertSlideshowShortcode"
-	class="thickbox"
+	class="button thickbox"
 	title="<?php _e('Insert a Slideshow', 'slideshow-plugin'); ?>"
+    style="padding-left: .4em;"
 >
-	<?php _e('Insert Slideshow', 'slideshow-plugin'); ?>
 	<img
 		src="<?php echo SlideshowPluginMain::getPluginUrl() . '/images/adminIcon.png'; ?>"
 		alt="<?php _e('Insert a Slideshow', 'slideshow-plugin'); ?>"
+	    style="vertical-align: text-top;"
 	/>
+	<?php _e('Insert Slideshow', 'slideshow-plugin'); ?>
 </a>
 
 <div id="insertSlideshowShortcode" style="display: none;">

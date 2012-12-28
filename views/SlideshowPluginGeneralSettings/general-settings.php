@@ -76,7 +76,7 @@ $customStyles = array(
 		</table>
 
 		<!-- ==== ==== Defaults slideshow settings ==== ==== -->
-		<table class="form-table default-slideshow-settings" style="display: none;">
+		<table class="feature-filter default-slideshow-settings" style="display: none;">
 
 			<tr>
 				<td colspan="2">
@@ -99,7 +99,7 @@ $customStyles = array(
 
 		</table>
 
-		<table class="form-table default-slideshow-settings" style="display: none;">
+		<table class="feature-filter default-slideshow-settings" style="display: none;">
 
 			<tr>
 				<td colspan="2">
@@ -123,28 +123,57 @@ $customStyles = array(
 		</table>
 
 		<!-- ==== ==== Custom styles ==== ==== -->
-		<div class="custom-styles" style="display: none; float: left; padding-right: 10px; margin: 10px; border-right: 1px solid #ccc;">
+		<div class="custom-styles feature-filter" style="display: none;">
+			<div class="styles-list">
 
-			<ul style="">
+				<b>Default styles</b>
 
-				<?php foreach($customStyles as $customStyleSlug => $customStyleName): ?>
+				<ul>
 
-				<li>
+					<li>
+						<p class="style-title">Light</p>
+						<p class="style-action">Customize &raquo;</p>
 
-					<?php echo $customStyleName; ?> <span style="display: block;text-align: right;">Edit</span>
+						<p style="clear: both;"></p>
+					</li>
 
-				</li>
+					<li>
+						<p class="style-title">Dark</p>
+						<p class="style-action">Customize &raquo;</p>
 
-				<?php endforeach; ?>
+						<p style="clear: both;"></p>
+					</li>
 
-			</ul>
+				</ul>
 
-		</div>
+				<b>Custom styles</b>
 
-		<div class="custom-styles" style="display: none; float: left;">
+				<ul style="">
 
-			Other stuff, editor and crap.
+					<?php foreach($customStyles as $customStyleSlug => $customStyleName): ?>
 
+					<li>
+						<p class="style-title"><?php echo htmlspecialchars($customStyleName); ?></p>
+						<p class="style-action">Edit &raquo;</p>
+
+						<p style="clear: both;"></p>
+					</li>
+
+					<?php endforeach; ?>
+
+				</ul>
+
+			</div>
+
+			<div class="styles-editor">
+
+				<b>Other stuff, editor and crap.</b>
+
+				<?php // TODO: Place all custom styles here as hidden text area's. ?>
+
+			</div>
+
+			<div style="clear: both;"></div>
 		</div>
 
 		<div style="clear: both;"></div>
