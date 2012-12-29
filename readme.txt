@@ -31,7 +31,7 @@ different images, settings and styles for each one of them.
  - Run multiple slideshows on the same page
  - Change animations and handling
  - Customize to taste
- - Shows that visitor who's boss
+ - Show that visitor who's boss
 
 = Languages =
 
@@ -41,8 +41,8 @@ different images, settings and styles for each one of them.
  - French (Translated by [Wptheme](http://wptheme.fr/))
  - Russian (Translated by [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
 
- Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
- thanks in advance!
+Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
+thanks in advance!
 
 = Project board =
 
@@ -54,13 +54,15 @@ Check upcoming features, bug-fixes and development progress that are currently o
 
 1. Install Slideshow either via the WordPress.org plugin directory, or by uploading the files to your server.
 
-2. After activating Slideshow, you can create a new slideshow.
+2. After activating Slideshow, click on 'Slideshows' and create a new slideshow.
 
 3. Click on 'Insert Image Slide' to insert an image slide, a popup will appear where you can search for the desired
-image. Insert the image by clicking 'Insert'
+image. Insert the image by clicking 'Insert'. The same goes for text and video slides, don't forget to save!
 
-4. Use the shortcode or code snippet visible in your slideshow admin panel to deploy your slideshow anywhere on your website,
-or use the widget to show any of your slideshows in the sidebar of your website.
+4. Go to a post or a page and click the 'Insert Slideshow' button above the editor. A popup appears where you can select
+your newly created slideshow to insert. You can also use the shortcode or code snippet visible in your slideshow admin
+panel to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the sidebar
+of your website.
 
 5. Feel like a sir.
 

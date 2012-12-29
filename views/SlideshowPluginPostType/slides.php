@@ -34,7 +34,7 @@
 		$name = SlideshowPluginSlideshowSettingsHandler::$slidesKey . '[' . $key . ']';
 		?>
 
-		<li class="widefat sortable-slides-list-item">
+		<li class="widefat sortable-slides-list-item" style="padding: 5px; width: auto;">
 			<?php if($slide['type'] == 'text'):
 
 				// Type specific values
@@ -90,6 +90,19 @@
 				if(!isset($attachment))
 					continue;
 
+				// Title and description
+				$title = $description = '';
+				if(isset($slide['title']) && !empty($slide['title']))
+					$title = $slide['title'];
+				else
+					$title = $attachment->post_title;
+
+				if(isset($slide['description']) && !empty($slide['description']))
+					$description = $slide['description'];
+				else
+					$description = $attachment->post_content;
+
+				// Prepare image
 				$image = wp_get_attachment_image_src($attachment->ID);
 				$imageSrc = '';
 				if(!is_array($image) || !$image){
@@ -104,19 +117,25 @@
 
 				$editUrl = admin_url() . '/media.php?attachment_id=' . $attachment->ID . '&amp;action=edit'; ?>
 
-				<p style="float: left; padding: 0 5px;">
+				<p style="float: left;">
 					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
 						<img width="80" height="60" src="<?php echo $imageSrc; ?>" class="attachment-80x60" alt="<?php echo $attachment->post_title; ?>" title="<?php echo $attachment->post_title; ?>" />
 					</a>
 				</p>
 
-				<p style="float: left; padding: 0 5px;">
-					<strong>
+				<p style="float: left;">
+					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br /><input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" /><br />
+					<!--<strong>
 						<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;"><?php echo $attachment->post_title; ?></a>
 					</strong><br />
-					<?php if(strlen($attachment->post_content) > 30) echo substr($attachment->post_content, 0, 20) . '...'; else echo $attachment->post_content; ?>
+					<?php if(strlen($attachment->post_content) > 30) echo substr($attachment->post_content, 0, 20) . '...'; else echo $attachment->post_content; ?>-->
 				</p>
 				<p style="clear: both"></p>
+
+				<p style="padding: 0 5px;">
+					<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+					<textarea name="<?php echo $name; ?>[description]" rows="3" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
+				</p>
 
 				<p style="float: left; padding: 0 5px;">
 					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />

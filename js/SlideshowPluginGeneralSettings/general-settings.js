@@ -62,4 +62,11 @@ jQuery(document).ready(function(){
 			jQuery('#' + editSlideshows + '_' + role).attr('checked', true);
 		}
 	});
+
+	/**
+	 * ==== Custom Styles ====
+	 *
+	 *
+	 */
+
 });

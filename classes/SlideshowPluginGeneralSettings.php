@@ -89,6 +89,10 @@ class SlideshowPluginGeneralSettings {
 		// Register default slideshow settings
 		register_setting(self::$settingsGroup, self::$defaultSettings);
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
+
+		// TODO: Register a single custom style setting. This will save custom style keys, which refer to the
+		// TODO: options saved in separate option entries. This way custom styles can be retrieved one at a
+		// TODO: time, as the slideshow stores the key to the custom style option as well.
 	}
 
 	/**
