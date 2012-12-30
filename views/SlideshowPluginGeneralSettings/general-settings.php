@@ -22,6 +22,9 @@ $customStyles = array(
 );
 
 // TODO: Foreach custom style: Load it. (From options, by $customStyles key)
+// Get custom styles
+$customStyleValues = array();
+
 ?>
 
 <div class="wrap">

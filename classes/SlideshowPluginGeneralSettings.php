@@ -90,9 +90,8 @@ class SlideshowPluginGeneralSettings {
 		register_setting(self::$settingsGroup, self::$defaultSettings);
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
 
-		// TODO: Register a single custom style setting. This will save custom style keys, which refer to the
-		// TODO: options saved in separate option entries. This way custom styles can be retrieved one at a
-		// TODO: time, as the slideshow stores the key to the custom style option as well.
+		// Register custom style settings
+		register_setting(self::$settingsGroup, self::$customStyles);
 	}
 
 	/**
@@ -173,5 +172,20 @@ class SlideshowPluginGeneralSettings {
 		}
 
 		return $capability;
+	}
+
+	/**
+	 * Saves custom styles, called by a callback from a registered custom styles setting
+	 *
+	 * TODO: Register a single custom style setting. This will save custom style keys, which refer to the
+	 * TODO: options saved in separate option entries. This way custom styles can be retrieved one at a
+	 * TODO: time, as the slideshow stores the key to the custom style option as well.
+	 *
+	 * @param string $customStyles
+	 * @return string $customStyles
+	 */
+	static function saveCustomStyles($customStyles){
+
+		return $customStyles;
 	}
 }
