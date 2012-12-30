@@ -1,5 +1,7 @@
 <?php
 
+/* ==== ==== ==== Capabilities ==== ==== ==== */
+
 // Roles
 global $wp_roles;
 
@@ -10,20 +12,52 @@ $capabilities = array(
 	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin')
 );
 
+/* ==== ==== ==== Default settings ==== ==== ==== */
+
 // Default settings
 $defaultSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
 $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
 
+/* ==== ==== ==== Custom styles ==== ==== ==== */
+
+// Get default stylesheets
+$defaultStyles = array();
+$defaultStylesheets = array(
+	'style-light.css' => __('Light', 'slideshow-plugin'),
+	'style-dark.css' => __('Dark', 'slideshow-plugin')
+);
+$stylesheetsFilePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin';
+foreach($defaultStylesheets as $fileName => $name){
+	if(file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName)){
+		ob_start();
+		include $stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName;
+		$defaultStyles[$fileName] = array(
+			'name' => $name,
+			'style' => ob_get_clean()
+		);
+	}
+}
+
 // Custom styles
-$customStyles = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
-$customStyles = array(
+$customStyleKeys = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
+$customStyleKeys = array(
 	'slideshow-jquery-image-gallery-custom-style_0' => 'Name',
 	'slideshow-jquery-image-gallery-custom-style_1' => 'Other name'
 );
 
-// TODO: Foreach custom style: Load it. (From options, by $customStyles key)
 // Get custom styles
 $customStyleValues = array();
+if(is_array($customStyleKeys)){
+	foreach($customStyleKeys as $customStyleKey => $customStyleKeyName){
+
+		// Get custom style value from custom style key
+		$customStyleValues[$customStyleKey] = get_option($customStyleKey);
+	}
+}
+$customStyleValues = array(
+	'slideshow-jquery-image-gallery-custom-style_0' => 'Style 1',
+	'slideshow-jquery-image-gallery-custom-style_1' => 'Style 2'
+);
 
 ?>
 
@@ -135,19 +169,25 @@ $customStyleValues = array();
 
 				<ul>
 
-					<li>
-						<p class="style-title">Light</p>
-						<p class="style-action">Customize &raquo;</p>
+					<?php foreach($defaultStyles as $defaultStyleKey => $defaultStyleValues): ?>
 
-						<p style="clear: both;"></p>
-					</li>
+					<?php if(!isset($defaultStyleValues['style']) || empty($defaultStyleValues['style'])) continue; // Continue if style is not set or empty ?>
 
 					<li>
-						<p class="style-title">Dark</p>
-						<p class="style-action">Customize &raquo;</p>
+						<span class="style-title"><?php echo (isset($defaultStyleValues['name'])) ? htmlspecialchars($defaultStyleValues['name']) : __('Untitled'); ?></span>
+						<span
+							class="style-action style-default <?php htmlspecialchars($defaultStyleKey); ?>"
+							title="<?php _e('Create a new custom style from this style', 'slideshow-plugin'); ?>"
+						>
+							<?php _e('Customize', 'slideshow-plugin'); ?> &raquo;
+						</span>
 
 						<p style="clear: both;"></p>
+
+						<span class="style-content" style="display: none;"><?php echo htmlspecialchars($defaultStyleValues['style']); ?></span>
 					</li>
+
+					<?php endforeach; ?>
 
 				</ul>
 
@@ -155,11 +195,26 @@ $customStyleValues = array();
 
 				<ul style="">
 
-					<?php foreach($customStyles as $customStyleSlug => $customStyleName): ?>
+					<?php foreach($customStyleKeys as $customStyleKey => $customStyleKeyName): ?>
 
 					<li>
-						<p class="style-title"><?php echo htmlspecialchars($customStyleName); ?></p>
-						<p class="style-action">Edit &raquo;</p>
+						<span class="style-title"><?php echo htmlspecialchars($customStyleKeyName); ?></span>
+
+						<span
+							class="style-action <?php echo htmlspecialchars($customStyleKey); ?>"
+							title="<?php _e('Edit this style', 'slideshow-plugin'); ?>"
+						>
+							<?php _e('Edit', 'slideshow-plugin'); ?> &raquo;
+						</span>
+
+						<span style="float: right;">&#124;</span>
+
+						<span
+							class="style-delete <?php echo htmlspecialchars($customStyleKey); ?>"
+							title="<?php _e('Delete this style', 'slideshow-plugin'); ?>"
+						>
+							<?php _e('Delete', 'slideshow-plugin'); ?>
+						</span>
 
 						<p style="clear: both;"></p>
 					</li>
@@ -170,18 +225,68 @@ $customStyleValues = array();
 
 			</div>
 
-			<div class="styles-editor">
+			<div class="style-editors">
 
-				<b>Other stuff, editor and crap.</b>
+				<b><?php _e('Custom style editor', 'slideshow-plugin'); ?></b>
 
-				<?php // TODO: Place all custom styles here as hidden text area's. ?>
+				<p class="style-editor">
+					<?php _e('Select a style from the left to start customizing.', 'slideshow-plugin'); ?>
+				</p>
+
+				<?php foreach($customStyleValues as $customStyleKey => $customStyleValue): ?>
+
+				<div class="style-editor <?php echo htmlspecialchars($customStyleKey); ?>" style="display: none;">
+
+					<p>
+						<i><?php _e('Name', 'slideshow-plugin'); ?></i><br />
+						<input
+							type="text"
+							name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][title]"
+						    value="<?php echo (isset($customStyleKeys[$customStyleKey]) && !empty($customStyleKeys[$customStyleKey])) ? $customStyleKeys[$customStyleKey] : __('Untitled', 'slideshow-plugin'); ?>"
+						/>
+					</p>
+
+					<p>
+						<i><?php _e('Editor', 'slideshow-plugin'); ?></i><br />
+						<textarea
+							name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][style]"
+							rows="20"
+							cols=""
+						><?php echo htmlspecialchars($customStyleValue); ?></textarea>
+					</p>
+
+				</div>
+
+				<?php endforeach; ?>
 
 			</div>
 
 			<div style="clear: both;"></div>
-		</div>
 
-		<div style="clear: both;"></div>
+			<div class="style-editor-template" style="display: none;">
+				<div class="style-editor">
+
+					<p>
+						<i><?php _e('Name', 'slideshow-plugin'); ?></i><br />
+						<input
+							type="text"
+							class="title"
+						/>
+					</p>
+
+					<p>
+						<i><?php _e('Editor', 'slideshow-plugin'); ?></i><br />
+						<textarea
+							class="style"
+							rows="20"
+							cols=""
+						></textarea>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
 
 		<?php submit_button(); ?>
 	</form>

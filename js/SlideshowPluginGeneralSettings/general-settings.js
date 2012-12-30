@@ -1,6 +1,8 @@
 jQuery(document).ready(function(){
 
 	/**
+	 * ==== Navigation ====
+	 *
 	 * On click of navigation tab, show different settings page.
 	 */
 	jQuery('.nav-tab').click(function(){
@@ -66,7 +68,50 @@ jQuery(document).ready(function(){
 	/**
 	 * ==== Custom Styles ====
 	 *
-	 *
+	 * Show chosen style editor and hide all others.
 	 */
+	jQuery('.custom-styles .styles-list .style-action').click(function(){
 
+		// Get custom style key
+		var customStyleKey = jQuery(this).attr('class').split(' ')[1];
+
+		// Return if no style key was found
+		if(customStyleKey == undefined)
+			return;
+
+		// Fade editors out
+		jQuery('.custom-styles .style-editors .style-editor').each(function(){
+			jQuery(this).fadeOut(200);
+		});
+
+		// Fade active editor in
+		setTimeout(
+			function(){
+				jQuery('.style-editor.' + customStyleKey).fadeIn(200);
+			},
+			200
+		)
+	});
+
+	/**
+	 * ==== Custom Styles ====
+	 *
+	 * Create new editor from editor template when a default style needs to be customized.
+	 */
+	jQuery('.custom-styles .styles-list .style-action.style-default').click(function(){
+
+		// Get the default stylesheet content
+		var content = jQuery(this).closest('li').find('.style-content').html();
+
+		// Exit when content is empty
+		if(content == '' || content == undefined)
+			return;
+
+		// Clone editor template
+		var $editor = jQuery('.custom-styles .style-editor-template .style-editor').clone();
+
+		// 
+
+		//console.log($editor);
+	});
 });
