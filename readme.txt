@@ -112,8 +112,11 @@ slideshow may not be styled.
 
 = 2.1.23 =
 *   Default settings and styles can now be changed from the 'General Settings' page.
+*   Added input fields to set separate titles and descriptions for shared images.
+*   Cleaned up the slides list's layout, to reach a more WordPress-like look.
 *   Adapted the 'Dark' style to be more compatible with the WordPress TwentyTwelve theme.
 *   Changed 'Insert Slideshow' link to appear as a button.
+*   Empty settings won't be shown at the end of the settings boxes.
 
 = 2.1.22 =
 *   Added French translation.

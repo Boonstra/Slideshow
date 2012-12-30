@@ -74,6 +74,8 @@ class SlideshowPluginSlideInserter {
 	 * This function is registered in the SlideshowPluginAjax class
 	 * and deletes slides with a particular $_POST['slideId'].
 	 *
+	 * TODO: This function has become obsolete and slides are deleted by simply unsetting them and saving the slideshow.
+	 *
 	 * @since 2.0.0
 	 */
 	static function deleteSlide(){
@@ -143,9 +145,7 @@ class SlideshowPluginSlideInserter {
 						<img width="60" height="60" src="' . $imageSrc . '" class="attachment" alt="' . $attachment->post_title . '" title="' . $attachment->post_title . '">
 					</td>
 					<td class="column-title">
-						<strong class="title">
-							' . $attachment->post_title . '
-						</strong>
+						<strong class="title">' . $attachment->post_title . '</strong>
 						<p class="description">' . $attachment->post_content . '</p>
 					</td>
 					<td class="insert-button">

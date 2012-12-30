@@ -13,9 +13,14 @@
 	.sortable li {
 		cursor: pointer;
 	}
+
+	.sortable-slide-placeholder {
+		border: 1px solid #f00;
+	}
 </style>
+
 <script type="text/javascript">
-	var slideshowHighestSlideId = <?php echo (is_numeric($highestSlideId))? $highestSlideId : 0; ?>
+	//var slideshowHighestSlideId = <?php echo (is_numeric($highestSlideId))? $highestSlideId : 0; ?>
 </script>
 
 <ul class="sortable-slides-list">
@@ -34,7 +39,7 @@
 		$name = SlideshowPluginSlideshowSettingsHandler::$slidesKey . '[' . $key . ']';
 		?>
 
-		<li class="widefat sortable-slides-list-item" style="padding: 5px; width: auto;">
+		<li class="widefat sortable-slides-list-item" style="margin: 10px 0; width: auto; background-color: #fafafa;">
 			<?php if($slide['type'] == 'text'):
 
 				// Type specific values
@@ -47,23 +52,30 @@
 					$color = $slide['color'];
 				?>
 
-				<p style="padding: 0 15px 0 5px;">
-					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" /><i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
-					<i><?php _e('Description', 'slideshow-plugin'); ?></i><textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
-					<input type="text" name="<?php echo $name; ?>[color]" value="<?php echo $color; ?>" class="color {required:false}" /><i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
+				<h3 class="hndle">
+					<span style="font-size: 0.8em;">
+						<?php _e('Text slide', 'slideshow-plugin'); ?>
+					</span>
+				</h3>
+
+				<p style="margin: 5px 15px 5px 5px;">
+					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" /><br />
+					<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+					<textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
+					<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
+					<input type="text" name="<?php echo $name; ?>[color]" value="<?php echo $color; ?>" class="color {required:false}" />
 				</p>
 
-				<p style="float: left; padding: 0 5px;">
+				<p style="margin: 5px 15px 5px 5px;">
+					<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />
+					<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
 					<select name="<?php echo $name; ?>[urlTarget]">
 						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
 						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
 					</select>
 				</p>
-				<p style="float: left; line-height: 50px;">
-					<i><?php _e('URL', 'slideshow-plugin'); ?></i>
-				</p>
-				<p style="clear: both;"></p>
 
 				<input type="hidden" name="<?php echo $name; ?>[type]" value="text" />
 				<input type="hidden" name="<?php echo $name; ?>[order]" value="<?php echo $order; ?>" class="slide_order" />
@@ -76,8 +88,15 @@
 					$videoId = $slide['videoId'];
 				?>
 
-				<p style="padding: 0 5px;">
-					<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" /><i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i>
+				<h3 class="hndle">
+					<span style="font-size: 0.8em;">
+						<?php _e('Video slide', 'slideshow-plugin'); ?>
+					</span>
+				</h3>
+
+				<p style="margin: 5px 15px 5px 5px;">
+					<i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i><br />
+					<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" />
 				</p>
 
 				<input type="hidden" name="<?php echo $name; ?>[type]" value="video" />
@@ -117,37 +136,38 @@
 
 				$editUrl = admin_url() . '/media.php?attachment_id=' . $attachment->ID . '&amp;action=edit'; ?>
 
-				<p style="float: left;">
+				<h3 class="hndle">
+					<span style="font-size: 0.8em;">
+						<?php _e('Image slide', 'slideshow-plugin'); ?>
+					</span>
+				</h3>
+
+				<p style="float: left; margin: 5px;">
 					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
 						<img width="80" height="60" src="<?php echo $imageSrc; ?>" class="attachment-80x60" alt="<?php echo $attachment->post_title; ?>" title="<?php echo $attachment->post_title; ?>" />
 					</a>
 				</p>
 
-				<p style="float: left;">
-					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br /><input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" /><br />
-					<!--<strong>
-						<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;"><?php echo $attachment->post_title; ?></a>
-					</strong><br />
-					<?php if(strlen($attachment->post_content) > 30) echo substr($attachment->post_content, 0, 20) . '...'; else echo $attachment->post_content; ?>-->
+				<p style="float: left; margin: 5px 15px 5px 5px;">
+					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" />
 				</p>
 				<p style="clear: both"></p>
 
-				<p style="padding: 0 5px;">
+				<p style="margin: 5px 15px 5px 5px;">
 					<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
 					<textarea name="<?php echo $name; ?>[description]" rows="3" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
 				</p>
 
-				<p style="float: left; padding: 0 5px;">
+				<p style="margin: 5px 15px 5px 5px;">
+					<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />
+					<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
 					<select name="<?php echo $name; ?>[urlTarget]">
 						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
 						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
 					</select>
 				</p>
-				<p style="float: left; line-height: 50px;">
-					<i><?php _e('URL', 'slideshow-plugin'); ?></i>
-				</p>
-				<p style="clear: both;"></p>
 
 				<input type="hidden" name="<?php echo $name; ?>[type]" value="attachment" />
 				<input type="hidden" name="<?php echo $name; ?>[postId]" value="<?php echo $attachment->ID; ?>" />
@@ -155,94 +175,128 @@
 
 			<?php else: ?>
 
-				<p style="padding: 0 5px;">
+				<p style="margin: 5px 15px 5px 5px;">
 					<?php _e('An error occurred while loading this slide, and it will not be present in the slideshow', 'slideshow-plugin'); ?>
 				</p>
 
 			<?php endif; ?>
-			<p style="padding: 0 5px; color: red; cursor: pointer;" class="slideshow-delete-slide">
-				<?php _e('Delete slide', 'slideshow-plugin'); ?>
+
+			<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-slide">
+				<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
 				<span style="display: none;" class="<?php echo $id; ?>"></span>
 			</p>
+
 		</li>
 	<?php endforeach; ?>
 	<?php endif; ?>
 </ul>
 
 <div class="text-slide-template" style="display: none;">
-	<li class="widefat sortable-slides-list-item">
-		<p style="padding: 0 15px 0 5px;">
-			<input type="text" class="title" /><i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
-			<i><?php _e('Description', 'slideshow-plugin'); ?></i><textarea class="description" cols="" rows="7" style="width: 100%;"></textarea><br />
-			<input type="text" class="color {required:false}" /><i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
+	<li class="widefat sortable-slides-list-item" style="margin: 10px 0; width: auto; background-color: #fafafa;">
+
+		<h3 class="hndle">
+			<span style="font-size: 0.8em;">
+				<?php _e('Text slide', 'slideshow-plugin'); ?>
+			</span>
+		</h3>
+
+		<p style="margin: 5px 15px 5px 5px;">
+			<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+			<input type="text" class="title" /><br />
+			<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+			<textarea class="description" cols="" rows="7" style="width: 100%;"></textarea><br />
+			<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
+			<input type="text" class="color {required:false}" />
 		</p>
 
-		<p style="float: left; padding: 0 5px;">
+		<p style="margin: 5px 15px 5px 5px;">
+			<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
 			<input type="text" class="url" value="" /><br />
+			<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
 			<select class="urlTarget">
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
 			</select>
 		</p>
-		<p style="float: left; line-height: 50px;">
-			<i><?php _e('URL', 'slideshow-plugin'); ?></i>
-		</p>
-		<p style="clear: both"></p>
 
 		<input type="hidden" class="type" value="text" />
 		<input type="hidden" class="slide_order" />
 
-		<p style="padding: 0 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
-			<?php _e('Delete slide', 'slideshow-plugin'); ?>
+		<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
+			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
+
 	</li>
 </div>
 
 <div class="video-slide-template" style="display: none;">
-	<li class="widefat sortable-slides-list-item">
-		<p style="padding: 0 5px;">
-			<input type="text" class="videoId" /><i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i>
+	<li class="widefat sortable-slides-list-item" style="margin: 10px 0; width: auto; background-color: #fafafa;">
+
+		<h3 class="hndle">
+			<span style="font-size: 0.8em;">
+				<?php _e('Video slide', 'slideshow-plugin'); ?>
+			</span>
+		</h3>
+
+		<p style="margin: 5px 15px 5px 5px;">
+			<i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i><br />
+			<input type="text" class="videoId" />
 		</p>
 
 		<input type="hidden" class="type" value="video" />
 		<input type="hidden" class="slide_order" />
 
-		<p style="padding: 0 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
-			<?php _e('Delete slide', 'slideshow-plugin'); ?>
+		<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
+			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
+
 	</li>
 </div>
 
 <div class="image-slide-template" style="display: none;">
-	<li class="widefat sortable-slides-list-item">
-		<p style="float: left; padding: 0 5px;">
+	<li class="widefat sortable-slides-list-item" style="margin: 10px 0; width: auto; background-color: #fafafa;">
+
+		<h3 class="hndle">
+			<span style="font-size: 0.8em;">
+				<?php _e('Image slide', 'slideshow-plugin'); ?>
+			</span>
+		</h3>
+
+		<p style="float: left; margin: 5px;">
 			<img width="80" height="60" src="" class="attachment attachment-80x60" alt="" title="" />
 		</p>
 
-		<p style="float: left; padding: 0 5px;">
-			<strong class="title"></strong><br />
-			<span class="description"></span>
+		<p style="float: left; margin: 5px 15px 5px 5px;">
+			<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+			<input type="text" class="title" />
 		</p>
 		<p style="clear: both"></p>
 
-		<p style="float: left; padding: 0 5px;">
+		<p style="margin: 5px 15px 5px 5px;">
+			<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+			<textarea class="description" rows="3" cols="" style="width: 100%;"></textarea><br />
+		</p>
+
+		<p style="margin: 5px 15px 5px 5px;">
+			<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
 			<input type="text" class="url" value="" /><br />
+			<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
 			<select class="urlTarget">
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
 			</select>
 		</p>
-		<p style="float: left; line-height: 50px;"
-			<i><?php _e('URL', 'slideshow-plugin'); ?></i>
-		</p>
-		<p style="clear: both"></p>
 
 		<input type="hidden" class="type" value="attachment" />
 		<input type="hidden" class="postId" value="" />
 		<input type="hidden" value="" class="slide_order" />
 
-		<p style="padding: 0 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
-			<?php _e('Delete slide', 'slideshow-plugin'); ?>
+		<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
+			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
+
 	</li>
 </div>

@@ -20,6 +20,8 @@ $customStyles = array(
 	'slideshow-jquery-image-gallery-custom-style_0' => 'Name',
 	'slideshow-jquery-image-gallery-custom-style_1' => 'Other name'
 );
+
+// TODO: Foreach custom style: Load it. (From options, by $customStyles key)
 ?>
 
 <div class="wrap">

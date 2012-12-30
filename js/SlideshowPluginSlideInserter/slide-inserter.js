@@ -1,10 +1,13 @@
 jQuery(document).ready(function(){
+
 	// Index first
 	slideshowSlideInserterIndexSlidesOrder();
 
 	// Make list items in the sortables list sortable, exclude elements with cancel option.
 	jQuery('.sortable-slides-list').sortable({
 		revert: true,
+		placeholder: 'sortable-placeholder',
+		forcePlaceholderSize: true,
 		stop: function(event, ui){
 			slideshowSlideInserterIndexSlidesOrder();
 		},
@@ -101,7 +104,7 @@ jQuery(document).ready(function(){
 		// Get slideId
 		var slideId = jQuery(this).find('span').attr('class');
 
-
+		// Exit if no slideId is found
 		if(postId == -1 || slideId == 'undefined')
 			return;
 
@@ -207,21 +210,21 @@ jQuery(document).ready(function(){
 	 * @param src
 	 */
 	function slideshowSlideInserterInsertImageSlide(id, title, description, src){
-		if(slideshowHighestSlideId == 'undefined')
-			return;
 
-		slideshowHighestSlideId++;
+		// Find and clone the image slide template
 		var imageSlide = jQuery('.image-slide-template').find('li').clone();
 
 		// Fill slide with data
 		imageSlide.find('.attachment').attr('src', src);
 		imageSlide.find('.attachment').attr('title', title);
 		imageSlide.find('.attachment').attr('alt', title);
-		imageSlide.find('.title').html(title);
+		imageSlide.find('.title').attr('value', title);
 		imageSlide.find('.description').html(description);
 		imageSlide.find('.postId').attr('value', id);
 
 		// Set names to be saved to the database
+		imageSlide.find('.title').attr('name', 'slides[0][title]');
+		imageSlide.find('.description').attr('name', 'slides[0][description]');
 		imageSlide.find('.url').attr('name', 'slides[0][url]');
 		imageSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
 		imageSlide.find('.type').attr('name', 'slides[0][type]');
@@ -248,10 +251,8 @@ jQuery(document).ready(function(){
 	 * Inserts text slide into the slides list
 	 */
 	function slideshowSlideInserterInsertTextSlide(){
-		if(slideshowHighestSlideId == 'undefined')
-			return;
 
-		slideshowHighestSlideId++;
+		// Find and clone the text slide template
 		var textSlide = jQuery('.text-slide-template').find('li').clone();
 
 		// Set names to be saved to the database
@@ -283,10 +284,8 @@ jQuery(document).ready(function(){
 	 * Inserts video slide into the slides list
 	 */
 	function slideshowSlideInserterInsertVideoSlide(){
-		if(slideshowHighestSlideId == 'undefined')
-			return;
 
-		slideshowHighestSlideId++;
+		// Find and clone the video slide template
 		var videoSlide = jQuery('.video-slide-template').find('li').clone();
 
 		// Set names to be saved to the database

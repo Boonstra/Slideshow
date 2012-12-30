@@ -6,7 +6,11 @@
 				<?php foreach($slides as $slide): ?>
 
 					<?php
-					$url = $target = '';
+					$title = $description = $url = $target = '';
+					if(isset($slide['title']))
+						$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($slide['title']);
+					if(isset($slide['description']))
+						$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($slide['description']);
 					if(isset($slide['url']))
 						$url = htmlspecialchars($slide['url']);
 					if(isset($slide['urlTarget']))
@@ -16,11 +20,7 @@
 					<?php if($slide['type'] == 'text'): ?>
 
 						<?php
-							$title = $description = $color = '';
-							if(isset($slide['title']))
-								$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($slide['title']);
-							if(isset($slide['description']))
-								$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($slide['description']);
+							$color = '';
 							if(isset($slide['color']))
 								$color = htmlspecialchars($slide['color']);
 						?>
@@ -64,16 +64,25 @@
 					<?php elseif($slide['type'] == 'attachment'): ?>
 
 						<?php
+						// Get post id, continue if no post id was found
 						$postId = '';
 						if(isset($slide['postId']) && is_numeric($slide['postId']))
 							$postId = $slide['postId'];
 						else
 							continue;
 
+						// Get post from post id. Continue if post can't be loaded
 						$attachment = get_post($postId);
 						if(empty($attachment))
 							continue;
 
+						// Get post tile and description when empty
+						if(empty($title))
+							$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($attachment->post_title);
+						if(empty($description))
+							$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($attachment->post_content);
+
+						// Prepare image
 						$image = wp_get_attachment_image_src($attachment->ID, 'full');
 						$imageSrc = '';
 						if(!is_array($image) || !$image){
@@ -89,12 +98,12 @@
 						<div class="slide slide_<?php echo $i; ?>" style="height: <?php echo (is_numeric($settings['height']))? $settings['height'] : 0; ?>px;">
 							<div class="description transparent">
 								<a <?php if(!empty($url)) echo 'href="' . $url . '"'; ?> <?php if(!empty($target)) echo 'target="' . $target . '"'; ?>>
-									<h2><?php echo SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($attachment->post_title); ?></h2>
-									<p><?php echo SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($attachment->post_content); ?></p>
+									<h2><?php echo $title ?></h2>
+									<p><?php echo $description; ?></p>
 								</a>
 							</div>
 							<a <?php if(!empty($url)) echo 'href="' . $url . '"'; ?> <?php if(!empty($target)) echo 'target="' . $target . '"'; ?>>
-								<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo htmlspecialchars($attachment->post_title); ?>" />
+								<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $title; ?>" />
 							</a>
 						</div>
 

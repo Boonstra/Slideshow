@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+
 	/**
 	 * Loop through fields that depend on another field's value for showing, register change event
 	 */
