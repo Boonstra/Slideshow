@@ -91,7 +91,7 @@ class SlideshowPluginGeneralSettings {
 		register_setting(self::$settingsGroup, self::$defaultStyleSettings);
 
 		// Register custom style settings
-		register_setting(self::$settingsGroup, self::$customStyles);
+		register_setting(self::$settingsGroup, self::$customStyles, array(__CLASS__, 'saveCustomStyles'));
 	}
 
 	/**
@@ -115,6 +115,17 @@ class SlideshowPluginGeneralSettings {
 			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/general-settings.js',
 			array('jquery'),
 			SlideshowPluginMain::$version
+		);
+
+		// Localize general settings script
+		wp_localize_script(
+			'slideshow-jquery-image-gallery-general-settings',
+			'GeneralSettingsVariables',
+			array(
+				'customStylesKey' => self::$customStyles,
+				'newCustomizationPrefix' => __('New', 'slideshow-plugin'),
+				'confirmDeleteMessage' => __('Are you sure you want to delete this custom style?', 'slideshow-plugin')
+			)
 		);
 	}
 
@@ -177,15 +188,45 @@ class SlideshowPluginGeneralSettings {
 	/**
 	 * Saves custom styles, called by a callback from a registered custom styles setting
 	 *
-	 * TODO: Register a single custom style setting. This will save custom style keys, which refer to the
-	 * TODO: options saved in separate option entries. This way custom styles can be retrieved one at a
-	 * TODO: time, as the slideshow stores the key to the custom style option as well.
-	 *
-	 * @param string $customStyles
-	 * @return string $customStyles
+	 * @param array $customStyles
+	 * @return array $newCustomStyles
 	 */
 	static function saveCustomStyles($customStyles){
 
-		return $customStyles;
+		// Verify nonce
+		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
+		if(!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+			return $customStyles;
+
+		// Remove custom styles that have been deleted
+		$oldCustomStyles = get_option(self::$customStyles, array());
+		if(is_array($oldCustomStyles)){
+			foreach($oldCustomStyles as $oldCustomStyleKey => $oldCustomStyleValue){
+
+				// Delete option from database if it no longer exists
+				if(!array_key_exists($oldCustomStyleKey, $customStyles))
+					delete_option($oldCustomStyleKey);
+			}
+		}
+
+		// Loop through new custom styles
+		$newCustomStyles = array();
+		if(is_array($customStyles)){
+			foreach($customStyles as $customStyleKey => $customStyleValue){
+
+				// Put custom style key and name into the $newCustomStyle array
+				$newCustomStyles[$customStyleKey] = isset($customStyleValue['title']) ? $customStyleValue['title'] : __('Untitled', 'slideshow-plugin');
+
+				// Create or update new custom style
+				$style = isset($customStyleValue['style']) ? $customStyleValue['style'] : '';
+				if(get_option($customStyleKey))
+					update_option($customStyleKey, $style);
+				else
+					add_option($customStyleKey, $style, '', 'no');
+			}
+		}
+
+		// Return
+		return $newCustomStyles;
 	}
 }

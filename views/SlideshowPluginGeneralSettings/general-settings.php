@@ -38,15 +38,9 @@ foreach($defaultStylesheets as $fileName => $name){
 	}
 }
 
-// Custom styles
-$customStyleKeys = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
-$customStyleKeys = array(
-	'slideshow-jquery-image-gallery-custom-style_0' => 'Name',
-	'slideshow-jquery-image-gallery-custom-style_1' => 'Other name'
-);
-
 // Get custom styles
 $customStyleValues = array();
+$customStyleKeys = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
 if(is_array($customStyleKeys)){
 	foreach($customStyleKeys as $customStyleKey => $customStyleKeyName){
 
@@ -54,10 +48,6 @@ if(is_array($customStyleKeys)){
 		$customStyleValues[$customStyleKey] = get_option($customStyleKey);
 	}
 }
-$customStyleValues = array(
-	'slideshow-jquery-image-gallery-custom-style_0' => 'Style 1',
-	'slideshow-jquery-image-gallery-custom-style_1' => 'Style 2'
-);
 
 ?>
 
@@ -165,10 +155,11 @@ $customStyleValues = array(
 		<div class="custom-styles feature-filter" style="display: none;">
 			<div class="styles-list">
 
-				<b>Default styles</b>
+				<b><?php _e('Default stylesheets', 'slideshow-plugin'); ?></b>
 
-				<ul>
+				<ul class="default-styles-list">
 
+					<?php if(is_array($defaultStyles)): ?>
 					<?php foreach($defaultStyles as $defaultStyleKey => $defaultStyleValues): ?>
 
 					<?php if(!isset($defaultStyleValues['style']) || empty($defaultStyleValues['style'])) continue; // Continue if style is not set or empty ?>
@@ -188,13 +179,15 @@ $customStyleValues = array(
 					</li>
 
 					<?php endforeach; ?>
+					<?php endif; ?>
 
 				</ul>
 
-				<b>Custom styles</b>
+				<b><?php _e('Custom stylesheets', 'slideshow-plugin'); ?></b>
 
-				<ul style="">
+				<ul class="custom-styles-list">
 
+					<?php if(is_array($customStyleKeys) && count($customStyleKeys) > 0): ?>
 					<?php foreach($customStyleKeys as $customStyleKey => $customStyleKeyName): ?>
 
 					<li>
@@ -220,6 +213,13 @@ $customStyleValues = array(
 					</li>
 
 					<?php endforeach; ?>
+					<?php else: ?>
+
+					<li class="no-custom-styles-found">
+						<?php _e("Create a new custom stylesheet by clicking 'Customize' behind a default stylesheet."); ?>
+					</li>
+
+					<?php endif; ?>
 
 				</ul>
 
@@ -230,9 +230,10 @@ $customStyleValues = array(
 				<b><?php _e('Custom style editor', 'slideshow-plugin'); ?></b>
 
 				<p class="style-editor">
-					<?php _e('Select a style from the left to start customizing.', 'slideshow-plugin'); ?>
+					<?php _e('Select a stylesheet from the left to start customizing it.', 'slideshow-plugin'); ?>
 				</p>
 
+				<?php if(is_array($customStyleValues)): ?>
 				<?php foreach($customStyleValues as $customStyleKey => $customStyleValue): ?>
 
 				<div class="style-editor <?php echo htmlspecialchars($customStyleKey); ?>" style="display: none;">
@@ -247,10 +248,10 @@ $customStyleValues = array(
 					</p>
 
 					<p>
-						<i><?php _e('Editor', 'slideshow-plugin'); ?></i><br />
+						<i><?php _e('Custom style editor', 'slideshow-plugin'); ?></i><br />
 						<textarea
 							name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][style]"
-							rows="20"
+							rows="25"
 							cols=""
 						><?php echo htmlspecialchars($customStyleValue); ?></textarea>
 					</p>
@@ -258,27 +259,51 @@ $customStyleValues = array(
 				</div>
 
 				<?php endforeach; ?>
+				<?php endif; ?>
 
 			</div>
 
 			<div style="clear: both;"></div>
 
-			<div class="style-editor-template" style="display: none;">
-				<div class="style-editor">
+			<div class="custom-style-templates" style="display: none;">
+
+				<li class="custom-styles-list-item">
+					<span class="style-title"></span>
+
+					<span
+						class="style-action"
+						title="<?php _e('Edit this style', 'slideshow-plugin'); ?>"
+					>
+						<?php _e('Edit', 'slideshow-plugin'); ?> &raquo;
+					</span>
+
+					<span style="float: right;">&#124;</span>
+
+					<span
+						class="style-delete"
+						title="<?php _e('Delete this style', 'slideshow-plugin'); ?>"
+					>
+						<?php _e('Delete', 'slideshow-plugin'); ?>
+					</span>
+
+					<p style="clear: both;"></p>
+				</li>
+
+				<div class="style-editor" style="display: none;">
 
 					<p>
 						<i><?php _e('Name', 'slideshow-plugin'); ?></i><br />
 						<input
 							type="text"
-							class="title"
+							class="new-custom-style-title"
 						/>
 					</p>
 
 					<p>
 						<i><?php _e('Editor', 'slideshow-plugin'); ?></i><br />
 						<textarea
-							class="style"
-							rows="20"
+							class="new-custom-style-content"
+							rows="25"
 							cols=""
 						></textarea>
 					</p>

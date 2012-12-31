@@ -17,7 +17,7 @@
 	min-width: 500px;
 
 	margin-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 }
 
 .custom-styles .styles-list {
@@ -75,7 +75,9 @@
 	min-width: 350px;
 
 	padding-left: 10px;
-	margin-right: -21px;
+	margin: 0 -21px 0 -1px;
+
+	border-left: 1px solid #dfdfdf;
 }
 
 .custom-styles .style-editors .style-editor textarea {
