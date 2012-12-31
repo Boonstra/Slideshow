@@ -97,13 +97,13 @@ class SlideshowPlugin {
 		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
 		$sessionID = self::$sessionCounter++;
 
-		// Get stylesheet for printing
-		$style = '';
-		if($styleSettings['style'] == 'custom' && isset($styleSettings['custom']) && !empty($styleSettings['custom'])){ // Custom style
-			$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $styleSettings['custom']);
-		}else{ // Set style
-			$filePath = SlideshowPluginMain::getPluginPath() . '/style/' . __CLASS__ . '/style-' . $styleSettings['style'] . '.css';
-			if(file_exists(SlideshowPluginMain::getPluginPath() . '/style/' . __CLASS__ . '/style-' . $styleSettings['style'] . '.css')){
+		// Get stylesheet. Get the light stylesheet when no stylesheet could be found.
+		$style = get_option($styleSettings['style'], null);
+		if(isset($style)){
+			$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $style);
+		}else{
+			$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'style-light.css';
+			if(file_exists($filePath)){
 				ob_start();
 				include($filePath);
 				$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), ob_get_clean());

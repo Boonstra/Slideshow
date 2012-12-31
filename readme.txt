@@ -111,7 +111,8 @@ slideshow may not be styled.
 == Changelog ==
 
 = 2.1.23 =
-*   Default settings and styles can now be changed from the 'General Settings' page.
+*   Default settings can now be changed from the 'General Settings' page.
+*   Custom styles are now shared across all slideshows and endless customizations can be created.
 *   Added input fields to set separate titles and descriptions for shared images.
 *   Cleaned up the slides list's layout, to reach a more WordPress-like look.
 *   Adapted the 'Dark' style to be more compatible with the WordPress TwentyTwelve theme.
