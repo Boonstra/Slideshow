@@ -1,23 +1,35 @@
+.feature-filter {
+	padding: 0 10px;
+	margin: 10px;
+}
+
+/* ==== ==== ==== User capabilities ==== ==== ==== */
+
+.user-capabilities td {
+	line-height: 1.5em;
+	padding: 0 10px;
+}
+
 /* ==== ==== ==== Default slideshow settings ==== ==== ==== */
 
 .default-slideshow-settings {
-	margin-top: 20px;
-	padding-bottom: 20px;
-
 	width: auto !important;
+
+	float: left;
+}
+
+.default-slideshow-settings table {
+	padding-bottom: 10px;
 }
 
 .default-slideshow-settings td {
-	padding: 3px 8px !important;
+	padding: 0 10px !important;
 }
 
 /* ==== ==== ==== Custom styles ==== ==== ==== */
 
 .custom-styles {
 	min-width: 500px;
-
-	margin-top: 20px;
-	padding-bottom: 5px;
 }
 
 .custom-styles .styles-list {
@@ -29,6 +41,10 @@
 	padding-right: 10px;
 
 	border-right: 1px solid #dfdfdf;
+}
+
+.custom-styles .styles-list ul {
+	margin-left: 10px;
 }
 
 .custom-styles .styles-list li {

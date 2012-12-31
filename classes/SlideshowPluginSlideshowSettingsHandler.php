@@ -40,6 +40,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $settings
 	 */
 	static function getAllSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true){
+
 		$settings = array();
 		$settings[self::$settingsKey] = self::getSettings($slideshowId, $fullDefinition, $enableCache,  $mergeDefaults);
 		$settings[self::$styleSettingsKey] = self::getStyleSettings($slideshowId, $fullDefinition, $enableCache,  $mergeDefaults);
@@ -61,6 +62,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $settings
 	 */
 	static function getSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true){
+
 		if(!is_numeric($slideshowId) || empty($slideshowId))
 			return array();
 
@@ -129,6 +131,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $settings
 	 */
 	static function getStyleSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true){
+
 		if(!is_numeric($slideshowId) || empty($slideshowId))
 			return array();
 
@@ -195,6 +198,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $settings
 	 */
 	static function getSlides($slideshowId, $enableCache = true){
+
 		if(!is_numeric($slideshowId) || empty($slideshowId))
 			return array();
 
@@ -230,6 +234,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return int $postId
 	 */
 	static function save($postId){
+
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
 		if(get_post_type($postId) != SlideshowPluginPostType::$postType ||
 			(isset($_POST['nonce']) && !wp_verify_nonce($_POST['nonce'], plugin_basename(__FILE__))) ||
@@ -293,6 +298,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $data
 	 */
 	static function getAllDefaults($key = null, $fullDefinition = false, $fromDatabase = true){
+
 		$data = array();
 		$data[self::$settingsKey] = self::getDefaultSettings($fullDefinition, $fromDatabase);
 		$data[self::$styleSettingsKey] = self::getDefaultStyleSettings($fullDefinition, $fromDatabase);
@@ -311,6 +317,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $data
 	 */
 	static function getDefaultSettings($fullDefinition = false, $fromDatabase = true){
+
 		// Much used data for translation
 		$yes = __('Yes', 'slideshow-plugin');
 		$no = __('No', 'slideshow-plugin');
@@ -381,14 +388,10 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $data
 	 */
 	static function getDefaultStyleSettings($fullDefinition = false, $fromDatabase = true){
-		// Much used data for translation
-		$yes = __('Yes', 'slideshow-plugin');
-		$no = __('No', 'slideshow-plugin');
 
 		// Default style settings
 		$data = array(
-			'style' => 'light',
-			'custom' => ''
+			'style' => 'style-light.css'
 		);
 
 		// Read defaults from database and merge with $data, when $fromDatabase is set to true
@@ -401,8 +404,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 		// Full definition
 		if($fullDefinition){
 			$data = array(
-				'style' => array('type' => 'select', 'default' => $data['style'], 'description' => __('The style used for this slideshow', 'slideshow-plugin'), 'options' => array('light' => __('Light', 'slideshow-plugin'), 'dark' => __('Dark', 'slideshow-plugin'), 'custom' => __('Custom', 'slideshow-plugin'))),
-				'custom' => array('type' => 'textarea', 'default' => $data['custom'], 'description' => __('Custom style editor', 'slideshow-plugin'), 'dependsOn' => array('styleSettings[style]', 'custom'))
+				'style' => array('type' => 'select', 'default' => $data['style'], 'description' => __('The style used for this slideshow', 'slideshow-plugin'), 'options' => SlideshowPluginGeneralSettings::getStylesheets()),
 			);
 		}
 
@@ -424,6 +426,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @return mixed $inputField
 	 */
 	static function getInputField($settingsKey, $settingsName, $settings){
+
 		if(!is_array($settings) || empty($settings) || empty($settingsName))
 			return null;
 

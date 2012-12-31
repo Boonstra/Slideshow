@@ -1,6 +1,6 @@
 <?php
 
-/* ==== ==== ==== Capabilities ==== ==== ==== */
+/* ==== ==== ==== User capabilities ==== ==== ==== */
 
 // Roles
 global $wp_roles;
@@ -66,96 +66,109 @@ if(is_array($customStyleKeys)){
 		</h2>
 
 		<!-- ==== ==== User capabilities ==== ==== -->
-		<table class="form-table user-capabilities">
+		<div class="user-capabilities feature-filter">
 
-			<?php foreach($capabilities as $capability => $capabilityName): ?>
+			<p>
+				<b><?php _e('Select the user roles that will able to perform certain actions.', 'slideshow-plugin');  ?></b>
+			</p>
 
-			<tr valign="top">
-				<th><?php echo $capabilityName; ?></th>
-				<td>
-					<?php
+			<table>
 
-					if(isset($wp_roles->roles) && is_array($wp_roles->roles)):
-					foreach($wp_roles->roles as $roleSlug => $values):
+				<?php foreach($capabilities as $capability => $capabilityName): ?>
 
-					$disabled = ($roleSlug == 'administrator') ? 'disabled="disabled"' : '';
-					$checked = ((isset($values['capabilities']) && array_key_exists($capability, $values['capabilities']) && $values['capabilities'][$capability] == true) || $roleSlug == 'administrator') ? 'checked="checked"' : '';
-					$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-plugin');
+				<tr valign="top">
+					<th><?php echo $capabilityName; ?></th>
+					<td>
+						<?php
 
-					?>
+						if(isset($wp_roles->roles) && is_array($wp_roles->roles)):
+						foreach($wp_roles->roles as $roleSlug => $values):
 
-					<input
-						type="checkbox"
-						name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
-						id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
-						<?php echo $disabled; ?>
-						<?php echo $checked; ?>
-					/>
-					<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
-					<br />
+						$disabled = ($roleSlug == 'administrator') ? 'disabled="disabled"' : '';
+						$checked = ((isset($values['capabilities']) && array_key_exists($capability, $values['capabilities']) && $values['capabilities'][$capability] == true) || $roleSlug == 'administrator') ? 'checked="checked"' : '';
+						$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-plugin');
 
-					<?php endforeach; ?>
-					<?php endif; ?>
+						?>
 
-				</td>
-			</tr>
+						<input
+							type="checkbox"
+							name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
+							id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
+							<?php echo $disabled; ?>
+							<?php echo $checked; ?>
+						/>
+						<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
+						<br />
 
-			<?php endforeach; ?>
+						<?php endforeach; ?>
+						<?php endif; ?>
 
-		</table>
+					</td>
+				</tr>
+
+				<?php endforeach; ?>
+
+			</table>
+		</div>
 
 		<!-- ==== ==== Defaults slideshow settings ==== ==== -->
-		<table class="feature-filter default-slideshow-settings" style="display: none;">
+		<div class="default-slideshow-settings feature-filter" style="display: none;">
 
-			<tr>
-				<td colspan="2">
-					<h3><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></h3>
-				</td>
-			</tr>
+			<p>
+				<b><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></b>
+			</p>
 
-			<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
+			<table>
 
-			<tr>
-				<td>
-					<?php echo $defaultSettingValue['description']; ?>
-				</td>
-				<td>
-					<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultSettings, $defaultSettingKey, $defaultSettingValue) ?>
-				</td>
-			</tr>
+				<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
 
-			<?php endforeach; ?>
+				<tr>
+					<td>
+						<?php echo $defaultSettingValue['description']; ?>
+					</td>
+					<td>
+						<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultSettings, $defaultSettingKey, $defaultSettingValue) ?>
+					</td>
+				</tr>
 
-		</table>
+				<?php endforeach; ?>
 
-		<table class="feature-filter default-slideshow-settings" style="display: none;">
+			</table>
+		</div>
 
-			<tr>
-				<td colspan="2">
-					<h3><?php _e('Default Slideshow Style', 'slideshow-plugin'); ?></h3>
-				</td>
-			</tr>
+		<div class="default-slideshow-settings feature-filter" style="display: none;">
 
-			<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
+			<p>
+				<b><?php _e('Default Slideshow Stylesheet', 'slideshow-plugin'); ?></b>
+			</p>
 
-			<tr>
-				<td>
-					<?php echo $defaultStyleSettingValue['description']; ?>
-				</td>
-				<td>
-					<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultStyleSettings, $defaultStyleSettingKey, $defaultStyleSettingValue) ?>
-				</td>
-			</tr>
+			<table>
 
-			<?php endforeach; ?>
+				<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
 
-		</table>
+				<tr>
+					<td>
+						<?php echo $defaultStyleSettingValue['description']; ?>
+					</td>
+					<td>
+						<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultStyleSettings, $defaultStyleSettingKey, $defaultStyleSettingValue) ?>
+					</td>
+				</tr>
+
+				<?php endforeach; ?>
+
+			</table>
+		</div>
+
+		<div style="clear: both;"></div>
 
 		<!-- ==== ==== Custom styles ==== ==== -->
 		<div class="custom-styles feature-filter" style="display: none;">
 			<div class="styles-list">
 
-				<b><?php _e('Default stylesheets', 'slideshow-plugin'); ?></b>
+				<p>
+					<b><?php _e('Default stylesheets', 'slideshow-plugin'); ?></b>
+				</p>
 
 				<ul class="default-styles-list">
 
@@ -183,7 +196,9 @@ if(is_array($customStyleKeys)){
 
 				</ul>
 
-				<b><?php _e('Custom stylesheets', 'slideshow-plugin'); ?></b>
+				<p>
+					<b><?php _e('Custom stylesheets', 'slideshow-plugin'); ?></b>
+				</p>
 
 				<ul class="custom-styles-list">
 
@@ -216,7 +231,7 @@ if(is_array($customStyleKeys)){
 					<?php else: ?>
 
 					<li class="no-custom-styles-found">
-						<?php _e("Create a new custom stylesheet by clicking 'Customize' behind a default stylesheet."); ?>
+						<?php _e("Click 'Customize' to create a new custom stylesheet."); ?>
 					</li>
 
 					<?php endif; ?>
@@ -227,7 +242,9 @@ if(is_array($customStyleKeys)){
 
 			<div class="style-editors">
 
-				<b><?php _e('Custom style editor', 'slideshow-plugin'); ?></b>
+				<p>
+					<b><?php _e('Custom style editor', 'slideshow-plugin'); ?></b>
+				</p>
 
 				<p class="style-editor">
 					<?php _e('Select a stylesheet from the left to start customizing it.', 'slideshow-plugin'); ?>
@@ -313,6 +330,8 @@ if(is_array($customStyleKeys)){
 
 		</div>
 
-		<?php submit_button(); ?>
+		<p>
+			<?php submit_button(null, 'primary', null, false); ?>
+		</p>
 	</form>
 </div>

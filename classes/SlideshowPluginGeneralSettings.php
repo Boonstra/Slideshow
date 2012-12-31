@@ -70,6 +70,17 @@ class SlideshowPluginGeneralSettings {
 	}
 
 	/**
+	 * Shows the general settings page.
+	 *
+	 * @since 2.1.22
+	 */
+	static function generalSettings(){
+
+		// Include general settings page
+		include SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'general-settings.php';
+	}
+
+	/**
 	 * Registers required settings into the WordPress settings API.
 	 * Only performed when actually on the general settings page.
 	 *
@@ -130,14 +141,44 @@ class SlideshowPluginGeneralSettings {
 	}
 
 	/**
-	 * Shows the general settings page.
+	 * Returns an array of stylesheets with its keys and respective names.
 	 *
-	 * @since 2.1.22
+	 * When the $separateDefaultFromCustom boolean is set to true, the default stylesheets will be returned separately
+	 * from the custom stylesheets as: array('default' => array(), 'custom' => array()) respectively.
+	 *
+	 * @param boolean $separateDefaultFromCustom (optional, defaults to false)
+	 * @return array $stylesheets
 	 */
-	static function generalSettings(){
+	static function getStylesheets($separateDefaultFromCustom = false){
 
-		// Include general settings page
-		include SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'general-settings.php';
+		// Default styles
+		$defaultStyles = array(
+			'style-light.css' => __('Light', 'slideshow-plugin'),
+			'style-dark.css' => __('Dark', 'slideshow-plugin')
+		);
+
+		// Loop through default stylesheets
+		$stylesheetsFilePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin';
+		foreach($defaultStyles as $fileName => $name){
+
+			// Check if stylesheet exists on server, don't offer it when it does not exist.
+			if(!file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName))
+				unset($defaultStyles[$fileName]);
+		}
+
+		// Get custom styles
+		$customStyles = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
+
+		// Return
+		if($separateDefaultFromCustom)
+			return array(
+				'default' => $defaultStyles,
+				'custom' => $customStyles
+			);
+		return array_merge(
+			$defaultStyles,
+			$customStyles
+		);
 	}
 
 	/**
