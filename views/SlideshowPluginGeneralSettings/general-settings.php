@@ -256,7 +256,7 @@ if(is_array($customStyleKeys)){
 				<div class="style-editor <?php echo htmlspecialchars($customStyleKey); ?>" style="display: none;">
 
 					<p>
-						<i><?php _e('Name', 'slideshow-plugin'); ?></i><br />
+						<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
 						<input
 							type="text"
 							name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][title]"
@@ -265,7 +265,7 @@ if(is_array($customStyleKeys)){
 					</p>
 
 					<p>
-						<i><?php _e('Custom style editor', 'slideshow-plugin'); ?></i><br />
+						<i><?php _e('Style', 'slideshow-plugin'); ?></i><br />
 						<textarea
 							name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][style]"
 							rows="25"
@@ -309,7 +309,7 @@ if(is_array($customStyleKeys)){
 				<div class="style-editor" style="display: none;">
 
 					<p>
-						<i><?php _e('Name', 'slideshow-plugin'); ?></i><br />
+						<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
 						<input
 							type="text"
 							class="new-custom-style-title"
@@ -317,7 +317,7 @@ if(is_array($customStyleKeys)){
 					</p>
 
 					<p>
-						<i><?php _e('Editor', 'slideshow-plugin'); ?></i><br />
+						<i><?php _e('Style', 'slideshow-plugin'); ?></i><br />
 						<textarea
 							class="new-custom-style-content"
 							rows="25"

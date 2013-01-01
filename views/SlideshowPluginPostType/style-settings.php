@@ -18,12 +18,12 @@
 
 <p>
 	<?php
-		_e(sprintf(
-				'Custom styles can be created and customized %shere%s',
-				'<a href="' . admin_url() . '/edit.php?post_type=slideshow&page=general_settings#custom-styles" target="_blank">',
-				'</a>'
+		echo sprintf(__(
+				'Custom styles can be created and customized %shere%s.',
+				'slideshow-plugin'
 			),
-			'slideshow-plugin'
+			'<a href="' . admin_url() . '/edit.php?post_type=slideshow&page=general_settings#custom-styles" target="_blank">',
+			'</a>'
 		);
 	?>
 </p>
