@@ -71,8 +71,78 @@ class SlideshowPluginInstaller {
 	 */
 	private static function updateV2_1_20_to_V2_2_1_23(){
 
-		// TODO: Transfer custom styles. Every slideshow set to a custom style needs to create a new custom style and
-		// TODO: subscribe to it. Not even that easy, eh?
+		// Check if this has already been done
+		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23') !== false)
+			return;
+
+		// Get slideshows
+		$slideshows = get_posts(array(
+			'numberposts' => -1,
+			'offset' => 0,
+			'post_type' => 'slideshow'
+		));
+
+		// Loop through slideshows
+		if(is_array($slideshows) && count($slideshows > 0)){
+			foreach($slideshows as $slideshow){
+				// Get settings
+				$styleSettings = maybe_unserialize(get_post_meta(
+					$slideshow->ID,
+					'styleSettings',
+					true
+				));
+				if(!is_array($styleSettings) || count($styleSettings) <= 0)
+					continue;
+
+				// Only save custom style when it's the current setting
+				if( isset($styleSettings['style']) &&
+					$styleSettings['style'] == 'custom' &&
+					isset($styleSettings['custom']) &&
+					!empty($styleSettings['custom'])){
+
+					// Custom style key
+					$stylesKey = 'slideshow-jquery-image-gallery-custom-styles';
+					$customStyleKey = $stylesKey . '_' . $slideshow->ID;
+
+					// Add stylesheet to database, continue to next post when failed.
+					if(!add_option(
+						$customStyleKey,
+						$styleSettings['custom'],
+						'',
+						'no'
+						))
+						continue;
+
+					// Get list of stylesheets to link the new stylesheet to.
+					$styleSheets = get_option($stylesKey, array());
+
+					// Stylesheets must be an array
+					if(!is_array($styleSheets) || count($styleSheets) <= 0)
+						$styleSheets = array();
+
+					// Link new stylesheet to stylesheets array
+					$styleSheets[$customStyleKey] = $slideshow->post_title . ' (ID: ' . $slideshow->ID . ')';
+
+					// Update stylesheets array
+					update_option($stylesKey, $styleSheets);
+
+					// Set style setting to the custom style's key
+					$styleSettings['style'] = $customStyleKey;
+				}
+
+				// Delete 'custom' key from array
+				unset($styleSettings['custom']);
+
+				// Update post meta
+				update_post_meta(
+					$slideshow->ID,
+					'styleSettings',
+					$styleSettings
+				);
+			}
+		}
+
+		update_option('slideshow-plugin-updated-from-v2-to-v2-1-20', 'updated');
 	}
 
 	/**

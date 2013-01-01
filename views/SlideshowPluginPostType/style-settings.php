@@ -19,7 +19,7 @@
 <p>
 	<?php
 		_e(sprintf(
-				'Custom styles can be created %shere%s',
+				'Custom styles can be created and customized %shere%s',
 				'<a href="' . admin_url() . '/edit.php?post_type=slideshow&page=general_settings#custom-styles" target="_blank">',
 				'</a>'
 			),
