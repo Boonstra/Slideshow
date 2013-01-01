@@ -146,6 +146,7 @@ class SlideshowPluginGeneralSettings {
 	 * When the $separateDefaultFromCustom boolean is set to true, the default stylesheets will be returned separately
 	 * from the custom stylesheets as: array('default' => array(), 'custom' => array()) respectively.
 	 *
+	 * @since 2.1.23
 	 * @param boolean $separateDefaultFromCustom (optional, defaults to false)
 	 * @return array $stylesheets
 	 */
@@ -184,6 +185,7 @@ class SlideshowPluginGeneralSettings {
 	/**
 	 * Saves capabilities, called by a callback from a registered capability setting
 	 *
+	 * @since 2.1.23
 	 * @param String $capability
 	 * @return String $capability
 	 */
@@ -229,6 +231,7 @@ class SlideshowPluginGeneralSettings {
 	/**
 	 * Saves custom styles, called by a callback from a registered custom styles setting
 	 *
+	 * @since 2.1.23
 	 * @param array $customStyles
 	 * @return array $newCustomStyles
 	 */

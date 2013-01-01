@@ -55,8 +55,24 @@ class SlideshowPluginInstaller {
 		if(self::firstVersionGreaterThanSecond('2.1.22', $currentVersion) || $currentVersion == null)
 			self::setCapabilities();
 
+		// Update to version 2.1.23
+		if(self::firstVersionGreaterThanSecond('2.1.23', $currentVersion) || $currentVersion == null)
+			self::updateV2_1_20_to_V2_2_1_23();
+
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.1.23 introduces shared custom styles. Styles customized by a user need to be converted to a custom
+	 * style on the General Settings page.
+	 *
+	 * @since 2.1.23
+	 */
+	private static function updateV2_1_20_to_V2_2_1_23(){
+
+		// TODO: Transfer custom styles. Every slideshow set to a custom style needs to create a new custom style and
+		// TODO: subscribe to it. Not even that easy, eh?
 	}
 
 	/**
