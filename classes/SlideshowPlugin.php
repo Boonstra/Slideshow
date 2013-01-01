@@ -97,22 +97,31 @@ class SlideshowPlugin {
 		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
 		$sessionID = self::$sessionCounter++;
 
-		// Get stylesheet. Get the light stylesheet when no stylesheet could be found.
+		// Get stylesheet. If the style was not found, see if a default stylesheet can be loaded
 		$style = get_option($styleSettings['style'], null);
-		if(isset($style)){
-			$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $style);
-		}else{
-			$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'style-light.css';
+		if(!isset($style)){
+
+			// Check if default stylesheet exists, if not get the light variant
+			$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . $styleSettings['style'];
+			if(!file_exists($filePath))
+				$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'style-light.css';
+
 			if(file_exists($filePath)){
 				ob_start();
 				include($filePath);
-				$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), ob_get_clean());
+				$style = ob_get_clean();
 			}
 		}
 
 		// Append the random ID to the slideshow container in the stylesheet, to identify multiple slideshows
-		if(!empty($style))
+		if(!empty($style)){
+
+			// Replace URL tag with the site's URL
+			$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $style);
+
+			// Add slideshow's page ID to the CSS container class to differentiate between slideshows
 			$style = str_replace('.slideshow_container', '.slideshow_container_' . $sessionID, $style);
+		}
 
 		// Include output file to store output in $output.
 		$output = '';

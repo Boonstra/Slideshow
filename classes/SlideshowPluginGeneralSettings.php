@@ -112,6 +112,11 @@ class SlideshowPluginGeneralSettings {
 	 */
 	static function enqueue(){
 
+		// Return when not on a slideshow edit page, or files have already been included.
+		$currentScreen = get_current_screen();
+		if($currentScreen->post_type != SlideshowPluginPostType::$postType)
+			return;
+
 		// Enqueue general settings stylesheet
 		wp_enqueue_style(
 			'slideshow-jquery-image-gallery-general-settings',

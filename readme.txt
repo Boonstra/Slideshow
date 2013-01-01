@@ -97,15 +97,23 @@ slideshow may not be styled.
 
 1. Here's what a default slideshow can look like. Sit back, grab a beer, enjoy.
 
-2. Create a new slideshow. A shortcode and a code snippet of how to call it are already visible.
+2. Create a new slideshow. Slides and settings specific to this slideshow can be set here.
 
-3. If you haven't uploaded any images yet, you can do so on the Wordpress media page. Don't forget to insert the images into the slideshow after uploading!
+3. If you haven't uploaded any images yet, you can do so on the WordPress media page.
 
-4. Click the 'Insert Image Slide' button in the Slides List to search and pick images from the WordPress media page.
+4. Click the 'Image Slide' button in the Slides List to search and pick images from the WordPress media page.
+Click 'Insert' to insert the image as slide.
 
 5. The images you selected are directly visible in your Slides List, don't forget to save!
 
-6. Not satisfied with the handling or styling of the slideshow? Customize!
+6. When you understand the basics of creating slideshows, you may want to go a little more in depth and have a look at
+the General Settings page. As seen in the image above, privileges can be granted to user roles to give users the ability
+to add, edit or delete slideshows.
+
+7. Default slideshow settings can be edited here. Slideshows that are newly created, will start out with these options.
+
+8. Custom styles can be added and customized here. Custom styles can be used to style one or more slideshows to your own
+personal taste.
 
 
 == Changelog ==
