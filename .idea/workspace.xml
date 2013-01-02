@@ -1,44 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot-7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot-8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshot-1.png" afterPath="$PROJECT_DIR$/screenshot-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshot-2.png" afterPath="$PROJECT_DIR$/screenshot-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshot-3.png" afterPath="$PROJECT_DIR$/screenshot-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshot-4.png" afterPath="$PROJECT_DIR$/screenshot-4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshot-5.png" afterPath="$PROJECT_DIR$/screenshot-5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshot-6.png" afterPath="$PROJECT_DIR$/screenshot-6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginGeneralSettings/general-settings.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginGeneralSettings/general-settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginPostType/post-type-handler.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginPostType/post-type-handler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/style-dark.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/style-dark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" afterPath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
-    </list>
-    <list id="6f5b02dc-cecf-4c7e-bc44-388dfbdcee10" name="private" comment="Previous commit shows the changes, this is simply">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="" />
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" time="1357083067575" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,64 +18,10 @@
     <disable_hints />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="slideshow-jquery-image-gallery" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slideshow.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="26" selection-start="743" selection-end="743" vertical-scroll-proportion="-11.653846">
-              <folding>
-                <element signature="e#6#499#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="0" selection-start="4858" selection-end="4858" vertical-scroll-proportion="0.5294118">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="changedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" />
-        <option value="$PROJECT_DIR$/private/js/slideshow.js" />
-        <option value="$PROJECT_DIR$/js/SlideshowPlugin/slideshow.js" />
-        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
-        <option value="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" />
-        <option value="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" />
-        <option value="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" />
-        <option value="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" />
-        <option value="$PROJECT_DIR$/views/SlideshowPluginSlideInserter/search-popup.php" />
-        <option value="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
-        <option value="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" />
-        <option value="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" />
-        <option value="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" />
-        <option value="$PROJECT_DIR$/slideshow.php" />
-        <option value="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
-        <option value="$PROJECT_DIR$/readme.txt" />
-      </list>
-    </option>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
-    <include_path>
-      <path value="C:\xampp\htdocs\wordpress\testenvironment" />
-    </include_path>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -144,16 +55,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -174,64 +75,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="281" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="263" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="46" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="282" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="231" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="230" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../test/slideshowv3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="231" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="906" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="231" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="957" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.lastSelected" value="reference.webide.settings.project.settings.php" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
-    <property name="options.searchVisible" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery" />
-      <recent name="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\classes" />
-      <recent name="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\private\languages" />
-      <recent name="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\languages" />
-      <recent name="C:\xampp\htdocs\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\js\SlideshowPlugin" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery" />
-      <recent name="C:\xampp\htdocs\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\private" />
-      <recent name="C:\xampp\htdocs\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\js\SlideshowPlugin" />
-      <recent name="C:\xampp\htdocs\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\PS" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="0" />
@@ -255,7 +107,6 @@
     <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="false">C:\Users\Stefan Boonstra\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
-    <supportedVersion>125</supportedVersion>
   </component>
   <component name="SvnFileUrlMappingImpl">
     <option name="myMappingRoots">
@@ -277,302 +128,32 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0dab0d1c-0dcb-4210-a5f6-95a93f8333cd" name="Default" comment="" />
-      <changelist id="6f5b02dc-cecf-4c7e-bc44-388dfbdcee10" name="private" comment="These files should not be committed." />
-      <created>1340469988351</created>
-      <updated>1340469988351</updated>
+      <created>1357085257610</created>
+      <updated>1357085257610</updated>
     </task>
-    <task id="LOCAL-00001" summary="Fixed problems with servers that have 'allow_url_fopen' disabled.">
-      <created>1340666015119</created>
-      <updated>1340666015119</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Update screenshot-1.png">
-      <created>1340667720103</created>
-      <updated>1340667720103</updated>
-    </task>
-    <task id="LOCAL-00003">
-      <created>1340668718114</created>
-      <updated>1340668718114</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Extended compatibility to servers that do not support use of the short php opening tag.">
-      <created>1340785672105</created>
-      <updated>1340785672105</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Fixed: Custom width of the slideshow will no longer cause buttons to fall off-screeen.">
-      <created>1340955005102</created>
-      <updated>1340955005102</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Fixed: Namespace complications found with the Slideshow widget, renamed all classes.">
-      <created>1341328078126</created>
-      <updated>1341328078126</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Preparing 2.0.0 for tagging">
-      <created>1346696706113</created>
-      <updated>1346696706113</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Bugfix 2.0.1. Users that are satisfied with version 2.0.0 as it is, should wait for a  later version to come out. This release is just for the people who want their old v1.x.x slides back.">
-      <created>1346698846110</created>
-      <updated>1346698846110</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Resized images saving download size.">
-      <created>1346699272113</created>
-      <updated>1346699272113</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Missing file added">
-      <created>1346700272110</created>
-      <updated>1346700272110</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Changed version number">
-      <created>1346700373111</created>
-      <updated>1346700373111</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added un-minified slideshow.js">
-      <created>1346706629111</created>
-      <updated>1346706629111</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Now using minified script.">
-      <created>1346707085111</created>
-      <updated>1346707085111</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Added FAQ entry.">
-      <created>1346881800173</created>
-      <updated>1346881800173</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Stretching bug solved.&#10;All slides now are automatically centered when not stretched.&#10;First image now showing only once instead of twice in a row, counter calculation bug.&#10;More than vife slides can now be shown in the 'Add Image Slide' search popup.">
-      <created>1347143116111</created>
-      <updated>1347143116111</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Only the slideshow element's overflow now is hidden, meaning buttons and other elements can be positioned outside of the slideshow.">
-      <created>1347182552156</created>
-      <updated>1347182552156</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Added video slides and links can now open in new windows.">
-      <created>1347524810118</created>
-      <updated>1347524810118</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Release of version 2.1.0">
-      <created>1347720448177</created>
-      <updated>1347720448177</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Slides can now be randomized">
-      <created>1347724217111</created>
-      <updated>1347724217111</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Fixed: Settings meta-box threw an unexpected 'T_ENDFOREACH' since a shorthand PHP tag was used improperly.">
-      <created>1347795822177</created>
-      <updated>1347795822177</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Fixed: Image inserter pop-up CSS no longer pushes the 'insert' buttons off-screen.">
-      <created>1347910871165</created>
-      <updated>1347910871165</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Fixed width issues with overflow container, HTML elements are now on top of the Flash elements and and images are now loaded with the Wordpress function">
-      <created>1347997090173</created>
-      <updated>1347997090173</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Fixed bug that caused script to fail on 'em' tags. Also, borders no longer fall off-slide">
-      <created>1348014309125</created>
-      <updated>1348014309125</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Testing if inserting raw html into posts and pages now works for the users who had issues with this.">
-      <created>1348096228163</created>
-      <updated>1348096228163</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Wordpress doesn't intervene with slideshow shortcode output anymore, fixing a lot of problems. Also slideshow now gets the width of the first div, width-less parent elements are discarded. This primarily fixes IE issues.">
-      <created>1348147537145</created>
-      <updated>1348147537145</updated>
-    </task>
-    <task id="LOCAL-00027" summary="FAQ changed.">
-      <created>1348165111113</created>
-      <updated>1348165111113</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Undefined bug testing slides not being output.">
-      <created>1348179920111</created>
-      <updated>1348179920111</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added link to widgets page in information section.">
-      <created>1348334748179</created>
-      <updated>1348334748179</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Multiple slideshows can now be shown with each its separate styling.">
-      <created>1348354790124</created>
-      <updated>1348354790124</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Slideshow widgets are now loaded using theme sidebar settings, making the widget more dynamic.">
-      <created>1348390249128</created>
-      <updated>1348390249128</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Removed unwanted output">
-      <created>1348397484113</created>
-      <updated>1348397484113</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Fixed: Slideshow in some cases unable to show next slide in fade animation. Also, users can now search insertable images by post ID">
-      <created>1348440656113</created>
-      <updated>1348440656113</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Added option to enable or disable avoiding Wordpress' content filter.">
-      <created>1348604057160</created>
-      <updated>1348604057160</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Set in-software version number to 2.1.8, official version still is 2.1.7">
-      <created>1348604131106</created>
-      <updated>1348604131106</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Removed some output">
-      <created>1348605130107</created>
-      <updated>1348605130107</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Updating to stable tag 2.1.8">
-      <created>1348608009106</created>
-      <updated>1348608009106</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Added donation link and link to the development board">
-      <created>1348850504203</created>
-      <updated>1348850504203</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Moved admin scripts and styles to the header">
-      <created>1349257152146</created>
-      <updated>1349257152146</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Moved admin scripts and styles to the header">
-      <created>1349261435106</created>
-      <updated>1349261435106</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Slideshow widget form now is compatible with older versions of PHP, that didn't recognize a null value as a set value.">
-      <created>1349301821107</created>
-      <updated>1349301821107</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Resolved conflict with the Gravity Forms plugin">
-      <created>1350148837108</created>
-      <updated>1350148837108</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Moved slideshow activation to the footer script. Footer jQuery scripts are now supported.">
-      <created>1350312578115</created>
-      <updated>1350312578115</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Added more compensation space in the calculation of the slideshow div element.">
-      <created>1350503209143</created>
-      <updated>1350503209143</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Changed manufacturer line">
-      <created>1350743789243</created>
-      <updated>1350743789243</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Added Russian translation by Oleg Fritz. Thankyou Oleg!">
-      <created>1351184863133</created>
-      <updated>1351184863133</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Not worth mentioning.">
-      <created>1351185282113</created>
-      <updated>1351185282113</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Security fixes">
-      <created>1351377247108</created>
-      <updated>1351377247108</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Text slides allow use of HTML again.">
-      <created>1351412873108</created>
-      <updated>1351412873108</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Removed htmlentities on descriptions">
-      <created>1351416210107</created>
-      <updated>1351416210107</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Changed link of translator Oleg Fritz to link to his Facebook account">
-      <created>1351416692106</created>
-      <updated>1351416692106</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Added translations to default values">
-      <created>1351420063106</created>
-      <updated>1351420063106</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Updated Dutch translation">
-      <created>1351420255106</created>
-      <updated>1351420255106</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Fixed security bug and added Chinese translation by Kevin Tell">
-      <created>1351722731113</created>
-      <updated>1351722731114</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Updated description">
-      <created>1351775753142</created>
-      <updated>1351775753142</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Deleted 'height: 100%' on 'slideshow_container img' CSS tag, as to prevent images from unintended stretching.">
-      <created>1351808763107</created>
-      <updated>1351808763107</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Chinese translation updated">
-      <created>1352072163152</created>
-      <updated>1352072163152</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Security update, enabling HTML in slides again. (In strict, no script format).&#10;Added shortcode editor to provide a more convenient way of inserting slideshow in posts and pages.&#10;Better way of retrieving slideshows, faulty ID's will be catched and only when there's no slideshow at all, no slideshow will show. Also getting slideshows by their slug is now possible.&#10;Example shortcode's ID is now in quotes to prevent confusion.">
-      <created>1352550241130</created>
-      <updated>1352550241130</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Added file left behind.">
-      <created>1352550740106</created>
-      <updated>1352550740106</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Test release of version 2.1.17 as development version&#10;Foreach loop error fixed&#10;Undefined URL target notice fixed&#10;Video slide now accepets URLs as well (although being a little slower)">
-      <created>1352570885106</created>
-      <updated>1352570885106</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Previous commit shows the changes, this is simply the official version number change.">
-      <created>1352589662106</created>
-      <updated>1352589662106</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Text slide descriptions now displayed in text areas, backgrounds of text slides can now be set to transparent, and settings are now loaded from JavaScript variable so search engines don't recognize them as content.">
-      <created>1353679073200</created>
-      <updated>1353679073200</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Slides are now forced to float - Solves many slide support questions&#10;Post meta settings are now only stored in slideshow posts, fixes last weeks most prominent three bugs. ('save()' function wasn't contained properly)&#10;PHP snippet hidden from users that cannot edit themes&#10;SwfObject.js is now provided by WordPress itself (wp-includes)&#10;Script namespace moved from 'slideshow_script' to 'slideshow-jquery-image-gallery-script', some users had trouble loading their slideshow.js but were able to load the functional stylesheet&#10;Untitled slideshows in the widget form will now show 'Untitled slideshow' instead of an empty select option.">
-      <created>1354321168127</created>
-      <updated>1354321168127</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Fixed: Query filters will no longer alter the output of the slideshow.&#10;Fixed: All images will now show, even if they don't have thumbnails.&#10;Compatibility with WordPress 3.5 confirmed.&#10;First back-end increment toward version 2.2.0, introducing a more efficient way to store and retrieve slideshow settings and slides.">
-      <created>1354795328126</created>
-      <updated>1354795328126</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Fixed: Adding new slides was made impossible by a faulty setting.&#10;Fixed: Image tag placed on multiple lines caused some sites to not display images correctly due to an inserted break character.">
-      <created>1354838513105</created>
-      <updated>1354838513105</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Added French translation by Wptheme (http://wptheme.fr/)">
-      <created>1355241415125</created>
-      <updated>1355241415125</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Added French translation.&#10;Added a &quot;General Settings&quot; page, containing user capability settings.&#10;Cleaned up unnecessary settings that were showing on page.&#10;Replaced the, in WordPress 3.5, deprecated function 'wp_get_single_post' with the 'get_post' function.&#10;Added an on-page error logger to be able to solve back-end issues faster. Nothing is shown when no errors exist, doesn't affect SEO.">
-      <created>1355869820117</created>
-      <updated>1355869820117</updated>
-    </task>
-    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32700893" sideWeight="0.49786323" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.49786553" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2013889" sideWeight="0.32700893" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2230523" sideWeight="0.6729911" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.49839914" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13572204" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -580,8 +161,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -610,7 +191,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default settings can now be changed from the 'General Settings' page.&#10;Custom styles are now shared across all slideshows and endless customizations can be created.&#10;Added input fields to set separate titles and descriptions for shared images.&#10;Cleaned up the slides list's layout, to reach a more WordPress-like look.&#10;Adapted the 'Dark' style to be more compatible with the WordPress TwentyTwelve theme.&#10;Changed 'Insert Slideshow' link to appear as a button.&#10;Empty settings won't be shown at the end of the settings boxes." />
+    <option name="LAST_COMMIT_MESSAGE" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -623,124 +204,9 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Security fixes" />
-    <MESSAGE value="Text slides allow use of HTML again." />
-    <MESSAGE value="Removed htmlentities on descriptions" />
-    <MESSAGE value="Changed link of translator Oleg Fritz to link to his Facebook account" />
-    <MESSAGE value="Added translations to default values" />
-    <MESSAGE value="Updated Dutch translation" />
-    <MESSAGE value="Fixed security bug and added Chinese translation by Kevin Tell" />
-    <MESSAGE value="Updated description" />
-    <MESSAGE value="Deleted 'height: 100%' on 'slideshow_container img' CSS tag, as to prevent images from unintended stretching." />
-    <MESSAGE value="Chinese translation updated" />
-    <MESSAGE value="Security update, enabling HTML in slides again. (In strict, no script format).&#10;Added shortcode editor to provide a more convenient way of inserting slideshow in posts and pages.&#10;Better way of retrieving slideshows, faulty ID's will be catched and only when there's no slideshow at all, no slideshow will show. Also getting slideshows by their slug is now possible.&#10;Example shortcode's ID is now in quotes to prevent confusion." />
-    <MESSAGE value="Added file left behind." />
-    <MESSAGE value="Test release of version 2.1.17 as development version&#10;Foreach loop error fixed&#10;Undefined URL target notice fixed&#10;Video slide now accepets URLs as well (although being a little slower)" />
-    <MESSAGE value="Previous commit shows the changes, this is simply the official version number change." />
-    <MESSAGE value="Text slide descriptions now displayed in text areas, backgrounds of text slides can now be set to transparent, and settings are now loaded from JavaScript variable so search engines don't recognize them as content." />
-    <MESSAGE value="Widget title's HTML tags are now discarded when no widget title is set." />
-    <MESSAGE value="Slides are now forced to float - Solves many slide support questions&#10;Post meta settings are now only stored in slideshow posts, fixes last weeks most prominent three bugs. ('save()' function wasn't contained properly)&#10;PHP snippet hidden from users that cannot edit themes&#10;SwfObject.js is now provided by WordPress itself (wp-includes)&#10;Script namespace moved from 'slideshow_script' to 'slideshow-jquery-image-gallery-script', some users had trouble loading their slideshow.js but were able to load the functional stylesheet&#10;Untitled slideshows in the widget form will now show 'Untitled slideshow' instead of an empty select option." />
-    <MESSAGE value="Fixed: Query filters will no longer alter the output of the slideshow.&#10;Fixed: All images will now show, even if they don't have thumbnails.&#10;Compatibility with WordPress 3.5 confirmed.&#10;First back-end increment toward version 2.2.0, introducing a more efficient way to store and retrieve slideshow settings and slides." />
-    <MESSAGE value="Fixed: Adding new slides was made impossible by a faulty setting.&#10;Fixed: Image tag placed on multiple lines caused some sites to not display images correctly due to an inserted break character." />
-    <MESSAGE value="Added French translation by Wptheme (http://wptheme.fr/)" />
-    <MESSAGE value="Added French translation.&#10;Added a &quot;General Settings&quot; page, containing user capability settings.&#10;Cleaned up unnecessary settings that were showing on page.&#10;Replaced the, in WordPress 3.5, deprecated function 'wp_get_single_post' with the 'get_post' function.&#10;Added an on-page error logger to be able to solve back-end issues faster. Nothing is shown when no errors exist, doesn't affect SEO." />
-    <MESSAGE value="Removing old banner" />
-    <MESSAGE value="Renaming new banner" />
-    <MESSAGE value="Updating banner" />
-    <MESSAGE value="Default settings can now be changed from the 'General Settings' page.&#10;Custom styles are now shared across all slideshows and endless customizations can be created.&#10;Added input fields to set separate titles and descriptions for shared images.&#10;Cleaned up the slides list's layout, to reach a more WordPress-like look.&#10;Adapted the 'Dark' style to be more compatible with the WordPress TwentyTwelve theme.&#10;Changed 'Insert Slideshow' link to appear as a button.&#10;Empty settings won't be shown at the end of the settings boxes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginSlideInserter/insert-video-button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginSlideInserter/insert-text-button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginSlideInserter/insert-image-button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="32" selection-start="31" selection-end="32" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginPostType/support-plugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="28" selection-start="543" selection-end="545" vertical-scroll-proportion="0.18389423" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="82" selection-start="317" selection-end="317" vertical-scroll-proportion="0.1408284" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="21" selection-start="918" selection-end="918" vertical-scroll-proportion="0.09770115" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="124" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.5029586" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginPostType/information.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="7" selection-start="6" selection-end="7" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/SlideshowPlugin/functional.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="280" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="51" selection-start="620" selection-end="620" vertical-scroll-proportion="0.17852975" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/SlideshowPluginShortcode/shortcode-inserter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSecurity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="55" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.5950992" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.1408284" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="743" selection-end="743" vertical-scroll-proportion="-11.653846">
-          <folding>
-            <element signature="e#6#499#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="0" selection-start="4858" selection-end="4858" vertical-scroll-proportion="0.5294118">
-          <folding />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
 

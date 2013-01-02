@@ -1,4 +1,11 @@
 #############
+## IDEA
+#############
+
+# Ignore PHPStorm .idea folder
+.idea/
+
+#############
 ## SVN
 #############
 
