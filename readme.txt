@@ -71,12 +71,43 @@ of your website.
 
 = How do I add image slides? =
 
-You can choose from images that have already been uploaded to your Wordpress website by clicking on the
-'Insert Image Slide' button in the slides list. A screen will pop up and here you are able to search your image files
-by name for image you want to use. If you want to add new images to the slideshow, you need to upload them to the
-Wordpress media page.
+Click the 'Image slide' button in the 'Slides List' of the slideshow. A screen will pop up where you'll be able to
+search though all images that have already been uploaded to your WordPress website. If you want to add new images to the
+slideshow, or you do not have any images yet, you'll have to upload them to the WordPress media page first.
 
-= The slideshow does not show up / The slideshow looks like it's not styled =
+= How do I customize the slideshow's style? =
+
+On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to the
+'Custom styles' tab. Here you'll see a list of default stylesheets, such as 'Light' and 'Dark', and a list of custom
+stylesheets; The ones you created.
+
+Choose a default stylesheet you'd like to customize and click 'Customize' top open the 'Custom style editor'. When
+you're done editing click 'Save Changes' and go to the slideshow you'd to style with the newly created stylesheet. In
+the 'Slideshow Style' box you can now find and select your custom stylesheet. You can set a stylesheet for multiple
+slideshows.
+
+If you've already created a custom stylesheet, you can edit it by clicking 'Edit'. You can also delete it by clicking
+'Delete'. Be careful with this though, a deleted stylesheet cannot be retrieved and cannot be used by any slideshow
+anymore.
+
+= How do I change the slideshow's default settings? =
+
+On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to the
+'Default Slideshow Settings' tab. All the slideshow's default settings are listed here and can be changed so newly added
+slideshows will start out with these settings. Save your changes by clicking the 'Save Changes' button.
+
+= Some users can add, edit or delete slideshows, although I do not want them to. Can I prevent this from happening? =
+
+Yes you can. On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to
+the 'User Capabilities' tab (If you're not already there). The privileges that allow user groups to perform certain
+actions are listed here. To allow, for instance, a contributor to add a slideshow, click the box in front of 'Contributor'
+to grant him the right to add slideshow.
+
+Note that when you grant someone the right to add or delete a slideshow, you'll also automatically grant him or her the
+right to edit slideshows, as this right is required to add or delete slideshows. The same is true for the reversed
+situation.
+
+= The slideshow does not show up =
 
 - The slideshow is mostly called after the `</head>` tag, which means the scripts and stylesheet need to load in the footer
 of the website. A theme that has no `<?php wp_footer(); ?>` call in it's footer will not be able to load the slideshow's
@@ -86,11 +117,18 @@ scripts.
 javascript to break. For the slideshow to work again, this error needs to be fixed. Check if any errors were thrown by
 opening Google Chrome or Firefox (with Firebug installed) and press the 'F12' key. Errors show in the console tab.
 
-= I chose the 'Custom' style option for my slideshow, but the slideshow is not styled anymore =
+= The slideshow looks like it's not styled =
 
 Since the slideshow is most often called after the </head> tag, the slideshow can't print it's styles in the head of
-the website and has to output it on the page. A strict doctype does not allow stylesheets in the body and thus the
-slideshow may not be styled.
+the website and has to output them on the page. A strict doctype does not allow stylesheets to be in the body of the
+website and thus the slideshow may not be styled.
+
+= Why does Internet Explorer show a big blank space above the slideshow? =
+
+Internet Explorer is a very strict browser, so when a big blank space above your slideshow is showing your page may
+contain some invalid HTML. Most times invalid HTML is caused by placing the slideshow's shortcode or PHP snippet into
+an anchor tag (`<a></a>`) or paragraph tag (`<p></p>`), while you can only place a slideshow within a 'div' element
+(`<div></div>`).
 
 
 == Screenshots ==
@@ -117,6 +155,10 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.0 Beta =
+*   Fixed: Image title and description were filled with attachment's content.
+*
 
 = 2.1.23 =
 *   Default settings can now be changed from the 'General Settings' page.

@@ -120,7 +120,8 @@ class SlideshowPluginShortcode {
 		wp_enqueue_script(
 			'slideshow-shortcode-inserter',
 			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/shortcode-inserter.js',
-			array('jquery')
+			array('jquery'),
+			SlideshowPluginMain::$version
 		);
 
 		wp_localize_script(

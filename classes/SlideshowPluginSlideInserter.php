@@ -223,14 +223,17 @@ class SlideshowPluginSlideInserter {
 		// Enqueue style
 		wp_enqueue_style(
 			'slideshow-slide-inserter',
-			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/slide-inserter.css'
+			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/slide-inserter.css',
+			null,
+			SlideshowPluginMain::$version
 		);
 
 		// Enqueue insert button script
 		wp_enqueue_script(
 			'slideshow-slide-inserter',
 			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slide-inserter.js',
-			array('jquery')
+			array('jquery'),
+			SlideshowPluginMain::$version
 		);
 
 		wp_localize_script(
