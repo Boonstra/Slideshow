@@ -76,12 +76,6 @@
 						if(empty($attachment))
 							continue;
 
-						// Get post tile and description when empty
-						if(empty($title))
-							$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($attachment->post_title);
-						if(empty($description))
-							$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($attachment->post_content);
-
 						// Prepare image
 						$image = wp_get_attachment_image_src($attachment->ID, 'full');
 						$imageSrc = '';

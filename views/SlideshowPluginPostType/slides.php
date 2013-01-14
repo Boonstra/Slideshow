@@ -19,10 +19,6 @@
 	}
 </style>
 
-<script type="text/javascript">
-	//var slideshowHighestSlideId = <?php echo (is_numeric($highestSlideId))? $highestSlideId : 0; ?>
-</script>
-
 <ul class="sortable-slides-list">
 	<?php if(count($slides) > 0): ?>
 	<?php foreach($slides as $key => $slide):
@@ -111,15 +107,10 @@
 
 				// Title and description
 				$title = $description = '';
-				if(isset($slide['title']) && !empty($slide['title']))
+				if(isset($slide['title']))
 					$title = $slide['title'];
-				else
-					$title = $attachment->post_title;
-
-				if(isset($slide['description']) && !empty($slide['description']))
+				if(isset($slide['description']))
 					$description = $slide['description'];
-				else
-					$description = $attachment->post_content;
 
 				// Prepare image
 				$image = wp_get_attachment_image_src($attachment->ID);

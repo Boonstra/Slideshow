@@ -168,7 +168,7 @@ class SlideshowPluginPostType {
 	 * @since 2.0.0
 	 */
 	static function supportPluginMessage(){
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php');
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
 	}
 
 	/**
@@ -182,11 +182,13 @@ class SlideshowPluginPostType {
 		$snippet = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
 		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
 
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php');
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php';
 	}
 
 	/**
 	 * Shows slides currently in slideshow
+	 *
+	 * TODO Tidy up, it's probably best to move all to 'slides.php'
 	 *
 	 * @since 1.0.0
 	 */
@@ -196,14 +198,66 @@ class SlideshowPluginPostType {
 		// Get slides
 		$slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
 
-		// Stores highest slide id.
-		$highestSlideId = count($slides) - 1;
+		// Get settings. Since in version 2.2.X slides aren't put into views yet, this has to be done manually
+		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
+		$slidesPerView = 1;
+		if(isset($settings['slidesPerView']));
+			$slidesPerView = $settings['slidesPerView'];
+
+		// Loop through slides, forcing them into views
+		$i = 0;
+		$viewId = -1;
+		$views = array();
+		if(is_array($slides)){
+			foreach($slides as $slide){
+
+				// Create new view when view is full or not yet created
+				if($i % $slidesPerView == 0){
+
+					$viewId++;
+					$views[$viewId] = new SlideshowPluginSlideshowView();
+				}
+
+				// Add slide to view
+				$views[$viewId]->addSlide($slide);
+
+				$i++;
+			}
+		}
+
+		echo '<p style="text-align: center;">
+			<i>' . __('Insert', 'slideshow-plugin') . ':</i><br/>' .
+			SlideshowPluginSlideInserter::getImageSlideInsertButton() .
+			SlideshowPluginSlideInserter::getTextSlideInsertButton() .
+			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
+		'</p>';
+
+		if(count($slides) <= 0)
+			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
+
+		echo '<style type="text/css">
+			.sortable li {
+				cursor: pointer;
+			}
+
+			.sortable-slide-placeholder {
+				border: 1px solid #f00;
+			}
+		</style>';
+
+		echo '<ul class="sortable-slides-list">';
+
+		if(is_array($views))
+			foreach($views as $view)
+				echo $view->toBackEndHTML();
+
+		echo '</ul>';
 
 		// Set url from which a substitute icon can be fetched
-		$noPreviewIcon = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
+		//$noPreviewIcon = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
 
 		// Include slides preview file
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slides.php');
+		//include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slides.php';
 	}
 
 	/**
@@ -225,7 +279,7 @@ class SlideshowPluginPostType {
 		}
 
 		// Include style settings file
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php');
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
 	}
 
 	/**
@@ -240,6 +294,6 @@ class SlideshowPluginPostType {
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
 
 		// Include
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php');
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
 	}
 }
