@@ -7,9 +7,9 @@ if(isset($attachment)):
 	// Title and description
 	$title = $description = $url = $target = '';
 	if(isset($properties['title']))
-		$title = $properties['title'];
+		$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
 	if(isset($properties['description']))
-		$description = $properties['description'];
+		$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
 	if(isset($properties['url']))
 		$url = $properties['url'];
 	if(isset($properties['urlTarget']))

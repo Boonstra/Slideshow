@@ -258,6 +258,7 @@ jQuery(document).ready(function(){
 		// Set names to be saved to the database
 		textSlide.find('.title').attr('name', 'slides[0][title]');
 		textSlide.find('.description').attr('name', 'slides[0][description]');
+		textSlide.find('.textColor').attr('name', 'slides[0][textColor]');
 		textSlide.find('.color').attr('name', 'slides[0][color]');
 		textSlide.find('.url').attr('name', 'slides[0][url]');
 		textSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');

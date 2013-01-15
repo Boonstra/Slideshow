@@ -3,7 +3,7 @@
 
 	<?php foreach($settings as $key => $value): ?>
 
-	<?php if( !isset($value, $value['type'], $value['value'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
+	<?php if( !isset($value, $value['type'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
 
 	<tr <?php if(isset($value['dependsOn'])) echo 'style="display:none;"'; ?>>
 		<td><?php echo $value['description']; ?></td>

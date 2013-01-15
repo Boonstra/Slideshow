@@ -195,36 +195,10 @@ class SlideshowPluginPostType {
 	static function slidesMetaBox(){
 		global $post;
 
-		// Get slides
-		$slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
+		// Get views
+		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
 
-		// Get settings. Since in version 2.2.X slides aren't put into views yet, this has to be done manually
-		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
-		$slidesPerView = 1;
-		if(isset($settings['slidesPerView']));
-			$slidesPerView = $settings['slidesPerView'];
-
-		// Loop through slides, forcing them into views
-		$i = 0;
-		$viewId = -1;
-		$views = array();
-		if(is_array($slides)){
-			foreach($slides as $slide){
-
-				// Create new view when view is full or not yet created
-				if($i % $slidesPerView == 0){
-
-					$viewId++;
-					$views[$viewId] = new SlideshowPluginSlideshowView();
-				}
-
-				// Add slide to view
-				$views[$viewId]->addSlide($slide);
-
-				$i++;
-			}
-		}
-
+		// Insert slide buttons
 		echo '<p style="text-align: center;">
 			<i>' . __('Insert', 'slideshow-plugin') . ':</i><br/>' .
 			SlideshowPluginSlideInserter::getImageSlideInsertButton() .
@@ -232,9 +206,11 @@ class SlideshowPluginPostType {
 			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
 		'</p>';
 
-		if(count($slides) <= 0)
+		// No views/slides message
+		if(count($views) <= 0)
 			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
 
+		// Style
 		echo '<style type="text/css">
 			.sortable li {
 				cursor: pointer;
@@ -245,19 +221,19 @@ class SlideshowPluginPostType {
 			}
 		</style>';
 
+		// Start list
 		echo '<ul class="sortable-slides-list">';
 
+		// Print views
 		if(is_array($views))
 			foreach($views as $view)
 				echo $view->toBackEndHTML();
 
+		// Templates
+		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
+
+		// End list
 		echo '</ul>';
-
-		// Set url from which a substitute icon can be fetched
-		//$noPreviewIcon = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
-
-		// Include slides preview file
-		//include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slides.php';
 	}
 
 	/**

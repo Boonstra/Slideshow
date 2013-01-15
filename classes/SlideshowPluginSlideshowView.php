@@ -52,14 +52,14 @@ class SlideshowPluginSlideshowView {
 	 */
 	function toFrontEndHTML($return = true){
 
-		$frontEndHTML = 'view begin';
+		$frontEndHTML = '<div class="slideshow_view">';
 
 		foreach($this->slides as $slide){
 
 			$frontEndHTML .= $slide->toFrontEndHTML();
 		}
 
-		$frontEndHTML .= 'view end';
+		$frontEndHTML .= '<div style="clear: both;"></div></div>';
 
 		if($return)
 			return $frontEndHTML;

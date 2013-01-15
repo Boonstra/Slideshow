@@ -1,10 +1,12 @@
 <?php
 
-$title = $description = $color = $url = $target = '';
+$title = $description = $textColor = $color = $url = $target = '';
 if(isset($properties['title']))
-	$title = $properties['title'];
+	$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
 if(isset($properties['description']))
-	$description = $properties['description'];
+	$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
+if(isset($properties['textColor']))
+	$textColor = $properties['textColor'];
 if(isset($properties['color']))
 	$color = $properties['color'];
 if(isset($properties['url']))
@@ -29,6 +31,9 @@ if(isset($properties['urlTarget']))
 
 		<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
 		<textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
+
+		<i><?php _e('Text color', 'slideshow-plugin'); ?></i><br />
+		<input type="text" name="<?php echo $name; ?>[textColor]" value="<?php echo !empty($textColor) ? $textColor : '000000'; ?>" class="color {required:false}" /><br />
 
 		<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
 		<input type="text" name="<?php echo $name; ?>[color]" value="<?php echo $color; ?>" class="color {required:false}" />

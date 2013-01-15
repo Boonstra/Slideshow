@@ -29,7 +29,7 @@
 /* ==== ==== ==== Custom styles ==== ==== ==== */
 
 .custom-styles {
-	min-width: 500px;
+	min-width: 650px;
 }
 
 .custom-styles .styles-list {
@@ -88,7 +88,7 @@
 .custom-styles .style-editors {
 	float: left;
 
-	min-width: 350px;
+	min-width: 500px;
 
 	padding-left: 10px;
 	margin: 0 -21px 0 -1px;

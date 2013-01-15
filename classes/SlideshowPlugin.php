@@ -73,18 +73,14 @@ class SlideshowPlugin {
 		// Log slideshow's issues to be able to track them on the page.
 		$log = array();
 
-		// Get slides
-		$slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
-		if(!is_array($slides) || count($slides) <= 0)
-			$log[] = 'No slides were found';
+		// Get views
+		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
+		if(!is_array($views) || count($views) <= 0)
+			$log[] = 'No views were found';
 
 		// Get settings
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
 		$styleSettings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID);
-
-		// Randomize if setting is true.
-		if(isset($settings['random']) && $settings['random'] == 'true')
-			shuffle($slides);
 
 		// Enqueue functional sheet
 		wp_enqueue_style(
@@ -134,9 +130,9 @@ class SlideshowPlugin {
 			'slideshow-jquery-image-gallery-script',
 			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.js',
 			array(
-                'jquery',
-                'swfobject'
-            ),
+				'jquery',
+				'swfobject'
+			),
 			SlideshowPluginMain::$version
 		);
 
@@ -146,6 +142,87 @@ class SlideshowPlugin {
 			'SlideshowPluginSettings_' . $sessionID,
 			$settings
 		);
+
+
+
+
+
+//		// Log slideshow's issues to be able to track them on the page.
+//		$log = array();
+//
+//		// Get slides
+//		$slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
+//		if(!is_array($slides) || count($slides) <= 0)
+//			$log[] = 'No slides were found';
+//
+//		// Get settings
+//		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
+//		$styleSettings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID);
+//
+//		// Randomize if setting is true.
+//		if(isset($settings['random']) && $settings['random'] == 'true')
+//			shuffle($slides);
+//
+//		// Enqueue functional sheet
+//		wp_enqueue_style(
+//			'slideshow_functional_style',
+//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/functional.css',
+//			array(),
+//			SlideshowPluginMain::$version
+//		);
+//
+//		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
+//		$sessionID = self::$sessionCounter++;
+//
+//		// Get stylesheet. If the style was not found, see if a default stylesheet can be loaded
+//		$style = get_option($styleSettings['style'], null);
+//		if(!isset($style)){
+//
+//			// Check if default stylesheet exists, if not get the light variant
+//			$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . $styleSettings['style'];
+//			if(!file_exists($filePath))
+//				$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'style-light.css';
+//
+//			if(file_exists($filePath)){
+//				ob_start();
+//				include($filePath);
+//				$style = ob_get_clean();
+//			}
+//		}
+//
+//		// Append the random ID to the slideshow container in the stylesheet, to identify multiple slideshows
+//		if(!empty($style)){
+//
+//			// Replace URL tag with the site's URL
+//			$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $style);
+//
+//			// Add slideshow's page ID to the CSS container class to differentiate between slideshows
+//			$style = str_replace('.slideshow_container', '.slideshow_container_' . $sessionID, $style);
+//		}
+//
+//		// Include output file to store output in $output.
+//		$output = '';
+//		ob_start();
+//		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slideshow.php');
+//		$output .= ob_get_clean();
+//
+//		// Enqueue slideshow script
+//		wp_enqueue_script(
+//			'slideshow-jquery-image-gallery-script',
+//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.js',
+//			array(
+//                'jquery',
+//                'swfobject'
+//            ),
+//			SlideshowPluginMain::$version
+//		);
+//
+//		// Include slideshow settings by localizing them
+//		wp_localize_script(
+//			'slideshow-jquery-image-gallery-script',
+//			'SlideshowPluginSettings_' . $sessionID,
+//			$settings
+//		);
 
 		// Return output
 		return $output;

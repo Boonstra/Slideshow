@@ -11,6 +11,7 @@
  * A text slide can consist of one of these properties:
  * - title
  * - description
+ * - textColor
  * - color
  * - url
  * - urlTarget
@@ -68,7 +69,7 @@ class SlideshowPluginSlideshowSlide {
 		$file = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR .
 			'views' . DIRECTORY_SEPARATOR .
 			__CLASS__ . DIRECTORY_SEPARATOR .
-			'frontend' . $this->properties['type'] . '.php';
+			'frontend_' . $this->properties['type'] . '.php';
 
 		// Include file path
 		if(!file_exists($file))
@@ -102,6 +103,7 @@ class SlideshowPluginSlideshowSlide {
 		if(!isset($this->properties['type']) || empty($this->properties['type']))
 			return '';
 
+		// Make properties array available to included file
 		$properties = $this->properties;
 
 		// The name is used to prefix a setting name with. Although the ID's are set on load, set a random one to be sure
