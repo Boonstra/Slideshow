@@ -5,7 +5,7 @@
     style="padding-left: .4em;"
 >
 	<img
-		src="<?php echo SlideshowPluginMain::getPluginUrl() . '/images/adminIcon.png'; ?>"
+		src="<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon.png'; ?>"
 		alt="<?php _e('Insert a Slideshow', 'slideshow-plugin'); ?>"
 	    style="vertical-align: text-top;"
 	/>
@@ -21,7 +21,6 @@
 	<div style="border: 1px solid #ddd; padding: 10px; color: #5a5a5a;">
 
 		<?php if($slideshows instanceof WP_Query && count($slideshows->get_posts()) > 0): ?>
-
 		<table>
 			<tr>
 
