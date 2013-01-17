@@ -157,8 +157,13 @@ personal taste.
 == Changelog ==
 
 = 2.2.0 Beta =
-*   Fixed: Image title and description were filled with attachment's content.
-*
+*   The slideshow script has been completely renewed, making it more lightweight, more versatile and responsive altogether.
+*   Slideshow now has a continuing loop.
+*   Pagination bullets can now be shown.
+*   Slide order can now be completely random, as can the animation type.
+*   Added new animations.
+*   Slideshow now pauses when a (YouTube) video is playing or when a mouse is hovering over.
+*   Fixed: Image title and description were wrongly filled with attachment's content.
 
 = 2.1.23 =
 *   Default settings can now be changed from the 'General Settings' page.

@@ -59,8 +59,67 @@ class SlideshowPluginInstaller {
 		if(self::firstVersionGreaterThanSecond('2.1.23', $currentVersion) || $currentVersion == null)
 			self::updateV2_1_20_to_V2_2_1_23();
 
+		// Update to version 2.2.0
+		if(self::firstVersionGreaterThanSecond('2.2.0', $currentVersion) || $currentVersion == null)
+			self::updateV2_2_1_23_to_V_2_2_0();
+
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.2.0 comes with redesigned stylesheets, which makes the old ones obsolete. Set the style settings for
+	 * each slideshow to 'Light', if it's a custom style.
+	 *
+	 * @since 2.2.0
+	 */
+	function updateV2_2_1_23_to_V_2_2_0(){
+
+		// Check if this has already been done
+		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0') !== false)
+			return;
+
+		// Get slideshows
+		$slideshows = get_posts(array(
+			'numberposts' => -1,
+			'offset' => 0,
+			'post_type' => 'slideshow'
+		));
+
+		// Loop through slideshows
+		if(is_array($slideshows) && count($slideshows > 0)){
+			foreach($slideshows as $slideshow){
+
+				// Get settings
+				$styleSettings = maybe_unserialize(get_post_meta(
+					$slideshow->ID,
+					'styleSettings',
+					true
+				));
+				if(!is_array($styleSettings) || count($styleSettings) <= 0)
+					continue;
+
+				// Only set style to the default light style if the style is currently a custom one
+				if( isset($styleSettings['style']) &&
+					$styleSettings['style'] != 'light' &&
+					$styleSettings['style'] != 'dark'){
+
+					$styleSettings['style'] = 'light';
+				}
+
+				// Delete 'custom' key from array
+				unset($styleSettings['custom']);
+
+				// Update post meta
+				update_post_meta(
+					$slideshow->ID,
+					'styleSettings',
+					$styleSettings
+				);
+			}
+		}
+
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0', 'updated');
 	}
 
 	/**
@@ -142,7 +201,7 @@ class SlideshowPluginInstaller {
 			}
 		}
 
-		update_option('slideshow-plugin-updated-from-v2-to-v2-1-20', 'updated');
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23', 'updated');
 	}
 
 	/**
