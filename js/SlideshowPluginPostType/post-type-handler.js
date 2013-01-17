@@ -10,18 +10,18 @@ jQuery(document).ready(function(){
 		var element = jQuery(this).closest('tr');
 		if((jQuery('input[name="' + attributes[1] + '"]').val() == attributes[2] && jQuery('input[name="' + attributes[1] + '"]').prop('checked')) ||
 			jQuery('select[name="' + attributes[1] + '"]').val() == attributes[2])
-			setElementVisibility(element, true);
+			jQuery(element).show();
 		else
-			setElementVisibility(element, false);
+			jQuery(element).hide();
 
 		// On change, set field's visibility
 		jQuery('input[name="' + attributes[1] + '"], select[name="' + attributes[1] + '"]').change(attributes, function(){
 			var element = jQuery('.' + attributes[3]).closest('tr');
 
 			if(jQuery(this).val() == attributes[2])
-				setElementVisibility(element, true);
+				animateElementVisibility(element, true);
 			else
-				setElementVisibility(element, false);
+				animateElementVisibility(element, false);
 		});
 	});
 
@@ -31,10 +31,20 @@ jQuery(document).ready(function(){
 	 * @param element
 	 * @param visible
 	 */
-	function setElementVisibility(element, visible){
-		if(visible)
-			jQuery(element).css({'display': 'table-row'});
-		else
-			jQuery(element).css({'display': 'none'});
+	function animateElementVisibility(element, visible){
+		if(visible){
+			jQuery(element)
+				.show()
+				.css('background-color', '#c0dd52')
+
+			setTimeout(
+				function(){
+					jQuery(element).animate({ 'background-color': 'transparent' }, 1500);
+				},
+				500
+			);
+		}else{
+			jQuery(element).hide();
+		}
 	}
 });

@@ -1,4 +1,4 @@
-<div class="slideshow_container slideshow_container_0" style="<?php echo (isset($settings['width']) && $settings['width'] > 0) ? 'max-width: ' . $settings['width'] . 'px; ' : ''; ?><?php echo (isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px; ' : ''; ?>">
+<div class="slideshow_container slideshow_container_0" style="<?php echo (isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px; ' : ''; ?>">
 	<div class="slideshow_content">
 
 		<?php

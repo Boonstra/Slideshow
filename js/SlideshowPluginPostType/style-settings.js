@@ -1,6 +1,4 @@
 jQuery(document).ready(function(){
-	//if(jQuery('.custom-style-textarea').val() == '')
-	//	jQuery.get('./css/' + this.val(), function(data) { $('#myTextbox').val(data); });
 
 	var currentlyEdited = '.' + jQuery('.style-list').val();
 	setVisible(currentlyEdited, true);

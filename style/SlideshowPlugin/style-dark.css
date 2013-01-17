@@ -1,4 +1,4 @@
-.slideshow_container { }
+.slideshow_container { background: #000; }
 
 .slideshow_container a { text-decoration: none; }
 
@@ -16,46 +16,42 @@
 .slideshow_container .slideshow_transparent:hover { filter: alpha(opacity = 80); opacity: 0.8; }
 
 .slideshow_container .slideshow_controlPanel {
-	width: 21px;
-	height: 21px;
-	margin-left: -11px;
-	background: #000;
-	border-radius: 2px;
-	-moz-border-radius: 10px;
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
 }
 
 .slideshow_container .slideshow_controlPanel ul { }
 
 .slideshow_container .slideshow_controlPanel ul li {
-	margin: 3px;
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 }
 
 .slideshow_container .slideshow_controlPanel ul li:hover { }
 
 .slideshow_container .slideshow_play {
-	background: url('%plugin-url%/images/SlideshowPlugin/light-controlpanel.png') 0 0 no-repeat;
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-controlpanel.png') 0 0 no-repeat;
 }
 
 .slideshow_container .slideshow_pause {
-	background: url('%plugin-url%/images/SlideshowPlugin/light-controlpanel.png') -15px 0 no-repeat;
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-controlpanel.png') -20px 0 no-repeat;
 }
 
 .slideshow_container .slideshow_button {
-	margin-top: -20px;
-	height: 40px;
-	width: 19px;
-	background: url('%plugin-url%/images/SlideshowPlugin/light-arrows.png') no-repeat;
+	margin-top: -50px;
+	height: 100px;
+	width: 24px;
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-arrows.png') no-repeat;
 }
 
 .slideshow_container .slideshow_previous { }
 
 .slideshow_container .slideshow_next {
-	background-position: -19px 0;
+	background-position: -24px 0;
 }
 
-.slideshow_container .slideshow_pagination { bottom: 16px; }
+.slideshow_container .slideshow_pagination { bottom: 20px; }
 
 .slideshow_container .slideshow_pagination_center {	}
 
@@ -68,7 +64,7 @@
 
 .slideshow_container .slideshow_pagination ul li {
 	margin: 0 2px;
-	width: 11px;
-	height: 11px;
-	background: url('%plugin-url%/images/SlideshowPlugin/light-bullet.png');
+	width: 15px;
+	height: 15px;
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-bullet.png');
 }
