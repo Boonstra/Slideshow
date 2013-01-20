@@ -1,3 +1,4 @@
+<?php echo isset($settings['maxWidth']) && $settings['maxWidth'] > 0 ? '<div style="max-width: ' . $settings['maxWidth'] . 'px;">' : ''; ?>
 <div class="slideshow_container slideshow_container_0" style="<?php echo (isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px; ' : ''; ?>">
 	<div class="slideshow_content">
 
@@ -38,3 +39,4 @@
 	</style>
 	<?php endif; ?>
 </div>
+<?php echo isset($settings['maxWidth']) && $settings['maxWidth'] > 0 ? '</div>' : ''; ?>

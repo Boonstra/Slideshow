@@ -19,6 +19,15 @@
 
 		<p>
 			<input
+					type="button"
+					class="button-secondary"
+					value="<?php _e('Frequently Asked Questions (FAQ)', 'slideshow-plugin'); ?>"
+					onclick="window.open('http://wordpress.org/extend/plugins/slideshow-jquery-image-gallery/faq/')"
+					/>
+		</p>
+
+		<p>
+			<input
 				type="button"
 				class="button-secondary"
 				value="<?php _e('Questions / Suggestions', 'slideshow-plugin'); ?>"

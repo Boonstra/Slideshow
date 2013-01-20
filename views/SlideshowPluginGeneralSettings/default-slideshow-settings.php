@@ -32,18 +32,44 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 
 	<table>
 
+		<?php $groups = array(); ?>
 		<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
+
+		<?php if(!empty($defaultSettingValue['group']) && !isset($groups[$defaultSettingValue['group']])): $groups[$defaultSettingValue['group']] = true; ?>
+
+		<tr>
+			<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
+				<span style="display: inline-block; position: relative; top: 9px; padding: 0 12px; background: #fff;">
+					<?php echo $defaultSettingValue['group']; ?> <?php _e('settings', 'slideshow-plugin'); ?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"></td>
+		</tr>
+
+		<?php endif; ?>
 
 		<tr>
 			<td>
 				<?php echo $defaultSettingValue['description']; ?>
 			</td>
 			<td>
-				<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultSettings, $defaultSettingKey, $defaultSettingValue) ?>
+				<?php
+
+				echo SlideshowPluginSlideshowSettingsHandler::getInputField(
+					SlideshowPluginGeneralSettings::$defaultSettings,
+					$defaultSettingKey,
+					$defaultSettingValue,
+					/* hideDependentValues = */ false
+				);
+
+				?>
 			</td>
 		</tr>
 
 		<?php endforeach; ?>
+		<?php unset($groups); ?>
 
 	</table>
 </div>
@@ -63,7 +89,16 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 				<?php echo $defaultStyleSettingValue['description']; ?>
 			</td>
 			<td>
-				<?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginGeneralSettings::$defaultStyleSettings, $defaultStyleSettingKey, $defaultStyleSettingValue) ?>
+				<?php
+
+				echo SlideshowPluginSlideshowSettingsHandler::getInputField(
+					SlideshowPluginGeneralSettings::$defaultStyleSettings,
+					$defaultStyleSettingKey,
+					$defaultStyleSettingValue,
+					/* hideDependentValues = */ false
+				);
+
+				?>
 			</td>
 		</tr>
 

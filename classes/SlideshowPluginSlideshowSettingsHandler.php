@@ -381,12 +381,14 @@ class SlideshowPluginSlideshowSettingsHandler {
 			'descriptionSpeed' => '0.4',
 			'intervalSpeed' => '5',
 			'slidesPerView' => '1',
+			'maxWidth' => '0',
 			'preserveSlideshowDimensions' => 'true',
 			'aspectRatio' => '4:1',
 			'height' => '200',
 			'stretchImages' => 'true',
 			'showDescription' => 'true',
 			'hideDescription' => 'true',
+			'enableResponsiveness' => 'true',
 //			'descriptionHeight' => '50',
 			'play' => 'true',
 			'loop' => 'true',
@@ -416,12 +418,14 @@ class SlideshowPluginSlideshowSettingsHandler {
 				'descriptionSpeed' => array('type' => 'text', 'default' => $data['descriptionSpeed'], 'description' => __('Number of seconds the description takes to slide in', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
 				'intervalSpeed' => array('type' => 'text', 'default' => $data['intervalSpeed'], 'description' => __('Seconds between changing slides', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
 				'slidesPerView' => array('type' => 'text', 'default' => $data['slidesPerView'], 'description' => __('Number of slides to fit into one slide', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'preserveSlideshowDimensions' => array('type' => 'radio', 'default' => $data['preserveSlideshowDimensions'], 'description' => __('Shrink height when width shrinks', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
+				'maxWidth' => array('type' => 'text', 'default' => $data['maxWidth'], 'description' => __('Maximum width. When maximum width is 0, maximum width is ignored', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
+				'preserveSlideshowDimensions' => array('type' => 'radio', 'default' => $data['preserveSlideshowDimensions'], 'description' => __('Shrink height when width shrinks (Fixed height can be defined when setting this value to \'No\')', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
 				'aspectRatio' => array('type' => 'text', 'default' => $data['aspectRatio'], 'description' => sprintf('<a href="' . __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin') . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between width and height (width:height)', 'slideshow-plugin'), '</a>'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
 				'height' => array('type' => 'text', 'default' => $data['height'], 'description' => __('Slideshow\'s height', 'slideshow-plugin'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'false'), 'group' => __('Display', 'slideshow-plugin')),
 				'stretchImages' => array('type' => 'radio', 'default' => $data['stretchImages'], 'description' => __('Fit image into slide (Stretch image)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
 				'showDescription' => array('type' => 'radio', 'default' => $data['showDescription'], 'description' => __('Show title and description', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
 				'hideDescription' => array('type' => 'radio', 'default' => $data['hideDescription'], 'description' => __('Hide description box, pop up when mouse hovers over', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[showDescription]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
+				'enableResponsiveness' => array('type' => 'radio', 'default' => $data['enableResponsiveness'], 'description' => __('Enable responsiveness (Shrink slideshow\'s width when page\'s width shrinks)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[showDescription]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
 //				'descriptionHeight' => array('type' => 'text', 'default' => $data['descriptionHeight'], 'description' => __('Height of the description boxes', 'slideshow-plugin'), 'dependsOn' => array('settings[hideDescription]', 'false'), 'group' => __('Display', 'slideshow-plugin')),
 				'play' => array('type' => 'radio', 'default' => $data['play'], 'description' => __('Automatically slide to the next slide', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
 				'loop' => array('type' => 'radio', 'default' => $data['loop'], 'description' => __('Return to the beginning of the slideshow after last slide', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
@@ -487,9 +491,10 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param string $settingsKey
 	 * @param string $settingsName
 	 * @param mixed $settings
+	 * @param bool $hideDependentValues (optional, defaults to true)
 	 * @return mixed $inputField
 	 */
-	static function getInputField($settingsKey, $settingsName, $settings){
+	static function getInputField($settingsKey, $settingsName, $settings, $hideDependentValues = true){
 
 		if(!is_array($settings) || empty($settings) || empty($settingsName))
 			return null;
@@ -497,7 +502,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 		$inputField = '';
 		$name = $settingsKey . '[' . $settingsName . ']';
 		$displayValue = (!isset($settings['value']) || (empty($settings['value']) && !is_numeric($settings['value'])) ? $settings['default'] : $settings['value']);
-		$class = ((isset($settings['dependsOn']))? 'depends-on-field-value ' . $settings['dependsOn'][0] . ' ' . $settings['dependsOn'][1] . ' ': '') . $settingsKey . '-' . $settingsName;
+		$class = ((isset($settings['dependsOn']) && $hideDependentValues)? 'depends-on-field-value ' . $settings['dependsOn'][0] . ' ' . $settings['dependsOn'][1] . ' ': '') . $settingsKey . '-' . $settingsName;
 		switch($settings['type']){
 			case 'text':
 				$inputField .= '<input

@@ -6,16 +6,21 @@ jQuery(document).ready(function(){
 	jQuery('.depends-on-field-value').each(function(key, value){
 		var attributes = jQuery(this).attr('class').split(' ');
 
+		if(attributes[1] == 'settings[preserveSlideshowDimensions]'){
+		console.log(jQuery('input[name="' + attributes[1] + '"]:checked').val());
+		console.log(attributes[2]);
+		console.log();
+		console.log('---');
+		}
 		// Check if field should be shown
 		var element = jQuery(this).closest('tr');
-		if((jQuery('input[name="' + attributes[1] + '"]').val() == attributes[2] && jQuery('input[name="' + attributes[1] + '"]').prop('checked')) ||
-			jQuery('select[name="' + attributes[1] + '"]').val() == attributes[2])
+		if(jQuery('input[name="' + attributes[1] + '"]:checked').val() == attributes[2])
 			jQuery(element).show();
 		else
 			jQuery(element).hide();
 
 		// On change, set field's visibility
-		jQuery('input[name="' + attributes[1] + '"], select[name="' + attributes[1] + '"]').change(attributes, function(){
+		jQuery('input[name="' + attributes[1] + '"]').change(attributes, function(){
 			var element = jQuery('.' + attributes[3]).closest('tr');
 
 			if(jQuery(this).val() == attributes[2])
@@ -26,7 +31,7 @@ jQuery(document).ready(function(){
 	});
 
 	/**
-	 * Set element visibility
+	 * Animate to element's visibility
 	 *
 	 * @param element
 	 * @param visible
@@ -39,12 +44,12 @@ jQuery(document).ready(function(){
 
 			setTimeout(
 				function(){
-					jQuery(element).animate({ 'background-color': 'transparent' }, 1500);
+					jQuery(element).stop(true, true).animate({ 'background-color': 'transparent' }, 1500);
 				},
 				500
 			);
 		}else{
-			jQuery(element).hide();
+			jQuery(element).stop(true, true).hide();
 		}
 	}
 });

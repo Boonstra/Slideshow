@@ -13,9 +13,11 @@ Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
 
 == Description ==
 
-Slideshow provides an easy way to integrate a slideshow for any Wordpress installation.
+Slideshow version 2.2.0 Beta is now available for testing. [Click here to try it out!](http://stefanboonstra.com/)
 
-Any image can be loaded into the slideshow by picking it from the Wordpress media page, even images you've already
+Slideshow provides an easy way to integrate a slideshow for any WordPress installation.
+
+Any image can be loaded into the slideshow by picking it from the WordPress media page, even images you've already
 uploaded can be inserted into your slideshow right away!
 
 Fancy doing something crazy? You can create and use as many slideshows as you'd like, with
@@ -39,6 +41,7 @@ different images, settings and styles for each one of them.
  - Dutch
  - English
  - French (Translated by [Wptheme](http://wptheme.fr/))
+ - Spanish (Translated by Violeta Rosales)
  - Russian (Translated by [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
@@ -75,33 +78,39 @@ Click the 'Image slide' button in the 'Slides List' of the slideshow. A screen w
 search though all images that have already been uploaded to your WordPress website. If you want to add new images to the
 slideshow, or you do not have any images yet, you'll have to upload them to the WordPress media page first.
 
+= How do I change a slideshow's settings? =
+
+Just like the posts and pages you're already familiar with, slideshows can be edited. Go to the 'Slideshows' tab in your
+WordPress admin, and you'll see a list of slideshows. If you have not created a slideshow yet, you can do so by clicking
+'Add new' on that same page. If there are slideshows in the list, click on the title of the slideshow you want to change
+the settings of. On the slideshow's edit page you'll be able to find a box titled 'Slideshow Settings', in this box you
+can change the slideshow's settings.
+
+If you're creating multiple slideshows that should have the same settings, but their settings need to be different from
+the default settings, you can change the default settings by going to the 'General Settings' page and clicking on the
+'Default Slideshow Settings' tab. Newly created slideshows will start off with the settings you set there.
+
 = How do I customize the slideshow's style? =
 
 On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to the
 'Custom styles' tab. Here you'll see a list of default stylesheets, such as 'Light' and 'Dark', and a list of custom
 stylesheets; The ones you created.
 
-Choose a default stylesheet you'd like to customize and click 'Customize' top open the 'Custom style editor'. When
-you're done editing click 'Save Changes' and go to the slideshow you'd to style with the newly created stylesheet. In
-the 'Slideshow Style' box you can now find and select your custom stylesheet. You can set a stylesheet for multiple
+Choose a default stylesheet you'd like to customize and click 'Customize' to open the 'Custom style editor'. When
+you're done editing click 'Save Changes' and go to the slideshow you'd like to style with the newly created stylesheet.
+In the 'Slideshow Style' box you can now find and select your custom stylesheet. You can set a stylesheet for multiple
 slideshows.
 
 If you've already created a custom stylesheet, you can edit it by clicking 'Edit'. You can also delete it by clicking
 'Delete'. Be careful with this though, a deleted stylesheet cannot be retrieved and cannot be used by any slideshow
 anymore.
 
-= How do I change the slideshow's default settings? =
-
-On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to the
-'Default Slideshow Settings' tab. All the slideshow's default settings are listed here and can be changed so newly added
-slideshows will start out with these settings. Save your changes by clicking the 'Save Changes' button.
-
 = Some users can add, edit or delete slideshows, although I do not want them to. Can I prevent this from happening? =
 
 Yes you can. On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to
 the 'User Capabilities' tab (If you're not already there). The privileges that allow user groups to perform certain
 actions are listed here. To allow, for instance, a contributor to add a slideshow, click the box in front of 'Contributor'
-to grant him the right to add slideshow.
+to grant him the right to add slideshows.
 
 Note that when you grant someone the right to add or delete a slideshow, you'll also automatically grant him or her the
 right to edit slideshows, as this right is required to add or delete slideshows. The same is true for the reversed
