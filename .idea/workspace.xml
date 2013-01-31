@@ -20,6 +20,11 @@
       <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\button-next.png" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\button-previous.png" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\no-img.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
@@ -28,6 +33,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginPostType/post-type-handler.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginPostType/post-type-handler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginPostType/style-settings.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginPostType/style-settings.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" afterPath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" />
@@ -107,6 +117,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -125,23 +136,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="languages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,12 +246,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2854856" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2886873" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -265,6 +260,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -352,6 +348,13 @@
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="85" selection-start="8791" selection-end="8791" vertical-scroll-proportion="0.58553386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

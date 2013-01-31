@@ -4,16 +4,14 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
 Requires at least: 3.3
-Tested up to: 3.5
-Stable tag: 2.2.0-Beta
+Tested up to: 3.5.1
+Stable tag: 2.2.0
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
 
 
 == Description ==
-
-Slideshow version 2.2.0 Beta is now available for testing. [Click here to try it out!](http://stefanboonstra.com/)
 
 Slideshow provides an easy way to integrate a slideshow for any WordPress installation.
 
@@ -29,6 +27,7 @@ different images, settings and styles for each one of them.
  - Image slides
  - Text slides
  - Video slides
+ - Responsive
  - Place it anywhere on your website
  - Run multiple slideshows on the same page
  - Change animations and handling
@@ -37,12 +36,12 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Chinese (Translated by [Kevin Tell](http://www.ivygg.com/))
+ - Chinese (27% Translated by [Kevin Tell](http://www.ivygg.com/))
  - Dutch
  - English
- - French (Translated by [Wptheme](http://wptheme.fr/))
- - Spanish (Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Russian (Translated by [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
+ - French (60% Translated by [Wptheme](http://wptheme.fr/))
+ - Spanish (62% Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Russian (56% Translated by [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
 thanks in advance!
