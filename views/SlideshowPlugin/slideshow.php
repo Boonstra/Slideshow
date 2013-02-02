@@ -1,6 +1,6 @@
 <?php echo isset($settings['maxWidth']) && $settings['maxWidth'] > 0 ? '<div style="max-width: ' . $settings['maxWidth'] . 'px;">' : ''; ?>
-<div class="slideshow_container slideshow_container_<?php echo $sessionID; ?>" style="display: none; <?php echo (isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px; ' : ''; ?>">
-	<div class="slideshow_content">
+<div class="slideshow_container slideshow_container_<?php echo $sessionID; ?>" style="<?php echo (isset($settings['preserveSlideshowDimensions']) && $settings['preserveSlideshowDimensions'] == 'false' && isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px; ' : ''; ?>">
+	<div class="slideshow_content" style="display: none;">
 
 		<?php
 

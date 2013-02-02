@@ -164,6 +164,10 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.2 =
+*   Live width calculations that make the slideshow responsive have been halved to improve performance.
+*   Default settings have been tuned to cater better to most users.
+
 = 2.2.1 =
 *   Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.
 *   Fixed: The functional stylesheet defined the last five header elements for the entire page, instead of just for the slideshow.
