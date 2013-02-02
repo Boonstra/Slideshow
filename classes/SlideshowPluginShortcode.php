@@ -7,7 +7,7 @@
  *
  * @since 1.2.0
  * @author: Stefan Boonstra
- * @version: 06-12-12
+ * @version: 01-02-2013
  */
 class SlideshowPluginShortcode {
 

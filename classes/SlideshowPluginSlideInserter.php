@@ -6,7 +6,7 @@
  * TODO than just inserting slides. (Show and delete functionality should be applied here as well)
  * @since 2.0.0
  * @author Stefan Boonstra
- * @version 03-10-2012
+ * @version 01-02-2013
  */
 class SlideshowPluginSlideInserter {
 

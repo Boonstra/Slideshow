@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/SlideshowPlugin/dark-bullet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/SlideshowPlugin/light-bullet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSlide.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/SlideshowPlugin/slideshow.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_attachment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_templates.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_attachment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_text.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_video.php" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\js\SlideshowPlugin\slideshow.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\adminIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\button-next.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\button-previous.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\images\no-img.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginPostType/post-type-handler.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginPostType/post-type-handler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginPostType/style-settings.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginPostType/style-settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" afterPath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/style-dark.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/style-dark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/style-light.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/style-light.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/slides.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/style-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/support-plugin.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/support-plugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" afterPath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
-    </list>
+    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="" />
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,7 +19,28 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="15" selection-start="34" selection-end="34" vertical-scroll-proportion="0.039035592">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slideshow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.65384614">
+              <folding>
+                <element signature="e#6#498#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -239,18 +210,35 @@
       <created>1358843504160</created>
       <updated>1358843504160</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Releasing version 2.2.0">
+      <created>1359643076125</created>
+      <updated>1359643076125</updated>
+    </task>
+    <task id="LOCAL-00011" summary="R comes before S in the alphabet. I learnt that now.">
+      <created>1359643299105</created>
+      <updated>1359643299105</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added upgrade notices, as the new version will have to reset some settings.">
+      <created>1359647057461</created>
+      <updated>1359647057461</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.&#10;Fixed: The functional stylesheet defined the last five header elements for the entire page, instead of just for the slideshow.&#10;Fixed: Pagination bullets were showing multiple times because of a CSS bug.&#10;Padding and margin in unordered lists set to 0 by default.&#10;Videos can now be played in full-screen.&#10;Functional stylesheet temporarily moved to the head section of the page until the stylesheets can be loaded beneath it.">
+      <created>1359741937125</created>
+      <updated>1359741937125</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2886873" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2950907" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -260,7 +248,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -271,8 +258,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -301,7 +288,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linked to Violeta Rosales' Twitter account" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.&#10;Fixed: The functional stylesheet defined the last five header elements for the entire page, instead of just for the slideshow.&#10;Fixed: Pagination bullets were showing multiple times because of a CSS bug.&#10;Padding and margin in unordered lists set to 0 by default.&#10;Videos can now be played in full-screen.&#10;Functional stylesheet temporarily moved to the head section of the page until the stylesheets can be loaded beneath it." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -321,11 +308,38 @@
     <MESSAGE value="Adding Spanish Translation by Violeta Rosales" />
     <MESSAGE value="Edited FAQ" />
     <MESSAGE value="Linked to Violeta Rosales' Twitter account" />
+    <MESSAGE value="Releasing version 2.2.0" />
+    <MESSAGE value="R comes before S in the alphabet. I learnt that now." />
+    <MESSAGE value="Added upgrade notices, as the new version will have to reset some settings." />
+    <MESSAGE value="Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.&#10;Fixed: The functional stylesheet defined the last five header elements for the entire page, instead of just for the slideshow.&#10;Fixed: Pagination bullets were showing multiple times because of a CSS bug.&#10;Padding and margin in unordered lists set to 0 by default.&#10;Videos can now be played in full-screen.&#10;Functional stylesheet temporarily moved to the head section of the page until the stylesheets can be loaded beneath it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#6#498#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="99" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="22" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
@@ -340,21 +354,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
+    <entry file="file://$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="85" selection-start="8791" selection-end="8791" vertical-scroll-proportion="0.58553386">
-          <folding />
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.65384614">
+          <folding>
+            <element signature="e#6#498#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po">
+    <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="2" column="15" selection-start="34" selection-end="34" vertical-scroll-proportion="0.039035592">
           <folding />
         </state>
       </provider>

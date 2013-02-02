@@ -4,7 +4,7 @@
  *
  * @since 2.1.20
  * @author Stefan Boonstra
- * @version 19-12-12
+ * @version 01-02-2013
  */
 class SlideshowPluginSlideshowSettingsHandler {
 
@@ -382,14 +382,13 @@ class SlideshowPluginSlideshowSettingsHandler {
 			'intervalSpeed' => '5',
 			'slidesPerView' => '1',
 			'maxWidth' => '0',
-			'preserveSlideshowDimensions' => 'true',
-			'aspectRatio' => '4:1',
+			'aspectRatio' => '3:1',
 			'height' => '200',
 			'stretchImages' => 'true',
 			'showDescription' => 'true',
 			'hideDescription' => 'true',
+			'preserveSlideshowDimensions' => 'false',
 			'enableResponsiveness' => 'true',
-//			'descriptionHeight' => '50',
 			'play' => 'true',
 			'loop' => 'true',
 			'pauseOnHover' => 'true',
@@ -419,14 +418,13 @@ class SlideshowPluginSlideshowSettingsHandler {
 				'intervalSpeed' => array('type' => 'text', 'default' => $data['intervalSpeed'], 'description' => __('Seconds between changing slides', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
 				'slidesPerView' => array('type' => 'text', 'default' => $data['slidesPerView'], 'description' => __('Number of slides to fit into one slide', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
 				'maxWidth' => array('type' => 'text', 'default' => $data['maxWidth'], 'description' => __('Maximum width. When maximum width is 0, maximum width is ignored', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'preserveSlideshowDimensions' => array('type' => 'radio', 'default' => $data['preserveSlideshowDimensions'], 'description' => __('Shrink height when width shrinks (Fixed height can be defined when setting this value to \'No\')', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
-				'aspectRatio' => array('type' => 'text', 'default' => $data['aspectRatio'], 'description' => sprintf('<a href="' . __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin') . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between width and height (width:height)', 'slideshow-plugin'), '</a>'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
+				'aspectRatio' => array('type' => 'text', 'default' => $data['aspectRatio'], 'description' => sprintf('<a href="' . __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin') . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between slideshow\'s width and height (width:height)', 'slideshow-plugin'), '</a>'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
 				'height' => array('type' => 'text', 'default' => $data['height'], 'description' => __('Slideshow\'s height', 'slideshow-plugin'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'false'), 'group' => __('Display', 'slideshow-plugin')),
 				'stretchImages' => array('type' => 'radio', 'default' => $data['stretchImages'], 'description' => __('Fit image into slide (Stretch image)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
+				'preserveSlideshowDimensions' => array('type' => 'radio', 'default' => $data['preserveSlideshowDimensions'], 'description' => __('Shrink slideshow\'s height when width shrinks', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
+				'enableResponsiveness' => array('type' => 'radio', 'default' => $data['enableResponsiveness'], 'description' => __('Enable responsiveness (Shrink slideshow\'s width when page\'s width shrinks)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[showDescription]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
 				'showDescription' => array('type' => 'radio', 'default' => $data['showDescription'], 'description' => __('Show title and description', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
 				'hideDescription' => array('type' => 'radio', 'default' => $data['hideDescription'], 'description' => __('Hide description box, pop up when mouse hovers over', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[showDescription]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
-				'enableResponsiveness' => array('type' => 'radio', 'default' => $data['enableResponsiveness'], 'description' => __('Enable responsiveness (Shrink slideshow\'s width when page\'s width shrinks)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[showDescription]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
-//				'descriptionHeight' => array('type' => 'text', 'default' => $data['descriptionHeight'], 'description' => __('Height of the description boxes', 'slideshow-plugin'), 'dependsOn' => array('settings[hideDescription]', 'false'), 'group' => __('Display', 'slideshow-plugin')),
 				'play' => array('type' => 'radio', 'default' => $data['play'], 'description' => __('Automatically slide to the next slide', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
 				'loop' => array('type' => 'radio', 'default' => $data['loop'], 'description' => __('Return to the beginning of the slideshow after last slide', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
 				'pauseOnHover' => array('type' => 'radio', 'default' => $data['loop'], 'description' => __('Pause slideshow when mouse hovers over', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),

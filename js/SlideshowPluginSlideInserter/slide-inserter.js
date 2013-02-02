@@ -229,7 +229,6 @@ jQuery(document).ready(function(){
 		imageSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
 		imageSlide.find('.type').attr('name', 'slides[0][type]');
 		imageSlide.find('.postId').attr('name', 'slides[0][postId]');
-		imageSlide.find('.slide_order').attr('name', 'slides[0][order]');
 
 		// Register delete link (only needs to delete from DOM)
 		imageSlide.find('.slideshow-delete-new-slide').click(function(){
@@ -263,7 +262,6 @@ jQuery(document).ready(function(){
 		textSlide.find('.url').attr('name', 'slides[0][url]');
 		textSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
 		textSlide.find('.type').attr('name', 'slides[0][type]');
-		textSlide.find('.slide_order').attr('name', 'slides[0][order]');
 
 		// Register delete link (only needs to delete from DOM)
 		textSlide.find('.slideshow-delete-new-slide').click(function(){
@@ -292,7 +290,6 @@ jQuery(document).ready(function(){
 		// Set names to be saved to the database
 		videoSlide.find('.videoId').attr('name', 'slides[0][videoId]');
 		videoSlide.find('.type').attr('name', 'slides[0][type]');
-		videoSlide.find('.slide_order').attr('name', 'slides[0][order]');
 
 		// Register delete link (only needs to delete from DOM)
 		videoSlide.find('.slideshow-delete-new-slide').click(function(){

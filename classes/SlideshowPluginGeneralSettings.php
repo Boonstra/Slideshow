@@ -5,7 +5,7 @@
  *
  * @since 2.1.22
  * @author Stefan Boonstra
- * @version 19-12-12
+ * @version 01-02-2013
  */
 class SlideshowPluginGeneralSettings {
 

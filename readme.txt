@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 2.2.0
+Stable tag: 2.2.2
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -27,7 +27,7 @@ different images, settings and styles for each one of them.
  - Image slides
  - Text slides
  - Video slides
- - Responsive
+ - Completely responsive
  - Place it anywhere on your website
  - Run multiple slideshows on the same page
  - Change animations and handling
@@ -40,8 +40,8 @@ different images, settings and styles for each one of them.
  - Dutch
  - English
  - French (60% Translated by [Wptheme](http://wptheme.fr/))
- - Spanish (62% Translated by [Violeta Rosales](https://twitter.com/violetisha))
  - Russian (56% Translated by [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
+ - Spanish (62% Translated by [Violeta Rosales](https://twitter.com/violetisha))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
 thanks in advance!
@@ -164,7 +164,15 @@ personal taste.
 
 == Changelog ==
 
-= 2.2.0 Beta =
+= 2.2.1 =
+*   Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.
+*   Fixed: The functional stylesheet defined the last five header elements for the entire page, instead of just for the slideshow.
+*   Fixed: Pagination bullets were showing multiple times because of a CSS bug.
+*   Padding and margin in unordered lists set to 0 by default.
+*   Videos can now be played in full-screen.
+*   Functional stylesheet temporarily moved to the head section of the page until the stylesheets can be loaded beneath it.
+
+= 2.2.0 =
 *   The slideshow script has been completely renewed, making it more lightweight, more versatile and responsive altogether.
 *   Slideshow now has a continuing loop.
 *   Pagination bullets can now be shown.

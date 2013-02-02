@@ -33,15 +33,15 @@ if(isset($attachment)):
 
 	if($displaySlide): ?>
 
-		<li class="widefat sortable-slides-list-item" style="margin: 10px 0; width: auto; background-color: #fafafa;">
+		<li class="widefat sortable-slides-list-item">
 
 			<h3 class="hndle">
-				<span style="font-size: 0.8em;">
+				<span>
 					<?php _e('Image slide', 'slideshow-plugin'); ?>
 				</span>
 			</h3>
 
-			<p style="float: left; margin: 5px;">
+			<p>
 
 				<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
 					<img width="80" height="60" src="<?php echo $imageSrc; ?>" class="attachment-80x60" alt="<?php echo $attachment->post_title; ?>" title="<?php echo $attachment->post_title; ?>" />
@@ -49,25 +49,24 @@ if(isset($attachment)):
 
 			</p>
 
-			<p style="float: left; margin: 5px 15px 5px 5px;">
+			<p>
 
 				<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
-				<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" />
+				<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" />
 
 			</p>
-			<p style="clear: both"></p>
 
-			<p style="margin: 5px 15px 5px 5px;">
+			<p>
 
 				<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
 				<textarea name="<?php echo $name; ?>[description]" rows="3" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
 
 			</p>
 
-			<p style="margin: 5px 15px 5px 5px;">
+			<p>
 
 				<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
-				<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />
+				<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" /><br />
 
 				<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
 				<select name="<?php echo $name; ?>[urlTarget]">
@@ -80,7 +79,7 @@ if(isset($attachment)):
 			<input type="hidden" name="<?php echo $name; ?>[type]" value="attachment" />
 			<input type="hidden" name="<?php echo $name; ?>[postId]" value="<?php echo $attachment->ID; ?>" />
 
-			<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-slide">
+			<p class="slideshow-delete-slide">
 				<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
 				<span style="display: none;" class="<?php echo $id; ?>"></span>
 			</p>

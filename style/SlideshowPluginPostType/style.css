@@ -1,0 +1,20 @@
+/* ====  ==== */
+.sortable-slides-list li {
+	margin: 10px 0;
+	width: auto;
+	background-color: #fafafa;
+}
+
+.sortable-slides-list li .hndle span {
+	font-size: 0.8em;
+}
+
+.sortable-slides-list li p {
+	margin: 5px 15px 5px 5px;
+}
+
+.sortable-slides-list li .slideshow-delete-slide,
+.sortable-slides-list li .slideshow-delete-new-slide {
+	color: red;
+	cursor: pointer;
+}

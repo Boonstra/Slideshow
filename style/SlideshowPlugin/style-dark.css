@@ -66,5 +66,5 @@
 	margin: 0 2px;
 	width: 15px;
 	height: 15px;
-	background: url('%plugin-url%/images/SlideshowPlugin/dark-bullet.png');
+	background: url('%plugin-url%/images/SlideshowPlugin/dark-bullet.png') no-repeat;
 }

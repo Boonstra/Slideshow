@@ -16,18 +16,18 @@ if(isset($properties['urlTarget']))
 
 ?>
 
-<li class="widefat sortable-slides-list-item" style="margin: 10px 0; width: auto; background-color: #fafafa;">
+<li class="widefat sortable-slides-list-item">
 
 	<h3 class="hndle">
-		<span style="font-size: 0.8em;">
+		<span>
 			<?php _e('Text slide', 'slideshow-plugin'); ?>
 		</span>
 	</h3>
 
-	<p style="margin: 5px 15px 5px 5px;">
+	<p>
 
 		<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
-		<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" /><br />
+		<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" /><br />
 
 		<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
 		<textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
@@ -40,10 +40,10 @@ if(isset($properties['urlTarget']))
 
 	</p>
 
-	<p style="margin: 5px 15px 5px 5px;">
+	<p>
 
 		<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
-		<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />
+		<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" /><br />
 
 		<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
 		<select name="<?php echo $name; ?>[urlTarget]">
@@ -55,7 +55,7 @@ if(isset($properties['urlTarget']))
 
 	<input type="hidden" name="<?php echo $name; ?>[type]" value="text" />
 
-	<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-slide">
+	<p class="slideshow-delete-slide">
 		<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
 		<span style="display: none;" class="<?php echo $id; ?>"></span>
 	</p>

@@ -70,5 +70,5 @@
 	margin: 0 2px;
 	width: 11px;
 	height: 11px;
-	background: url('%plugin-url%/images/SlideshowPlugin/light-bullet.png');
+	background: url('%plugin-url%/images/SlideshowPlugin/light-bullet.png') no-repeat;
 }
