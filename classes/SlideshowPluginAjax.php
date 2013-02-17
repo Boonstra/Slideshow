@@ -18,6 +18,5 @@ class SlideshowPluginAjax {
 	 */
 	static function init() {
 		add_action('wp_ajax_slideshow_slide_inserter_search_query', array('SlideshowPluginSlideInserter', 'printSearchResults'));
-		add_action('wp_ajax_slideshow_delete_slide', array('SlideshowPluginSlideInserter', 'deleteSlide'));
 	}
 }

@@ -6,12 +6,6 @@ jQuery(document).ready(function(){
 	jQuery('.depends-on-field-value').each(function(key, value){
 		var attributes = jQuery(this).attr('class').split(' ');
 
-		if(attributes[1] == 'settings[preserveSlideshowDimensions]'){
-		console.log(jQuery('input[name="' + attributes[1] + '"]:checked').val());
-		console.log(attributes[2]);
-		console.log();
-		console.log('---');
-		}
 		// Check if field should be shown
 		var element = jQuery(this).closest('tr');
 		if(jQuery('input[name="' + attributes[1] + '"]:checked').val() == attributes[2])

@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 2.2.2
+Stable tag: 2.2.4
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -37,6 +37,7 @@ different images, settings and styles for each one of them.
 = Languages =
 
  - Chinese (27% Translated by [Kevin Tell](http://www.ivygg.com/))
+ - Czech (100% Translated by Edhel)
  - Dutch
  - English
  - French (60% Translated by [Wptheme](http://wptheme.fr/))
@@ -164,9 +165,21 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.4 =
+*   Fixed: Video slideshows will now work on mobile devices supported by YouTube.
+*   Fixed: Removed multi-line element tags to prevent WordPress from adding '<br />' tags into them.
+*   Fixed: Quick editing a slideshow deleted its content.
+
+= 2.2.3 =
+*   Fixed: A 'console.log();' message presumably caused Internet Explorer to have problems when inserting slides.
+*   Fixed: Slideshows that are hidden on page's load now wait to become visible before calculating their size.
+
 = 2.2.2 =
-*   Live width calculations that make the slideshow responsive have been halved to improve performance.
+*   Fixed: Float and size bugs caused by the maximum width element.
+*   Fixed: PHP errors were showing in 'Delete slide' links.
+*   Live width calculations have been halved to improve performance.
 *   Default settings have been tuned to cater better to most users.
+*   Added Czech translation by Edhel.
 
 = 2.2.1 =
 *   Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.

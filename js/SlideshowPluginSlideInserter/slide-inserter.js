@@ -82,45 +82,32 @@ jQuery(document).ready(function(){
 	});
 
 	/**
-	 * Ajax deletes a slide from the slides list and from the database
+	 * Call slideshowDeleteSlide on click
 	 */
 	jQuery('.slideshow-delete-slide').click(function(){
+		slideshowDeleteSlide(jQuery(this).closest('li'));
+	});
+
+	/**
+	 * Deletes slide from DOM
+	 *
+	 * @param slide
+	 */
+	function slideshowDeleteSlide(slide){
+
+		// Deletion message
 		var confirmMessage = 'Are you sure you want to delete this slide?';
 		if(typeof SlideInserterTranslations !== undefined)
 			confirmMessage = SlideInserterTranslations.confirmMessage;
 
+		// Confirm deletion
 		var deleteSlide = confirm(confirmMessage);
 		if(!deleteSlide)
 			return;
 
-		// Get postId from url
-		var postId = -1;
-		jQuery.each(location.search.replace('?', '').split('&'), function(key, value){
-			var splitValue = value.split('=');
-			if(splitValue[0] == 'post')
-				postId = splitValue[1];
-		});
-
-		// Get slideId
-		var slideId = jQuery(this).find('span').attr('class');
-
-		// Exit if no slideId is found
-		if(postId == -1 || slideId == 'undefined')
-			return;
-
 		// Remove slide from DOM
-		jQuery(this).parent().remove();
-
-		// Remove slide by AJAX.
-		jQuery.post(
-			ajaxurl,
-			{
-				action: 'slideshow_delete_slide',
-				postId: postId,
-				slideId: slideId
-			}
-		);
-	});
+		slide.remove();
+	}
 
 	/**
 	 * Loop through list items, setting slide orders
@@ -230,13 +217,9 @@ jQuery(document).ready(function(){
 		imageSlide.find('.type').attr('name', 'slides[0][type]');
 		imageSlide.find('.postId').attr('name', 'slides[0][postId]');
 
-		// Register delete link (only needs to delete from DOM)
-		imageSlide.find('.slideshow-delete-new-slide').click(function(){
-			var deleteSlide = confirm('Are you sure you want to delete this slide?');
-			if(!deleteSlide)
-				return;
-
-			jQuery(this).closest('li').remove();
+		// Register delete link
+		imageSlide.find('.slideshow-delete-slide').click(function(){
+			slideshowDeleteSlide(jQuery(this).closest('li'));
 		});
 
 		// Put slide in the sortables list.
@@ -263,13 +246,9 @@ jQuery(document).ready(function(){
 		textSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
 		textSlide.find('.type').attr('name', 'slides[0][type]');
 
-		// Register delete link (only needs to delete from DOM)
-		textSlide.find('.slideshow-delete-new-slide').click(function(){
-			var deleteSlide = confirm('Are you sure you want to delete this slide?');
-			if(!deleteSlide)
-				return;
-
-			jQuery(this).closest('li').remove();
+		// Register delete link
+		textSlide.find('.slideshow-delete-slide').click(function(){
+			slideshowDeleteSlide(jQuery(this).closest('li'));
 		});
 
 		// Put slide in the sortables list.
@@ -291,13 +270,9 @@ jQuery(document).ready(function(){
 		videoSlide.find('.videoId').attr('name', 'slides[0][videoId]');
 		videoSlide.find('.type').attr('name', 'slides[0][type]');
 
-		// Register delete link (only needs to delete from DOM)
-		videoSlide.find('.slideshow-delete-new-slide').click(function(){
-			var deleteSlide = confirm('Are you sure you want to delete this slide?');
-			if(!deleteSlide)
-				return;
-
-			jQuery(this).closest('li').remove();
+		// Register delete link
+		videoSlide.find('.slideshow-delete-slide').click(function(){
+			slideshowDeleteSlide(jQuery(this).closest('li'));
 		});
 
 		// Put slide in the sortables list.

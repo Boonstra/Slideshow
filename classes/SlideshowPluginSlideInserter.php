@@ -72,31 +72,6 @@ class SlideshowPluginSlideInserter {
 
 	/**
 	 * This function is registered in the SlideshowPluginAjax class
-	 * and deletes slides with a particular $_POST['slideId'].
-	 *
-	 * TODO: This function has become obsolete and slides are deleted by simply unsetting them and saving the slideshow.
-	 *
-	 * @since 2.0.0
-	 */
-	static function deleteSlide(){
-		if((!isset($_POST['slideId']) || !is_numeric($_POST['slideId'])) ||
-			(!isset($_POST['postId']) || !is_numeric($_POST['postId'])))
-			die;
-
-		$search = 'slide_' . $_POST['slideId'] . '_';
-		$settings = get_post_meta($_POST['postId'], 'settings', true);
-		if(is_array($settings) && count($settings) > 0){
-			foreach($settings as $key => $setting)
-				if(strtolower(substr($key, 0, strlen($search))) == strtolower($search))
-					unset($settings[$key]);
-		}
-		update_post_meta($_POST['postId'], 'settings', $settings);
-
-		die;
-	}
-
-	/**
-	 * This function is registered in the SlideshowPluginAjax class
 	 * and prints the results from the search query.
 	 *
 	 * @since 2.0.0

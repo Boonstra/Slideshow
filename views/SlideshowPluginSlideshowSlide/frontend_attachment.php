@@ -44,10 +44,8 @@ if(is_numeric($postId)):
 				</a>
 				<div class="slideshow_description slideshow_transparent">
 					<a <?php echo $anchorTagAttributes; ?>>
-						<h2><?php echo $title; ?></h2>
-						<p>
-							<?php echo $description; ?>
-						</p>
+						<?php echo !empty($title) ? '<h2>' . $title . '</h2>' : ''; ?>
+						<?php echo !empty($description) ? '<p>' . $description . '</p>' : ''; ?>
 					</a>
 				</div>
 			</div>

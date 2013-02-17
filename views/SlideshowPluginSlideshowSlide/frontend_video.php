@@ -18,9 +18,6 @@ if(($idPosition = stripos($videoId, 'v=')) !== false){
 		$videoId = $videoId[0];
 }
 
-// Enqueue SwfObject script
-wp_enqueue_script('swfobject');
-
 ?>
 
 <div class="slideshow_slide slideshow_slide_video">

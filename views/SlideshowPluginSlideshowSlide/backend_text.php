@@ -57,7 +57,6 @@ if(isset($properties['urlTarget']))
 
 	<p class="slideshow-delete-slide">
 		<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
-		<span style="display: none;" class="<?php echo $id; ?>"></span>
 	</p>
 
 </li>

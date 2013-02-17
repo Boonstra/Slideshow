@@ -290,9 +290,9 @@ class SlideshowPluginSlideshowSettingsHandler {
 
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
 		if(get_post_type($postId) != SlideshowPluginPostType::$postType ||
-			(isset($_POST['nonce']) && !wp_verify_nonce($_POST['nonce'], plugin_basename(__FILE__))) ||
+			(!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'update-post_' . $postId)) ||
 			!current_user_can('edit_post', $postId) ||
-			defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))
 			return $postId;
 
 		// Old settings

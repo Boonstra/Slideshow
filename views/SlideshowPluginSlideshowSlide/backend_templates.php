@@ -38,9 +38,8 @@
 
 		<input type="hidden" class="type" value="text" />
 
-		<p class="slideshow-delete-new-slide">
+		<p class="slideshow-delete-slide">
 			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
-			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
 
 	</li>
@@ -64,9 +63,8 @@
 
 		<input type="hidden" class="type" value="video" />
 
-		<p class="slideshow-delete-new-slide">
+		<p class="slideshow-delete-slide">
 			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
-			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
 
 	</li>
@@ -117,9 +115,8 @@
 		<input type="hidden" class="type" value="attachment" />
 		<input type="hidden" class="postId" value="" />
 
-		<p class="slideshow-delete-new-slide">
+		<p class="slideshow-delete-slide">
 			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
-			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
 
 	</li>
