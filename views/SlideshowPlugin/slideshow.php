@@ -19,10 +19,6 @@
 
 	</div>
 
-	<div class="slideshow_plugin_manufacturer">
-		<a href="http://www.stefanboonstra.com/slideshow/">Wordpress Slideshow</a>
-	</div>
-
 	<!-- WordPress Slideshow Version <?php echo SlideshowPluginMain::$version; ?> -->
 
 	<?php if(is_array($log) && count($log) > 0): ?>

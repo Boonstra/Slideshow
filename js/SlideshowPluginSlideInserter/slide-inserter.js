@@ -144,27 +144,36 @@ jQuery(document).ready(function(){
 	 * @param offset (optional, defaults to 0)
 	 */
 	function slideshowSlideInserterGetSearchResults(offset){
+		var popup = jQuery('#slideshow-slide-inserter-popup');
+		var resultsTable = popup.find('#results');
+
 		if(!offset){
 			offset = 0;
-			jQuery('#slideshow-slide-inserter-popup #results').html('');
+			resultsTable.html('');
 		}
+
+		var attachmentIDs = [];
+		jQuery.each(resultsTable.find('.result-table-row'), function(key, tr){
+			attachmentIDs.push(jQuery(tr).data('attachmentId'));
+		});
 
 		jQuery.post(
 			ajaxurl,
 			{
 				action: 'slideshow_slide_inserter_search_query',
-				search: jQuery('#slideshow-slide-inserter-popup #search').attr('value'),
-				offset: offset
+				search: popup.find('#search').attr('value'),
+				offset: offset,
+				attachmentIDs: attachmentIDs
 			},
 			function(response){
 				// Fill table
-				jQuery('#slideshow-slide-inserter-popup #results').append(response);
+				resultsTable.append(response);
 
 				// Apply insert to slideshow script
-				jQuery('#slideshow-slide-inserter-popup #results .insert-attachment').click(function(){
+				resultsTable.find('.insert-attachment').unbind('click').click(function(){
 					var tr = jQuery(this).closest('tr');
 					slideshowSlideInserterInsertImageSlide(
-						jQuery(this).attr('id'),
+						jQuery(tr).data('attachmentId'),
 						jQuery(tr).find('.title').text(),
 						jQuery(tr).find('.description').text(),
 						jQuery(tr).find('.image img').attr('src')
@@ -172,8 +181,9 @@ jQuery(document).ready(function(){
 				});
 
 				// Load more results on click of the 'Load more results' button
-				if(jQuery('.load-more-results')){
-					jQuery('.load-more-results').click(function(){
+				var loadMoreResultsButton = jQuery('.load-more-results');
+				if(loadMoreResultsButton){
+					loadMoreResultsButton.click(function(){
 						// Get offset
 						var previousOffset = jQuery(this).attr('class').split(' ')[2];
 

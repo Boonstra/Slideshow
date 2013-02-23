@@ -8,6 +8,10 @@
  */
 class SlideshowPluginSlideshowSettingsHandler {
 
+	/** Nonce */
+	static $nonceAction = 'slideshow-jquery-image-gallery-nonceAction';
+	static $nonceName = 'slideshow-jquery-image-gallery-nonceName';
+
 	/** Setting keys */
 	static $settingsKey = 'settings';
 	static $styleSettingsKey = 'styleSettings';
@@ -290,7 +294,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
 		if(get_post_type($postId) != SlideshowPluginPostType::$postType ||
-			(!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'update-post_' . $postId)) ||
+			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
 			!current_user_can('edit_post', $postId) ||
 			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))
 			return $postId;

@@ -77,23 +77,75 @@ class SlideshowPluginSlideInserter {
 	 * @since 2.0.0
 	 */
 	static function printSearchResults(){
+		global $wpdb;
+
 		// Numberposts and offset
 		$numberPosts = 10;
 		$offset = 0;
-		if(isset($_POST['offset']))
+		if(isset($_POST['offset']) && is_numeric($_POST['offset']))
 			$offset = $_POST['offset'];
+
+		$attachmentIDs = array();
+		if(isset($_POST['attachmentIDs']))
+			$attachmentIDs = array_filter($_POST['attachmentIDs'], 'ctype_digit');
 
 		// Get attachments with a title alike the search string, needs to be filtered
 		add_filter('posts_where', array(__CLASS__, 'printSearchResultsWhereFilter'));
-		$attachments = get_posts(array(
-			'numberposts' => $numberPosts + 1,
-			'offset' => $offset,
-			'orderby' => 'post_date',
-			'order' => 'DESC',
+		$query = new WP_Query(array(
 			'post_type' => 'attachment',
-			'suppress_filters' => false
+			'post_status' => 'inherit',
+			'offset' => $offset,
+			'posts_per_page' => $numberPosts + 1,
+			'orderby' => 'date',
+			'order' => 'DESC',
+			'post__not_in' => $attachmentIDs
 		));
+		$attachments = $query->get_posts();
 		remove_filter('posts_where', array(__CLASS__, 'printSearchResultsWhereFilter'));
+
+		// Look for images by their file's name when not enough matching results were found
+		if(count($attachments) < $numberPosts){
+			$searchString = $wpdb->escape($_POST['search']);
+
+			// Add results found with the previous query to the $attachmentIDs array to exclude them as well
+			foreach($attachments as $attachment){
+				$attachmentIDs[] = $attachment->ID;
+			}
+
+			// Search by file name
+			$fileNameQuery = new WP_Query(array(
+				'post_type' => 'attachment',
+				'post_status' => 'inherit',
+				'posts_per_page' => $numberPosts - count($attachments),
+				'post__not_in' => $attachmentIDs,
+				'meta_query' => array(
+					array(
+						'key' => '_wp_attached_file',
+						'value' => $searchString,
+						'compare' => 'LIKE'
+					)
+				)
+			));
+
+			// Put found results in attachments array
+			$fileNameQueryAttachments = $fileNameQuery->get_posts();
+			if(is_array($fileNameQueryAttachments) && count($fileNameQueryAttachments) > 0){
+
+				foreach($fileNameQueryAttachments as $fileNameQueryAttachment)
+					$attachments[] = $fileNameQueryAttachment;
+
+//				for($i = 0; $i < count($fileNameQueryAttachments); $i++){
+//
+//					$inAttachmentsArray = false;
+//					foreach($attachments as $attachmentValue)
+//						if($attachmentValue->ID == $fileNameQueryAttachments[$i]->ID)
+//							$inAttachmentsArray = true;
+//
+//					if(!$inAttachmentsArray)
+//						$attachments[] = $fileNameQueryAttachments[$i];
+//				}
+			}
+		}
 
 		// Check if there are enough attachments to print a 'Load more images' button
 		$loadMoreResults = false;
@@ -104,6 +156,14 @@ class SlideshowPluginSlideInserter {
 
 		// Print results to the screen
 		if(count($attachments) > 0){
+
+			if($offset > 0)
+				echo '<tr valign="top">
+					<td colspan="3" style="text-align: center;">
+						<b>' . count($attachments) . ' ' . __('More results loaded', 'slideshow-plugin') . '<b>
+					</td>
+				</tr>';
+
 			foreach($attachments as $attachment){
 				$image = wp_get_attachment_image_src($attachment->ID);
 				if(!is_array($image) || !$image){
@@ -115,7 +175,7 @@ class SlideshowPluginSlideInserter {
 					$imageSrc = $image[0];
 				}
 				if(!$imageSrc || empty($imageSrc)) $imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/no-img.png';
-				echo '<tr valign="top">
+				echo '<tr valign="top" data-attachment-Id="' . $attachment->ID . '" class="result-table-row">
 					<td class="image">
 						<img width="60" height="60" src="' . $imageSrc . '" class="attachment" alt="' . $attachment->post_title . '" title="' . $attachment->post_title . '">
 					</td>
@@ -126,7 +186,6 @@ class SlideshowPluginSlideInserter {
 					<td class="insert-button">
 						<input
 							type="button"
-							id="' . $attachment->ID . '"
 							class="insert-attachment button-secondary"
 							value="' . __('Insert', 'slideshow-plugin') . '"
 						/>
@@ -165,11 +224,14 @@ class SlideshowPluginSlideInserter {
 	static function printSearchResultsWhereFilter($where){
 		global $wpdb;
 
+		$searchString = $_POST['search'];
+		$searchString = $wpdb->escape($searchString);
+
 		if(isset($_POST['search']))
 			$where .= $wpdb->prepare(
 				" AND (post_title LIKE '%%%s%%' OR ID LIKE '%%%s%%') ",
-				$_POST['search'],
-				$_POST['search']
+				$searchString,
+				$searchString
 			);
 
 		return $where;
@@ -190,6 +252,11 @@ class SlideshowPluginSlideInserter {
 	 * @since 2.0.0
 	 */
 	static function enqueueFiles(){
+
+		// Return if function doesn't exist
+		if(!function_exists('get_current_screen'))
+			return;
+
         // Return when not on a slideshow edit page, or files have already been included.
         $currentScreen = get_current_screen();
         if($currentScreen->post_type != SlideshowPluginPostType::$postType || self::$enqueuedFiles)
