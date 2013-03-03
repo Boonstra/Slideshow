@@ -20,7 +20,6 @@ class SlideshowPluginPostType {
 	 */
 	static function init(){
 		add_action('init', array(__CLASS__, 'registerSlideshowPostType'));
-		add_action('wp_print_styles', array(__CLASS__, 'enqueueStyles'));
 		add_action('admin_print_styles', array(__CLASS__, 'enqueueAdminStyles'));
 		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueAdminScripts'));
 		add_action('save_post', array('SlideshowPluginSlideshowSettingsHandler', 'save'));
@@ -77,25 +76,6 @@ class SlideshowPluginPostType {
 				'supports' => array('title'),
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)
-		);
-	}
-
-	/**
-	 * Enqueues the styles that have to be placed in the header
-	 *
-	 * TODO The functional stylesheet needs to move to the bottom of the page again, once the stylesheets of the plugin
-	 * TODO can be loaded beneath the functional stylesheet.
-	 *
-	 * @since 2.2.1
-	 */
-	static function enqueueStyles(){
-
-		// Functional stylesheet
-		wp_enqueue_style(
-			'slideshow_functional_style',
-			SlideshowPluginMain::getPluginUrl() . '/style/SlideshowPlugin/functional.css',
-			array(),
-			SlideshowPluginMain::$version
 		);
 	}
 

@@ -3,7 +3,7 @@
  * Class SlideshowPluginSlideInserter
  *
  * TODO This class will probably need to be renamed to SlideshowPluginSlideHandler to explain more functionality
- * TODO than just inserting slides. (Show and delete functionality should be applied here as well)
+ * TODO than just inserting slides.
  * @since 2.0.0
  * @author Stefan Boonstra
  * @version 01-02-2013
@@ -97,8 +97,7 @@ class SlideshowPluginSlideInserter {
 			'offset' => $offset,
 			'posts_per_page' => $numberPosts + 1,
 			'orderby' => 'date',
-			'order' => 'DESC',
-			'post__not_in' => $attachmentIDs
+			'order' => 'DESC'
 		));
 		$attachments = $query->get_posts();
 		remove_filter('posts_where', array(__CLASS__, 'printSearchResultsWhereFilter'));
@@ -133,17 +132,6 @@ class SlideshowPluginSlideInserter {
 
 				foreach($fileNameQueryAttachments as $fileNameQueryAttachment)
 					$attachments[] = $fileNameQueryAttachment;
-
-//				for($i = 0; $i < count($fileNameQueryAttachments); $i++){
-//
-//					$inAttachmentsArray = false;
-//					foreach($attachments as $attachmentValue)
-//						if($attachmentValue->ID == $fileNameQueryAttachments[$i]->ID)
-//							$inAttachmentsArray = true;
-//
-//					if(!$inAttachmentsArray)
-//						$attachments[] = $fileNameQueryAttachments[$i];
-//				}
 			}
 		}
 
@@ -195,7 +183,7 @@ class SlideshowPluginSlideInserter {
 			if($loadMoreResults){
 				echo '<tr>
 					<td colspan="3" style="text-align: center;">
-						<button class="button-secondary load-more-results ' . ($offset + $numberPosts) . '" >
+						<button class="button-secondary load-more-results" data-offset="' . ($offset + $numberPosts) . '">
 							' . __('Load more results', 'slideshow-plugin') . '
 						</button>
 					</td>

@@ -270,12 +270,23 @@ class SlideshowPluginGeneralSettings {
 				// Put custom style key and name into the $newCustomStyle array
 				$newCustomStyles[$customStyleKey] = isset($customStyleValue['title']) ? $customStyleValue['title'] : __('Untitled', 'slideshow-plugin');
 
+				// Get style
+				$newStyle = isset($customStyleValue['style']) ? $customStyleValue['style'] : '';
+
 				// Create or update new custom style
-				$style = isset($customStyleValue['style']) ? $customStyleValue['style'] : '';
-				if(get_option($customStyleKey))
-					update_option($customStyleKey, $style);
-				else
-					add_option($customStyleKey, $style, '', 'no');
+				$oldStyle = get_option($customStyleKey, false);
+				if($oldStyle){
+
+					// Check if style has changed
+					if($oldStyle !== $newStyle){
+						update_option($customStyleKey, $newStyle);
+						update_option($customStyleKey . '_version', time());
+					}
+				}else{
+					// The custom style itself shouldn't be auto-loaded, it's never used within WordPress
+					add_option($customStyleKey, $newStyle, '', 'no');
+					add_option($customStyleKey . '_version', time());
+				}
 			}
 		}
 

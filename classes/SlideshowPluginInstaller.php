@@ -61,10 +61,63 @@ class SlideshowPluginInstaller {
 
 		// Update to version 2.2.0
 		if(self::firstVersionGreaterThanSecond('2.2.0', $currentVersion) || $currentVersion == null)
-			self::updateV2_2_1_23_to_V_2_2_0();
+			self::updateV2_1_23_to_V_2_2_0();
+
+		// Update to version 2.2.0
+		if(self::firstVersionGreaterThanSecond('2.2.8', $currentVersion) || $currentVersion == null)
+			self::updateV2_2_0_to_V_2_2_8();
 
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.2.0 to 2.2.8
+	 *
+	 * In order to output valid HTML, the anchor elements have been moved inside the header and paragraph elements,
+	 * rather than wrapping around them. This requires an 'a' to be added to the description classes for the header
+	 * and paragraph, which is done here.
+	 *
+	 * @since 2.2.8
+	 */
+	private static function updateV2_2_0_to_V_2_2_8(){
+
+		// Check if this has already been done
+		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8') !== false)
+			return;
+
+		$customStylesOptionsKey = 'slideshow-jquery-image-gallery-custom-styles';
+
+		// Get all custom stylesheet keys
+		$customStyles = get_option($customStylesOptionsKey, array());
+		if(is_array($customStyles)){
+			foreach($customStyles as $customStyleKey => $customStyleValue){
+
+				// Get custom style from custom style key
+				$customStyle = get_option($customStyleKey, null);
+				if(!isset($customStyle))
+					continue;
+
+				$h2Class = '.slideshow_container .slideshow_description h2';
+				$pClass = '.slideshow_container .slideshow_description p';
+
+				// Don't add to custom styles that already have this rule
+				if(stripos($customStyle, $h2Class . ' a') !== false || stripos($customStyle, $pClass . ' a') !== false)
+					continue;
+
+				// Add anchor classes
+				$h2Position = stripos($customStyle, $h2Class) + strlen($h2Class);
+				$customStyle = substr($customStyle, 0, $h2Position) . ' a ' . substr($customStyle, $h2Position);
+
+				$pPosition = stripos($customStyle, $pClass) + strlen($pClass);
+				$customStyle = substr($customStyle, 0, $pPosition) . ' a ' . substr($customStyle, $pPosition);
+
+				// Save
+				update_option($customStyleKey, $customStyle);
+			}
+		}
+
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8', 'updated');
 	}
 
 	/**
@@ -73,7 +126,7 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.2.0
 	 */
-	function updateV2_2_1_23_to_V_2_2_0(){
+	private static function updateV2_1_23_to_V_2_2_0(){
 
 		// Check if this has already been done
 		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0') !== false)

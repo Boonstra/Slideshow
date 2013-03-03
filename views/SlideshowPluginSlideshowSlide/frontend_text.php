@@ -2,9 +2,9 @@
 
 $title = $description = $textColor = $color = $url = $urlTarget = '';
 if(isset($properties['title']))
-	$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
+	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
 if(isset($properties['description']))
-	$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
+	$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
 if(isset($properties['textColor']))
 	$textColor = htmlspecialchars($properties['textColor']);
 if(isset($properties['color']))
@@ -14,18 +14,26 @@ if(isset($properties['url']))
 if(isset($properties['urlTarget']))
 	$urlTarget = htmlspecialchars($properties['urlTarget']);
 
+$anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!empty($urlTarget) ? 'target="' . $urlTarget . '"' : '');
+
 ?>
 
 <div class="slideshow_slide slideshow_slide_text" style="background-color: #<?php echo !empty($color) ? $color : 'FFFFFF'; ?>">
-	<a <?php echo !empty($url) ? 'href="' . $url . '"' : ''; ?> <?php echo !empty($urlTarget) ? 'target="' . $urlTarget . '"' : ''; ?>>
-
-		<h2 style="color: #<?php echo !empty($textColor) ? $textColor : '000000'; ?>;">
+	<?php if(!empty($title)): ?>
+	<h2>
+		<a <?php echo $anchorTagAttributes; ?> style="color: #<?php echo !empty($textColor) ? $textColor : '000000'; ?>;">
 			<?php echo $title; ?>
-		</h2>
+		</a>
+	</h2>
+	<?php endif; ?>
 
-		<p style="color: #<?php echo !empty($textColor) ? $textColor : '000000'; ?>;">
+	<?php if(!empty($description)): ?>
+	<p>
+		<a <?php echo $anchorTagAttributes; ?> style="color: #<?php echo !empty($textColor) ? $textColor : '000000'; ?>;">
 			<?php echo $description; ?>
-		</p>
+		</a>
+	</p>
+	<?php endif; ?>
 
-	</a>
+	<a <?php echo $anchorTagAttributes ?> class="slideshow_background_anchor"></a>
 </div>

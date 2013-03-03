@@ -5,7 +5,7 @@
  *
  * @since 1.0.0
  * @author: Stefan Boonstra
- * @version: 06-12-12
+ * @version: 03-03-2013
  */
 class SlideshowPlugin {
 
@@ -85,39 +85,44 @@ class SlideshowPlugin {
 		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
 		$sessionID = self::$sessionCounter++;
 
-		// Get stylesheet. If the style was not found, see if a default stylesheet can be loaded
-		$style = get_option($styleSettings['style'], null);
-		if(!isset($style)){
+		// Try to get a custom stylesheet
+		if(isset($styleSettings['style'])){
 
-			// Check if default stylesheet exists, if not get the light variant
-			$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . $styleSettings['style'];
-			if(!file_exists($filePath))
-				$filePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'style-light.css';
-
-			if(file_exists($filePath)){
-				ob_start();
-				include($filePath);
-				$style = ob_get_clean();
+			// Try to get the custom style's version
+			$customStyle = get_option($styleSettings['style'], false);
+			$customStyleVersion = false;
+			if($customStyle){
+				$customStyleVersion = get_option($styleSettings['style'] . '_version', false);
 			}
+
+			// Style name and version
+			if($customStyle && $customStyleVersion){
+				$styleName = $styleSettings['style'];
+				$styleVersion = $customStyleVersion;
+			}else{
+				$styleName = str_replace('.css', '', $styleSettings['style']);
+				$styleVersion = SlideshowPluginMain::$version;
+			}
+		}else{
+			$styleName = 'style-light';
+			$styleVersion = SlideshowPluginMain::$version;
 		}
 
-		// Append the random ID to the slideshow container in the stylesheet, to identify multiple slideshows
-		if(!empty($style)){
+		// Register function stylesheet
+		wp_enqueue_style(
+			'slideshow-jquery-image-gallery-stylesheet_functional',
+			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/functional.css',
+			array(),
+			SlideshowPluginMain::$version
+		);
 
-			// Replace URL tag with the site's URL
-			$style = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $style);
-
-			// Add slideshow's page ID to the CSS container class to differentiate between slideshows
-			$style = str_replace('.slideshow_container', '.slideshow_container_' . $sessionID, $style);
-		}
-
-		// Register YouTube API to enqueue when necessary
-//		wp_register_script(
-//			'slideshow-jquery-image-gallery-youtube-iframe-api',
-//			(isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://www.youtube.com/iframe_api',
-//			array(),
-//			SlideshowPluginMain::$version
-//		);
+		// Enqueue stylesheet
+		wp_enqueue_style(
+			'slideshow-jquery-image-gallery-stylesheet_' . $styleName,
+			admin_url('admin-ajax.php') . '?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $styleName,
+			array('slideshow-jquery-image-gallery-stylesheet_functional'),
+			$styleVersion
+		);
 
 		// Include output file to store output in $output.
 		$output = '';

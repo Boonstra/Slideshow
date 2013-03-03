@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 2.2.7
+Stable tag: 2.2.8
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -164,6 +164,12 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.8 =
+*   Fixed: Images that have a, to WordPress, unknown size weren't able to show on all websites.
+*   Fixed: Images in the image inserter popup were being skipped over when loading more results because of a faulty query.
+*   All stylesheets are now loaded at the page's bottom to validate in HTML checkers and be cached by the visitor's browser.
+*   Errors in jQuery's 'ready' method no longer stop the slideshow from showing. However, JavaScript errors should always be resolved.
 
 = 2.2.7 =
 *   Fixed: Slideshow control buttons were placed behind the slideshow.

@@ -129,7 +129,7 @@ if(is_array($customStyleKeys)){
 						type="text"
 						name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][title]"
 						value="<?php echo (isset($customStyleKeys[$customStyleKey]) && !empty($customStyleKeys[$customStyleKey])) ? $customStyleKeys[$customStyleKey] : __('Untitled', 'slideshow-plugin'); ?>"
-						/>
+					/>
 				</p>
 
 				<p>
@@ -138,7 +138,7 @@ if(is_array($customStyleKeys)){
 						name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][style]"
 						rows="25"
 						cols=""
-						><?php echo htmlspecialchars($customStyleValue); ?></textarea>
+					><?php echo isset($customStyleValue) ? htmlspecialchars($customStyleValue) : ''; ?></textarea>
 				</p>
 
 			</div>

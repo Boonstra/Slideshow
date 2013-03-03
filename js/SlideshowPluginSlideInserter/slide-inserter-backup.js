@@ -185,13 +185,13 @@ jQuery(document).ready(function(){
 				if(loadMoreResultsButton){
 					loadMoreResultsButton.click(function(){
 						// Get offset
-						var previousOffset = jQuery(this).data('offset');
-
-						// Remove button row
-						jQuery(this).closest('tr').hide();
+						var previousOffset = jQuery(this).attr('class').split(' ')[2];
 
 						// Load ajax results
 						slideshowSlideInserterGetSearchResults(previousOffset);
+
+						// Remove button row
+						jQuery(this).closest('tr').remove();
 					});
 				}
 			}

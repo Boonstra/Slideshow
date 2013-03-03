@@ -2,9 +2,9 @@
 
 $title = $description = $url = $urlTarget = $postId = '';
 if(isset($properties['title']))
-	$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
+	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
 if(isset($properties['description']))
-	$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
+	$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
 if(isset($properties['url']))
 	$url = htmlspecialchars($properties['url']);
 if(isset($properties['urlTarget']))
@@ -54,13 +54,11 @@ if(is_numeric($postId)):
 
 			<div class="slideshow_slide slideshow_slide_image">
 				<a <?php echo $anchorTagAttributes; ?>>
-					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alt; ?>" width="<?php echo $imageWidth ?>" height="<?php echo $imageHeight; ?>">
+					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alt; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
 				</a>
 				<div class="slideshow_description slideshow_transparent">
-					<a <?php echo $anchorTagAttributes; ?>>
-						<?php echo !empty($title) ? '<h2>' . $title . '</h2>' : ''; ?>
-						<?php echo !empty($description) ? '<p>' . $description . '</p>' : ''; ?>
-					</a>
+					<?php echo !empty($title) ? '<h2><a ' . $anchorTagAttributes . '>' . $title . '</a></h2>' : ''; ?>
+					<?php echo !empty($description) ? '<p><a ' . $anchorTagAttributes . '>' . $description . '</a></p>' : ''; ?>
 				</div>
 			</div>
 
