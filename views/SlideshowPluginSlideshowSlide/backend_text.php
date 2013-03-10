@@ -33,10 +33,11 @@ if(isset($properties['urlTarget']))
 		<textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
 
 		<i><?php _e('Text color', 'slideshow-plugin'); ?></i><br />
-		<input type="text" name="<?php echo $name; ?>[textColor]" value="<?php echo !empty($textColor) ? $textColor : '000000'; ?>" class="color {required:false}" /><br />
+		<input type="text" name="<?php echo $name; ?>[textColor]" value="<?php echo $textColor; ?>" class="color {required:false}" /><br />
 
 		<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
 		<input type="text" name="<?php echo $name; ?>[color]" value="<?php echo $color; ?>" class="color {required:false}" />
+		<i><?php _e('(Leave empty for a transparent background)', 'slideshow-plugin'); ?></i>
 
 	</p>
 

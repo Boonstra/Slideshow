@@ -34,6 +34,7 @@ class SlideshowPlugin {
 	 * @return String $output
 	 */
 	static function prepare($postId = null){
+
 		// Get post by its ID, if the ID is not a negative value
 		if(is_numeric($postId) && $postId >= 0)
 			$post = get_post($postId);

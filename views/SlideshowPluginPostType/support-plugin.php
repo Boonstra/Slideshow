@@ -26,15 +26,6 @@
 					/>
 		</p>
 
-		<p>
-			<input
-				type="button"
-				class="button-secondary"
-				value="<?php _e('Questions / Suggestions', 'slideshow-plugin'); ?>"
-				onclick="window.open('http://wordpress.org/support/plugin/slideshow-jquery-image-gallery/')"
-			/>
-		</p>
-
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 			<input type="hidden" name="cmd" value="_s-xclick" />
 			<input type="hidden" name="hosted_button_id" value="VWHWA99RBJZW8" />

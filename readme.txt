@@ -45,7 +45,7 @@ different images, settings and styles for each one of them.
  - Spanish (62% Translated by [Violeta Rosales](https://twitter.com/violetisha))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
-thanks in advance!
+thanks in advance! (Please use the support forum for asking questions, it'll help others as well)
 
 = Project board =
 
@@ -169,7 +169,9 @@ personal taste.
 *   Fixed: Images that have a, to WordPress, unknown size weren't able to show on all websites.
 *   Fixed: Images in the image inserter popup were being skipped over when loading more results because of a faulty query.
 *   All stylesheets are now loaded at the page's bottom to validate in HTML checkers and be cached by the visitor's browser.
+*   Improved the handling of description boxes. Description boxes will no longer be 'jumpy' nor will they pop up on fly-over.
 *   Errors in jQuery's 'ready' method no longer stop the slideshow from showing. However, JavaScript errors should always be resolved.
+*   Text slides can now have transparent backgrounds by leaving the 'Background color' field empty.
 
 = 2.2.7 =
 *   Fixed: Slideshow control buttons were placed behind the slideshow.

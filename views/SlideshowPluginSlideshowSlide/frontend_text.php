@@ -18,10 +18,10 @@ $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!emp
 
 ?>
 
-<div class="slideshow_slide slideshow_slide_text" style="background-color: #<?php echo !empty($color) ? $color : 'FFFFFF'; ?>">
+<div class="slideshow_slide slideshow_slide_text" style="<?php echo !empty($color) ? 'background-color: #' . $color . ';' : '' ?>">
 	<?php if(!empty($title)): ?>
 	<h2>
-		<a <?php echo $anchorTagAttributes; ?> style="color: #<?php echo !empty($textColor) ? $textColor : '000000'; ?>;">
+		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: #' . $textColor . ';' : ''; ?>">
 			<?php echo $title; ?>
 		</a>
 	</h2>
@@ -29,7 +29,7 @@ $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!emp
 
 	<?php if(!empty($description)): ?>
 	<p>
-		<a <?php echo $anchorTagAttributes; ?> style="color: #<?php echo !empty($textColor) ? $textColor : '000000'; ?>;">
+		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: #' . $textColor . ';' : ''; ?>">
 			<?php echo $description; ?>
 		</a>
 	</p>

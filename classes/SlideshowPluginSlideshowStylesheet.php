@@ -37,9 +37,9 @@ class SlideshowPluginSlideshowStylesheet {
 		$stylesheet = str_replace('.slideshow_container', '.slideshow_container_' . $styleName, $stylesheet);
 
 		// Set header to CSS. Cache for a year (as WordPress does)
-		//header('Content-Type:text/css; charset=UTF-8');
-		header('Content-Type: text/css;');
+		header('Content-Type: text/css; charset=UTF-8');
 		header('Expires: ' . gmdate("D, d M Y H:i:s", time() + 31556926) . ' GMT');
+		header('Pragma: cache');
 		header("Cache-Control: public, max-age=31556926");
 
 		echo $stylesheet;
