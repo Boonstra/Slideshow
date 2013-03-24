@@ -136,8 +136,8 @@ class SlideshowPlugin {
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-script',
-			//SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
-			'http://localhost/test/slideshowv3/slideshow.js',
+			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
+			//'http://localhost/test/slideshowv3/slideshow.js',
 			array('jquery'),
 			SlideshowPluginMain::$version
 		);
