@@ -2,7 +2,7 @@
 
 Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
-Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
+Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.3
 Tested up to: 3.5.1
 Stable tag: 2.2.11
