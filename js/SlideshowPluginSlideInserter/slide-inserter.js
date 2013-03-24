@@ -154,7 +154,7 @@ jQuery(document).ready(function(){
 
 		var attachmentIDs = [];
 		jQuery.each(resultsTable.find('.result-table-row'), function(key, tr){
-			attachmentIDs.push(jQuery(tr).data('attachmentId'));
+			attachmentIDs.push(jQuery(tr).attr('data-attachment-id'));
 		});
 
 		jQuery.post(
@@ -173,7 +173,7 @@ jQuery(document).ready(function(){
 				resultsTable.find('.insert-attachment').unbind('click').click(function(){
 					var tr = jQuery(this).closest('tr');
 					slideshowSlideInserterInsertImageSlide(
-						jQuery(tr).data('attachmentId'),
+						jQuery(tr).attr('data-attachment-id'),
 						jQuery(tr).find('.title').text(),
 						jQuery(tr).find('.description').text(),
 						jQuery(tr).find('.image img').attr('src')
@@ -185,7 +185,7 @@ jQuery(document).ready(function(){
 				if(loadMoreResultsButton){
 					loadMoreResultsButton.click(function(){
 						// Get offset
-						var previousOffset = jQuery(this).data('offset');
+						var previousOffset = jQuery(this).attr('data-offset');
 
 						// Remove button row
 						jQuery(this).closest('tr').hide();

@@ -1,4 +1,4 @@
-<div class="slideshow_container slideshow_container_<?php echo $styleName; ?>" style="width: 2000px; <?php echo (isset($settings['preserveSlideshowDimensions']) && $settings['preserveSlideshowDimensions'] == 'false' && isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px;' : ''; ?> <?php echo (isset($settings['maxWidth']) && $settings['maxWidth'] > 0) ? 'max-width: ' . $settings['maxWidth'] . 'px;' : ''; ?>" data-session-id="<?php echo $sessionID; ?>">
+<div class="slideshow_container slideshow_container_<?php echo $styleName; ?>" style="<?php echo (isset($settings['preserveSlideshowDimensions']) && $settings['preserveSlideshowDimensions'] == 'false' && isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px;' : ''; ?> <?php echo (isset($settings['maxWidth']) && $settings['maxWidth'] > 0) ? 'max-width: ' . $settings['maxWidth'] . 'px;' : ''; ?>" data-session-id="<?php echo $sessionID; ?>">
 
 	<div class="slideshow_controlPanel slideshow_transparent"><ul><li class="slideshow_togglePlay"></li></ul></div>
 

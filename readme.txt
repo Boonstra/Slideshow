@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: slideshow, slider, slide, slides, show, images, image, photo, gallery, galleries, jquery, javascript, video, text
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 2.2.8
+Stable tag: 2.2.11
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -41,8 +41,10 @@ different images, settings and styles for each one of them.
  - Dutch
  - English
  - French (60% Translated by [Wptheme](http://wptheme.fr/))
- - Russian (56% Translated by [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
+ - Hebrew (63% Translated by Eli Segev)
+ - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
  - Spanish (62% Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
 thanks in advance! (Please use the support forum for asking questions, it'll help others as well)
@@ -164,6 +166,21 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.11 =
+*   Fixed: The slideshow script loaded the YouTube API twice.
+*   Fixed: Floating the slideshow resulted in it having no width, therefore being invisible.
+*   Fixed: Sites that don't support URL data weren't able to load a slideshow's stylesheet correctly.
+*   Added Swedish translation by Åke Isacsson.
+*   Added Hebrew translation by Eli Segev.
+
+= 2.2.10 =
+*   Fixed: Auto margin combined with a fixed width will no longer break slideshow's responsiveness.
+*   Updated Russian translation, thanks to Dmitry Fatakov.
+
+= 2.2.9 =
+*   Fixed: Descriptions didn't show when 'Hide descriptions' was set to 'No'.
+*   Fixed: Title was given wrong size by CSS.
 
 = 2.2.8 =
 *   Fixed: Images that have a, to WordPress, unknown size weren't able to show on all websites.

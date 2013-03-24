@@ -35,12 +35,14 @@ class SlideshowPlugin {
 	 */
 	static function prepare($postId = null){
 
+		$post = null;
+
 		// Get post by its ID, if the ID is not a negative value
 		if(is_numeric($postId) && $postId >= 0)
 			$post = get_post($postId);
 
 		// Get slideshow by slug when it's a non-empty string
-		if(is_string($postId) && !is_numeric($postId) && !empty($postId)){
+		if($post === null && is_string($postId) && !is_numeric($postId) && !empty($postId)){
 			$query = new WP_Query(array(
 				'post_type' => SlideshowPluginPostType::$postType,
 				'name' => $postId,
@@ -54,7 +56,7 @@ class SlideshowPlugin {
 		}
 
 		// When no slideshow is found, get one at random
-		if(empty($post)){
+		if($post === null){
 			$post = get_posts(array(
 				'numberposts' => 1,
 				'offset' => 0,
@@ -68,7 +70,7 @@ class SlideshowPlugin {
 		}
 
 		// Exit on error
-		if(empty($post))
+		if($post === null)
 			return '<!-- Wordpress Slideshow - No slideshows available -->';
 
 		// Log slideshow's issues to be able to track them on the page.
@@ -119,9 +121,9 @@ class SlideshowPlugin {
 
 		// Enqueue stylesheet
 		wp_enqueue_style(
-			'slideshow-jquery-image-gallery-stylesheet_' . $styleName,
-			admin_url('admin-ajax.php') . '?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $styleName,
-			array('slideshow-jquery-image-gallery-stylesheet_functional'),
+			'slideshow-jquery-image-gallery-ajax-stylesheet_' . $styleName,
+			admin_url('admin-ajax.php' /*?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $styleName*/),
+			array(),
 			$styleVersion
 		);
 
@@ -134,7 +136,8 @@ class SlideshowPlugin {
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-script',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
+			//SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
+			'http://localhost/test/slideshowv3/slideshow.js',
 			array('jquery'),
 			SlideshowPluginMain::$version
 		);

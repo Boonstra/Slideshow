@@ -9,8 +9,9 @@
 .slideshow_container .slideshow_slide_video { }
 
 .slideshow_container .slideshow_description { background: #000; width: 100%; }
-.slideshow_container .slideshow_description h2 a { color: #fff; font-size: 1.3em; text-align: center; }
-.slideshow_container .slideshow_description p a { color: #fff; text-align: center; }
+.slideshow_container .slideshow_description h2  { font-size: 1.3em; text-align: center; }
+.slideshow_container .slideshow_description p  { text-align: center; }
+.slideshow_container .slideshow_description a  { color: #fff; }
 
 .slideshow_container .slideshow_transparent { filter: alpha(opacity = 50); opacity: 0.5; }
 .slideshow_container .slideshow_transparent:hover { filter: alpha(opacity = 80); opacity: 0.8; }

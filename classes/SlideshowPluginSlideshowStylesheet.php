@@ -9,13 +9,45 @@
 class SlideshowPluginSlideshowStylesheet {
 
 	/**
-	 * Loads the requested stylesheet, outputs it to the page and returns it as a text/css content type.
+	 * Called through WordPress' admin-ajax.php script, registered in the SlideshowPluginAjax class. This function
+	 * must not be called on itself.
 	 *
-	 * @since 2.2.8
+	 * Uses the loadStylesheet function to load the stylesheet passed in the URL data. If no stylesheet name is set, all
+	 * stylesheets will be loaded.
+	 *
+	 * Headers are set to allow file caching.
+	 *
+	 * @since 2.2.11
 	 */
-	public static function loadStylesheet(){
+	public static function loadStylesheetByAjax(){
 
 		$styleName = filter_input(INPUT_GET, 'style', FILTER_SANITIZE_SPECIAL_CHARS);
+
+		// If no style name is set, all stylesheets will be loaded.
+		if(isset($styleName) && !empty($styleName) && strlen($styleName) > 0)
+			$stylesheet = self::loadStylesheet($styleName);
+		else
+			return;
+
+		// Set header to CSS. Cache for a year (as WordPress does)
+		header('Content-Type: text/css; charset=UTF-8');
+		header('Expires: ' . gmdate("D, d M Y H:i:s", time() + 31556926) . ' GMT');
+		header('Pragma: cache');
+		header("Cache-Control: public, max-age=31556926");
+
+		echo $stylesheet;
+
+		die;
+	}
+
+	/**
+	 * Loads the stylesheet with the parsed style name, then returns it.
+	 *
+	 * @since 2.2.8
+	 * @param string $styleName
+	 * @return string $stylesheet
+	 */
+	public static function loadStylesheet($styleName){
 
 		// Get custom stylesheet, of the default stylesheet if the custom stylesheet does not exist
 		$stylesheet = get_option($styleName, '');
@@ -36,14 +68,6 @@ class SlideshowPluginSlideshowStylesheet {
 		$stylesheet = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $stylesheet);
 		$stylesheet = str_replace('.slideshow_container', '.slideshow_container_' . $styleName, $stylesheet);
 
-		// Set header to CSS. Cache for a year (as WordPress does)
-		header('Content-Type: text/css; charset=UTF-8');
-		header('Expires: ' . gmdate("D, d M Y H:i:s", time() + 31556926) . ' GMT');
-		header('Pragma: cache');
-		header("Cache-Control: public, max-age=31556926");
-
-		echo $stylesheet;
-
-		die;
+		return $stylesheet;
 	}
 }
