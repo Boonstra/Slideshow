@@ -122,7 +122,7 @@ class SlideshowPlugin {
 		// Enqueue stylesheet
 		wp_enqueue_style(
 			'slideshow-jquery-image-gallery-ajax-stylesheet_' . $styleName,
-			admin_url('admin-ajax.php' /*?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $styleName*/),
+			admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $styleName),
 			array(),
 			$styleVersion
 		);

@@ -171,6 +171,7 @@ personal taste.
 *   Fixed: The slideshow script loaded the YouTube API twice.
 *   Fixed: Floating the slideshow resulted in it having no width, therefore being invisible.
 *   Fixed: Sites that don't support URL data weren't able to load a slideshow's stylesheet correctly.
+*   Fixed: Slideshow randomly disappeared in Internet Explorer 8 when absolute positioning was used.
 *   Added Swedish translation by Åke Isacsson.
 *   Added Hebrew translation by Eli Segev.
 
