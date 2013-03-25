@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.mo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginAjax.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginAjax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPlugin/slideshow.min.js" afterPath="$PROJECT_DIR$/js/SlideshowPlugin/slideshow.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" />
-    </list>
+    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="" />
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +23,7 @@
       <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="122" selection-start="230" selection-end="230" vertical-scroll-proportion="0.078071184">
+            <state line="3" column="59" selection-start="107" selection-end="107" vertical-scroll-proportion="0.019517796">
               <folding />
             </state>
           </provider>
@@ -44,7 +32,7 @@
       <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="-5.230769">
+            <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,6 +104,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="slideshow-jquery-image-gallery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slideshow-jquery-image-gallery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slideshow-jquery-image-gallery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slideshow-jquery-image-gallery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slideshow-jquery-image-gallery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -294,19 +310,35 @@
       <created>1363387309128</created>
       <updated>1363387309128</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fixed: The slideshow script loaded the YouTube API twice.&#10;Fixed: Floating the slideshow resulted in it having no width, therefore being invisible.&#10;Fixed: Sites that don't support URL data weren't able to load a slideshow's stylesheet correctly.&#10;Fixed: Slideshow randomly disappeared in Internet Explorer 8 when absolute positioning was used.&#10;Added Swedish translation by Åke Isacsson.&#10;Added Hebrew translation by Eli Segev.">
+      <created>1364160922139</created>
+      <updated>1364160922139</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Removed test data">
+      <created>1364160971105</created>
+      <updated>1364160971105</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Updated translations and the readme.txt Languages chapter. Added original translation files.">
+      <created>1364239096128</created>
+      <updated>1364239096128</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Updated readme.txt">
+      <created>1364246332110</created>
+      <updated>1364246332110</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19743863" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20170757" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -316,7 +348,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -328,7 +360,7 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -357,7 +389,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unused stylesheets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme.txt" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -370,10 +402,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Added version number to scripts, recent problems were probably caused by cached scripts." />
-    <MESSAGE value="Added  and edited FAQ." />
-    <MESSAGE value="Edited FAQ." />
-    <MESSAGE value="Added Link to version 2.2.0 Beta" />
     <MESSAGE value="Adding Spanish Translation by Violeta Rosales" />
     <MESSAGE value="Edited FAQ" />
     <MESSAGE value="Linked to Violeta Rosales' Twitter account" />
@@ -395,14 +423,18 @@
     <MESSAGE value="Fixed: Auto margin combined with a fixed width will no longer break slideshow's responsiveness.&#10;Updated Russian translation, thanks to Dmitry Fatakov." />
     <MESSAGE value="Removed forgotten test data. Live fix, as it's a ridiculous mistake." />
     <MESSAGE value="Removed unused stylesheets" />
+    <MESSAGE value="Fixed: The slideshow script loaded the YouTube API twice.&#10;Fixed: Floating the slideshow resulted in it having no width, therefore being invisible.&#10;Fixed: Sites that don't support URL data weren't able to load a slideshow's stylesheet correctly.&#10;Fixed: Slideshow randomly disappeared in Internet Explorer 8 when absolute positioning was used.&#10;Added Swedish translation by Åke Isacsson.&#10;Added Hebrew translation by Eli Segev." />
+    <MESSAGE value="Removed test data" />
+    <MESSAGE value="Updated translations and the readme.txt Languages chapter. Added original translation files." />
+    <MESSAGE value="Updated readme.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/readme.txt">
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -483,23 +515,21 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/SlideshowPlugin.php">
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="23" selection-start="238" selection-end="238" vertical-scroll-proportion="0.1408284">
+        <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPlugin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="-5.230769">
-          <folding />
-        </state>
+        <state line="131" column="19" selection-start="3742" selection-end="3742" vertical-scroll-proportion="0.37633136" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="122" selection-start="230" selection-end="230" vertical-scroll-proportion="0.078071184">
+        <state line="3" column="59" selection-start="107" selection-end="107" vertical-scroll-proportion="0.019517796">
           <folding />
         </state>
       </provider>

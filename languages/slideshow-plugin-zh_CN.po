@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-02 01:48+0100\n"
-"PO-Revision-Date: 2013-02-02 01:48+0100\n"
+"POT-Creation-Date: 2013-03-25 19:58+0100\n"
+"PO-Revision-Date: 2013-03-25 19:58+0100\n"
 "Last-Translator: Stefan Boonstra <stefanboonstra@hotmail.com>\n"
 "Language-Team: Kevin Tell\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/SlideshowPluginGeneralSettings.php:64
@@ -21,236 +21,236 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: classes/SlideshowPluginGeneralSettings.php:142
+#: classes/SlideshowPluginGeneralSettings.php:146
 msgid "New"
 msgstr ""
 
-#: classes/SlideshowPluginGeneralSettings.php:143
+#: classes/SlideshowPluginGeneralSettings.php:147
 msgid "Are you sure you want to delete this custom style?"
 msgstr ""
 
-#: classes/SlideshowPluginGeneralSettings.php:162
-#: classes/SlideshowPluginInstaller.php:388
+#: classes/SlideshowPluginGeneralSettings.php:166
+#: classes/SlideshowPluginInstaller.php:441
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:6
 msgid "Light"
 msgstr ""
 
-#: classes/SlideshowPluginGeneralSettings.php:163
-#: classes/SlideshowPluginInstaller.php:388
+#: classes/SlideshowPluginGeneralSettings.php:167
+#: classes/SlideshowPluginInstaller.php:441
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:7
 msgid "Dark"
 msgstr ""
 
-#: classes/SlideshowPluginGeneralSettings.php:267
+#: classes/SlideshowPluginGeneralSettings.php:271
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:49
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:131
 msgid "Untitled"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:385
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:374
+#: classes/SlideshowPluginInstaller.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:378
 msgid "Yes"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:386
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:375
+#: classes/SlideshowPluginInstaller.php:439
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:379
 msgid "No"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:388
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:473
+#: classes/SlideshowPluginInstaller.php:441
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:477
 msgid "The style used for this slideshow"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:388
+#: classes/SlideshowPluginInstaller.php:441
 msgid "Custom"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:389
+#: classes/SlideshowPluginInstaller.php:442
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:114
 msgid "Custom style editor"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:390
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Animation used for transition between slides"
 msgstr "幻灯片滑动的动画效果设置"
 
-#: classes/SlideshowPluginInstaller.php:390
+#: classes/SlideshowPluginInstaller.php:443
 msgid "Slide"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:390
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Fade"
 msgstr ""
 
-#: classes/SlideshowPluginInstaller.php:390
-#: classes/SlideshowPluginInstaller.php:391
-#: classes/SlideshowPluginInstaller.php:392
-#: classes/SlideshowPluginInstaller.php:393
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:416
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:417
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:418
-msgid "Animation"
-msgstr "动态"
-
-#: classes/SlideshowPluginInstaller.php:391
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:416
-msgid "Number of seconds the slide takes to slide in"
-msgstr "幻灯片滑动速度"
-
-#: classes/SlideshowPluginInstaller.php:392
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:417
-msgid "Number of seconds the description takes to slide in"
-msgstr "“描述”滑动速度"
-
-#: classes/SlideshowPluginInstaller.php:393
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:418
-msgid "Seconds between changing slides"
-msgstr "幻灯片间置换的时间间隔"
-
-#: classes/SlideshowPluginInstaller.php:394
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
-msgid "Number of slides to fit into one slide"
-msgstr "同一幅幻灯片中显示多少图片"
-
-#: classes/SlideshowPluginInstaller.php:394
-#: classes/SlideshowPluginInstaller.php:395
-#: classes/SlideshowPluginInstaller.php:396
-#: classes/SlideshowPluginInstaller.php:397
-#: classes/SlideshowPluginInstaller.php:398
-#: classes/SlideshowPluginInstaller.php:399
-#: classes/SlideshowPluginInstaller.php:400
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginInstaller.php:444
+#: classes/SlideshowPluginInstaller.php:445
+#: classes/SlideshowPluginInstaller.php:446
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:420
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:421
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+msgid "Animation"
+msgstr "动态"
+
+#: classes/SlideshowPluginInstaller.php:444
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:420
+msgid "Number of seconds the slide takes to slide in"
+msgstr "幻灯片滑动速度"
+
+#: classes/SlideshowPluginInstaller.php:445
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+msgid "Number of seconds the description takes to slide in"
+msgstr "“描述”滑动速度"
+
+#: classes/SlideshowPluginInstaller.php:446
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+msgid "Seconds between changing slides"
+msgstr "幻灯片间置换的时间间隔"
+
+#: classes/SlideshowPluginInstaller.php:447
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:423
+msgid "Number of slides to fit into one slide"
+msgstr "同一幅幻灯片中显示多少图片"
+
+#: classes/SlideshowPluginInstaller.php:447
+#: classes/SlideshowPluginInstaller.php:448
+#: classes/SlideshowPluginInstaller.php:449
+#: classes/SlideshowPluginInstaller.php:450
+#: classes/SlideshowPluginInstaller.php:451
+#: classes/SlideshowPluginInstaller.php:452
+#: classes/SlideshowPluginInstaller.php:453
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:423
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:424
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:426
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:427
-msgid "Display"
-msgstr "显示"
-
-#: classes/SlideshowPluginInstaller.php:395
-msgid "Width of the slideshow, set to parent&#39;s width on 0"
-msgstr "幻灯片宽度，0为继承父元素宽度"
-
-#: classes/SlideshowPluginInstaller.php:396
-msgid "Height of the slideshow"
-msgstr "幻灯片高度"
-
-#: classes/SlideshowPluginInstaller.php:397
-msgid "Height of the description boxes"
-msgstr "幻灯片中描述窗口的高度"
-
-#: classes/SlideshowPluginInstaller.php:398
-msgid "Fit image into slide (stretching it)"
-msgstr "图片适应显示 (即拉伸图片"
-
-#: classes/SlideshowPluginInstaller.php:399
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:426
-msgid "Show title and description"
-msgstr "显示标题和描述"
-
-#: classes/SlideshowPluginInstaller.php:400
-msgid "Hide description box, it will pop up when a mouse hovers over the slide"
-msgstr "隐藏描述窗口，只有鼠标移至幻灯片才弹出"
-
-#: classes/SlideshowPluginInstaller.php:401
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:428
-msgid "Automatically slide to the next slide"
-msgstr "幻灯片自动滚动显示"
-
-#: classes/SlideshowPluginInstaller.php:401
-#: classes/SlideshowPluginInstaller.php:402
-#: classes/SlideshowPluginInstaller.php:403
-#: classes/SlideshowPluginInstaller.php:404
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:428
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:429
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:430
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:431
+msgid "Display"
+msgstr "显示"
+
+#: classes/SlideshowPluginInstaller.php:448
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr "幻灯片宽度，0为继承父元素宽度"
+
+#: classes/SlideshowPluginInstaller.php:449
+msgid "Height of the slideshow"
+msgstr "幻灯片高度"
+
+#: classes/SlideshowPluginInstaller.php:450
+msgid "Height of the description boxes"
+msgstr "幻灯片中描述窗口的高度"
+
+#: classes/SlideshowPluginInstaller.php:451
+msgid "Fit image into slide (stretching it)"
+msgstr "图片适应显示 (即拉伸图片"
+
+#: classes/SlideshowPluginInstaller.php:452
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:430
+msgid "Show title and description"
+msgstr "显示标题和描述"
+
+#: classes/SlideshowPluginInstaller.php:453
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr "隐藏描述窗口，只有鼠标移至幻灯片才弹出"
+
+#: classes/SlideshowPluginInstaller.php:454
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:432
+msgid "Automatically slide to the next slide"
+msgstr "幻灯片自动滚动显示"
+
+#: classes/SlideshowPluginInstaller.php:454
+#: classes/SlideshowPluginInstaller.php:455
+#: classes/SlideshowPluginInstaller.php:456
+#: classes/SlideshowPluginInstaller.php:457
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:432
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:433
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:434
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:435
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:436
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:439
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:440
 msgid "Control"
 msgstr "控制"
 
-#: classes/SlideshowPluginInstaller.php:402
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:429
+#: classes/SlideshowPluginInstaller.php:455
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:433
 msgid "Return to the beginning of the slideshow after last slide"
 msgstr "循环展示幻灯片"
 
-#: classes/SlideshowPluginInstaller.php:403
+#: classes/SlideshowPluginInstaller.php:456
 msgid "Activate buttons (so the user can scroll through the slides)"
 msgstr "激活按钮 (用户可通过按钮左右滚动显示幻灯片)"
 
-#: classes/SlideshowPluginInstaller.php:404
+#: classes/SlideshowPluginInstaller.php:457
 msgid "Show control panel (play and pause button)"
 msgstr "显示控制面板 (播放和停止按钮)"
 
-#: classes/SlideshowPluginPostType.php:39
+#: classes/SlideshowPluginPostType.php:38
 msgid "Slideshows"
 msgstr "幻灯片"
 
-#: classes/SlideshowPluginPostType.php:40
+#: classes/SlideshowPluginPostType.php:39
 #: views/SlideshowPluginWidget/form.php:7
 msgid "Slideshow"
 msgstr "幻灯片"
 
-#: classes/SlideshowPluginPostType.php:41
+#: classes/SlideshowPluginPostType.php:40
 msgid "Add New Slideshow"
 msgstr ""
 
-#: classes/SlideshowPluginPostType.php:42
+#: classes/SlideshowPluginPostType.php:41
 msgid "Edit slideshow"
 msgstr ""
 
-#: classes/SlideshowPluginPostType.php:43
+#: classes/SlideshowPluginPostType.php:42
 msgid "New slideshow"
 msgstr ""
 
-#: classes/SlideshowPluginPostType.php:44
+#: classes/SlideshowPluginPostType.php:43
 msgid "View slideshow"
 msgstr ""
 
-#: classes/SlideshowPluginPostType.php:45
+#: classes/SlideshowPluginPostType.php:44
 msgid "Search slideshows"
 msgstr ""
 
+#: classes/SlideshowPluginPostType.php:45
 #: classes/SlideshowPluginPostType.php:46
-#: classes/SlideshowPluginPostType.php:47
 msgid "No slideshows found"
 msgstr ""
 
-#: classes/SlideshowPluginPostType.php:167
+#: classes/SlideshowPluginPostType.php:155
 msgid "Information"
 msgstr "信息"
 
-#: classes/SlideshowPluginPostType.php:176
+#: classes/SlideshowPluginPostType.php:164
 msgid "Slides List"
 msgstr ""
 
-#: classes/SlideshowPluginPostType.php:185
+#: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow Style"
 msgstr "幻灯片展示样式"
 
-#: classes/SlideshowPluginPostType.php:194
+#: classes/SlideshowPluginPostType.php:182
 msgid "Slideshow Settings"
 msgstr "幻灯片设置"
 
-#: classes/SlideshowPluginPostType.php:244
-#: classes/SlideshowPluginSlideInserter.php:156
+#: classes/SlideshowPluginPostType.php:232
+#: classes/SlideshowPluginSlideInserter.php:178
 #: views/SlideshowPluginPostType/slides.php:2
 msgid "Insert"
 msgstr "插入"
 
-#: classes/SlideshowPluginPostType.php:252
+#: classes/SlideshowPluginPostType.php:240
 #: views/SlideshowPluginPostType/slides.php:9
 msgid "Add slides to this slideshow by using one of the buttons above."
 msgstr ""
@@ -259,120 +259,124 @@ msgstr ""
 msgid "No slideshow selected."
 msgstr ""
 
-#: classes/SlideshowPluginSlideInserter.php:165
+#: classes/SlideshowPluginSlideInserter.php:151
+msgid "More results loaded"
+msgstr ""
+
+#: classes/SlideshowPluginSlideInserter.php:187
 msgid "Load more results"
 msgstr ""
 
-#: classes/SlideshowPluginSlideInserter.php:174
+#: classes/SlideshowPluginSlideInserter.php:196
 msgid "No images were found, click here to upload some."
 msgstr ""
 
-#: classes/SlideshowPluginSlideInserter.php:243
+#: classes/SlideshowPluginSlideInserter.php:273
 msgid "Are you sure you want to delete this slide?"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Left"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Right"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Up"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Down"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Direct Fade"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Random Animation"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:420
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:424
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 msgid "More info"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 #, php-format
 msgid ""
 "Proportional relationship%s between slideshow's width and height (width:"
 "height)"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:426
 msgid "Slideshow's height"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:423
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:427
 msgid "Fit image into slide (Stretch image)"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:424
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:428
 msgid "Shrink slideshow's height when width shrinks"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:429
 msgid ""
 "Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:427
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:431
 msgid "Hide description box, pop up when mouse hovers over"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:430
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:434
 msgid "Pause slideshow when mouse hovers over"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:431
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:435
 msgid "Activate navigation buttons"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:432
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:436
 msgid "Hide navigation buttons, show when mouse hovers over"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:433
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
 msgid "Activate pagination"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:434
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
 msgid "Hide pagination, show when mouse hovers over"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:435
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:439
 msgid "Activate control panel (play and pause button)"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:436
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:440
 msgid "Hide control panel, show when mouse hovers over"
 msgstr ""
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:441
 msgid "Randomize slides"
 msgstr "随机幻灯片"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:441
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:442
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:442
 #, php-format
 msgid "Avoid content filter (disable if '%s' is shown)"
 msgstr ""
@@ -439,7 +443,7 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:263
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:54
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:12
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:92
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:90
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:29
 #: views/SlideshowPluginWidget/form.php:2
 msgid "Title"
@@ -540,7 +544,7 @@ msgstr "文本幻灯片"
 #: views/SlideshowPluginPostType/slides.php:269
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:61
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:15
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:99
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:97
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:32
 msgid "Description"
 msgstr ""
@@ -558,8 +562,8 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:274
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:68
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:28
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:106
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:45
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:104
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:46
 msgid "URL"
 msgstr ""
 
@@ -569,8 +573,8 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:276
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:71
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:31
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:109
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:48
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:107
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:49
 msgid "Open URL in"
 msgstr ""
 
@@ -580,8 +584,8 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:278
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:73
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:33
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:111
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:50
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:109
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:51
 msgid "Same window"
 msgstr ""
 
@@ -591,22 +595,22 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:279
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:74
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:34
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:112
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:51
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:52
 msgid "New window"
 msgstr ""
 
 #: views/SlideshowPluginPostType/slides.php:89
 #: views/SlideshowPluginPostType/slides.php:229
 #: views/SlideshowPluginSlideInserter/insert-video-button.php:1
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:54
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:53
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:13
 msgid "Video slide"
 msgstr "视频幻灯片"
 
 #: views/SlideshowPluginPostType/slides.php:94
 #: views/SlideshowPluginPostType/slides.php:234
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:60
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:59
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:19
 msgid "Youtube Video ID"
 msgstr ""
@@ -615,7 +619,7 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:254
 #: views/SlideshowPluginSlideInserter/insert-image-button.php:1
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:40
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:80
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:78
 msgid "Image slide"
 msgstr "图示幻灯片"
 
@@ -631,9 +635,9 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:288
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:83
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:42
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:68
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:121
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:59
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:67
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:119
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:60
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:27
 msgid "Delete slide"
 msgstr ""
@@ -665,10 +669,6 @@ msgstr "为本插件打分"
 #: views/SlideshowPluginPostType/support-plugin.php:24
 msgid "Frequently Asked Questions (FAQ)"
 msgstr ""
-
-#: views/SlideshowPluginPostType/support-plugin.php:33
-msgid "Questions / Suggestions"
-msgstr "问题/建议"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
@@ -714,6 +714,10 @@ msgstr ""
 msgid "Text color"
 msgstr ""
 
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:40
+msgid "(Leave empty for a transparent background)"
+msgstr ""
+
 #: views/SlideshowPluginUpload/upload-button.php:1
 msgid "Upload/Manage Images"
 msgstr ""
@@ -721,6 +725,9 @@ msgstr ""
 #: views/SlideshowPluginWidget/form.php:9
 msgid "Random Slideshow"
 msgstr ""
+
+#~ msgid "Questions / Suggestions"
+#~ msgstr "问题/建议"
 
 #~ msgid "Leave any field open to use default value."
 #~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."

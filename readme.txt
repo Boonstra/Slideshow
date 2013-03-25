@@ -36,18 +36,21 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Chinese (27% Translated by [Kevin Tell](http://www.ivygg.com/))
- - Czech (100% Translated by Edhel)
+ - Chinese (26% Translated by [Kevin Tell](http://www.ivygg.com/))
+ - Czech (98% Translated by Edhel)
  - Dutch
  - English
- - French (60% Translated by [Wptheme](http://wptheme.fr/))
- - Hebrew (63% Translated by Eli Segev)
+ - French (59% Translated by [Wptheme](http://wptheme.fr/))
+ - Hebrew (62% Translated by Eli Segev)
  - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
- - Spanish (62% Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Spanish (61% Translated by [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
 
-Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. Many
-thanks in advance! (Please use the support forum for asking questions, it'll help others as well)
+Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
+translation file can be downloaded
+[by clicking here](http://plugins.svn.wordpress.org/slideshow-jquery-image-gallery/trunk/languages/slideshow-plugin-original.po)
+and saving the page to your computer. This file can be easily edited with [PoEdit](http://www.poedit.net/), a free
+translation tool. Many thanks in advance!
 
 = Project board =
 

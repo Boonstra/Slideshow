@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-04 12:14+0100\n"
-"PO-Revision-Date: 2013-02-04 12:18+0100\n"
+"POT-Creation-Date: 2013-03-25 19:55+0100\n"
+"PO-Revision-Date: 2013-03-25 19:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
 "Language: cz_CZ\n"
@@ -21,237 +21,237 @@ msgstr ""
 msgid "General Settings"
 msgstr "Obecné nastavení"
 
-#: classes/SlideshowPluginGeneralSettings.php:142
+#: classes/SlideshowPluginGeneralSettings.php:146
 msgid "New"
 msgstr "Nový"
 
-#: classes/SlideshowPluginGeneralSettings.php:143
+#: classes/SlideshowPluginGeneralSettings.php:147
 msgid "Are you sure you want to delete this custom style?"
 msgstr "Víte jistě, že chcete tuto přizpůsobenou šablonu stylů smazat?"
 
-#: classes/SlideshowPluginGeneralSettings.php:162
-#: classes/SlideshowPluginInstaller.php:388
+#: classes/SlideshowPluginGeneralSettings.php:166
+#: classes/SlideshowPluginInstaller.php:441
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:6
 msgid "Light"
 msgstr "Světlý"
 
-#: classes/SlideshowPluginGeneralSettings.php:163
-#: classes/SlideshowPluginInstaller.php:388
+#: classes/SlideshowPluginGeneralSettings.php:167
+#: classes/SlideshowPluginInstaller.php:441
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:7
 msgid "Dark"
 msgstr "Tmavý"
 
-#: classes/SlideshowPluginGeneralSettings.php:267
+#: classes/SlideshowPluginGeneralSettings.php:271
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:49
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:131
 msgid "Untitled"
 msgstr "Beze jména"
 
-#: classes/SlideshowPluginInstaller.php:385
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:374
+#: classes/SlideshowPluginInstaller.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:378
 msgid "Yes"
 msgstr "Ano"
 
-#: classes/SlideshowPluginInstaller.php:386
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:375
+#: classes/SlideshowPluginInstaller.php:439
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:379
 msgid "No"
 msgstr "Ne"
 
-#: classes/SlideshowPluginInstaller.php:388
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:473
+#: classes/SlideshowPluginInstaller.php:441
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:477
 msgid "The style used for this slideshow"
 msgstr "Šablona stylů použitá pro tuto prezentaci"
 
-#: classes/SlideshowPluginInstaller.php:388
+#: classes/SlideshowPluginInstaller.php:441
 msgid "Custom"
 msgstr "Přizpůsobit"
 
-#: classes/SlideshowPluginInstaller.php:389
+#: classes/SlideshowPluginInstaller.php:442
 #: views/SlideshowPluginGeneralSettings/custom-styles.php:114
 msgid "Custom style editor"
 msgstr "Přizpůsobení šablony stylů"
 
-#: classes/SlideshowPluginInstaller.php:390
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Animation used for transition between slides"
 msgstr "Animace použitá pro přechod mezi listy"
 
-#: classes/SlideshowPluginInstaller.php:390
+#: classes/SlideshowPluginInstaller.php:443
 msgid "Slide"
 msgstr "List"
 
-#: classes/SlideshowPluginInstaller.php:390
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Fade"
 msgstr "Prolnout"
 
-#: classes/SlideshowPluginInstaller.php:390
-#: classes/SlideshowPluginInstaller.php:391
-#: classes/SlideshowPluginInstaller.php:392
-#: classes/SlideshowPluginInstaller.php:393
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:416
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:417
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:418
-msgid "Animation"
-msgstr "Nastavení animace"
-
-#: classes/SlideshowPluginInstaller.php:391
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:416
-msgid "Number of seconds the slide takes to slide in"
-msgstr "Kolik sekund zabere listu, než se přisune"
-
-#: classes/SlideshowPluginInstaller.php:392
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:417
-msgid "Number of seconds the description takes to slide in"
-msgstr "Kolik sekund zabere popisu, než se přisune"
-
-#: classes/SlideshowPluginInstaller.php:393
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:418
-msgid "Seconds between changing slides"
-msgstr "Kolik sekund mezi tím, než se vymění listy"
-
-#: classes/SlideshowPluginInstaller.php:394
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
-msgid "Number of slides to fit into one slide"
-msgstr "Počet listů, kolik se jich vejde do jednoho listu"
-
-#: classes/SlideshowPluginInstaller.php:394
-#: classes/SlideshowPluginInstaller.php:395
-#: classes/SlideshowPluginInstaller.php:396
-#: classes/SlideshowPluginInstaller.php:397
-#: classes/SlideshowPluginInstaller.php:398
-#: classes/SlideshowPluginInstaller.php:399
-#: classes/SlideshowPluginInstaller.php:400
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginInstaller.php:444
+#: classes/SlideshowPluginInstaller.php:445
+#: classes/SlideshowPluginInstaller.php:446
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:420
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:421
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+msgid "Animation"
+msgstr "Nastavení animace"
+
+#: classes/SlideshowPluginInstaller.php:444
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:420
+msgid "Number of seconds the slide takes to slide in"
+msgstr "Kolik sekund zabere listu, než se přisune"
+
+#: classes/SlideshowPluginInstaller.php:445
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+msgid "Number of seconds the description takes to slide in"
+msgstr "Kolik sekund zabere popisu, než se přisune"
+
+#: classes/SlideshowPluginInstaller.php:446
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+msgid "Seconds between changing slides"
+msgstr "Kolik sekund mezi tím, než se vymění listy"
+
+#: classes/SlideshowPluginInstaller.php:447
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:423
+msgid "Number of slides to fit into one slide"
+msgstr "Počet listů, kolik se jich vejde do jednoho listu"
+
+#: classes/SlideshowPluginInstaller.php:447
+#: classes/SlideshowPluginInstaller.php:448
+#: classes/SlideshowPluginInstaller.php:449
+#: classes/SlideshowPluginInstaller.php:450
+#: classes/SlideshowPluginInstaller.php:451
+#: classes/SlideshowPluginInstaller.php:452
+#: classes/SlideshowPluginInstaller.php:453
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:423
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:424
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:426
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:427
-msgid "Display"
-msgstr "Nastavení zobrazení"
-
-#: classes/SlideshowPluginInstaller.php:395
-msgid "Width of the slideshow, set to parent&#39;s width on 0"
-msgstr ""
-"Šířka zobrazení, nastaveno na šířku rodičovského objektu, pokud je zadáno 0"
-
-#: classes/SlideshowPluginInstaller.php:396
-msgid "Height of the slideshow"
-msgstr "Výška prezentace"
-
-#: classes/SlideshowPluginInstaller.php:397
-msgid "Height of the description boxes"
-msgstr "Výška bloku s popisem"
-
-#: classes/SlideshowPluginInstaller.php:398
-msgid "Fit image into slide (stretching it)"
-msgstr "Přizpůsobit obrázek do listů (roztáhne se)"
-
-#: classes/SlideshowPluginInstaller.php:399
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:426
-msgid "Show title and description"
-msgstr "Zobrazit název a popis"
-
-#: classes/SlideshowPluginInstaller.php:400
-msgid "Hide description box, it will pop up when a mouse hovers over the slide"
-msgstr "Skrýt blok s popisem, vyskočí, pokud myš najede na list"
-
-#: classes/SlideshowPluginInstaller.php:401
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:428
-msgid "Automatically slide to the next slide"
-msgstr "Automaticky posouvat na další list"
-
-#: classes/SlideshowPluginInstaller.php:401
-#: classes/SlideshowPluginInstaller.php:402
-#: classes/SlideshowPluginInstaller.php:403
-#: classes/SlideshowPluginInstaller.php:404
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:428
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:429
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:430
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:431
+msgid "Display"
+msgstr "Nastavení zobrazení"
+
+#: classes/SlideshowPluginInstaller.php:448
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr ""
+"Šířka zobrazení, nastaveno na šířku rodičovského objektu, pokud je zadáno 0"
+
+#: classes/SlideshowPluginInstaller.php:449
+msgid "Height of the slideshow"
+msgstr "Výška prezentace"
+
+#: classes/SlideshowPluginInstaller.php:450
+msgid "Height of the description boxes"
+msgstr "Výška bloku s popisem"
+
+#: classes/SlideshowPluginInstaller.php:451
+msgid "Fit image into slide (stretching it)"
+msgstr "Přizpůsobit obrázek do listů (roztáhne se)"
+
+#: classes/SlideshowPluginInstaller.php:452
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:430
+msgid "Show title and description"
+msgstr "Zobrazit název a popis"
+
+#: classes/SlideshowPluginInstaller.php:453
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr "Skrýt blok s popisem, vyskočí, pokud myš najede na list"
+
+#: classes/SlideshowPluginInstaller.php:454
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:432
+msgid "Automatically slide to the next slide"
+msgstr "Automaticky posouvat na další list"
+
+#: classes/SlideshowPluginInstaller.php:454
+#: classes/SlideshowPluginInstaller.php:455
+#: classes/SlideshowPluginInstaller.php:456
+#: classes/SlideshowPluginInstaller.php:457
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:432
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:433
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:434
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:435
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:436
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:439
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:440
 msgid "Control"
 msgstr "Nastavení ovládání"
 
-#: classes/SlideshowPluginInstaller.php:402
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:429
+#: classes/SlideshowPluginInstaller.php:455
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:433
 msgid "Return to the beginning of the slideshow after last slide"
 msgstr "Návrat na začátek prezentace po posledním listu"
 
-#: classes/SlideshowPluginInstaller.php:403
+#: classes/SlideshowPluginInstaller.php:456
 msgid "Activate buttons (so the user can scroll through the slides)"
 msgstr "Aktivovat tlačítka (takže uživatel může procházet mezi listy)"
 
-#: classes/SlideshowPluginInstaller.php:404
+#: classes/SlideshowPluginInstaller.php:457
 msgid "Show control panel (play and pause button)"
 msgstr "Zobrazit ovládací panel (tlačítka přehrát a zastavit)"
 
-#: classes/SlideshowPluginPostType.php:39
+#: classes/SlideshowPluginPostType.php:38
 msgid "Slideshows"
 msgstr "Prezentace"
 
-#: classes/SlideshowPluginPostType.php:40
+#: classes/SlideshowPluginPostType.php:39
 #: views/SlideshowPluginWidget/form.php:7
 msgid "Slideshow"
 msgstr "Prezentace"
 
-#: classes/SlideshowPluginPostType.php:41
+#: classes/SlideshowPluginPostType.php:40
 msgid "Add New Slideshow"
 msgstr "Přidat novou prezentaci"
 
-#: classes/SlideshowPluginPostType.php:42
+#: classes/SlideshowPluginPostType.php:41
 msgid "Edit slideshow"
 msgstr "Upravit prezentaci"
 
-#: classes/SlideshowPluginPostType.php:43
+#: classes/SlideshowPluginPostType.php:42
 msgid "New slideshow"
 msgstr "Nová prezentace"
 
-#: classes/SlideshowPluginPostType.php:44
+#: classes/SlideshowPluginPostType.php:43
 msgid "View slideshow"
 msgstr "Zobrazit prezentaci"
 
-#: classes/SlideshowPluginPostType.php:45
+#: classes/SlideshowPluginPostType.php:44
 msgid "Search slideshows"
 msgstr "Hledat prezentaci"
 
+#: classes/SlideshowPluginPostType.php:45
 #: classes/SlideshowPluginPostType.php:46
-#: classes/SlideshowPluginPostType.php:47
 msgid "No slideshows found"
 msgstr "Žádná prezentace nenalezena"
 
-#: classes/SlideshowPluginPostType.php:167
+#: classes/SlideshowPluginPostType.php:155
 msgid "Information"
 msgstr "Informace"
 
-#: classes/SlideshowPluginPostType.php:176
+#: classes/SlideshowPluginPostType.php:164
 msgid "Slides List"
 msgstr "Seznam listů"
 
-#: classes/SlideshowPluginPostType.php:185
+#: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow Style"
 msgstr "Šablona stylu prezentace"
 
-#: classes/SlideshowPluginPostType.php:194
+#: classes/SlideshowPluginPostType.php:182
 msgid "Slideshow Settings"
 msgstr "Nastavení prezentace"
 
-#: classes/SlideshowPluginPostType.php:244
-#: classes/SlideshowPluginSlideInserter.php:156
+#: classes/SlideshowPluginPostType.php:232
+#: classes/SlideshowPluginSlideInserter.php:178
 #: views/SlideshowPluginPostType/slides.php:2
 msgid "Insert"
 msgstr "Vložit"
 
-#: classes/SlideshowPluginPostType.php:252
+#: classes/SlideshowPluginPostType.php:240
 #: views/SlideshowPluginPostType/slides.php:9
 msgid "Add slides to this slideshow by using one of the buttons above."
 msgstr ""
@@ -261,124 +261,128 @@ msgstr ""
 msgid "No slideshow selected."
 msgstr "Žádná prezentace nebyla vybrána."
 
-#: classes/SlideshowPluginSlideInserter.php:165
+#: classes/SlideshowPluginSlideInserter.php:151
+msgid "More results loaded"
+msgstr ""
+
+#: classes/SlideshowPluginSlideInserter.php:187
 msgid "Load more results"
 msgstr "Načíst více výsledků"
 
-#: classes/SlideshowPluginSlideInserter.php:174
+#: classes/SlideshowPluginSlideInserter.php:196
 msgid "No images were found, click here to upload some."
 msgstr "Žádné obrázky nebyly nalezeny, hlikněte sem, abyste nějaké nahráli."
 
-#: classes/SlideshowPluginSlideInserter.php:243
+#: classes/SlideshowPluginSlideInserter.php:273
 msgid "Are you sure you want to delete this slide?"
 msgstr "Víte jistě, že chcete tento list smazat?"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Left"
 msgstr "Posunout doleva"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Right"
 msgstr "Posunout doprava"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Up"
 msgstr "Posunout nahoru"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Slide Down"
 msgstr "Posunout dolů"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Direct Fade"
 msgstr "Přímé prolnutí"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:415
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
 msgid "Random Animation"
 msgstr "Náhodná animace"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:420
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:424
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
 msgstr "Maximální šířka. Pokud je zadáno 0, je maximální šířka ignorována"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
 msgstr "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 msgid "More info"
 msgstr "Více informací"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
 #, php-format
 msgid ""
 "Proportional relationship%s between slideshow's width and height (width:"
 "height)"
 msgstr "Proporcionální vazba%s mezi šířkou a výškou prezentace (šířka:výška)"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:426
 msgid "Slideshow's height"
 msgstr "Výška prezentace"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:423
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:427
 msgid "Fit image into slide (Stretch image)"
 msgstr "Přizpůsobit obrázek do listu (obrázek se roztáhne)"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:424
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:428
 msgid "Shrink slideshow's height when width shrinks"
 msgstr ""
 "Umožnit přizpůsobení (Šířka prezentace se smrskne, pokud se smrskne šířka "
 "stránky)"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:429
 msgid ""
 "Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
 msgstr ""
 "Umožnit přizpůsobení (Šířka prezentace se smrskne, pokud se smrskne šířka "
 "stránky"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:427
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:431
 msgid "Hide description box, pop up when mouse hovers over"
 msgstr "Skrýt blok s popisem, objeví se, když přes ni přejde myš"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:430
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:434
 msgid "Pause slideshow when mouse hovers over"
 msgstr "Zastavit prezentaci, když přes ni přeběhne myš"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:431
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:435
 msgid "Activate navigation buttons"
 msgstr "Použít tlačítka navigace"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:432
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:436
 msgid "Hide navigation buttons, show when mouse hovers over"
 msgstr "Skrýt tlačítka navigace, objeví se, když přes ně přeběhne myš"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:433
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
 msgid "Activate pagination"
 msgstr "Použít stránkování"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:434
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
 msgid "Hide pagination, show when mouse hovers over"
 msgstr "Skrýt stránkování, objeví se, když přes něj přeběhne myš"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:435
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:439
 msgid "Activate control panel (play and pause button)"
 msgstr "Použít ovládací panel (tlačítka přehrát a zastavit)"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:436
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:440
 msgid "Hide control panel, show when mouse hovers over"
 msgstr "Skrát ovládací panel, objeví se, když jej přejde myš"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:441
 msgid "Randomize slides"
 msgstr "Náhodné pořadí listů"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:441
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:442
 msgid "Miscellaneous"
 msgstr "Další nastavení"
 
-#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:442
 #, php-format
 msgid "Avoid content filter (disable if '%s' is shown)"
 msgstr "Vyhnout se filtru obsahu (vypne se, pokud se ukáže '%s' )"
@@ -445,7 +449,7 @@ msgstr "Klikněte na některou šablonu stylů vlevo, abyste ji upravili."
 #: views/SlideshowPluginPostType/slides.php:263
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:54
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:12
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:92
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:90
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:29
 #: views/SlideshowPluginWidget/form.php:2
 msgid "Title"
@@ -552,7 +556,7 @@ msgstr "List s textem"
 #: views/SlideshowPluginPostType/slides.php:269
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:61
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:15
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:99
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:97
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:32
 msgid "Description"
 msgstr "Popis"
@@ -570,8 +574,8 @@ msgstr "Barva pozadí"
 #: views/SlideshowPluginPostType/slides.php:274
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:68
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:28
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:106
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:45
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:104
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:46
 msgid "URL"
 msgstr "URL"
 
@@ -581,8 +585,8 @@ msgstr "URL"
 #: views/SlideshowPluginPostType/slides.php:276
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:71
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:31
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:109
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:48
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:107
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:49
 msgid "Open URL in"
 msgstr "Otevřít URL v"
 
@@ -592,8 +596,8 @@ msgstr "Otevřít URL v"
 #: views/SlideshowPluginPostType/slides.php:278
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:73
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:33
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:111
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:50
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:109
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:51
 msgid "Same window"
 msgstr "Stejné okno"
 
@@ -603,22 +607,22 @@ msgstr "Stejné okno"
 #: views/SlideshowPluginPostType/slides.php:279
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:74
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:34
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:112
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:51
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:52
 msgid "New window"
 msgstr "Nové okno"
 
 #: views/SlideshowPluginPostType/slides.php:89
 #: views/SlideshowPluginPostType/slides.php:229
 #: views/SlideshowPluginSlideInserter/insert-video-button.php:1
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:54
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:53
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:13
 msgid "Video slide"
 msgstr "List s videem"
 
 #: views/SlideshowPluginPostType/slides.php:94
 #: views/SlideshowPluginPostType/slides.php:234
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:60
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:59
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:19
 msgid "Youtube Video ID"
 msgstr "ID videa na Youtube"
@@ -627,7 +631,7 @@ msgstr "ID videa na Youtube"
 #: views/SlideshowPluginPostType/slides.php:254
 #: views/SlideshowPluginSlideInserter/insert-image-button.php:1
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:40
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:80
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:78
 msgid "Image slide"
 msgstr "List s obrázkem"
 
@@ -645,9 +649,9 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:288
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:83
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:42
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:68
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:121
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:59
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:67
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:119
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:60
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:27
 msgid "Delete slide"
 msgstr "Smazat list"
@@ -680,10 +684,6 @@ msgstr "Ohodnotit na Wordpress.org"
 #: views/SlideshowPluginPostType/support-plugin.php:24
 msgid "Frequently Asked Questions (FAQ)"
 msgstr "Často kladené otázky (FAQ)"
-
-#: views/SlideshowPluginPostType/support-plugin.php:33
-msgid "Questions / Suggestions"
-msgstr "Dotazy / Nápady"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
@@ -731,6 +731,10 @@ msgstr "Hledat obrázky podle titulku nebo ID"
 msgid "Text color"
 msgstr "Barva textu"
 
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:40
+msgid "(Leave empty for a transparent background)"
+msgstr ""
+
 #: views/SlideshowPluginUpload/upload-button.php:1
 msgid "Upload/Manage Images"
 msgstr "Nahrát/Spravovat obrázky"
@@ -738,6 +742,9 @@ msgstr "Nahrát/Spravovat obrázky"
 #: views/SlideshowPluginWidget/form.php:9
 msgid "Random Slideshow"
 msgstr "Náhodná prezentace"
+
+#~ msgid "Questions / Suggestions"
+#~ msgstr "Dotazy / Nápady"
 
 #~ msgid ""
 #~ "Shrink slideshow's height when width shrinks (Fixed height can be defined "
