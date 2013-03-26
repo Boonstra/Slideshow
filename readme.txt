@@ -45,6 +45,7 @@ different images, settings and styles for each one of them.
  - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
  - Spanish (61% Translated by [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
+ - Turkish (100% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded

@@ -1,0 +1,751 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slideshow Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-25 19:59+0100\n"
+"PO-Revision-Date: 2013-03-26 20:59+0100\n"
+"Last-Translator: Kelkirpi <admin@kelkirpi.net>\n"
+"Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/SlideshowPluginGeneralSettings.php:64
+#: classes/SlideshowPluginGeneralSettings.php:65
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: classes/SlideshowPluginGeneralSettings.php:146
+msgid "New"
+msgstr "Yeni"
+
+#: classes/SlideshowPluginGeneralSettings.php:147
+msgid "Are you sure you want to delete this custom style?"
+msgstr "Bu özel stili silmek istediğinizden emin misiniz?"
+
+#: classes/SlideshowPluginGeneralSettings.php:166
+#: classes/SlideshowPluginInstaller.php:441
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:6
+msgid "Light"
+msgstr "Açık Renk"
+
+#: classes/SlideshowPluginGeneralSettings.php:167
+#: classes/SlideshowPluginInstaller.php:441
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:7
+msgid "Dark"
+msgstr "Koyu Renk"
+
+#: classes/SlideshowPluginGeneralSettings.php:271
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:49
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:131
+msgid "Untitled"
+msgstr "İsimsiz"
+
+#: classes/SlideshowPluginInstaller.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:378
+msgid "Yes"
+msgstr "Evet"
+
+#: classes/SlideshowPluginInstaller.php:439
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:379
+msgid "No"
+msgstr "Hayır"
+
+#: classes/SlideshowPluginInstaller.php:441
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:477
+msgid "The style used for this slideshow"
+msgstr "Bu slayt gösterisi için kullanılan stil"
+
+#: classes/SlideshowPluginInstaller.php:441
+msgid "Custom"
+msgstr "Özel"
+
+#: classes/SlideshowPluginInstaller.php:442
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:114
+msgid "Custom style editor"
+msgstr "Özel stil editörü"
+
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Animation used for transition between slides"
+msgstr "Slaytlar arasında geçiş için kullanılan animasyon"
+
+#: classes/SlideshowPluginInstaller.php:443
+msgid "Slide"
+msgstr "Slayt"
+
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Fade"
+msgstr "Solma"
+
+#: classes/SlideshowPluginInstaller.php:443
+#: classes/SlideshowPluginInstaller.php:444
+#: classes/SlideshowPluginInstaller.php:445
+#: classes/SlideshowPluginInstaller.php:446
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:420
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+msgid "Animation"
+msgstr "Animasyon"
+
+#: classes/SlideshowPluginInstaller.php:444
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:420
+msgid "Number of seconds the slide takes to slide in"
+msgstr "İkinci slayta geçiş için geçecek saniye"
+
+#: classes/SlideshowPluginInstaller.php:445
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:421
+msgid "Number of seconds the description takes to slide in"
+msgstr "Açıklamanın görüntülenmesi için geçecek süre"
+
+#: classes/SlideshowPluginInstaller.php:446
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:422
+msgid "Seconds between changing slides"
+msgstr "Değişen slaytlar arasındaki saniye"
+
+#: classes/SlideshowPluginInstaller.php:447
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:423
+msgid "Number of slides to fit into one slide"
+msgstr "Bir defada gösterilecek slayt sayısı"
+
+#: classes/SlideshowPluginInstaller.php:447
+#: classes/SlideshowPluginInstaller.php:448
+#: classes/SlideshowPluginInstaller.php:449
+#: classes/SlideshowPluginInstaller.php:450
+#: classes/SlideshowPluginInstaller.php:451
+#: classes/SlideshowPluginInstaller.php:452
+#: classes/SlideshowPluginInstaller.php:453
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:423
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:424
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:426
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:427
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:428
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:429
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:430
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:431
+msgid "Display"
+msgstr "Görünüm"
+
+#: classes/SlideshowPluginInstaller.php:448
+msgid "Width of the slideshow, set to parent&#39;s width on 0"
+msgstr "Slayt gösterisinin genişliği, ana olarak&#39;s genişlik sıfırdır"
+
+#: classes/SlideshowPluginInstaller.php:449
+msgid "Height of the slideshow"
+msgstr "Slayt gösterisinin yüksekliği"
+
+#: classes/SlideshowPluginInstaller.php:450
+msgid "Height of the description boxes"
+msgstr "Açıklama kutularının yüksekliği"
+
+#: classes/SlideshowPluginInstaller.php:451
+msgid "Fit image into slide (stretching it)"
+msgstr "Resmi slayta sığdır (gererek)"
+
+#: classes/SlideshowPluginInstaller.php:452
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:430
+msgid "Show title and description"
+msgstr "Başlığı ve açıklamayı göster"
+
+#: classes/SlideshowPluginInstaller.php:453
+msgid "Hide description box, it will pop up when a mouse hovers over the slide"
+msgstr "Açıklama kutusunu sakla, fare ile üzerine gelince açılır"
+
+#: classes/SlideshowPluginInstaller.php:454
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:432
+msgid "Automatically slide to the next slide"
+msgstr "Otomatik olarak sonraki slayta geç"
+
+#: classes/SlideshowPluginInstaller.php:454
+#: classes/SlideshowPluginInstaller.php:455
+#: classes/SlideshowPluginInstaller.php:456
+#: classes/SlideshowPluginInstaller.php:457
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:432
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:433
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:434
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:435
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:436
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:439
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:440
+msgid "Control"
+msgstr "Kontrol"
+
+#: classes/SlideshowPluginInstaller.php:455
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:433
+msgid "Return to the beginning of the slideshow after last slide"
+msgstr "Son slayttan sonra tekrar başlat"
+
+#: classes/SlideshowPluginInstaller.php:456
+msgid "Activate buttons (so the user can scroll through the slides)"
+msgstr "Butonları etkinleştir (böylece kullanıcı slaytlar arasında gezebilir)"
+
+#: classes/SlideshowPluginInstaller.php:457
+msgid "Show control panel (play and pause button)"
+msgstr "Kontrol panelini göster (Oynat ve Duraklat butonları)"
+
+#: classes/SlideshowPluginPostType.php:38
+msgid "Slideshows"
+msgstr "Slayt Gösterileri"
+
+#: classes/SlideshowPluginPostType.php:39
+#: views/SlideshowPluginWidget/form.php:7
+msgid "Slideshow"
+msgstr "Slayt Gösterisi"
+
+#: classes/SlideshowPluginPostType.php:40
+msgid "Add New Slideshow"
+msgstr "Yeni Slayt Gösterisi Ekle"
+
+#: classes/SlideshowPluginPostType.php:41
+msgid "Edit slideshow"
+msgstr "Slayt Gösterisini Düzenle"
+
+#: classes/SlideshowPluginPostType.php:42
+msgid "New slideshow"
+msgstr "Yeni Slayt Gösterisi"
+
+#: classes/SlideshowPluginPostType.php:43
+msgid "View slideshow"
+msgstr "Slayt Gösterisini Görüntüle"
+
+#: classes/SlideshowPluginPostType.php:44
+msgid "Search slideshows"
+msgstr "Slayt Gösterisi Ara"
+
+#: classes/SlideshowPluginPostType.php:45
+#: classes/SlideshowPluginPostType.php:46
+msgid "No slideshows found"
+msgstr "Slayt gösterisi bulunamadı"
+
+#: classes/SlideshowPluginPostType.php:155
+msgid "Information"
+msgstr "Bilgi"
+
+#: classes/SlideshowPluginPostType.php:164
+msgid "Slides List"
+msgstr "Slayt Listesi"
+
+#: classes/SlideshowPluginPostType.php:173
+msgid "Slideshow Style"
+msgstr "Slayt Gösterisi Stili"
+
+#: classes/SlideshowPluginPostType.php:182
+msgid "Slideshow Settings"
+msgstr "Slayt Gösterisi Ayarları"
+
+#: classes/SlideshowPluginPostType.php:232
+#: classes/SlideshowPluginSlideInserter.php:178
+#: views/SlideshowPluginPostType/slides.php:2
+msgid "Insert"
+msgstr "Ekle"
+
+#: classes/SlideshowPluginPostType.php:240
+#: views/SlideshowPluginPostType/slides.php:9
+msgid "Add slides to this slideshow by using one of the buttons above."
+msgstr ""
+"Yukarıdaki düğmelerden birini kullanarak bu slayt gösterisi için slayt "
+"ekleyin."
+
+#: classes/SlideshowPluginShortcode.php:132
+msgid "No slideshow selected."
+msgstr "Slayt gösterisi seçilmedi."
+
+#: classes/SlideshowPluginSlideInserter.php:151
+msgid "More results loaded"
+msgstr "Daha fazla sonuç yüklendi"
+
+#: classes/SlideshowPluginSlideInserter.php:187
+msgid "Load more results"
+msgstr "Daha fazla sonuç yükle"
+
+#: classes/SlideshowPluginSlideInserter.php:196
+msgid "No images were found, click here to upload some."
+msgstr "Resim bulunamadı, yüklemek için buraya tıklayınız."
+
+#: classes/SlideshowPluginSlideInserter.php:273
+msgid "Are you sure you want to delete this slide?"
+msgstr "Bu slaytı silmek istediğinizden emin misiniz?"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Slide Left"
+msgstr "Sola Doğru"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Slide Right"
+msgstr "Sağa Doğru"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Slide Up"
+msgstr "Yukarı Doğru"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Slide Down"
+msgstr "Aşağı Doğru"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Direct Fade"
+msgstr "Direkt Solma"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:419
+msgid "Random Animation"
+msgstr "Rastgele Animasyon"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:424
+msgid "Maximum width. When maximum width is 0, maximum width is ignored"
+msgstr ""
+"Maksimum genişlik. Eğer buraya sıfır girerseniz, maksimum genişlik göz ardı "
+"edilir"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
+msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+msgstr "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
+msgid "More info"
+msgstr "Detaylı bilgi"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:425
+#, php-format
+msgid ""
+"Proportional relationship%s between slideshow's width and height (width:"
+"height)"
+msgstr ""
+"(genişlik:yükseklik)%s Slayt genişliği ve yüksekliği arasındaki oransal "
+"ilişki "
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:426
+msgid "Slideshow's height"
+msgstr "Slayt gösterisinin yüksekliği"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:427
+msgid "Fit image into slide (Stretch image)"
+msgstr "Resmi slayta sığdır (Resmi ger)"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:428
+msgid "Shrink slideshow's height when width shrinks"
+msgstr "Genişlik küçülürse slayt gösterisinin yüksekliğini küçült"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:429
+msgid ""
+"Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
+msgstr ""
+"Esnekliği Ekinleştir (Sayfa küçülünce slayt gösterisi de aynı oranda küçülür)"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:431
+msgid "Hide description box, pop up when mouse hovers over"
+msgstr "Açıklamayı sakla, fare ile üzerine gelince gösterilir"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:434
+msgid "Pause slideshow when mouse hovers over"
+msgstr "Fare imleci geldiğinde slayt gösterisi duraklasın"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:435
+msgid "Activate navigation buttons"
+msgstr "Yönlendirme butonlarını etkinleştir"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:436
+msgid "Hide navigation buttons, show when mouse hovers over"
+msgstr "Yönlendirme butonlarını gizle, fare imleciyle göster"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:437
+msgid "Activate pagination"
+msgstr "Sayfalandırmayı etkinleştir"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:438
+msgid "Hide pagination, show when mouse hovers over"
+msgstr "Sayfalandırmayı sakla, fare ile üzerine gelince gösterilir"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:439
+msgid "Activate control panel (play and pause button)"
+msgstr "Kontrol panelini etkinleştir ( Oynat ve Duraklat butonları)"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:440
+msgid "Hide control panel, show when mouse hovers over"
+msgstr "Kontrol panelini sakla, fare ile üzerine gelince gösterilir"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:441
+msgid "Randomize slides"
+msgstr "Rastgele slaytlar"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:441
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:442
+msgid "Miscellaneous"
+msgstr "Çeşitli"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:442
+#, php-format
+msgid "Avoid content filter (disable if '%s' is shown)"
+msgstr ""
+"İçerik filtresinden sakın (Eğer '%s'  görünsün isterseniz hayırı seçin)"
+
+#: classes/SlideshowPluginWidget.php:23
+msgid "Enables you to show your slideshows in the widget area of your website."
+msgstr "Kullanıcı düzeylerinin hangi yetkilere sahip olacağını belirleyin."
+
+#: classes/SlideshowPluginWidget.php:29
+msgid "Slideshow Widget"
+msgstr "Slayt gösterisi bileşeni"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:38
+msgid "Default stylesheets"
+msgstr "Varsayılan Stil Sayfaları"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:52
+msgid "Create a new custom style from this style"
+msgstr "Yeni stil oluşturmak için bu stili özelleştir"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:54
+msgid "Customize"
+msgstr "Özelleştir"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:68
+msgid "Custom stylesheets"
+msgstr "Özel Stil Sayfaları"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:81
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:160
+msgid "Edit this style"
+msgstr "Bu stili düzenle"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:83
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:162
+#: views/SlideshowPluginPostType/slides.php:137
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:46
+msgid "Edit"
+msgstr "Düzenle"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:90
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:169
+msgid "Delete this style"
+msgstr "Bu stili sil"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:92
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:171
+msgid "Delete"
+msgstr "Sil"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:102
+msgid "Click 'Customize' to create a new custom stylesheet."
+msgstr ""
+"Yeni bir stil sayfası oluşturmak yada düzenlemek için Özelleştir'e tıklayın."
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:118
+msgid "Select a stylesheet from the left to start customizing it."
+msgstr "Özelleştirmeye başlamak için soldan bir stil seçin."
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:127
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:180
+#: views/SlideshowPluginPostType/slides.php:58
+#: views/SlideshowPluginPostType/slides.php:143
+#: views/SlideshowPluginPostType/slides.php:195
+#: views/SlideshowPluginPostType/slides.php:263
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:54
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:12
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:90
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:29
+#: views/SlideshowPluginWidget/form.php:2
+msgid "Title"
+msgstr "Başlık"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:136
+#: views/SlideshowPluginGeneralSettings/custom-styles.php:188
+msgid "Style"
+msgstr "Stil"
+
+#: views/SlideshowPluginGeneralSettings/default-slideshow-settings.php:11
+msgid "Note"
+msgstr "Not"
+
+#: views/SlideshowPluginGeneralSettings/default-slideshow-settings.php:18
+#, php-format
+msgid ""
+"The settings set on this page apply only to newly created slideshows and "
+"therefore do not alter any existing ones. To adapt a slideshow's settings, "
+"%sclick here.%s"
+msgstr ""
+"Bu sayfada belirlenen ayarlar yeni oluşturulan slayt gösterileri için "
+"geçerlidir. Dolayısıyla mevcut olan slayt gösterilerinin ayarlarını "
+"değiştirmez. Mevcut slayt gösterisi ayarlarını uyarlamak için %stıklayınız.%s"
+
+#: views/SlideshowPluginGeneralSettings/default-slideshow-settings.php:30
+#: views/SlideshowPluginGeneralSettings/general-settings.php:16
+msgid "Default Slideshow Settings"
+msgstr "Varsayılan Slayt Gösterisi Ayarları"
+
+#: views/SlideshowPluginGeneralSettings/default-slideshow-settings.php:43
+#: views/SlideshowPluginPostType/settings.php:12
+msgid "settings"
+msgstr "Ayarları"
+
+#: views/SlideshowPluginGeneralSettings/default-slideshow-settings.php:80
+msgid "Default Slideshow Stylesheet"
+msgstr "Varsayılan Slayt Gösterisi Stil Sayfası"
+
+#: views/SlideshowPluginGeneralSettings/general-settings.php:15
+msgid "User Capabilities"
+msgstr "Kullanıcı Yetkileri"
+
+#: views/SlideshowPluginGeneralSettings/general-settings.php:17
+msgid "Custom Styles"
+msgstr "Özel Stiller"
+
+#: views/SlideshowPluginGeneralSettings/user-capabilities.php:8
+msgid "Add slideshows"
+msgstr "Slayt gösterisi Ekle"
+
+#: views/SlideshowPluginGeneralSettings/user-capabilities.php:9
+msgid "Edit slideshows"
+msgstr "Slayt gösterilerini Düzenle"
+
+#: views/SlideshowPluginGeneralSettings/user-capabilities.php:10
+msgid "Delete slideshows"
+msgstr "Slayt gösterilerini Sil"
+
+#: views/SlideshowPluginGeneralSettings/user-capabilities.php:18
+msgid "Select the user roles that will able to perform certain actions."
+msgstr ""
+"Aşağıdaki eylemleri gerçekleştirmek için kullanıcı yetkilerini belirleyin."
+
+#: views/SlideshowPluginGeneralSettings/user-capabilities.php:35
+msgid "Untitled role"
+msgstr "Başlıksız rol"
+
+#: views/SlideshowPluginPostType/information.php:1
+msgid ""
+"To use this slideshow in your website either add this piece of shortcode to "
+"your posts or pages"
+msgstr ""
+"Slayt gösterisini yazı yada sayfalarınıza eklemek için bu kodu kullanın"
+
+#: views/SlideshowPluginPostType/information.php:5
+msgid ""
+"Or add this piece of code to where ever in your website you want to place "
+"the slideshow"
+msgstr ""
+"Ya da sitenizin, temanızın herhangi bir yerinde aşağıdaki kodla "
+"kullanabilirsiniz"
+
+#: views/SlideshowPluginPostType/information.php:9
+#, php-format
+msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
+msgstr ""
+"Yada %sBileşen Ayarlama%s sayfasına gidip hazır bileşen sayesinde "
+"ekleyebilirsiniz."
+
+#: views/SlideshowPluginPostType/settings.php:26
+#: views/SlideshowPluginPostType/style-settings.php:11
+msgid "Default"
+msgstr "Varsayılan"
+
+#: views/SlideshowPluginPostType/slides.php:53
+#: views/SlideshowPluginPostType/slides.php:190
+#: views/SlideshowPluginSlideInserter/insert-text-button.php:1
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:6
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:23
+msgid "Text slide"
+msgstr "Metin slaytı"
+
+#: views/SlideshowPluginPostType/slides.php:60
+#: views/SlideshowPluginPostType/slides.php:149
+#: views/SlideshowPluginPostType/slides.php:197
+#: views/SlideshowPluginPostType/slides.php:269
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:61
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:15
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:97
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:32
+msgid "Description"
+msgstr "Açıklama"
+
+#: views/SlideshowPluginPostType/slides.php:62
+#: views/SlideshowPluginPostType/slides.php:199
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:21
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:38
+msgid "Background color"
+msgstr "Arkaplan rengi"
+
+#: views/SlideshowPluginPostType/slides.php:67
+#: views/SlideshowPluginPostType/slides.php:154
+#: views/SlideshowPluginPostType/slides.php:204
+#: views/SlideshowPluginPostType/slides.php:274
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:68
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:28
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:104
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:46
+msgid "URL"
+msgstr "URL"
+
+#: views/SlideshowPluginPostType/slides.php:69
+#: views/SlideshowPluginPostType/slides.php:156
+#: views/SlideshowPluginPostType/slides.php:206
+#: views/SlideshowPluginPostType/slides.php:276
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:71
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:31
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:107
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:49
+msgid "Open URL in"
+msgstr "URL hedefi"
+
+#: views/SlideshowPluginPostType/slides.php:71
+#: views/SlideshowPluginPostType/slides.php:158
+#: views/SlideshowPluginPostType/slides.php:208
+#: views/SlideshowPluginPostType/slides.php:278
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:73
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:33
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:109
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:51
+msgid "Same window"
+msgstr "Aynı sayfa"
+
+#: views/SlideshowPluginPostType/slides.php:72
+#: views/SlideshowPluginPostType/slides.php:159
+#: views/SlideshowPluginPostType/slides.php:209
+#: views/SlideshowPluginPostType/slides.php:279
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:74
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:34
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:52
+msgid "New window"
+msgstr "Yeni sayfa"
+
+#: views/SlideshowPluginPostType/slides.php:89
+#: views/SlideshowPluginPostType/slides.php:229
+#: views/SlideshowPluginSlideInserter/insert-video-button.php:1
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:53
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:13
+msgid "Video slide"
+msgstr "Video Slayt"
+
+#: views/SlideshowPluginPostType/slides.php:94
+#: views/SlideshowPluginPostType/slides.php:234
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:59
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:19
+msgid "Youtube Video ID"
+msgstr "Youtube Video ID"
+
+#: views/SlideshowPluginPostType/slides.php:132
+#: views/SlideshowPluginPostType/slides.php:254
+#: views/SlideshowPluginSlideInserter/insert-image-button.php:1
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:40
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:78
+msgid "Image slide"
+msgstr "Resim Slaytı"
+
+#: views/SlideshowPluginPostType/slides.php:170
+msgid ""
+"An error occurred while loading this slide, and it will not be present in "
+"the slideshow"
+msgstr ""
+"Bu slayt yüklenirken bir hata oluştu, ve bu slayt gösteride "
+"kullanılmayacaktır"
+
+#: views/SlideshowPluginPostType/slides.php:176
+#: views/SlideshowPluginPostType/slides.php:217
+#: views/SlideshowPluginPostType/slides.php:242
+#: views/SlideshowPluginPostType/slides.php:288
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:83
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:42
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:67
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:119
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:60
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:27
+msgid "Delete slide"
+msgstr "Bu Slaytı Sil"
+
+#: views/SlideshowPluginPostType/style-settings.php:22
+#, php-format
+msgid "Custom styles can be created and customized %shere%s."
+msgstr "Özel stilleri oluşturmak ve düzenlemek için %stıklayınız%s."
+
+#: views/SlideshowPluginPostType/support-plugin.php:3
+msgid "Help to keep this plugin free!"
+msgstr "Bu eklentinin ücretsiz kalması için yardımcı olun!"
+
+#: views/SlideshowPluginPostType/support-plugin.php:6
+msgid ""
+"In order to keep you provided with the newest features, forum support, and "
+"bug-fixes, a lot of motivation is required. Therefore I'm kindly asking you "
+"to consider making a small donation to the plugin or rating it as 5-stars on "
+"Wordpress.org. Thank you in advance!"
+msgstr ""
+"Yeni özellikler eklemek, hataları belirleyip düzeltmek için motivasyonumuzu "
+"üst seviyede tutmamız gerekiyor. Bu yüzden sizden küçük bir bağış veya "
+"Wordpress.org üzerinden 5 yıldızla oylama rica ediyorum. Şimdiden "
+"teşekkürler!"
+
+#: views/SlideshowPluginPostType/support-plugin.php:15
+msgid "Rate on Wordpress.org"
+msgstr "Wordpress.org'da Oyla"
+
+#: views/SlideshowPluginPostType/support-plugin.php:24
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "Sık Sorulan Sorular (SSS)"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:4
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:9
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:18
+msgid "Insert a Slideshow"
+msgstr "Slayt Gösterisi Ekle"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:12
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:51
+msgid "Insert Slideshow"
+msgstr "Slayt Gösterisi Ekle"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:27
+msgid "Select a slideshow"
+msgstr "Bir slayt gösterisi seçin"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:36
+#: views/SlideshowPluginWidget/form.php:12
+msgid "Untitled slideshow"
+msgstr "Başlıksız slayt gösterisi"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:56
+msgid "Cancel"
+msgstr "İptal"
+
+#: views/SlideshowPluginShortcode/shortcode-inserter.php:67
+#, php-format
+msgid ""
+"It seems you haven't created any slideshows yet. %sYou can create a "
+"slideshow here!%s"
+msgstr ""
+"Henüz bir slayt gösterisi oluştumamışsınız gibi görünüyor. %sBuraya "
+"tıklayarak oluşturabilirsiniz.%s"
+
+#: views/SlideshowPluginSlideInserter/search-popup.php:6
+msgid "Search"
+msgstr "Ara"
+
+#: views/SlideshowPluginSlideInserter/search-popup.php:7
+msgid "Search images by title or ID"
+msgstr "Resimleri ID veya isme göre ara"
+
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:18
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:35
+msgid "Text color"
+msgstr "Yazı rengi"
+
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:40
+msgid "(Leave empty for a transparent background)"
+msgstr "(Şeffaf bir arkaplan için boş bırakın)"
+
+#: views/SlideshowPluginUpload/upload-button.php:1
+msgid "Upload/Manage Images"
+msgstr "Resim Yükle/Yönet"
+
+#: views/SlideshowPluginWidget/form.php:9
+msgid "Random Slideshow"
+msgstr "Rastgele Slayt Gösterisi"
+
+#~ msgid "Leave any field open to use default value."
+#~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."
