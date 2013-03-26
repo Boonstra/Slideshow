@@ -132,12 +132,6 @@ scripts.
 javascript to break. For the slideshow to work again, this error needs to be fixed. Check if any errors were thrown by
 opening Google Chrome or Firefox (with Firebug installed) and press the 'F12' key. Errors show in the console tab.
 
-= The slideshow looks like it's not styled =
-
-Since the slideshow is most often called after the </head> tag, the slideshow can't print it's styles in the head of
-the website and has to output them on the page. A strict doctype does not allow stylesheets to be in the body of the
-website and thus the slideshow may not be styled.
-
 = Why does Internet Explorer show a big blank space above the slideshow? =
 
 Internet Explorer is a very strict browser, so when a big blank space above your slideshow is showing your page may
