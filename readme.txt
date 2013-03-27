@@ -38,8 +38,8 @@ different images, settings and styles for each one of them.
 
  - Chinese (26% Translated by [Kevin Tell](http://www.ivygg.com/))
  - Czech (98% Translated by Edhel)
- - Dutch
- - English
+ - Dutch (100%)
+ - English (100%)
  - French (59% Translated by [Wptheme](http://wptheme.fr/))
  - Hebrew (62% Translated by Eli Segev)
  - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
