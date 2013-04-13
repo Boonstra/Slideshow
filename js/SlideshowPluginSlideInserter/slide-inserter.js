@@ -278,6 +278,7 @@ jQuery(document).ready(function(){
 
 		// Set names to be saved to the database
 		videoSlide.find('.videoId').attr('name', 'slides[0][videoId]');
+		videoSlide.find('.showRelatedVideos').attr('name', 'slides[0][showRelatedVideos]');
 		videoSlide.find('.type').attr('name', 'slides[0][type]');
 
 		// Register delete link

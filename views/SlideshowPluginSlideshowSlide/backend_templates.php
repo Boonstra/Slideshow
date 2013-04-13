@@ -61,6 +61,14 @@
 
 		</p>
 
+		<p>
+
+			<i><?php _e('Show related videos', 'slideshow-plugin'); ?></i><br />
+			<label><input type="radio" class="showRelatedVideos" value="true"><?php _e('Yes', 'slideshow-plugin'); ?></label>
+			<label><input type="radio" class="showRelatedVideos" value="false" checked="checked""><?php _e('No', 'slideshow-plugin'); ?></label>
+
+		</p>
+
 		<input type="hidden" class="type" value="video" />
 
 		<p class="slideshow-delete-slide">

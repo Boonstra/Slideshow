@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 2.2.11
+Stable tag: 2.2.12
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -42,6 +42,7 @@ different images, settings and styles for each one of them.
  - English (100%)
  - French (59% Translated by [Wptheme](http://wptheme.fr/))
  - Hebrew (62% Translated by Eli Segev)
+ - Polish (99% Translated by Wicher Wiater)
  - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
  - Spanish (61% Translated by [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
@@ -164,6 +165,15 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.12 =
+*   Related videos can now be enabled or disabled on YouTube videos.
+*   YouTube API now is only loaded when a video slide needs to be shown.
+*   Re-arranged the 'General Settings' page to have a 'General Settings' tab that contains overall system settings.
+*   Added option to chose the loading location of the stylesheets, as IE8 and older don't always allow in-body styling.
+*   Implemented a new algorithm for randomizing slides.
+*   Added Turkish translation by İlker Akdoğan.
+*   Added Polish translation by Wicher Wiater.
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.

@@ -9,8 +9,11 @@
  */
 class SlideshowPluginGeneralSettings {
 
-	/** Settings Group */
+	/** Settings group */
 	static $settingsGroup = 'slideshow-jquery-image-gallery-general-settings';
+
+	/** General settings */
+	static $stylesheetLocation = 'slideshow-jquery-image-gallery-stylesheet-location';
 
 	/** User capability settings */
 	static $capabilities = array(
@@ -92,6 +95,9 @@ class SlideshowPluginGeneralSettings {
 		if(array_pop(explode('/', $_SERVER['PHP_SELF'])) != 'options.php')
 			return;
 
+		// Register general settings
+		register_setting(self::$settingsGroup, self::$stylesheetLocation);
+
 		// Register user capability settings, saving capabilities only has to be called once.
 		register_setting(self::$settingsGroup, self::$capabilities['addSlideshows']);
 		register_setting(self::$settingsGroup, self::$capabilities['editSlideshows']);
@@ -150,16 +156,41 @@ class SlideshowPluginGeneralSettings {
 	}
 
 	/**
+	 * Returns the stylesheet location, or 'bottom' when no stylesheet position has been defined yet.
+	 *
+	 * @since 2.2.12
+	 * @return string $stylesheetLocation
+	 */
+	public static function getStylesheetLocation(){
+
+		return get_option(SlideshowPluginGeneralSettings::$stylesheetLocation, 'footer');
+	}
+
+	/**
 	 * Returns an array of stylesheets with its keys and respective names.
 	 *
+	 * Gets the version number for each stylesheet when $withVersion is set to true.
+	 *
 	 * When the $separateDefaultFromCustom boolean is set to true, the default stylesheets will be returned separately
-	 * from the custom stylesheets as: array('default' => array(), 'custom' => array()) respectively.
+	 * from the custom stylesheets.
+	 *
+	 * The data returned with both parameters set to 'false' will look like the following:
+	 *
+	 * [$stylesheetKey => $stylesheetName]
+	 *
+	 * With both parameters set to 'true' the returned data will be formed like this:
+	 *
+	 * [
+	 *  default => [$stylesheetKey => [name => $stylesheetName, version => $versionNumber]],
+	 *  custom => [$stylesheetKey => [name => $stylesheetName, version => $versionNumber]]
+	 * ]
 	 *
 	 * @since 2.1.23
+	 * @param boolean $withVersion (optional, defaults to false)
 	 * @param boolean $separateDefaultFromCustom (optional, defaults to false)
 	 * @return array $stylesheets
 	 */
-	static function getStylesheets($separateDefaultFromCustom = false){
+	static function getStylesheets($withVersion = false, $separateDefaultFromCustom = false){
 
 		// Default styles
 		$defaultStyles = array(
@@ -172,12 +203,32 @@ class SlideshowPluginGeneralSettings {
 		foreach($defaultStyles as $fileName => $name){
 
 			// Check if stylesheet exists on server, don't offer it when it does not exist.
-			if(!file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName))
+			if(!file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName)){
 				unset($defaultStyles[$fileName]);
+
+				continue;
+			}
+
+			// Add version if $withVersion is true
+			if($withVersion)
+				$defaultStyles[$fileName] = array('name' => $name, 'version' => SlideshowPluginMain::$version);
 		}
 
 		// Get custom styles
 		$customStyles = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
+
+		// Add version to the custom styles if $withVersion is true
+		if($withVersion){
+			foreach($customStyles as $customStylesKey => $customStylesName){
+
+				$customStylesVersion = get_option($customStylesKey . '_version', false);
+
+				if(!$customStylesVersion)
+					$customStylesVersion = time();
+
+				$customStyles[$customStylesKey] = array('name' => $customStylesName, 'version' => $customStylesVersion);
+			}
+		}
 
 		// Return
 		if($separateDefaultFromCustom)

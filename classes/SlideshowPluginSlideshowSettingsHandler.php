@@ -403,6 +403,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 			'controlPanel' => 'false',
 			'hideControlPanel' => 'true',
 			'random' => 'false',
+			//'stylesheetLocation' => 'bottom',
 			'avoidFilter' => 'true'
 		);
 
@@ -439,6 +440,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 				'controlPanel' => array('type' => 'radio', 'default' => $data['controlPanel'], 'description' => __('Activate control panel (play and pause button)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
 				'hideControlPanel' => array('type' => 'radio', 'default' => $data['hideControlPanel'], 'description' => __('Hide control panel, show when mouse hovers over', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[controlPanel]', 'true'), 'group' => __('Control', 'slideshow-plugin')),
 				'random' => array('type' => 'radio', 'default' => $data['random'], 'description' => __('Randomize slides', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Miscellaneous', 'slideshow-plugin')),
+				//'stylesheetLocation' => array('type' => 'select', 'default' => $data['stylesheetLocation'], 'description' => __('The location on your website where the stylesheets are loaded', 'slideshow-plugin'), 'options' => array('top' => __('Top', 'slideshow-plugin'), 'bottom' => __('Bottom', 'slideshow-plugin')), 'group' => __('Miscellaneous', 'slideshow-plugin')),
 				'avoidFilter' => array('type' => 'radio', 'default' => $data['avoidFilter'], 'description' => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-plugin'), SlideshowPluginShortcode::$bookmark), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Miscellaneous', 'slideshow-plugin'))
 			);
 		}

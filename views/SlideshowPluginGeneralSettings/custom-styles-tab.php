@@ -31,7 +31,7 @@ if(is_array($customStyleKeys)){
 
 ?>
 
-<div class="custom-styles feature-filter" style="display: none;">
+<div class="custom-styles-tab feature-filter" style="display: none;">
 	<div class="styles-list">
 
 		<p>

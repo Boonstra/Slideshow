@@ -88,44 +88,18 @@ class SlideshowPlugin {
 		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
 		$sessionID = self::$sessionCounter++;
 
-		// Try to get a custom stylesheet
-		if(isset($styleSettings['style'])){
-
-			// Try to get the custom style's version
-			$customStyle = get_option($styleSettings['style'], false);
-			$customStyleVersion = false;
-			if($customStyle){
-				$customStyleVersion = get_option($styleSettings['style'] . '_version', false);
-			}
-
-			// Style name and version
-			if($customStyle && $customStyleVersion){
-				$styleName = $styleSettings['style'];
-				$styleVersion = $customStyleVersion;
-			}else{
-				$styleName = str_replace('.css', '', $styleSettings['style']);
-				$styleVersion = SlideshowPluginMain::$version;
-			}
-		}else{
-			$styleName = 'style-light';
-			$styleVersion = SlideshowPluginMain::$version;
+		// Only enqueue the functional stylesheet when the 'allStylesheetsRegistered' flag is false
+		if(!SlideshowPluginSlideshowStylesheet::$allStylesheetsRegistered){
+			wp_enqueue_style(
+				'slideshow-jquery-image-gallery-stylesheet_functional',
+				SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/functional.css',
+				array(),
+				SlideshowPluginMain::$version
+			);
 		}
 
-		// Register function stylesheet
-		wp_enqueue_style(
-			'slideshow-jquery-image-gallery-stylesheet_functional',
-			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/functional.css',
-			array(),
-			SlideshowPluginMain::$version
-		);
-
-		// Enqueue stylesheet
-		wp_enqueue_style(
-			'slideshow-jquery-image-gallery-ajax-stylesheet_' . $styleName,
-			admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $styleName),
-			array(),
-			$styleVersion
-		);
+		// Check if requested style is available. If not, use the default
+		list($styleName, $styleVersion) = SlideshowPluginSlideshowStylesheet::enqueueStylesheet($styleSettings['style']);
 
 		// Include output file to store output in $output.
 		$output = '';
@@ -136,7 +110,8 @@ class SlideshowPlugin {
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-script',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
+			//SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
+			'http://localhost/test/slideshowv3/slideshow.js',
 			array('jquery'),
 			SlideshowPluginMain::$version
 		);

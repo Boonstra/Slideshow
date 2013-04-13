@@ -1,8 +1,11 @@
 <?php
 
 $videoId = '';
+$showRelatedVideos = 0;
 if(isset($properties['videoId']))
 	$videoId = htmlspecialchars($properties['videoId']);
+if(isset($properties['showRelatedVideos']) && $properties['showRelatedVideos'] === 'true')
+	$showRelatedVideos = 1;
 
 // If the video ID contains 'v=', it means a URL has been passed. Retrieve the video ID.
 $idPosition = null;
@@ -21,5 +24,5 @@ if(($idPosition = stripos($videoId, 'v=')) !== false){
 ?>
 
 <div class="slideshow_slide slideshow_slide_video">
-	<div style="display: none;"><?php echo $videoId; ?></div>
+	<div style="display: none;" data-show-related-videos="<?php echo $showRelatedVideos; ?>"><?php echo $videoId; ?></div>
 </div>

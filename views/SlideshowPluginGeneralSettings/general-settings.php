@@ -12,23 +12,23 @@ $generalSettingsViewsPath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEP
 
 		<div class="icon32" style="background: url('<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon32.png'; ?>');"></div>
 		<h2 class="nav-tab-wrapper">
-			<a href="#user-capabilities" class="nav-tab nav-tab-active"><?php _e('User Capabilities', 'slideshow-plugin'); ?></a>
-			<a href="#default-slideshow-settings" class="nav-tab"><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></a>
-			<a href="#custom-styles" class="nav-tab"><?php _e('Custom Styles', 'slideshow-plugin'); ?></a>
+			<a href="#general-settings-tab" class="nav-tab nav-tab-active"><?php _e('General Settings', 'slideshow-plugin'); ?></a>
+			<a href="#default-slideshow-settings-tab" class="nav-tab"><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></a>
+			<a href="#custom-styles-tab" class="nav-tab"><?php _e('Custom Styles', 'slideshow-plugin'); ?></a>
 
 			<?php submit_button(null, 'primary', null, false, 'style="float: right;"'); ?>
 		</h2>
 
 		<?php
 
-		// User capabilities
-		include $generalSettingsViewsPath . 'user-capabilities.php';
+		// General Settings
+		include $generalSettingsViewsPath . 'general-settings-tab.php';
 
 		// Default slideshow settings
-		include $generalSettingsViewsPath . 'default-slideshow-settings.php';
+		include $generalSettingsViewsPath . 'default-slideshow-settings-tab.php';
 
 		// Custom styles
-		include $generalSettingsViewsPath . 'custom-styles.php';
+		include $generalSettingsViewsPath . 'custom-styles-tab.php';
 
 		?>
 

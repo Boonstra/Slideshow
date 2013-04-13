@@ -30,7 +30,7 @@ jQuery(document).ready(function(){
 	jQuery('a[href="#' + document.URL.split('#').pop() + '"]').trigger('click');
 
 	/**
-	 * ==== User Capabilities ====
+	 * ==== User Capabilities Tab ====
 	 *
 	 * On checking either the 'Add slideshows' capability or the 'Delete slideshow' capability, the 'Edit slideshows'
 	 * checkbox should also be checked. Un-checking the 'Edit slideshows' checkbox needs to do the opposite.
@@ -66,16 +66,16 @@ jQuery(document).ready(function(){
 	});
 
 	/**
-	 * ==== Custom Styles ====
+	 * ==== Custom Styles Tab ====
 	 *
 	 * Show chosen style editor and hide all others when clicked on style-action. Delete chosen style when clicked on
 	 * style-delete
 	 */
 	jQuery(
-		'.custom-styles .styles-list .style-action,' +
-		'.custom-styles .styles-list .style-delete,' +
-		'.custom-styles .custom-style-templates .custom-styles-list-item .style-action,' +
-		'.custom-styles .custom-style-templates .custom-styles-list-item .style-delete'
+		'.custom-styles-tab .styles-list .style-action,' +
+		'.custom-styles-tab .styles-list .style-delete,' +
+		'.custom-styles-tab .custom-style-templates .custom-styles-list-item .style-action,' +
+		'.custom-styles-tab .custom-style-templates .custom-styles-list-item .style-delete'
 	).click(function(){
 
 		// Get custom style key
@@ -89,7 +89,7 @@ jQuery(document).ready(function(){
 		if(jQuery(this).hasClass('style-action')){
 
 			// Fade editors out
-			jQuery('.custom-styles .style-editors .style-editor').each(function(){
+			jQuery('.custom-styles-tab .style-editors .style-editor').each(function(){
 				jQuery(this).fadeOut(200);
 			});
 
@@ -117,7 +117,7 @@ jQuery(document).ready(function(){
 				return;
 
 			// Delete custom style
-			jQuery('.custom-styles .style-editors .style-editor.' + customStyleKey).remove();
+			jQuery('.custom-styles-tab .style-editors .style-editor.' + customStyleKey).remove();
 
 			// Delete item from list
 			jQuery(this).closest('li').remove();
@@ -125,11 +125,11 @@ jQuery(document).ready(function(){
 	});
 
 	/**
-	 * ==== Custom Styles ====
+	 * ==== Custom Styles Tab ====
 	 *
 	 * Create new editor from editor template when a default style needs to be customized.
 	 */
-	jQuery('.custom-styles .styles-list .style-action.style-default').click(function(){
+	jQuery('.custom-styles-tab .styles-list .style-action.style-default').click(function(){
 
 		// Get the default stylesheet title and content
 		var title = jQuery(this).closest('li').find('.style-title').html();
@@ -159,7 +159,7 @@ jQuery(document).ready(function(){
 		var customStyleID = customStylesKey + '_' + (highestCustomStyleID + 1);
 
 		// Clone editor template
-		var $editor = jQuery('.custom-styles .custom-style-templates .style-editor').clone();
+		var $editor = jQuery('.custom-styles-tab .custom-style-templates .style-editor').clone();
 
 		// Add class to editor
 		$editor.addClass(customStyleID);
@@ -173,7 +173,7 @@ jQuery(document).ready(function(){
 		$editor.find('.new-custom-style-content').attr('name', customStylesKey + '[' + customStyleID + '][style]');
 
 		// Add editor to DOM
-		jQuery('.custom-styles .style-editors').append($editor);
+		jQuery('.custom-styles-tab .style-editors').append($editor);
 
 		// Fade editor in
 		setTimeout(
@@ -184,7 +184,7 @@ jQuery(document).ready(function(){
 		);
 
 		// Clone custom styles list item
-		var $li = jQuery('.custom-styles .custom-style-templates .custom-styles-list-item').clone(true);
+		var $li = jQuery('.custom-styles-tab .custom-style-templates .custom-styles-list-item').clone(true);
 
 		// Prepare
 		$li.removeClass('custom-styles-list-item')
@@ -193,14 +193,14 @@ jQuery(document).ready(function(){
 		$li.find('.style-delete').addClass(customStyleID);
 
 		// Remove 'No custom stylesheets found message'
-		jQuery('.custom-styles .styles-list .custom-styles-list .no-custom-styles-found').remove();
+		jQuery('.custom-styles-tab .styles-list .custom-styles-list .no-custom-styles-found').remove();
 
 		// Add custom styles list item to DOM
-		jQuery('.custom-styles .styles-list .custom-styles-list').append($li);
+		jQuery('.custom-styles-tab .styles-list .custom-styles-list').append($li);
 	});
 
 	/**
-	 * ==== Custom Styles ====
+	 * ==== Custom Styles Tab ====
 	 *
 	 * Returns highest custom style id in existence
 	 *
@@ -211,7 +211,7 @@ jQuery(document).ready(function(){
 		var highestCustomStyleID = 0;
 
 		// Loop through style editors
-		jQuery('.custom-styles .style-editors .style-editor').each(function(){
+		jQuery('.custom-styles-tab .style-editors .style-editor').each(function(){
 
 			// Get custom style ID
 			var customStyleID = parseInt(jQuery(this).attr('class').split('_').pop());

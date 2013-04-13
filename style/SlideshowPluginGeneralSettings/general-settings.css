@@ -1,38 +1,50 @@
 .feature-filter {
-	padding: 0 10px;
+	padding: 0 10px 10px;
 	margin: 10px;
 }
 
-/* ==== ==== ==== User capabilities ==== ==== ==== */
+/* ==== ==== ==== General Settings ==== ==== ==== */
 
-.user-capabilities td {
+.general-settings-tab {
+	float: left;
+}
+
+.general-settings-tab td {
 	line-height: 1.5em;
 	padding: 0 10px;
 }
 
+.general-settings-tab h4 {
+	text-align: center;
+}
+
 /* ==== ==== ==== Default slideshow settings ==== ==== ==== */
 
-.default-slideshow-settings {
+.default-slideshow-settings-tab {
 	width: auto !important;
 
 	float: left;
 }
 
-.default-slideshow-settings table {
-	padding-bottom: 10px;
+.default-slideshow-settings-tab td {
+	padding: 0 10px !important;
 }
 
-.default-slideshow-settings td {
-	padding: 0 10px !important;
+.default-slideshow-settings-tab h4 {
+	text-align: center;
 }
 
 /* ==== ==== ==== Custom styles ==== ==== ==== */
 
-.custom-styles {
+.custom-styles-tab {
 	min-width: 650px;
 }
 
-.custom-styles .styles-list {
+.custom-styles-tab.feature-filter {
+	padding-bottom: 0;
+}
+
+.custom-styles-tab .styles-list {
 	float: left;
 
 	min-width: 150px;
@@ -43,49 +55,49 @@
 	border-right: 1px solid #dfdfdf;
 }
 
-.custom-styles .styles-list ul {
+.custom-styles-tab .styles-list ul {
 	margin-left: 10px;
 }
 
-.custom-styles .styles-list li {
+.custom-styles-tab .styles-list li {
 	float: none;
 }
 
-.custom-styles .styles-list span {
+.custom-styles-tab .styles-list span {
 	padding: 0 2px;
 }
 
-.custom-styles .styles-list li .style-title {
+.custom-styles-tab .styles-list li .style-title {
 	float: left;
 
 	padding-right: 10px;
 }
 
-.custom-styles .styles-list li .style-action {
+.custom-styles-tab .styles-list li .style-action {
 	 float: right;
 
 	 color: #21759B;
 }
 
-.custom-styles .styles-list li .style-delete {
+.custom-styles-tab .styles-list li .style-delete {
 	float: right;
 
 	color: #BC0B0B;
 }
 
-.custom-styles .styles-list li .style-action:hover {
+.custom-styles-tab .styles-list li .style-action:hover {
 	cursor: pointer;
 
 	color: #D54E21;
 }
 
-.custom-styles .styles-list li .style-delete:hover {
+.custom-styles-tab .styles-list li .style-delete:hover {
 	cursor: pointer;
 
 	color: red;
 }
 
-.custom-styles .style-editors {
+.custom-styles-tab .style-editors {
 	float: left;
 
 	min-width: 500px;
@@ -96,6 +108,6 @@
 	border-left: 1px solid #dfdfdf;
 }
 
-.custom-styles .style-editors .style-editor textarea {
+.custom-styles-tab .style-editors .style-editor textarea {
 	width: 100%;
 }
