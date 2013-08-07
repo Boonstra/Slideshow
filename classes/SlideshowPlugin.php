@@ -1,6 +1,6 @@
 <?php
 /**
- * Class SlideslowPlugin is called whenever a slideshow do_action tag is come across.
+ * Class SlideshowPlugin is called whenever a slideshow do_action tag is come across.
  * Responsible for outputting the slideshow's HTML, CSS and Javascript.
  *
  * @since 1.0.0
@@ -110,8 +110,7 @@ class SlideshowPlugin {
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-script',
-			//SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.min.js',
-			'http://localhost/test/slideshowv3/slideshow.js',
+			SlideshowPluginMain::getPluginUrl() . '/js/all.frontend.min.js',
 			array('jquery'),
 			SlideshowPluginMain::$version
 		);

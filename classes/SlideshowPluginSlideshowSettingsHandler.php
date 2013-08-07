@@ -402,8 +402,9 @@ class SlideshowPluginSlideshowSettingsHandler {
 			'hidePagination' => 'true',
 			'controlPanel' => 'false',
 			'hideControlPanel' => 'true',
+			'waitUntilLoaded' => 'false',
+			'showLoadingIcon' => 'false',
 			'random' => 'false',
-			//'stylesheetLocation' => 'bottom',
 			'avoidFilter' => 'true'
 		);
 
@@ -423,7 +424,7 @@ class SlideshowPluginSlideshowSettingsHandler {
 				'intervalSpeed' => array('type' => 'text', 'default' => $data['intervalSpeed'], 'description' => __('Seconds between changing slides', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
 				'slidesPerView' => array('type' => 'text', 'default' => $data['slidesPerView'], 'description' => __('Number of slides to fit into one slide', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
 				'maxWidth' => array('type' => 'text', 'default' => $data['maxWidth'], 'description' => __('Maximum width. When maximum width is 0, maximum width is ignored', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'aspectRatio' => array('type' => 'text', 'default' => $data['aspectRatio'], 'description' => sprintf('<a href="' . __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin') . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between slideshow\'s width and height (width:height)', 'slideshow-plugin'), '</a>'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
+				'aspectRatio' => array('type' => 'text', 'default' => $data['aspectRatio'], 'description' => sprintf('<a href="' . str_replace('%', '%%', __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin')) . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between slideshow\'s width and height (width:height)', 'slideshow-plugin'), '</a>'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true'), 'group' => __('Display', 'slideshow-plugin')),
 				'height' => array('type' => 'text', 'default' => $data['height'], 'description' => __('Slideshow\'s height', 'slideshow-plugin'), 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'false'), 'group' => __('Display', 'slideshow-plugin')),
 				'stretchImages' => array('type' => 'radio', 'default' => $data['stretchImages'], 'description' => __('Fit image into slide (Stretch image)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
 				'preserveSlideshowDimensions' => array('type' => 'radio', 'default' => $data['preserveSlideshowDimensions'], 'description' => __('Shrink slideshow\'s height when width shrinks', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
@@ -439,8 +440,9 @@ class SlideshowPluginSlideshowSettingsHandler {
 				'hidePagination' => array('type' => 'radio', 'default' => $data['hidePagination'], 'description' => __('Hide pagination, show when mouse hovers over', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[showPagination]', 'true'), 'group' => __('Control', 'slideshow-plugin')),
 				'controlPanel' => array('type' => 'radio', 'default' => $data['controlPanel'], 'description' => __('Activate control panel (play and pause button)', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
 				'hideControlPanel' => array('type' => 'radio', 'default' => $data['hideControlPanel'], 'description' => __('Hide control panel, show when mouse hovers over', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'dependsOn' => array('settings[controlPanel]', 'true'), 'group' => __('Control', 'slideshow-plugin')),
+				'waitUntilLoaded' => array('type' => 'radio', 'default' => $data['waitUntilLoaded'], 'description' => __('Wait until slide has loaded before showing it', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Miscellaneous', 'slideshow-plugin')),
+				'showLoadingIcon' => array('type' => 'radio', 'default' => $data['showLoadingIcon'], 'description' => __('Show a loading icon until the first slide appears', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Miscellaneous', 'slideshow-plugin')),
 				'random' => array('type' => 'radio', 'default' => $data['random'], 'description' => __('Randomize slides', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Miscellaneous', 'slideshow-plugin')),
-				//'stylesheetLocation' => array('type' => 'select', 'default' => $data['stylesheetLocation'], 'description' => __('The location on your website where the stylesheets are loaded', 'slideshow-plugin'), 'options' => array('top' => __('Top', 'slideshow-plugin'), 'bottom' => __('Bottom', 'slideshow-plugin')), 'group' => __('Miscellaneous', 'slideshow-plugin')),
 				'avoidFilter' => array('type' => 'radio', 'default' => $data['avoidFilter'], 'description' => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-plugin'), SlideshowPluginShortcode::$bookmark), 'options' => array('true' => $yes, 'false' => $no), 'group' => __('Miscellaneous', 'slideshow-plugin'))
 			);
 		}

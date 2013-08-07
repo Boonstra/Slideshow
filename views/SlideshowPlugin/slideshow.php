@@ -7,6 +7,10 @@
 
 	<div class="slideshow_pagination" style="display: none;"><div class="slideshow_pagination_center"></div></div>
 
+	<?php if(isset($settings['showLoadingIcon']) && $settings['showLoadingIcon'] === 'true'): ?>
+		<div class="slideshow_loading_icon"></div>
+	<?php endif; ?>
+
 	<div class="slideshow_content" style="display: none;">
 
 		<?php

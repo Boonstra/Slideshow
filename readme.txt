@@ -3,8 +3,8 @@
 Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
-Requires at least: 3.3
-Tested up to: 3.5.1
+Requires at least: 3.5
+Tested up to: 3.6
 Stable tag: 2.2.12
 License: GPLv2
 
@@ -27,7 +27,7 @@ different images, settings and styles for each one of them.
  - Image slides
  - Text slides
  - Video slides
- - Completely responsive
+ - Responsive
  - Place it anywhere on your website
  - Run multiple slideshows on the same page
  - Change animations and handling
@@ -40,10 +40,15 @@ different images, settings and styles for each one of them.
  - Czech (98% Translated by Edhel)
  - Dutch (100%)
  - English (100%)
- - French (59% Translated by [Wptheme](http://wptheme.fr/))
+ - Finnish (100% Translated by A. Nonymous)
+ - French (100% Translated by [Romain Sandri](http://www.onidesign.fr/))
+ - German (100% Translated by [Markus Amann](http://www.dema-itsupport.com/))
  - Hebrew (62% Translated by Eli Segev)
+ - Italian (100% Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Persian (100% Translated by [W3Design](http://w3design.ir/))
  - Polish (99% Translated by Wicher Wiater)
- - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
+ - Portuguese (100% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
+ - Russian (100% Translated by Dmitry Fatakov)
  - Spanish (61% Translated by [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
  - Turkish (100% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
@@ -58,6 +63,11 @@ translation tool. Many thanks in advance!
 
 Check upcoming features, bug-fixes and development progress that are currently on the Slideshow project board at:
 [Slideshow project board - Trello.com](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
+
+= PrePros =
+
+A big thanks to the creator(s) of [PrePros](http://alphapixels.com/prepros/), the free tool that helps me manage and
+order my code so I don't have to go completely insane.
 
 
 == Installation ==
@@ -167,13 +177,21 @@ personal taste.
 == Changelog ==
 
 = 2.2.12 =
+*   Compatible with WordPress 3.6.
+*   Complete javascript revision to be better manageable with the help of the Prepros tool.
 *   Related videos can now be enabled or disabled on YouTube videos.
 *   YouTube API now is only loaded when a video slide needs to be shown.
 *   Re-arranged the 'General Settings' page to have a 'General Settings' tab that contains overall system settings.
 *   Added option to chose the loading location of the stylesheets, as IE8 and older don't always allow in-body styling.
 *   Implemented a new algorithm for randomizing slides.
+*   Slideshow can now wait for a slide to load before showing it.
 *   Added Turkish translation by İlker Akdoğan.
 *   Added Polish translation by Wicher Wiater.
+*   Added Finnish translation by an anonymous supporter.
+*   Updated French translation by Romain Sandri.
+*   Added Portuguese translation by Filipe Catraia.
+*   Added Persian translation by W3Design.
+*   Added Italian translation by Tecnikgeek.
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.

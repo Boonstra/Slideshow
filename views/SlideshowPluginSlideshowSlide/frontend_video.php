@@ -24,5 +24,5 @@ if(($idPosition = stripos($videoId, 'v=')) !== false){
 ?>
 
 <div class="slideshow_slide slideshow_slide_video">
-	<div style="display: none;" data-show-related-videos="<?php echo $showRelatedVideos; ?>"><?php echo $videoId; ?></div>
+	<div class="slideshow_slide_video_id" style="display: none;" data-show-related-videos="<?php echo $showRelatedVideos; ?>"><?php echo $videoId; ?></div>
 </div>

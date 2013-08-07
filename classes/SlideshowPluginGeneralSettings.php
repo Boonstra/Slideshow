@@ -92,7 +92,8 @@ class SlideshowPluginGeneralSettings {
 	static function registerSettings(){
 
 		// Register settings only when the user is going through the options.php page
-		if(array_pop(explode('/', $_SERVER['PHP_SELF'])) != 'options.php')
+		$urlParts = explode('/', $_SERVER['PHP_SELF']);
+		if(array_pop($urlParts) != 'options.php')
 			return;
 
 		// Register general settings

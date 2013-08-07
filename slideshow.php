@@ -99,7 +99,7 @@ class SlideshowPluginMain {
 	 *
 	 * @since 1.0.0
 	 */
-	function autoInclude(){
+	static function autoInclude(){
 		if(!function_exists('spl_autoload_register'))
 			return;
 
