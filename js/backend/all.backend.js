@@ -41,4 +41,4 @@ slideshow_jquery_image_gallery_backend_script = function()
 	return self;
 }();
 
-// @code//kit-append
+// @codekit-append generalSettings.js
