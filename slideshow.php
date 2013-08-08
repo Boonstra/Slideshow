@@ -46,6 +46,7 @@ class SlideshowPluginMain {
 		// Add general settings page
 		SlideshowPluginGeneralSettings::init();
 
+		// Initialize stylesheet builder
 		SlideshowPluginSlideshowStylesheet::init();
 
 		// Deploy slideshow on do_action('slideshow_deploy'); hook.
@@ -59,6 +60,30 @@ class SlideshowPluginMain {
 
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
+
+		// TODO Move temporary statement
+		// Include backend script
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScript'), 1);
+	}
+
+	/**
+	 * TODO Move temporary function
+	 *
+	 * Includes backend script
+	 *
+	 * @since 2.2.12
+	 */
+	static function enqueueBackendScript(){
+		wp_enqueue_script(
+			'slideshow-jquery-image-gallery-backend-script',
+			self::getPluginUrl() . '/js/all.backend.min.js',
+			array(
+				'jquery',
+				'jquery-ui-sortable',
+				'wp-color-picker'
+			),
+			SlideshowPluginMain::$version
+		);
 	}
 
 	/**

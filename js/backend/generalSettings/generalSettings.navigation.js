@@ -1,32 +1,52 @@
-jQuery(document).bind('slideshowBackendReady', function()
+slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = function()
 {
 	var $    = jQuery,
-		self = slideshow_jquery_image_gallery_backend_script;
+		self = { };
 
 	/**
-	 * On click of navigation tab, show different settings page.
+	 *
 	 */
-	jQuery('.nav-tab').click(function(){
+	self.init = function()
+	{
+		if (!slideshow_jquery_image_gallery_backend_script.generalSettings.isCurrentPage)
+		{
+			return;
+		}
 
-		// Tab references
-		var activeTab = jQuery('.nav-tab-active');
-		var thisTab = jQuery(this);
+		self.activateNavigation();
+	};
 
-		// Set active navigation tab
-		activeTab.removeClass('nav-tab-active');
-		thisTab.addClass('nav-tab-active');
+	/**
+	 * Binds functions to fire at click events on the navigation tabs
+	 */
+	self.activateNavigation = function()
+	{
+		// On click of navigation tab, show different settings page.
+		$('.nav-tab').click(function(event)
+		{
+			var $this      = $(event.currentTarget),
+				$activeTab = $('.nav-tab-active'),
+				$referrer;
 
-		// Hide previously active tab's content
-		jQuery(activeTab.attr('href').replace('#', '.')).hide();
+			$activeTab.removeClass('nav-tab-active');
+			$this.addClass('nav-tab-active');
 
-		// Show newly activate tab
-		jQuery(thisTab.attr('href').replace('#', '.')).show();
+			// Hide previously active tab's content
+			$($activeTab.attr('href').replace('#', '.')).hide();
 
-		// Set referrer value to the current page to be able to return there after saving
-		var referrer = jQuery('input[name=_wp_http_referer]');
-		referrer.attr('value', referrer.attr('value').split('#').shift() + thisTab.attr('href'));
-	});
+			// Show newly activated tab
+			$($this.attr('href').replace('#', '.')).show();
 
-	// Navigate to correct tab by firing a click event on it. Click event needs to have already been registered on '.nav-tab'.
-	jQuery('a[href="#' + document.URL.split('#').pop() + '"]').trigger('click');
-});
+			// Set referrer value to the current page to be able to return there after saving
+			$referrer = $('input[name=_wp_http_referer]');
+			$referrer.attr('value', $referrer.attr('value').split('#').shift() + $this.attr('href'));
+		});
+
+		// Navigate to correct tab by firing a click event on it. Click event needs to have already been registered on '.nav-tab'.
+		$('a[href="#' + document.URL.split('#').pop() + '"]').trigger('click');
+	};
+
+	$(document).bind('slideshowBackendReady', self.init);
+
+	return self;
+}();

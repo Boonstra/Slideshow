@@ -64,10 +64,10 @@ translation tool. Many thanks in advance!
 Check upcoming features, bug-fixes and development progress that are currently on the Slideshow project board at:
 [Slideshow project board - Trello.com](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
 
-= PrePros =
+= Need the (uncompressed) source code? =
 
-A big thanks to the creator(s) of [PrePros](http://alphapixels.com/prepros/), the free tool that helps me manage and
-order my code so I don't have to go completely insane.
+Find the Slideshow project's source code in my [GitHub](https://github.com/Boonstra/Slideshow) repository. The
+uncompressed files can be compiled using [PrePros](http://alphapixels.com/prepros/) (or CodeKit).
 
 
 == Installation ==
@@ -449,3 +449,4 @@ personal taste.
 
 *	[Stefan Boonstra](http://stefanboonstra.com/)
 *   [Slideshow project board](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
+*   [Prepros](http://alphapixels.com/prepros/)

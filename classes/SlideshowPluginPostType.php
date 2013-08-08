@@ -26,7 +26,7 @@ class SlideshowPluginPostType {
 	}
 
 	/**
-	 * Registers new posttype slideshow
+	 * Registers new post type slideshow
 	 *
 	 * @since 1.0.0
 	 */
@@ -120,25 +120,26 @@ class SlideshowPluginPostType {
 			return;
 
 		// Enqueue associating script
-		wp_enqueue_script(
-			'post-type-handler',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/post-type-handler.js',
-			array('jquery'),
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_script(
+//			'post-type-handler',
+//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/post-type-handler.js',
+//			array('jquery'),
+//			SlideshowPluginMain::$version
+//		);
 
 		// TODO: These scripts have been moved here from the footer. They need to be always printed in the header
 		// TODO: a solution for this needs to be found.
 		// Enqueue scripts required for sorting the slides list
-		wp_enqueue_script('jquery-ui-sortable');
+//		wp_enqueue_script('jquery-ui-sortable');
 
 		// Enqueue JSColor
-		wp_enqueue_script(
-			'jscolor-colorpicker',
-			SlideshowPluginMain::getPluginUrl() . '/js/SlideshowPluginPostType/jscolor/jscolor.js',
-			null,
-			SlideshowPluginMain::$version
-		);
+		// TODO Switch to wp-color-picker (Iris): http://make.wordpress.org/core/2012/11/30/new-color-picker-in-wp-3-5/
+//		wp_enqueue_script(
+//			'jscolor-colorpicker',
+//			SlideshowPluginMain::getPluginUrl() . '/js/SlideshowPluginPostType/jscolor/jscolor.js',
+//			null,
+//			SlideshowPluginMain::$version
+//		);
 
 		// Enqueue slide insert script and style
 		SlideshowPluginSlideInserter::enqueueFiles();

@@ -6,7 +6,6 @@ $generalSettingsViewsPath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEP
 ?>
 
 <div class="wrap">
-
 	<form method="post" action="options.php">
 		<?php settings_fields(SlideshowPluginGeneralSettings::$settingsGroup); ?>
 

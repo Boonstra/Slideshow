@@ -9,6 +9,9 @@
  */
 class SlideshowPluginGeneralSettings {
 
+	/** Flag that represents whether or not the general settings page is the current page */
+	static $isCurrentPage = false;
+
 	/** Settings group */
 	static $settingsGroup = 'slideshow-jquery-image-gallery-general-settings';
 
@@ -40,14 +43,23 @@ class SlideshowPluginGeneralSettings {
 		if(!is_admin())
 			return;
 
+		if (isset($_GET['post_type']) &&
+			$_GET['post_type'] == 'slideshow' &&
+			isset($_GET['page']) &&
+			$_GET['page'] == 'general_settings')
+		{
+			self::$isCurrentPage = true;
+		}
+
 		// Register settings
 		add_action('admin_init', array(__CLASS__, 'registerSettings'));
 
 		// Add sub menu
 		add_action('admin_menu', array(__CLASS__, 'addSubMenuPage'));
 
-		// Enqueue stylesheet and scripts
+		// Enqueue and localize
 		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueue'));
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'));
 	}
 
 	/**
@@ -119,13 +131,7 @@ class SlideshowPluginGeneralSettings {
 	 */
 	static function enqueue(){
 
-		// Return if function doesn't exist
-		if(!function_exists('get_current_screen'))
-			return;
-
-		// Return when not on a slideshow edit page, or files have already been included.
-		$currentScreen = get_current_screen();
-		if($currentScreen->post_type != SlideshowPluginPostType::$postType)
+		if (!self::$isCurrentPage)
 			return;
 
 		// Enqueue general settings stylesheet
@@ -136,22 +142,34 @@ class SlideshowPluginGeneralSettings {
 			SlideshowPluginMain::$version
 		);
 
+		// TODO Remove before release
 		// Enqueue general settings script
-		wp_enqueue_script(
-			'slideshow-jquery-image-gallery-general-settings',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/general-settings.js',
-			array('jquery'),
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_script(
+//			'slideshow-jquery-image-gallery-general-settings',
+//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/general-settings.js',
+//			array('jquery'),
+//			SlideshowPluginMain::$version
+//		);
+	}
+
+	/**
+	 * Localizes the general settings script. Needs to be called on the 'admin_enqueue_scripts' hook.
+	 */
+	static function localizeScript(){
+
+		if (!self::$isCurrentPage)
+			return;
 
 		// Localize general settings script
 		wp_localize_script(
-			'slideshow-jquery-image-gallery-general-settings',
-			'GeneralSettingsVariables',
+			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow_jquery_image_gallery_backend_script_generalSettings',
 			array(
-				'customStylesKey' => self::$customStyles,
-				'newCustomizationPrefix' => __('New', 'slideshow-plugin'),
-				'confirmDeleteMessage' => __('Are you sure you want to delete this custom style?', 'slideshow-plugin')
+				'data'         => array('customStylesKey' => self::$customStyles),
+				'localization' => array(
+					'newCustomizationPrefix' => __('New', 'slideshow-plugin'),
+					'confirmDeleteMessage'   => __('Are you sure you want to delete this custom style?', 'slideshow-plugin')
+				)
 			)
 		);
 	}

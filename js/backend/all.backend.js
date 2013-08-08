@@ -8,7 +8,7 @@ slideshow_jquery_image_gallery_backend_script = function()
 	var $    = jQuery,
 		self = {};
 
-	self.isBackendActivated = false;
+	self.isBackendInitialized = false;
 
 	/**
 	 * Called by either jQuery's document ready event or JavaScript's window load event in case document ready fails to
@@ -16,27 +16,21 @@ slideshow_jquery_image_gallery_backend_script = function()
 	 *
 	 * Triggers the slideshowBackendReady on the document to inform all backend scripts they can start.
 	 */
-	self.activateBackend = function()
+	self.init = function()
 	{
-		if (self.isBackendActivated)
+		if (self.isBackendInitialized)
 		{
 			return;
 		}
 
-		self.isBackendActivated = true;
+		self.isBackendInitialized = true;
 
 		$(document).trigger('slideshowBackendReady');
 	};
 
-	$(document).ready(function()
-	{
-		self.activateBackend();
-	});
+	$(document).ready(self.init);
 
-	$(window).load(function()
-	{
-		self.activateBackend();
-	});
+	$(window).load(self.init);
 
 	return self;
 }();
