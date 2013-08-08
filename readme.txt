@@ -185,6 +185,7 @@ personal taste.
 *   Added option to chose the loading location of the stylesheets, as IE8 and older don't always allow in-body styling.
 *   Implemented a new algorithm for randomizing slides.
 *   Slideshow can now wait for a slide to load before showing it.
+*   Fixed: The 'Enable responsiveness' setting disappeared when disabling the 'Show title and description' option.
 *   Added Turkish translation by İlker Akdoğan.
 *   Added Polish translation by Wicher Wiater.
 *   Added Finnish translation by an anonymous supporter.
