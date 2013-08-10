@@ -250,6 +250,9 @@ class SlideshowPluginSlideInserter {
         if($currentScreen->post_type != SlideshowPluginPostType::$postType || self::$enqueuedFiles)
             return;
 
+		// Color picker
+		wp_enqueue_style('wp-color-picker');
+
 		// Enqueue style
 		wp_enqueue_style(
 			'slideshow-slide-inserter',

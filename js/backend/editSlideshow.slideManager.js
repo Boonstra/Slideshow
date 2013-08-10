@@ -40,6 +40,9 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			cancel: 'input, select, p'
 		});
 
+		// Add the wp-color-picker plugin to the color fields
+		$('.wp-color-picker-field').wpColorPicker();
+
 		// Make the black background stretch all the way down the document
 		$popupBackground.height($(document).outerHeight(true));
 
