@@ -66,5 +66,5 @@ slideshow_jquery_image_gallery_backend_script.generalSettings = function()
 	return self;
 }();
 
-// @codekit-append generalSettings/generalSettings.navigation.js
-// @codekit-append generalSettings/generalSettings.customStyles.js
+// @codekit-append generalSettings.navigation.js
+// @codekit-append generalSettings.customStyles.js

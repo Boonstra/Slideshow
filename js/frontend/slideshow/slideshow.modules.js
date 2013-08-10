@@ -1,4 +1,4 @@
-undefined = function()
+(function()
 {
 	var $    = jQuery,
 		self = slideshow_jquery_image_gallery_script;
@@ -15,7 +15,7 @@ undefined = function()
 		}
 
 		// Loop through descriptions. Show them and if they need to be hidden, hide them
-		$.each(this.$slides.find('.slideshow_description'), $.proxy(function(undefined, description)
+		$.each(this.$slides.find('.slideshow_description'), $.proxy(function(key, description)
 		{
 			var $description = $(description);
 
@@ -46,7 +46,7 @@ undefined = function()
 		// Adjust description's hiding position on slideshowResize event
 		this.$container.bind('slideshowResize', $.proxy(function()
 		{
-			$.each(this.$container.find('.slideshow_description'), $.proxy(function(undefined, description)
+			$.each(this.$container.find('.slideshow_description'), $.proxy(function(key, description)
 			{
 				$(description).css('top', this.$container.outerHeight(true));
 			}, this));
@@ -60,7 +60,7 @@ undefined = function()
 				return;
 			}
 
-			$.each($(this.$views[this.visibleViews[1]]).find('.slideshow_description'), $.proxy(function(undefined, description)
+			$.each($(this.$views[this.visibleViews[1]]).find('.slideshow_description'), $.proxy(function(key, description)
 			{
 				$(description).css('top', this.$container.outerHeight(true));
 			}, this));
@@ -237,7 +237,7 @@ undefined = function()
 
 		$ul.html('');
 
-		this.$views.each($.proxy(function(viewID, undefined)
+		this.$views.each($.proxy(function(viewID)
 		{
 			// Only add currentView class to currently active view-bullet
 			var currentView = '';
@@ -284,7 +284,7 @@ undefined = function()
 				var $bullets = this.$pagination.find('li');
 
 				// Remove all currentView classes from the bullets
-				$bullets.each($.proxy(function(undefined, bullet){ $(bullet).removeClass('slideshow_currentView'); }, this));
+				$bullets.each($.proxy(function(key, bullet){ $(bullet).removeClass('slideshow_currentView'); }, this));
 
 				// Add the currentView class to the current bullet
 				$($bullets[this.currentViewID]).addClass('slideshow_currentView');
@@ -337,4 +337,4 @@ undefined = function()
 			}
 		}, this));
 	};
-}();
+}());

@@ -1,4 +1,4 @@
-undefined = function()
+(function()
 {
 	var $    = jQuery,
 		self = slideshow_jquery_image_gallery_script;
@@ -69,7 +69,7 @@ undefined = function()
 		// Register slideshow
 		self.registeredSlideshows.push(this.ID);
 
-		$.each(this.$views, $.proxy(function(viewID, undefined){ this.viewIDs.push(viewID); }, this));
+		$.each(this.$views, $.proxy(function(viewID){ this.viewIDs.push(viewID); }, this));
 
 		this.currentViewID = this.getNextViewID();
 
@@ -116,7 +116,7 @@ undefined = function()
 
 					if ($image.length > 0)
 					{
-						$image.each($.proxy(function(undefined, image)
+						$image.each($.proxy(function(key, image)
 						{
 							if (image.complete)
 							{
@@ -182,4 +182,4 @@ undefined = function()
 			this.firstStart();
 		}
 	};
-}();
+}());

@@ -24,30 +24,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 	 */
 	self.activateSettingsVisibilityDependency = function()
 	{
-//		jQuery('.depends-on-field-value').each(function(key, value){
-//			var attributes = jQuery(this).attr('class').split(' ');
-//
-//			// Check if field should be shown
-//			var element = jQuery(this).closest('tr');
-//			if(jQuery('input[name="' + attributes[1] + '"]:checked').val() == attributes[2])
-//				jQuery(element).show();
-//			else
-//				jQuery(element).hide();
-//
-//			// On change, set field's visibility
-//			jQuery('input[name="' + attributes[1] + '"]').change(attributes, function(){
-//				var element = jQuery('.' + attributes[3]).closest('tr');
-//
-//				if(jQuery(this).val() == attributes[2])
-//					self.animateElementVisibility(element, true);
-//				else
-//					self.animateElementVisibility(element, false);
-//			});
-//		});
-//
-//		return;
-
-		$('.depends-on-field-value').each(function(undefined, field)
+		$('.depends-on-field-value').each(function(key, field)
 		{
 			var $field     = $(field),
 				attributes = $field.attr('class').split(' '),
@@ -56,12 +33,10 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 			// Check whether or not field should be shown
 			if ($('input[name="' + attributes[1] + '"]:checked').val() == attributes[2])
 			{
-				console.log('show');
 				$tr.show();
 			}
 			else
 			{
-				console.log('no show');
 				$tr.hide();
 			}
 
@@ -122,3 +97,5 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 
 	return self;
 }();
+
+// @codekit-append editSlideshow.slideManager.js

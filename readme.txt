@@ -26,7 +26,7 @@ different images, settings and styles for each one of them.
  - Create as many slideshows with as many slides as you like
  - Image slides
  - Text slides
- - Video slides
+ - YouTube Video slides
  - Responsive
  - Place it anywhere on your website
  - Run multiple slideshows on the same page

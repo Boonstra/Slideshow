@@ -104,7 +104,7 @@ class SlideshowPluginSlideInserter {
 
 		// Look for images by their file's name when not enough matching results were found
 		if(count($attachments) < $numberPosts){
-			$searchString = $wpdb->escape($_POST['search']);
+			$searchString = esc_sql($_POST['search']);
 
 			// Add results found with the previous query to the $attachmentIDs array to exclude them as well
 			foreach($attachments as $attachment){
@@ -213,7 +213,7 @@ class SlideshowPluginSlideInserter {
 		global $wpdb;
 
 		$searchString = $_POST['search'];
-		$searchString = $wpdb->escape($searchString);
+		$searchString = esc_sql($searchString);
 
 		if(isset($_POST['search']))
 			$where .= $wpdb->prepare(
@@ -259,18 +259,19 @@ class SlideshowPluginSlideInserter {
 		);
 
 		// Enqueue insert button script
-		wp_enqueue_script(
-			'slideshow-slide-inserter',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slide-inserter.js',
-			array('jquery'),
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_script(
+//			'slideshow-slide-inserter',
+//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slide-inserter.js',
+//			array('jquery'),
+//			SlideshowPluginMain::$version
+//		);
 
 		wp_localize_script(
-			'slideshow-slide-inserter',
-			'SlideInserterTranslations',
+			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow_jquery_image_gallery_backend_script_editSlideshow',
 			array(
-				'confirmMessage' => __('Are you sure you want to delete this slide?', 'slideshow-plugin')
+				'data' => array(),
+				'localization' => array('confirm' => __('Are you sure you want to delete this slide?', 'slideshow-plugin'))
 			)
 		);
 

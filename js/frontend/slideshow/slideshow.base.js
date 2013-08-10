@@ -1,4 +1,4 @@
-undefined = function()
+(function()
 {
 	var $    = jQuery,
 		self = slideshow_jquery_image_gallery_script;
@@ -144,7 +144,7 @@ undefined = function()
 	{
 		var isViewLoaded = true;
 
-		$.each(this.viewData[viewID], $.proxy(function(undefined, slideData)
+		$.each(this.viewData[viewID], $.proxy(function(key, slideData)
 		{
 			if (slideData.loaded == 0)
 			{
@@ -325,4 +325,4 @@ undefined = function()
 
 		return ID;
 	};
-}();
+}());

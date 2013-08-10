@@ -42,13 +42,13 @@ class SlideshowPluginShortcode {
 	 * Wordpress has done its HTML checks.
 	 *
 	 * @since 1.2.0
-	 * @param mixed $atts
+	 * @param mixed $attributes
 	 * @return String $output
 	 */
-	static function slideshowDeploy($atts){
+	static function slideshowDeploy($attributes){
 		$postId = '';
-		if(isset($atts['id']))
-			$postId = $atts['id'];
+		if(isset($attributes['id']))
+			$postId = $attributes['id'];
 
 		$output = '';
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($postId);
@@ -118,19 +118,19 @@ class SlideshowPluginShortcode {
 	 * @since 2.1.16
 	 */
 	static function shortcodeInserterScript(){
-		wp_enqueue_script(
-			'slideshow-shortcode-inserter',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/shortcode-inserter.js',
-			array('jquery'),
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_script(
+//			'slideshow-shortcode-inserter',
+//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/shortcode-inserter.js',
+//			array('jquery'),
+//			SlideshowPluginMain::$version
+//		);
 
 		wp_localize_script(
-			'slideshow-shortcode-inserter',
-			'SlideshowShortcodeInserter',
+			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow_jquery_image_gallery_backend_script_shortcode',
 			array(
-				'undefinedSlideshowMessage' => __('No slideshow selected.', 'slideshow-plugin'),
-				'shortcode' => SlideshowPluginShortcode::$shortCode
+				'data' => array('shortcode' => SlideshowPluginShortcode::$shortCode),
+				'localization' => array('undefinedSlideshow' => __('No slideshow selected.', 'slideshow-plugin'))
 			)
 		);
 	}

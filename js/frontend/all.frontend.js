@@ -76,7 +76,9 @@ slideshow_jquery_image_gallery_script = function()
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
 
 		if (ajaxStylesheets.length <= 0)
+		{
 			return;
+		}
 
 		$.each(ajaxStylesheets, function(ajaxStylesheetKey, ajaxStylesheet)
 		{

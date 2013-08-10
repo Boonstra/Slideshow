@@ -1,4 +1,4 @@
-undefined = function()
+(function()
 {
 	var $         = jQuery,
 		self      = slideshow_jquery_image_gallery_script;
@@ -110,7 +110,7 @@ undefined = function()
 	self.Slideshow.prototype.recalculateVisibleViews = function()
 	{
 		// Loop through viewsInAnimation array
-		$.each(this.visibleViews, $.proxy(function(undefined, viewID)
+		$.each(this.visibleViews, $.proxy(function(key, viewID)
 		{
 			this.recalculateView(viewID);
 		}, this));
@@ -344,4 +344,4 @@ undefined = function()
 			'height': viewHeight
 		});
 	};
-}();
+}());

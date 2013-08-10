@@ -46,6 +46,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 			{
 				// Prefix title with 'New'
 				if (typeof externalData.localization === 'object' &&
+					externalData.localization.newCustomizationPrefix !== undefined &&
 					externalData.localization.newCustomizationPrefix.length > 0)
 				{
 					title = externalData.localization.newCustomizationPrefix + ' - ' + title;
@@ -53,6 +54,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 
 				// Get custom styles key
 				if (typeof externalData.data === 'object' &&
+					externalData.data.customStylesKey !== undefined &&
 					externalData.data.customStylesKey.length > 0)
 				{
 					customStylesKey = externalData.data.customStylesKey;
@@ -120,7 +122,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 			}
 
 			// Fade editors out
-			$('.custom-styles-tab .style-editors .style-editor').each(function(undefined, editor)
+			$('.custom-styles-tab .style-editors .style-editor').each(function(key, editor)
 			{
 				$(editor).fadeOut(200);
 			});
@@ -157,6 +159,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 
 			if (typeof externalData === 'object' &&
 				typeof externalData.localization === 'object' &&
+				externalData.localization.confirmDeleteMessage !== undefined &&
 				externalData.localization.confirmDeleteMessage.length > 0)
 			{
 				confirmDeleteMessage = externalData.localization.confirmDeleteMessage;
@@ -186,7 +189,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 		var highestCustomStyleID = 0;
 
 		// Loop through style editors
-		$('.custom-styles-tab .style-editors .style-editor').each(function(undefined, editor)
+		$('.custom-styles-tab .style-editors .style-editor').each(function(key, editor)
 		{
 			var customStyleID = parseInt($(editor).attr('class').split('_').pop());
 

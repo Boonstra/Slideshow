@@ -1,4 +1,4 @@
-undefined = function()
+(function()
 {
 	var $    = jQuery,
 		self = slideshow_jquery_image_gallery_script;
@@ -256,4 +256,4 @@ undefined = function()
 			this.settings['slideSpeed'] * 1000
 		);
 	};
-}();
+}());

@@ -37,3 +37,4 @@ slideshow_jquery_image_gallery_backend_script = function()
 
 // @codekit-append generalSettings.js
 // @codekit-append editSlideshow.js
+// @codekit-append shortcode.js

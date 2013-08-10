@@ -44,6 +44,10 @@
 	overflow-y: scroll;
 }
 
+.widefat {
+	border-color: #dfdfdf;
+}
+
 .sortable-slides-list-item {
 	background: #fff url('../../images/SlideshowPluginPostType/draggable.png') no-repeat right center;
 }
