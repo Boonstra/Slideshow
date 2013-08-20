@@ -1,11 +1,18 @@
 <?php
 
-$videoId = '';
+$videoId           = '';
 $showRelatedVideos = 'false';
-if(isset($properties['videoId']))
+
+if (isset($properties['videoId']))
+{
 	$videoId = $properties['videoId'];
-if(isset($properties['showRelatedVideos']) && $properties['showRelatedVideos'] === 'true')
+}
+
+if (isset($properties['showRelatedVideos']) &&
+	$properties['showRelatedVideos'] === 'true')
+{
 	$showRelatedVideos = 'true';
+}
 
 ?>
 

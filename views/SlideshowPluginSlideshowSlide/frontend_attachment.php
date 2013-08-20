@@ -1,56 +1,88 @@
 <?php
 
 $title = $description = $url = $urlTarget = $postId = '';
-if(isset($properties['title']))
+
+if (isset($properties['title']))
+{
 	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
-if(isset($properties['description']))
+}
+
+if (isset($properties['description']))
+{
 	$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
-if(isset($properties['url']))
+}
+
+if (isset($properties['url']))
+{
 	$url = htmlspecialchars($properties['url']);
-if(isset($properties['urlTarget']))
+}
+
+if (isset($properties['urlTarget']))
+{
 	$urlTarget = htmlspecialchars($properties['urlTarget']);
-if(isset($properties['postId']))
+}
+
+if (isset($properties['postId']))
+{
 	$postId = $properties['postId'];
+}
 
 // Post ID should always be numeric
-if(is_numeric($postId)):
+if (is_numeric($postId)):
 
 	// Anchor tag is used twice
 	$anchorTagAttributes = (!empty($url) ? ' href="' . $url . '" ' : '') . (!empty($urlTarget) ? ' target="' . $urlTarget . '" ' : '');
 
 	// Get post from post id. Post should be able to load
 	$attachment = get_post($postId);
-	if(!empty($attachment)):
+	if (!empty($attachment)):
 
 		// If no title is set, get the alt from the original image
 		$alt = $title;
-		if(empty($alt))
+
+		if (empty($alt))
+		{
 			$alt = htmlspecialchars($attachment->post_title);
-		if(empty($alt))
+		}
+
+		if (empty($alt))
+		{
 			$alt = htmlspecialchars($attachment->post_content);
+		}
 
 		// Prepare image
-		$image = wp_get_attachment_image_src($attachment->ID, 'full');
-		$imageSrc = '';
-		$imageWidth = 0;
-		$imageHeight = 0;
+		$image          = wp_get_attachment_image_src($attachment->ID, 'full');
+		$imageSrc       = '';
+		$imageWidth     = 0;
+		$imageHeight    = 0;
 		$imageAvailable = true;
-		if(!is_array($image) || !$image || !isset($image[0])){
-			if(!empty($attachment->guid))
+
+		if (!is_array($image) ||
+			!$image ||
+			!isset($image[0]))
+		{
+			if (!empty($attachment->guid))
+			{
 				$imageSrc = $attachment->guid;
+			}
 			else
+			{
 				$imageAvailable = false;
-		}else{
+			}
+		}
+		else
+		{
 			$imageSrc = $image[0];
 
-			if(isset($image[1], $image[2])){
-				$imageWidth = $image[1];
+			if (isset($image[1], $image[2]))
+			{
+				$imageWidth  = $image[1];
 				$imageHeight = $image[2];
 			}
 		}
 
 		// If image is available
-		if($imageAvailable): ?>
+		if ($imageAvailable): ?>
 
 			<div class="slideshow_slide slideshow_slide_image">
 				<a <?php echo $anchorTagAttributes; ?>>

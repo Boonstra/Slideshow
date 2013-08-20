@@ -1,7 +1,7 @@
 <?php
 
 // Default settings
-$defaultSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
+$defaultSettings      = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
 $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
 
 ?>

@@ -3,7 +3,7 @@
 		<h3><?php _e('Help to keep this plugin free!', 'slideshow-plugin'); ?></h3>
 
 		<p>
-			<?php _e('In order to keep you provided with the newest features and updates, a lot of motivation is required. Therefore I\'m kindly asking you to consider making a small donation to the plugin or rating it as 5-stars on Wordpress.org. Thank you in advance!', 'slideshow-plugin'); ?>
+			<?php _e('In order to keep you provided with the newest features, updates and bug fixes, a lot of motivation is required. Therefore I\'m kindly asking you to consider making a small donation to the plugin or rating it as 5-stars on Wordpress.org. Thank you in advance!', 'slideshow-plugin'); ?>
 		</p>
 	</div>
 

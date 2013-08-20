@@ -1,16 +1,22 @@
 <?php
 
 // Get default stylesheets
-$defaultStyles = array();
+$defaultStyles      = array();
 $defaultStylesheets = array(
 	'style-light.css' => __('Light', 'slideshow-plugin'),
 	'style-dark.css' => __('Dark', 'slideshow-plugin')
 );
+
 $stylesheetsFilePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin';
-foreach($defaultStylesheets as $fileName => $name){
-	if(file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName)){
+
+foreach ($defaultStylesheets as $fileName => $name)
+{
+	if (file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName))
+	{
 		ob_start();
+
 		include $stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName;
+
 		$defaultStyles[$fileName] = array(
 			'name' => $name,
 			'style' => ob_get_clean()
@@ -20,10 +26,12 @@ foreach($defaultStylesheets as $fileName => $name){
 
 // Get custom styles
 $customStyleValues = array();
-$customStyleKeys = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
-if(is_array($customStyleKeys)){
-	foreach($customStyleKeys as $customStyleKey => $customStyleKeyName){
+$customStyleKeys   = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
 
+if (is_array($customStyleKeys))
+{
+	foreach ($customStyleKeys as $customStyleKey => $customStyleKeyName)
+	{
 		// Get custom style value from custom style key
 		$customStyleValues[$customStyleKey] = get_option($customStyleKey);
 	}

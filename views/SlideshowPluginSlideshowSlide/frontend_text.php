@@ -1,18 +1,36 @@
 <?php
 
 $title = $description = $textColor = $color = $url = $urlTarget = '';
-if(isset($properties['title']))
+
+if (isset($properties['title']))
+{
 	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
-if(isset($properties['description']))
+}
+
+if (isset($properties['description']))
+{
 	$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
-if(isset($properties['textColor']))
+}
+
+if (isset($properties['textColor']))
+{
 	$textColor = htmlspecialchars($properties['textColor']);
-if(isset($properties['color']))
+}
+
+if (isset($properties['color']))
+{
 	$color = htmlspecialchars($properties['color']);
-if(isset($properties['url']))
+}
+
+if (isset($properties['url']))
+{
 	$url = htmlspecialchars($properties['url']);
-if(isset($properties['urlTarget']))
+}
+
+if (isset($properties['urlTarget']))
+{
 	$urlTarget = htmlspecialchars($properties['urlTarget']);
+}
 
 $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!empty($urlTarget) ? 'target="' . $urlTarget . '"' : '');
 

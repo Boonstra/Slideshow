@@ -2,36 +2,62 @@
 
 // The attachment should always be there
 $attachment = get_post($properties['postId']);
-if(isset($attachment)):
+
+if (isset($attachment)):
 
 	// Title and description
 	$title = $description = $url = $target = '';
-	if(isset($properties['title']))
+
+	if (isset($properties['title']))
+	{
 		$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
-	if(isset($properties['description']))
+	}
+
+	if (isset($properties['description']))
+	{
 		$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
-	if(isset($properties['url']))
+	}
+
+	if (isset($properties['url']))
+	{
 		$url = $properties['url'];
-	if(isset($properties['urlTarget']))
+	}
+	if (isset($properties['urlTarget']))
+	{
 		$target = $properties['urlTarget'];
+	}
 
 	// Prepare image
-	$image = wp_get_attachment_image_src($attachment->ID);
-	$imageSrc = '';
+	$image        = wp_get_attachment_image_src($attachment->ID);
+	$imageSrc     = '';
 	$displaySlide = true;
-	if(!is_array($image) || !$image){
-		if(!empty($attachment->guid))
+
+	if (!is_array($image) ||
+		!$image)
+	{
+		if (!empty($attachment->guid))
+		{
 			$imageSrc = $attachment->guid;
+		}
 		else
+		{
 			$displaySlide = false;
-	}else{
+		}
+	}
+	else
+	{
 		$imageSrc = $image[0];
 	}
-	if(!$imageSrc || empty($imageSrc)) $imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
+
+	if (!$imageSrc ||
+		empty($imageSrc))
+	{
+		$imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
+	}
 
 	$editUrl = admin_url() . '/media.php?attachment_id=' . $attachment->ID . '&amp;action=edit';
 
-	if($displaySlide): ?>
+	if ($displaySlide): ?>
 
 		<li class="widefat sortable-slides-list-item">
 

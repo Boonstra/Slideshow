@@ -1,18 +1,36 @@
 <?php
 
 $title = $description = $textColor = $color = $url = $target = '';
-if(isset($properties['title']))
+
+if (isset($properties['title']))
+{
 	$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
-if(isset($properties['description']))
+}
+
+if (isset($properties['description']))
+{
 	$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
-if(isset($properties['textColor']))
+}
+
+if (isset($properties['textColor']))
+{
 	$textColor = $properties['textColor'];
-if(isset($properties['color']))
+}
+
+if (isset($properties['color']))
+{
 	$color = $properties['color'];
-if(isset($properties['url']))
+}
+
+if (isset($properties['url']))
+{
 	$url = $properties['url'];
-if(isset($properties['urlTarget']))
+}
+
+if (isset($properties['urlTarget']))
+{
 	$target = $properties['urlTarget'];
+}
 
 ?>
 
