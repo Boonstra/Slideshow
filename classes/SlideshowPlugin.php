@@ -110,7 +110,7 @@ class SlideshowPlugin {
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-script',
-			SlideshowPluginMain::getPluginUrl() . '/js/all.frontend.min.js',
+			SlideshowPluginMain::getPluginUrl() . '/js/min/all.frontend.min.js',
 			array('jquery'),
 			SlideshowPluginMain::$version
 		);

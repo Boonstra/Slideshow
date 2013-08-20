@@ -76,7 +76,7 @@ class SlideshowPluginMain {
 	static function enqueueBackendScript(){
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-backend-script',
-			self::getPluginUrl() . '/js/all.backend.min.js',
+			self::getPluginUrl() . '/js/min/all.backend.min.js',
 			array(
 				'jquery',
 				'jquery-ui-sortable',
