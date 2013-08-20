@@ -7,9 +7,9 @@
  * @author Stefan Boonstra
  * @version 01-02-2013
  */
-class SlideshowPluginInstaller {
-
-	/** Version option key */
+class SlideshowPluginInstaller
+{
+	/** @var string $versionKey Version option key */
 	private static $versionKey = 'slideshow-jquery-image-gallery-plugin-version';
 
 	/**
@@ -18,20 +18,26 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.1.20
 	 */
-	static function init(){
-
+	static function init()
+	{
 		// Only check versions in admin
-		if(!is_admin())
+		if (!is_admin())
+		{
 			return;
+		}
 
 		// Transfer if no version number is set, or the new version number is greater than the current one saved in the database
 		$currentVersion = get_option(self::$versionKey, null);
-		if($currentVersion == null || self::firstVersionGreaterThanSecond(SlideshowPluginMain::$version, $currentVersion))
+
+		if ($currentVersion == null ||
+			self::firstVersionGreaterThanSecond(SlideshowPluginMain::$version, $currentVersion))
+		{
 			self::update($currentVersion);
+		}
 
 		// New installation
-		if($currentVersion == null){
-
+		if ($currentVersion == null)
+		{
 			// Set up capabilities
 			self::setCapabilities();
 		}
@@ -43,29 +49,42 @@ class SlideshowPluginInstaller {
 	 * @since 2.1.20
 	 * @param string $currentVersion
 	 */
-	private static function update($currentVersion){
-
+	private static function update($currentVersion)
+	{
 		// Version numbers are registered after version 2.1.20
-		if($currentVersion == null){
+		if($currentVersion == null)
+		{
 			self::updateV1toV2();
 			self::updateV2toV2_1_20();
 		}
 
 		// Update to version 2.1.22
-		if(self::firstVersionGreaterThanSecond('2.1.22', $currentVersion) || $currentVersion == null)
+		if (self::firstVersionGreaterThanSecond('2.1.22', $currentVersion) ||
+			$currentVersion == null)
+		{
 			self::setCapabilities();
+		}
 
 		// Update to version 2.1.23
-		if(self::firstVersionGreaterThanSecond('2.1.23', $currentVersion) || $currentVersion == null)
+		if (self::firstVersionGreaterThanSecond('2.1.23', $currentVersion) ||
+			$currentVersion == null)
+		{
 			self::updateV2_1_20_to_V2_2_1_23();
+		}
 
 		// Update to version 2.2.0
-		if(self::firstVersionGreaterThanSecond('2.2.0', $currentVersion) || $currentVersion == null)
+		if (self::firstVersionGreaterThanSecond('2.2.0', $currentVersion) ||
+			$currentVersion == null)
+		{
 			self::updateV2_1_23_to_V_2_2_0();
+		}
 
 		// Update to version 2.2.0
-		if(self::firstVersionGreaterThanSecond('2.2.8', $currentVersion) || $currentVersion == null)
+		if (self::firstVersionGreaterThanSecond('2.2.8', $currentVersion) ||
+			$currentVersion == null)
+		{
 			self::updateV2_2_0_to_V_2_2_8();
+		}
 
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
@@ -80,36 +99,45 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.2.8
 	 */
-	private static function updateV2_2_0_to_V_2_2_8(){
-
+	private static function updateV2_2_0_to_V_2_2_8()
+	{
 		// Check if this has already been done
-		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8') !== false)
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8') !== false)
+		{
 			return;
+		}
 
 		$customStylesOptionsKey = 'slideshow-jquery-image-gallery-custom-styles';
 
 		// Get all custom stylesheet keys
 		$customStyles = get_option($customStylesOptionsKey, array());
-		if(is_array($customStyles)){
-			foreach($customStyles as $customStyleKey => $customStyleValue){
-
+		if (is_array($customStyles))
+		{
+			foreach ($customStyles as $customStyleKey => $customStyleValue)
+			{
 				// Get custom style from custom style key
 				$customStyle = get_option($customStyleKey, null);
-				if(!isset($customStyle))
+
+				if (!isset($customStyle))
+				{
 					continue;
+				}
 
 				$h2Class = '.slideshow_container .slideshow_description h2';
-				$pClass = '.slideshow_container .slideshow_description p';
+				$pClass  = '.slideshow_container .slideshow_description p';
 
 				// Don't add to custom styles that already have this rule
-				if(stripos($customStyle, $h2Class . ' a') !== false || stripos($customStyle, $pClass . ' a') !== false)
+				if (stripos($customStyle, $h2Class . ' a') !== false ||
+					stripos($customStyle, $pClass . ' a') !== false)
+				{
 					continue;
+				}
 
 				// Add anchor classes
-				$h2Position = stripos($customStyle, $h2Class) + strlen($h2Class);
+				$h2Position  = stripos($customStyle, $h2Class) + strlen($h2Class);
 				$customStyle = substr($customStyle, 0, $h2Position) . ' a ' . substr($customStyle, $h2Position);
 
-				$pPosition = stripos($customStyle, $pClass) + strlen($pClass);
+				$pPosition   = stripos($customStyle, $pClass) + strlen($pClass);
 				$customStyle = substr($customStyle, 0, $pPosition) . ' a ' . substr($customStyle, $pPosition);
 
 				// Save
@@ -126,37 +154,43 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.2.0
 	 */
-	private static function updateV2_1_23_to_V_2_2_0(){
-
+	private static function updateV2_1_23_to_V_2_2_0()
+	{
 		// Check if this has already been done
-		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0') !== false)
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0') !== false)
+		{
 			return;
+		}
 
 		// Get slideshows
 		$slideshows = get_posts(array(
 			'numberposts' => -1,
-			'offset' => 0,
-			'post_type' => 'slideshow'
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
 		));
 
 		// Loop through slideshows
-		if(is_array($slideshows) && count($slideshows > 0)){
-			foreach($slideshows as $slideshow){
-
+		if (is_array($slideshows) && count($slideshows > 0))
+		{
+			foreach ($slideshows as $slideshow)
+			{
 				// Get settings
 				$styleSettings = maybe_unserialize(get_post_meta(
 					$slideshow->ID,
 					'styleSettings',
 					true
 				));
-				if(!is_array($styleSettings) || count($styleSettings) <= 0)
+
+				if (!is_array($styleSettings) || count($styleSettings) <= 0)
+				{
 					continue;
+				}
 
 				// Only set style to the default light style if the style is currently a custom one
-				if( isset($styleSettings['style']) &&
+				if (isset($styleSettings['style']) &&
 					$styleSettings['style'] != 'light' &&
-					$styleSettings['style'] != 'dark'){
-
+					$styleSettings['style'] != 'dark')
+				{
 					$styleSettings['style'] = 'light';
 				}
 
@@ -181,56 +215,65 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.1.23
 	 */
-	private static function updateV2_1_20_to_V2_2_1_23(){
-
+	private static function updateV2_1_20_to_V2_2_1_23()
+	{
 		// Check if this has already been done
-		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23') !== false)
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23') !== false)
+		{
 			return;
+		}
 
 		// Get slideshows
 		$slideshows = get_posts(array(
 			'numberposts' => -1,
-			'offset' => 0,
-			'post_type' => 'slideshow'
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
 		));
 
 		// Loop through slideshows
-		if(is_array($slideshows) && count($slideshows > 0)){
-			foreach($slideshows as $slideshow){
+		if (is_array($slideshows) &&
+			count($slideshows > 0))
+		{
+			foreach ($slideshows as $slideshow)
+			{
 				// Get settings
 				$styleSettings = maybe_unserialize(get_post_meta(
 					$slideshow->ID,
 					'styleSettings',
 					true
 				));
-				if(!is_array($styleSettings) || count($styleSettings) <= 0)
+
+				if (!is_array($styleSettings) ||
+					count($styleSettings) <= 0)
+				{
 					continue;
+				}
 
 				// Only save custom style when it's the current setting
-				if( isset($styleSettings['style']) &&
+				if (isset($styleSettings['style']) &&
 					$styleSettings['style'] == 'custom' &&
 					isset($styleSettings['custom']) &&
-					!empty($styleSettings['custom'])){
-
+					!empty($styleSettings['custom']))
+				{
 					// Custom style key
-					$stylesKey = 'slideshow-jquery-image-gallery-custom-styles';
+					$stylesKey      = 'slideshow-jquery-image-gallery-custom-styles';
 					$customStyleKey = $stylesKey . '_' . $slideshow->ID;
 
 					// Add stylesheet to database, continue to next post when failed.
-					if(!add_option(
-						$customStyleKey,
-						$styleSettings['custom'],
-						'',
-						'no'
-						))
+					if (!add_option($customStyleKey, $styleSettings['custom'], '', 'no'))
+					{
 						continue;
+					}
 
 					// Get list of stylesheets to link the new stylesheet to.
 					$styleSheets = get_option($stylesKey, array());
 
 					// Stylesheets must be an array
-					if(!is_array($styleSheets) || count($styleSheets) <= 0)
+					if (!is_array($styleSheets) ||
+						count($styleSheets) <= 0)
+					{
 						$styleSheets = array();
+					}
 
 					// Link new stylesheet to stylesheets array
 					$styleSheets[$customStyleKey] = $slideshow->post_title . ' (ID: ' . $slideshow->ID . ')';
@@ -262,27 +305,32 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.1.22
 	 */
-	private static function setCapabilities(){
-
+	private static function setCapabilities()
+	{
 		// Check if update has already been done
-		if(get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22') !== false)
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22') !== false)
+		{
 			return;
+		}
 
 		// Capabilities
-		$addSlideshows = 'slideshow-jquery-image-gallery-add-slideshows';
-		$editSlideshows = 'slideshow-jquery-image-gallery-edit-slideshows';
+		$addSlideshows   = 'slideshow-jquery-image-gallery-add-slideshows';
+		$editSlideshows  = 'slideshow-jquery-image-gallery-edit-slideshows';
 		$deleteSlideshow = 'slideshow-jquery-image-gallery-delete-slideshows';
 
 		// Add capabilities to roles
 		$roles = array('administrator', 'editor', 'author');
-		foreach($roles as $roleName){
 
+		foreach ($roles as $roleName)
+		{
 			// Get role
 			$role = get_role($roleName);
 
 			// Continue on non-existent role
-			if($role == null)
+			if ($role == null)
+			{
 				continue;
+			}
 
 			// Add capability to role
 			$role->add_cap($addSlideshows);
@@ -300,75 +348,101 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.1.20
 	 */
-	private static function updateV2toV2_1_20(){
-
+	private static function updateV2toV2_1_20()
+	{
 		// Check if this has already been done
-		if(get_option('slideshow-plugin-updated-from-v2-to-v2-1-20') !== false)
+		if (get_option('slideshow-plugin-updated-from-v2-to-v2-1-20') !== false)
+		{
 			return;
+		}
 
 		// Get slideshows
 		$slideshows = get_posts(array(
 			'numberposts' => -1,
-			'offset' => 0,
-			'post_type' => 'slideshow'
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
 		));
 
 		// Loop through slideshows
-		if(is_array($slideshows) && count($slideshows > 0)){
-			foreach($slideshows as $slideshow){
+		if (is_array($slideshows) && count($slideshows > 0))
+		{
+			foreach ($slideshows as $slideshow)
+			{
 				// Get settings
 				$settings = maybe_unserialize(get_post_meta(
 					$slideshow->ID,
 					'settings',
 					true
 				));
-				if(!is_array($settings) || count($settings) <= 0)
+
+				if (!is_array($settings) ||
+					count($settings) <= 0)
+				{
 					continue;
+				}
 
 				// Old prefixes
 				$settingsPrefix = 'setting_';
-				$stylePrefix = 'style_';
-				$slidePrefix = 'slide_';
+				$stylePrefix    = 'style_';
+				$slidePrefix    = 'slide_';
 
 				// Meta keys
-				$settingsKey = 'settings';
+				$settingsKey      = 'settings';
 				$styleSettingsKey = 'styleSettings';
-				$slidesKey = 'slides';
+				$slidesKey        = 'slides';
 
 				// Extract key => value into new arrays
-				$newSettings = array();
+				$newSettings   = array();
 				$styleSettings = array();
-				$slides = array();
-				foreach($settings as $key => $value){
-					if($settingsPrefix == substr($key, 0, strlen($settingsPrefix)))
+				$slides        = array();
+
+				foreach ($settings as $key => $value)
+				{
+					if ($settingsPrefix == substr($key, 0, strlen($settingsPrefix)))
+					{
 						$newSettings[substr($key, strlen($settingsPrefix))] = $value;
-					elseif($stylePrefix == substr($key, 0, strlen($stylePrefix)))
+					}
+					elseif ($stylePrefix == substr($key, 0, strlen($stylePrefix)))
+					{
 						$styleSettings[substr($key, strlen($stylePrefix))] = $value;
-					elseif($slidePrefix == substr($key, 0, strlen($slidePrefix)))
+					}
+					elseif ($slidePrefix == substr($key, 0, strlen($slidePrefix)))
+					{
 						$slides[substr($key, strlen($slidePrefix))] = $value;
+					}
 				}
 
 				// Slides are prefixed with another prefix, their order ID. All settings of one slide should go into an
 				// array referenced by their order ID. Create order lookup array below, then order slides accordingly
 				$slidesOrderLookup = array();
-				foreach($slides as $key => $value){
+
+				foreach ($slides as $key => $value)
+				{
 					$key = explode('_', $key);
 
-					if($key[1] == 'order')
+					if ($key[1] == 'order')
+					{
 						$slidesOrderLookup[$value] = $key[0];
+					}
 				}
 
 				// Order slides with order lookup array
 				$orderedSlides = array();
-				foreach($slides as $key => $value){
+
+				foreach ($slides as $key => $value)
+				{
 					$key = explode('_', $key);
 
-					foreach($slidesOrderLookup as $order => $id){
-						if($key[0] == $id){
-
+					foreach ($slidesOrderLookup as $order => $id)
+					{
+						if ($key[0] == $id)
+						{
 							// Create array if slot is empty
-							if(!isset($orderedSlides[$order]) || !is_array($orderedSlides[$order]))
+							if (!isset($orderedSlides[$order]) ||
+								!is_array($orderedSlides[$order]))
+							{
 								$orderedSlides[$order] = array();
+							}
 
 							// Add slide value to array
 							$orderedSlides[$order][$key[1]] = $value;
@@ -395,22 +469,24 @@ class SlideshowPluginInstaller {
 	 *
 	 * @since 2.0.1
 	 */
-	private static function updateV1toV2(){
-
+	private static function updateV1toV2()
+	{
 		// Check if this has already been done
-		if(get_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1') !== false)
+		if (get_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1') !== false)
+		{
 			return;
+		}
 
 		// Get posts
 		$posts = get_posts(array(
 			'numberposts' => -1,
-			'offset' => 0,
-			'post_type' => 'slideshow'
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
 		));
 
 		// Loop through posts
-		foreach($posts as $post){
-
+		foreach ($posts as $post)
+		{
 			// Stores highest slide id.
 			$highestSlideId = -1;
 
@@ -465,57 +541,83 @@ class SlideshowPluginInstaller {
 			);
 
 			// Fill data with settings
-			foreach($data as $key => $value)
-				if(isset($currentSettings[$key])){
+			foreach ($data as $key => $value)
+			{
+				if (isset($currentSettings[$key]))
+				{
 					$data[$key][1] = $currentSettings[$key];
+
 					unset($currentSettings[$key]);
 				}
+			}
 
 			// Load settings that are not there by default into data (slides in particular)
-			foreach($currentSettings as $key => $value)
-				if(!isset($data[$key]))
+			foreach ($currentSettings as $key => $value)
+			{
+				if (!isset($data[$key]))
+				{
 					$data[$key] = $value;
+				}
+			}
 
 			// Settings
 			$settings = $data;
 
 			// Filter slides
 			$prefix = 'slide_';
-			foreach($settings as $key => $value)
-				if($prefix != substr($key, 0, strlen($prefix)))
+
+			foreach ($settings as $key => $value)
+			{
+				if ($prefix != substr($key, 0, strlen($prefix)))
+				{
 					unset($settings[$key]);
+				}
+			}
 
 			// Convert slide settings to array([slide-key] => array([setting-name] => [value]));
 			$slidesPreOrder = array();
-			foreach($settings as $key => $value){
+
+			foreach ($settings as $key => $value)
+			{
 				$key = explode('_', $key);
-				if(is_numeric($key[1]))
+
+				if (is_numeric($key[1]))
+				{
 					$slidesPreOrder[$key[1]][$key[2]] = $value;
+				}
 			}
 
 			// Save slide keys from the $slidePreOrder array in the array itself for later use
-			foreach($slidesPreOrder as $key => $value){
+			foreach ($slidesPreOrder as $key => $value)
+			{
 				// Save highest slide id
 				if($key > $highestSlideId)
+				{
 					$highestSlideId = $key;
+				}
 			}
 
 			// Get old data
 			$oldData = get_post_meta($post->ID, 'settings', true);
+
 			if(!is_array(($oldData)))
+			{
 				$oldData = array();
+			}
 
 			// Get attachments
 			$attachments = get_posts(array(
 				'numberposts' => -1,
-				'offset' => 0,
-				'post_type' => 'attachment',
+				'offset'      => 0,
+				'post_type'   => 'attachment',
 				'post_parent' => $post->ID
 			));
 
 			// Get data from attachments
 			$newData = array();
-			foreach($attachments as $attachment){
+
+			foreach ($attachments as $attachment)
+			{
 				$highestSlideId++;
 				$newData['slide_' . $highestSlideId . '_postId'] = $attachment->ID;
 				$newData['slide_' . $highestSlideId . '_type'] = 'attachment';
@@ -529,7 +631,8 @@ class SlideshowPluginInstaller {
 					$defaultData,
 					$oldData,
 					$newData
-				));
+				)
+			);
 		}
 
 		update_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1', 'updated');
@@ -545,29 +648,44 @@ class SlideshowPluginInstaller {
 	 * @param String $secondVersion
 	 * @return boolean $firstGreaterThanSecond
 	 */
-	private static function firstVersionGreaterThanSecond($firstVersion, $secondVersion){
-
+	private static function firstVersionGreaterThanSecond($firstVersion, $secondVersion)
+	{
 		// Return false if $firstVersion is not set
-		if(empty($firstVersion) || !is_string($firstVersion))
+		if (empty($firstVersion) ||
+			!is_string($firstVersion))
+		{
 			return false;
+		}
 
 		// Return true if $secondVersion is not set
-		if(empty($secondVersion) || !is_string($secondVersion))
+		if (empty($secondVersion) ||
+			!is_string($secondVersion))
+		{
 			return true;
+		}
 
 		// Separate main, sub and bug-fix version number from one another.
-		$firstVersion = explode('.', $firstVersion);
+		$firstVersion  = explode('.', $firstVersion);
 		$secondVersion = explode('.', $secondVersion);
 
 		// Compare version numbers per piece
-		for($i = 0; $i < count($firstVersion); $i++){
-			if(isset($firstVersion[$i], $secondVersion[$i])){
-				if($firstVersion[$i] > $secondVersion[$i])
+		for ($i = 0; $i < count($firstVersion); $i++)
+		{
+			if (isset($firstVersion[$i], $secondVersion[$i]))
+			{
+				if ($firstVersion[$i] > $secondVersion[$i])
+				{
 					return true;
-				elseif($firstVersion[$i] < $secondVersion[$i])
+				}
+				elseif ($firstVersion[$i] < $secondVersion[$i])
+				{
 					return false;
+				}
 			}
-			else return false;
+			else
+			{
+				return false;
+			}
 		}
 
 		// Return false by default

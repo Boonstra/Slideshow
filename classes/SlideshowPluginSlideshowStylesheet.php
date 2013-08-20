@@ -6,8 +6,9 @@
  * @author Stefan Boonstra
  * @version 03-03-2013
  */
-class SlideshowPluginSlideshowStylesheet {
-
+class SlideshowPluginSlideshowStylesheet
+{
+	/** @var bool $allStylesheetsRegistered */
 	public static $allStylesheetsRegistered = false;
 
 	/**
@@ -15,18 +16,18 @@ class SlideshowPluginSlideshowStylesheet {
 	 *
 	 * @since 2.2.12
 	 */
-	public static function init(){
-
+	public static function init()
+	{
 		add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueueFrontendStylesheets'));
 	}
 
 	/**
 	 * Enqueue stylesheet
 	 */
-	public static function enqueueFrontendStylesheets(){
-
-		if(SlideshowPluginGeneralSettings::getStylesheetLocation() === 'head'){
-
+	public static function enqueueFrontendStylesheets()
+	{
+		if (SlideshowPluginGeneralSettings::getStylesheetLocation() === 'head')
+		{
 			// Register functional stylesheet
 			wp_enqueue_style(
 				'slideshow-jquery-image-gallery-stylesheet_functional',
@@ -36,23 +37,26 @@ class SlideshowPluginSlideshowStylesheet {
 			);
 
 			// Get default and custom stylesheets
-			$stylesheets = SlideshowPluginGeneralSettings::getStylesheets(true, true);
+			$stylesheets        = SlideshowPluginGeneralSettings::getStylesheets(true, true);
 			$defaultStylesheets = $stylesheets['default'];
-			$customStylesheets = $stylesheets['custom'];
+			$customStylesheets  = $stylesheets['custom'];
 
 			// Clean the '.css' extension from the default stylesheets
-			foreach($defaultStylesheets as $defaultStylesheetKey => $defaultStylesheetValue){
-
+			foreach ($defaultStylesheets as $defaultStylesheetKey => $defaultStylesheetValue)
+			{
 				$newDefaultStylesheetKey = str_replace('.css', '', $defaultStylesheetKey);
 
 				$defaultStylesheets[$newDefaultStylesheetKey] = $defaultStylesheetValue;
 
-				if($defaultStylesheetKey !== $newDefaultStylesheetKey)
+				if ($defaultStylesheetKey !== $newDefaultStylesheetKey)
+				{
 					unset($defaultStylesheets[$defaultStylesheetKey]);
+				}
 			}
 
 			// Enqueue stylesheets
-			foreach(array_merge($defaultStylesheets, $customStylesheets) as $stylesheetKey => $stylesheetValue){
+			foreach (array_merge($defaultStylesheets, $customStylesheets) as $stylesheetKey => $stylesheetValue)
+			{
 				wp_enqueue_style(
 					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $stylesheetKey,
 					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $stylesheetKey),
@@ -75,25 +79,33 @@ class SlideshowPluginSlideshowStylesheet {
 	 * @param string $name (optional, defaults to null)
 	 * @return array [$name, $version]
 	 */
-	public static function enqueueStylesheet($name = null){
-
-		if(isset($name)){
+	public static function enqueueStylesheet($name = null)
+	{
+		if (isset($name))
+		{
 			// Try to get the custom style's version
-			$customStyle = get_option($name, false);
+			$customStyle        = get_option($name, false);
 			$customStyleVersion = false;
-			if($customStyle){
+
+			if ($customStyle)
+			{
 				$customStyleVersion = get_option($name . '_version', false);
 			}
 
 			// Style name and version
-			if($customStyle && $customStyleVersion){
+			if ($customStyle && $customStyleVersion)
+			{
 				$version = $customStyleVersion;
-			}else{
-				$name = str_replace('.css', '', $name);
+			}
+			else
+			{
+				$name    = str_replace('.css', '', $name);
 				$version = SlideshowPluginMain::$version;
 			}
-		}else{
-			$name = 'style-light';
+		}
+		else
+		{
+			$name    = 'style-light';
 			$version = SlideshowPluginMain::$version;
 		}
 
@@ -119,19 +131,27 @@ class SlideshowPluginSlideshowStylesheet {
 	 *
 	 * @since 2.2.11
 	 */
-	public static function loadStylesheetByAJAX(){
-
+	public static function loadStylesheetByAJAX()
+	{
 		$styleName = filter_input(INPUT_GET, 'style', FILTER_SANITIZE_SPECIAL_CHARS);
 
 		// If no style name is set, all stylesheets will be loaded.
-		if(isset($styleName) && !empty($styleName) && strlen($styleName) > 0)
+		if (isset($styleName) &&
+			!empty($styleName) &&
+			strlen($styleName) > 0)
+		{
 			$stylesheet = self::getStylesheet($styleName);
+		}
 		else
+		{
 			return;
+		}
 
 		// Exit if headers have already been sent
-		if(headers_sent())
+		if (headers_sent())
+		{
 			return;
+		}
 
 		// Set header to CSS. Cache for a year (as WordPress does)
 		header('Content-Type: text/css; charset=UTF-8');
@@ -151,14 +171,17 @@ class SlideshowPluginSlideshowStylesheet {
 	 * @param string $styleName
 	 * @return string $stylesheet
 	 */
-	public static function getStylesheet($styleName){
-
+	public static function getStylesheet($styleName)
+	{
 		// Get custom stylesheet, of the default stylesheet if the custom stylesheet does not exist
 		$stylesheet = get_option($styleName, '');
-		if(strlen($stylesheet) <= 0){
 
+		if (strlen($stylesheet) <= 0)
+		{
 			$stylesheetFile = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin' . DIRECTORY_SEPARATOR . $styleName . '.css';
-			if(!file_exists($stylesheetFile)){
+
+			if (!file_exists($stylesheetFile))
+			{
 				$stylesheetFile = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin' . DIRECTORY_SEPARATOR . 'style-light.css';
 			}
 

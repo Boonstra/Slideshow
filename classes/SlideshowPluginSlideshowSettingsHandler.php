@@ -6,20 +6,25 @@
  * @author Stefan Boonstra
  * @version 01-02-2013
  */
-class SlideshowPluginSlideshowSettingsHandler {
-
-	/** Nonce */
+class SlideshowPluginSlideshowSettingsHandler
+{
+	/** @var string $nonceAction */
 	static $nonceAction = 'slideshow-jquery-image-gallery-nonceAction';
+	/** @var string $nonceName */
 	static $nonceName = 'slideshow-jquery-image-gallery-nonceName';
 
-	/** Setting keys */
+	/** @var string $settingsKey */
 	static $settingsKey = 'settings';
+	/** @var string $styleSettingsKey */
 	static $styleSettingsKey = 'styleSettings';
+	/** @var string $slidesKey */
 	static $slidesKey = 'slides';
 
-	/** Cached settings stored by slideshow ID */
+	/** @var array $settings      Used for caching by slideshow ID */
 	static $settings = array();
+	/** @var array $styleSettings Used for caching by slideshow ID */
 	static $styleSettings = array();
+	/** @var array $slides        Used for caching by slideshow ID */
 	static $slides = array();
 
 	/**
@@ -43,12 +48,12 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $mergeDefaults (optional, defaults to true)
 	 * @return mixed $settings
 	 */
-	static function getAllSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true){
-
-		$settings = array();
-		$settings[self::$settingsKey] = self::getSettings($slideshowId, $fullDefinition, $enableCache,  $mergeDefaults);
+	static function getAllSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true)
+	{
+		$settings                          = array();
+		$settings[self::$settingsKey]      = self::getSettings($slideshowId, $fullDefinition, $enableCache,  $mergeDefaults);
 		$settings[self::$styleSettingsKey] = self::getStyleSettings($slideshowId, $fullDefinition, $enableCache,  $mergeDefaults);
-		$settings[self::$slidesKey] = self::getSlides($slideshowId, $enableCache);
+		$settings[self::$slidesKey]        = self::getSlides($slideshowId, $enableCache);
 
 		return $settings;
 	}
@@ -65,55 +70,80 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $mergeDefaults (optional, defaults to true)
 	 * @return mixed $settings
 	 */
-	static function getSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true){
-
-		if(!is_numeric($slideshowId) || empty($slideshowId))
+	static function getSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true)
+	{
+		if (!is_numeric($slideshowId) ||
+			empty($slideshowId))
+		{
 			return array();
+		}
 
 		// Set caching to false and merging defaults to true when $fullDefinition is set to true
-		if($fullDefinition){
-			$enableCache = false;
+		if ($fullDefinition)
+		{
+			$enableCache   = false;
 			$mergeDefaults = true;
 		}
 
 		// If no cache is set, or cache is disabled
-		if(!isset(self::$settings[$slideshowId]) || empty(self::$settings[$slideshowId]) || !$enableCache){
+		if (!isset(self::$settings[$slideshowId]) ||
+			empty(self::$settings[$slideshowId]) ||
+			!$enableCache)
+		{
 			// Meta data
 			$settingsMeta = get_post_meta(
 				$slideshowId,
 				self::$settingsKey,
 				true
 			);
-			if(!$settingsMeta || !is_array($settingsMeta))
+
+			if (!$settingsMeta ||
+				!is_array($settingsMeta))
+			{
 				$settingsMeta = array();
+			}
 
 			// If the settings should be merged with the defaults as a full definition, place each setting in an array referenced by 'value'.
-			if($fullDefinition)
-				foreach($settingsMeta as $key => $value)
+			if ($fullDefinition)
+			{
+				foreach ($settingsMeta as $key => $value)
+				{
 					$settingsMeta[$key] = array('value' => $value);
+				}
+			}
 
 			// Get defaults
 			$defaults = array();
-			if($mergeDefaults)
+
+			if ($mergeDefaults)
+			{
 				$defaults = self::getDefaultSettings($fullDefinition);
+			}
 
 			// Merge with defaults, recursively if a the full definition is required
-			if($fullDefinition)
+			if ($fullDefinition)
+			{
 				$settings = array_merge_recursive(
 					$defaults,
 					$settingsMeta
 				);
+			}
 			else
+			{
 				$settings = array_merge(
 					$defaults,
 					$settingsMeta
 				);
+			}
 
 			// Cache if cache is enabled
-			if($enableCache){
+			if ($enableCache)
+			{
 				self::$settings[$slideshowId] = $settings;
 			}
-		}else{
+		}
+		else
+		{
 			// Get cached settings
 			$settings = self::$settings[$slideshowId];
 		}
@@ -134,55 +164,80 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $mergeDefaults (optional, defaults to true)
 	 * @return mixed $settings
 	 */
-	static function getStyleSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true){
-
-		if(!is_numeric($slideshowId) || empty($slideshowId))
+	static function getStyleSettings($slideshowId, $fullDefinition = false, $enableCache = true, $mergeDefaults = true)
+	{
+		if (!is_numeric($slideshowId) ||
+			empty($slideshowId))
+		{
 			return array();
+		}
 
 		// Set caching to false and merging defaults to true when $fullDefinition is set to true
-		if($fullDefinition){
-			$enableCache = false;
+		if ($fullDefinition)
+		{
+			$enableCache   = false;
 			$mergeDefaults = true;
 		}
 
 		// If no cache is set, or cache is disabled
-		if(!isset(self::$styleSettings[$slideshowId]) || empty(self::$styleSettings[$slideshowId]) || !$enableCache){
+		if (!isset(self::$styleSettings[$slideshowId]) ||
+			empty(self::$styleSettings[$slideshowId]) ||
+			!$enableCache)
+		{
 			// Meta data
 			$styleSettingsMeta = get_post_meta(
 				$slideshowId,
 				self::$styleSettingsKey,
 				true
 			);
-			if(!$styleSettingsMeta || !is_array($styleSettingsMeta))
+
+			if (!$styleSettingsMeta ||
+				!is_array($styleSettingsMeta))
+			{
 				$styleSettingsMeta = array();
+			}
 
 			// If the settings should be merged with the defaults as a full definition, place each setting in an array referenced by 'value'.
-			if($fullDefinition)
-				foreach($styleSettingsMeta as $key => $value)
+			if ($fullDefinition)
+			{
+				foreach ($styleSettingsMeta as $key => $value)
+				{
 					$styleSettingsMeta[$key] = array('value' => $value);
+				}
+			}
 
 			// Get defaults
 			$defaults = array();
-			if($mergeDefaults)
+
+			if ($mergeDefaults)
+			{
 				$defaults = self::getDefaultStyleSettings($fullDefinition);
+			}
 
 			// Merge with defaults, recursively if a the full definition is required
-			if($fullDefinition)
+			if ($fullDefinition)
+			{
 				$styleSettings = array_merge_recursive(
 					$defaults,
 					$styleSettingsMeta
 				);
+			}
 			else
+			{
 				$styleSettings = array_merge(
 					$defaults,
 					$styleSettingsMeta
 				);
+			}
 
 			// Cache if cache is enabled
-			if($enableCache){
+			if ($enableCache)
+			{
 				self::$styleSettings[$slideshowId] = $styleSettings;
 			}
-		}else{
+		}
+		else
+		{
 			// Get cached settings
 			$styleSettings = self::$styleSettings[$slideshowId];
 		}
@@ -201,29 +256,41 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $enableCache (optional, defaults to true)
 	 * @return mixed $settings
 	 */
-	static function getSlides($slideshowId, $enableCache = true){
-
-		if(!is_numeric($slideshowId) || empty($slideshowId))
+	static function getSlides($slideshowId, $enableCache = true)
+	{
+		if (!is_numeric($slideshowId) ||
+			empty($slideshowId))
+		{
 			return array();
+		}
 
 		// If no cache is set, or cache is disabled
-		if(!isset(self::$slides[$slideshowId]) ||	empty(self::$slides[$slideshowId]) || !$enableCache){
+		if (!isset(self::$slides[$slideshowId]) ||
+			empty(self::$slides[$slideshowId]) ||
+			!$enableCache)
+		{
 			// Meta data
 			$slides = get_post_meta(
 				$slideshowId,
 				self::$slidesKey,
 				true
 			);
-		}else{
+		}
+		else
+		{
 			// Get cached settings
 			$slides = self::$slides[$slideshowId];
 		}
 
 		// Sort slides by order ID
-		if(is_array($slides))
+		if (is_array($slides))
+		{
 			ksort($slides);
+		}
 		else
+		{
 			$slides = array();
+		}
 
 		// Return
 		return $slides;
@@ -241,39 +308,53 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param bool $enableCache (optional, defaults to true)
 	 * @return mixed $views
 	 */
-	static function getViews($slideshowId, $returnAsObjects = true, $enableCache = true){
-
+	static function getViews($slideshowId, $returnAsObjects = true, $enableCache = true)
+	{
 		// Get slides
 		$slides = self::getSlides($slideshowId, $enableCache);
 
 		// Get settings. Since in version 2.2.X slides aren't put into views yet, this has to be done manually
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($slideshowId, false, $enableCache);
 		$slidesPerView = 1;
+
 		if(isset($settings['slidesPerView']))
+		{
 			$slidesPerView = $settings['slidesPerView'];
+		}
 
 		// Loop through slides, forcing them into views
-		$i = 0;
+		$i      = 0;
 		$viewId = -1;
-		$views = array();
-		if(is_array($slides)){
-			foreach($slides as $slide){
+		$views  = array();
 
+		if (is_array($slides))
+		{
+			foreach ($slides as $slide)
+			{
 				// Create new view when view is full or not yet created
-				if($i % $slidesPerView == 0){
-
+				if ($i % $slidesPerView == 0)
+				{
 					$viewId++;
-					if($returnAsObjects)
+
+					if ($returnAsObjects)
+					{
 						$views[$viewId] = new SlideshowPluginSlideshowView();
+					}
 					else
+					{
 						$views[$viewId] = array();
+					}
 				}
 
 				// Add slide to view
-				if($returnAsObjects)
+				if ($returnAsObjects)
+				{
 					$views[$viewId]->addSlide($slide);
+				}
 				else
+				{
 					$views[$viewId][] = $slide;
+				}
 
 				$i++;
 			}
@@ -290,27 +371,41 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param int $postId
 	 * @return int $postId
 	 */
-	static function save($postId){
-
+	static function save($postId)
+	{
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
-		if(get_post_type($postId) != SlideshowPluginPostType::$postType ||
+		if (get_post_type($postId) != SlideshowPluginPostType::$postType ||
 			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
 			!current_user_can('edit_post', $postId) ||
 			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))
+		{
 			return $postId;
+		}
 
 		// Old settings
-		$oldSettings = self::getSettings($postId);
+		$oldSettings      = self::getSettings($postId);
 		$oldStyleSettings = self::getStyleSettings($postId);
 
 		// Get new settings from $_POST, making sure they're arrays
 		$newPostSettings = $newPostStyleSettings = $newPostSlides = array();
-		if(isset($_POST[self::$settingsKey]) && is_array($_POST[self::$settingsKey]))
+
+		if (isset($_POST[self::$settingsKey]) &&
+			is_array($_POST[self::$settingsKey]))
+		{
 			$newPostSettings = $_POST[self::$settingsKey];
-		if(isset($_POST[self::$styleSettingsKey]) && is_array($_POST[self::$styleSettingsKey]))
+		}
+
+		if (isset($_POST[self::$styleSettingsKey]) &&
+			is_array($_POST[self::$styleSettingsKey]))
+		{
 			$newPostStyleSettings = $_POST[self::$styleSettingsKey];
-		if(isset($_POST[self::$slidesKey]) && is_array($_POST[self::$slidesKey]))
+		}
+
+		if (isset($_POST[self::$slidesKey]) &&
+			is_array($_POST[self::$slidesKey]))
+		{
 			$newPostSlides = $_POST[self::$slidesKey];
+		}
 
 		// Merge new settings with its old values
 		$newSettings = array_merge(
@@ -353,10 +448,10 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $fromDatabase (optional, defaults to true)
 	 * @return mixed $data
 	 */
-	static function getAllDefaults($key = null, $fullDefinition = false, $fromDatabase = true){
-
-		$data = array();
-		$data[self::$settingsKey] = self::getDefaultSettings($fullDefinition, $fromDatabase);
+	static function getAllDefaults($key = null, $fullDefinition = false, $fromDatabase = true)
+	{
+		$data                          = array();
+		$data[self::$settingsKey]      = self::getDefaultSettings($fullDefinition, $fromDatabase);
 		$data[self::$styleSettingsKey] = self::getDefaultStyleSettings($fullDefinition, $fromDatabase);
 
 		return $data;
@@ -372,11 +467,11 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $fromDatabase (optional, defaults to true)
 	 * @return mixed $data
 	 */
-	static function getDefaultSettings($fullDefinition = false, $fromDatabase = true){
-
+	static function getDefaultSettings($fullDefinition = false, $fromDatabase = true)
+	{
 		// Much used data for translation
 		$yes = __('Yes', 'slideshow-plugin');
-		$no = __('No', 'slideshow-plugin');
+		$no  = __('No', 'slideshow-plugin');
 
 		// Default values
 		$data = array(
@@ -409,14 +504,17 @@ class SlideshowPluginSlideshowSettingsHandler {
 		);
 
 		// Read defaults from database and merge with $data, when $fromDatabase is set to true
-		if($fromDatabase)
+		if ($fromDatabase)
+		{
 			$data = array_merge(
 				$data,
 				$customData = get_option(SlideshowPluginGeneralSettings::$defaultSettings, array())
 			);
+		}
 
 		// Full definition
-		if($fullDefinition){
+		if ($fullDefinition)
+		{
 			$descriptions = array(
 				'animation'                   => __('Animation used for transition between slides', 'slideshow-plugin'),
 				'slideSpeed'                  => __('Number of seconds the slide takes to slide in', 'slideshow-plugin'),
@@ -490,22 +588,25 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param boolean $fromDatabase (optional, defaults to true)
 	 * @return mixed $data
 	 */
-	static function getDefaultStyleSettings($fullDefinition = false, $fromDatabase = true){
-
+	static function getDefaultStyleSettings($fullDefinition = false, $fromDatabase = true)
+	{
 		// Default style settings
 		$data = array(
 			'style' => 'style-light.css'
 		);
 
 		// Read defaults from database and merge with $data, when $fromDatabase is set to true
-		if($fromDatabase)
+		if ($fromDatabase)
+		{
 			$data = array_merge(
 				$data,
 				$customData = get_option(SlideshowPluginGeneralSettings::$defaultStyleSettings, array())
 			);
+		}
 
 		// Full definition
-		if($fullDefinition){
+		if ($fullDefinition)
+		{
 			$data = array(
 				'style' => array('type' => 'select', 'default' => $data['style'], 'description' => __('The style used for this slideshow', 'slideshow-plugin'), 'options' => SlideshowPluginGeneralSettings::getStylesheets()),
 			);
@@ -529,42 +630,63 @@ class SlideshowPluginSlideshowSettingsHandler {
 	 * @param bool $hideDependentValues (optional, defaults to true)
 	 * @return mixed $inputField
 	 */
-	static function getInputField($settingsKey, $settingsName, $settings, $hideDependentValues = true){
-
-		if(!is_array($settings) || empty($settings) || empty($settingsName))
+	static function getInputField($settingsKey, $settingsName, $settings, $hideDependentValues = true)
+	{
+		if (!is_array($settings) ||
+			empty($settings) ||
+			empty($settingsName))
+		{
 			return null;
+		}
 
-		$inputField = '';
-		$name = $settingsKey . '[' . $settingsName . ']';
+		$inputField   = '';
+		$name         = $settingsKey . '[' . $settingsName . ']';
 		$displayValue = (!isset($settings['value']) || (empty($settings['value']) && !is_numeric($settings['value'])) ? $settings['default'] : $settings['value']);
-		$class = ((isset($settings['dependsOn']) && $hideDependentValues)? 'depends-on-field-value ' . $settings['dependsOn'][0] . ' ' . $settings['dependsOn'][1] . ' ': '') . $settingsKey . '-' . $settingsName;
-		switch($settings['type']){
+		$class        = ((isset($settings['dependsOn']) && $hideDependentValues)? 'depends-on-field-value ' . $settings['dependsOn'][0] . ' ' . $settings['dependsOn'][1] . ' ': '') . $settingsKey . '-' . $settingsName;
+
+		switch($settings['type'])
+		{
 			case 'text':
+
 				$inputField .= '<input
 					type="text"
 					name="' . $name . '"
 					class="' . $class . '"
 					value="' . $displayValue . '"
 				/>';
+
 				break;
+
 			case 'textarea':
+
 				$inputField .= '<textarea
 					name="' . $name . '"
 					class="' . $class . '"
 					rows="20"
 					cols="60"
 				>' . $displayValue . '</textarea>';
+
 				break;
+
 			case 'select':
+
 				$inputField .= '<select name="' . $name . '" class="' . $class . '">';
-				foreach($settings['options'] as $optionKey => $optionValue)
+
+				foreach ($settings['options'] as $optionKey => $optionValue)
+				{
 					$inputField .= '<option value="' . $optionKey . '" ' . selected($displayValue, $optionKey, false) . '>
 						' . $optionValue . '
 					</option>';
+				}
+
 				$inputField .= '</select>';
+
 				break;
+
 			case 'radio':
-				foreach($settings['options'] as $radioKey => $radioValue)
+
+				foreach ($settings['options'] as $radioKey => $radioValue)
+				{
 					$inputField .= '<label><input
 						type="radio"
 						name="' . $name . '"
@@ -572,9 +694,14 @@ class SlideshowPluginSlideshowSettingsHandler {
 						value="' . $radioKey . '" ' .
 						checked($displayValue, $radioKey, false) .
 						' />' . $radioValue . '</label><br />';
+				}
+
 				break;
+
 			default:
+
 				$inputField = null;
+
 				break;
 		};
 

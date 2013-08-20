@@ -7,9 +7,9 @@
  * @author Stefan Boonstra
  * @version 01-02-2013
  */
-class SlideshowPluginSlideshowView {
-
-	/** Slides */
+class SlideshowPluginSlideshowView
+{
+	/** @var SlideshowPluginSlideshowSlide $slides */
 	private $slides = array();
 
 	/**
@@ -20,11 +20,15 @@ class SlideshowPluginSlideshowView {
 	 * @since 2.2.0
 	 * @param array $slidesProperties (optional)
 	 */
-	function __construct($slidesProperties = array()){
-
-		if(is_array($slidesProperties))
-			foreach($slidesProperties as $slideProperties)
+	function __construct($slidesProperties = array())
+	{
+		if (is_array($slidesProperties))
+		{
+			foreach ($slidesProperties as $slideProperties)
+			{
 				$this->slides[] = new SlideshowPluginSlideshowSlide($slideProperties);
+			}
+		}
 	}
 
 	/**
@@ -35,10 +39,12 @@ class SlideshowPluginSlideshowView {
 	 * @since 2.2.0
 	 * @param array $slideProperties
 	 */
-	function addSlide($slideProperties){
-
-		if(is_array($slideProperties))
+	function addSlide($slideProperties)
+	{
+		if (is_array($slideProperties))
+		{
 			$this->slides[] = new SlideshowPluginSlideshowSlide($slideProperties);
+		}
 	}
 
 	/**
@@ -50,21 +56,25 @@ class SlideshowPluginSlideshowView {
 	 * @param boolean $return (optional, defaults to true)
 	 * @return String $frontEndHTML
 	 */
-	function toFrontEndHTML($return = true){
-
+	function toFrontEndHTML($return = true)
+	{
 		$frontEndHTML = '<div class="slideshow_view">';
 
-		foreach($this->slides as $slide){
-
+		foreach ($this->slides as $slide)
+		{
 			$frontEndHTML .= $slide->toFrontEndHTML();
 		}
 
 		$frontEndHTML .= '<div style="clear: both;"></div></div>';
 
-		if($return)
+		if ($return)
+		{
 			return $frontEndHTML;
-		else
-			echo $frontEndHTML;
+		}
+
+		echo $frontEndHTML;
+
+		return "";
 	}
 
 	/**
@@ -76,17 +86,26 @@ class SlideshowPluginSlideshowView {
 	 * @param boolean $return (optional, defaults to true)
 	 * @return String $backEndHTML
 	 */
-	function toBackEndHTML($return = true){
-
+	function toBackEndHTML($return = true)
+	{
 		$backEndHTML = '';
-		foreach($this->slides as $slide){
+		foreach ($this->slides as $slide)
+		{
+			if (!($slide instanceof SlideshowPluginSlideshowSlide))
+			{
+				continue;
+			}
 
 			$backEndHTML .= $slide->toBackEndHTML();
 		}
 
-		if($return)
+		if ($return)
+		{
 			return $backEndHTML;
-		else
-			echo $backEndHTML;
+		}
+
+		echo $backEndHTML;
+
+		return "";
 	}
 }

@@ -6,9 +6,9 @@
  * @author: Stefan Boonstra
  * @version: 01-02-2013
  */
-class SlideshowPluginWidget extends WP_Widget {
-
-	/** Variables */
+class SlideshowPluginWidget extends WP_Widget
+{
+	/** @var string $widgetName */
 	static $widgetName = 'Slideshow';
 
 	/**
@@ -16,10 +16,11 @@ class SlideshowPluginWidget extends WP_Widget {
 	 *
 	 * @since 1.2.0
 	 */
-	function SlideshowPluginWidget(){
+	function SlideshowPluginWidget()
+	{
 		// Settings
 		$options = array(
-			'classname' => 'SlideshowWidget',
+			'classname'   => 'SlideshowWidget',
 			'description' => __('Enables you to show your slideshows in the widget area of your website.', 'slideshow-plugin')
 		);
 
@@ -38,35 +39,48 @@ class SlideshowPluginWidget extends WP_Widget {
 	 * @param mixed array $args
 	 * @param mixed array $instance
 	 */
-	function widget($args, $instance){
+	function widget($args, $instance)
+	{
 		// Get slideshowId
 		$slideshowId = '';
-		if(isset($instance['slideshowId']))
+		if (isset($instance['slideshowId']))
+		{
 			$slideshowId = $instance['slideshowId'];
+		}
 
 		// Get title
 		$title = '';
-		if(isset($instance['title']))
+		if (isset($instance['title']))
+		{
 			$title = $instance['title'];
+		}
 
 		// Prepare slideshow for output to website.
 		$output = SlideshowPlugin::prepare($slideshowId);
 
 		$beforeWidget = $afterWidget = $beforeTitle = $afterTitle = '';
-		if(isset($args['before_widget']))
+		if (isset($args['before_widget']))
+		{
 			$beforeWidget = $args['before_widget'];
-		if(isset($args['after_widget']))
+		}
+
+		if (isset($args['after_widget']))
+		{
 			$afterWidget = $args['after_widget'];
-		if(isset($args['before_title']))
+		}
+
+		if (isset($args['before_title']))
+		{
 			$beforeTitle = $args['before_title'];
-		if(isset($args['after_title']))
+		}
+
+		if (isset($args['after_title']))
+		{
 			$afterTitle = $args['after_title'];
+		}
 
 		// Output widget
-		echo $beforeWidget .
-			(!empty($title) ? $beforeTitle . $title . $afterTitle : '') .
-			$output .
-		$afterWidget;
+		echo $beforeWidget . (!empty($title) ? $beforeTitle . $title . $afterTitle : '') . $output . $afterWidget;
 	}
 
 	/**
@@ -76,10 +90,11 @@ class SlideshowPluginWidget extends WP_Widget {
 	 * @param mixed array $instance
 	 * @return string
 	 */
-	function form($instance){
+	function form($instance)
+	{
 		// Defaults
 		$defaults = array(
-			'title' => __(self::$widgetName, 'slideshow-plugin'),
+			'title'       => __(self::$widgetName, 'slideshow-plugin'),
 			'slideshowId' => -1
 		);
 
@@ -89,8 +104,8 @@ class SlideshowPluginWidget extends WP_Widget {
 		// Get slideshows
 		$slideshows = get_posts(array(
 			'numberposts' => -1,
-			'offset' => 0,
-			'post_type' => SlideshowPluginPostType::$postType
+			'offset'      => 0,
+			'post_type'   => SlideshowPluginPostType::$postType
 		));
 
 		// Include form
@@ -105,14 +120,20 @@ class SlideshowPluginWidget extends WP_Widget {
 	 * @param mixed array $instance
 	 * @return mixed array $instance
 	 */
-	function update($newInstance, $instance){
+	function update($newInstance, $instance)
+	{
 		// Update title
-		if(isset($newInstance['title']))
+		if (isset($newInstance['title']))
+		{
 			$instance['title'] = $newInstance['title'];
+		}
 
 		// Update slideshowId
-		if(isset($newInstance['slideshowId']) && !empty($newInstance['slideshowId']))
+		if (isset($newInstance['slideshowId']) &&
+			!empty($newInstance['slideshowId']))
+		{
 			$instance['slideshowId'] = $newInstance['slideshowId'];
+		}
 
 		// Save
 		return $instance;
@@ -123,7 +144,8 @@ class SlideshowPluginWidget extends WP_Widget {
 	 *
 	 * @since 1.2.0
 	 */
-	static function registerWidget(){
+	static function registerWidget()
+	{
 		register_widget(__CLASS__);
 	}
 }

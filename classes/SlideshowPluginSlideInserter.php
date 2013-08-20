@@ -8,9 +8,9 @@
  * @author Stefan Boonstra
  * @version 01-02-2013
  */
-class SlideshowPluginSlideInserter {
-
-	/** Flag to see if enqueue function has been called */
+class SlideshowPluginSlideInserter
+{
+	/** @var bool $enqueuedFiles Flag to see if enqueue function has been called */
 	private static $enqueuedFiles;
 
 	/**
@@ -21,9 +21,12 @@ class SlideshowPluginSlideInserter {
 	 * @param boolean $enqueueFiles
 	 * @return String $button
 	 */
-	static function getImageSlideInsertButton($enqueueFiles = true){
-		if($enqueueFiles)
+	static function getImageSlideInsertButton($enqueueFiles = true)
+	{
+		if ($enqueueFiles)
+		{
 			self::enqueueFiles();
+		}
 
 		// Put popup html in footer
 		add_action('admin_footer', array(__CLASS__, 'includePopup'));
@@ -42,9 +45,12 @@ class SlideshowPluginSlideInserter {
 	 * @param boolean $enqueueFiles
 	 * @return String $button
 	 */
-	static function getTextSlideInsertButton($enqueueFiles = true){
-		if($enqueueFiles)
+	static function getTextSlideInsertButton($enqueueFiles = true)
+	{
+		if ($enqueueFiles)
+		{
 			self::enqueueFiles();
+		}
 
 		// Return button html
 		ob_start();
@@ -60,9 +66,12 @@ class SlideshowPluginSlideInserter {
 	 * @param boolean $enqueueFiles
 	 * @return String $button
 	 */
-	static function getVideoSlideInsertButton($enqueueFiles = true){
-		if($enqueueFiles)
+	static function getVideoSlideInsertButton($enqueueFiles = true)
+	{
+		if ($enqueueFiles)
+		{
 			self::enqueueFiles();
+		}
 
 		// Return button html
 		ob_start();
@@ -76,51 +85,61 @@ class SlideshowPluginSlideInserter {
 	 *
 	 * @since 2.0.0
 	 */
-	static function printSearchResults(){
+	static function printSearchResults()
+	{
 		global $wpdb;
 
 		// Numberposts and offset
 		$numberPosts = 10;
-		$offset = 0;
-		if(isset($_POST['offset']) && is_numeric($_POST['offset']))
+		$offset      = 0;
+
+		if (isset($_POST['offset']) &&
+			is_numeric($_POST['offset']))
+		{
 			$offset = $_POST['offset'];
+		}
 
 		$attachmentIDs = array();
-		if(isset($_POST['attachmentIDs']))
+
+		if (isset($_POST['attachmentIDs']))
+		{
 			$attachmentIDs = array_filter($_POST['attachmentIDs'], 'ctype_digit');
+		}
 
 		// Get attachments with a title alike the search string, needs to be filtered
 		add_filter('posts_where', array(__CLASS__, 'printSearchResultsWhereFilter'));
 		$query = new WP_Query(array(
-			'post_type' => 'attachment',
-			'post_status' => 'inherit',
-			'offset' => $offset,
+			'post_type'      => 'attachment',
+			'post_status'    => 'inherit',
+			'offset'         => $offset,
 			'posts_per_page' => $numberPosts + 1,
-			'orderby' => 'date',
-			'order' => 'DESC'
+			'orderby'        => 'date',
+			'order'          => 'DESC'
 		));
 		$attachments = $query->get_posts();
 		remove_filter('posts_where', array(__CLASS__, 'printSearchResultsWhereFilter'));
 
 		// Look for images by their file's name when not enough matching results were found
-		if(count($attachments) < $numberPosts){
+		if (count($attachments) < $numberPosts)
+		{
 			$searchString = esc_sql($_POST['search']);
 
 			// Add results found with the previous query to the $attachmentIDs array to exclude them as well
-			foreach($attachments as $attachment){
+			foreach ($attachments as $attachment)
+			{
 				$attachmentIDs[] = $attachment->ID;
 			}
 
 			// Search by file name
 			$fileNameQuery = new WP_Query(array(
-				'post_type' => 'attachment',
-				'post_status' => 'inherit',
+				'post_type'      => 'attachment',
+				'post_status'    => 'inherit',
 				'posts_per_page' => $numberPosts - count($attachments),
-				'post__not_in' => $attachmentIDs,
-				'meta_query' => array(
+				'post__not_in'   => $attachmentIDs,
+				'meta_query'     => array(
 					array(
-						'key' => '_wp_attached_file',
-						'value' => $searchString,
+						'key'     => '_wp_attached_file',
+						'value'   => $searchString,
 						'compare' => 'LIKE'
 					)
 				)
@@ -128,41 +147,66 @@ class SlideshowPluginSlideInserter {
 
 			// Put found results in attachments array
 			$fileNameQueryAttachments = $fileNameQuery->get_posts();
-			if(is_array($fileNameQueryAttachments) && count($fileNameQueryAttachments) > 0){
 
-				foreach($fileNameQueryAttachments as $fileNameQueryAttachment)
+			if (is_array($fileNameQueryAttachments) &&
+				count($fileNameQueryAttachments) > 0)
+			{
+				foreach ($fileNameQueryAttachments as $fileNameQueryAttachment)
+				{
 					$attachments[] = $fileNameQueryAttachment;
+				}
 			}
 		}
 
 		// Check if there are enough attachments to print a 'Load more images' button
 		$loadMoreResults = false;
-		if(count($attachments) > $numberPosts){
+
+		if (count($attachments) > $numberPosts)
+		{
 			array_pop($attachments);
+
 			$loadMoreResults = true;
 		}
 
 		// Print results to the screen
-		if(count($attachments) > 0){
-
-			if($offset > 0)
+		if (count($attachments) > 0)
+		{
+			if ($offset > 0)
+			{
 				echo '<tr valign="top">
 					<td colspan="3" style="text-align: center;">
 						<b>' . count($attachments) . ' ' . __('More results loaded', 'slideshow-plugin') . '<b>
 					</td>
 				</tr>';
+			}
 
-			foreach($attachments as $attachment){
+			foreach ($attachments as $attachment)
+			{
 				$image = wp_get_attachment_image_src($attachment->ID);
-				if(!is_array($image) || !$image){
-					if(!empty($attachment->guid))
+
+				if (!is_array($image) ||
+					!$image)
+				{
+					if (!empty($attachment->guid))
+					{
 						$imageSrc = $attachment->guid;
+					}
 					else
+					{
 						continue;
-				}else{
+					}
+				}
+				else
+				{
 					$imageSrc = $image[0];
 				}
-				if(!$imageSrc || empty($imageSrc)) $imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/no-img.png';
+
+				if (!$imageSrc ||
+					empty($imageSrc))
+				{
+					$imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/no-img.png';
+				}
+
 				echo '<tr valign="top" data-attachment-Id="' . $attachment->ID . '" class="result-table-row">
 					<td class="image">
 						<img width="60" height="60" src="' . $imageSrc . '" class="attachment" alt="' . $attachment->post_title . '" title="' . $attachment->post_title . '">
@@ -180,7 +224,9 @@ class SlideshowPluginSlideInserter {
 					</td>
 				</tr>';
 			}
-			if($loadMoreResults){
+
+			if ($loadMoreResults)
+			{
 				echo '<tr>
 					<td colspan="3" style="text-align: center;">
 						<button class="button-secondary load-more-results" data-offset="' . ($offset + $numberPosts) . '">
@@ -189,7 +235,9 @@ class SlideshowPluginSlideInserter {
 					</td>
 				</tr>';
 			}
-		} else {
+		}
+		else
+		{
 			echo '<tr>
 				<td colspan="3" style="text-align: center;">
 					<a href="' . admin_url() . 'media-new.php" target="_blank">
@@ -209,18 +257,21 @@ class SlideshowPluginSlideInserter {
 	 * @param string $where
 	 * @return string $where
 	 */
-	static function printSearchResultsWhereFilter($where){
+	static function printSearchResultsWhereFilter($where)
+	{
 		global $wpdb;
 
 		$searchString = $_POST['search'];
 		$searchString = esc_sql($searchString);
 
-		if(isset($_POST['search']))
+		if (isset($_POST['search']))
+		{
 			$where .= $wpdb->prepare(
 				" AND (post_title LIKE '%%%s%%' OR ID LIKE '%%%s%%') ",
 				$searchString,
 				$searchString
 			);
+		}
 
 		return $where;
 	}
@@ -230,7 +281,8 @@ class SlideshowPluginSlideInserter {
 	 *
 	 * @since 2.0.0
 	 */
-	static function includePopup(){
+	static function includePopup()
+	{
 		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/search-popup.php');
 	}
 
@@ -239,16 +291,21 @@ class SlideshowPluginSlideInserter {
 	 *
 	 * @since 2.0.0
 	 */
-	static function enqueueFiles(){
-
+	static function enqueueFiles()
+	{
 		// Return if function doesn't exist
-		if(!function_exists('get_current_screen'))
+		if (!function_exists('get_current_screen'))
+		{
 			return;
+		}
 
         // Return when not on a slideshow edit page, or files have already been included.
         $currentScreen = get_current_screen();
-        if($currentScreen->post_type != SlideshowPluginPostType::$postType || self::$enqueuedFiles)
+
+        if ($currentScreen->post_type != SlideshowPluginPostType::$postType || self::$enqueuedFiles)
+        {
             return;
+        }
 
 		// Color picker
 		wp_enqueue_style('wp-color-picker');

@@ -9,11 +9,15 @@
  * @author: Stefan Boonstra
  * @version: 01-02-2013
  */
-class SlideshowPluginShortcode {
-
-	/** Variables */
+class SlideshowPluginShortcode
+{
+	/** @var string $shortCode */
 	public static $shortCode = 'slideshow_deploy';
+
+	/** @var string $bookmark */
 	public static $bookmark = '!slideshow_deploy!';
+
+	/** @var array $postIDs */
 	private static $postIds = array();
 
 	/**
@@ -22,12 +26,14 @@ class SlideshowPluginShortcode {
 	 *
 	 * @since 2.1.16
 	 */
-	static function init(){
+	static function init()
+	{
 		// Register shortcode
 		add_shortcode(self::$shortCode, array(__CLASS__, 'slideshowDeploy'));
 
 		// Admin
-		if(is_admin()){
+		if (is_admin())
+		{
 			// Add shortcode inserter HTML
 			add_action('media_buttons',  array(__CLASS__, 'shortcodeInserter'), 11);
 
@@ -45,14 +51,20 @@ class SlideshowPluginShortcode {
 	 * @param mixed $attributes
 	 * @return String $output
 	 */
-	static function slideshowDeploy($attributes){
+	static function slideshowDeploy($attributes)
+	{
 		$postId = '';
-		if(isset($attributes['id']))
-			$postId = $attributes['id'];
 
-		$output = '';
+		if (isset($attributes['id']))
+		{
+			$postId = $attributes['id'];
+		}
+
+		$output   = '';
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($postId);
-		if($settings['avoidFilter'] == 'true'){
+
+		if ($settings['avoidFilter'] == 'true')
+		{
 			// Filter content after all Wordpress HTML parsers are done, then replace bookmarks with raw HTML
 			add_filter('the_content', array(__CLASS__, 'insertSlideshow'), 999);
 			add_filter('the_excerpt', array(__CLASS__, 'insertSlideshow'), 999);
@@ -62,7 +74,9 @@ class SlideshowPluginShortcode {
 
 			// Set output
 			$output = self::$bookmark;
-		}else{
+		}
+		else
+		{
 			// Just output the slideshow, without filtering
 			$output = SlideshowPlugin::prepare($postId);
 		}
@@ -79,15 +93,22 @@ class SlideshowPluginShortcode {
 	 * @param String $content
 	 * @return String $content
 	 */
-	static function insertSlideshow($content){
+	static function insertSlideshow($content)
+	{
 		// Loop through post ids
-		if(is_array(self::$postIds) && count(self::$postIds) > 0)
-			foreach(self::$postIds as $postId){
+		if (is_array(self::$postIds) &&
+			count(self::$postIds) > 0)
+		{
+			foreach (self::$postIds as $postId)
+			{
 				$updatedContent = preg_replace("/" . self::$bookmark . "/", SlideshowPlugin::prepare($postId), $content, 1);
 
-				if(is_string($updatedContent))
+				if (is_string($updatedContent))
+				{
 					$content = $updatedContent;
+				}
 			}
+		}
 
 		// Reset postIds, so a shortcode in a next post can be used
 		self::$postIds = array();
@@ -100,13 +121,14 @@ class SlideshowPluginShortcode {
 	 *
 	 * @since 2.1.16
 	 */
-	static function shortcodeInserter(){
+	static function shortcodeInserter()
+	{
 		// Get slideshows
 		$slideshows = new WP_Query(array(
-			'post_type' => SlideshowPluginPostType::$postType,
-			'orderby' => 'post_date',
+			'post_type'      => SlideshowPluginPostType::$postType,
+			'orderby'        => 'post_date',
 			'posts_per_page' => -1,
-			'order' => 'DESC'
+			'order'          => 'DESC'
 		));
 
 		include(SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'shortcode-inserter.php');
@@ -117,7 +139,8 @@ class SlideshowPluginShortcode {
 	 *
 	 * @since 2.1.16
 	 */
-	static function shortcodeInserterScript(){
+	static function shortcodeInserterScript()
+	{
 //		wp_enqueue_script(
 //			'slideshow-shortcode-inserter',
 //			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/shortcode-inserter.js',
