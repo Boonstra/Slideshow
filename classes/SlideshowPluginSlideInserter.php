@@ -289,6 +289,8 @@ class SlideshowPluginSlideInserter
 	/**
 	 * Enqueues styles and scripts necessary for the media upload button.
 	 *
+	 * TODO Remove disabled code
+	 *
 	 * @since 2.0.0
 	 */
 	static function enqueueFiles()

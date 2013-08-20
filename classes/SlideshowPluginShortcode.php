@@ -137,6 +137,8 @@ class SlideshowPluginShortcode
 	/**
 	 * Enqueues the shortcode inserter script
 	 *
+	 * TODO Remove disabled code
+	 *
 	 * @since 2.1.16
 	 */
 	static function shortcodeInserterScript()

@@ -93,7 +93,9 @@ class SlideshowPlugin
 
 		// Get views
 		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
-		if (!is_array($views) || count($views) <= 0)
+
+		if (!is_array($views) ||
+			count($views) <= 0)
 		{
 			$log[] = 'No views were found';
 		}

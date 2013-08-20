@@ -7,29 +7,30 @@
  * @author Stefan Boonstra
  * @version 01-02-2013
  */
-class SlideshowPluginGeneralSettings {
-
-	/** Flag that represents whether or not the general settings page is the current page */
+class SlideshowPluginGeneralSettings
+{
+	/** @var bool $isCurrentPage Flag that represents whether or not the general settings page is the current page */
 	static $isCurrentPage = false;
 
-	/** Settings group */
+	/** @var string $settingsGroup Settings group */
 	static $settingsGroup = 'slideshow-jquery-image-gallery-general-settings';
 
-	/** General settings */
+	/** @var string $stylesheetLocation General settings */
 	static $stylesheetLocation = 'slideshow-jquery-image-gallery-stylesheet-location';
 
-	/** User capability settings */
+	/** @var array $capabilities User capability settings */
 	static $capabilities = array(
-		'addSlideshows' => 'slideshow-jquery-image-gallery-add-slideshows',
-		'editSlideshows' => 'slideshow-jquery-image-gallery-edit-slideshows',
+		'addSlideshows'    => 'slideshow-jquery-image-gallery-add-slideshows',
+		'editSlideshows'   => 'slideshow-jquery-image-gallery-edit-slideshows',
 		'deleteSlideshows' => 'slideshow-jquery-image-gallery-delete-slideshows'
 	);
 
-	/** Default slideshow settings */
+	/** @var string $defaultSettings */
 	static $defaultSettings = 'slideshow-jquery-image-gallery-default-settings';
+	/** @var string $defaultStyleSettings */
 	static $defaultStyleSettings = 'slideshow-jquery-image-gallery-default-style-settings';
 
-	/** List of pointers to custom style options */
+	/** @var string $customStyles List of pointers to custom style options */
 	static $customStyles = 'slideshow-jquery-image-gallery-custom-styles';
 
 	/**
@@ -37,11 +38,13 @@ class SlideshowPluginGeneralSettings {
 	 *
 	 * @since 2.1.22
 	 */
-	static function init(){
-
+	static function init()
+	{
 		// Only initialize in admin
-		if(!is_admin())
+		if (!is_admin())
+		{
 			return;
+		}
 
 		if (isset($_GET['post_type']) &&
 			$_GET['post_type'] == 'slideshow' &&
@@ -67,11 +70,13 @@ class SlideshowPluginGeneralSettings {
 	 *
 	 * @since 2.1.22
 	 */
-	static function addSubMenuPage(){
-
+	static function addSubMenuPage()
+	{
 		// Return if the slideshow post type does not exist
 		if(!post_type_exists(SlideshowPluginPostType::$postType))
+		{
 			return;
+		}
 
 		// Add sub menu
 		add_submenu_page(
@@ -89,8 +94,8 @@ class SlideshowPluginGeneralSettings {
 	 *
 	 * @since 2.1.22
 	 */
-	static function generalSettings(){
-
+	static function generalSettings()
+	{
 		// Include general settings page
 		include SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'general-settings.php';
 	}
@@ -101,12 +106,15 @@ class SlideshowPluginGeneralSettings {
 	 *
 	 * @since 2.1.22
 	 */
-	static function registerSettings(){
-
+	static function registerSettings()
+	{
 		// Register settings only when the user is going through the options.php page
 		$urlParts = explode('/', $_SERVER['PHP_SELF']);
-		if(array_pop($urlParts) != 'options.php')
+
+		if (array_pop($urlParts) != 'options.php')
+		{
 			return;
+		}
 
 		// Register general settings
 		register_setting(self::$settingsGroup, self::$stylesheetLocation);
@@ -127,12 +135,16 @@ class SlideshowPluginGeneralSettings {
 	/**
 	 * Enqueue scripts and stylesheets. Needs to be called on the 'admin_enqueue_scripts' hook.
 	 *
+	 * TODO This function is not needed anymore.
+	 *
 	 * @since 2.1.22
 	 */
-	static function enqueue(){
-
+	static function enqueue()
+	{
 		if (!self::$isCurrentPage)
+		{
 			return;
+		}
 
 		// Enqueue general settings stylesheet
 //		wp_enqueue_style(
@@ -155,10 +167,12 @@ class SlideshowPluginGeneralSettings {
 	/**
 	 * Localizes the general settings script. Needs to be called on the 'admin_enqueue_scripts' hook.
 	 */
-	static function localizeScript(){
-
+	static function localizeScript()
+	{
 		if (!self::$isCurrentPage)
+		{
 			return;
+		}
 
 		// Localize general settings script
 		wp_localize_script(
@@ -175,13 +189,13 @@ class SlideshowPluginGeneralSettings {
 	}
 
 	/**
-	 * Returns the stylesheet location, or 'bottom' when no stylesheet position has been defined yet.
+	 * Returns the stylesheet location, or 'footer' when no stylesheet position has been defined yet.
 	 *
 	 * @since 2.2.12
 	 * @return string $stylesheetLocation
 	 */
-	public static function getStylesheetLocation(){
-
+	public static function getStylesheetLocation()
+	{
 		return get_option(SlideshowPluginGeneralSettings::$stylesheetLocation, 'footer');
 	}
 
@@ -209,20 +223,22 @@ class SlideshowPluginGeneralSettings {
 	 * @param boolean $separateDefaultFromCustom (optional, defaults to false)
 	 * @return array $stylesheets
 	 */
-	static function getStylesheets($withVersion = false, $separateDefaultFromCustom = false){
-
+	static function getStylesheets($withVersion = false, $separateDefaultFromCustom = false)
+	{
 		// Default styles
 		$defaultStyles = array(
 			'style-light.css' => __('Light', 'slideshow-plugin'),
-			'style-dark.css' => __('Dark', 'slideshow-plugin')
+			'style-dark.css'  => __('Dark', 'slideshow-plugin')
 		);
 
 		// Loop through default stylesheets
 		$stylesheetsFilePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin';
-		foreach($defaultStyles as $fileName => $name){
 
+		foreach ($defaultStyles as $fileName => $name)
+		{
 			// Check if stylesheet exists on server, don't offer it when it does not exist.
-			if(!file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName)){
+			if (!file_exists($stylesheetsFilePath . DIRECTORY_SEPARATOR . $fileName))
+			{
 				unset($defaultStyles[$fileName]);
 
 				continue;
@@ -230,31 +246,39 @@ class SlideshowPluginGeneralSettings {
 
 			// Add version if $withVersion is true
 			if($withVersion)
+			{
 				$defaultStyles[$fileName] = array('name' => $name, 'version' => SlideshowPluginMain::$version);
+			}
 		}
 
 		// Get custom styles
 		$customStyles = get_option(SlideshowPluginGeneralSettings::$customStyles, array());
 
 		// Add version to the custom styles if $withVersion is true
-		if($withVersion){
-			foreach($customStyles as $customStylesKey => $customStylesName){
-
+		if ($withVersion)
+		{
+			foreach ($customStyles as $customStylesKey => $customStylesName)
+			{
 				$customStylesVersion = get_option($customStylesKey . '_version', false);
 
-				if(!$customStylesVersion)
+				if (!$customStylesVersion)
+				{
 					$customStylesVersion = time();
+				}
 
 				$customStyles[$customStylesKey] = array('name' => $customStylesName, 'version' => $customStylesVersion);
 			}
 		}
 
 		// Return
-		if($separateDefaultFromCustom)
+		if ($separateDefaultFromCustom)
+		{
 			return array(
 				'default' => $defaultStyles,
 				'custom' => $customStyles
 			);
+		}
+
 		return array_merge(
 			$defaultStyles,
 			$customStyles
@@ -268,39 +292,52 @@ class SlideshowPluginGeneralSettings {
 	 * @param String $capability
 	 * @return String $capability
 	 */
-	static function saveCapabilities($capability){
-
+	static function saveCapabilities($capability)
+	{
 		// Verify nonce
 		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
-		if(!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+
+		if (!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		{
 			return $capability;
+		}
 
 		// Roles
 		global $wp_roles;
 
 		// Loop through available user roles
-		foreach($wp_roles->roles as $roleSlug => $roleValues){
-
+		foreach ($wp_roles->roles as $roleSlug => $roleValues)
+		{
 			// Continue when the capabilities are either not set or are no array
-			if(!is_array($roleValues) || !isset($roleValues['capabilities']) || !is_array($roleValues['capabilities']))
+			if (!is_array($roleValues) ||
+				!isset($roleValues['capabilities']) ||
+				!is_array($roleValues['capabilities']))
+			{
 				continue;
+			}
 
 			// Get role
 			$role = get_role($roleSlug);
 
 			// Continue when role is not set
-			if($role == null)
+			if ($role == null)
+			{
 				continue;
+			}
 
 			// Loop through available capabilities
-			foreach(self::$capabilities as $capabilitySlug){
-
+			foreach (self::$capabilities as $capabilitySlug)
+			{
 				// If $roleSlug is present in $_POST's capability, add the capability to the role, otherwise remove the capability from the role.
-				if( (isset($_POST[$capabilitySlug]) && is_array($_POST[$capabilitySlug]) && array_key_exists($roleSlug, $_POST[$capabilitySlug])) ||
+				if ((isset($_POST[$capabilitySlug]) && is_array($_POST[$capabilitySlug]) && array_key_exists($roleSlug, $_POST[$capabilitySlug])) ||
 					$roleSlug == 'administrator')
+				{
 					$role->add_cap($capabilitySlug);
+				}
 				else
+				{
 					$role->remove_cap($capabilitySlug);
+				}
 			}
 		}
 
@@ -314,29 +351,38 @@ class SlideshowPluginGeneralSettings {
 	 * @param array $customStyles
 	 * @return array $newCustomStyles
 	 */
-	static function saveCustomStyles($customStyles){
-
+	static function saveCustomStyles($customStyles)
+	{
 		// Verify nonce
 		$nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
-		if(!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+
+		if (!wp_verify_nonce($nonce, self::$settingsGroup . '-options'))
+		{
 			return $customStyles;
+		}
 
 		// Remove custom styles that have been deleted
 		$oldCustomStyles = get_option(self::$customStyles, array());
-		if(is_array($oldCustomStyles)){
-			foreach($oldCustomStyles as $oldCustomStyleKey => $oldCustomStyleValue){
 
+		if (is_array($oldCustomStyles))
+		{
+			foreach ($oldCustomStyles as $oldCustomStyleKey => $oldCustomStyleValue)
+			{
 				// Delete option from database if it no longer exists
-				if(!array_key_exists($oldCustomStyleKey, $customStyles))
+				if (!array_key_exists($oldCustomStyleKey, $customStyles))
+				{
 					delete_option($oldCustomStyleKey);
+				}
 			}
 		}
 
 		// Loop through new custom styles
 		$newCustomStyles = array();
-		if(is_array($customStyles)){
-			foreach($customStyles as $customStyleKey => $customStyleValue){
 
+		if (is_array($customStyles))
+		{
+			foreach ($customStyles as $customStyleKey => $customStyleValue)
+			{
 				// Put custom style key and name into the $newCustomStyle array
 				$newCustomStyles[$customStyleKey] = isset($customStyleValue['title']) ? $customStyleValue['title'] : __('Untitled', 'slideshow-plugin');
 
@@ -345,14 +391,18 @@ class SlideshowPluginGeneralSettings {
 
 				// Create or update new custom style
 				$oldStyle = get_option($customStyleKey, false);
-				if($oldStyle){
 
+				if ($oldStyle)
+				{
 					// Check if style has changed
-					if($oldStyle !== $newStyle){
+					if ($oldStyle !== $newStyle)
+					{
 						update_option($customStyleKey, $newStyle);
 						update_option($customStyleKey . '_version', time());
 					}
-				}else{
+				}
+				else
+				{
 					// The custom style itself shouldn't be auto-loaded, it's never used within WordPress
 					add_option($customStyleKey, $newStyle, '', 'no');
 					add_option($customStyleKey . '_version', time());
