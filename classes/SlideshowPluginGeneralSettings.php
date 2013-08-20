@@ -135,12 +135,12 @@ class SlideshowPluginGeneralSettings {
 			return;
 
 		// Enqueue general settings stylesheet
-		wp_enqueue_style(
-			'slideshow-jquery-image-gallery-general-settings',
-			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/general-settings.css',
-			array(),
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_style(
+//			'slideshow-jquery-image-gallery-general-settings',
+//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/general-settings.css',
+//			array(),
+//			SlideshowPluginMain::$version
+//		);
 
 		// TODO Remove before release
 		// Enqueue general settings script

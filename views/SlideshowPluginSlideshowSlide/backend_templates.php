@@ -16,10 +16,10 @@
 			<textarea class="description" cols="" rows="7" style="width: 100%;"></textarea><br />
 
 			<i><?php _e('Text color', 'slideshow-plugin'); ?></i><br />
-			<input type="text" class="textColor {required:false}" value="000000" /><br />
+			<input type="text" class="textColor" value="000000" /><br />
 
 			<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
-			<input type="text" class="color {required:false}" value="FFFFFF" />
+			<input type="text" class="color" value="FFFFFF" />
 
 		</p>
 

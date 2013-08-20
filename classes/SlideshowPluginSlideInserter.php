@@ -254,12 +254,12 @@ class SlideshowPluginSlideInserter {
 		wp_enqueue_style('wp-color-picker');
 
 		// Enqueue style
-		wp_enqueue_style(
-			'slideshow-slide-inserter',
-			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/slide-inserter.css',
-			null,
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_style(
+//			'slideshow-slide-inserter',
+//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/slide-inserter.css',
+//			null,
+//			SlideshowPluginMain::$version
+//		);
 
 		// Enqueue insert button script
 //		wp_enqueue_script(

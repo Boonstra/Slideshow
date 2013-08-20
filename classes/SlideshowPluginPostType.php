@@ -95,12 +95,12 @@ class SlideshowPluginPostType {
 		if($currentScreen->post_type != self::$postType)
 			return;
 
-		wp_enqueue_style(
-			'slideshow-plugin-post-type-stylesheet',
-			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/style.css',
-			array(),
-			SlideshowPluginMain::$version
-		);
+//		wp_enqueue_style(
+//			'slideshow-plugin-post-type-stylesheet',
+//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/style.css',
+//			array(),
+//			SlideshowPluginMain::$version
+//		);
 	}
 
 	/**
@@ -278,11 +278,11 @@ class SlideshowPluginPostType {
 		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
 
 		// Fill custom style with default css if empty
-		if(isset($settings['custom']) && isset($settings['custom']['value']) && empty($settings['custom']['value'])){
-			ob_start();
-			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-custom.css');
-			$settings['custom']['value'] = ob_get_clean();
-		}
+//		if(isset($settings['custom']) && isset($settings['custom']['value']) && empty($settings['custom']['value'])){
+//			ob_start();
+//			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-custom.css');
+//			$settings['custom']['value'] = ob_get_clean();
+//		}
 
 		// Include style settings file
 		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';

@@ -45,6 +45,7 @@ different images, settings and styles for each one of them.
  - German (100% Translated by [Markus Amann](http://www.dema-itsupport.com/))
  - Hebrew (62% Translated by Eli Segev)
  - Italian (100% Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Japanese (100% Translated by []())
  - Persian (100% Translated by [W3Design](http://w3design.ir/))
  - Polish (99% Translated by Wicher Wiater)
  - Portuguese (100% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
@@ -193,6 +194,7 @@ personal taste.
 *   Added Portuguese translation by Filipe Catraia.
 *   Added Persian translation by W3Design.
 *   Added Italian translation by Tecnikgeek.
+*   Added Japanese translation by
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.

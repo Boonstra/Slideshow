@@ -41,7 +41,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		});
 
 		// Add the wp-color-picker plugin to the color fields
-		$('.wp-color-picker-field').wpColorPicker();
+		$('.wp-color-picker-field').wpColorPicker({ width: 234 });
 
 		// Make the black background stretch all the way down the document
 		$popupBackground.height($(document).outerHeight(true));
@@ -294,6 +294,9 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		{
 			self.deleteSlide($(event.currentTarget).closest('li'));
 		});
+
+		// Add color picker
+		$textSlide.find('.color, .textColor').wpColorPicker();
 
 		// Put slide in the sortables list.
 		$('.sortable-slides-list').prepend($textSlide);

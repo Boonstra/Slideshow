@@ -63,7 +63,7 @@ class SlideshowPluginMain {
 
 		// TODO Move temporary statement
 		// Include backend script
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScript'), 1);
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScripts'), 1);
 	}
 
 	/**
@@ -73,13 +73,22 @@ class SlideshowPluginMain {
 	 *
 	 * @since 2.2.12
 	 */
-	static function enqueueBackendScript(){
+	static function enqueueBackendScripts(){
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-backend-script',
 			self::getPluginUrl() . '/js/min/all.backend.min.js',
 			array(
 				'jquery',
 				'jquery-ui-sortable',
+				'wp-color-picker'
+			),
+			SlideshowPluginMain::$version
+		);
+
+		wp_enqueue_style(
+			'slideshow-jquery-image-gallery-backend-style',
+			self::getPluginUrl() . '/css/all.backend.css',
+			array(
 				'wp-color-picker'
 			),
 			SlideshowPluginMain::$version

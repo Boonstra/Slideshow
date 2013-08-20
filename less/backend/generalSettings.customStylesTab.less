@@ -1,0 +1,90 @@
+
+.custom-styles-tab
+{
+  min-width: 650px;
+
+  &.feature-filter
+  {
+    padding-bottom: 0;
+  }
+
+  .styles-list
+  {
+    float: left;
+
+    min-width: 150px;
+    max-width: 250px;
+
+    padding-right: 10px;
+
+    border-right: 1px solid #dfdfdf;
+  }
+
+  .styles-list
+  {
+    ul
+    {
+      margin-left: 10px;
+    }
+
+    li
+    {
+      float: none;
+
+      .style-title
+      {
+        float: left;
+        padding-right: 10px;
+      }
+
+      .style-action
+      {
+        float: right;
+        color: #21759B;
+
+        &:hover
+        {
+          cursor: pointer;
+          color: #D54E21;
+        }
+      }
+
+      .style-delete
+      {
+        float: right;
+        color: #BC0B0B;
+
+        &:hover
+        {
+          cursor: pointer;
+          color: red;
+        }
+      }
+    }
+
+    span
+    {
+      padding: 0 2px;
+    }
+  }
+
+  .style-editors
+  {
+    float: left;
+
+    min-width: 500px;
+
+    padding-left: 10px;
+    margin: 0 -21px 0 -1px;
+
+    border-left: 1px solid #dfdfdf;
+
+    .style-editor
+    {
+      textarea
+      {
+        width: 100%;
+      }
+    }
+  }
+}
