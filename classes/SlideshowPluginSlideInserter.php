@@ -4,28 +4,28 @@
  *
  * TODO This class will probably need to be renamed to SlideshowPluginSlideHandler to explain more functionality
  * TODO than just inserting slides.
+ *
  * @since 2.0.0
  * @author Stefan Boonstra
- * @version 01-02-2013
  */
 class SlideshowPluginSlideInserter
 {
-	/** @var bool $enqueuedFiles Flag to see if enqueue function has been called */
-	private static $enqueuedFiles;
+	/** @var bool $localizedScript Flag to see if localizeScript function has been called */
+	private static $localizedScript;
 
 	/**
 	 * Returns the html for showing the image insert button.
-	 * Enqueues scripts unless $enqueueFiles is set to false.
+	 * Localizes script unless $localizeScript is set to false.
 	 *
 	 * @since 2.0.0
-	 * @param boolean $enqueueFiles
+	 * @param boolean $localizeScript
 	 * @return String $button
 	 */
-	static function getImageSlideInsertButton($enqueueFiles = true)
+	static function getImageSlideInsertButton($localizeScript = true)
 	{
-		if ($enqueueFiles)
+		if ($localizeScript)
 		{
-			self::enqueueFiles();
+			self::localizeScript();
 		}
 
 		// Put popup html in footer
@@ -39,17 +39,17 @@ class SlideshowPluginSlideInserter
 
 	/**
 	 * Returns the html for showing the text insert button.
-	 * Enqueues scripts unless $enqueueFiles is set to false.
+	 * Localizes script unless $localizeScript is set to false.
 	 *
 	 * @since 2.0.0
-	 * @param boolean $enqueueFiles
+	 * @param boolean $localizeScript
 	 * @return String $button
 	 */
-	static function getTextSlideInsertButton($enqueueFiles = true)
+	static function getTextSlideInsertButton($localizeScript = true)
 	{
-		if ($enqueueFiles)
+		if ($localizeScript)
 		{
-			self::enqueueFiles();
+			self::localizeScript();
 		}
 
 		// Return button html
@@ -60,17 +60,17 @@ class SlideshowPluginSlideInserter
 
 	/**
 	 * Returns the html for showing the video insert button.
-	 * Enqueues scripts unless $enqueueFiles is set to false.
+	 * Localizes script unless $localizeScript is set to false.
 	 *
 	 * @since 2.1.0
-	 * @param boolean $enqueueFiles
+	 * @param boolean $localizeScript
 	 * @return String $button
 	 */
-	static function getVideoSlideInsertButton($enqueueFiles = true)
+	static function getVideoSlideInsertButton($localizeScript = true)
 	{
-		if ($enqueueFiles)
+		if ($localizeScript)
 		{
-			self::enqueueFiles();
+			self::localizeScript();
 		}
 
 		// Return button html
@@ -289,14 +289,13 @@ class SlideshowPluginSlideInserter
 	/**
 	 * Enqueues styles and scripts necessary for the media upload button.
 	 *
-	 * TODO Remove disabled code
-	 *
-	 * @since 2.0.0
+	 * @since 2.2.12
 	 */
-	static function enqueueFiles()
+	static function localizeScript()
 	{
 		// Return if function doesn't exist
-		if (!function_exists('get_current_screen'))
+		if (!function_exists('get_current_screen') ||
+			self::$localizedScript)
 		{
 			return;
 		}
@@ -304,29 +303,10 @@ class SlideshowPluginSlideInserter
         // Return when not on a slideshow edit page, or files have already been included.
         $currentScreen = get_current_screen();
 
-        if ($currentScreen->post_type != SlideshowPluginPostType::$postType || self::$enqueuedFiles)
+        if ($currentScreen->post_type != SlideshowPluginPostType::$postType)
         {
             return;
         }
-
-		// Color picker
-		wp_enqueue_style('wp-color-picker');
-
-		// Enqueue style
-//		wp_enqueue_style(
-//			'slideshow-slide-inserter',
-//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/slide-inserter.css',
-//			null,
-//			SlideshowPluginMain::$version
-//		);
-
-		// Enqueue insert button script
-//		wp_enqueue_script(
-//			'slideshow-slide-inserter',
-//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slide-inserter.js',
-//			array('jquery'),
-//			SlideshowPluginMain::$version
-//		);
 
 		wp_localize_script(
 			'slideshow-jquery-image-gallery-backend-script',
@@ -338,6 +318,6 @@ class SlideshowPluginSlideInserter
 		);
 
 		// Set enqueued to true
-		self::$enqueuedFiles = true;
+		self::$localizedScript = true;
 	}
 }

@@ -4,7 +4,6 @@
  *
  * @since 2.1.16
  * @author Stefan Boonstra
- * @version 01-02-2013
  */
 class SlideshowPluginSecurity
 {

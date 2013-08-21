@@ -5,7 +5,6 @@
  *
  * @since 2.0.0
  * @author: Stefan Boonstra
- * @version: 03-03-13
  */
 class SlideshowPluginAJAX
 {

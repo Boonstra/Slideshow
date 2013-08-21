@@ -7,7 +7,6 @@
  *
  * @since 1.2.0
  * @author: Stefan Boonstra
- * @version: 01-02-2013
  */
 class SlideshowPluginShortcode
 {
@@ -38,7 +37,7 @@ class SlideshowPluginShortcode
 			add_action('media_buttons',  array(__CLASS__, 'shortcodeInserter'), 11);
 
 			// Enqueue shortcode inserter script
-			add_action('admin_enqueue_scripts', array(__CLASS__, 'shortcodeInserterScript'));
+			add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'));
 		}
 	}
 
@@ -137,19 +136,10 @@ class SlideshowPluginShortcode
 	/**
 	 * Enqueues the shortcode inserter script
 	 *
-	 * TODO Remove disabled code
-	 *
 	 * @since 2.1.16
 	 */
-	static function shortcodeInserterScript()
+	static function localizeScript()
 	{
-//		wp_enqueue_script(
-//			'slideshow-shortcode-inserter',
-//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/shortcode-inserter.js',
-//			array('jquery'),
-//			SlideshowPluginMain::$version
-//		);
-
 		wp_localize_script(
 			'slideshow-jquery-image-gallery-backend-script',
 			'slideshow_jquery_image_gallery_backend_script_shortcode',

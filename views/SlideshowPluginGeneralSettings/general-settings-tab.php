@@ -69,8 +69,8 @@ $capabilities = array(
 			<td><?php _e('Stylesheet location', 'slideshow-plugin'); ?></td>
 			<td>
 				<select name="<?php echo SlideshowPluginGeneralSettings::$stylesheetLocation; ?>">
-					<option value="head" <?php selected('head', $stylesheetLocation); ?>><?php _e('Head (top)', 'slideshow-plugin'); ?></option>
-					<option value="footer" <?php selected('footer', $stylesheetLocation); ?>><?php _e('Footer (bottom)', 'slideshow-plugin'); ?></option>
+					<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-plugin'); ?>)</option>
+					<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-plugin'); ?>)</option>
 				</select>
 			</td>
 		</tr>

@@ -4,7 +4,6 @@
  *
  * @since 2.1.20
  * @author Stefan Boonstra
- * @version 01-02-2013
  */
 class SlideshowPluginSlideshowSettingsHandler
 {
@@ -538,7 +537,7 @@ class SlideshowPluginSlideshowSettingsHandler
 				'hidePagination'              => __('Hide pagination, show when mouse hovers over', 'slideshow-plugin'),
 				'controlPanel'                => __('Activate control panel (play and pause button)', 'slideshow-plugin'),
 				'hideControlPanel'            => __('Hide control panel, show when mouse hovers over', 'slideshow-plugin'),
-				'waitUntilLoaded'             => __('Wait until slide has loaded before showing it', 'slideshow-plugin'),
+				'waitUntilLoaded'             => __('Wait until the next slide has loaded before showing it', 'slideshow-plugin'),
 				'showLoadingIcon'             => __('Show a loading icon until the first slide appears', 'slideshow-plugin'),
 				'random'                      => __('Randomize slides', 'slideshow-plugin'),
 				'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-plugin'), SlideshowPluginShortcode::$bookmark)

@@ -5,7 +5,6 @@
  *
  * @since 1.0.0
  * @author: Stefan Boonstra
- * @version: 01-02-2013
  */
 class SlideshowPluginPostType
 {
@@ -21,9 +20,8 @@ class SlideshowPluginPostType
 	static function init()
 	{
 		add_action('init'                 , array(__CLASS__, 'registerSlideshowPostType'));
-		add_action('admin_print_styles'   , array(__CLASS__, 'enqueueAdminStyles'));
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueAdminScripts'));
 		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
+		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'));
 	}
 
 	/**
@@ -79,86 +77,6 @@ class SlideshowPluginPostType
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)
 		);
-	}
-
-	/**
-	 * Enqueues the admin stylesheets when one a slideshow edit page.
-	 *
-	 * TODO Remove function. It has been made redundant. :)
-	 *
-	 * @since 2.2.2
-	 */
-	static function enqueueAdminStyles()
-	{
-		// Return when function doesn't exist
-		if(!function_exists('get_current_screen'))
-		{
-			return;
-		}
-
-		// Return when not on a slideshow edit page.
-		$currentScreen = get_current_screen();
-
-		if ($currentScreen->post_type != self::$postType)
-		{
-			return;
-		}
-
-//		wp_enqueue_style(
-//			'slideshow-plugin-post-type-stylesheet',
-//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/style.css',
-//			array(),
-//			SlideshowPluginMain::$version
-//		);
-	}
-
-	/**
-	 * Enqueues scripts for when the admin page is a slideshow edit page.
-	 *
-	 * TODO Remove disabled code
-	 *
-	 * @since 2.1.11
-	 */
-	static function enqueueAdminScripts()
-	{
-		// Return if function doesn't exist
-		if (!function_exists('get_current_screen'))
-		{
-			return;
-		}
-
-        // Return when not on a slideshow edit page.
-		$currentScreen = get_current_screen();
-
-		if ($currentScreen->post_type != self::$postType)
-		{
-			return;
-		}
-
-		// Enqueue associating script
-//		wp_enqueue_script(
-//			'post-type-handler',
-//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/post-type-handler.js',
-//			array('jquery'),
-//			SlideshowPluginMain::$version
-//		);
-
-		// TODO: These scripts have been moved here from the footer. They need to be always printed in the header
-		// TODO: a solution for this needs to be found.
-		// Enqueue scripts required for sorting the slides list
-//		wp_enqueue_script('jquery-ui-sortable');
-
-		// Enqueue JSColor
-		// TODO Switch to wp-color-picker (Iris): http://make.wordpress.org/core/2012/11/30/new-color-picker-in-wp-3-5/
-//		wp_enqueue_script(
-//			'jscolor-colorpicker',
-//			SlideshowPluginMain::getPluginUrl() . '/js/SlideshowPluginPostType/jscolor/jscolor.js',
-//			null,
-//			SlideshowPluginMain::$version
-//		);
-
-		// Enqueue slide insert script and style
-		SlideshowPluginSlideInserter::enqueueFiles();
 	}
 
 	/**
@@ -303,8 +221,6 @@ class SlideshowPluginPostType
 	/**
 	 * Shows style used for slideshow
 	 *
-	 * TODO Remove disabled code
-	 *
 	 * @since 1.3.0
 	 */
 	static function styleMetaBox()
@@ -313,13 +229,6 @@ class SlideshowPluginPostType
 
 		// Get settings
 		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
-
-		// Fill custom style with default css if empty
-//		if(isset($settings['custom']) && isset($settings['custom']['value']) && empty($settings['custom']['value'])){
-//			ob_start();
-//			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-custom.css');
-//			$settings['custom']['value'] = ob_get_clean();
-//		}
 
 		// Include style settings file
 		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';

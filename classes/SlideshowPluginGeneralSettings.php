@@ -5,7 +5,6 @@
  *
  * @since 2.1.22
  * @author Stefan Boonstra
- * @version 01-02-2013
  */
 class SlideshowPluginGeneralSettings
 {
@@ -60,8 +59,7 @@ class SlideshowPluginGeneralSettings
 		// Add sub menu
 		add_action('admin_menu', array(__CLASS__, 'addSubMenuPage'));
 
-		// Enqueue and localize
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueue'));
+		// Localize
 		add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'));
 	}
 
@@ -130,38 +128,6 @@ class SlideshowPluginGeneralSettings
 
 		// Register custom style settings
 		register_setting(self::$settingsGroup, self::$customStyles, array(__CLASS__, 'saveCustomStyles'));
-	}
-
-	/**
-	 * Enqueue scripts and stylesheets. Needs to be called on the 'admin_enqueue_scripts' hook.
-	 *
-	 * TODO This function is not needed anymore.
-	 *
-	 * @since 2.1.22
-	 */
-	static function enqueue()
-	{
-		if (!self::$isCurrentPage)
-		{
-			return;
-		}
-
-		// Enqueue general settings stylesheet
-//		wp_enqueue_style(
-//			'slideshow-jquery-image-gallery-general-settings',
-//			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/general-settings.css',
-//			array(),
-//			SlideshowPluginMain::$version
-//		);
-
-		// TODO Remove before release
-		// Enqueue general settings script
-//		wp_enqueue_script(
-//			'slideshow-jquery-image-gallery-general-settings',
-//			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/general-settings.js',
-//			array('jquery'),
-//			SlideshowPluginMain::$version
-//		);
 	}
 
 	/**

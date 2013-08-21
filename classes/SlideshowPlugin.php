@@ -5,7 +5,6 @@
  *
  * @since 1.0.0
  * @author: Stefan Boonstra
- * @version: 03-03-2013
  */
 class SlideshowPlugin
 {

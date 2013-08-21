@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/SlideshowPlugin/loading-icon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/min" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/all.backend.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/min/all.backend.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/min/all.frontend.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.po" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fi.mo" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fi.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ja.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ja.po" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.mo" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.po" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.mo" />
@@ -15,25 +29,37 @@
       <change type="MOVED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginGeneralSettings\user-capabilities.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings-tab.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSlide.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSlide.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginGeneralSettings/general-settings.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginGeneralSettings/general-settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" afterPath="$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SlideshowPlugin/slideshow.min.js" afterPath="$PROJECT_DIR$/js/SlideshowPlugin/slideshow.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowView.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_attachment.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_attachment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_templates.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_templates.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_attachment.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_attachment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_text.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_text.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_video.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_video.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.mo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" afterPath="$PROJECT_DIR$/style/SlideshowPluginGeneralSettings/general-settings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginGeneralSettings/general-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_templates.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_templates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_video.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/frontend_video.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" afterPath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginPostType/support-plugin.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginPostType/support-plugin.php" />
     </list>
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/a.dummy" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377070783047" ignored="false" />
+    <file path="/SlideshowPluginSlideInserter.php" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377071346069" ignored="false" />
+    <file path="/SlideshowPluginPostType.php" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377071183906" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,27 +74,11 @@
     <disable_hints />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="slideshow-jquery-image-gallery" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="20" selection-start="9121" selection-end="9121" vertical-scroll-proportion="0.5660161">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slideshow.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -79,11 +89,21 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/readme2.txt" />
-        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" />
+        <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginShortcode.php" />
         <option value="$PROJECT_DIR$/slideshow.php" />
         <option value="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
         <option value="$PROJECT_DIR$/classes/SlideshowPluginAJAX.php" />
-        <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginSecurity.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSlide.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginSlideshowView.php" />
+        <option value="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" />
       </list>
     </option>
   </component>
@@ -120,7 +140,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -149,58 +168,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SlideshowPluginGeneralSettings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="languages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slideshow-jquery-image-gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,7 +199,7 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -235,7 +209,6 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="DETECT_NESTED_COPIES" value="true" />
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
@@ -400,15 +373,36 @@
     <option name="localTasksCounter" value="33" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2831661" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31323373" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21664888" sideWeight="0.7168339" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -417,7 +411,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -451,13 +444,20 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="Added Turkish translation thanks to İlker Akdoğan" />
@@ -471,6 +471,7 @@
     <option name="ACTIVE_VCS_NAME" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Edited FAQ" />
@@ -503,100 +504,120 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="10" selection-start="9107" selection-end="9107" vertical-scroll-proportion="3.4936855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#6#499#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="99" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="85" selection-start="8073" selection-end="8073" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/SlideshowPluginSlideInserter/slide-inserter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="234" selection-end="234" vertical-scroll-proportion="0.14437869" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/SlideshowPlugin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="19" selection-start="3742" selection-end="3742" vertical-scroll-proportion="0.37633136" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="39" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
+        <state line="6" column="27" selection-start="214" selection-end="214" vertical-scroll-proportion="-3.9230769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginAJAX.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="146" selection-start="697" selection-end="697" vertical-scroll-proportion="0.40236688" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
+        <state line="6" column="27" selection-start="176" selection-end="176" vertical-scroll-proportion="-3.9230769">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginGeneralSettings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="20" selection-start="9121" selection-end="9121" vertical-scroll-proportion="0.5660161">
+        <state line="6" column="26" selection-start="288" selection-end="288" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginInstaller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="26" selection-start="200" selection-end="200" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="173" selection-end="173" vertical-scroll-proportion="-3.9230769">
+          <folding>
+            <marker date="1377071732610" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1377071732610" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1377071732610" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSecurity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="143" selection-end="143" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginShortcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="27" selection-start="329" selection-end="329" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="245" selection-end="245" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="168" selection-end="168" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideshowSlide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="26" selection-start="726" selection-end="726" vertical-scroll-proportion="-18.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="145" selection-end="145" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideshowView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="26" selection-start="194" selection-end="194" vertical-scroll-proportion="-3.9230769">
+          <folding>
+            <marker date="1377071732542" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginWidget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.10059172">
           <folding />
         </state>
       </provider>

@@ -17,11 +17,10 @@
  *
  * @since 1.0.0
  * @author Stefan Boonstra
- * @version 03-03-2013
  */
-class SlideshowPluginMain {
-
-	/** Variables */
+class SlideshowPluginMain
+{
+	/** @var string $version */
 	static $version = '2.2.12';
 
 	/**
@@ -30,8 +29,8 @@ class SlideshowPluginMain {
 	 *
 	 * @since 1.0.0
 	 */
-	static function bootStrap(){
-
+	static function bootStrap()
+	{
 		self::autoInclude();
 
 		// Initialize localization on init
@@ -61,8 +60,7 @@ class SlideshowPluginMain {
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
 
-		// TODO Move temporary statement
-		// Include backend script
+		// Include backend script TODO Move temporary statement
 		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScripts'), 1);
 	}
 
@@ -73,7 +71,8 @@ class SlideshowPluginMain {
 	 *
 	 * @since 2.2.12
 	 */
-	static function enqueueBackendScripts(){
+	static function enqueueBackendScripts()
+	{
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-backend-script',
 			self::getPluginUrl() . '/js/min/all.backend.min.js',
@@ -100,7 +99,8 @@ class SlideshowPluginMain {
 	 *
 	 * @since 1.0.0
 	 */
-	static function localize(){
+	static function localize()
+	{
 		load_plugin_textdomain(
 			'slideshow-plugin',
 			false,
@@ -114,7 +114,8 @@ class SlideshowPluginMain {
 	 * @since 1.0.0
 	 * @return string pluginUrl
 	 */
-	static function getPluginUrl(){
+	static function getPluginUrl()
+	{
 		return plugins_url('', __FILE__);
 	}
 
@@ -124,7 +125,8 @@ class SlideshowPluginMain {
 	 * @since 1.0.0
 	 * @return string pluginPath
 	 */
-	static function getPluginPath(){
+	static function getPluginPath()
+	{
 		return dirname(__FILE__);
 	}
 
@@ -133,16 +135,22 @@ class SlideshowPluginMain {
 	 *
 	 * @since 1.0.0
 	 */
-	static function autoInclude(){
-		if(!function_exists('spl_autoload_register'))
+	static function autoInclude()
+	{
+		if (!function_exists('spl_autoload_register'))
+		{
 			return;
+		}
 
-		function slideshowPluginAutoLoader($name) {
+		function slideshowPluginAutoLoader($name)
+		{
 			$name = str_replace('\\', DIRECTORY_SEPARATOR, $name);
 			$file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $name . '.php';
 
-			if(is_file($file))
+			if (is_file($file))
+			{
 				require_once $file;
+			}
 		}
 
 		spl_autoload_register('slideshowPluginAutoLoader');

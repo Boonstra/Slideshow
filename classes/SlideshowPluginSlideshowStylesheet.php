@@ -4,7 +4,6 @@
  *
  * @since 2.2.8
  * @author Stefan Boonstra
- * @version 03-03-2013
  */
 class SlideshowPluginSlideshowStylesheet
 {

@@ -37,22 +37,22 @@ different images, settings and styles for each one of them.
 = Languages =
 
  - Chinese (26% Translated by [Kevin Tell](http://www.ivygg.com/))
- - Czech (98% Translated by Edhel)
+ - Czech (94% Translated by Edhel)
  - Dutch (100%)
  - English (100%)
- - Finnish (100% Translated by A. Nonymous)
- - French (100% Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German (100% Translated by [Markus Amann](http://www.dema-itsupport.com/))
- - Hebrew (62% Translated by Eli Segev)
- - Italian (100% Translated by [Tecnikgeek](http://tecnikgeek.com/))
- - Japanese (100% Translated by []())
- - Persian (100% Translated by [W3Design](http://w3design.ir/))
- - Polish (99% Translated by Wicher Wiater)
- - Portuguese (100% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian (100% Translated by Dmitry Fatakov)
- - Spanish (61% Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
- - Turkish (100% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
+ - Finnish (95% Translated by A. Nonymous)
+ - French (93% Translated by [Romain Sandri](http://www.onidesign.fr/))
+ - German (95% Translated by [Markus Amann](http://www.dema-itsupport.com/))
+ - Hebrew (60% Translated by Eli Segev)
+ - Italian (95% Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Japanese (95% Translated by [Michihide Hotta](http://net-newbie.com/))
+ - Persian (95% Translated by [W3Design](http://w3design.ir/))
+ - Polish (95% Translated by Wicher Wiater)
+ - Portuguese (95% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
+ - Russian (95% Translated by Dmitry Fatakov)
+ - Spanish (58% Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish (95% Translated by [Åke Isacsson](http://www.nojdkund.se/))
+ - Turkish (95% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded
@@ -68,7 +68,7 @@ Check upcoming features, bug-fixes and development progress that are currently o
 = Need the (uncompressed) source code? =
 
 Find the Slideshow project's source code in my [GitHub](https://github.com/Boonstra/Slideshow) repository. The
-uncompressed files can be compiled using [PrePros](http://alphapixels.com/prepros/) (or CodeKit).
+uncompressed files can be compiled using [Prepros](http://alphapixels.com/prepros/), or [CodeKit](http://incident57.com/codekit/).
 
 
 == Installation ==
@@ -194,7 +194,7 @@ personal taste.
 *   Added Portuguese translation by Filipe Catraia.
 *   Added Persian translation by W3Design.
 *   Added Italian translation by Tecnikgeek.
-*   Added Japanese translation by
+*   Added Japanese translation by Michihide Hotta.
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.
