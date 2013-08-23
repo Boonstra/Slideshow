@@ -183,7 +183,7 @@ personal taste.
 *   Related videos can now be enabled or disabled on YouTube videos.
 *   YouTube API now is only loaded when a video slide needs to be shown.
 *   Re-arranged the 'General Settings' page to have a 'General Settings' tab that contains overall system settings.
-*   Added option to chose the loading location of the stylesheets, as IE8 and older don't always allow in-body styling.
+*   Added option to choose the loading location of the stylesheets, as IE8 and older don't always allow in-body styling.
 *   Implemented a new algorithm for randomizing slides.
 *   Slideshow can now wait for a slide to load before showing it.
 *   Fixed: The 'Enable responsiveness' setting disappeared when disabling the 'Show title and description' option.
