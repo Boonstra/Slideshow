@@ -9,12 +9,24 @@
 .slideshow_container .slideshow_slide_video { }
 
 .slideshow_container .slideshow_description { background: #000; width: 100%; }
-.slideshow_container .slideshow_description h2  { font-size: 1.3em; text-align: center; }
-.slideshow_container .slideshow_description p  { text-align: center; }
-.slideshow_container .slideshow_description a  { color: #fff; }
+.slideshow_container .slideshow_description h2 { font-size: 1.3em; text-align: center; }
+.slideshow_container .slideshow_description p { text-align: center; }
+.slideshow_container .slideshow_description h2 a,
+.slideshow_container .slideshow_description p a { color: #fff; }
 
 .slideshow_container .slideshow_transparent { filter: alpha(opacity = 50); opacity: 0.5; }
 .slideshow_container .slideshow_transparent:hover { filter: alpha(opacity = 80); opacity: 0.8; }
+
+.slideshow_container .slideshow_loading_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	margin: -16px 0 0 -16px;
+	background: url('%plugin-url%/images/SlideshowPlugin/loading-icon-128x128.gif') no-repeat;
+	background-size: 32px 32px;
+}
 
 .slideshow_container .slideshow_controlPanel {
 	width: 21px;

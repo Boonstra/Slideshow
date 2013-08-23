@@ -211,11 +211,11 @@ class SlideshowPluginPostType
 			}
 		}
 
-		// Templates
-		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
-
 		// End list
 		echo '</ul>';
+
+		// Templates
+		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
 	}
 
 	/**

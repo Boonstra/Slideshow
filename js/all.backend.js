@@ -2,6 +2,7 @@
  * Slideshow backend script
  *
  * @author Stefan Boonstra
+ * @version 2.2.12
  */
 slideshow_jquery_image_gallery_backend_script = function()
 {
@@ -38,3 +39,15 @@ slideshow_jquery_image_gallery_backend_script = function()
 // @codekit-append backend/generalSettings.js
 // @codekit-append backend/editSlideshow.js
 // @codekit-append backend/shortcode.js
+
+///**
+// * Simple logging function for Internet Explorer
+// *
+// * @param message
+// */
+//function log(message)
+//{
+//	var $ = jQuery;
+//
+//	$('body').prepend('<p style="color: red;">' + message +  '</p>');
+//}

@@ -78,15 +78,74 @@ class SlideshowPluginInstaller
 			self::updateV2_1_23_to_V_2_2_0();
 		}
 
-		// Update to version 2.2.0
+		// Update to version 2.2.8
 		if (self::firstVersionGreaterThanSecond('2.2.8', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_2_0_to_V_2_2_8();
 		}
 
+		// Update to version 2.2.12
+		if (self::firstVersionGreaterThanSecond('2.2.12', $currentVersion) ||
+			$currentVersion == null)
+		{
+			self::updateV2_2_8_to_V_2_2_12();
+		}
+
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.2.8 to 2.2.12
+	 *
+	 * Version 2.2.12 introduces a loading icon to entertain those nice folks while waiting for the first slide to load.
+	 * This function puts the CSS for the loading icon into the custom stylesheets.
+	 *
+	 * @since 2.2.12
+	 */
+	private static function updateV2_2_8_to_V_2_2_12()
+	{
+		// Check if this has already been done
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-8-to-v2-2-12') !== false)
+		{
+			return;
+		}
+
+		$customStylesOptionsKey = 'slideshow-jquery-image-gallery-custom-styles';
+
+		// Get all custom stylesheet keys
+		$customStyles = get_option($customStylesOptionsKey, array());
+
+		if (is_array($customStyles))
+		{
+			foreach ($customStyles as $customStyleKey => $customStyleValue)
+			{
+				// Get custom style from custom style key
+				$customStyle = get_option($customStyleKey, null);
+
+				if (!isset($customStyle))
+				{
+					continue;
+				}
+
+				$customStyle .= PHP_EOL . PHP_EOL . '.slideshow_container .slideshow_loading_icon {' . PHP_EOL .
+					"\t" . 'position: absolute;' . PHP_EOL .
+					"\t" . 'top: 50%;' . PHP_EOL .
+					"\t" . 'left: 50%;' . PHP_EOL .
+					"\t" . 'width: 32px;' . PHP_EOL .
+					"\t" . 'height: 32px;' . PHP_EOL .
+					"\t" . 'margin: -16px 0 0 -16px;' . PHP_EOL .
+					"\t" . 'background: url(\'%plugin-url%/images/SlideshowPlugin/loading-icon-128x128.gif\') no-repeat;' . PHP_EOL .
+					"\t" . 'background-size: 32px 32px;' . PHP_EOL .
+				'}';
+
+				// Save
+				update_option($customStyleKey, $customStyle);
+			}
+		}
+
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-2-8-to-v2-2-12', 'updated');
 	}
 
 	/**

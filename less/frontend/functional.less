@@ -1,0 +1,186 @@
+.slideshow_container
+{
+  margin: 0;
+  position: relative;
+  width: 100%;
+
+  div {
+    clear: none !important;
+    max-width: none;
+    padding: 0;
+  }
+
+  img
+  {
+    border: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  p
+  {
+    margin: 0;
+    padding: 10px;
+  }
+
+  a
+  {
+    margin: 0;
+    display: block !important;
+  }
+
+  ul
+  {
+    margin: 0;
+    padding: 0;
+
+    li
+    {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+  {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .slideshow_transparent,
+  .slideshow_transparent:hover { zoom: 1; }
+
+  .slideshow_content
+  {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slideshow_view
+  {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    .slideshow_slide
+    {
+      position: relative;
+      float: left !important;
+      overflow: hidden;
+
+      &.slideshow_slide_text
+      {
+        .slideshow_background_anchor
+        {
+          position: absolute; top: 0;
+        }
+      }
+
+      &.slideshow_slide_image
+      {
+        .slideshow_description {
+          display: none;
+          position: absolute;
+        }
+      }
+
+      &.slideshow_slide_video { }
+    }
+  }
+
+  .slideshow_controlPanel
+  {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    display: none;
+    z-index: 2;
+
+    ul
+    {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li
+      {
+        float: left;
+
+        &:hover
+        {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .slideshow_button
+  {
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+
+    &.slideshow_previous
+    {
+      left: 5px;
+    }
+
+    &.slideshow_next
+    {
+      right: 5px;
+    }
+  }
+
+  .slideshow_pagination
+  {
+    height: 0;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 2;
+
+    .slideshow_pagination_center
+    {
+      display: table;
+      margin: 0 auto;
+
+      ul
+      {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li
+        {
+          display: inline;
+          float: left;
+
+          &:hover
+          {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .slideshow_manufacturer
+  {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}

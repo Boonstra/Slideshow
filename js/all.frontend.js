@@ -143,3 +143,15 @@ function onYouTubeIframeAPIReady()
 }
 
 // @codekit-append frontend/slideshow.js
+
+///**
+// * Simple logging function for Internet Explorer
+// *
+// * @param message
+// */
+//function log(message)
+//{
+//	var $ = jQuery;
+//
+//	$('body').prepend('<p style="color: red;">' + message +  '</p>');
+//}
