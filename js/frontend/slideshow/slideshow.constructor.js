@@ -159,6 +159,21 @@
 		// Recalculate visible views when window is loaded
 		$(window).load($.proxy(function()
 		{
+//			$.each(this.$views, $.proxy(function(viewID, view)
+//			{
+//				var $view  = $(view),
+//					$image = $view.find('img');
+//
+//				if ($image.length <= 0)
+//				{
+//					return;
+//				}
+//
+//				this.recalculateView(viewID);
+//
+//				console.log($image.get(0).complete, $image.width(), $image.height());
+//			}, this));
+
 			this.recalculateVisibleViews();
 		}, this));
 

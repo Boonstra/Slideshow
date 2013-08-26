@@ -122,7 +122,7 @@
 	 * TODO Implement separate slide widths. This can be done by making use of the $viewData array using a 'width'
 	 * TODO variable.
 	 *
-	 * @param viewID (int)
+	 * @param viewID           (int)
 	 */
 	self.Slideshow.prototype.recalculateView = function(viewID)
 	{
@@ -145,6 +145,11 @@
 
 		var viewWidth  = this.$content.width() - ($view.outerWidth(true) - $view.width());
 		var viewHeight = this.$content.height() - ($view.outerHeight(true) - $view.height());
+
+//		$view.css({
+//			'width' : viewWidth,
+//			'height': viewHeight
+//		});
 
 		var slideWidth  = Math.floor(viewWidth / $slides.length);
 		var slideHeight = viewHeight;
@@ -266,7 +271,7 @@
 							height: Math.floor(maxImageWidth / imageDimension)
 						});
 					}
-					else if (imageDimension < slideDimension) // Image has a slimmer dimension than the slide
+					else // Image has a slimmer dimension than the slide
 					{
 						// Center image
 						$image.css({
@@ -284,6 +289,18 @@
 						});
 					}
 				}
+//				else // Stretching is disabled and image sizes cannot be determined yet
+//				{
+//					console.log($image.get(0).complete, $image.width(), $image.height());
+//
+//					setTimeout(
+//						$.proxy(function()
+//						{
+//							console.log($image.get(0).complete, $image.width(), $image.height());
+//						}, this),
+//						0
+//					);
+//				}
 			}
 			else if ($slide.hasClass('slideshow_slide_video'))
 			{
