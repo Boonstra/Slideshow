@@ -14,12 +14,26 @@ if (isset($properties['description']))
 
 if (isset($properties['textColor']))
 {
-	$textColor = htmlspecialchars($properties['textColor']);
+	$textColor = $properties['textColor'];
+
+	if (substr($textColor, 0, 1) != '#')
+	{
+		$textColor = '#' . $textColor;
+	}
+
+	$textColor = htmlspecialchars($textColor);
 }
 
 if (isset($properties['color']))
 {
-	$color = htmlspecialchars($properties['color']);
+	$color = $properties['color'];
+
+	if (substr($color, 0, 1) != '#')
+	{
+		$color = '#' . $color;
+	}
+
+	$color = htmlspecialchars($color);
 }
 
 if (isset($properties['url']))
@@ -36,10 +50,10 @@ $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!emp
 
 ?>
 
-<div class="slideshow_slide slideshow_slide_text" style="<?php echo !empty($color) ? 'background-color: #' . $color . ';' : '' ?>">
+<div class="slideshow_slide slideshow_slide_text" style="<?php echo !empty($color) ? 'background-color: ' . $color . ';' : '' ?>">
 	<?php if(!empty($title)): ?>
 	<h2>
-		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: #' . $textColor . ';' : ''; ?>">
+		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: ' . $textColor . ';' : ''; ?>">
 			<?php echo $title; ?>
 		</a>
 	</h2>
@@ -47,7 +61,7 @@ $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!emp
 
 	<?php if(!empty($description)): ?>
 	<p>
-		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: #' . $textColor . ';' : ''; ?>">
+		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: ' . $textColor . ';' : ''; ?>">
 			<?php echo $description; ?>
 		</a>
 	</p>

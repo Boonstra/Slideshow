@@ -225,11 +225,27 @@
 				else if ($image.width() > 0 && // If stretch images is false and the image's dimensions are greater than 0, keep image dimensions
 					$image.height() > 0)
 				{
-					// Falls off (worse than too small):
-					var imageDimension = this.viewData[viewID][slideID]['imageDimension'];
+					var imageDimension;
 
-					if (isNaN(parseFloat(imageDimension)))
+					if (typeof this.viewData === 'object' &&
+						typeof this.viewData[viewID] == 'object' &&
+						typeof this.viewData[viewID][slideID] === 'object' &&
+						!isNaN(parseInt(this.viewData[viewID][slideID]['imageDimension'])))
 					{
+						imageDimension = this.viewData[viewID][slideID]['imageDimension'];
+					}
+					else
+					{
+						if (typeof this.viewData[viewID] !== 'object')
+						{
+							this.viewData[viewID] = [];
+						}
+
+						if (typeof this.viewData[viewID][slideID] !== 'object')
+						{
+							this.viewData[viewID][slideID] = [];
+						}
+
 						imageDimension = this.viewData[viewID][slideID]['imageDimension'] = $image.outerWidth(true) / $image.outerHeight(true);
 					}
 
