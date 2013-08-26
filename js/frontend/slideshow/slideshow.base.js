@@ -156,6 +156,47 @@
 	};
 
 	/**
+	 * Gets the natural size of the passed image jQuery object. The natural size is the original size, as it hasn't been
+	 * adapted by any kind of styles on the page.
+	 *
+	 * This function returns no data. It calls a callback function, as the image may not be fully loaded at the time
+	 * this function is called. The callback function will receive the following parameters:
+	 *
+	 * callback(long width, long height, mixed data)
+	 *
+	 * @param $image   (jQuery)
+	 * @param callback (function)
+	 * @param data     (mixed)
+	 */
+	self.Slideshow.prototype.getNaturalImageSize = function($image, callback, data)
+	{
+		var originalImage;
+
+		if ($image.length <= 0 ||
+			typeof $image.attr('src') !== 'string')
+		{
+			callback(-1, -1, data);
+
+			return;
+		}
+
+		originalImage     = new Image();
+		originalImage.src = $image.attr('src');
+
+		if ($image.get(0).complete)
+		{
+			callback(originalImage.width, originalImage.height, data);
+		}
+		else
+		{
+			$image.load(function(event)
+			{
+				callback(originalImage.width, originalImage.height, data);
+			});
+		}
+	};
+
+	/**
 	 * Returns the next view ID, is a random number when random is true.
 	 *
 	 * @return int viewID
