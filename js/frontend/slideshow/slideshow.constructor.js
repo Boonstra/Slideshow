@@ -67,7 +67,8 @@
 		this.randomAvailableViewIDs       = [];
 
 		// Register slideshow
-		self.registeredSlideshows.push(this.ID);
+		//self.registeredSlideshows.push(this.ID);
+		self.registeredSlideshows[this.ID] = this;
 
 		$.each(this.$views, $.proxy(function(viewID){ this.viewIDs.push(viewID); }, this));
 

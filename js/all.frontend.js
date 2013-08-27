@@ -2,36 +2,42 @@
  * Slideshow frontend script
  *
  * @author Stefan Boonstra
- * @version 4.0.0
+ * @version 4.1.0
  */
 slideshow_jquery_image_gallery_script = function()
 {
 	var $    = jQuery,
 		self = {};
 
-	self.registeredSlideshows = [];
+	self.registeredSlideshows = { };
 	self.youTubeAPIReady      = false;
 	self.loadYouTubeAPICalled = false;
 	self.stylesheetURLChecked = false;
 
 	/**
-	 *
+	 * Instantiates Slideshow objects on all slideshow elements that have not yet been registered of having a Slideshow
+	 * instance.
 	 */
 	self.activateSlideshows = function()
 	{
-		$.each(jQuery('.slideshow_container'), function(key, slideshow)
+		$.each(jQuery('.slideshow_container'), function(key, slideshowElement)
 		{
-			var $slideshow = $(slideshow),
-				ID = $slideshow.data('sessionId');
+			var $slideshowElement = $(slideshowElement),
+				ID                = $slideshowElement.data('sessionId');
 
 			if (isNaN(parseInt(ID, 10)))
 			{
-				ID = $slideshow.attr('data-session-id');
+				ID = $slideshowElement.attr('data-session-id');
 			}
 
-			if ($.inArray(ID, self.registeredSlideshows) < 0)
+//			if ($.inArray(ID, self.registeredSlideshows) < 0)
+//			{
+//				new self.Slideshow($slideshowElement);
+//			}
+
+			if (!(self.registeredSlideshows[ID] instanceof self.Slideshow))
 			{
-				new self.Slideshow($slideshow);
+				new self.Slideshow($slideshowElement);
 			}
 		});
 	};
