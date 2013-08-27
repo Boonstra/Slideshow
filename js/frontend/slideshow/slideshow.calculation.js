@@ -97,10 +97,21 @@
 
 		// Recalculate all views in animation
 		if (recalculateViews ||
-			recalculateViews == undefined)
+			typeof recalculateViews !== 'boolean')
 		{
 			this.recalculateVisibleViews();
 		}
+	};
+
+	/**
+	 * Recalculates all views. Uses recalculateView() to recalculate every separate view.
+	 */
+	self.Slideshow.prototype.recalculateViews = function()
+	{
+		$.each(this.$views, $.proxy(function(viewID)
+		{
+			this.recalculateView(viewID, false);
+		}, this));
 	};
 
 	/**
@@ -112,25 +123,30 @@
 		// Loop through viewsInAnimation array
 		$.each(this.visibleViews, $.proxy(function(key, viewID)
 		{
-			this.recalculateView(viewID);
+			this.recalculateView(viewID, false);
 		}, this));
 	};
 
 	/**
 	 * Calculates all slides' heights and widths in the passed view, keeping their border widths in mind.
 	 *
+	 * When forceCalculation is set to true, the view with the passed viewID will be recalculated even though the width
+	 * of the view may not have changed.
+	 *
 	 * TODO Implement separate slide widths. This can be done by making use of the $viewData array using a 'width'
 	 * TODO variable.
 	 *
 	 * @param viewID           (int)
+	 * @param forceCalculation (bool) Optional, defaults to false.
 	 */
-	self.Slideshow.prototype.recalculateView = function(viewID)
+	self.Slideshow.prototype.recalculateView = function(viewID, forceCalculation)
 	{
 		// Create jQuery object from view
 		var $view = $(this.$views[viewID]);
 
 		// Return when the slideshow's width hasn't changed
-		if (this.$content.width() == $view.outerWidth(true))
+		if ((typeof forceCalculation !== 'boolean' || !forceCalculation) &&
+			this.$content.width() == $view.outerWidth(true))
 		{
 			return;
 		}
@@ -145,11 +161,6 @@
 
 		var viewWidth  = this.$content.width() - ($view.outerWidth(true) - $view.width());
 		var viewHeight = this.$content.height() - ($view.outerHeight(true) - $view.height());
-
-//		$view.css({
-//			'width' : viewWidth,
-//			'height': viewHeight
-//		});
 
 		var slideWidth  = Math.floor(viewWidth / $slides.length);
 		var slideHeight = viewHeight;
@@ -210,9 +221,12 @@
 					return;
 				}
 
+				var imageAbsoluteOuterWidth  = $image.outerWidth() - $image.width();
+				var imageAbsoluteOuterHeight = $image.outerHeight() - $image.height();
+
 				// Calculate image width and height
-				var maxImageWidth  = $slide.width() - ($image.outerWidth(true) - $image.width());
-				var maxImageHeight = $slide.height() - ($image.outerHeight(true) - $image.height());
+				var maxImageWidth  = $slide.width() - imageAbsoluteOuterWidth;
+				var maxImageHeight = $slide.height() - imageAbsoluteOuterHeight;
 
 				// If stretch images is true, stretch to the slide's sizes.
 				if (this.settings['stretchImages'])
@@ -227,80 +241,64 @@
 						height: maxImageHeight
 					});
 				}
-				else if ($image.width() > 0 && // If stretch images is false and the image's dimensions are greater than 0, keep image dimensions
-					$image.height() > 0)
+				else // No stretching
 				{
-					var imageDimension;
+					this.getNaturalImageSize($image, $.proxy(function(naturalWidth, naturalHeight)
+					{
+						var slideDimension,
+							imageDimension;
 
-					if (typeof this.viewData === 'object' &&
-						typeof this.viewData[viewID] == 'object' &&
-						typeof this.viewData[viewID][slideID] === 'object' &&
-						!isNaN(parseInt(this.viewData[viewID][slideID]['imageDimension'])))
-					{
-						imageDimension = this.viewData[viewID][slideID]['imageDimension'];
-					}
-					else
-					{
-						if (typeof this.viewData[viewID] !== 'object')
+						if (naturalWidth <= 0 ||
+							naturalHeight <= 0)
 						{
-							this.viewData[viewID] = [];
+							setTimeout(
+								$.proxy(function()
+								{
+									this.recalculateView(viewID, true);
+								}, this),
+								500
+							);
+
+							return;
 						}
 
-						if (typeof this.viewData[viewID][slideID] !== 'object')
+						slideDimension = $slide.width() / $slide.height();
+						imageDimension = (naturalWidth + imageAbsoluteOuterWidth) / (naturalHeight + imageAbsoluteOuterHeight);
+
+						if (imageDimension >= slideDimension) // Image has a wider dimension than the slide
 						{
-							this.viewData[viewID][slideID] = [];
+							// Remove auto centering
+							$image.css({
+								'margin': '0px',
+								'width' : maxImageWidth,
+								'height': Math.floor(maxImageWidth / imageDimension)
+							});
+
+							// Set width to slide's width, keep height in same dimension
+							$image.attr({
+								width : maxImageWidth,
+								height: Math.floor(maxImageWidth / imageDimension)
+							});
 						}
+						else // Image has a slimmer dimension than the slide
+						{
+							// Center image
+							$image.css({
+								'margin-left' : 'auto',
+								'margin-right': 'auto',
+								'display'     : 'block',
+								'width'       : Math.floor(maxImageHeight * imageDimension),
+								'height'      : maxImageHeight
+							});
 
-						imageDimension = this.viewData[viewID][slideID]['imageDimension'] = $image.outerWidth(true) / $image.outerHeight(true);
-					}
-
-					var slideDimension = $slide.width() / $slide.height();
-
-					if (imageDimension >= slideDimension) // Image has a wider dimension than the slide
-					{
-						// Remove auto centering
-						$image.css({
-							'margin': '0px',
-							'width' : maxImageWidth,
-							'height': Math.floor(maxImageWidth / imageDimension)
-						});
-
-						// Set width to slide's width, keep height in same dimension
-						$image.attr({
-							width : maxImageWidth,
-							height: Math.floor(maxImageWidth / imageDimension)
-						});
-					}
-					else // Image has a slimmer dimension than the slide
-					{
-						// Center image
-						$image.css({
-							'margin-left' : 'auto',
-							'margin-right': 'auto',
-							'display'     : 'block',
-							'width'       : Math.floor(maxImageHeight * imageDimension),
-							'height'      : maxImageHeight
-						});
-
-						// Set height to slide's height, keep width in same dimension
-						$image.attr({
-							width : Math.floor(maxImageHeight * imageDimension),
-							height: maxImageHeight
-						});
-					}
+							// Set height to slide's height, keep width in same dimension
+							$image.attr({
+								width : Math.floor(maxImageHeight * imageDimension),
+								height: maxImageHeight
+							});
+						}
+					},this));
 				}
-//				else // Stretching is disabled and image sizes cannot be determined yet
-//				{
-//					console.log($image.get(0).complete, $image.width(), $image.height());
-//
-//					setTimeout(
-//						$.proxy(function()
-//						{
-//							console.log($image.get(0).complete, $image.width(), $image.height());
-//						}, this),
-//						0
-//					);
-//				}
 			}
 			else if ($slide.hasClass('slideshow_slide_video'))
 			{

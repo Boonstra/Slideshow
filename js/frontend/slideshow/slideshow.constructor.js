@@ -78,7 +78,7 @@
 		// Initial size calculation of slideshow, doesn't recalculate views
 		this.recalculate(false);
 
-		// Initialize $viewData array as $viewData[ view[ slide{ 'imageDimension': '', 'loaded': 0 } ] ]
+		// Initialize $viewData array as $viewData[ view[ slide{ 'loaded': 0 } ] ]
 		// Add slideshow_currentView identifier class to the visible views
 		// Recalculate views
 		// Hide views out of the content area
@@ -86,8 +86,6 @@
 		$.each(this.$views, $.proxy(function(viewID, view)
 		{
 			var $view = $(view);
-
-			this.recalculateView(viewID);
 
 			// Hide views, except for the one that's currently showing.
 			if (viewID != this.visibleViews[0])
@@ -105,44 +103,49 @@
 			{
 				var $slide = $(slide);
 
-				this.viewData[viewID][slideID] = { 'imageDimension': '' };
+				//this.viewData[viewID][slideID] = { 'imageDimension': '' };
+				this.viewData[viewID][slideID] = { };
 
 				// Check if the image in this slide is loaded. The loaded value van have the following values:
 				// -1: Slide is no image slide, 0: Not yet loaded, 1: Successfully loaded, 2: Unsuccessfully loaded
-				if (this.settings['waitUntilLoaded'] &&
-					$slide.hasClass('slideshow_slide_image'))
+				if ($slide.hasClass('slideshow_slide_image'))
 				{
 					var $image = $slide.find('img');
 
 					if ($image.length > 0)
 					{
-						$image.each($.proxy(function(key, image)
+						if ($image.get(0).complete)
 						{
-							if (image.complete)
+							this.viewData[viewID][slideID].loaded = 1;
+						}
+						else
+						{
+							if (viewID === this.currentViewID)
 							{
-								this.viewData[viewID][slideID].loaded = 1;
+								hasFirstSlideLoaded = false;
 							}
-							else
+
+							this.viewData[viewID][slideID].loaded = 0;
+
+							this.onImageLoad($image, $.proxy(function(success)
 							{
-								if (viewID === this.currentViewID)
-								{
-									hasFirstSlideLoaded = false;
-								}
-
-								this.viewData[viewID][slideID].loaded = 0;
-
-								$image.load($.proxy(function()
+								if (success)
 								{
 									this.viewData[viewID][slideID].loaded = 1;
+								}
+								else
+								{
+									this.viewData[viewID][slideID].loaded = 2;
+								}
 
-									if (viewID === this.currentViewID &&
-										this.isViewLoaded((viewID)))
-									{
-										this.firstStart();
-									}
-								}, this)).bind('error', $.proxy(function(){ this.viewData[viewID][slideID].loaded = 2; }, this));
-							}
-						}, this));
+								if (this.settings['waitUntilLoaded'] &&
+									viewID === this.currentViewID &&
+									this.isViewLoaded((viewID)))
+								{
+									this.start();
+								}
+							}, this));
+						}
 					}
 					else
 					{
@@ -159,21 +162,6 @@
 		// Recalculate visible views when window is loaded
 		$(window).load($.proxy(function()
 		{
-//			$.each(this.$views, $.proxy(function(viewID, view)
-//			{
-//				var $view  = $(view),
-//					$image = $view.find('img');
-//
-//				if ($image.length <= 0)
-//				{
-//					return;
-//				}
-//
-//				this.recalculateView(viewID);
-//
-//				console.log($image.get(0).complete, $image.width(), $image.height());
-//			}, this));
-
 			this.recalculateVisibleViews();
 		}, this));
 
@@ -192,9 +180,9 @@
 
 		// Start slideshow
 		if (!this.settings['waitUntilLoaded'] ||
-			hasFirstSlideLoaded)
+			(this.settings['waitUntilLoaded'] && hasFirstSlideLoaded))
 		{
-			this.firstStart();
+			this.start();
 		}
 	};
 }());

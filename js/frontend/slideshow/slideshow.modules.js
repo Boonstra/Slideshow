@@ -127,9 +127,9 @@
 
 			this.pauseAllVideos();
 
-			this.stop();
+			this.pause();
 			this.animateTo(this.getNextViewID(), 1);
-			this.start();
+			this.play();
 		}, this));
 
 		// Register previous button click event
@@ -142,9 +142,9 @@
 
 			this.pauseAllVideos();
 
-			this.stop();
+			this.pause();
 			this.animateTo(this.getPreviousViewID(), -1);
-			this.start();
+			this.play();
 		}, this));
 
 		// If hideNavigationButtons is true, fade them in and out on mouse enter and leave. Simply show them otherwise
@@ -194,7 +194,7 @@
 
 				$(event.currentTarget).attr('class', 'slideshow_play');
 
-				this.stop();
+				this.pause();
 			}
 			else
 			{
@@ -202,7 +202,7 @@
 
 				$(event.currentTarget).attr('class', 'slideshow_pause');
 
-				this.start();
+				this.play();
 			}
 		}, this));
 
@@ -270,9 +270,9 @@
 			this.pauseAllVideos();
 
 			// Animate to view ID
-			this.stop();
+			this.pause();
 			this.animateTo(parseInt(viewID, 10), 0);
-			this.start();
+			this.play();
 		}, this));
 
 		// Bind slideshowAnimate to pagination to shift currently active view-bullets
@@ -321,7 +321,7 @@
 			// Wait 500 milliseconds before pausing the slideshow. If within this time the mouse hasn't left the container, pause.
 			clearTimeout(this.mouseEnterTimer);
 
-			this.mouseEnterTimer = setTimeout($.proxy(function(){ this.stop(); }, this), 500);
+			this.mouseEnterTimer = setTimeout($.proxy(function(){ this.pause(); }, this), 500);
 		}, this));
 
 		// Continue the slideshow when the mouse leaves the slideshow container.
@@ -333,7 +333,7 @@
 			// Start slideshow, but only when the interval has been stopped
 			if (this.interval === false)
 			{
-				this.start();
+				this.play();
 			}
 		}, this));
 	};

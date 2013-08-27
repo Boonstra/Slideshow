@@ -6,7 +6,7 @@
 	/**
 	 * Initial start method
 	 */
-	self.Slideshow.prototype.firstStart = function()
+	self.Slideshow.prototype.start = function()
 	{
 		if (this.$loadingIcon.length > 0)
 		{
@@ -15,6 +15,8 @@
 
 		// Show content
 		this.$content.show();
+
+		this.recalculateViews();
 
 		// Register recalculation on window resize
 		if (this.settings['enableResponsiveness'])
@@ -25,13 +27,13 @@
 			}, this));
 		}
 
-		this.start();
+		this.play();
 	};
 
 	/**
 	 * Sets the slideshow's animation interval when play is true.
 	 */
-	self.Slideshow.prototype.start = function()
+	self.Slideshow.prototype.play = function()
 	{
 		// Only start when play is true and no interval is currently running
 		if (!this.settings['play'] ||
@@ -59,11 +61,11 @@
 				{
 					slideshowInstance.animateTo(viewID, 1);
 
-					slideshowInstance.start();
+					slideshowInstance.play();
 				}
 				else
 				{
-					slideshowInstance.stop();
+					slideshowInstance.pause();
 
 					setTimeout($.proxy(function(){ retrieveViewAndAnimateToView(viewID, slideshowInstance); }, slideshowInstance), 100);
 				}
@@ -75,7 +77,7 @@
 	/**
 	 * Stops the slideshow's animation interval. $interval is set to false.
 	 */
-	self.Slideshow.prototype.stop = function()
+	self.Slideshow.prototype.pause = function()
 	{
 		clearInterval(this.interval);
 
@@ -162,7 +164,7 @@
 	 * This function returns no data. It calls a callback function, as the image may not be fully loaded at the time
 	 * this function is called. The callback function will receive the following parameters:
 	 *
-	 * callback(long width, long height, mixed data)
+	 * callback(long naturalWidth, long naturalHeight, mixed data)
 	 *
 	 * @param $image   (jQuery)
 	 * @param callback (function)
@@ -170,9 +172,8 @@
 	 */
 	self.Slideshow.prototype.getNaturalImageSize = function($image, callback, data)
 	{
-		var originalImage;
-
 		if ($image.length <= 0 ||
+			!($image instanceof $) ||
 			typeof $image.attr('src') !== 'string')
 		{
 			callback(-1, -1, data);
@@ -180,20 +181,43 @@
 			return;
 		}
 
-		originalImage     = new Image();
-		originalImage.src = $image.attr('src');
+		this.onImageLoad($image, $.proxy(function(success, image)
+		{
+			callback(image.width, image.height, data);
+		}, this));
+	};
 
-		if ($image.get(0).complete)
+	/**
+	 * An IE-safe way to wait for an image to load. The passed callback function will be called once the image has
+	 * fully loaded.
+	 *
+	 * The callback function will be called with the following parameters:
+	 *
+	 * callback(bool success, HTMLImageElement image, mixed data)
+	 *
+	 * @param $image   (jQuery)
+	 * @param callback (function)
+	 * @param data     (mixed)
+	 */
+	self.Slideshow.prototype.onImageLoad = function($image, callback, data)
+	{
+		var image = new Image();
+
+		if ($image.length <= 0 ||
+			!($image instanceof $) ||
+			typeof $image.attr('src') !== 'string')
 		{
-			callback(originalImage.width, originalImage.height, data);
+			callback(false, image, data);
+
+			return;
 		}
-		else
+
+		image.onload = $.proxy(function()
 		{
-			$image.load(function(event)
-			{
-				callback(originalImage.width, originalImage.height, data);
-			});
-		}
+			callback(true, image, data);
+		}, this);
+
+		image.src = $image.attr('src');
 	};
 
 	/**
