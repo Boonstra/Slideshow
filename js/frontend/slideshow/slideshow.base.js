@@ -107,6 +107,30 @@
 	};
 
 	/**
+	 * Animates slideshow to next view
+	 */
+	self.Slideshow.prototype.next = function()
+	{
+		this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+		this.animateTo(this.getNextViewID(), 1);
+
+		this.play();
+	};
+
+	/**
+	 * Animates slideshow to previous view
+	 */
+	self.Slideshow.prototype.previous = function()
+	{
+		this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+		this.animateTo(this.getPreviousViewID(), -1);
+
+		this.play();
+	};
+
+	/**
 	 * Returns true if a video is playing, returns false otherwise.
 	 *
 	 * @return boolean isVideoPlaying
@@ -243,7 +267,7 @@
 	};
 
 	/**
-	 * Returns the next view ID, is a random number when random is true.
+	 * Returns the next view ID, is a (semi) random number when random is true.
 	 *
 	 * @return int viewID
 	 */
@@ -290,7 +314,7 @@
 	};
 
 	/**
-	 * Returns the previous view ID, is a random number when random is true.
+	 * Returns the previous view ID, is a (semi) random number when random is true.
 	 *
 	 * @return int viewID
 	 */

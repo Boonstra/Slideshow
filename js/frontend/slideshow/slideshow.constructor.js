@@ -51,16 +51,16 @@
 		}, this));
 
 		// Interchanging variables
-		this.$parentElement   = this.$container.parent();
-		this.viewData         = [];
-		this.viewIDs          = [];
-		this.navigationActive = true;
-		this.currentViewID    = undefined;
-		this.currentWidth     = 0;
-		this.visibleViews     = [];
-		this.videoPlayers     = [];
-		this.PlayStates       = { PAUSED: -1, TEMPORARILY_PAUSED: 0, PLAYING: 1 }
-		this.playState        = -1;
+		this.$parentElement     = this.$container.parent();
+		this.viewData           = [];
+		this.viewIDs            = [];
+		this.currentlyAnimating = false;
+		this.currentViewID      = undefined;
+		this.currentWidth       = 0;
+		this.visibleViews       = [];
+		this.videoPlayers       = [];
+		this.PlayStates         = { PAUSED: -1, TEMPORARILY_PAUSED: 0, PLAYING: 1 };
+		this.playState          = -1;
 
 		// Timers
 		this.interval          = false;

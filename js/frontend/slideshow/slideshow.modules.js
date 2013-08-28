@@ -53,7 +53,7 @@
 		}, this));
 
 		// Hide descriptions when the slideshow animates
-		this.$container.bind('slideshowAnimate', $.proxy(function()
+		this.$container.bind('slideshowAnimationStart', $.proxy(function()
 		{
 			if (this.visibleViews[1] == undefined)
 			{
@@ -120,7 +120,7 @@
 		// Register next button click event
 		this.$nextButton.click($.proxy(function()
 		{
-			if (!this.navigationActive)
+			if (this.currentlyAnimating)
 			{
 				return;
 			}
@@ -135,7 +135,7 @@
 		// Register previous button click event
 		this.$previousButton.click($.proxy(function()
 		{
-			if (!this.navigationActive)
+			if (this.currentlyAnimating)
 			{
 				return;
 			}
@@ -256,7 +256,7 @@
 		// On click of a view-bullet go to the corresponding slide
 		this.$pagination.find('li').click($.proxy(function(event)
 		{
-			if (!this.navigationActive)
+			if (this.currentlyAnimating)
 			{
 				return;
 			}
@@ -277,9 +277,9 @@
 			this.play();
 		}, this));
 
-		// Bind slideshowAnimate to pagination to shift currently active view-bullets
+		// Bind slideshowAnimationStart to pagination to shift currently active view-bullets
 		this.$container.bind(
-			'slideshowAnimate',
+			'slideshowAnimationStart',
 			$.proxy(function()
 			{
 				// Get bullets

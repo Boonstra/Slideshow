@@ -179,7 +179,7 @@ personal taste.
 
 = 2.2.15 =
 *   The image dimension calculation algorithm now uses a more stable and more efficient way to determine the size of images.
-*   TODO: Add slideshow API.
+*   Added slideshow API.
 *   Fixed: WP Color Picker (Iris) adds a hashtag to color codes. As slideshow does this as well, text slides didn't display color properly.
 
 = 2.2.14 =

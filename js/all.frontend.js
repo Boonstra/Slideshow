@@ -83,11 +83,6 @@ slideshow_jquery_image_gallery_script = function()
 				ID = $slideshowElement.attr('data-session-id');
 			}
 
-//			if ($.inArray(ID, self.slideshowInstances) < 0)
-//			{
-//				self.API.addSlideshow(new self.Slideshow($slideshowElement));
-//			}
-
 			if (!(self.slideshowInstances[ID] instanceof self.Slideshow))
 			{
 				self.slideshowInstances[ID] = new self.Slideshow($slideshowElement);
@@ -177,9 +172,9 @@ slideshow_jquery_image_gallery_script = function()
 		self.init();
 	});
 
-	$.fn.slideshowGetSlideshowInstance = function()
+	$.fn.getSlideshowInstance = function()
 	{
-		self.getSlideshowInstance(this);
+		return self.getSlideshowInstance(this);
 	};
 
 	return self;

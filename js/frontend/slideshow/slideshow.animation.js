@@ -25,8 +25,22 @@
 			return;
 		}
 
-		// Disable navigation to prevent user input when animating
-		this.navigationActive = false;
+		// Queue up animateTo requests while an animation is still running
+		if (this.currentlyAnimating === true)
+		{
+			this.$container.one('slideshowAnimationEnd', $.proxy(function()
+			{
+				this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+				this.animateTo(viewID, direction);
+
+				this.play();
+			}, this));
+
+			return;
+		}
+
+		this.currentlyAnimating = true;
 
 		// When direction is 0 or undefined, calculate direction
 		if (isNaN(parseInt(direction, 10)) ||
@@ -86,8 +100,8 @@
 		// Set new current view ID
 		this.currentViewID = viewID;
 
-		// Fire the slideshowAnimate event
-		this.$container.trigger('slideshowAnimate', [ viewID, animation ]);
+		// Fire the slideshowAnimationStart event
+		this.$container.trigger('slideshowAnimationStart', [ viewID, animation ]);
 
 		// Animate
 		switch(animation)
@@ -249,8 +263,9 @@
 				// Update visible views array after animating
 				this.visibleViews = [ viewID ];
 
-				// Re-enable navigation
-				this.navigationActive = true;
+				this.currentlyAnimating = false;
+
+				this.$container.trigger('slideshowAnimationEnd');
 
 			}, this),
 			this.settings['slideSpeed'] * 1000
