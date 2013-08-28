@@ -10,7 +10,7 @@
 	 */
 	self.Slideshow = function($slideshow)
 	{
-		/** Element variables */
+		// Element variables
 		this.$container        = $slideshow;
 		this.$content          = this.$container.find('.slideshow_content');
 		this.$views            = this.$container.find('.slideshow_view');
@@ -45,8 +45,8 @@
 			}
 		}, this));
 
-		/** Interchanging variables */
-		this.$parentElement    = this.$container.parent();
+		// Interchanging variables
+		this.$parentElement   = this.$container.parent();
 		this.viewData         = [];
 		this.viewIDs          = [];
 		this.navigationActive = true;
@@ -54,21 +54,19 @@
 		this.currentWidth     = 0;
 		this.visibleViews     = [];
 		this.videoPlayers     = [];
+		this.PlayStates       = { PAUSED: -1, TEMPORARILY_PAUSED: 0, PLAYING: 1 }
+		this.playState        = -1;
 
-		/** Timers */
+		// Timers
 		this.interval          = false;
-		this.mouseEnterTimer   = false;
+		this.pauseOnHoverTimer = false;
 		this.invisibilityTimer = false;
 		this.descriptionTimer  = false;
 
-		/** Randomization */
+		// Randomization
 		this.randomNextHistoryViewIDs     = [];
 		this.randomPreviousHistoryViewIDs = [];
 		this.randomAvailableViewIDs       = [];
-
-		// Register slideshow
-		//self.registeredSlideshows.push(this.ID);
-		self.registeredSlideshows[this.ID] = this;
 
 		$.each(this.$views, $.proxy(function(viewID){ this.viewIDs.push(viewID); }, this));
 

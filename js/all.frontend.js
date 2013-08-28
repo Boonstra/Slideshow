@@ -30,14 +30,9 @@ slideshow_jquery_image_gallery_script = function()
 				ID = $slideshowElement.attr('data-session-id');
 			}
 
-//			if ($.inArray(ID, self.registeredSlideshows) < 0)
-//			{
-//				new self.Slideshow($slideshowElement);
-//			}
-
 			if (!(self.registeredSlideshows[ID] instanceof self.Slideshow))
 			{
-				new self.Slideshow($slideshowElement);
+				self.registeredSlideshows[ID] = new self.Slideshow($slideshowElement);
 			}
 		});
 	};

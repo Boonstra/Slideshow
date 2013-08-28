@@ -127,7 +127,7 @@
 
 			this.pauseAllVideos();
 
-			this.pause();
+			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
 			this.animateTo(this.getNextViewID(), 1);
 			this.play();
 		}, this));
@@ -142,7 +142,7 @@
 
 			this.pauseAllVideos();
 
-			this.pause();
+			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
 			this.animateTo(this.getPreviousViewID(), -1);
 			this.play();
 		}, this));
@@ -194,7 +194,7 @@
 
 				$(event.currentTarget).attr('class', 'slideshow_play');
 
-				this.pause();
+				this.pause(this.PlayStates.PAUSED);
 			}
 			else
 			{
@@ -270,7 +270,7 @@
 			this.pauseAllVideos();
 
 			// Animate to view ID
-			this.pause();
+			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
 			this.animateTo(parseInt(viewID, 10), 0);
 			this.play();
 		}, this));
@@ -318,17 +318,27 @@
 		// Pause the slideshow when the mouse enters the slideshow container.
 		this.$container.mouseenter($.proxy(function()
 		{
-			// Wait 500 milliseconds before pausing the slideshow. If within this time the mouse hasn't left the container, pause.
-			clearTimeout(this.mouseEnterTimer);
+			clearTimeout(this.pauseOnHoverTimer);
 
-			this.mouseEnterTimer = setTimeout($.proxy(function(){ this.pause(); }, this), 500);
+			if (this.playState === this.PlayStates.PAUSED)
+			{
+				return;
+			}
+
+			// Wait 500 milliseconds before pausing the slideshow. If within this time the mouse hasn't left the container, pause.
+			this.pauseOnHoverTimer = setTimeout($.proxy(function(){ this.pause(this.PlayStates.TEMPORARILY_PAUSED); }, this), 500);
 		}, this));
 
 		// Continue the slideshow when the mouse leaves the slideshow container.
 		this.$container.mouseleave($.proxy(function()
 		{
 			// This will cancel any pausing when the mouse simply flies over, instead of hovering.
-			clearTimeout(this.mouseEnterTimer);
+			clearTimeout(this.pauseOnHoverTimer);
+
+			if (this.playState === this.PlayStates.PAUSED)
+			{
+				return;
+			}
 
 			// Start slideshow, but only when the interval has been stopped
 			if (this.interval === false)
