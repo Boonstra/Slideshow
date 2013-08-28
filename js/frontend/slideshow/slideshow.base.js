@@ -8,12 +8,18 @@
 	 */
 	self.Slideshow.prototype.start = function()
 	{
+		// Activate modules
+		this.activateDescriptions();
+		this.activateControlPanel();
+		this.activateNavigationButtons();
+		this.activatePagination();
+		this.activatePauseOnHover();
+
 		if (this.$loadingIcon.length > 0)
 		{
 			this.$loadingIcon.remove();
 		}
 
-		// Show content
 		this.$content.show();
 
 		this.recalculateViews();

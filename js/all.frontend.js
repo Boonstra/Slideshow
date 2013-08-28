@@ -9,11 +9,63 @@ slideshow_jquery_image_gallery_script = function()
 	var $    = jQuery,
 		self = {};
 
-	self.registeredSlideshows = [ ];
-	self.youTubeAPIReady      = false;
-	self.loadYouTubeAPICalled = false;
-	self.stylesheetURLChecked = false;
-	self.API                  = new SlideshowAPI();
+	self.slideshowInstances = { };
+	self.initialized        = false;
+	self.youTubeAPIReady    = false;
+
+	/**
+	 * Called by either $(document).ready() or $(window).load() to initialize the slideshow's script.
+	 */
+	self.init = function()
+	{
+		if (self.initialized)
+		{
+			return;
+		}
+
+		self.initialized = true;
+
+		self.loadYouTubeAPI();
+		self.checkStylesheetURL();
+		self.activateSlideshows();
+	};
+
+	/**
+	 * @param searchKey (int|jQuery)
+	 *
+	 * @return self.Slideshow
+	 */
+	self.getSlideshowInstance = function(searchKey)
+	{
+		if (!isNaN(parseInt(searchKey, 10)))
+		{
+			if (self.slideshowInstances[searchKey] instanceof self.Slideshow)
+			{
+				return self.slideshowInstances[searchKey];
+			}
+		}
+		else if (searchKey instanceof $ &&
+				 searchKey.length > 0)
+		{
+			for (var ID in self.slideshowInstances)
+			{
+				if (!self.slideshowInstances.hasOwnProperty(ID))
+				{
+					continue;
+				}
+
+				var slideshowInstance = self.slideshowInstances[ID];
+
+				if (slideshowInstance instanceof self.Slideshow &&
+					slideshowInstance.$container.get(0) === searchKey.get(0))
+				{
+					return slideshowInstance;
+				}
+			}
+		}
+
+		return new self.Slideshow();
+	};
 
 	/**
 	 * Instantiates Slideshow objects on all slideshow elements that have not yet been registered of having a Slideshow
@@ -31,15 +83,15 @@ slideshow_jquery_image_gallery_script = function()
 				ID = $slideshowElement.attr('data-session-id');
 			}
 
-			if ($.inArray(ID, self.registeredSlideshows) < 0)
-			{
-				new self.Slideshow($slideshowElement);
-			}
-
-//			if (!(self.registeredSlideshows[ID] instanceof self.Slideshow))
+//			if ($.inArray(ID, self.slideshowInstances) < 0)
 //			{
-//				self.registeredSlideshows[ID] = new self.Slideshow($slideshowElement);
+//				self.API.addSlideshow(new self.Slideshow($slideshowElement));
 //			}
+
+			if (!(self.slideshowInstances[ID] instanceof self.Slideshow))
+			{
+				self.slideshowInstances[ID] = new self.Slideshow($slideshowElement);
+			}
 		});
 	};
 
@@ -48,11 +100,6 @@ slideshow_jquery_image_gallery_script = function()
 	 */
 	self.loadYouTubeAPI = function()
 	{
-		if (self.loadYouTubeAPICalled)
-		{
-			return;
-		}
-
 		self.loadYouTubeAPICalled = true;
 
 		if ($('.slideshow_slide_video').length <= 0)
@@ -73,13 +120,6 @@ slideshow_jquery_image_gallery_script = function()
 	 */
 	self.checkStylesheetURL = function()
 	{
-		if (self.stylesheetURLChecked)
-		{
-			return;
-		}
-
-		self.stylesheetURLChecked = true;
-
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
 
 		if (ajaxStylesheets.length <= 0)
@@ -129,17 +169,18 @@ slideshow_jquery_image_gallery_script = function()
 
 	$(document).ready(function()
 	{
-		self.loadYouTubeAPI();
-		self.checkStylesheetURL();
-		self.activateSlideshows();
+		self.init();
 	});
 
 	$(window).load(function()
 	{
-		self.loadYouTubeAPI();
-		self.checkStylesheetURL();
-		self.activateSlideshows();
+		self.init();
 	});
+
+	$.fn.slideshowGetSlideshowInstance = function()
+	{
+		self.getSlideshowInstance(this);
+	};
 
 	return self;
 }();
@@ -150,7 +191,6 @@ function onYouTubeIframeAPIReady()
 }
 
 // @codekit-append frontend/slideshow.js
-// @codekit-append frontend/slideshowAPI.js
 
 ///**
 //* Simple logging function for Internet Explorer

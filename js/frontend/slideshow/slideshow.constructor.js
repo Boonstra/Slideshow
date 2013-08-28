@@ -10,6 +10,11 @@
 	 */
 	self.Slideshow = function($slideshow)
 	{
+		if (!($slideshow instanceof $))
+		{
+			return;
+		}
+
 		// Element variables
 		this.$container        = $slideshow;
 		this.$content          = this.$container.find('.slideshow_content');
@@ -22,7 +27,7 @@
 		this.$pagination       = this.$container.find('.slideshow_pagination');
 		this.$loadingIcon      = this.$container.find('.slideshow_loading_icon');
 
-		/** Settings */
+		// Settings
 		this.ID = this.getID();
 
 		if (isNaN(parseInt(this.ID, 10)))
@@ -169,13 +174,6 @@
 		{
 			this.settings['intervalSpeed'] = parseFloat(this.settings['slideSpeed']) + 0.1;
 		}
-
-		// Activate modules
-		this.activateDescriptions();
-		this.activateControlPanel();
-		this.activateNavigationButtons();
-		this.activatePagination();
-		this.activatePauseOnHover();
 
 		// Start slideshow
 		if (!this.settings['waitUntilLoaded'] ||
