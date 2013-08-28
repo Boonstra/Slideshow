@@ -175,15 +175,17 @@
 			return;
 		}
 
-		// Set button to pause when slideshow is initially running, otherwise set button to play
-		if (this.settings['play'])
+		this.$container.bind('slideshowPlayStateChange', $.proxy(function(event, playState)
 		{
-			this.$togglePlayButton.attr('class', 'slideshow_pause');
-		}
-		else
-		{
-			this.$togglePlayButton.attr('class', 'slideshow_play');
-		}
+			if (playState === this.PlayStates.PLAYING)
+			{
+				this.$togglePlayButton.attr('class', 'slideshow_pause');
+			}
+			else if (playState === this.PlayStates.PAUSED)
+			{
+				this.$togglePlayButton.attr('class', 'slideshow_play');
+			}
+		}, this));
 
 		// Register click event on the togglePlayButton
 		this.$togglePlayButton.click($.proxy(function(event)

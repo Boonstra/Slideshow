@@ -9,10 +9,11 @@ slideshow_jquery_image_gallery_script = function()
 	var $    = jQuery,
 		self = {};
 
-	self.registeredSlideshows = { };
+	self.registeredSlideshows = [ ];
 	self.youTubeAPIReady      = false;
 	self.loadYouTubeAPICalled = false;
 	self.stylesheetURLChecked = false;
+	self.API                  = new SlideshowAPI();
 
 	/**
 	 * Instantiates Slideshow objects on all slideshow elements that have not yet been registered of having a Slideshow
@@ -30,10 +31,15 @@ slideshow_jquery_image_gallery_script = function()
 				ID = $slideshowElement.attr('data-session-id');
 			}
 
-			if (!(self.registeredSlideshows[ID] instanceof self.Slideshow))
+			if ($.inArray(ID, self.registeredSlideshows) < 0)
 			{
-				self.registeredSlideshows[ID] = new self.Slideshow($slideshowElement);
+				new self.Slideshow($slideshowElement);
 			}
+
+//			if (!(self.registeredSlideshows[ID] instanceof self.Slideshow))
+//			{
+//				self.registeredSlideshows[ID] = new self.Slideshow($slideshowElement);
+//			}
 		});
 	};
 
@@ -144,6 +150,7 @@ function onYouTubeIframeAPIReady()
 }
 
 // @codekit-append frontend/slideshow.js
+// @codekit-append frontend/slideshowAPI.js
 
 ///**
 //* Simple logging function for Internet Explorer

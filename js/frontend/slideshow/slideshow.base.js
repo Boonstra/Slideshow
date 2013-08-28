@@ -44,6 +44,8 @@
 
 		this.playState = this.PlayStates.PLAYING;
 
+		this.$container.trigger('slideshowPlayStateChange', [ this.playState ]);
+
 		// Set interval to intervalSpeed
 		this.interval = setInterval(
 			$.proxy(function retrieveViewAndAnimateToView(viewID, slideshowInstance)
@@ -82,18 +84,20 @@
 	 * @param playState (PlayState) Optional, defaults to this.PlayState.PAUSED
 	 */
 	self.Slideshow.prototype.pause = function(playState)
-	{console.log(playState);
-		if (playState !== this.PlayStates.PAUSED ||
+	{
+		clearInterval(this.interval);
+
+		this.interval = false;
+
+		if (playState !== this.PlayStates.PAUSED &&
 			playState !== this.PlayStates.TEMPORARILY_PAUSED)
 		{
 			playState = this.PlayStates.PAUSED;
 		}
-		console.log(playState);
+
 		this.playState = playState;
 
-		clearInterval(this.interval);
-
-		this.interval = false;
+		this.$container.trigger('slideshowPlayStateChange', [ this.playState ]);
 	};
 
 	/**
