@@ -83,7 +83,7 @@
 						.stop(true, false)
 						.animate({ 'top': (this.$container.outerHeight(true) - $description.outerHeight(true)) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
 				}, this),
-				100
+				200
 			);
 		}, this));
 
@@ -91,7 +91,7 @@
 		this.$slides.mouseleave($.proxy(function(event)
 		{
 			// If a description timer is still set, reset it
-			if (this.descriptionTimer === false)
+			if (this.descriptionTimer !== false)
 			{
 				clearInterval(this.descriptionTimer);
 
