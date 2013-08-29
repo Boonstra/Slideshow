@@ -33,7 +33,14 @@
 			}, this));
 		}
 
-		this.play();
+		this.playState = this.PlayStates.PAUSED;
+
+		this.$container.trigger('slideshowPlayStateChange', [ this.playState ]);
+
+		if (this.settings['play'])
+		{
+			this.play();
+		}
 	};
 
 	/**
@@ -41,9 +48,7 @@
 	 */
 	self.Slideshow.prototype.play = function()
 	{
-		// Only start when play is true and no interval is currently running
-		if (!this.settings['play'] ||
-			this.interval)
+		if (this.interval)
 		{
 			return;
 		}

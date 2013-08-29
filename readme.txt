@@ -180,6 +180,7 @@ personal taste.
 = 2.2.16 =
 *   
 *   Fixed: Descriptions came up and stayed up on fly-over.
+*   Fixed: Control panel wasn't correctly initialized when slideshow was set to automatically slide to the next slide.
 
 = 2.2.15 =
 *   The image dimension calculation algorithm now uses a more stable and more efficient way to determine the size of images.

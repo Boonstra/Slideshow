@@ -190,21 +190,15 @@
 		// Register click event on the togglePlayButton
 		this.$togglePlayButton.click($.proxy(function(event)
 		{
-			if (this.settings['play'])
+			var $button = $(event.currentTarget);
+
+			if ($button.hasClass('slideshow_play'))
 			{
-				this.settings['play'] = false;
-
-				$(event.currentTarget).attr('class', 'slideshow_play');
-
-				this.pause(this.PlayStates.PAUSED);
+				this.play();
 			}
 			else
 			{
-				this.settings['play'] = true;
-
-				$(event.currentTarget).attr('class', 'slideshow_pause');
-
-				this.play();
+				this.pause(this.PlayStates.PAUSED);
 			}
 		}, this));
 

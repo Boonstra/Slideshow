@@ -59,8 +59,8 @@
 		this.currentWidth       = 0;
 		this.visibleViews       = [];
 		this.videoPlayers       = [];
-		this.PlayStates         = { PAUSED: -1, TEMPORARILY_PAUSED: 0, PLAYING: 1 };
-		this.playState          = -1;
+		this.PlayStates         = { UNSTARTED: -2, PAUSED: -1, TEMPORARILY_PAUSED: 0, PLAYING: 1 };
+		this.playState          = this.PlayStates.UNSTARTED;
 
 		// Timers
 		this.interval          = false;
