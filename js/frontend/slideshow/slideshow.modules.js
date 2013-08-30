@@ -127,9 +127,14 @@
 
 			this.pauseAllVideos();
 
-			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+			if (this.playState === this.PlayStates.PLAYING)
+			{
+				this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+				this.play();
+			}
+
 			this.animateTo(this.getNextViewID(), 1);
-			this.play();
 		}, this));
 
 		// Register previous button click event
@@ -142,9 +147,14 @@
 
 			this.pauseAllVideos();
 
-			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+			if (this.playState === this.PlayStates.PLAYING)
+			{
+				this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+				this.play();
+			}
+
 			this.animateTo(this.getPreviousViewID(), -1);
-			this.play();
 		}, this));
 
 		// If hideNavigationButtons is true, fade them in and out on mouse enter and leave. Simply show them otherwise
@@ -265,10 +275,14 @@
 
 			this.pauseAllVideos();
 
-			// Animate to view ID
-			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+			if (this.playState === this.PlayStates.PLAYING)
+			{
+				this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+				this.play();
+			}
+
 			this.animateTo(parseInt(viewID, 10), 0);
-			this.play();
 		}, this));
 
 		// Bind slideshowAnimationStart to pagination to shift currently active view-bullets

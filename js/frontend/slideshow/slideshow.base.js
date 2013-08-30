@@ -116,11 +116,14 @@
 	 */
 	self.Slideshow.prototype.next = function()
 	{
-		this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+		if (this.playState === this.PlayStates.PLAYING)
+		{
+			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+			this.play();
+		}
 
 		this.animateTo(this.getNextViewID(), 1);
-
-		this.play();
 	};
 
 	/**
@@ -128,11 +131,14 @@
 	 */
 	self.Slideshow.prototype.previous = function()
 	{
-		this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+		if (this.playState === this.PlayStates.PLAYING)
+		{
+			this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+			this.play();
+		}
 
 		this.animateTo(this.getPreviousViewID(), -1);
-
-		this.play();
 	};
 
 	/**

@@ -30,11 +30,14 @@
 		{
 			this.$container.one('slideshowAnimationEnd', $.proxy(function()
 			{
-				this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+				if (this.playState === this.PlayStates.PLAYING)
+				{
+					this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+
+					this.play();
+				}
 
 				this.animateTo(viewID, direction);
-
-				this.play();
 			}, this));
 
 			return;

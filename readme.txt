@@ -179,6 +179,7 @@ personal taste.
 
 = 2.2.16 =
 *   
+*   Images can now fill up an entire slide without losing their dimensions, using the 'Zoom to fit' option.
 *   Fixed: Descriptions came up and stayed up on fly-over.
 *   Fixed: Control panel wasn't correctly initialized when slideshow was set to automatically slide to the next slide.
 

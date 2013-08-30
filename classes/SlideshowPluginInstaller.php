@@ -92,8 +92,80 @@ class SlideshowPluginInstaller
 			self::updateV2_2_8_to_V_2_2_12();
 		}
 
+		// Update to version 2.2.16
+		if (self::firstVersionGreaterThanSecond('2.2.16', $currentVersion) ||
+			$currentVersion == null)
+		{
+			self::updateV2_2_12_to_V_2_2_16();
+		}
+
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.2.12 to 2.2.16
+	 *
+	 * The 'Fit image into slide' setting has been replaced with the 'Image behaviour' setting.
+	 *
+	 * @since 2.2.16
+	 */
+	private static function updateV2_2_12_to_V_2_2_16()
+	{
+		// Check if this has already been done
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-12-to-v2-2-16') !== false)
+		{
+			return;
+		}
+
+		// Get slideshows
+		$slideshows = get_posts(array(
+			'numberposts' => -1,
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
+		));
+
+		// Loop through slideshows
+		if (is_array($slideshows) &&
+			count($slideshows) > 0)
+		{
+			foreach ($slideshows as $slideshow)
+			{
+				// Get settings
+				$settings = maybe_unserialize(get_post_meta(
+					$slideshow->ID,
+					'settings',
+					true
+				));
+
+				if (isset($settings['stretchImages']))
+				{
+					if ($settings['stretchImages'] === 'true')
+					{
+						$settings['imageBehaviour'] = 'stretch';
+					}
+					else
+					{
+						$settings['imageBehaviour'] = 'natural';
+					}
+
+					unset($settings['stretchImages']);
+				}
+				else
+				{
+					$settings['imageBehaviour'] = 'natural';
+				}
+
+				// Update post meta
+				update_post_meta(
+					$slideshow->ID,
+					'settings',
+					$settings
+				);
+			}
+		}
+
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-2-12-to-v2-2-16', 'updated');
 	}
 
 	/**
@@ -228,7 +300,8 @@ class SlideshowPluginInstaller
 		));
 
 		// Loop through slideshows
-		if (is_array($slideshows) && count($slideshows > 0))
+		if (is_array($slideshows) &&
+			count($slideshows) > 0)
 		{
 			foreach ($slideshows as $slideshow)
 			{
@@ -290,7 +363,7 @@ class SlideshowPluginInstaller
 
 		// Loop through slideshows
 		if (is_array($slideshows) &&
-			count($slideshows > 0))
+			count($slideshows) > 0)
 		{
 			foreach ($slideshows as $slideshow)
 			{
@@ -422,7 +495,8 @@ class SlideshowPluginInstaller
 		));
 
 		// Loop through slideshows
-		if (is_array($slideshows) && count($slideshows > 0))
+		if (is_array($slideshows) &&
+			count($slideshows) > 0)
 		{
 			foreach ($slideshows as $slideshow)
 			{

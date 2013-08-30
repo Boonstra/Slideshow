@@ -228,8 +228,7 @@
 				var maxImageWidth  = $slide.width() - imageAbsoluteOuterWidth;
 				var maxImageHeight = $slide.height() - imageAbsoluteOuterHeight;
 
-				// If stretch images is true, stretch to the slide's sizes.
-				if (this.settings['stretchImages'])
+				if (this.settings['imageBehaviour'] === 'stretch')
 				{
 					$image.css({
 						width : maxImageWidth,
@@ -267,35 +266,69 @@
 
 						if (imageDimension >= slideDimension) // Image has a wider dimension than the slide
 						{
-							// Remove auto centering
-							$image.css({
-								'margin': '0px',
-								'width' : maxImageWidth,
-								'height': Math.floor(maxImageWidth / imageDimension)
-							});
+							if (this.settings['imageBehaviour'] === 'natural')
+							{
+								// Remove auto centering
+								$image.css({
+									'margin': '0px',
+									'width' : maxImageWidth,
+									'height': Math.floor(maxImageWidth / imageDimension)
+								});
 
-							// Set width to slide's width, keep height in same dimension
-							$image.attr({
-								width : maxImageWidth,
-								height: Math.floor(maxImageWidth / imageDimension)
-							});
+								// Set width to slide's width, keep height in same dimension
+								$image.attr({
+									width : maxImageWidth,
+									height: Math.floor(maxImageWidth / imageDimension)
+								});
+							}
+							else if (this.settings['imageBehaviour'] === 'zoom')
+							{
+								$image.css({
+									'margin-top' : '0px',
+									'margin-left': -Math.floor(((maxImageHeight * imageDimension) - maxImageWidth) / 2),
+									'height'     : maxImageHeight,
+									'width'      : Math.floor(maxImageHeight * imageDimension)
+								});
+
+								$image.attr({
+									width : Math.floor(maxImageHeight * imageDimension),
+									height: maxImageHeight
+								});
+							}
 						}
 						else // Image has a slimmer dimension than the slide
 						{
-							// Center image
-							$image.css({
-								'margin-left' : 'auto',
-								'margin-right': 'auto',
-								'display'     : 'block',
-								'width'       : Math.floor(maxImageHeight * imageDimension),
-								'height'      : maxImageHeight
-							});
+							if (this.settings['imageBehaviour'] === 'natural')
+							{
+								// Center image
+								$image.css({
+									'margin-left' : 'auto',
+									'margin-right': 'auto',
+									'display'     : 'block',
+									'width'       : - Math.floor(maxImageHeight * imageDimension),
+									'height'      : maxImageHeight
+								});
 
-							// Set height to slide's height, keep width in same dimension
-							$image.attr({
-								width : Math.floor(maxImageHeight * imageDimension),
-								height: maxImageHeight
-							});
+								// Set height to slide's height, keep width in same dimension
+								$image.attr({
+									width : Math.floor(maxImageHeight * imageDimension),
+									height: maxImageHeight
+								});
+							}
+							else if (this.settings['imageBehaviour'] === 'zoom')
+							{
+								$image.css({
+									'margin-top' : -Math.floor(((maxImageWidth / imageDimension) - maxImageHeight) / 2),
+									'margin-left': '0px',
+									'width'      : maxImageWidth,
+									'height'     : Math.floor(maxImageWidth / imageDimension)
+								});
+
+								$image.attr({
+									'width'      : maxImageWidth,
+									'height'     : Math.floor(maxImageWidth / imageDimension)
+								});
+							}
 						}
 					},this));
 				}
