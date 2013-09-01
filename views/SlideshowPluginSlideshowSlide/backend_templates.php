@@ -89,7 +89,7 @@
 
 		<p>
 
-			<img width="80" height="60" src="" class="attachment attachment-80x60" alt="" title="" />
+			<img width="80" height="60" src="" class="attachment attachment-80x60" alt="" title="" style="float: none; margin: 0; padding: 0;" />
 
 		</p>
 
@@ -117,6 +117,13 @@
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
 			</select>
+
+		</p>
+
+		<p>
+
+			<i><?php _e('Alternative text', 'slideshow-plugin'); ?></i><br />
+			<input type="text" class="alternativeText" style="width: 100%;" />
 
 		</p>
 

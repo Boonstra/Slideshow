@@ -1,6 +1,6 @@
 <?php
 
-$title = $description = $url = $urlTarget = $postId = '';
+$title = $description = $url = $urlTarget = $alternativeText = $postId = '';
 
 if (isset($properties['title']))
 {
@@ -22,6 +22,11 @@ if (isset($properties['urlTarget']))
 	$urlTarget = htmlspecialchars($properties['urlTarget']);
 }
 
+if (isset($properties['alternativeText']))
+{
+	$alternativeText = htmlspecialchars($properties['alternativeText']);
+}
+
 if (isset($properties['postId']))
 {
 	$postId = $properties['postId'];
@@ -37,17 +42,20 @@ if (is_numeric($postId)):
 	$attachment = get_post($postId);
 	if (!empty($attachment)):
 
-		// If no title is set, get the alt from the original image
-		$alt = $title;
-
-		if (empty($alt))
+		// If no alternative text is set, get the alt from the original image
+		if (empty($alternativeText))
 		{
-			$alt = htmlspecialchars($attachment->post_title);
-		}
+			$alternativeText = $title;
 
-		if (empty($alt))
-		{
-			$alt = htmlspecialchars($attachment->post_content);
+			if (empty($alternativeText))
+			{
+				$alternativeText = htmlspecialchars($attachment->post_title);
+			}
+
+			if (empty($alternativeText))
+			{
+				$alternativeText = htmlspecialchars($attachment->post_content);
+			}
 		}
 
 		// Prepare image
@@ -86,7 +94,7 @@ if (is_numeric($postId)):
 
 			<div class="slideshow_slide slideshow_slide_image">
 				<a <?php echo $anchorTagAttributes; ?>>
-					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alt; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
+					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
 				</a>
 				<div class="slideshow_description slideshow_transparent">
 					<?php echo !empty($title) ? '<h2><a ' . $anchorTagAttributes . '>' . $title . '</a></h2>' : ''; ?>

@@ -221,8 +221,29 @@
 					return;
 				}
 
-				var imageAbsoluteOuterWidth  = $image.outerWidth() - $image.width();
-				var imageAbsoluteOuterHeight = $image.outerHeight() - $image.height();
+				var imageOuterWidth  = $image.outerWidth();
+				var imageOuterHeight = $image.outerHeight();
+
+				var imageAbsoluteOuterWidth,
+					imageAbsoluteOuterHeight;
+
+				if (!isNaN(parseInt(imageOuterWidth)))
+				{
+					imageAbsoluteOuterWidth = imageOuterWidth - $image.width();
+				}
+				else
+				{
+					imageAbsoluteOuterWidth = 0;
+				}
+
+				if (!isNaN(parseInt(imageOuterHeight)))
+				{
+					imageAbsoluteOuterHeight = imageOuterHeight - $image.height();
+				}
+				else
+				{
+					imageAbsoluteOuterHeight = 0;
+				}
 
 				// Calculate image width and height
 				var maxImageWidth  = $slide.width() - imageAbsoluteOuterWidth;

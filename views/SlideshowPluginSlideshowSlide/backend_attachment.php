@@ -6,7 +6,7 @@ $attachment = get_post($properties['postId']);
 if (isset($attachment)):
 
 	// Title and description
-	$title = $description = $url = $target = '';
+	$title = $description = $url = $target = $alternativeText = '';
 
 	if (isset($properties['title']))
 	{
@@ -22,9 +22,19 @@ if (isset($attachment)):
 	{
 		$url = $properties['url'];
 	}
+
 	if (isset($properties['urlTarget']))
 	{
 		$target = $properties['urlTarget'];
+	}
+
+	if (isset($properties['alternativeText']))
+	{
+		$alternativeText = $properties['alternativeText'];
+	}
+	else
+	{
+		$alternativeText = $title;
 	}
 
 	// Prepare image
@@ -99,6 +109,13 @@ if (isset($attachment)):
 					<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
 					<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
 				</select>
+
+			</p>
+
+			<p>
+
+				<i><?php _e('Alternative text', 'slideshow-plugin'); ?></i><br />
+				<input type="text" name="<?php echo $name; ?>[alternativeText]" value="<?php echo $alternativeText; ?>" style="width: 100%;" />
 
 			</p>
 

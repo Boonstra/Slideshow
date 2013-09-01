@@ -1,5 +1,6 @@
 <p style="text-align: center;" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 	<i><?php _e('Insert', 'slideshow-plugin'); ?>:</i><br/>
+
 	<?php echo SlideshowPluginSlideInserter::getImageSlideInsertButton(); ?>
 	<?php echo SlideshowPluginSlideInserter::getTextSlideInsertButton(); ?>
 	<?php echo SlideshowPluginSlideInserter::getVideoSlideInsertButton(); ?>

@@ -313,7 +313,10 @@ class SlideshowPluginSlideInserter
 			'slideshow_jquery_image_gallery_backend_script_editSlideshow',
 			array(
 				'data' => array(),
-				'localization' => array('confirm' => __('Are you sure you want to delete this slide?', 'slideshow-plugin'))
+				'localization' => array(
+					'confirm'       => __('Are you sure you want to delete this slide?', 'slideshow-plugin'),
+					'uploaderTitle' => __('Insert image slide', 'slideshow-plugin')
+				)
 			)
 		);
 

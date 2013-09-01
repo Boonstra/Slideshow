@@ -178,9 +178,10 @@ personal taste.
 == Changelog ==
 
 = 2.2.16 =
-*   
+*   Inserting images can now be done using the WordPress 3.5 uploader.
 *   Images can now fill up an entire slide without losing their dimensions, using the 'Zoom to fit' option.
 *   Fixed: Descriptions came up and stayed up on fly-over.
+*   Fixed: Image calculations failed in a few because of a 'jQuery.outerWidth()' bug.
 *   Fixed: Control panel wasn't correctly initialized when slideshow was set to automatically slide to the next slide.
 
 = 2.2.15 =

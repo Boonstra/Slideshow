@@ -73,6 +73,8 @@ class SlideshowPluginMain
 	 */
 	static function enqueueBackendScripts()
 	{
+		wp_enqueue_media();
+
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-backend-script',
 			self::getPluginUrl() . '/js/min/all.backend.min.js',

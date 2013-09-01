@@ -12,8 +12,89 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	{
 		if (slideshow_jquery_image_gallery_backend_script.editSlideshow.isCurrentPage)
 		{
+			self.activateUploader();
+
+			// TODO Remove old uploader when the new uploader has been tested well enough
 			self.activate();
 		}
+	};
+
+	/**
+	 * Activates the WordPress 3.5 uploader.
+	 */
+	self.activateUploader = function()
+	{
+		$('.upload_image_button').on('click', function(event)
+		{
+			event.preventDefault();
+
+			var oldPostID       = wp.media.model.settings.post.id,
+				temporaryPostID = -1,
+				uploaderTitle,
+				externalData;
+
+			// Reopen file frame if it has already been created
+			if (self.uploader)
+			{
+				// Set the post ID to a non-existing one, so image files won't be attached to anything
+				self.uploader.uploader.uploader.param('post_id', temporaryPostID);
+
+				self.uploader.open();
+
+				return;
+			}
+
+			wp.media.model.settings.post.id = temporaryPostID;
+
+			externalData = window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
+
+			uploaderTitle = '';
+
+			if (typeof externalData === 'object' &&
+				typeof externalData.localization === 'object' &&
+				externalData.localization.uploaderTitle !== undefined &&
+				externalData.localization.uploaderTitle.length > 0)
+			{
+				uploaderTitle = externalData.localization.uploaderTitle;
+			}
+
+			// Create the uploader
+			self.uploader = wp.media.frames.file_frame = wp.media({
+				title   : uploaderTitle,
+				multiple: true,
+				library :
+				{
+					type: 'image'
+				}
+			});
+
+			// Create image slide on select
+			self.uploader.on('select', function()
+			{
+				var attachments = self.uploader.state().get('selection').toJSON(),
+					attachment,
+					attachmentID;
+
+				//console.log(attachments);
+
+				for (attachmentID in attachments)
+				{
+					if (!attachments.hasOwnProperty(attachmentID))
+					{
+						continue;
+					}
+
+					attachment = attachments[attachmentID];
+
+					self.insertImageSlide(attachment.id, attachment.title, attachment.description, attachment.url, attachment.alt);
+				}
+
+				// Restore the old post ID
+				wp.media.model.settings.post.id = oldPostID;
+			});
+
+			self.uploader.open();
+		});
 	};
 
 	/**
@@ -202,7 +283,8 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 						$tr.attr('data-attachment-id'),
 						$tr.find('.title').text(),
 						$tr.find('.description').text(),
-						$tr.find('.image img').attr('src')
+						$tr.find('.image img').attr('src'),
+						$tr.find('.title').text()
 					);
 				});
 
@@ -237,8 +319,9 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	 * @param title
 	 * @param description
 	 * @param src
+	 * @param alternativeText
 	 */
-	self.insertImageSlide = function(id, title, description, src)
+	self.insertImageSlide = function(id, title, description, src, alternativeText)
 	{
 		// Find and clone the image slide template
 		var $imageSlide = $('.image-slide-template').find('li').clone();
@@ -246,9 +329,10 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		// Fill slide with data
 		$imageSlide.find('.attachment').attr('src', src);
 		$imageSlide.find('.attachment').attr('title', title);
-		$imageSlide.find('.attachment').attr('alt', title);
+		$imageSlide.find('.attachment').attr('alt', alternativeText);
 		$imageSlide.find('.title').attr('value', title);
 		$imageSlide.find('.description').html(description);
+		$imageSlide.find('.alternativeText').attr('value', alternativeText);
 		$imageSlide.find('.postId').attr('value', id);
 
 		// Set names to be saved to the database
@@ -256,6 +340,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		$imageSlide.find('.description').attr('name', 'slides[0][description]');
 		$imageSlide.find('.url').attr('name', 'slides[0][url]');
 		$imageSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
+		$imageSlide.find('.alternativeText').attr('name', 'slides[0][alternativeText]');
 		$imageSlide.find('.type').attr('name', 'slides[0][type]');
 		$imageSlide.find('.postId').attr('name', 'slides[0][postId]');
 
