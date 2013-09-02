@@ -36,23 +36,23 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Chinese (26% Translated by [Kevin Tell](http://www.ivygg.com/))
- - Czech (94% Translated by Edhel)
+ - Chinese (25% Translated by [Kevin Tell](http://www.ivygg.com/))
+ - Czech (90% Translated by Edhel)
  - Dutch (100%)
  - English (100%)
- - Finnish (95% Translated by A. Nonymous)
- - French (93% Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German (95% Translated by [Markus Amann](http://www.dema-itsupport.com/))
- - Hebrew (60% Translated by Eli Segev)
- - Italian (95% Translated by [Tecnikgeek](http://tecnikgeek.com/))
- - Japanese (95% Translated by [Michihide Hotta](http://net-newbie.com/))
- - Persian (95% Translated by [W3Design](http://w3design.ir/))
- - Polish (95% Translated by Wicher Wiater)
- - Portuguese (95% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian (95% Translated by Dmitry Fatakov)
- - Spanish (58% Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish (95% Translated by [Åke Isacsson](http://www.nojdkund.se/))
- - Turkish (95% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
+ - Finnish (91% Translated by A. Nonymous)
+ - French (89% Translated by [Romain Sandri](http://www.onidesign.fr/))
+ - German (91% Translated by [Markus Amann](http://www.dema-itsupport.com/))
+ - Hebrew (58% Translated by Eli Segev)
+ - Italian (91% Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Japanese (91% Translated by [Michihide Hotta](http://net-newbie.com/))
+ - Persian (91% Translated by [W3Design](http://w3design.ir/))
+ - Polish (91% Translated by Wicher Wiater)
+ - Portuguese (91% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
+ - Russian (91% Translated by Dmitry Fatakov)
+ - Spanish (56% Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish (91% Translated by [Åke Isacsson](http://www.nojdkund.se/))
+ - Turkish (91% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded
