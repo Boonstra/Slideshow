@@ -75,8 +75,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 					attachment,
 					attachmentID;
 
-				//console.log(attachments);
-
 				for (attachmentID in attachments)
 				{
 					if (!attachments.hasOwnProperty(attachmentID))

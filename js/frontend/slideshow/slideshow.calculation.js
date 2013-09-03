@@ -302,7 +302,7 @@
 									height: Math.floor(maxImageWidth / imageDimension)
 								});
 							}
-							else if (this.settings['imageBehaviour'] === 'zoom')
+							else if (this.settings['imageBehaviour'] === 'crop')
 							{
 								$image.css({
 									'margin-top' : '0px',
@@ -326,7 +326,7 @@
 									'margin-left' : 'auto',
 									'margin-right': 'auto',
 									'display'     : 'block',
-									'width'       : - Math.floor(maxImageHeight * imageDimension),
+									'width'       : Math.floor(maxImageHeight * imageDimension),
 									'height'      : maxImageHeight
 								});
 
@@ -336,7 +336,7 @@
 									height: maxImageHeight
 								});
 							}
-							else if (this.settings['imageBehaviour'] === 'zoom')
+							else if (this.settings['imageBehaviour'] === 'crop')
 							{
 								$image.css({
 									'margin-top' : -Math.floor(((maxImageWidth / imageDimension) - maxImageHeight) / 2),

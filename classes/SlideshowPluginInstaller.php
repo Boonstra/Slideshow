@@ -99,8 +99,73 @@ class SlideshowPluginInstaller
 			self::updateV2_2_12_to_V_2_2_16();
 		}
 
+		// Update to version 2.2.17
+		if (self::firstVersionGreaterThanSecond('2.2.17', $currentVersion) ||
+			$currentVersion == null)
+		{
+			self::updateV2_2_16_to_V_2_2_17();
+		}
+
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.2.16 to 2.2.17
+	 *
+	 * The 'Zoom to fit' option has been renamed 'Crop to fit'.
+	 *
+	 * @since 2.2.16
+	 */
+	private static function updateV2_2_16_to_V_2_2_17()
+	{
+		// Check if this has already been done
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-16-to-v2-2-17') !== false)
+		{
+			return;
+		}
+
+		// Get slideshows
+		$slideshows = get_posts(array(
+			'numberposts' => -1,
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
+		));
+
+		// Loop through slideshows
+		if (is_array($slideshows) &&
+			count($slideshows) > 0)
+		{
+			foreach ($slideshows as $slideshow)
+			{
+				// Get settings
+				$settings = maybe_unserialize(get_post_meta(
+					$slideshow->ID,
+					'settings',
+					true
+				));
+
+				if (isset($settings['imageBehaviour']) &&
+					$settings['imageBehaviour'] === 'zoom')
+				{
+					$settings['imageBehaviour'] = 'crop';
+				}
+
+				if (isset($settings['stretchImages']))
+				{
+					unset($settings['stretchImages']);
+				}
+
+				// Update post meta
+				update_post_meta(
+					$slideshow->ID,
+					'settings',
+					$settings
+				);
+			}
+		}
+
+		update_option('slideshow-jquery-image-gallery-updated-from-v2-2-16-to-v2-2-17', 'updated');
 	}
 
 	/**

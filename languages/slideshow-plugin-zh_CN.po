@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-03 00:32+0100\n"
-"PO-Revision-Date: 2013-09-03 00:33+0100\n"
+"POT-Creation-Date: 2013-09-03 09:51+0100\n"
+"PO-Revision-Date: 2013-09-03 09:51+0100\n"
 "Last-Translator: Stefan Boonstra <stefanboonstra@hotmail.com>\n"
 "Language-Team: Kevin Tell\n"
 "Language: zh_CN\n"
@@ -398,7 +398,7 @@ msgid "Natural and centered"
 msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
-msgid "Zoom to fit"
+msgid "Crop to fit"
 msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555

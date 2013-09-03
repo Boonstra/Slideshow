@@ -19,6 +19,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.mo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.backend.min.js" afterPath="$PROJECT_DIR$/js/min/all.backend.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.frontend.min.js" afterPath="$PROJECT_DIR$/js/min/all.frontend.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" />
@@ -37,6 +41,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
     </list>
     <list id="5a8cea98-94ff-4dd1-b9fe-42c6f3fde1f7" name="Failed commit: Default" comment="Re-committing 2.2.12." />
     <ignored path="slideshow-jquery-image-gallery.iws" />
@@ -44,7 +49,7 @@
     <file path="/a.dummy" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1378158634831" ignored="false" />
     <file path="/SlideshowPluginSlideInserter.php" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377071346069" ignored="false" />
     <file path="/SlideshowPluginPostType.php" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377071183906" ignored="false" />
-    <file path="/Dummy.txt" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1378159247905" ignored="false" />
+    <file path="/Dummy.txt" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1378196009417" ignored="false" />
     <file path="/readme.txt" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377472308229" ignored="false" />
     <file path="$PROJECT_DIR$/js/frontend/slideshow/slideshow.calculation.js" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377471220030" ignored="false" />
     <file path="/slideshow.calculation.js" changelist="b5af96a6-fe65-406b-afe1-c858063cad42" time="1377446665422" ignored="false" />
@@ -76,7 +81,7 @@
       <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="18" selection-start="290" selection-end="290" vertical-scroll-proportion="0.21834862">
+            <state line="172" column="0" selection-start="8963" selection-end="8963" vertical-scroll-proportion="0.48850575">
               <folding />
             </state>
           </provider>
@@ -124,8 +129,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -726,7 +731,11 @@
       <created>1378159292116</created>
       <updated>1378159292116</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Updated language files.">
+      <created>1378162071106</created>
+      <updated>1378162071106</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -750,7 +759,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -758,7 +767,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2831661" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25667024" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -816,7 +825,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inserting images can now be done using the WordPress 3.5 uploader.&#10;Images can now fill up an entire slide without losing their dimensions, using the 'Zoom to fit' option.&#10;Fixed: Descriptions came up and stayed up on fly-over.&#10;Fixed: Image calculations failed in a few because of a 'jQuery.outerWidth()' bug.&#10;Fixed: Control panel wasn't correctly initialized when slideshow was set to automatically slide to the next slide." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -830,8 +839,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Fixed: Theme's that set image heights affected the slideshow's image dimensions.&#10;Fixed: Compatibility with the ALO EasyMail Newsletter plugin.&#10;Fixed: Image's 'alt' values didn't show when no image title was set." />
-    <MESSAGE value="Fixed: Slideshow control buttons were placed behind the slideshow.&#10;Fixed: Image slides doubly inserted after having clicked on 'Load more results'&#10;Included width and height attributes on all image elements." />
     <MESSAGE value="Fixed: Images that have a, to WordPress, unknown size weren't able to show on all websites.&#10;Fixed: Images in the image inserter popup were being skipped over when loading more results because of a faulty query.&#10;All stylesheets are now loaded at the page's bottom to validate in HTML checkers and be cached by the visitor's browser.&#10;Improved the handling of description boxes. Description boxes will no longer be 'jumpy' nor will they pop up on fly-over.&#10;Errors in jQuery's 'ready' method no longer stop the slideshow from showing. However, JavaScript errors should always be resolved.&#10;Text slides can now have transparent backgrounds by leaving the 'Background color' field empty." />
     <MESSAGE value="Fixed: Descriptions didn't show when 'Hide descriptions' was set to 'No'.&#10;Fixed: Title was given wrong size by CSS." />
     <MESSAGE value="Fixed: Auto margin combined with a fixed width will no longer break slideshow's responsiveness.&#10;Updated Russian translation, thanks to Dmitry Fatakov." />
@@ -855,6 +862,8 @@
     <MESSAGE value="Fixed: Slideshow didn't show because of a JavaScript error when calculating an unstretched image's dimension." />
     <MESSAGE value="The image dimension calculation algorithm now uses a more stable and more efficient way to determine the size of images.&#10;Added slideshow API.&#10;Fixed: WP Color Picker (Iris) adds a hashtag to color codes. As slideshow does this as well, text slides didn't display color properly." />
     <MESSAGE value="Inserting images can now be done using the WordPress 3.5 uploader.&#10;Images can now fill up an entire slide without losing their dimensions, using the 'Zoom to fit' option.&#10;Fixed: Descriptions came up and stayed up on fly-over.&#10;Fixed: Image calculations failed in a few because of a 'jQuery.outerWidth()' bug.&#10;Fixed: Control panel wasn't correctly initialized when slideshow was set to automatically slide to the next slide." />
+    <MESSAGE value="Updated language files." />
+    <MESSAGE value="Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -939,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="290" selection-end="290" vertical-scroll-proportion="0.21834862">
+        <state line="172" column="0" selection-start="8963" selection-end="8963" vertical-scroll-proportion="0.48850575">
           <folding />
         </state>
       </provider>

@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 2.2.16
+Stable tag: 2.2.17
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -176,6 +176,9 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.17 =
+*   Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'
 
 = 2.2.16 =
 *   Inserting images can now be done using the WordPress 3.5 uploader.
