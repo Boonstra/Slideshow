@@ -44,7 +44,7 @@ class SlideshowPluginShortcode
 	/**
 	 * Function slideshowDeploy adds a bookmark to where ever a shortcode
 	 * is found and adds the postId to an array, it then is loaded after
-	 * Wordpress has done its HTML checks.
+	 * WordPress has done its HTML checks.
 	 *
 	 * @since 1.2.0
 	 * @param mixed $attributes
@@ -62,11 +62,11 @@ class SlideshowPluginShortcode
 		$output   = '';
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($postId);
 
-		if ($settings['avoidFilter'] == 'true')
+		if ($settings['avoidFilter'] == 'true' &&
+			strlen(current_filter()) > 0)
 		{
-			// Filter content after all Wordpress HTML parsers are done, then replace bookmarks with raw HTML
-			add_filter('the_content', array(__CLASS__, 'insertSlideshow'), 999);
-			add_filter('the_excerpt', array(__CLASS__, 'insertSlideshow'), 999);
+			// Avoid current filter, call function to replace the bookmark with the slideshow
+			add_filter(current_filter(), array(__CLASS__, 'insertSlideshow'), 999);
 
 			// Save post id
 			self::$postIds[] = $postId;

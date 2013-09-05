@@ -36,23 +36,24 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Chinese (25% Translated by [Kevin Tell](http://www.ivygg.com/))
- - Czech (90% Translated by Edhel)
- - Dutch (100%)
- - English (100%)
- - Finnish (91% Translated by A. Nonymous)
- - French (89% Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German (91% Translated by [Markus Amann](http://www.dema-itsupport.com/))
- - Hebrew (58% Translated by Eli Segev)
- - Italian (91% Translated by [Tecnikgeek](http://tecnikgeek.com/))
- - Japanese (91% Translated by [Michihide Hotta](http://net-newbie.com/))
- - Persian (91% Translated by [W3Design](http://w3design.ir/))
- - Polish (91% Translated by Wicher Wiater)
- - Portuguese (91% Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian (91% Translated by Dmitry Fatakov)
- - Spanish (56% Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish (91% Translated by [Åke Isacsson](http://www.nojdkund.se/))
- - Turkish (91% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
+ - Chinese    (25%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/))
+ - Czech      (90%  - cs_CZ - Translated by Edhel)
+ - Dutch      (100% - nl_NL)
+ - English    (100%)
+ - Finnish    (91%  - fi    - Translated by A. Nonymous)
+ - French     (89%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
+ - German     (91%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/))
+ - Hebrew     (58%  - he_IL - Translated by Eli Segev)
+ - Italian    (91%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Japanese   (91%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
+ - Persian    (91%  - fa_IR - Translated by [W3Design](http://w3design.ir/))
+ - Polish     (91%  - pl_PL - Translated by Wicher Wiater)
+ - Portuguese (83%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
+ - Portuguese (91%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
+ - Russian    (91%  - ru_RU - Translated by Dmitry Fatakov)
+ - Spanish    (56%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish    (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/))
+ - Turkish    (91%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded
@@ -176,6 +177,10 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.18 =
+*   Improved filter avoiding mechanism.
+*   Added Brazilian Portuguese translation by Piero Luiz.
 
 = 2.2.17 =
 *   Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'

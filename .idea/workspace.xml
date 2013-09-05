@@ -1,48 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fi.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fi.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ja.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ja.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-original.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-original.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginInstaller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowSettingsHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.backend.min.js" afterPath="$PROJECT_DIR$/js/min/all.backend.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.frontend.min.js" afterPath="$PROJECT_DIR$/js/min/all.frontend.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fi.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fi.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ja.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ja.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-original.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-original.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-    </list>
+    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="" />
     <list id="5a8cea98-94ff-4dd1-b9fe-42c6f3fde1f7" name="Failed commit: Default" comment="Re-committing 2.2.12." />
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,7 +40,7 @@
       <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="0" selection-start="8963" selection-end="8963" vertical-scroll-proportion="0.48850575">
+            <state line="177" column="15" selection-start="9118" selection-end="9118" vertical-scroll-proportion="0.5862069">
               <folding />
             </state>
           </provider>
@@ -735,7 +694,11 @@
       <created>1378162071106</created>
       <updated>1378162071106</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'">
+      <created>1378196101116</created>
+      <updated>1378196101116</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -948,7 +911,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="8963" selection-end="8963" vertical-scroll-proportion="0.48850575">
+        <state line="177" column="15" selection-start="9118" selection-end="9118" vertical-scroll-proportion="0.5862069">
           <folding />
         </state>
       </provider>
