@@ -77,7 +77,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 
 		if (setVisible)
 		{
-			$element.show().css('background-color', '#c0dd52')
+			$element.stop(true, true).show().css('background-color', '#c0dd52');
 
 			setTimeout(
 				function()
@@ -89,7 +89,18 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 		}
 		else
 		{
-			$element.stop(true, true).hide();
+			$element.stop(true, true).css('background-color', '#d44f6e');
+
+			setTimeout(
+				function()
+				{
+					$element.stop(true, true).hide(1500, function()
+					{
+						$element.css('background-color', 'transparent');
+					});
+				},
+				500
+			);
 		}
 	};
 

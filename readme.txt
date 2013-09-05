@@ -180,6 +180,7 @@ personal taste.
 
 = 2.2.18 =
 *   Improved filter avoiding mechanism.
+*   Disappearing settings now have a more apparent animation.
 *   Added Brazilian Portuguese translation by Piero Luiz.
 
 = 2.2.17 =
