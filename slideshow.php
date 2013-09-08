@@ -67,6 +67,9 @@ class SlideshowPluginMain
 	/**
 	 * TODO Move temporary function
 	 *
+	 * TODO Make sure this doesn't conflict with any other plugin, as there's currently an issue with the Gravity Forms plugin:
+	 * TODO http://wordpress.org/support/topic/this-plugin-breaks-gravity-forms-edit-fields
+	 *
 	 * Includes backend script
 	 *
 	 * @since 2.2.12

@@ -285,7 +285,7 @@
 						slideDimension = $slide.width() / $slide.height();
 						imageDimension = (naturalWidth + imageAbsoluteOuterWidth) / (naturalHeight + imageAbsoluteOuterHeight);
 
-						if (imageDimension >= slideDimension) // Image has a wider dimension than the slide
+						if (imageDimension >= slideDimension) // Image dimension is wider than or equal to the dimension of the slide
 						{
 							if (this.settings['imageBehaviour'] === 'natural')
 							{
@@ -321,8 +321,6 @@
 						{
 							if (this.settings['imageBehaviour'] === 'natural')
 							{
-                                //if (viewID === 1) console.log('');
-
 								// Center image
 								$image.css({
 									'margin-left' : 'auto',
