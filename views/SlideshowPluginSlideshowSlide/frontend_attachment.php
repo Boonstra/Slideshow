@@ -1,6 +1,6 @@
 <?php
 
-$title = $description = $url = $urlTarget = $alternativeText = $postId = '';
+$title = $description = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
 
 if (isset($properties['title']))
 {
@@ -27,6 +27,11 @@ if (isset($properties['alternativeText']))
 	$alternativeText = htmlspecialchars($properties['alternativeText']);
 }
 
+if (isset($properties['noFollow']))
+{
+    $noFollow = ' rel="nofollow" ';
+}
+
 if (isset($properties['postId']))
 {
 	$postId = $properties['postId'];
@@ -36,7 +41,7 @@ if (isset($properties['postId']))
 if (is_numeric($postId)):
 
 	// Anchor tag is used twice
-	$anchorTagAttributes = (!empty($url) ? ' href="' . $url . '" ' : '') . (!empty($urlTarget) ? ' target="' . $urlTarget . '" ' : '');
+	$anchorTagAttributes = (!empty($url) ? ' href="' . $url . '" ' : '') . (!empty($urlTarget) ? ' target="' . $urlTarget . '" ' : '') . $noFollow;
 
 	// Get post from post id. Post should be able to load
 	$attachment = get_post($postId);

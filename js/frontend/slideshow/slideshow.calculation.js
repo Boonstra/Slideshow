@@ -321,6 +321,8 @@
 						{
 							if (this.settings['imageBehaviour'] === 'natural')
 							{
+                                //if (viewID === 1) console.log('');
+
 								// Center image
 								$image.css({
 									'margin-left' : 'auto',

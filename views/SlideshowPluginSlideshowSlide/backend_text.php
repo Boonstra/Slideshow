@@ -2,6 +2,8 @@
 
 $title = $description = $textColor = $color = $url = $target = '';
 
+$noFollow = false;
+
 if (isset($properties['title']))
 {
 	$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
@@ -30,6 +32,11 @@ if (isset($properties['url']))
 if (isset($properties['urlTarget']))
 {
 	$target = $properties['urlTarget'];
+}
+
+if (isset($properties['noFollow']))
+{
+    $noFollow = true;
 }
 
 ?>
@@ -68,7 +75,10 @@ if (isset($properties['urlTarget']))
 		<select name="<?php echo $name; ?>[urlTarget]">
 			<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
 			<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
-		</select>
+		</select><br />
+
+        <input type="checkbox" name="<?php echo $name; ?>[noFollow]" value="" <?php checked($noFollow); ?> />
+        <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
 
 	</p>
 

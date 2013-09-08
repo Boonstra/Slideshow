@@ -1,6 +1,6 @@
 <?php
 
-$title = $description = $textColor = $color = $url = $urlTarget = '';
+$title = $description = $textColor = $color = $url = $urlTarget = $noFollow = '';
 
 if (isset($properties['title']))
 {
@@ -46,7 +46,12 @@ if (isset($properties['urlTarget']))
 	$urlTarget = htmlspecialchars($properties['urlTarget']);
 }
 
-$anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!empty($urlTarget) ? 'target="' . $urlTarget . '"' : '');
+if (isset($properties['noFollow']))
+{
+    $noFollow = ' rel="nofollow" ';
+}
+
+$anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!empty($urlTarget) ? 'target="' . $urlTarget . '"' : '') . $noFollow;
 
 ?>
 

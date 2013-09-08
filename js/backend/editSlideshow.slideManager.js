@@ -339,6 +339,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		$imageSlide.find('.url').attr('name', 'slides[0][url]');
 		$imageSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
 		$imageSlide.find('.alternativeText').attr('name', 'slides[0][alternativeText]');
+        $imageSlide.find('.noFollow').attr('name', 'slides[0][noFollow]');
 		$imageSlide.find('.type').attr('name', 'slides[0][type]');
 		$imageSlide.find('.postId').attr('name', 'slides[0][postId]');
 
@@ -370,6 +371,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		$textSlide.find('.color').attr('name', 'slides[0][color]');
 		$textSlide.find('.url').attr('name', 'slides[0][url]');
 		$textSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
+        $textSlide.find('.noFollow').attr('name', 'slides[0][noFollow]');
 		$textSlide.find('.type').attr('name', 'slides[0][type]');
 
 		// Register delete link

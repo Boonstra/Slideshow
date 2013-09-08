@@ -32,9 +32,12 @@
 			<select class="urlTarget">
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
-			</select>
+			</select><br />
 
-		</p>
+            <input type="checkbox" class="noFollow" />
+            <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
+
+        </p>
 
 		<input type="hidden" class="type" value="text" />
 
@@ -116,9 +119,12 @@
 			<select class="urlTarget">
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
-			</select>
+			</select><br />
 
-		</p>
+            <input type="checkbox" class="noFollow" />
+            <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
+
+        </p>
 
 		<p>
 
