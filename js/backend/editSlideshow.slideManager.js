@@ -3,8 +3,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	var $    = jQuery,
 		self = { };
 
-	self.isCurrentPage = false;
-
 	/**
 	 *
 	 */
@@ -12,9 +10,10 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	{
 		if (slideshow_jquery_image_gallery_backend_script.editSlideshow.isCurrentPage)
 		{
+			// New 3.5 uploader
 			self.activateUploader();
 
-			// TODO Remove old uploader when the new uploader has been tested well enough
+			// Old pre-3.5 uploader
 			self.activate();
 		}
 	};
@@ -24,7 +23,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	 */
 	self.activateUploader = function()
 	{
-		$('.upload_image_button').on('click', function(event)
+		$('.slideshow-insert-image-slide').on('click', function(event)
 		{
 			event.preventDefault();
 

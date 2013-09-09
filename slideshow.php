@@ -3,7 +3,7 @@
  Plugin Name: Slideshow
  Plugin URI: http://wordpress.org/extend/plugins/slideshow-jquery-image-gallery/
  Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
- Version: 2.2.17
+ Version: 2.2.18
  Requires at least: 3.3
  Author: StefanBoonstra
  Author URI: http://stefanboonstra.com/
@@ -21,7 +21,7 @@
 class SlideshowPluginMain
 {
 	/** @var string $version */
-	static $version = '2.2.17';
+	static $version = '2.2.18';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -60,23 +60,33 @@ class SlideshowPluginMain
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
 
-		// Include backend script TODO Move temporary statement
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScripts'), 1);
+		// Include backend scripts and styles
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScripts'));
 	}
 
 	/**
-	 * TODO Move temporary function
+	 * Includes backend script.
 	 *
-	 * TODO Make sure this doesn't conflict with any other plugin, as there's currently an issue with the Gravity Forms plugin:
-	 * TODO http://wordpress.org/support/topic/this-plugin-breaks-gravity-forms-edit-fields
-	 *
-	 * Includes backend script
+	 * Should always be called on the admin_enqueue_scrips hook.
 	 *
 	 * @since 2.2.12
 	 */
 	static function enqueueBackendScripts()
 	{
-		wp_enqueue_media();
+		// Function get_current_screen() should be defined, as this method is expected to fire at 'admin_enqueue_scripts'
+		if (!function_exists('get_current_screen'))
+		{
+			return;
+		}
+
+		$currentScreen = get_current_screen();
+
+		// Enqueue 3.5 uploader
+		if ($currentScreen->post_type === 'slideshow' &&
+			function_exists('wp_enqueue_media'))
+		{
+			wp_enqueue_media();
+		}
 
 		wp_enqueue_script(
 			'slideshow-jquery-image-gallery-backend-script',

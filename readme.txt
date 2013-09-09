@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 2.2.17
+Stable tag: 2.2.18
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -179,6 +179,7 @@ personal taste.
 == Changelog ==
 
 = 2.2.18 =
+*	Added option to select whether or not search engines should follow a slide's link.
 *   Improved filter avoiding mechanism.
 *   Disappearing settings now have a more apparent animation.
 *   Added Brazilian Portuguese translation by Piero Luiz.
