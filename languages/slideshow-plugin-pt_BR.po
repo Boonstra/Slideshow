@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow v2.2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-04 15:10+0100\n"
-"PO-Revision-Date: 2013-09-04 15:14+0100\n"
+"POT-Creation-Date: 2013-09-09 23:54+0100\n"
+"PO-Revision-Date: 2013-09-09 23:55+0100\n"
 "Last-Translator: admin <caixat@newer7.com.br>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -61,7 +61,7 @@ msgstr "Sem título"
 # @ slideshow-plugin
 #: classes/SlideshowPluginInstaller.php:711
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:472
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:67
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:70
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:37
 msgid "Yes"
 msgstr "Sim"
@@ -69,7 +69,7 @@ msgstr "Sim"
 # @ slideshow-plugin
 #: classes/SlideshowPluginInstaller.php:712
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:473
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:68
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:71
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:38
 msgid "No"
 msgstr "Não"
@@ -538,7 +538,7 @@ msgstr "Editar este estilo"
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:91
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:170
 #: views/SlideshowPluginPostType/slides.php:138
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:82
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:88
 msgid "Edit"
 msgstr "Editar"
 
@@ -572,10 +572,10 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:144
 #: views/SlideshowPluginPostType/slides.php:196
 #: views/SlideshowPluginPostType/slides.php:264
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:90
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:96
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:12
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:98
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:47
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:101
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:54
 #: views/SlideshowPluginWidget/form.php:2
 msgid "Title"
 msgstr "Título"
@@ -705,9 +705,9 @@ msgstr "Padrão"
 # @ slideshow-plugin
 #: views/SlideshowPluginPostType/slides.php:54
 #: views/SlideshowPluginPostType/slides.php:191
-#: views/SlideshowPluginSlideInserter/insert-text-button.php:1
+#: views/SlideshowPluginSlideInserter/insert-text-button.php:2
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:6
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:41
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:48
 msgid "Text slide"
 msgstr "Slide de texto"
 
@@ -716,10 +716,10 @@ msgstr "Slide de texto"
 #: views/SlideshowPluginPostType/slides.php:150
 #: views/SlideshowPluginPostType/slides.php:198
 #: views/SlideshowPluginPostType/slides.php:270
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:97
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:103
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:15
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:105
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:50
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:108
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:57
 msgid "Description"
 msgstr "Descrição"
 
@@ -727,7 +727,7 @@ msgstr "Descrição"
 #: views/SlideshowPluginPostType/slides.php:63
 #: views/SlideshowPluginPostType/slides.php:200
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:21
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:56
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:63
 msgid "Background color"
 msgstr "Cor de fundo"
 
@@ -736,10 +736,10 @@ msgstr "Cor de fundo"
 #: views/SlideshowPluginPostType/slides.php:155
 #: views/SlideshowPluginPostType/slides.php:205
 #: views/SlideshowPluginPostType/slides.php:275
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:104
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:110
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:28
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:112
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:64
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:115
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:71
 msgid "URL"
 msgstr ""
 
@@ -748,10 +748,10 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:157
 #: views/SlideshowPluginPostType/slides.php:207
 #: views/SlideshowPluginPostType/slides.php:277
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:107
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:113
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:31
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:115
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:67
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:118
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:74
 msgid "Open URL in"
 msgstr "Abrir URL em"
 
@@ -760,10 +760,10 @@ msgstr "Abrir URL em"
 #: views/SlideshowPluginPostType/slides.php:159
 #: views/SlideshowPluginPostType/slides.php:209
 #: views/SlideshowPluginPostType/slides.php:279
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:109
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:115
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:33
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:117
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:69
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:120
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:76
 msgid "Same window"
 msgstr "Mesma janela"
 
@@ -772,18 +772,18 @@ msgstr "Mesma janela"
 #: views/SlideshowPluginPostType/slides.php:160
 #: views/SlideshowPluginPostType/slides.php:210
 #: views/SlideshowPluginPostType/slides.php:280
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:110
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:116
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:34
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:118
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:70
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:121
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:77
 msgid "New window"
 msgstr "Nova janela"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginPostType/slides.php:90
 #: views/SlideshowPluginPostType/slides.php:230
-#: views/SlideshowPluginSlideInserter/insert-video-button.php:1
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:53
+#: views/SlideshowPluginSlideInserter/insert-video-button.php:2
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:56
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:23
 msgid "Video slide"
 msgstr "Slide de vídeo"
@@ -791,7 +791,7 @@ msgstr "Slide de vídeo"
 # @ slideshow-plugin
 #: views/SlideshowPluginPostType/slides.php:95
 #: views/SlideshowPluginPostType/slides.php:235
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:59
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:62
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:29
 msgid "Youtube Video ID"
 msgstr "ID do Vídeo no Youtube"
@@ -799,10 +799,10 @@ msgstr "ID do Vídeo no Youtube"
 # @ slideshow-plugin
 #: views/SlideshowPluginPostType/slides.php:133
 #: views/SlideshowPluginPostType/slides.php:255
-#: views/SlideshowPluginSlideInserter/insert-image-button.php:1
-#: views/SlideshowPluginSlideInserter/insert-image-button.php:3
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:76
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:86
+#: views/SlideshowPluginSlideInserter/insert-image-button.php:2
+#: views/SlideshowPluginSlideInserter/insert-image-button.php:4
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:82
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:89
 msgid "Image slide"
 msgstr "Slide de imagem"
 
@@ -819,11 +819,11 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:218
 #: views/SlideshowPluginPostType/slides.php:243
 #: views/SlideshowPluginPostType/slides.php:289
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:126
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:42
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:75
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:134
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:78
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:135
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:45
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:78
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:140
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:88
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:45
 msgid "Delete slide"
 msgstr "Excluir slide"
@@ -911,31 +911,33 @@ msgstr "Pesquisar"
 msgid "Search images by title or ID"
 msgstr "Procurar imagens por título ou ID"
 
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:117
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:120
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:38
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:125
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:81
+msgid "Don't let search engines follow link"
+msgstr ""
+
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:126
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:131
 msgid "Alternative text"
 msgstr ""
 
 # @ slideshow-plugin
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:18
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:53
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:60
 msgid "Text color"
 msgstr "Cor do texto"
 
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:66
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:36
 msgid "Show related videos"
 msgstr ""
 
 # @ slideshow-plugin
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:58
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:65
 msgid "(Leave empty for a transparent background)"
 msgstr "(Deixe em branco para um fundo transparente)"
-
-# @ slideshow-plugin
-#: views/SlideshowPluginUpload/upload-button.php:1
-msgid "Upload/Manage Images"
-msgstr "Carregar/Gerenciar Imagens"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginWidget/form.php:9
