@@ -182,6 +182,7 @@ personal taste.
 *	Added option to select whether or not search engines should follow a slide's link.
 *   Improved filter avoiding mechanism.
 *   Disappearing settings now have a more apparent animation.
+*	Fixed: First slide of a slideshow wouldn't show when the slideshow's content had no size on page load.
 *   Added Brazilian Portuguese translation by Piero Luiz.
 
 = 2.2.17 =

@@ -17,17 +17,10 @@
 		if (!this.$container.is(':visible'))
 		{
 			// Poll as long as the slideshow is invisible. When visible recalculate and cancel polling
-			this.invisibilityTimer = setInterval(
+			setTimeout(
 				$.proxy(function()
 				{
-					if (this.$container.is(':visible'))
-					{
-						this.recalculate(recalculateViews);
-
-						clearInterval(this.invisibilityTimer);
-
-						this.invisibilityTimer = false;
-					}
+					this.recalculate(recalculateViews);
 				}, this),
 				500
 			);
@@ -141,10 +134,25 @@
 	 */
 	self.Slideshow.prototype.recalculateView = function(viewID, forceCalculation)
 	{
+		// Don't calculate the view when the $content element isn't at a displayable size
+		if (this.$content.width() <= 0 ||
+			this.$content.height() <= 0)
+		{
+			setTimeout(
+				$.proxy(function()
+				{
+					this.recalculateView(viewID, forceCalculation);
+				}, this),
+				500
+			);
+
+			return;
+		}
+
 		// Create jQuery object from view
 		var $view = $(this.$views[viewID]);
 
-		// Return when the slideshow's width hasn't changed
+		// Return when the slideshow's width or height haven't changed
 		if ((typeof forceCalculation !== 'boolean' || !forceCalculation) &&
 			this.$content.width() == $view.outerWidth(true))
 		{
