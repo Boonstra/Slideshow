@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-09 23:58+0100\n"
-"PO-Revision-Date: 2013-09-09 23:58+0100\n"
+"POT-Creation-Date: 2013-09-12 00:27+0100\n"
+"PO-Revision-Date: 2013-09-12 00:27+0100\n"
 "Last-Translator: Murat Demir <demir.murat1@gmail.com>\n"
 "Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
 "Language: fr_FR\n"
@@ -270,7 +270,7 @@ msgstr "Aucun diaporama choisi."
 
 #: classes/SlideshowPluginSlideInserter.php:178
 msgid "More results loaded"
-msgstr ""
+msgstr "Plus de résultats chargés"
 
 #: classes/SlideshowPluginSlideInserter.php:233
 msgid "Load more results"
@@ -286,7 +286,7 @@ msgstr "Etes-vous sur de supprimer cette diapo ? "
 
 #: classes/SlideshowPluginSlideInserter.php:318
 msgid "Insert image slide"
-msgstr ""
+msgstr "Insérer une diapositive image"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:523
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
@@ -308,6 +308,8 @@ msgid ""
 "Proportional relationship%s between slideshow's width and height (width:"
 "height)"
 msgstr ""
+"Relation proportionnel%s entre la largeur du diaporama et la hauteur "
+"(largeur/hauteur)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:525
 msgid "Slideshow's height"
@@ -315,7 +317,7 @@ msgstr "Hauteur du diaporama"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:526
 msgid "Image behaviour"
-msgstr ""
+msgstr "Comportement de l’image"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:527
 msgid "Shrink slideshow's height when width shrinks"
@@ -363,11 +365,13 @@ msgstr "Masquer les commandes de contrôle, les afficher au survol de la souris"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:540
 msgid "Wait until the next slide has loaded before showing it"
-msgstr ""
+msgstr "Attendre le chargement de la diapositive suivante avant de l’afficher"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:541
 msgid "Show a loading icon until the first slide appears"
 msgstr ""
+"Afficher une icône de chargement jusqu’à ce que la première diapositive "
+"apparaisse"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:542
 msgid "Randomize slides"
@@ -404,15 +408,15 @@ msgstr "Animation aléatoire"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Natural and centered"
-msgstr ""
+msgstr "Naturel et centré"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Crop to fit"
-msgstr ""
+msgstr "Rogner pour s’adapter"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Stretch to fit"
-msgstr ""
+msgstr "Étiré pour s’adapter"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:569
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:570
@@ -558,15 +562,15 @@ msgstr "Réglages"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:69
 msgid "Stylesheet location"
-msgstr ""
+msgstr "Chemin de la feuille de style"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:72
 msgid "top"
-msgstr ""
+msgstr "haut"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:73
 msgid "bottom"
-msgstr ""
+msgstr "bas"
 
 #: views/SlideshowPluginGeneralSettings/general-settings.php:16
 msgid "Custom Styles"
@@ -793,7 +797,7 @@ msgstr ""
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:126
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:131
 msgid "Alternative text"
-msgstr ""
+msgstr "texte alternatif"
 
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:18
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:60
@@ -803,11 +807,11 @@ msgstr "Couleur du texte"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:36
 msgid "Show related videos"
-msgstr ""
+msgstr "Montrer les vidéos similaires"
 
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:65
 msgid "(Leave empty for a transparent background)"
-msgstr ""
+msgstr "(laisser un espace pour un fond transparent)"
 
 #: views/SlideshowPluginWidget/form.php:9
 msgid "Random Slideshow"

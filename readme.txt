@@ -184,6 +184,7 @@ personal taste.
 *   Disappearing settings now have a more apparent animation.
 *	Fixed: First slide of a slideshow wouldn't show when the slideshow's content had no size on page load.
 *   Added Brazilian Portuguese translation by Piero Luiz.
+*   Updated French translation by Romain Sandri.
 
 = 2.2.17 =
 *   Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'
