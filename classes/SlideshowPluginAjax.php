@@ -16,6 +16,7 @@ class SlideshowPluginAJAX
 	 */
 	static function init()
 	{
+		// For the old pre-3.5 uploader
 		add_action('wp_ajax_slideshow_slide_inserter_search_query', array('SlideshowPluginSlideInserter', 'printSearchResults'));
 
 		add_action('wp_ajax_slideshow_jquery_image_gallery_load_stylesheet', array('SlideshowPluginSlideshowStylesheet', 'loadStylesheetByAJAX'));
