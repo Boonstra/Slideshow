@@ -26,7 +26,7 @@ slideshow_jquery_image_gallery_script = function()
 		self.initialized = true;
 
 		self.loadYouTubeAPI();
-		self.checkStylesheetURL();
+		self.checkStylesheetURLs();
 		self.activateSlideshows();
 	};
 
@@ -113,15 +113,19 @@ slideshow_jquery_image_gallery_script = function()
 	/**
 	 *
 	 */
-	self.checkStylesheetURL = function()
+	self.checkStylesheetURLs = function()
 	{
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
 
+		// No AJAX stylesheets found. If there are slideshows on the page, there is something wrong. A slideshow always comes with an AJAX stylesheet
 		if (ajaxStylesheets.length <= 0)
 		{
+			self.generateStylesheetURLs();
+
 			return;
 		}
 
+		// Some website disable URL variables, impairing the AJAX loaded stylesheets. Check and fix all slideshow stylesheet related URLs
 		$.each(ajaxStylesheets, function(ajaxStylesheetKey, ajaxStylesheet)
 		{
 			var $ajaxStylesheet = $(ajaxStylesheet),
@@ -162,6 +166,25 @@ slideshow_jquery_image_gallery_script = function()
 		});
 	};
 
+	/**
+	 *
+	 */
+	self.generateStylesheetURLs = function()
+	{
+//		var $slideshows = $('.slideshow_container'),
+//			adminURL;
+//
+//		if ($slideshows.length > 0 &&
+//			typeof Slideshow_jquery_image_gallery_script_adminURL === 'string')
+//		{
+//			adminURL = Slideshow_jquery_image_gallery_script_adminURL;
+//
+//			console.log(adminURL);
+//
+//			//http://localhost/wordpress/testenvironment/wp-admin/admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=style-light&ver=2.2.18
+//		}
+	};
+
 	$(document).ready(function()
 	{
 		self.init();
@@ -180,6 +203,10 @@ slideshow_jquery_image_gallery_script = function()
 	return self;
 }();
 
+/**
+ * This function must be named "onYouTubeIframeAPIReady", as it is needed to check whether or not the YouTube IFrame API
+ * has loaded.
+ */
 function onYouTubeIframeAPIReady()
 {
 	slideshow_jquery_image_gallery_script.youTubeAPIReady = true;

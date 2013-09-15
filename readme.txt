@@ -4,7 +4,7 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 3.6
+Tested up to: 3.6.1
 Stable tag: 2.2.18
 License: GPLv2
 
@@ -177,6 +177,8 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.19 =
 
 = 2.2.18 =
 *	Added option to select whether or not search engines should follow a slide's link.
