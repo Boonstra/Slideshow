@@ -26,7 +26,7 @@ slideshow_jquery_image_gallery_script = function()
 		self.initialized = true;
 
 		self.loadYouTubeAPI();
-		self.checkStylesheetURLs();
+		self.repairStylesheetURLs();
 		self.activateSlideshows();
 	};
 
@@ -113,14 +113,14 @@ slideshow_jquery_image_gallery_script = function()
 	/**
 	 *
 	 */
-	self.checkStylesheetURLs = function()
+	self.repairStylesheetURLs = function()
 	{
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
 
 		// No AJAX stylesheets found. If there are slideshows on the page, there is something wrong. A slideshow always comes with an AJAX stylesheet
 		if (ajaxStylesheets.length <= 0)
 		{
-			self.generateStylesheetURLs();
+			self.generateStylesheetURLs(false);
 
 			return;
 		}
@@ -166,54 +166,54 @@ slideshow_jquery_image_gallery_script = function()
 		});
 	};
 
-//	/**
-//	 *
-//	 */
-//	self.generateStylesheetURLs = function()
-//	{
-//		var $slideshows = $('.slideshow_container'),
-//			adminURL;
-//
-//		if ($slideshows.length > 0 &&
-//			typeof Slideshow_jquery_image_gallery_script_adminURL === 'string')
-//		{
-//			adminURL = Slideshow_jquery_image_gallery_script_adminURL;
-//
-//			console.log(adminURL);
-//
-//			//http://localhost/wordpress/testenvironment/wp-admin/admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=style-light&ver=2.2.18
-//		}
-//	};
-
 	/**
-	 * 
+	 * Generates admin AJAX stylesheet URLs for all slideshows.
+	 *
+	 * When forceGenerate is set to true, it will generate stylesheet URLs for slideshows that already have a matching
+	 * stylesheet as well.
+	 *
+	 * @param forceGenerate (boolean, defaults to false)
 	 */
-	self.generateStylesheetURLs = function()
+	self.generateStylesheetURLs = function(forceGenerate)
 	{
-		var $slideshow = $('.slideshow_container');
+		var $slideshows = $('.slideshow_container'),
+			adminURL    = window.slideshow_jquery_image_gallery_script_adminURL;
 
 		if ($slideshows.length <= 0 ||
-			typeof slideshow_jquery_image_gallery_script_backendURL !== 'string' &&
-				slideshow_jquery_image_gallery_script_backendURL.length <= 0)
+			typeof adminURL !== 'string' ||
+			adminURL.length <= 0)
 		{
 			return;
 		}
 
 		$.each($slideshows, function(key, slideshow)
 		{
-			var $slideshow        = $(slideshow),
-				stylesheetName    = $slideshow.attr('data-stylesheet-name'),
-				stylesheetVersion = $slideshow.attr('data-stylesheet-version'),
+			var $slideshow   = $(slideshow),
+				styleName    = $slideshow.attr('data-style-name'),
+				styleVersion = $slideshow.attr('data-style-version'),
+				styleID      = 'slideshow-jquery-image-gallery-ajax-stylesheet_' + styleName + '-css',
+				$originalStylesheet,
 				stylesheetURL;
 
-			if (typeof stylesheetName === 'string' &&
-				typeof stylesheetVersion === 'string' &&
-				stylesheetName.length > 0 &&
-				stylesheetVersion.length > 0)
+			if (typeof styleName === 'string' &&
+				typeof styleVersion === 'string' &&
+				styleName.length > 0 &&
+				styleVersion.length > 0)
 			{
-				stylesheetURL = adminURL + 'admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' + stylesheetName + '&ver=' + stylesheetVersion;
+				if (!forceGenerate &&
+					typeof forceGenerate === 'boolean')
+				{
+					$originalStylesheet = $('#' + styleID);
 
-				$('head').append('<link rel="stylesheet" id="slideshow-jquery-image-gallery-ajax-stylesheet_' + stylesheetName + '-css" href="' + stylesheetURL + '" type="text/css" media="all">');
+					if ($originalStylesheet.length > 0)
+					{
+						return;
+					}
+				}
+
+				stylesheetURL = adminURL + 'admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' + styleName + '&ver=' + styleVersion;
+
+				$('head').append('<link rel="stylesheet" id="' + styleID + '" href="' + stylesheetURL + '" type="text/css" media="all">');
 			}
 		});
 	};

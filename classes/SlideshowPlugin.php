@@ -173,7 +173,7 @@ class SlideshowPlugin
 		// Include the location of the admin-ajax.php file
 		wp_localize_script(
 			'slideshow-jquery-image-gallery-script',
-			'Slideshow_jquery_image_gallery_script_adminURL',
+			'slideshow_jquery_image_gallery_script_adminURL',
 			admin_url()
 		);
 

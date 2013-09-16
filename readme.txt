@@ -179,6 +179,7 @@ personal taste.
 == Changelog ==
 
 = 2.2.19 =
+*	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.
 
 = 2.2.18 =
 *	Added option to select whether or not search engines should follow a slide's link.
