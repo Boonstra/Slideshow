@@ -166,11 +166,11 @@ slideshow_jquery_image_gallery_script = function()
 		});
 	};
 
-	/**
-	 *
-	 */
-	self.generateStylesheetURLs = function()
-	{
+//	/**
+//	 *
+//	 */
+//	self.generateStylesheetURLs = function()
+//	{
 //		var $slideshows = $('.slideshow_container'),
 //			adminURL;
 //
@@ -183,6 +183,39 @@ slideshow_jquery_image_gallery_script = function()
 //
 //			//http://localhost/wordpress/testenvironment/wp-admin/admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=style-light&ver=2.2.18
 //		}
+//	};
+
+	/**
+	 * 
+	 */
+	self.generateStylesheetURLs = function()
+	{
+		var $slideshow = $('.slideshow_container');
+
+		if ($slideshows.length <= 0 ||
+			typeof slideshow_jquery_image_gallery_script_backendURL !== 'string' &&
+				slideshow_jquery_image_gallery_script_backendURL.length <= 0)
+		{
+			return;
+		}
+
+		$.each($slideshows, function(key, slideshow)
+		{
+			var $slideshow        = $(slideshow),
+				stylesheetName    = $slideshow.attr('data-stylesheet-name'),
+				stylesheetVersion = $slideshow.attr('data-stylesheet-version'),
+				stylesheetURL;
+
+			if (typeof stylesheetName === 'string' &&
+				typeof stylesheetVersion === 'string' &&
+				stylesheetName.length > 0 &&
+				stylesheetVersion.length > 0)
+			{
+				stylesheetURL = adminURL + 'admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' + stylesheetName + '&ver=' + stylesheetVersion;
+
+				$('head').append('<link rel="stylesheet" id="slideshow-jquery-image-gallery-ajax-stylesheet_' + stylesheetName + '-css" href="' + stylesheetURL + '" type="text/css" media="all">');
+			}
+		});
 	};
 
 	$(document).ready(function()
