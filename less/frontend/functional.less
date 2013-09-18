@@ -6,7 +6,7 @@
 
   div {
     clear: none !important;
-    max-width: none;
+    max-width: none !important;
     padding: 0;
   }
 
@@ -15,7 +15,7 @@
     border: none;
     margin: 0;
     padding: 0;
-    max-width: none;
+    max-width: none !important;
   }
 
   p
@@ -58,22 +58,22 @@
 
   .slideshow_content
   {
-    position: relative;
-    overflow: hidden;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
   .slideshow_view
   {
-    position: absolute;
+    position: absolute !important;
     width: 0;
     height: 0;
-    overflow: hidden;
+    overflow: hidden !important;
 
     .slideshow_slide
     {
-      position: relative;
+      position: relative !important;
       float: left !important;
-      overflow: hidden;
+      overflow: hidden !important;
 
       &.slideshow_slide_text
       {
