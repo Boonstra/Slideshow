@@ -19,7 +19,8 @@
   padding: 10px;
 }
 .slideshow_container a {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   display: block !important;
 }
 .slideshow_container ul {
