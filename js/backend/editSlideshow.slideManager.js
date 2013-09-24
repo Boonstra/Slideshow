@@ -3,6 +3,8 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	var $    = jQuery,
 		self = { };
 
+	self.uploader = null;
+
 	/**
 	 *
 	 */
@@ -27,23 +29,16 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		{
 			event.preventDefault();
 
-			var oldPostID       = wp.media.model.settings.post.id,
-				temporaryPostID = -1,
-				uploaderTitle,
+			var uploaderTitle,
 				externalData;
 
 			// Reopen file frame if it has already been created
 			if (self.uploader)
 			{
-				// Set the post ID to a non-existing one, so image files won't be attached to anything
-				self.uploader.uploader.uploader.param('post_id', temporaryPostID);
-
 				self.uploader.open();
 
 				return;
 			}
-
-			wp.media.model.settings.post.id = temporaryPostID;
 
 			externalData = window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
 
@@ -85,9 +80,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 
 					self.insertImageSlide(attachment.id, attachment.title, attachment.description, attachment.url, attachment.alt);
 				}
-
-				// Restore the old post ID
-				wp.media.model.settings.post.id = oldPostID;
 			});
 
 			self.uploader.open();

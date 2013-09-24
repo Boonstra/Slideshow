@@ -180,7 +180,8 @@ personal taste.
 
 = 2.2.19 =
 *	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.
-*   Fixed: Images with a 'max-width: 100%;' style rule would size wrongly on responsive websites.
+*	Fixed: Uploading images through the WordPress 3.5 uploader on a slideshow's edit page would return an error.
+*	Fixed: Images with a 'max-width: 100%;' style rule would size wrongly on responsive websites.
 
 = 2.2.18 =
 *	Added option to select whether or not search engines should follow a slide's link.
