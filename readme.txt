@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
 Tested up to: 3.6.1
-Stable tag: 2.2.18
+Stable tag: 2.2.19
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -180,6 +180,7 @@ personal taste.
 
 = 2.2.19 =
 *	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.
+*   The functional stylesheet should now provide a more stable base for all slideshows.
 *	Fixed: Uploading images through the WordPress 3.5 uploader on a slideshow's edit page would return an error.
 *	Fixed: Images with a 'max-width: 100%;' style rule would size wrongly on responsive websites.
 
