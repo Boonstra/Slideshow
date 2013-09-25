@@ -196,12 +196,18 @@
 	/**
 	 * Returns whether or not all slides in the passed view have been loaded.
 	 *
-	 * @param viewID
+	 * @param viewID (int)
 	 * @returns bool isViewLoaded
 	 */
 	self.Slideshow.prototype.isViewLoaded = function(viewID)
 	{
 		var isViewLoaded = true;
+
+		// Check viewID
+		if (isNaN(parseInt(viewID, 10)))
+		{
+			return false;
+		}
 
 		$.each(this.viewData[viewID], $.proxy(function(key, slideData)
 		{
@@ -379,16 +385,19 @@
 	 */
 	self.Slideshow.prototype.getNextRandomViewID = function()
 	{
+		// Push current view ID to previous slide history
 		if (!isNaN(parseInt(this.currentViewID, 10)))
 		{
 			this.randomPreviousHistoryViewIDs.push(this.currentViewID);
 		}
 
+		// The history should only be as long as twice the slideshows length in views
 		if (this.randomPreviousHistoryViewIDs.length > this.viewIDs.length * 2)
 		{
 			this.randomPreviousHistoryViewIDs.shift();
 		}
 
+		// When we're in history, use the next view ID in history
 		if (this.randomNextHistoryViewIDs.length > 0)
 		{
 			return this.randomNextHistoryViewIDs.pop();
@@ -400,7 +409,13 @@
 		{
 			this.randomAvailableViewIDs = $.extend(true, [], this.viewIDs);
 
-			this.randomAvailableViewIDs.splice($.inArray(this.currentViewID, this.randomAvailableViewIDs));
+			var randomAvailableViewIDsCurrentViewIDPosition = $.inArray(this.currentViewID, this.randomAvailableViewIDs);
+
+			// Remove current view ID from random available view IDs
+			if (randomAvailableViewIDsCurrentViewIDPosition >= 0)
+			{
+				this.randomAvailableViewIDs.splice(randomAvailableViewIDsCurrentViewIDPosition, 1);
+			}
 		}
 
 		return this.randomAvailableViewIDs.splice(Math.floor(Math.random() * this.randomAvailableViewIDs.length), 1).pop();
