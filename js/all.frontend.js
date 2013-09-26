@@ -1,8 +1,10 @@
+slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag = false;
+
 /**
  * Slideshow frontend script
  *
  * @author Stefan Boonstra
- * @version 4.1.0
+ * @version 4
  */
 slideshow_jquery_image_gallery_script = function()
 {
@@ -18,7 +20,8 @@ slideshow_jquery_image_gallery_script = function()
 	 */
 	self.init = function()
 	{
-		if (self.initialized)
+		if (slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag !== true ||
+			self.initialized)
 		{
 			return;
 		}
@@ -246,6 +249,7 @@ function onYouTubeIframeAPIReady()
 }
 
 // @codekit-append frontend/slideshow.js
+// @codekit-append frontend/scriptsLoadedFlag.js
 
 ///**
 //* Simple logging function for Internet Explorer

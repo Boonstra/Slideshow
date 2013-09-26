@@ -183,6 +183,7 @@ personal taste.
 *   The functional stylesheet should now provide a more stable base for all slideshows.
 *	Fixed: Uploading images through the WordPress 3.5 uploader on a slideshow's edit page would return an error.
 *	Fixed: Images with a 'max-width: 100%;' style rule would size wrongly on responsive websites.
+*	Fixed: The randomization method returned error messages.
 
 = 2.2.18 =
 *	Added option to select whether or not search engines should follow a slide's link.
