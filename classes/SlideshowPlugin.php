@@ -170,6 +170,13 @@ class SlideshowPlugin
 			$settings
 		);
 
+		// Include the location of the admin-ajax.php file
+		wp_localize_script(
+			'slideshow-jquery-image-gallery-script',
+			'slideshow_jquery_image_gallery_script_adminURL',
+			admin_url()
+		);
+
 		// Return output
 		return $output;
 	}

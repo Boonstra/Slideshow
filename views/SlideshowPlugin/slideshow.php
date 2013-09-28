@@ -1,4 +1,4 @@
-<div class="slideshow_container slideshow_container_<?php echo $styleName; ?>" style="<?php echo (isset($settings['preserveSlideshowDimensions']) && $settings['preserveSlideshowDimensions'] == 'false' && isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px;' : ''; ?> <?php echo (isset($settings['maxWidth']) && $settings['maxWidth'] > 0) ? 'max-width: ' . $settings['maxWidth'] . 'px;' : ''; ?>" data-session-id="<?php echo $sessionID; ?>">
+<div class="slideshow_container slideshow_container_<?php echo htmlspecialchars($styleName); ?>" style="<?php echo (isset($settings['preserveSlideshowDimensions']) && $settings['preserveSlideshowDimensions'] == 'false' && isset($settings['height']) && $settings['height'] > 0) ? 'height: ' . $settings['height'] . 'px;' : ''; ?> <?php echo (isset($settings['maxWidth']) && $settings['maxWidth'] > 0) ? 'max-width: ' . $settings['maxWidth'] . 'px;' : ''; ?>" data-session-id="<?php echo htmlspecialchars($sessionID); ?>" data-style-name="<?php echo htmlspecialchars($styleName); ?>" data-style-version="<?php echo htmlspecialchars($styleVersion); ?>">
 
 	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li class="slideshow_togglePlay"></li></ul></div>
 
@@ -16,8 +16,12 @@
 		<?php
 
 		if(is_array($views) && count($views) > 0)
+		{
 			foreach($views as $view)
+			{
 				echo $view->toFrontEndHTML();
+			}
+		}
 
 		?>
 

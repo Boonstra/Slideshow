@@ -1,8 +1,10 @@
+slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag = false;
+
 /**
  * Slideshow frontend script
  *
  * @author Stefan Boonstra
- * @version 4.1.0
+ * @version 4
  */
 slideshow_jquery_image_gallery_script = function()
 {
@@ -18,7 +20,8 @@ slideshow_jquery_image_gallery_script = function()
 	 */
 	self.init = function()
 	{
-		if (self.initialized)
+		if (slideshow_jquery_image_gallery_backend_script_scriptsloadedFlag !== true ||
+			self.initialized)
 		{
 			return;
 		}
@@ -26,7 +29,7 @@ slideshow_jquery_image_gallery_script = function()
 		self.initialized = true;
 
 		self.loadYouTubeAPI();
-		self.checkStylesheetURL();
+		self.repairStylesheetURLs();
 		self.activateSlideshows();
 	};
 
@@ -113,15 +116,19 @@ slideshow_jquery_image_gallery_script = function()
 	/**
 	 *
 	 */
-	self.checkStylesheetURL = function()
+	self.repairStylesheetURLs = function()
 	{
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
 
+		// No AJAX stylesheets found. If there are slideshows on the page, there is something wrong. A slideshow always comes with an AJAX stylesheet
 		if (ajaxStylesheets.length <= 0)
 		{
+			self.generateStylesheetURLs(false);
+
 			return;
 		}
 
+		// Some website disable URL variables, impairing the AJAX loaded stylesheets. Check and fix all slideshow stylesheet related URLs
 		$.each(ajaxStylesheets, function(ajaxStylesheetKey, ajaxStylesheet)
 		{
 			var $ajaxStylesheet = $(ajaxStylesheet),
@@ -162,6 +169,58 @@ slideshow_jquery_image_gallery_script = function()
 		});
 	};
 
+	/**
+	 * Generates admin AJAX stylesheet URLs for all slideshows.
+	 *
+	 * When forceGenerate is set to true, it will generate stylesheet URLs for slideshows that already have a matching
+	 * stylesheet as well.
+	 *
+	 * @param forceGenerate (boolean, defaults to false)
+	 */
+	self.generateStylesheetURLs = function(forceGenerate)
+	{
+		var $slideshows = $('.slideshow_container'),
+			adminURL    = window.slideshow_jquery_image_gallery_script_adminURL;
+
+		if ($slideshows.length <= 0 ||
+			typeof adminURL !== 'string' ||
+			adminURL.length <= 0)
+		{
+			return;
+		}
+
+		$.each($slideshows, function(key, slideshow)
+		{
+			var $slideshow   = $(slideshow),
+				styleName    = $slideshow.attr('data-style-name'),
+				styleVersion = $slideshow.attr('data-style-version'),
+				styleID      = 'slideshow-jquery-image-gallery-ajax-stylesheet_' + styleName + '-css',
+				$originalStylesheet,
+				stylesheetURL;
+
+			if (typeof styleName === 'string' &&
+				typeof styleVersion === 'string' &&
+				styleName.length > 0 &&
+				styleVersion.length > 0)
+			{
+				if (!forceGenerate &&
+					typeof forceGenerate === 'boolean')
+				{
+					$originalStylesheet = $('#' + styleID);
+
+					if ($originalStylesheet.length > 0)
+					{
+						return;
+					}
+				}
+
+				stylesheetURL = adminURL + 'admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' + styleName + '&ver=' + styleVersion;
+
+				$('head').append('<link rel="stylesheet" id="' + styleID + '" href="' + stylesheetURL + '" type="text/css" media="all">');
+			}
+		});
+	};
+
 	$(document).ready(function()
 	{
 		self.init();
@@ -180,12 +239,17 @@ slideshow_jquery_image_gallery_script = function()
 	return self;
 }();
 
+/**
+ * This function must be named "onYouTubeIframeAPIReady", as it is needed to check whether or not the YouTube IFrame API
+ * has loaded.
+ */
 function onYouTubeIframeAPIReady()
 {
 	slideshow_jquery_image_gallery_script.youTubeAPIReady = true;
 }
 
 // @codekit-append frontend/slideshow.js
+// @codekit-append frontend/scriptsLoadedFlag.js
 
 ///**
 //* Simple logging function for Internet Explorer

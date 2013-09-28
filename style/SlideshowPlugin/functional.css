@@ -5,21 +5,22 @@
 }
 .slideshow_container div {
   clear: none !important;
-  max-width: none;
+  max-width: none !important;
   padding: 0;
 }
 .slideshow_container img {
   border: none;
   margin: 0;
   padding: 0;
-  max-width: none;
+  max-width: none !important;
 }
 .slideshow_container p {
   margin: 0;
   padding: 10px;
 }
 .slideshow_container a {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   display: block !important;
 }
 .slideshow_container ul {
@@ -44,19 +45,21 @@
   zoom: 1;
 }
 .slideshow_container .slideshow_content {
-  position: relative;
-  overflow: hidden;
+  position: relative !important;
+  overflow: hidden !important;
 }
 .slideshow_container .slideshow_view {
-  position: absolute;
+  position: absolute !important;
+  top: 0;
+  left: 0;
   width: 0;
   height: 0;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .slideshow_container .slideshow_view .slideshow_slide {
-  position: relative;
+  position: relative !important;
   float: left !important;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_text .slideshow_background_anchor {
   position: absolute;
