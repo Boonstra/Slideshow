@@ -65,11 +65,13 @@
   position: absolute;
   top: 0;
 }
+.slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image img {
+  float: none;
+}
 .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image .slideshow_description {
   display: none;
   position: absolute;
   width: 100%;
-  float: none;
 }
 .slideshow_container .slideshow_controlPanel {
   position: absolute;
