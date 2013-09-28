@@ -37,7 +37,7 @@ class SlideshowPluginShortcode
 			add_action('media_buttons',  array(__CLASS__, 'shortcodeInserter'), 11);
 
 			// Enqueue shortcode inserter script
-			add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'));
+			add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'), 11);
 		}
 	}
 
