@@ -178,7 +178,9 @@ personal taste.
 
 == Changelog ==
 
-= Next =
+= 2.2.20 =
+*
+*	Improved functional stylesheet.
 *	Updated Persian translation by W3Design.
 
 = 2.2.19 =
