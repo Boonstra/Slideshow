@@ -60,7 +60,7 @@ class SlideshowPluginGeneralSettings
 		add_action('admin_menu', array(__CLASS__, 'addSubMenuPage'));
 
 		// Localize
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'));
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'), 11);
 	}
 
 	/**

@@ -53,7 +53,8 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			}
 
 			// Create the uploader
-			self.uploader = wp.media.frames.file_frame = wp.media({
+			self.uploader = wp.media.frames.slideshow_jquery_image_galler_uploader = wp.media({
+				frame   : 'select',
 				title   : uploaderTitle,
 				multiple: true,
 				library :

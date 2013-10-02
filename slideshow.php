@@ -36,6 +36,9 @@ class SlideshowPluginMain
 		// Initialize localization on init
 		add_action('init', array(__CLASS__, 'localize'));
 
+		// Include backend scripts and styles
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScripts'));
+
 		// Ajax requests
 		SlideshowPluginAJAX::init();
 
@@ -59,9 +62,6 @@ class SlideshowPluginMain
 
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
-
-		// Include backend scripts and styles
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueBackendScripts'));
 	}
 
 	/**

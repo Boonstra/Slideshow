@@ -21,7 +21,7 @@ class SlideshowPluginPostType
 	{
 		add_action('init'                 , array(__CLASS__, 'registerSlideshowPostType'));
 		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
-		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'));
+		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
 	}
 
 	/**
