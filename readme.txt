@@ -4,7 +4,7 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 3.6.1
+Tested up to: 3.7.1
 Stable tag: 2.2.19
 License: GPLv2
 
@@ -179,8 +179,9 @@ personal taste.
 == Changelog ==
 
 = 2.2.20 =
-*
+*   Compatible with WordPress 3.7.
 *	Improved functional stylesheet.
+*	Fixed: When the slideshow would not have any height, slides would not hide outside of the slideshow.
 *	Updated Persian translation by W3Design.
 
 = 2.2.19 =
