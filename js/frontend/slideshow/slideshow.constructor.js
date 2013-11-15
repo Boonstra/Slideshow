@@ -65,7 +65,6 @@
 		// Timers
 		this.interval          = false;
 		this.pauseOnHoverTimer = false;
-		this.invisibilityTimer = false;
 		this.descriptionTimer  = false;
 
 		// Randomization
@@ -82,24 +81,42 @@
 		// Initial size calculation of slideshow, doesn't recalculate views
 		this.recalculate(false);
 
+		// Hide views that should not be currently shown out of sight
+		// TODO As a slideshow (in very few cases) may not have received a height after calculation, this wrapper function
+		// TODO is needed to wait for the slideshow to receive a height value. It would probably be better to listen
+		// TODO to an event fired by the recalculate() function in order to hide the views.
+		var hideViews = $.proxy(function(hideViewsFunction)
+		{
+			if (this.$container.width() <= 0 ||
+				this.$container.height() <= 0)
+			{
+				setTimeout($.proxy(function(){ hideViewsFunction(); }, this), 500)
+			}
+
+			$.each(this.$views, $.proxy(function(viewID, view)
+			{
+				var $view = $(view);
+
+				// Hide views, except for the one that's currently showing.
+				if (viewID != this.visibleViews[0])
+				{
+					$view.css('top', this.$container.outerHeight(true));
+				}
+				else
+				{
+					$view.addClass('slideshow_currentView');
+				}
+			}, this));
+		}, this);
+		hideViews(hideViews);
+
 		// Initialize $viewData array as $viewData[ view[ slide{ 'loaded': 0 } ] ]
 		// Add slideshow_currentView identifier class to the visible views
 		// Recalculate views
-		// Hide views out of the content area
 		var hasFirstSlideLoaded = true;
 		$.each(this.$views, $.proxy(function(viewID, view)
 		{
 			var $view = $(view);
-
-			// Hide views, except for the one that's currently showing.
-			if (viewID != this.visibleViews[0])
-			{
-				$view.css('top', this.$container.outerHeight(true));
-			}
-			else
-			{
-				$view.addClass('slideshow_currentView');
-			}
 
 			this.viewData[viewID] = [];
 
