@@ -46,7 +46,7 @@ different images, settings and styles for each one of them.
  - Hebrew     (57%  - he_IL - Translated by Eli Segev)
  - Italian    (90%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
  - Japanese   (90%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
- - Persian    (90%  - fa_IR - Translated by [W3Design](http://w3design.ir/))
+ - Persian    (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
  - Polish     (91%  - pl_PL - Translated by Wicher Wiater)
  - Portuguese (82%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
  - Portuguese (91%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
@@ -177,6 +177,11 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.20 =
+*
+*	Improved functional stylesheet.
+*	Updated Persian translation by W3Design.
 
 = 2.2.19 =
 *	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.

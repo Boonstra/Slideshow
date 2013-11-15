@@ -15,7 +15,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			// New 3.5 uploader
 			self.activateUploader();
 
-			// Old pre-3.5 uploader
 			self.activate();
 		}
 	};
