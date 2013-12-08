@@ -22,6 +22,8 @@ class SlideshowPluginPostType
 		add_action('init'                 , array(__CLASS__, 'registerSlideshowPostType'));
 		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
 		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
+
+		add_filter('post_updated_messages', array(__CLASS__, 'alterSlideshowMessages'));
 	}
 
 	/**
@@ -128,6 +130,53 @@ class SlideshowPluginPostType
 		{
 			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
 		}
+	}
+
+	/**
+	 * Changes the "Post published/updated" message to a "Slideshow created/updated" message without the link to a
+	 * frontend page.
+	 *
+	 * @since 2.2.20
+	 *
+	 * @param mixed $messages
+	 *
+	 * @return mixed $messages
+	 *
+	 *
+	 */
+	static function alterSlideshowMessages($messages)
+	{
+		if (!function_exists('get_current_screen'))
+		{
+			return $messages;
+		}
+
+		$currentScreen = get_current_screen();
+
+		// Return when not on a slideshow edit page
+		if ($currentScreen->post_type != SlideshowPluginPostType::$postType)
+		{
+			return $messages;
+		}
+
+		$messageID = filter_input(INPUT_GET, 'message', FILTER_VALIDATE_INT);
+
+		if (!$messageID)
+		{
+			return $messages;
+		}
+
+		switch ($messageID)
+		{
+			case 6:
+				$messages[$currentScreen->base][$messageID] = __('Slideshow created', 'slideshow-plugin');
+				break;
+
+			default:
+				$messages[$currentScreen->base][$messageID] = __('Slideshow updated', 'slideshow-plugin');
+		}
+
+		return $messages;
 	}
 
 	/**

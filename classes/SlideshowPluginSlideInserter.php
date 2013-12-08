@@ -275,7 +275,7 @@ class SlideshowPluginSlideInserter
 			return;
 		}
 
-        // Return when not on a slideshow edit page, or files have already been included.
+        // Return when not on a slideshow edit page
         $currentScreen = get_current_screen();
 
         if ($currentScreen->post_type != SlideshowPluginPostType::$postType)
