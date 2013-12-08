@@ -1,4 +1,4 @@
-=== Slideshow ===
+﻿=== Slideshow ===
 
 Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
@@ -36,24 +36,25 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Chinese    (25%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/))
- - Czech      (89%  - cs_CZ - Translated by Edhel)
- - Dutch      (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/) (That's me!))
- - English    (100%)
- - Finnish    (91%  - fi    - Translated by A. Nonymous)
- - French     (89%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German     (91%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/))
- - Hebrew     (57%  - he_IL - Translated by Eli Segev)
- - Italian    (90%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
- - Japanese   (90%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
- - Persian    (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
- - Polish     (91%  - pl_PL - Translated by Wicher Wiater)
- - Portuguese (82%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
- - Portuguese (91%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian    (91%  - ru_RU - Translated by Dmitry Fatakov)
- - Spanish    (56%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish    (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/))
- - Turkish    (91%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
+ - Chinese        (25%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/))
+ - Czech          (89%  - cs_CZ - Translated by Edhel)
+ - Dutch          (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/) (That's me!))
+ - English        (100%)
+ - Finnish        (91%  - fi    - Translated by A. Nonymous)
+ - French         (89%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
+ - German         (91%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/))
+ - Hebrew         (57%  - he_IL - Translated by Eli Segev)
+ - Italian        (90%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Japanese       (90%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
+ - Persian        (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
+ - Polish         (91%  - pl_PL - Translated by Wicher Wiater)
+ - Portuguese     (82%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
+ - Portuguese     (91%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
+ - Russian        (91%  - ru_RU - Translated by Dmitry Fatakov)
+ - Serbo-Croatian (100% - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
+ - Spanish        (56%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/))
+ - Turkish        (91%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded
@@ -179,9 +180,11 @@ personal taste.
 == Changelog ==
 
 = 2.2.20 =
-*   Compatible with WordPress 3.7.
+*	Compatible with WordPress 3.7.
 *	Improved functional stylesheet.
+*	Post published/updated message doesn't show a link to a non-existant page anymore.
 *	Fixed: When the slideshow would not have any height, slides would not hide outside of the slideshow.
+*	Added Serbo-Croatian translation by Webhosting Hub.
 *	Updated Persian translation by W3Design.
 
 = 2.2.19 =
