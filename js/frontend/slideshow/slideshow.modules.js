@@ -185,6 +185,9 @@
 			return;
 		}
 
+		// make play button keyboard focusable
+		this.$togglePlayButton.attr('tabindex', '0');
+
 		this.$container.bind('slideshowPlayStateChange', $.proxy(function(event, playState)
 		{
 			if (playState === this.PlayStates.PLAYING)
