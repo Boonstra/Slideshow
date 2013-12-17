@@ -192,11 +192,21 @@
 		{
 			if (playState === this.PlayStates.PLAYING)
 			{
-				this.$togglePlayButton.attr('class', 'slideshow_pause');
+				this.$togglePlayButton
+					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPausetext')+'</span>')
+					.attr({
+						'class': 'slideshow_pause',
+						'title': this.$togglePlayButton.data('slideshowPausetext')
+					});
 			}
 			else if (playState === this.PlayStates.PAUSED)
 			{
-				this.$togglePlayButton.attr('class', 'slideshow_play');
+				this.$togglePlayButton
+					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPlaytext') + '</span>')
+					.attr({
+						'class': 'slideshow_play',
+						'title': this.$togglePlayButton.data('slideshowPlaytext')
+					});
 			}
 		}, this));
 
