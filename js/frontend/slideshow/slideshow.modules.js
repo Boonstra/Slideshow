@@ -227,12 +227,12 @@
 
 		// Allow Enter key to trigger play/pause button
 		this.$togglePlayButton.keypress(function(e) {
-            var code = e.keyCode || e.which;
-            if (code === 13) {
-                e.preventDefault();
-                $(this).click()
-            }
-        });
+			var code = e.keyCode || e.which;
+			if (code === 13) {
+				e.preventDefault();
+				$(this).click()
+			}
+		});
 
 		// If hideControlPanel is true, fade it in and out on mouse enter and leave. Simply show it otherwise
 		if (this.settings['hideControlPanel'])
