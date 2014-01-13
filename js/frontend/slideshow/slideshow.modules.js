@@ -119,10 +119,10 @@
 
 		// add text for screen readers and make button keyboard focusable
 		this.$nextButton
-			.html('<span class="assistive-text hide-text">' + this.$nextButton.data('slideshowNexttext') + '</span>')
+			.html('<span class="assistive-text hide-text">' + this.$nextButton.data('slideshowNextText') + '</span>')
 			.attr({
 				'tabindex': '0',
-				'title': this.$nextButton.data('slideshowNexttext')
+				'title': this.$nextButton.data('slideshowNextText')
 			});
 
 		// Register next button click event
@@ -147,10 +147,10 @@
 
 		// add text for screen readers and make button keyboard focusable
 		this.$previousButton
-			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPrevioustext') + '</span>')
+			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPreviousText') + '</span>')
 			.attr({
 				'tabindex': '0',
-				'title': this.$previousButton.data('slideshowPrevioustext')
+				'title': this.$previousButton.data('slideshowPreviousText')
 			});
 
 		// Register previous button click event
@@ -209,19 +209,19 @@
 			if (playState === this.PlayStates.PLAYING)
 			{
 				this.$togglePlayButton
-					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPausetext')+'</span>')
+					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPauseText')+'</span>')
 					.attr({
 						'class': 'slideshow_pause',
-						'title': this.$togglePlayButton.data('slideshowPausetext')
+						'title': this.$togglePlayButton.data('slideshowPauseText')
 					});
 			}
 			else if (playState === this.PlayStates.PAUSED)
 			{
 				this.$togglePlayButton
-					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPlaytext') + '</span>')
+					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPlayText') + '</span>')
 					.attr({
 						'class': 'slideshow_play',
-						'title': this.$togglePlayButton.data('slideshowPlaytext')
+						'title': this.$togglePlayButton.data('slideshowPlayText')
 					});
 			}
 		}, this));
