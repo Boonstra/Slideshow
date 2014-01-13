@@ -145,6 +145,9 @@
 			this.animateTo(this.getNextViewID(), 1);
 		}, this));
 
+        // allow Enter key to trigger next button
+        this.onKeyboardSubmit(this.$nextButton);
+
 		// add text for screen readers and make button keyboard focusable
 		this.$previousButton
 			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPreviousText') + '</span>')
@@ -172,6 +175,9 @@
 
 			this.animateTo(this.getPreviousViewID(), -1);
 		}, this));
+
+        // allow Enter key to trigger previous button
+        this.onKeyboardSubmit(this.$previousButton);
 
 		// If hideNavigationButtons is true, fade them in and out on mouse enter and leave. Simply show them otherwise
 		if (this.settings['hideNavigationButtons'])
@@ -242,13 +248,7 @@
 		}, this));
 
 		// Allow Enter key to trigger play/pause button
-		this.$togglePlayButton.keypress(function(e) {
-			var code = e.keyCode || e.which;
-			if (code === 13) {
-				e.preventDefault();
-				$(this).click()
-			}
-		});
+        this.onKeyboardSubmit(this.$togglePlayButton);
 
 		// If hideControlPanel is true, fade it in and out on mouse enter and leave. Simply show it otherwise
 		if (this.settings['hideControlPanel'])
