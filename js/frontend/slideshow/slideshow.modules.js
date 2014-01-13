@@ -117,6 +117,14 @@
 			return;
 		}
 
+		// add text for screen readers and make button keyboard focusable
+		this.$nextButton
+			.html('<span class="assistive-text hide-text">' + this.$nextButton.data('slideshowNexttext') + '</span>')
+			.attr({
+				'tabindex': '0',
+				'title': this.$nextButton.data('slideshowNexttext')
+			});
+
 		// Register next button click event
 		this.$nextButton.click($.proxy(function()
 		{
@@ -136,6 +144,14 @@
 
 			this.animateTo(this.getNextViewID(), 1);
 		}, this));
+
+		// add text for screen readers and make button keyboard focusable
+		this.$previousButton
+			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPrevioustext') + '</span>')
+			.attr({
+				'tabindex': '0',
+				'title': this.$previousButton.data('slideshowPrevioustext')
+			});
 
 		// Register previous button click event
 		this.$previousButton.click($.proxy(function()

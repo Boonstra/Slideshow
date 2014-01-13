@@ -2,8 +2,8 @@
 
 	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li aria-role="button" class="slideshow_togglePlay" data-slideshow-playText="<?php _e('Play the slideshow', 'slideshow-plugin'); ?>" data-slideshow-pauseText="<?php _e('Pause the slideshow', 'slideshow-plugin'); ?>"></li></ul></div>
 
-	<div class="slideshow_button slideshow_previous slideshow_transparent" style="display: none;"></div>
-	<div class="slideshow_button slideshow_next slideshow_transparent" style="display: none;"></div>
+	<div class="slideshow_button slideshow_previous slideshow_transparent" aria-role="button" data-slideshow-previousText="<?php _e('Previous slide', 'slideshow-plugin'); ?>" style="display: none;"></div>
+	<div class="slideshow_button slideshow_next slideshow_transparent" aria-role="button" data-slideshow-nextText="<?php _e('Next slide', 'slideshow-plugin'); ?>" style="display: none;"></div>
 
 	<div class="slideshow_pagination" style="display: none;"><div class="slideshow_pagination_center"></div></div>
 
