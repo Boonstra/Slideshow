@@ -48,7 +48,7 @@ if (isset($properties['urlTarget']))
 
 if (isset($properties['noFollow']))
 {
-    $noFollow = ' rel="nofollow" ';
+	$noFollow = ' rel="nofollow" ';
 }
 
 $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!empty($urlTarget) ? 'target="' . $urlTarget . '"' : '') . $noFollow;
@@ -57,11 +57,11 @@ $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!emp
 
 <div class="slideshow_slide slideshow_slide_text" style="<?php echo !empty($color) ? 'background-color: ' . $color . ';' : '' ?>">
 	<?php if(!empty($title)): ?>
-	<h2>
+	<div>
 		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: ' . $textColor . ';' : ''; ?>">
 			<?php echo $title; ?>
 		</a>
-	</h2>
+	</div>
 	<?php endif; ?>
 
 	<?php if(!empty($description)): ?>
