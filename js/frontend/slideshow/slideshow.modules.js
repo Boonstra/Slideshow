@@ -294,7 +294,7 @@
 			var slideNum = parseInt(viewID) + 1;
 
 			// Add list item
-			$ul.append('<li class="slideshow_transparent ' + currentView + '" data-slide-position="' + viewID + '" aria-role="button" title="Go to slide ' + slideNum + '"><span class="assistive-text hide-text">Go to slide ' + slideNum + '</span>' + '</li>');
+			$ul.append('<li class="slideshow_transparent ' + currentView + '" data-slide-position="' + viewID + '" role="button" title="Go to slide ' + slideNum + '"><span class="assistive-text hide-text">Go to slide ' + slideNum + '</span>' + '</li>');
 		}, this));
 
 		// On click of a view-bullet go to the corresponding slide
