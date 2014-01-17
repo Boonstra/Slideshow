@@ -20,12 +20,12 @@
 
 	</div>
 
-    <div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li role="button" class="slideshow_togglePlay" data-slideshow-play-text="<?php _e('Play the slideshow', 'slideshow-plugin'); ?>" data-slideshow-pause-text="<?php _e('Pause the slideshow', 'slideshow-plugin'); ?>"></li></ul></div>
+	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li role="button" class="slideshow_togglePlay" data-slideshow-play-text="<?php _e('Play the slideshow', 'slideshow-plugin'); ?>" data-slideshow-pause-text="<?php _e('Pause the slideshow', 'slideshow-plugin'); ?>"></li></ul></div>
 
-    <div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-slideshow-previous-text="<?php _e('Previous slide', 'slideshow-plugin'); ?>" style="display: none;"></div>
-    <div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-slideshow-next-text="<?php _e('Next slide', 'slideshow-plugin'); ?>" style="display: none;"></div>
+	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-slideshow-previous-text="<?php _e('Previous slide', 'slideshow-plugin'); ?>" style="display: none;"></div>
+	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-slideshow-next-text="<?php _e('Next slide', 'slideshow-plugin'); ?>" style="display: none;"></div>
 
-    <div class="slideshow_pagination" style="display: none;"><div class="slideshow_pagination_center"></div></div>
+	<div class="slideshow_pagination" style="display: none;"><div class="slideshow_pagination_center"></div></div>
 
 	<!-- WordPress Slideshow Version <?php echo SlideshowPluginMain::$version; ?> -->
 
