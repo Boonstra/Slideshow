@@ -259,9 +259,9 @@
 			$.proxy(function()
 			{
 				// Remove current view identifier class from the previous view
-				$currentView.removeClass('slideshow_currentView');
+				$currentView.removeClass('slideshow_currentView').find('a').attr('tabindex', '-1');
 				$nextView.removeClass('slideshow_nextView');
-				$nextView.addClass('slideshow_currentView');
+				$nextView.addClass('slideshow_currentView').find('a').attr('tabindex', '0');
 
 				// Update visible views array after animating
 				this.visibleViews = [ viewID ];

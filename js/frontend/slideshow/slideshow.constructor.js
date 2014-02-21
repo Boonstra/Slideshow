@@ -100,7 +100,7 @@
 				// Hide views, except for the one that's currently showing.
 				if (viewID != this.visibleViews[0])
 				{
-					$view.css('top', this.$container.outerHeight(true));
+					$view.css('top', this.$container.outerHeight(true)).find('a').attr('tabindex', '-1');
 				}
 				else
 				{
