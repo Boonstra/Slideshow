@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="" />
+    <list default="true" readonly="true" id="b5af96a6-fe65-406b-afe1-c858063cad42" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginPostType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php" />
+    </list>
     <list id="5a8cea98-94ff-4dd1-b9fe-42c6f3fde1f7" name="Failed commit: Default" comment="Re-committing 2.2.12." />
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +27,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="readme.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="185" column="0" selection-start="9860" selection-end="9913" vertical-scroll-proportion="0.68155783" vertical-offset="2550" max-vertical-offset="8602">
+=======
+            <state line="181" column="10" selection-start="9689" selection-end="9689" vertical-scroll-proportion="0.0" vertical-offset="2805" max-vertical-offset="8602">
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SlideshowPluginPostType.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.4628975" vertical-offset="2091" max-vertical-offset="4930">
+              <folding>
+                <marker date="1386518555841" expanded="true" signature="6738:6860" placeholder="..." />
+                <marker date="1386518555841" expanded="true" signature="6756:6783" placeholder="{...}" />
+                <marker date="1386518555841" expanded="true" signature="6816:6850" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -436,10 +456,10 @@
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="75" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="75" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="75" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="75" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="75" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="75" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="75" />
@@ -728,15 +748,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21913236" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2831661" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21344717" sideWeight="0.6718576" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21558164" sideWeight="0.6718576" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -746,6 +773,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21913236" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32814237" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -847,6 +878,7 @@
         <state line="62" column="0" selection-start="2018" selection-end="2018" vertical-scroll-proportion="0.57378983" vertical-offset="568" max-vertical-offset="6579" />
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4420" />
@@ -855,15 +887,28 @@
     <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginShortcode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5419126" vertical-offset="459" max-vertical-offset="2669" />
+=======
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginShortcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5419126" vertical-offset="459" max-vertical-offset="2669" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5151" />
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5151" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="29" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="3111">
+=======
         <state line="23" column="29" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="3111">
           <folding />
         </state>
@@ -871,8 +916,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="10" selection-start="9689" selection-end="9689" vertical-scroll-proportion="0.0" vertical-offset="2805" max-vertical-offset="8602">
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginPostType.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="185" column="0" selection-start="9860" selection-end="9913" vertical-scroll-proportion="0.68155783" vertical-offset="2550" max-vertical-offset="8602">
           <folding />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.4628975" vertical-offset="2091" max-vertical-offset="4930">
+          <folding>
+            <marker date="1386518555841" expanded="true" signature="6738:6860" placeholder="..." />
+            <marker date="1386518555841" expanded="true" signature="6756:6783" placeholder="{...}" />
+            <marker date="1386518555841" expanded="true" signature="6816:6850" placeholder="{...}" />
+          </folding>
+>>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
         </state>
       </provider>
     </entry>
