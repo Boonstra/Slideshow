@@ -14,11 +14,11 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 		}
 
 		self.activateActionButtons();
-		self.activateDeleteButtons()
+		self.activateDeleteButtons();
 	};
 
 	/**
-	 *
+	 * Activate action buttons.
 	 */
 	self.activateActionButtons = function()
 	{
@@ -139,7 +139,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 	};
 
 	/**
-	 *
+	 * Activate delete buttons.
 	 */
 	self.activateDeleteButtons = function()
 	{

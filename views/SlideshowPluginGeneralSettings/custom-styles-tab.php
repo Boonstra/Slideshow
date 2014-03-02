@@ -39,7 +39,7 @@ if (is_array($customStyleKeys))
 
 ?>
 
-<div class="custom-styles-tab feature-filter" style="display: none;">
+<div class="custom-styles-tab feature-filter" style="float: left; display: none;">
 	<div class="styles-list">
 
 		<p>
@@ -115,7 +115,11 @@ if (is_array($customStyleKeys))
 		</ul>
 
 	</div>
+</div>
 
+<div style="clear: both;"></div>
+
+<div class="custom-styles-tab feature-filter" style="display: none;">
 	<div class="style-editors">
 
 		<p>
@@ -123,7 +127,7 @@ if (is_array($customStyleKeys))
 		</p>
 
 		<p class="style-editor">
-			<?php _e('Select a stylesheet from the left to start customizing it.', 'slideshow-plugin'); ?>
+			<?php _e('Select a stylesheet to start customizing it.', 'slideshow-plugin'); ?>
 		</p>
 
 		<?php if(is_array($customStyleValues)): ?>
@@ -203,5 +207,4 @@ if (is_array($customStyleKeys))
 
 		</div>
 	</div>
-
 </div>

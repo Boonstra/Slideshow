@@ -7,8 +7,8 @@
 
 	<?php if(!empty($value['group']) && !isset($groups[$value['group']])): $groups[$value['group']] = true; ?>
 	<tr>
-		<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
-			<span style="display: inline-block; position: relative; top: 9px; padding: 0 12px; background: #f8f8f8;">
+		<td colspan="3" style="border-bottom: 1px solid #e5e5e5; text-align: center;">
+			<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
 				<?php echo $value['group']; ?> <?php _e('settings', 'slideshow-plugin'); ?>
 			</span>
 		</td>

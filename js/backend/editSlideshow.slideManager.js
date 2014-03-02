@@ -16,6 +16,9 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			self.activateUploader();
 
 			self.activate();
+
+			// Old pre-3.5 uploader
+			self.activeOldUploader();
 		}
 	};
 
@@ -87,31 +90,13 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	};
 
 	/**
-	 *
+	 * Activates the pre-3.5 uploader for backwards compatibility.
 	 */
-	self.activate = function()
+	self.activeOldUploader = function()
 	{
 		var $popup           = $('#slideshow-slide-inserter-popup'),
 			$popupBackground = $('#slideshow-slide-inserter-popup-background'),
 			$searchBar       = $popup.find('#search');
-
-		// Index first
-		self.indexSlidesOrder();
-
-		// Make list items in the sortables list sortable, exclude elements by using the cancel option
-		$('.sortable-slides-list').sortable({
-			revert: true,
-			placeholder: 'sortable-placeholder',
-			forcePlaceholderSize: true,
-			stop: function()
-			{
-				self.indexSlidesOrder();
-			},
-			cancel: 'input, select, p'
-		});
-
-		// Add the wp-color-picker plugin to the color fields
-		$('.wp-color-picker-field').wpColorPicker({ width: 234 });
 
 		// Make the black background stretch all the way down the document
 		$popupBackground.height($(document).outerHeight(true));
@@ -162,7 +147,63 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		// Call self.deleteSlide on click
 		$('.slideshow-delete-slide').click(function(event)
 		{
-			self.deleteSlide($(event.currentTarget).closest('li'));
+			self.deleteSlide($(event.currentTarget).closest('.sortable-slides-list-item'));
+		});
+	};
+
+	/**
+	 * Activate edit slideshow functionality.
+	 */
+	self.activate = function()
+	{
+		// Index first
+		self.indexSlidesOrder();
+
+		// Make list items in the sortables list sortable, exclude elements by using the cancel option
+		$('.sortable-slides-list').sortable({
+			revert: true,
+			placeholder: 'sortable-placeholder',
+			forcePlaceholderSize: true,
+			stop: function()
+			{
+				self.indexSlidesOrder();
+			},
+			cancel: 'input, select, p'
+		});
+
+		// Add the wp-color-picker plugin to the color fields
+		$('.wp-color-picker-field').wpColorPicker({ width: 234 });
+
+		// Open all slides on click
+		$('.open-slides-button').on('click', function(event)
+		{
+			event.preventDefault();
+
+			$('.sortable-slides-list .sortable-slides-list-item').each(function(listItemIndex, listItem)
+			{
+				var $listItem = $(listItem);
+
+				if (!$listItem.find('.inside').is(':visible'))
+				{
+					$listItem.find('.handlediv').trigger('click');
+				}
+			});
+		});
+
+		// Close all slides on click
+		$('.close-slides-button').on('click', function(event)
+		{
+			event.preventDefault();
+
+			$('.sortable-slides-list .sortable-slides-list-item').each(function(listItemIndex, listItem)
+			{
+				var $listItem = $(listItem);
+
+				if ($listItem.find('.inside').is(':visible'))
+				{
+					$listItem.find('.handlediv').trigger('click');
+				}
+			});
 		});
 	};
 
@@ -194,12 +235,12 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	};
 
 	/**
-	 * Loop through list items, setting slide orders
+	 * Loop through sortable slides list items, setting slide orders
 	 */
 	self.indexSlidesOrder = function()
 	{
 		// Loop through sortables
-		$.each($('.sortable-slides-list').find('li'), function(slideID, slide)
+		$('.sortable-slides-list .sortable-slides-list-item').each(function(slideID, slide)
 		{
 			// Loop through all fields to set their name attributes with the new index
 			$.each($(slide).find('input, select, textarea'), function(key, input)
@@ -313,7 +354,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	self.insertImageSlide = function(id, title, description, src, alternativeText)
 	{
 		// Find and clone the image slide template
-		var $imageSlide = $('.image-slide-template').find('li').clone();
+		var $imageSlide = $('.image-slide-template').find('.sortable-slides-list-item').clone(true, true);
 
 		// Fill slide with data
 		$imageSlide.find('.attachment').attr('src', src);
@@ -334,12 +375,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		$imageSlide.find('.type').attr('name', 'slides[0][type]');
 		$imageSlide.find('.postId').attr('name', 'slides[0][postId]');
 
-		// Register delete link
-		$imageSlide.find('.slideshow-delete-slide').click(function(event)
-		{
-			self.deleteSlide($(event.currentTarget).closest('li'));
-		});
-
 		// Put slide in the sortables list.
 		$('.sortable-slides-list').prepend($imageSlide);
 
@@ -353,7 +388,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	self.insertTextSlide = function()
 	{
 		// Find and clone the text slide template
-		var $textSlide = $('.text-slide-template').find('li').clone();
+		var $textSlide = $('.text-slide-template').find('.sortable-slides-list-item').clone(true, true);
 
 		// Set names to be saved to the database
 		$textSlide.find('.title').attr('name', 'slides[0][title]');
@@ -364,12 +399,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		$textSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
         $textSlide.find('.noFollow').attr('name', 'slides[0][noFollow]');
 		$textSlide.find('.type').attr('name', 'slides[0][type]');
-
-		// Register delete link
-		$textSlide.find('.slideshow-delete-slide').click(function(event)
-		{
-			self.deleteSlide($(event.currentTarget).closest('li'));
-		});
 
 		// Add color picker
 		$textSlide.find('.color, .textColor').wpColorPicker();
@@ -387,18 +416,12 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	self.insertVideoSlide = function()
 	{
 		// Find and clone the video slide template
-		var $videoSlide = $('.video-slide-template').find('li').clone();
+		var $videoSlide = $('.video-slide-template').find('.sortable-slides-list-item').clone(true, true);
 
 		// Set names to be saved to the database
 		$videoSlide.find('.videoId').attr('name', 'slides[0][videoId]');
 		$videoSlide.find('.showRelatedVideos').attr('name', 'slides[0][showRelatedVideos]');
 		$videoSlide.find('.type').attr('name', 'slides[0][type]');
-
-		// Register delete link
-		$videoSlide.find('.slideshow-delete-slide').click(function(event)
-		{
-			self.deleteSlide($(event.currentTarget).closest('li'));
-		});
 
 		// Put slide in the sortables list.
 		$('.sortable-slides-list').prepend($videoSlide);

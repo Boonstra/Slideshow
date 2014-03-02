@@ -31,6 +31,8 @@ class SlideshowPluginPostType
 	 */
 	static function registerSlideshowPostType()
 	{
+		global $wp_version;
+
 		register_post_type(
 			self::$postType,
 			array(
@@ -72,7 +74,7 @@ class SlideshowPluginPostType
 				'has_archive'          => true,
 				'hierarchical'         => false,
 				'menu_position'        => null,
-				'menu_icon'            => SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/adminIcon.png',
+				'menu_icon'            => version_compare($wp_version, '3.8', '<') ? SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/adminIcon.png' : 'dashicons-format-gallery',
 				'supports'             => array('title'),
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)
@@ -177,25 +179,21 @@ class SlideshowPluginPostType
 			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
 		'</p>';
 
+		// Toggle slides open/closed
+		echo '<p style="text-align: center;">
+			<a href="#" class="open-slides-button">' . __( 'Open all', 'slideshow-plugin' ) . '</a>
+			|
+			<a href="#" class="close-slides-button">' . __( 'Close all', 'slideshow-plugin' ) . '</a>
+		</p>';
+
 		// No views/slides message
 		if (count($views) <= 0)
 		{
 			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
 		}
 
-		// Style
-		echo '<style type="text/css">
-			.sortable li {
-				cursor: pointer;
-			}
-
-			.sortable-slide-placeholder {
-				border: 1px solid #f00;
-			}
-		</style>';
-
 		// Start list
-		echo '<ul class="sortable-slides-list">';
+		echo '<div class="sortable-slides-list">';
 
 		// Print views
 		if (is_array($views))
@@ -212,7 +210,7 @@ class SlideshowPluginPostType
 		}
 
 		// End list
-		echo '</ul>';
+		echo '</div>';
 
 		// Templates
 		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);

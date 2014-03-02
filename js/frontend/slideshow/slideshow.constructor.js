@@ -90,7 +90,7 @@
 			if (this.$container.width() <= 0 ||
 				this.$container.height() <= 0)
 			{
-				setTimeout($.proxy(function(){ hideViewsFunction(); }, this), 500)
+				setTimeout($.proxy(function(){ hideViewsFunction(hideViewsFunction); }, this), 500)
 			}
 
 			$.each(this.$views, $.proxy(function(viewID, view)

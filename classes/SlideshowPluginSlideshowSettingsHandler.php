@@ -686,13 +686,13 @@ class SlideshowPluginSlideshowSettingsHandler
 
 				foreach ($settings['options'] as $radioKey => $radioValue)
 				{
-					$inputField .= '<label><input
+					$inputField .= '<label style="padding-right: 10px;"><input
 						type="radio"
 						name="' . $name . '"
 						class="' . $class . '"
 						value="' . $radioKey . '" ' .
 						checked($displayValue, $radioKey, false) .
-						' />' . $radioValue . '</label><br />';
+						' />' . $radioValue . '</label>';
 				}
 
 				break;

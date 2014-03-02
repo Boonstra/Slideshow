@@ -1,24 +1,46 @@
-.sortable-slides-list li {
+#settings.postbox table tr {
+  height: 31px;
+}
+.sortable-slides-list .sortable-slides-list-item div.hndle {
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  border-bottom: 1px solid #eee;
+}
+.sortable-slides-list .sortable-slides-list-item div.hndle .slide-icon,
+.sortable-slides-list .sortable-slides-list-item div.hndle .slide-title {
+  float: left;
+  margin-right: 8px;
+}
+.sortable-slides-list .sortable-slides-list-item div.hndle .slide-icon {
+  width: 1.4em;
+  height: 1.4em;
+}
+.sortable-slides-list .sortable-slides-list-item div.hndle .slide-icon.image-slide-icon {
+  background: url('../images/SlideshowPluginPostType/fa-camera.svg') no-repeat left center;
+}
+.sortable-slides-list .sortable-slides-list-item div.hndle .slide-icon.text-slide-icon {
+  background: url('../images/SlideshowPluginPostType/fa-align-left.svg') no-repeat left center;
+}
+.sortable-slides-list .sortable-slides-list-item div.hndle .slide-icon.video-slide-icon {
+  background: url('../images/SlideshowPluginPostType/fa-video-camera.svg') no-repeat left center;
+}
+.sortable-slides-list .sortable-slides-list-item div.inside {
   margin: 10px 0;
   width: auto;
-  background-color: #fafa;
+  background: url('../images/SlideshowPluginPostType/draggable.png') no-repeat right center;
 }
-.sortable-slides-list li .hndle span {
-  font-size: 0.8em;
-}
-.sortable-slides-list li p {
+.sortable-slides-list .sortable-slides-list-item div.inside p {
   margin: 5px 15px 5px 5px;
 }
-.sortable-slides-list li .slideshow-delete-slide,
-.sortable-slides-list li .slideshow-delete-new-slide {
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-delete-slide,
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-delete-new-slide {
   color: red;
   cursor: pointer;
 }
-.sortable-slides-list li.widefat {
+.sortable-slides-list .sortable-slides-list-item div.inside.widefat {
   border-color: #dfdfdf;
-}
-.sortable-slides-list li.sortable-slides-list-item {
-  background: #ffffff url('../images/SlideshowPluginPostType/draggable.png') no-repeat right center;
 }
 #slideshow-slide-inserter-popup-background {
   background: #000;
@@ -76,24 +98,17 @@
   width: auto !important;
   float: left;
 }
-.default-slideshow-settings-tab td {
+.default-slideshow-settings-tab tr {
+  height: 31px;
+}
+.default-slideshow-settings-tab tr td {
   padding: 0 10px !important;
 }
-.default-slideshow-settings-tab h4 {
+.default-slideshow-settings-tab tr h4 {
   text-align: center;
-}
-.custom-styles-tab {
-  min-width: 650px;
 }
 .custom-styles-tab.feature-filter {
   padding-bottom: 0;
-}
-.custom-styles-tab .styles-list {
-  float: left;
-  min-width: 150px;
-  max-width: 250px;
-  padding-right: 10px;
-  border-right: 1px solid #dfdfdf;
 }
 .custom-styles-tab .styles-list ul {
   margin-left: 10px;
@@ -123,13 +138,6 @@
 }
 .custom-styles-tab .styles-list span {
   padding: 0 2px;
-}
-.custom-styles-tab .style-editors {
-  float: left;
-  min-width: 500px;
-  padding-left: 10px;
-  margin: 0 -21px 0 -1px;
-  border-left: 1px solid #dfdfdf;
 }
 .custom-styles-tab .style-editors .style-editor textarea {
   width: 100%;
