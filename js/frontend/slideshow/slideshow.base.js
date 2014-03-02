@@ -462,4 +462,20 @@
 
 		return ID;
 	};
+
+	/**
+	 * Triggers click on an element if the Enter key is pressed while element is focused
+	 *
+	 * @param $obj (jQuery)
+	 */
+	self.Slideshow.prototype.onKeyboardSubmit = function($obj)
+	{
+		$obj.keypress(function(e) {
+			var code = e.keyCode || e.which;
+			if (code === 13) {
+				e.preventDefault();
+				$(this).click()
+			}
+		});
+	}
 }());

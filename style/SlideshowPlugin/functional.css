@@ -136,3 +136,14 @@
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
+.slideshow_container .assistive-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+.slideshow_container .hide-text {
+	font: 0/0 a;
+	color: rgba(0, 0, 0, 0);
+	text-shadow: none;
+	background-color: rgba(0, 0, 0, 0);
+	border: 0;
+}

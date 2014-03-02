@@ -29,7 +29,7 @@ if (isset($properties['alternativeText']))
 
 if (isset($properties['noFollow']))
 {
-    $noFollow = ' rel="nofollow" ';
+	$noFollow = ' rel="nofollow" ';
 }
 
 if (isset($properties['postId']))
@@ -102,8 +102,8 @@ if (is_numeric($postId)):
 					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
 				</a>
 				<div class="slideshow_description slideshow_transparent">
-					<?php echo !empty($title) ? '<h2><a ' . $anchorTagAttributes . '>' . $title . '</a></h2>' : ''; ?>
-					<?php echo !empty($description) ? '<p><a ' . $anchorTagAttributes . '>' . $description . '</a></p>' : ''; ?>
+					<?php echo !empty($title) ? '<div class="slideshow_slide_title"><a ' . $anchorTagAttributes . '>' . $title . '</a></div>' : ''; ?>
+					<?php echo !empty($description) ? '<p class="slideshow_slide_description"><a ' . $anchorTagAttributes . '>' . $description . '</a></p>' : ''; ?>
 				</div>
 			</div>
 

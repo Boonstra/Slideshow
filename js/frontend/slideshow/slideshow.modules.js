@@ -117,6 +117,14 @@
 			return;
 		}
 
+		// add text for screen readers and make button keyboard focusable
+		this.$nextButton
+			.html('<span class="assistive-text hide-text">' + this.$nextButton.data('slideshowNextText') + '</span>')
+			.attr({
+				'tabindex': '0',
+				'title': this.$nextButton.data('slideshowNextText')
+			});
+
 		// Register next button click event
 		this.$nextButton.click($.proxy(function()
 		{
@@ -137,6 +145,17 @@
 			this.animateTo(this.getNextViewID(), 1);
 		}, this));
 
+		// allow Enter key to trigger next button
+		this.onKeyboardSubmit(this.$nextButton);
+
+		// add text for screen readers and make button keyboard focusable
+		this.$previousButton
+			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPreviousText') + '</span>')
+			.attr({
+				'tabindex': '0',
+				'title': this.$previousButton.data('slideshowPreviousText')
+			});
+
 		// Register previous button click event
 		this.$previousButton.click($.proxy(function()
 		{
@@ -156,6 +175,9 @@
 
 			this.animateTo(this.getPreviousViewID(), -1);
 		}, this));
+
+		// allow Enter key to trigger previous button
+		this.onKeyboardSubmit(this.$previousButton);
 
 		// If hideNavigationButtons is true, fade them in and out on mouse enter and leave. Simply show them otherwise
 		if (this.settings['hideNavigationButtons'])
@@ -185,15 +207,28 @@
 			return;
 		}
 
+		// make play button keyboard focusable
+		this.$togglePlayButton.attr('tabindex', '0');
+
 		this.$container.bind('slideshowPlayStateChange', $.proxy(function(event, playState)
 		{
 			if (playState === this.PlayStates.PLAYING)
 			{
-				this.$togglePlayButton.attr('class', 'slideshow_pause');
+				this.$togglePlayButton
+					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPauseText')+'</span>')
+					.attr({
+						'class': 'slideshow_pause',
+						'title': this.$togglePlayButton.data('slideshowPauseText')
+					});
 			}
 			else if (playState === this.PlayStates.PAUSED)
 			{
-				this.$togglePlayButton.attr('class', 'slideshow_play');
+				this.$togglePlayButton
+					.html('<span class="assistive-text hide-text">' + this.$togglePlayButton.data('slideshowPlayText') + '</span>')
+					.attr({
+						'class': 'slideshow_play',
+						'title': this.$togglePlayButton.data('slideshowPlayText')
+					});
 			}
 		}, this));
 
@@ -211,6 +246,9 @@
 				this.pause(this.PlayStates.PAUSED);
 			}
 		}, this));
+
+		// Allow Enter key to trigger play/pause button
+		this.onKeyboardSubmit(this.$togglePlayButton);
 
 		// If hideControlPanel is true, fade it in and out on mouse enter and leave. Simply show it otherwise
 		if (this.settings['hideControlPanel'])
@@ -253,37 +291,43 @@
 				currentView = 'slideshow_currentView';
 			}
 
+			var slideNum = parseInt(viewID) + 1;
+
 			// Add list item
-			$ul.append('<li class="slideshow_transparent ' + currentView + '"><span style="display: none;">' + viewID +	'</span></li>');
+			$ul.append('<li class="slideshow_transparent ' + currentView + '" data-slide-position="' + viewID + '" role="button" title="Go to slide ' + slideNum + '"><span class="assistive-text hide-text">Go to slide ' + slideNum + '</span>' + '</li>');
 		}, this));
 
 		// On click of a view-bullet go to the corresponding slide
-		this.$pagination.find('li').click($.proxy(function(event)
-		{
-			if (this.currentlyAnimating)
+		this.$pagination.find('li')
+			.attr('tabindex', '0')
+			.click($.proxy(function(event)
 			{
-				return;
-			}
+				if (this.currentlyAnimating)
+				{
+					return;
+				}
 
-			// Find view ID and check if it's not empty
-			var viewID = $(event.currentTarget).find('span').text();
+				// Find view ID and check if it's not empty
+				var viewID = $(event.currentTarget).data('slidePosition');
 
-			if (isNaN(parseInt(viewID, 10)))
-			{
-				return;
-			}
+				if (isNaN(parseInt(viewID, 10)))
+				{
+					return;
+				}
 
-			this.pauseAllVideos();
+				this.pauseAllVideos();
 
-			if (this.playState === this.PlayStates.PLAYING)
-			{
-				this.pause(this.PlayStates.TEMPORARILY_PAUSED);
+				if (this.playState === this.PlayStates.PLAYING)
+				{
+					this.pause(this.PlayStates.TEMPORARILY_PAUSED);
 
-				this.play();
-			}
+					this.play();
+				}
 
-			this.animateTo(parseInt(viewID, 10), 0);
-		}, this));
+				this.animateTo(parseInt(viewID, 10), 0);
+			}, this));
+
+		this.onKeyboardSubmit(this.$pagination.find('li'));
 
 		// Bind slideshowAnimationStart to pagination to shift currently active view-bullets
 		this.$container.bind(
