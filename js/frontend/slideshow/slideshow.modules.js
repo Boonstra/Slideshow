@@ -117,12 +117,22 @@
 			return;
 		}
 
-		// add text for screen readers and make button keyboard focusable
+		this.$nextButton.bind('focus', $.proxy(function(event){ console.log(event.type); }, this));
+
+		// Add text for screen readers and make next button keyboard focusable
 		this.$nextButton
 			.html('<span class="assistive-text hide-text">' + this.$nextButton.data('slideshowNextText') + '</span>')
 			.attr({
 				'tabindex': '0',
 				'title': this.$nextButton.data('slideshowNextText')
+			});
+
+		// Add text for screen readers and make button previous keyboard focusable
+		this.$previousButton
+			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPreviousText') + '</span>')
+			.attr({
+				'tabindex': '0',
+				'title': this.$previousButton.data('slideshowPreviousText')
 			});
 
 		// Register next button click event
@@ -145,17 +155,6 @@
 			this.animateTo(this.getNextViewID(), 1);
 		}, this));
 
-		// allow Enter key to trigger next button
-		this.onKeyboardSubmit(this.$nextButton);
-
-		// add text for screen readers and make button keyboard focusable
-		this.$previousButton
-			.html('<span class="assistive-text hide-text">' + this.$previousButton.data('slideshowPreviousText') + '</span>')
-			.attr({
-				'tabindex': '0',
-				'title': this.$previousButton.data('slideshowPreviousText')
-			});
-
 		// Register previous button click event
 		this.$previousButton.click($.proxy(function()
 		{
@@ -176,7 +175,8 @@
 			this.animateTo(this.getPreviousViewID(), -1);
 		}, this));
 
-		// allow Enter key to trigger previous button
+		// Allow Enter key to trigger navigation buttons
+		this.onKeyboardSubmit(this.$nextButton);
 		this.onKeyboardSubmit(this.$previousButton);
 
 		// If hideNavigationButtons is true, fade them in and out on mouse enter and leave. Simply show them otherwise

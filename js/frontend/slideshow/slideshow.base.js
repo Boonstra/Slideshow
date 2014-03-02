@@ -464,18 +464,23 @@
 	};
 
 	/**
-	 * Triggers click on an element if the Enter key is pressed while element is focused
+	 * Binds a key press listener to the passed element to trigger a click event on it when it has focus and the enter
+	 * key is pressed.
 	 *
-	 * @param $obj (jQuery)
+	 * @param $element (jQuery)
 	 */
-	self.Slideshow.prototype.onKeyboardSubmit = function($obj)
+	self.Slideshow.prototype.onKeyboardSubmit = function($element)
 	{
-		$obj.keypress(function(e) {
-			var code = e.keyCode || e.which;
-			if (code === 13) {
-				e.preventDefault();
-				$(this).click()
+		$element.keypress($.proxy(function(event)
+		{
+			var code = event.keyCode || event.which;
+
+			if (code === 13)
+			{
+				event.preventDefault();
+
+				$(event.currentTarget).click()
 			}
-		});
-	}
+		}, this));
+	};
 }());
