@@ -235,7 +235,7 @@
 				var imageAbsoluteOuterWidth,
 					imageAbsoluteOuterHeight;
 
-				if (!isNaN(parseInt(imageOuterWidth)))
+				if (!isNaN(parseInt(imageOuterWidth, 10)))
 				{
 					imageAbsoluteOuterWidth = imageOuterWidth - $image.width();
 				}
@@ -244,7 +244,7 @@
 					imageAbsoluteOuterWidth = 0;
 				}
 
-				if (!isNaN(parseInt(imageOuterHeight)))
+				if (!isNaN(parseInt(imageOuterHeight, 10)))
 				{
 					imageAbsoluteOuterHeight = imageOuterHeight - $image.height();
 				}

@@ -1,6 +1,7 @@
 .slideshow_container { }
 
 .slideshow_container a { text-decoration: none; }
+.slideshow_container a:hover { text-decoration: none; }
 
 .slideshow_container .slideshow_slide { margin-right: 2px; }
 .slideshow_container .slideshow_slide_text h2 { text-align: center; font-size: 1.3em; }

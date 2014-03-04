@@ -191,7 +191,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 		// Loop through style editors
 		$('.custom-styles-tab .style-editors .style-editor').each(function(key, editor)
 		{
-			var customStyleID = parseInt($(editor).attr('class').split('_').pop());
+			var customStyleID = parseInt($(editor).attr('class').split('_').pop(), 10);
 
 			// Check if the ID is higher than any previously checked
 			if (customStyleID > highestCustomStyleID)
@@ -201,7 +201,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings.customStyles = fun
 		});
 
 		// Return
-		return parseInt(highestCustomStyleID);
+		return parseInt(highestCustomStyleID, 10);
 	};
 
 	$(document).bind('slideshowBackendReady', self.init);

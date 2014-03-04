@@ -94,7 +94,7 @@ slideshow_jquery_image_gallery_script = function()
 	};
 
 	/**
-	 *
+	 * Loads the YouTube API.
 	 */
 	self.loadYouTubeAPI = function()
 	{
@@ -114,7 +114,7 @@ slideshow_jquery_image_gallery_script = function()
 	};
 
 	/**
-	 *
+	 * Repairs stylesheet URLs that have been damaged during output.
 	 */
 	self.repairStylesheetURLs = function()
 	{

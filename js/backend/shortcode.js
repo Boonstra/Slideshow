@@ -20,7 +20,7 @@ slideshow_jquery_image_gallery_backend_script.shortcode = function()
 		{
 			var undefinedSlideshowMessage = 'No slideshow selected.',
 				shortcode                 = 'slideshow_deploy',
-				slideshowID               = parseInt($('#insertSlideshowShortcodeSlideshowSelect').val()),
+				slideshowID               = parseInt($('#insertSlideshowShortcodeSlideshowSelect').val(), 10),
 				extraData                 = window.slideshow_jquery_image_gallery_backend_script_shortcode;
 
 			if (typeof extraData === 'object')

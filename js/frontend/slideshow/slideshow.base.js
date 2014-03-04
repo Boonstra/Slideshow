@@ -469,7 +469,7 @@
 	 *
 	 * @param $element (jQuery)
 	 */
-	self.Slideshow.prototype.onKeyboardSubmit = function($element)
+	self.Slideshow.prototype.bindSubmitListener = function($element)
 	{
 		$element.keypress($.proxy(function(event)
 		{

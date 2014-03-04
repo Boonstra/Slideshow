@@ -275,7 +275,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			$resultsTable = $popup.find('#results'),
 			attachmentIDs = [];
 
-		offset = parseInt(offset);
+		offset = parseInt(offset, 10);
 
 		if (isNaN(offset))
 		{
@@ -286,7 +286,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 
 		$.each($resultsTable.find('.result-table-row'), function(key, tr)
 		{
-			attachmentIDs.push(parseInt($(tr).attr('data-attachment-id')));
+			attachmentIDs.push(parseInt($(tr).attr('data-attachment-id'), 10));
 		});
 
 		$.post(
@@ -330,7 +330,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 
 						$this.closest('tr').hide();
 
-						if (isNaN(parseInt(newOffset)))
+						if (isNaN(parseInt(newOffset, 10)))
 						{
 							return;
 						}
