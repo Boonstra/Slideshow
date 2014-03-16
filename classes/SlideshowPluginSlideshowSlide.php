@@ -8,23 +8,34 @@
  * - attachment
  * - video
  *
- * A text slide can consist of one of these properties:
+ * A text slide can consist of the following properties:
  * - title
+ * - titleElementTag
  * - description
+ * - descriptionElementTag
  * - textColor
  * - color
  * - url
  * - urlTarget
+ * - noFollow
+ * - type (required)
  *
- * An attachment slide can consist of one of these properties:
+ * An attachment slide can consist of the following properties:
  * - title
+ * - titleElementTag
  * - description
+ * - descriptionElementTag
  * - url
  * - urlTarget
+ * - noFollow
+ * - alternativeText
+ * - type (required)
  * - postId (required)
  *
- * A video slide can consist of one these properties:
+ * A video slide can consist of the following properties:
  * - videoId (required)
+ * - showRelatedVideos
+ * - type (required)
  *
  * @since 2.2.0
  * @author Stefan Boonstra

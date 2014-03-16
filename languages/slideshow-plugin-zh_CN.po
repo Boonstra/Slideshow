@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-09 23:53+0100\n"
-"PO-Revision-Date: 2013-09-09 23:53+0100\n"
-"Last-Translator: Stefan Boonstra <stefanboonstra@hotmail.com>\n"
+"POT-Creation-Date: 2014-03-15 13:47+0100\n"
+"PO-Revision-Date: 2014-03-15 13:47+0100\n"
+"Last-Translator: leo <441968345@qq.com>\n"
 "Language-Team: Kevin Tell\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -13,22 +13,22 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/SlideshowPluginGeneralSettings.php:82
 #: classes/SlideshowPluginGeneralSettings.php:83
 #: views/SlideshowPluginGeneralSettings/general-settings.php:14
 msgid "General Settings"
-msgstr ""
+msgstr "一般设置"
 
 #: classes/SlideshowPluginGeneralSettings.php:150
 msgid "New"
-msgstr ""
+msgstr "添加幻灯片"
 
 #: classes/SlideshowPluginGeneralSettings.php:151
 msgid "Are you sure you want to delete this custom style?"
-msgstr ""
+msgstr "确定删除自定义样式？"
 
 #: classes/SlideshowPluginGeneralSettings.php:196
 #: classes/SlideshowPluginInstaller.php:714
@@ -44,37 +44,37 @@ msgstr ""
 
 #: classes/SlideshowPluginGeneralSettings.php:353
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:57
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:139
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:143
 msgid "Untitled"
 msgstr ""
 
 #: classes/SlideshowPluginInstaller.php:711
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:472
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:70
-#: views/SlideshowPluginSlideshowSlide/backend_video.php:37
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:84
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:43
 msgid "Yes"
 msgstr ""
 
 #: classes/SlideshowPluginInstaller.php:712
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:473
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:71
-#: views/SlideshowPluginSlideshowSlide/backend_video.php:38
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:85
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:44
 msgid "No"
 msgstr ""
 
 #: classes/SlideshowPluginInstaller.php:714
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:610
 msgid "The style used for this slideshow"
-msgstr ""
+msgstr "这个幻灯片使用的样式"
 
 #: classes/SlideshowPluginInstaller.php:714
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
 #: classes/SlideshowPluginInstaller.php:715
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:122
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:126
 msgid "Custom style editor"
-msgstr ""
+msgstr "自定义样式编辑器"
 
 #: classes/SlideshowPluginInstaller.php:716
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:518
@@ -88,7 +88,7 @@ msgstr ""
 #: classes/SlideshowPluginInstaller.php:716
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Fade"
-msgstr ""
+msgstr "渐变"
 
 #: classes/SlideshowPluginInstaller.php:716
 #: classes/SlideshowPluginInstaller.php:717
@@ -199,94 +199,110 @@ msgstr "激活按钮 (用户可通过按钮左右滚动显示幻灯片)"
 msgid "Show control panel (play and pause button)"
 msgstr "显示控制面板 (播放和停止按钮)"
 
-#: classes/SlideshowPluginPostType.php:38
+#: classes/SlideshowPluginPostType.php:42
 msgid "Slideshows"
 msgstr "幻灯片"
 
-#: classes/SlideshowPluginPostType.php:39
+#: classes/SlideshowPluginPostType.php:43
 #: views/SlideshowPluginWidget/form.php:7
 msgid "Slideshow"
 msgstr "幻灯片"
 
-#: classes/SlideshowPluginPostType.php:40
-msgid "Add New Slideshow"
-msgstr ""
-
-#: classes/SlideshowPluginPostType.php:41
-msgid "Edit slideshow"
-msgstr ""
-
-#: classes/SlideshowPluginPostType.php:42
-msgid "New slideshow"
-msgstr ""
-
-#: classes/SlideshowPluginPostType.php:43
-msgid "View slideshow"
-msgstr ""
-
 #: classes/SlideshowPluginPostType.php:44
-msgid "Search slideshows"
-msgstr ""
+msgid "Add New Slideshow"
+msgstr "添加新的幻灯片"
 
 #: classes/SlideshowPluginPostType.php:45
-#: classes/SlideshowPluginPostType.php:46
-msgid "No slideshows found"
-msgstr ""
+msgid "Edit slideshow"
+msgstr "编辑幻灯片"
 
-#: classes/SlideshowPluginPostType.php:91
+#: classes/SlideshowPluginPostType.php:46
+msgid "New slideshow"
+msgstr "添加幻灯片"
+
+#: classes/SlideshowPluginPostType.php:47
+msgid "View slideshow"
+msgstr "查看幻灯片"
+
+#: classes/SlideshowPluginPostType.php:48
+msgid "Search slideshows"
+msgstr "搜索幻灯片"
+
+#: classes/SlideshowPluginPostType.php:49
+#: classes/SlideshowPluginPostType.php:50
+msgid "No slideshows found"
+msgstr "暂无幻灯片"
+
+#: classes/SlideshowPluginPostType.php:95
 msgid "Information"
 msgstr "信息"
 
-#: classes/SlideshowPluginPostType.php:100
+#: classes/SlideshowPluginPostType.php:104
 msgid "Slides List"
-msgstr ""
+msgstr "幻灯片列表"
 
-#: classes/SlideshowPluginPostType.php:109
+#: classes/SlideshowPluginPostType.php:113
 msgid "Slideshow Style"
 msgstr "幻灯片展示样式"
 
-#: classes/SlideshowPluginPostType.php:118
+#: classes/SlideshowPluginPostType.php:122
 msgid "Slideshow Settings"
 msgstr "幻灯片设置"
 
 #: classes/SlideshowPluginPostType.php:174
-#: classes/SlideshowPluginSlideInserter.php:222
+msgid "Slideshow created"
+msgstr ""
+
+#: classes/SlideshowPluginPostType.php:178
+msgid "Slideshow updated"
+msgstr ""
+
+#: classes/SlideshowPluginPostType.php:225
+#: classes/SlideshowPluginSlideInserter.php:198
 #: views/SlideshowPluginPostType/slides.php:2
 msgid "Insert"
 msgstr "插入"
 
-#: classes/SlideshowPluginPostType.php:183
+#: classes/SlideshowPluginPostType.php:233
+msgid "Open all"
+msgstr ""
+
+#: classes/SlideshowPluginPostType.php:235
+msgid "Close all"
+msgstr ""
+
+#: classes/SlideshowPluginPostType.php:241
 #: views/SlideshowPluginPostType/slides.php:10
 msgid "Add slides to this slideshow by using one of the buttons above."
-msgstr ""
+msgstr "点击上述按钮添加幻灯片"
 
 #: classes/SlideshowPluginShortcode.php:148
 msgid "No slideshow selected."
-msgstr ""
+msgstr "没有选择幻灯片"
 
-#: classes/SlideshowPluginSlideInserter.php:178
+#: classes/SlideshowPluginSlideInserter.php:154
 msgid "More results loaded"
-msgstr ""
+msgstr "更多结果已加载完毕"
 
-#: classes/SlideshowPluginSlideInserter.php:233
+#: classes/SlideshowPluginSlideInserter.php:209
 msgid "Load more results"
-msgstr ""
+msgstr "查看更多结果"
 
-#: classes/SlideshowPluginSlideInserter.php:244
+#: classes/SlideshowPluginSlideInserter.php:220
 msgid "No images were found, click here to upload some."
 msgstr ""
 
-#: classes/SlideshowPluginSlideInserter.php:317
+#: classes/SlideshowPluginSlideInserter.php:292
 msgid "Are you sure you want to delete this slide?"
-msgstr ""
+msgstr "确定删除这张幻灯片？"
 
-#: classes/SlideshowPluginSlideInserter.php:318
+#: classes/SlideshowPluginSlideInserter.php:293
 msgid "Insert image slide"
 msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:523
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
-msgstr ""
+msgstr "最大宽度。0 表示不受限制。"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
@@ -294,7 +310,7 @@ msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 msgid "More info"
-msgstr ""
+msgstr "更多信息"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 #, php-format
@@ -305,60 +321,60 @@ msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:525
 msgid "Slideshow's height"
-msgstr ""
+msgstr "幻灯片高度"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:526
 msgid "Image behaviour"
-msgstr ""
+msgstr "图片属性"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:527
 msgid "Shrink slideshow's height when width shrinks"
-msgstr ""
+msgstr "幻灯片宽度缩小时，同时缩小高度"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:528
 msgid ""
 "Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
-msgstr ""
+msgstr "开启幻灯片自适应功能"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:530
 msgid "Hide description box, pop up when mouse hovers over"
-msgstr ""
+msgstr "隐藏描述框，鼠标悬浮时显示"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:533
 msgid "Pause slideshow when mouse hovers over"
-msgstr ""
+msgstr "鼠标悬浮时暂停幻灯片播放"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:534
 msgid "Activate navigation buttons"
-msgstr ""
+msgstr "开启导航按钮"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:535
 msgid "Hide navigation buttons, show when mouse hovers over"
-msgstr ""
+msgstr "隐藏导航按钮，鼠标悬浮时显示"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:536
 msgid "Activate pagination"
-msgstr ""
+msgstr "开启页码分页"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:537
 msgid "Hide pagination, show when mouse hovers over"
-msgstr ""
+msgstr "隐藏页码分页，鼠标悬浮时显示"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:538
 msgid "Activate control panel (play and pause button)"
-msgstr ""
+msgstr "开启控制(播放和暂停按钮)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:539
 msgid "Hide control panel, show when mouse hovers over"
-msgstr ""
+msgstr "隐藏控制，鼠标悬浮时显示"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:540
 msgid "Wait until the next slide has loaded before showing it"
-msgstr ""
+msgstr "直到下一张幻灯片加载完毕才显示它"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:541
 msgid "Show a loading icon until the first slide appears"
-msgstr ""
+msgstr "在第一张幻灯片出现前显示加载条"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:542
 msgid "Randomize slides"
@@ -367,7 +383,7 @@ msgstr "随机幻灯片"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:543
 #, php-format
 msgid "Avoid content filter (disable if '%s' is shown)"
-msgstr ""
+msgstr "防止内容过滤 (在 '%s' 出现时禁用)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Left"
@@ -391,7 +407,7 @@ msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Random Animation"
-msgstr ""
+msgstr "随机动画"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Natural and centered"
@@ -420,68 +436,88 @@ msgstr ""
 msgid "Slideshow Widget"
 msgstr ""
 
+#: views/SlideshowPlugin/slideshow.php:23
+msgid "Play"
+msgstr ""
+
+#: views/SlideshowPlugin/slideshow.php:23
+msgid "Pause"
+msgstr ""
+
+#: views/SlideshowPlugin/slideshow.php:25
+msgid "Previous"
+msgstr ""
+
+#: views/SlideshowPlugin/slideshow.php:26
+msgid "Next"
+msgstr ""
+
+#: views/SlideshowPlugin/slideshow.php:28
+msgid "Got to slide"
+msgstr ""
+
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:46
 msgid "Default stylesheets"
-msgstr ""
+msgstr "默认样式"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:60
 msgid "Create a new custom style from this style"
-msgstr ""
+msgstr "在这个样式基础上创建新的自定义样式"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:62
 msgid "Customize"
-msgstr ""
+msgstr "自定义"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:76
 msgid "Custom stylesheets"
-msgstr ""
+msgstr "自定义样式表"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:89
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:168
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:172
 msgid "Edit this style"
-msgstr ""
+msgstr "编辑改样式"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:91
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:170
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:174
 #: views/SlideshowPluginPostType/slides.php:138
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:88
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:102
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:98
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:177
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:181
 msgid "Delete this style"
-msgstr ""
+msgstr "删除该样式"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:100
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:179
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:183
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:110
 msgid "Click 'Customize' to create a new custom stylesheet."
+msgstr "点击 '自定义' 创建新的自定义样式"
+
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:130
+msgid "Select a stylesheet to start customizing it."
 msgstr ""
 
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:126
-msgid "Select a stylesheet from the left to start customizing it."
-msgstr ""
-
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:135
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:188
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:139
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:192
 #: views/SlideshowPluginPostType/slides.php:59
 #: views/SlideshowPluginPostType/slides.php:144
 #: views/SlideshowPluginPostType/slides.php:196
 #: views/SlideshowPluginPostType/slides.php:264
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:96
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:12
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:101
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:54
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:110
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:18
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:123
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:68
 #: views/SlideshowPluginWidget/form.php:2
 msgid "Title"
 msgstr ""
 
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:144
-#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:196
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:148
+#: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:200
 msgid "Style"
 msgstr ""
 
@@ -513,23 +549,23 @@ msgstr ""
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:11
 msgid "Add slideshows"
-msgstr ""
+msgstr "添加幻灯片"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:12
 msgid "Edit slideshows"
-msgstr ""
+msgstr "编辑幻灯片"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:13
 msgid "Delete slideshows"
-msgstr ""
+msgstr "删除幻灯片"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:20
 msgid "User Capabilities"
-msgstr ""
+msgstr "用户权限"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:22
 msgid "Select the user roles that will able to perform certain actions."
-msgstr ""
+msgstr "选择权限对应的用户群组"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:38
 msgid "Untitled role"
@@ -541,7 +577,7 @@ msgstr "设置"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:69
 msgid "Stylesheet location"
-msgstr ""
+msgstr "样式表(Stylesheet)位置"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:72
 msgid "top"
@@ -553,7 +589,7 @@ msgstr ""
 
 #: views/SlideshowPluginGeneralSettings/general-settings.php:16
 msgid "Custom Styles"
-msgstr ""
+msgstr "自定义样式"
 
 #: views/SlideshowPluginPostType/information.php:1
 msgid ""
@@ -580,8 +616,8 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:54
 #: views/SlideshowPluginPostType/slides.php:191
 #: views/SlideshowPluginSlideInserter/insert-text-button.php:2
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:6
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:48
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:9
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:57
 msgid "Text slide"
 msgstr "文本幻灯片"
 
@@ -589,17 +625,17 @@ msgstr "文本幻灯片"
 #: views/SlideshowPluginPostType/slides.php:150
 #: views/SlideshowPluginPostType/slides.php:198
 #: views/SlideshowPluginPostType/slides.php:270
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:103
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:15
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:108
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:57
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:117
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:21
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:130
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:71
 msgid "Description"
 msgstr ""
 
 #: views/SlideshowPluginPostType/slides.php:63
 #: views/SlideshowPluginPostType/slides.php:200
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:21
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:63
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:27
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:77
 msgid "Background color"
 msgstr ""
 
@@ -607,10 +643,10 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:155
 #: views/SlideshowPluginPostType/slides.php:205
 #: views/SlideshowPluginPostType/slides.php:275
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:110
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:28
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:115
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:71
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:124
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:34
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:137
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:85
 msgid "URL"
 msgstr ""
 
@@ -618,10 +654,10 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:157
 #: views/SlideshowPluginPostType/slides.php:207
 #: views/SlideshowPluginPostType/slides.php:277
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:113
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:31
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:118
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:74
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:127
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:37
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:140
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:88
 msgid "Open URL in"
 msgstr ""
 
@@ -629,10 +665,10 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:159
 #: views/SlideshowPluginPostType/slides.php:209
 #: views/SlideshowPluginPostType/slides.php:279
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:115
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:33
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:120
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:76
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:129
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:39
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:142
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:90
 msgid "Same window"
 msgstr ""
 
@@ -640,25 +676,25 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:160
 #: views/SlideshowPluginPostType/slides.php:210
 #: views/SlideshowPluginPostType/slides.php:280
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:116
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:34
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:121
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:77
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:130
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:40
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:143
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:91
 msgid "New window"
 msgstr ""
 
 #: views/SlideshowPluginPostType/slides.php:90
 #: views/SlideshowPluginPostType/slides.php:230
 #: views/SlideshowPluginSlideInserter/insert-video-button.php:2
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:56
-#: views/SlideshowPluginSlideshowSlide/backend_video.php:23
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:67
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:26
 msgid "Video slide"
 msgstr "视频幻灯片"
 
 #: views/SlideshowPluginPostType/slides.php:95
 #: views/SlideshowPluginPostType/slides.php:235
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:62
-#: views/SlideshowPluginSlideshowSlide/backend_video.php:29
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:76
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:35
 msgid "Youtube Video ID"
 msgstr ""
 
@@ -666,8 +702,8 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:255
 #: views/SlideshowPluginSlideInserter/insert-image-button.php:2
 #: views/SlideshowPluginSlideInserter/insert-image-button.php:4
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:82
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:89
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:91
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:108
 msgid "Image slide"
 msgstr "图示幻灯片"
 
@@ -681,19 +717,19 @@ msgstr ""
 #: views/SlideshowPluginPostType/slides.php:218
 #: views/SlideshowPluginPostType/slides.php:243
 #: views/SlideshowPluginPostType/slides.php:289
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:135
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:45
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:78
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:140
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:88
-#: views/SlideshowPluginSlideshowSlide/backend_video.php:45
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:149
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:51
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:92
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:162
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:102
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:51
 msgid "Delete slide"
-msgstr ""
+msgstr "删除幻灯片"
 
 #: views/SlideshowPluginPostType/style-settings.php:22
 #, php-format
 msgid "Custom styles can be created and customized %shere%s."
-msgstr ""
+msgstr "点击 %s 这里%s自定义样式"
 
 #: views/SlideshowPluginPostType/support-plugin.php:3
 msgid "Help to keep this plugin free!"
@@ -716,76 +752,89 @@ msgstr "为本插件打分"
 
 #: views/SlideshowPluginPostType/support-plugin.php:24
 msgid "Frequently Asked Questions (FAQ)"
-msgstr ""
+msgstr "常见问题"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18
 msgid "Insert a Slideshow"
-msgstr ""
+msgstr "添加幻灯片"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:12
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:51
 msgid "Insert Slideshow"
-msgstr ""
+msgstr "添加幻灯片"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:27
 msgid "Select a slideshow"
-msgstr ""
+msgstr "选择幻灯片"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:36
 #: views/SlideshowPluginWidget/form.php:12
 msgid "Untitled slideshow"
-msgstr ""
+msgstr "未命名幻灯片"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:56
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:67
 #, php-format
 msgid ""
 "It seems you haven't created any slideshows yet. %sYou can create a "
 "slideshow here!%s"
-msgstr ""
+msgstr "你还没有添加任何幻灯片. %s点击这里开始创建!%s"
 
 #: views/SlideshowPluginSlideInserter/search-popup.php:6
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: views/SlideshowPluginSlideInserter/search-popup.php:7
 msgid "Search images by title or ID"
+msgstr "按标题或ID搜索图片"
+
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:80
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:4
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:62
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:103
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:46
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:21
+msgid "Click to toggle"
 msgstr ""
 
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:120
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:38
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:125
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:81
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:134
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:44
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:147
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:95
 msgid "Don't let search engines follow link"
 msgstr ""
 
-#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:126
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:131
+#: views/SlideshowPluginSlideshowSlide/backend_attachment.php:140
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:153
 msgid "Alternative text"
 msgstr ""
 
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:18
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:60
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:24
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:74
 msgid "Text color"
-msgstr ""
+msgstr "文字颜色"
 
-#: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
-#: views/SlideshowPluginSlideshowSlide/backend_video.php:36
+#: views/SlideshowPluginSlideshowSlide/backend_templates.php:83
+#: views/SlideshowPluginSlideshowSlide/backend_video.php:42
 msgid "Show related videos"
-msgstr ""
+msgstr "显示相关视频"
 
-#: views/SlideshowPluginSlideshowSlide/backend_text.php:65
+#: views/SlideshowPluginSlideshowSlide/backend_text.php:79
 msgid "(Leave empty for a transparent background)"
+msgstr "（留空使用透明背景）"
+
+#: views/SlideshowPluginUpload/upload-button.php:1
+msgid "Upload/Manage Images"
 msgstr ""
 
 #: views/SlideshowPluginWidget/form.php:9
 msgid "Random Slideshow"
-msgstr ""
+msgstr "随机幻灯片"
 
 #~ msgid "Questions / Suggestions"
 #~ msgstr "问题/建议"

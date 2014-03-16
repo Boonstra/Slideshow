@@ -5,7 +5,7 @@ $attachment = get_post($properties['postId']);
 
 if (isset($attachment)):
 
-	$title = $description = $url = $target = $alternativeText = '';
+	$title = $description = $url = $target = $alternativeText = $titleElementTagID = $descriptionElementTagID = '';
 
     $noFollow = false;
 
@@ -14,9 +14,19 @@ if (isset($attachment)):
 		$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
 	}
 
+	if (isset($properties['titleElementTagID']))
+	{
+		$titleElementTagID = $properties['titleElementTagID'];
+	}
+
 	if (isset($properties['description']))
 	{
 		$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
+	}
+
+	if (isset($properties['descriptionElementTagID']))
+	{
+		$descriptionElementTagID = $properties['descriptionElementTagID'];
 	}
 
 	if (isset($properties['url']))
@@ -92,62 +102,80 @@ if (isset($attachment)):
 
 					<?php endif; ?>
 				</div>
-				<div style="clear: both;"></div>
+				<div class="clear"></div>
 			</div>
 
 			<div class="inside">
 
-				<p>
+				<div class="slideshow-group">
 
 					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
 						<img width="80" height="60" src="<?php echo $imageSrc; ?>" class="attachment-80x60" alt="<?php echo $attachment->post_title; ?>" title="<?php echo $attachment->post_title; ?>" />
 					</a>
 
-				</p>
+				</div>
 
-				<p>
+				<div class="slideshow-group">
 
-					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+					<div class="slideshow-left slideshow-label"><?php _e('Title', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-right">
+						<select name="<?php echo $name; ?>[titleElementTagID]">
+							<?php foreach (SlideshowPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
+								<option value="<?php echo $elementTagID; ?>" <?php selected($titleElementTagID, $elementTagID); ?>><?php echo $elementTag; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+					<div class="clear"></div>
 					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" />
 
-				</p>
+				</div>
 
-				<p>
+				<div class="slideshow-group">
 
-					<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
-					<textarea name="<?php echo $name; ?>[description]" rows="3" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
+					<div class="slideshow-left slideshow-label"><?php _e('Description', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-right">
+						<select name="<?php echo $name; ?>[descriptionElementTagID]">
+							<?php foreach (SlideshowPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
+								<option value="<?php echo $elementTagID; ?>" <?php selected($descriptionElementTagID, $elementTagID); ?>><?php echo $elementTag; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+					<div clear="clear"></div>
+					<textarea name="<?php echo $name; ?>[description]" rows="3" cols="" style="width: 100%;"><?php echo $description; ?></textarea>
 
-				</p>
+				</div>
 
-				<p>
+				<div class="slideshow-group">
 
-					<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
-					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" /><br />
+					<div class="slideshow-label"><?php _e('URL', 'slideshow-plugin'); ?></div>
+					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" />
 
-					<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
-					<select name="<?php echo $name; ?>[urlTarget]">
+					<div class="slideshow-label slideshow-left"><?php _e('Open URL in', 'slideshow-plugin'); ?></div>
+					<select name="<?php echo $name; ?>[urlTarget]" class="slideshow-right">
 						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
 						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
-					</select><br />
+					</select>
+					<div class="clear"></div>
 
-	                <input type="checkbox" name="<?php echo $name; ?>[noFollow]" value="" <?php checked($noFollow); ?> />
-	                <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
+					<div class="slideshow-label slideshow-left"><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></div>
+	                <input type="checkbox" name="<?php echo $name; ?>[noFollow]" value="" <?php checked($noFollow); ?> class="slideshow-right" />
+					<div class="clear"></div>
 
-	            </p>
+	            </div>
 
-				<p>
+				<div class="slideshow-group">
 
-					<i><?php _e('Alternative text', 'slideshow-plugin'); ?></i><br />
+					<div class="slideshow-label"><?php _e('Alternative text', 'slideshow-plugin'); ?></div>
 					<input type="text" name="<?php echo $name; ?>[alternativeText]" value="<?php echo $alternativeText; ?>" style="width: 100%;" />
 
-				</p>
+				</div>
+
+				<div class="slideshow-group slideshow-delete-slide">
+					<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+				</div>
 
 				<input type="hidden" name="<?php echo $name; ?>[type]" value="attachment" />
 				<input type="hidden" name="<?php echo $name; ?>[postId]" value="<?php echo $attachment->ID; ?>" />
-
-				<p class="slideshow-delete-slide">
-					<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
-				</p>
 
 			</div>
 

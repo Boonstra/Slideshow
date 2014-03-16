@@ -27,17 +27,28 @@
   background: url('../images/SlideshowPluginPostType/fa-video-camera.svg') no-repeat left center;
 }
 .sortable-slides-list .sortable-slides-list-item div.inside {
-  margin: 10px 0;
   width: auto;
-  background: url('../images/SlideshowPluginPostType/draggable.png') no-repeat right center;
 }
-.sortable-slides-list .sortable-slides-list-item div.inside p {
-  margin: 5px 15px 5px 5px;
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group {
+  margin: 5px 0;
 }
-.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-delete-slide,
-.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-delete-new-slide {
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group input[type="checkbox"] {
+  margin-top: 8px;
+}
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group .slideshow-label {
+  font-style: italic;
+  line-height: 30px;
+}
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group.slideshow-delete-slide,
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group.slideshow-delete-new-slide {
   color: red;
   cursor: pointer;
+}
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group .slideshow-left {
+  float: left;
+}
+.sortable-slides-list .sortable-slides-list-item div.inside .slideshow-group .slideshow-right {
+  float: right;
 }
 .sortable-slides-list .sortable-slides-list-item div.inside.widefat {
   border-color: #dfdfdf;

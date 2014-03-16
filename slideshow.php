@@ -8,6 +8,7 @@
  Author: StefanBoonstra
  Author URI: http://stefanboonstra.com/
  License: GPLv2
+ Text Domain: slideshow-plugin
 */
 
 /**

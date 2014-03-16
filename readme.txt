@@ -181,13 +181,11 @@ personal taste.
 == Changelog ==
 
 = 2.2.20 =
-<<<<<<< HEAD
 *	Compatible with WordPress 3.8.
-=======
-*	Compatible with WordPress 3.7.
->>>>>>> 7708c0356cacd7e80848be31ff51b09d210f8334
+*	Accessibility improvements by [bensashi](https://github.com/bensashi)
 *	Improved functional stylesheet.
 *	Post published/updated message doesn't show a link to a non-existant page anymore.
+*	New tags are available for custom stylesheets: %site-url%, %stylesheet-url% and %template-url%
 *	Fixed: When the slideshow would not have any height, slides would not hide outside of the slideshow.
 *	Added Serbo-Croatian translation by Webhosting Hub.
 *	Updated Persian translation by W3Design.

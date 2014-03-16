@@ -192,6 +192,9 @@ class SlideshowPluginSlideshowStylesheet
 
 		// Replace the '%plugin-url%' tag with the actual URL and add a unique identifier to separate stylesheets
 		$stylesheet = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $stylesheet);
+		$stylesheet = str_replace('%site-url%', get_bloginfo('url'), $stylesheet);
+		$stylesheet = str_replace('%stylesheet-url%', get_stylesheet_directory_uri(), $stylesheet);
+		$stylesheet = str_replace('%template-url%', get_template_directory_uri(), $stylesheet);
 		$stylesheet = str_replace('.slideshow_container', '.slideshow_container_' . $styleName, $stylesheet);
 
 		return $stylesheet;

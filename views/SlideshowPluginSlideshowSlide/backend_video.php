@@ -25,31 +25,31 @@ if (isset($properties['showRelatedVideos']) &&
 		<div class="slide-title">
 			<?php _e('Video slide', 'slideshow-plugin'); ?>
 		</div>
-		<div style="clear: both;"></div>
+		<div class="clear"></div>
 	</div>
 
 	<div class="inside">
 
-		<p>
+		<div class="slideshow-group">
 
-			<i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i><br />
+			<div class="slideshow-label"><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></div>
 			<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" style="width: 100%;" />
 
-		</p>
+		</div>
 
-		<p>
+		<div class="slideshow-group">
 
-			<i><?php _e('Show related videos', 'slideshow-plugin'); ?></i><br />
+			<div class="slideshow-label"><?php _e('Show related videos', 'slideshow-plugin'); ?></div>
 			<label><input type="radio" name="<?php echo $name; ?>[showRelatedVideos]" value="true" <?php checked('true', $showRelatedVideos); ?>><?php _e('Yes', 'slideshow-plugin'); ?></label>
 			<label><input type="radio" name="<?php echo $name; ?>[showRelatedVideos]" value="false" <?php checked('false', $showRelatedVideos); ?>><?php _e('No', 'slideshow-plugin'); ?></label>
 
-		</p>
+		</div>
+
+		<div class="slideshow-group slideshow-delete-slide">
+			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+		</div>
 
 		<input type="hidden" name="<?php echo $name; ?>[type]" value="video" />
-
-		<p class="slideshow-delete-slide">
-			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
-		</p>
 
 	</div>
 

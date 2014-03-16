@@ -58,28 +58,56 @@
 
 	div.inside
 	{
-	  margin: 10px 0;
-
 	  width: auto;
 
-	  background: url('../images/SlideshowPluginPostType/draggable.png') no-repeat right center;
-
-	  p
+	  .slideshow-group
 	  {
-		margin: 5px 15px 5px 5px;
-	  }
+		margin: 5px 0;
 
-	  .slideshow-delete-slide,
-	  .slideshow-delete-new-slide
-	  {
-		color: red;
-		cursor: pointer;
+		input[type="checkbox"]
+		{
+		  margin-top: 8px;
+		}
+
+		.slideshow-label
+		{
+		  font-style: italic;
+
+		  line-height: 30px;
+		}
+
+		&.slideshow-delete-slide,
+		&.slideshow-delete-new-slide
+		{
+		  color: red;
+		  cursor: pointer;
+		}
+
+		.slideshow-left
+		{
+		  float: left;
+		}
+
+		.slideshow-right
+		{
+		  float: right;
+		}
 	  }
 
 	  &.widefat
 	  {
 		border-color: #dfdfdf;
 	  }
+
+//	  margin: 10px 0;
+
+//	  background: url('../images/SlideshowPluginPostType/fa-arrows-v.svg') no-repeat right center;
+//	  background-size: 20px 30px;
+
+//	  p
+//	  {
+//		margin: 5px 0;
+//	  }
     }
   }
 }
