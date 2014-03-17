@@ -23,7 +23,10 @@ class SlideshowPluginPostType
 		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
 		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
 
+		add_action('admin_action_slideshow_jquery_image_gallery_duplicate_slideshow', array(__CLASS__, 'duplicateSlideshow'), 11);
+
 		add_filter('post_updated_messages', array(__CLASS__, 'alterSlideshowMessages'));
+		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateSlideshowActionLink'), 10, 2);
 	}
 
 	/**
@@ -139,12 +142,8 @@ class SlideshowPluginPostType
 	 * frontend page.
 	 *
 	 * @since 2.2.20
-	 *
 	 * @param mixed $messages
-	 *
 	 * @return mixed $messages
-	 *
-	 *
 	 */
 	static function alterSlideshowMessages($messages)
 	{
@@ -298,5 +297,52 @@ class SlideshowPluginPostType
 
 		// Include
 		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+	}
+
+	/**
+	 * Hooked on the post_row_actions filter, adds a "duplicate" action to each slideshow on the slideshow's overview
+	 * page.
+	 *
+	 * @param array $actions
+	 * @param WP_Post $post
+	 * @return array $actions
+	 */
+	static function duplicateSlideshowActionLink($actions, $post)
+	{
+		// TODO Enable
+//		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
+//			$post->post_type === self::$postType)
+//		{
+//			$url = add_query_arg(array(
+//				'action' => 'slideshow_jquery_image_gallery_duplicate_slideshow',
+//				'post'   => $post->ID,
+//			));
+//
+//			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-slideshow_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
+//		}
+
+		return $actions;
+	}
+
+	/**
+	 * Checks if a "duplicate" slideshow action was performed and whether or not the current user has the permission to
+	 * perform this action at all.
+	 */
+	static function duplicateSlideshow()
+	{
+		$post     = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
+		$nonce    = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
+		$postType = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+
+		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $post) ||
+			!current_user_can('slideshow-jquery-image-gallery-add-slideshows') ||
+			$postType !== self::$postType)
+		{
+			return;
+		}
+
+		// TODO Implement. Using the link below, or by any other means that can get all post meta without performing an
+		// TODO SQL query.
+		// @see http://rudrastyh.com/wordpress/duplicate-post.html
 	}
 }
