@@ -168,7 +168,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			{
 				self.indexSlidesOrder();
 			},
-			cancel: 'input, select, p'
+			cancel: 'input, select, textarea'
 		});
 
 		// Add the wp-color-picker plugin to the color fields
@@ -367,7 +367,9 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 
 		// Set names to be saved to the database
 		$imageSlide.find('.title').attr('name', 'slides[0][title]');
+		$imageSlide.find('.titleElementTagID').attr('name', 'slides[0][titleElementTagID]');
 		$imageSlide.find('.description').attr('name', 'slides[0][description]');
+		$imageSlide.find('.descriptionElementTagID').attr('name', 'slides[0][descriptionElementTagID]');
 		$imageSlide.find('.url').attr('name', 'slides[0][url]');
 		$imageSlide.find('.urlTarget').attr('name', 'slides[0][urlTarget]');
 		$imageSlide.find('.alternativeText').attr('name', 'slides[0][alternativeText]');
@@ -392,7 +394,9 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 
 		// Set names to be saved to the database
 		$textSlide.find('.title').attr('name', 'slides[0][title]');
+		$textSlide.find('.titleElementTagID').attr('name', 'slides[0][titleElementTagID]');
 		$textSlide.find('.description').attr('name', 'slides[0][description]');
+		$textSlide.find('.descriptionElementTagID').attr('name', 'slides[0][descriptionElementTagID]');
 		$textSlide.find('.textColor').attr('name', 'slides[0][textColor]');
 		$textSlide.find('.color').attr('name', 'slides[0][color]');
 		$textSlide.find('.url').attr('name', 'slides[0][url]');
