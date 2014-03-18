@@ -309,17 +309,16 @@ class SlideshowPluginPostType
 	 */
 	static function duplicateSlideshowActionLink($actions, $post)
 	{
-		// TODO Enable
-//		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
-//			$post->post_type === self::$postType)
-//		{
-//			$url = add_query_arg(array(
-//				'action' => 'slideshow_jquery_image_gallery_duplicate_slideshow',
-//				'post'   => $post->ID,
-//			));
-//
-//			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-slideshow_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
-//		}
+		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
+			$post->post_type === self::$postType)
+		{
+			$url = add_query_arg(array(
+				'action' => 'slideshow_jquery_image_gallery_duplicate_slideshow',
+				'post'   => $post->ID,
+			));
+
+			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-slideshow_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
+		}
 
 		return $actions;
 	}
@@ -330,19 +329,83 @@ class SlideshowPluginPostType
 	 */
 	static function duplicateSlideshow()
 	{
-		$post     = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
-		$nonce    = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
-		$postType = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
+		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
+		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
 
-		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $post) ||
+		// Check if nonce is correct and user has the correct privileges
+		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $postID) ||
 			!current_user_can('slideshow-jquery-image-gallery-add-slideshows') ||
 			$postType !== self::$postType)
 		{
-			return;
+			wp_redirect($errorRedirectURL);
+
+			die();
 		}
 
-		// TODO Implement. Using the link below, or by any other means that can get all post meta without performing an
-		// TODO SQL query.
-		// @see http://rudrastyh.com/wordpress/duplicate-post.html
+		$post = get_post($postID);
+
+		// Check if the post was retrieved successfully
+		if (!$post instanceof WP_Post ||
+			$post->post_type !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$current_user = wp_get_current_user();
+
+		// Create post duplicate
+		$newPostID = wp_insert_post(array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $current_user->ID,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title . (strlen($post->post_title) > 0 ? ' - ' : '') . __('Copy', 'slideshow-plugin'),
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order,
+		));
+
+		if (is_wp_error($newPostID))
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		// Get all taxonomies
+		$taxonomies = get_object_taxonomies($post->post_type);
+
+		// Add taxonomies to new post
+		foreach ($taxonomies as $taxonomy)
+		{
+			$postTerms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'slugs'));
+
+			wp_set_object_terms($newPostID, $postTerms, $taxonomy, false);
+		}
+
+		// Get all post meta
+		$postMetaRecords = get_post_meta($post->ID);
+
+		// Add post meta records to new post
+		foreach ($postMetaRecords as $postMetaKey => $postMetaValues)
+		{
+			foreach ($postMetaValues as $postMetaValue)
+			{
+				update_post_meta($newPostID, $postMetaKey, maybe_unserialize($postMetaValue));
+			}
+		}
+
+		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
+
+		die();
 	}
 }
