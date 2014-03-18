@@ -2,14 +2,26 @@
 
 $title = $description = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
 
+$titleElementTag = $descriptionElementTag = SlideshowPluginSlideInserter::getElementTag();
+
 if (isset($properties['title']))
 {
 	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
 }
 
+if (isset($properties['titleElementTagID']))
+{
+	$titleElementTag = SlideshowPluginSlideInserter::getElementTag($properties['titleElementTagID']);
+}
+
 if (isset($properties['description']))
 {
 	$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
+}
+
+if (isset($properties['descriptionElementTagID']))
+{
+	$descriptionElementTag = SlideshowPluginSlideInserter::getElementTag($properties['descriptionElementTagID']);
 }
 
 if (isset($properties['url']))
@@ -102,8 +114,8 @@ if (is_numeric($postId)):
 					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
 				</a>
 				<div class="slideshow_description slideshow_transparent">
-					<?php echo !empty($title) ? '<div class="slideshow_slide_title"><a ' . $anchorTagAttributes . '>' . $title . '</a></div>' : ''; ?>
-					<?php echo !empty($description) ? '<p class="slideshow_slide_description"><a ' . $anchorTagAttributes . '>' . $description . '</a></p>' : ''; ?>
+					<?php echo !empty($title) ? '<' . $titleElementTag . ' class="slideshow_slide_title"><a ' . $anchorTagAttributes . '>' . $title . '</a></' . $titleElementTag . '>' : ''; ?>
+					<?php echo !empty($description) ? '<' . $descriptionElementTag . ' class="slideshow_slide_description"><a ' . $anchorTagAttributes . '>' . $description . '</a></' . $descriptionElementTag . '>' : ''; ?>
 				</div>
 			</div>
 

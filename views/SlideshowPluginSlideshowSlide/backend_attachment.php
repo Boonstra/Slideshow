@@ -5,7 +5,7 @@ $attachment = get_post($properties['postId']);
 
 if (isset($attachment)):
 
-	$title = $description = $url = $target = $alternativeText = $titleElementTagID = $descriptionElementTagID = '';
+	$title = $titleElementTagID = $description = $descriptionElementTagID = $url = $target = $alternativeText = '';
 
     $noFollow = false;
 

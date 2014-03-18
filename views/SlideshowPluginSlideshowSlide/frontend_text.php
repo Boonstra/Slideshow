@@ -2,14 +2,26 @@
 
 $title = $description = $textColor = $color = $url = $urlTarget = $noFollow = '';
 
+$titleElementTag = $descriptionElementTag = SlideshowPluginSlideInserter::getElementTag();
+
 if (isset($properties['title']))
 {
 	$title = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']));
 }
 
+if (isset($properties['titleElementTagID']))
+{
+	$titleElementTag = SlideshowPluginSlideInserter::getElementTag($properties['titleElementTagID']);
+}
+
 if (isset($properties['description']))
 {
 	$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
+}
+
+if (isset($properties['descriptionElementTagID']))
+{
+	$descriptionElementTag = SlideshowPluginSlideInserter::getElementTag($properties['descriptionElementTagID']);
 }
 
 if (isset($properties['textColor']))
@@ -57,19 +69,19 @@ $anchorTagAttributes = (!empty($url) ? 'href="' . $url . '"' : '') . ' ' . (!emp
 
 <div class="slideshow_slide slideshow_slide_text" style="<?php echo !empty($color) ? 'background-color: ' . $color . ';' : '' ?>">
 	<?php if(!empty($title)): ?>
-	<div>
+	<<?php echo $titleElementTag; ?>>
 		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: ' . $textColor . ';' : ''; ?>">
 			<?php echo $title; ?>
 		</a>
-	</div>
+	</<?php echo $titleElementTag; ?>>
 	<?php endif; ?>
 
 	<?php if(!empty($description)): ?>
-	<p>
+	<<?php echo $descriptionElementTag; ?>>
 		<a <?php echo $anchorTagAttributes; ?> style="<?php echo !empty($textColor) ? 'color: ' . $textColor . ';' : ''; ?>">
 			<?php echo $description; ?>
 		</a>
-	</p>
+	</<?php echo $descriptionElementTag; ?>>
 	<?php endif; ?>
 
 	<a <?php echo $anchorTagAttributes ?> class="slideshow_background_anchor"></a>
