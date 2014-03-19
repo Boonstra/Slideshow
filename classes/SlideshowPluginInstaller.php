@@ -106,8 +106,59 @@ class SlideshowPluginInstaller
 			self::updateV2_2_16_to_V_2_2_17();
 		}
 
+		// Update to version 2.2.20
+		if (self::firstVersionGreaterThanSecond('2.2.20', $currentVersion) ||
+			$currentVersion == null)
+		{
+			self::updateV2_2_17_to_V_2_2_20();
+		}
+
 		// Set new version
 		update_option(self::$versionKey, SlideshowPluginMain::$version);
+	}
+
+	/**
+	 * Version 2.2.17 to 2.2.20
+	 *
+	 * Version 2.2.20 allows users to choose what kind of element displays the title and description of a slide. This
+	 * replaces all default header (h2) and paragraph (p) elements with a default div element. This method will update
+	 * all custom stylesheets with the new selectors.
+	 *
+	 * @since 2.2.20
+	 */
+	private static function updateV2_2_17_to_V_2_2_20()
+	{
+		// Check if this has already been done
+		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20') !== false)
+		{
+			return;
+		}
+
+		// Get slideshows
+		$slideshows = get_posts(array(
+			'numberposts' => -1,
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
+		));
+
+		// Loop through slideshows
+		if (is_array($slideshows) &&
+			count($slideshows) > 0)
+		{
+			foreach ($slideshows as $slideshow)
+			{
+				// TODO Implement. The lines below show what should be substituted. Do a final check.
+//				".slideshow_slide_text h2" >> ".slideshow_slide_text div.slideshow_title"
+//				".slideshow_slide_text p"  >> ".slideshow_slide_text div.slideshow_description"
+//
+//				".slideshow_description" >> ".slideshow_description_box"
+//
+//				".slideshow_description_box h2" >> ".slideshow_description_box div.slideshow_title"
+//				".slideshow_description_box p"  >> ".slideshow_description_box div.slideshow_description"
+			}
+		}
+
+//		update_option('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20', 'updated');
 	}
 
 	/**

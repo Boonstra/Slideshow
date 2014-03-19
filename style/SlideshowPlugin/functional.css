@@ -68,7 +68,7 @@
 .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image img {
   float: none;
 }
-.slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image .slideshow_description {
+.slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image .slideshow_description_box {
   display: none;
   position: absolute;
   width: 100%;

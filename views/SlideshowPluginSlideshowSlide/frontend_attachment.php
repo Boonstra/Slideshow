@@ -52,8 +52,18 @@ if (isset($properties['postId']))
 // Post ID should always be numeric
 if (is_numeric($postId)):
 
-	// Anchor tag is used twice
-	$anchorTagAttributes = (!empty($url) ? ' href="' . $url . '" ' : '') . (!empty($urlTarget) ? ' target="' . $urlTarget . '" ' : '') . $noFollow;
+	$anchorTag = $endAnchorTag = $anchorTagAttributes = '';
+
+	if (strlen($url) > 0)
+	{
+		$anchorTagAttributes =
+			'href="' . $url . '" ' .
+			(strlen($urlTarget) > 0 ? 'target="' . $urlTarget . '" ' : '') .
+			$noFollow;
+
+		$anchorTag    = '<a ' . $anchorTagAttributes . '>';
+		$endAnchorTag = '</a>';
+	}
 
 	// Get post from post id. Post should be able to load
 	$attachment = get_post($postId);
@@ -110,12 +120,12 @@ if (is_numeric($postId)):
 		if ($imageAvailable): ?>
 
 			<div class="slideshow_slide slideshow_slide_image">
-				<a <?php echo $anchorTagAttributes; ?>>
+				<?php echo $anchorTag; ?>
 					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
-				</a>
-				<div class="slideshow_description slideshow_transparent">
-					<?php echo !empty($title) ? '<' . $titleElementTag . ' class="slideshow_slide_title"><a ' . $anchorTagAttributes . '>' . $title . '</a></' . $titleElementTag . '>' : ''; ?>
-					<?php echo !empty($description) ? '<' . $descriptionElementTag . ' class="slideshow_slide_description"><a ' . $anchorTagAttributes . '>' . $description . '</a></' . $descriptionElementTag . '>' : ''; ?>
+				<?php echo $endAnchorTag; ?>
+				<div class="slideshow_description_box slideshow_transparent">
+					<?php echo !empty($title) ? '<' . $titleElementTag . ' class="slideshow_title">' . $anchorTag . $title . $endAnchorTag . '</' . $titleElementTag . '>' : ''; ?>
+					<?php echo !empty($description) ? '<' . $descriptionElementTag . ' class="slideshow_description">' . $anchorTag . $description . $endAnchorTag . '</' . $descriptionElementTag . '>' : ''; ?>
 				</div>
 			</div>
 

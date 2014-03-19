@@ -15,7 +15,7 @@
 		}
 
 		// Loop through descriptions. Show them and if they need to be hidden, hide them
-		$.each(this.$slides.find('.slideshow_description'), $.proxy(function(key, description)
+		$.each(this.$slides.find('.slideshow_description_box'), $.proxy(function(key, description)
 		{
 			var $description = $(description);
 
@@ -46,7 +46,7 @@
 		// Adjust description's hiding position on slideshowResize event
 		this.$container.bind('slideshowResize', $.proxy(function()
 		{
-			$.each(this.$container.find('.slideshow_description'), $.proxy(function(key, description)
+			$.each(this.$container.find('.slideshow_description_box'), $.proxy(function(key, description)
 			{
 				$(description).css('top', this.$container.outerHeight(true));
 			}, this));
@@ -60,7 +60,7 @@
 				return;
 			}
 
-			$.each($(this.$views[this.visibleViews[1]]).find('.slideshow_description'), $.proxy(function(key, description)
+			$.each($(this.$views[this.visibleViews[1]]).find('.slideshow_description_box'), $.proxy(function(key, description)
 			{
 				$(description).css('top', this.$container.outerHeight(true));
 			}, this));
@@ -69,7 +69,7 @@
 		// Register a mouse enter event to animate showing the description boxes.
 		this.$slides.mouseenter($.proxy(function(event)
 		{
-			var $description = $(event.currentTarget).find('.slideshow_description');
+			var $description = $(event.currentTarget).find('.slideshow_description_box');
 
 			// Use a timer, so the description doesn't pop up on fly-over
 			this.descriptionTimer = setTimeout(
@@ -100,7 +100,7 @@
 
 			// Find description and stop its current animation, then start animating it out
 			$(event.currentTarget)
-				.find('.slideshow_description')
+				.find('.slideshow_description_box')
 				.stop(true, false)
 				.animate({ 'top': this.$container.outerHeight(true) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
 		}, this));
