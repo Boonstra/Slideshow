@@ -18,7 +18,7 @@ if (isset($properties['showRelatedVideos']) &&
 
 <div class="widefat sortable-slides-list-item postbox">
 
-	<div class="handlediv" title="<?php _e('Click to toggle', 'slideshow-plugin'); ?>"><br></div>
+	<div class="handlediv" title="<?php _e('Click to toggle'); ?>"><br></div>
 
 	<div class="hndle">
 		<div class="slide-icon video-slide-icon"></div>

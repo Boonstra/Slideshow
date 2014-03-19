@@ -25,7 +25,7 @@
 	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-previous-text="<?php _e('Previous', 'slideshow-plugin'); ?>" style="display: none;"></div>
 	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-next-text="<?php _e('Next', 'slideshow-plugin'); ?>" style="display: none;"></div>
 
-	<div class="slideshow_pagination" style="display: none;" data-go-to-text="<?php _e('Got to slide', 'slideshow-plugin'); ?>"><div class="slideshow_pagination_center"></div></div>
+	<div class="slideshow_pagination" style="display: none;" data-go-to-text="<?php _e('Go to slide', 'slideshow-plugin'); ?>"><div class="slideshow_pagination_center"></div></div>
 
 	<!-- WordPress Slideshow Version <?php echo SlideshowPluginMain::$version; ?> -->
 
