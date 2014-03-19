@@ -190,7 +190,7 @@ class SlideshowPluginSlideshowStylesheet
 			$stylesheet .= ob_get_clean();
 		}
 
-		// Replace the '%plugin-url%' tag with the actual URL and add a unique identifier to separate stylesheets
+		// Replace the URL placeholders with actual URLs and add a unique identifier to separate stylesheets
 		$stylesheet = str_replace('%plugin-url%', SlideshowPluginMain::getPluginUrl(), $stylesheet);
 		$stylesheet = str_replace('%site-url%', get_bloginfo('url'), $stylesheet);
 		$stylesheet = str_replace('%stylesheet-url%', get_stylesheet_directory_uri(), $stylesheet);
