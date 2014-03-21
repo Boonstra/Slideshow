@@ -21,6 +21,7 @@ class SlideshowPluginPostType
 	{
 		add_action('init'                 , array(__CLASS__, 'registerSlideshowPostType'));
 		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
+		add_action('admin_menu'           , array(__CLASS__, 'modifyAdminMenu'));
 		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
 
 		add_action('admin_action_slideshow_jquery_image_gallery_duplicate_slideshow', array(__CLASS__, 'duplicateSlideshow'), 11);
@@ -44,11 +45,16 @@ class SlideshowPluginPostType
 				'labels'               => array(
 					'name'               => __('Slideshows', 'slideshow-plugin'),
 					'singular_name'      => __('Slideshow', 'slideshow-plugin'),
+					'menu_name'          => __('Slideshows', 'slideshow-plugin'),
+					'name_admin_bar'     => __('Slideshows', 'slideshow-plugin'),
+					'add_new'            => __('Add New', 'slideshow-plugin'),
 					'add_new_item'       => __('Add New Slideshow', 'slideshow-plugin'),
+					'new_item'           => __('New Slideshow', 'slideshow-plugin'),
 					'edit_item'          => __('Edit slideshow', 'slideshow-plugin'),
-					'new_item'           => __('New slideshow', 'slideshow-plugin'),
 					'view_item'          => __('View slideshow', 'slideshow-plugin'),
-					'search_items'       => __('Search slideshows', 'slideshow-plugin'),
+					'all_items'          => __('All Slideshows', 'slideshow-plugin'),
+					'search_items'       => __('Search Slideshows', 'slideshow-plugin'),
+					'parent_item_colon'  => __('Parent Slideshows:', 'slideshow-plugin'),
 					'not_found'          => __('No slideshows found', 'slideshow-plugin'),
 					'not_found_in_trash' => __('No slideshows found', 'slideshow-plugin')
 				),
@@ -297,6 +303,16 @@ class SlideshowPluginPostType
 
 		// Include
 		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+	}
+
+	/**
+	 * Modifies the admin menu, removing the "Add New" link from the slideshow menu.
+	 */
+	static function modifyAdminMenu()
+	{
+		global $submenu;
+
+		unset($submenu['edit.php?post_type=' . self::$postType][10]);
 	}
 
 	/**
