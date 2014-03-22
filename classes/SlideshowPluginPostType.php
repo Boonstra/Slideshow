@@ -24,10 +24,10 @@ class SlideshowPluginPostType
 		add_action('admin_menu'           , array(__CLASS__, 'modifyAdminMenu'));
 		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
 
-		add_action('admin_action_slideshow_jquery_image_gallery_duplicate_slideshow', array(__CLASS__, 'duplicateSlideshow'), 11);
+		add_action('admin_action_slideshow_jquery_image_gallery_duplicate_slideshow', array(__CLASS__, 'duplicate'), 11);
 
 		add_filter('post_updated_messages', array(__CLASS__, 'alterSlideshowMessages'));
-		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateSlideshowActionLink'), 10, 2);
+		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateActionLink'), 10, 2);
 	}
 
 	/**
@@ -307,6 +307,8 @@ class SlideshowPluginPostType
 
 	/**
 	 * Modifies the admin menu, removing the "Add New" link from the slideshow menu.
+	 *
+	 * @since 2.3.0
 	 */
 	static function modifyAdminMenu()
 	{
@@ -319,11 +321,12 @@ class SlideshowPluginPostType
 	 * Hooked on the post_row_actions filter, adds a "duplicate" action to each slideshow on the slideshow's overview
 	 * page.
 	 *
+	 * @since 2.2.20
 	 * @param array $actions
 	 * @param WP_Post $post
 	 * @return array $actions
 	 */
-	static function duplicateSlideshowActionLink($actions, $post)
+	static function duplicateActionLink($actions, $post)
 	{
 		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
 			$post->post_type === self::$postType)
@@ -342,8 +345,10 @@ class SlideshowPluginPostType
 	/**
 	 * Checks if a "duplicate" slideshow action was performed and whether or not the current user has the permission to
 	 * perform this action at all.
+	 *
+	 * @since 2.2.20
 	 */
-	static function duplicateSlideshow()
+	static function duplicate()
 	{
 		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
 		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
