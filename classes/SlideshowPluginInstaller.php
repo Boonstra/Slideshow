@@ -25,20 +25,93 @@ class SlideshowPluginInstaller
 			return;
 		}
 
-		// Transfer if no version number is set, or the new version number is greater than the current one saved in the database
+		// Get the current version number
 		$currentVersion = get_option(self::$versionKey, null);
 
+		// Set new version number
+		update_option(self::$versionKey, SlideshowPluginMain::$version);
+
+		// If this is a fresh installation, or the plugin has been updated, check if there are database migrations
 		if ($currentVersion == null ||
-			self::firstVersionGreaterThanSecond(SlideshowPluginMain::$version, $currentVersion))
+			self::isFirstVersionGreaterThanSecond(SlideshowPluginMain::$version, $currentVersion))
 		{
+			self::updateCapabilities($currentVersion);
+
 			self::update($currentVersion);
 		}
+	}
 
-		// New installation
-		if ($currentVersion == null)
+	/**
+	 * Updates user capabilities
+	 *
+	 * @since 2.3.0
+	 * @param string $currentVersion
+	 */
+	private static function updateCapabilities($currentVersion)
+	{
+		// Update to version 2.1.22
+		if (self::isFirstVersionGreaterThanSecond('2.1.22', $currentVersion) ||
+			$currentVersion == null)
 		{
-			// Set up capabilities
-			self::setCapabilities();
+			self::updateCapabilitiesV2_1_20_to_V2_1_22();
+		}
+
+		// Update to version 2.3.0
+		if (self::isFirstVersionGreaterThanSecond('2.3.0', $currentVersion) ||
+			$currentVersion == null)
+		{
+			self::updateCapabilitiesV2_1_22_to_V2_3_0();
+		}
+	}
+
+	/**
+	 * Add additional capabilities for the default users.
+	 *
+	 * TODO More PHPDoc
+	 *
+	 * @since 2.3.0
+	 */
+	private static function updateCapabilitiesV2_1_22_to_V2_3_0()
+	{
+		// TODO More implementation
+	}
+
+	/**
+	 * Sets capabilities for the default users that have access to creating, updating and deleting slideshows.
+	 *
+	 * @since 2.1.22
+	 */
+	private static function updateCapabilitiesV2_1_20_to_V2_1_22()
+	{
+		// Check if update has already been done
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22'))
+		{
+			return;
+		}
+
+		// Capabilities
+		$addSlideshows   = 'slideshow-jquery-image-gallery-add-slideshows';
+		$editSlideshows  = 'slideshow-jquery-image-gallery-edit-slideshows';
+		$deleteSlideshow = 'slideshow-jquery-image-gallery-delete-slideshows';
+
+		// Add capabilities to roles
+		$roles = array('administrator', 'editor', 'author');
+
+		foreach ($roles as $roleName)
+		{
+			// Get role
+			$role = get_role($roleName);
+
+			// Continue on non-existent role
+			if ($role == null)
+			{
+				continue;
+			}
+
+			// Add capability to role
+			$role->add_cap($addSlideshows);
+			$role->add_cap($editSlideshows);
+			$role->add_cap($deleteSlideshow);
 		}
 	}
 
@@ -57,64 +130,54 @@ class SlideshowPluginInstaller
 			self::updateV2toV2_1_20();
 		}
 
-		// Update to version 2.1.22
-		if (self::firstVersionGreaterThanSecond('2.1.22', $currentVersion) ||
-			$currentVersion == null)
-		{
-			self::setCapabilities();
-		}
-
 		// Update to version 2.1.23
-		if (self::firstVersionGreaterThanSecond('2.1.23', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.1.23', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_1_20_to_V2_2_1_23();
 		}
 
 		// Update to version 2.2.0
-		if (self::firstVersionGreaterThanSecond('2.2.0', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.2.0', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_1_23_to_V_2_2_0();
 		}
 
 		// Update to version 2.2.8
-		if (self::firstVersionGreaterThanSecond('2.2.8', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.2.8', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_2_0_to_V_2_2_8();
 		}
 
 		// Update to version 2.2.12
-		if (self::firstVersionGreaterThanSecond('2.2.12', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.2.12', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_2_8_to_V_2_2_12();
 		}
 
 		// Update to version 2.2.16
-		if (self::firstVersionGreaterThanSecond('2.2.16', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.2.16', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_2_12_to_V_2_2_16();
 		}
 
 		// Update to version 2.2.17
-		if (self::firstVersionGreaterThanSecond('2.2.17', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.2.17', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_2_16_to_V_2_2_17();
 		}
 
 		// Update to version 2.2.20
-		if (self::firstVersionGreaterThanSecond('2.2.20', $currentVersion) ||
+		if (self::isFirstVersionGreaterThanSecond('2.2.20', $currentVersion) ||
 			$currentVersion == null)
 		{
 			self::updateV2_2_17_to_V_2_2_20();
 		}
-
-		// Set new version
-		update_option(self::$versionKey, SlideshowPluginMain::$version);
 	}
 
 	/**
@@ -128,6 +191,11 @@ class SlideshowPluginInstaller
 	 */
 	private static function updateV2_2_17_to_V_2_2_20()
 	{
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20'))
+		{
+			return;
+		}
+
 		// Check if this has already been done
 		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20') !== false)
 		{
@@ -209,7 +277,7 @@ class SlideshowPluginInstaller
 	private static function updateV2_2_16_to_V_2_2_17()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-16-to-v2-2-17') !== false)
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-16-to-v2-2-17'))
 		{
 			return;
 		}
@@ -253,8 +321,6 @@ class SlideshowPluginInstaller
 				);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-2-16-to-v2-2-17', 'updated', '', false);
 	}
 
 	/**
@@ -267,7 +333,7 @@ class SlideshowPluginInstaller
 	private static function updateV2_2_12_to_V_2_2_16()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-12-to-v2-2-16') !== false)
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-12-to-v2-2-16'))
 		{
 			return;
 		}
@@ -318,8 +384,6 @@ class SlideshowPluginInstaller
 				);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-2-12-to-v2-2-16', 'updated', '', false);
 	}
 
 	/**
@@ -333,7 +397,7 @@ class SlideshowPluginInstaller
 	private static function updateV2_2_8_to_V_2_2_12()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-8-to-v2-2-12') !== false)
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-8-to-v2-2-12'))
 		{
 			return;
 		}
@@ -370,8 +434,6 @@ class SlideshowPluginInstaller
 				update_option($customStyleKey, $customStyle);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-2-8-to-v2-2-12', 'updated', '', false);
 	}
 
 	/**
@@ -386,7 +448,7 @@ class SlideshowPluginInstaller
 	private static function updateV2_2_0_to_V_2_2_8()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8') !== false)
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8'))
 		{
 			return;
 		}
@@ -428,8 +490,6 @@ class SlideshowPluginInstaller
 				update_option($customStyleKey, $customStyle);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-2-0-to-v2-2-8', 'updated', '', false);
 	}
 
 	/**
@@ -441,7 +501,7 @@ class SlideshowPluginInstaller
 	private static function updateV2_1_23_to_V_2_2_0()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0') !== false)
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0'))
 		{
 			return;
 		}
@@ -490,8 +550,6 @@ class SlideshowPluginInstaller
 				);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-1-23-to-v2-2-0', 'updated', '', false);
 	}
 
 	/**
@@ -503,7 +561,7 @@ class SlideshowPluginInstaller
 	private static function updateV2_1_20_to_V2_2_1_23()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23') !== false)
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23'))
 		{
 			return;
 		}
@@ -581,50 +639,6 @@ class SlideshowPluginInstaller
 				);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-23', 'updated', '', false);
-	}
-
-	/**
-	 * Sets capabilities for the default users that have access to creating, updating and deleting slideshows.
-	 *
-	 * @since 2.1.22
-	 */
-	private static function setCapabilities()
-	{
-		// Check if update has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22') !== false)
-		{
-			return;
-		}
-
-		// Capabilities
-		$addSlideshows   = 'slideshow-jquery-image-gallery-add-slideshows';
-		$editSlideshows  = 'slideshow-jquery-image-gallery-edit-slideshows';
-		$deleteSlideshow = 'slideshow-jquery-image-gallery-delete-slideshows';
-
-		// Add capabilities to roles
-		$roles = array('administrator', 'editor', 'author');
-
-		foreach ($roles as $roleName)
-		{
-			// Get role
-			$role = get_role($roleName);
-
-			// Continue on non-existent role
-			if ($role == null)
-			{
-				continue;
-			}
-
-			// Add capability to role
-			$role->add_cap($addSlideshows);
-			$role->add_cap($editSlideshows);
-			$role->add_cap($deleteSlideshow);
-		}
-
-		// Register as updated
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-1-20-to-v2-1-22', 'updated', '', false);
 	}
 
 	/**
@@ -636,7 +650,7 @@ class SlideshowPluginInstaller
 	private static function updateV2toV2_1_20()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-plugin-updated-from-v2-to-v2-1-20') !== false)
+		if (self::isUpdateApplied('slideshow-plugin-updated-from-v2-to-v2-1-20'))
 		{
 			return;
 		}
@@ -745,8 +759,6 @@ class SlideshowPluginInstaller
 				update_post_meta($slideshow->ID, $slidesKey, $orderedSlides);
 			}
 		}
-
-		add_option('slideshow-plugin-updated-from-v2-to-v2-1-20', 'updated', '', false);
 	}
 
 	/**
@@ -758,7 +770,7 @@ class SlideshowPluginInstaller
 	private static function updateV1toV2()
 	{
 		// Check if this has already been done
-		if (get_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1') !== false)
+		if (self::isUpdateApplied('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1'))
 		{
 			return;
 		}
@@ -920,8 +932,6 @@ class SlideshowPluginInstaller
 				)
 			);
 		}
-
-		add_option('slideshow-plugin-updated-from-v1-x-x-to-v2-0-1', 'updated', '', false);
 	}
 
 	/**
@@ -934,7 +944,7 @@ class SlideshowPluginInstaller
 	 * @param String $secondVersion
 	 * @return boolean $firstGreaterThanSecond
 	 */
-	private static function firstVersionGreaterThanSecond($firstVersion, $secondVersion)
+	private static function isFirstVersionGreaterThanSecond($firstVersion, $secondVersion)
 	{
 		// Return false if $firstVersion is not set
 		if (empty($firstVersion) ||
@@ -975,6 +985,26 @@ class SlideshowPluginInstaller
 		}
 
 		// Return false by default
+		return false;
+	}
+
+	/**
+	 * Checks if an update with the passed name has already been done. If not, returns false and stores the update with
+	 * the passed name as updated.
+	 *
+	 * @since 2.3.0
+	 * @param string $updateName
+	 * @return boolean $isUpdateApplied
+	 */
+	private static function isUpdateApplied($updateName)
+	{
+		if (get_option($updateName) !== false)
+		{
+			return true;
+		}
+
+		add_option($updateName, 'updated', '', false);
+
 		return false;
 	}
 }
