@@ -180,6 +180,12 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.21 =
+*	TODO Check compatibility with WordPress 3.9 - Let's be ahead of releases for once.
+*	TODO Fix https://github.com/Boonstra/Slideshow/issues/4
+*	TODO Look for "current_user_can", as some may check for general capabilities.
+*	Added "Cross Fade" option to the animation settings.
+
 = 2.2.20 =
 *	Compatible with WordPress 3.8.
 *	Accessibility improvements by [bensashi](https://github.com/bensashi)
