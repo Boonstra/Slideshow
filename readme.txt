@@ -4,8 +4,8 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 2.2.20
+Tested up to: 3.9
+Stable tag: 2.2.21
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -181,10 +181,10 @@ personal taste.
 == Changelog ==
 
 = 2.2.21 =
-*	TODO Check compatibility with WordPress 3.9 - Let's be ahead of releases for once.
-*	TODO Fix https://github.com/Boonstra/Slideshow/issues/4
-*	TODO Look for "current_user_can", as some may check for general capabilities.
+*	Compatible with WordPress 3.9.
 *	Added "Cross Fade" option to the animation settings.
+*	TODO Fix https://github.com/Boonstra/Slideshow/issues/4
+*	Fixed permission check that checked for "edit_post" instead of "edit_slideshow".
 
 = 2.2.20 =
 *	Compatible with WordPress 3.8.
