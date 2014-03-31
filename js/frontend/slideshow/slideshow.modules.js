@@ -228,6 +228,8 @@
 			var playText,
 				pauseText;
 
+			this.$togglePlayButton.attr('role', 'button');
+
 			playText  = this.$togglePlayButton.data('playText');
 			pauseText = this.$togglePlayButton.data('pauseText');
 

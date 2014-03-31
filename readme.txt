@@ -182,8 +182,9 @@ personal taste.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
+*	TODO Merge pull request #5
 *	Added "Cross Fade" option to the animation settings.
-*	TODO Fix https://github.com/Boonstra/Slideshow/issues/4
+*	Fixed HTML5 validation issue.
 *	Fixed permission check that checked for "edit_post" instead of "edit_slideshow".
 
 = 2.2.20 =
