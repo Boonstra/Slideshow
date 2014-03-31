@@ -104,7 +104,7 @@
 		this.currentViewID = viewID;
 
 		// Fire the slideshowAnimationStart event
-		this.$container.trigger('slideshowAnimationStart', [ viewID, animation ]);
+		this.$container.trigger('slideshowAnimationStart', [ viewID, animation, direction ]);
 
 		// Animate
 		switch(animation)

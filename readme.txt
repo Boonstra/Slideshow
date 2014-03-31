@@ -182,14 +182,15 @@ personal taste.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
-*	TODO Merge pull request #5
 *	Added "Cross Fade" option to the animation settings.
-*	Fixed HTML5 validation issue.
-*	Fixed permission check that checked for "edit_post" instead of "edit_slideshow".
+*	Updated the API to support retrieving the direction of the animation on the animation event.
+*	Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)
+*	Fixed: HTML5 validation issue.
+*	Fixed: Permission check that checked for "edit_post" instead of "edit_slideshow".
 
 = 2.2.20 =
 *	Compatible with WordPress 3.8.
-*	Accessibility improvements by [bensashi](https://github.com/bensashi)
+*	Accessibility improvements by [Ben Wetzel](https://github.com/bensashi)
 *	Title and description element types can now be set from backend and anchor tags are omitted when no URL is set.
 *	Improved functional stylesheet.
 *	Post published/updated message doesn't show a link to a non-existant page anymore.
