@@ -180,6 +180,9 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.22 =
+*	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
+
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
 *	Added "Cross Fade" option to the animation settings.
