@@ -79,7 +79,8 @@
 			'slideUp'   : 'slideDown',
 			'slideDown' : 'slideUp',
 			'fade'      : 'fade',
-			'directFade': 'directFade'
+			'directFade': 'directFade',
+			'crossFade' : 'crossFade'
 		};
 
 		if (direction < 0)
