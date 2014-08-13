@@ -182,6 +182,7 @@ personal taste.
 
 = 2.2.22 =
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
+*	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
