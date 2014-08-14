@@ -4,8 +4,8 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 2.2.20
+Tested up to: 3.9
+Stable tag: 2.2.21
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -180,9 +180,22 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.22 =
+*	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
+*	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
+*	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
+
+= 2.2.21 =
+*	Compatible with WordPress 3.9.
+*	Added "Cross Fade" option to the animation settings.
+*	Updated the API to support retrieving the direction of the animation on the animation event.
+*	Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)
+*	Fixed: HTML5 validation issue.
+*	Fixed: Permission check that checked for "edit_post" instead of "edit_slideshow".
+
 = 2.2.20 =
 *	Compatible with WordPress 3.8.
-*	Accessibility improvements by [bensashi](https://github.com/bensashi)
+*	Accessibility improvements by [Ben Wetzel](https://github.com/bensashi)
 *	Title and description element types can now be set from backend and anchor tags are omitted when no URL is set.
 *	Improved functional stylesheet.
 *	Post published/updated message doesn't show a link to a non-existant page anymore.

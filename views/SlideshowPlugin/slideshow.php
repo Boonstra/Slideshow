@@ -20,7 +20,7 @@
 
 	</div>
 
-	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li role="button" class="slideshow_togglePlay" data-play-text="<?php _e('Play', 'slideshow-plugin'); ?>" data-pause-text="<?php _e('Pause', 'slideshow-plugin'); ?>"></li></ul></div>
+	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li class="slideshow_togglePlay" data-play-text="<?php _e('Play', 'slideshow-plugin'); ?>" data-pause-text="<?php _e('Pause', 'slideshow-plugin'); ?>"></li></ul></div>
 
 	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-previous-text="<?php _e('Previous', 'slideshow-plugin'); ?>" style="display: none;"></div>
 	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-next-text="<?php _e('Next', 'slideshow-plugin'); ?>" style="display: none;"></div>

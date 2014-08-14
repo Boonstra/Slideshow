@@ -79,7 +79,8 @@
 			'slideUp'   : 'slideDown',
 			'slideDown' : 'slideUp',
 			'fade'      : 'fade',
-			'directFade': 'directFade'
+			'directFade': 'directFade',
+			'crossFade' : 'crossFade'
 		};
 
 		if (direction < 0)
@@ -104,7 +105,7 @@
 		this.currentViewID = viewID;
 
 		// Fire the slideshowAnimationStart event
-		this.$container.trigger('slideshowAnimationStart', [ viewID, animation ]);
+		this.$container.trigger('slideshowAnimationStart', [ viewID, animation, direction ]);
 
 		// Animate
 		switch(animation)
@@ -252,6 +253,30 @@
 				);
 
 				break;
+			case 'crossFade':
+
+				// Prepare next view
+				$nextView.css({
+					top      : 0,
+					left     : 0,
+					'z-index': 1,
+					'display': 'none'
+				});
+				$currentView.css({ 'z-index': 0 });
+
+				// Animate
+				$nextView.stop(true, true).fadeIn(this.settings['slideSpeed'] * 1000);
+
+				setTimeout(
+					$.proxy(function()
+					{
+						$currentView.css({ top: this.$container.outerHeight(true) });
+						$nextView.css({ 'z-index': 1 });
+					}, this),
+					this.settings['slideSpeed'] * 1000
+				);
+
+				break;
 		}
 
 		// After animation
@@ -259,9 +284,9 @@
 			$.proxy(function()
 			{
 				// Remove current view identifier class from the previous view
-				$currentView.removeClass('slideshow_currentView');
+				$currentView.removeClass('slideshow_currentView').find('a').attr('tabindex', '-1');
 				$nextView.removeClass('slideshow_nextView');
-				$nextView.addClass('slideshow_currentView');
+				$nextView.addClass('slideshow_currentView').find('a').attr('tabindex', '0');
 
 				// Update visible views array after animating
 				this.visibleViews = [ viewID ];

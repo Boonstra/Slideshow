@@ -58,7 +58,7 @@ class SlideshowPluginSlideshowStylesheet
 			{
 				wp_enqueue_style(
 					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $stylesheetKey,
-					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $stylesheetKey),
+					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $stylesheetKey, 'relative'),
 					array(),
 					$stylesheetValue['version']
 				);
@@ -80,6 +80,9 @@ class SlideshowPluginSlideshowStylesheet
 	 */
 	public static function enqueueStylesheet($name = null)
 	{
+		$enqueueDynamicStylesheet = true;
+		$version                  = SlideshowPluginMain::$version;
+
 		if (isset($name))
 		{
 			// Try to get the custom style's version
@@ -98,23 +101,35 @@ class SlideshowPluginSlideshowStylesheet
 			}
 			else
 			{
-				$name    = str_replace('.css', '', $name);
-				$version = SlideshowPluginMain::$version;
+				$enqueueDynamicStylesheet = false;
+				$name                     = str_replace('.css', '', $name);
 			}
 		}
 		else
 		{
-			$name    = 'style-light';
-			$version = SlideshowPluginMain::$version;
+			$enqueueDynamicStylesheet = false;
+			$name                     = 'style-light';
 		}
 
 		// Enqueue stylesheet
-		wp_enqueue_style(
-			'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
-			admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name),
-			array(),
-			$version
-		);
+		if ($enqueueDynamicStylesheet)
+		{
+			wp_enqueue_style(
+				'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
+				admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'relative'),
+				array(),
+				$version
+			);
+		}
+		else
+		{
+			wp_enqueue_style(
+				'slideshow-jquery-image-gallery-stylesheet_' . $name,
+				SlideshowPluginMain::getPluginUrl() . '/css/' . $name . '.css',
+				array(),
+				$version
+			);
+		}
 
 		return array($name, $version);
 	}

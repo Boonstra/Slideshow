@@ -28,9 +28,13 @@ slideshow_jquery_image_gallery_script = function()
 
 		self.initialized = true;
 
+		$(document).trigger('slideshow_jquery_image_gallery_script_ready');
+
 		self.loadYouTubeAPI();
 		self.repairStylesheetURLs();
 		self.activateSlideshows();
+
+		$(document).trigger('slideshow_jquery_image_gallery_slideshows_ready');
 	};
 
 	/**
