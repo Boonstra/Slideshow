@@ -73,7 +73,7 @@ class SlideshowPluginInstaller
 	 */
 	private static function updateCapabilitiesV2_1_22_to_V2_3_0()
 	{
-		// TODO More implementation
+		// TODO Add capabilities for adding, editing and deleting settings profiles
 	}
 
 	/**
@@ -178,6 +178,34 @@ class SlideshowPluginInstaller
 		{
 			self::updateV2_2_17_to_V_2_2_20();
 		}
+
+		// Update to version 2.3.0
+		if (self::isFirstVersionGreaterThanSecond('2.3.0', $currentVersion) ||
+			$currentVersion == null)
+		{
+			self::updateV_2_2_20_to_V2_3_0();
+		}
+	}
+
+	/**
+	 * Version 2.2.20 to 2.3.0
+	 *
+	 * Version 2.3.0 brings an improved admin interface by moving all slideshow's settings to the "Settings Profiles"
+	 * post type. This allows for re-usage of defaults settings on multiple slideshows and therefore better
+	 * manageability of your slideshows.
+	 *
+	 * This method will make sure that for every slideshow with unique settings a settings profile is created.
+	 *
+	 * @since 2.3.0
+	 */
+	private static function updateV_2_2_20_to_V2_3_0()
+	{
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-20-to-v2-3-0'))
+		{
+			return;
+		}
+
+		// TODO Implement
 	}
 
 	/**
@@ -192,12 +220,6 @@ class SlideshowPluginInstaller
 	private static function updateV2_2_17_to_V_2_2_20()
 	{
 		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20'))
-		{
-			return;
-		}
-
-		// Check if this has already been done
-		if (get_option('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20') !== false)
 		{
 			return;
 		}
@@ -263,8 +285,6 @@ class SlideshowPluginInstaller
 				update_option($customStyleKey, $customStyle);
 			}
 		}
-
-		add_option('slideshow-jquery-image-gallery-updated-from-v2-2-17-to-v2-2-20', 'updated', '', false);
 	}
 
 	/**

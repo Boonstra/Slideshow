@@ -97,12 +97,12 @@ class SlideshowPluginSettingsProfile
 			'default'
 		);
 
-		// Add support plugin message on edit slideshow
-		if (isset($_GET['action']) &&
-			strtolower($_GET['action']) == strtolower('edit'))
-		{
-			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
-		}
+//		// Add support plugin message on edit slideshow
+//		if (isset($_GET['action']) &&
+//			strtolower($_GET['action']) == strtolower('edit'))
+//		{
+//			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
+//		}
 	}
 
 	/**
@@ -148,15 +148,15 @@ class SlideshowPluginSettingsProfile
 		return $messages;
 	}
 
-	/**
-	 * Shows the support plugin message
-	 *
-	 * @since 2.3.0
-	 */
-	static function supportPluginMessage()
-	{
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
-	}
+//	/**
+//	 * Shows the support plugin message
+//	 *
+//	 * @since 2.3.0
+//	 */
+//	static function supportPluginMessage()
+//	{
+//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
+//	}
 
 	/**
 	 * Shows the settings for the current settings profile.

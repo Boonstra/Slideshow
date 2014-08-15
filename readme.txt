@@ -180,6 +180,9 @@ personal taste.
 
 == Changelog ==
 
+= 2.3.0 =
+*
+
 = 2.2.22 =
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
 *	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)

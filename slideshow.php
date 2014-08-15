@@ -30,7 +30,7 @@ class SlideshowPluginMain
 	 *
 	 * @since 1.0.0
 	 */
-	static function bootStrap()
+	static function bootstrap()
 	{
 		self::autoInclude();
 
@@ -178,4 +178,4 @@ class SlideshowPluginMain
 /**
  * Activate plugin
  */
-SlideShowPluginMain::bootStrap();
+SlideShowPluginMain::bootstrap();
