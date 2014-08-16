@@ -65,6 +65,13 @@ class SlideshowPluginMain
 
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
+
+		add_action('current_screen', array(__CLASS__, 'test'));
+	}
+
+	static function test()
+	{
+		var_dump(self::getCurrentPostType());
 	}
 
 	/**
@@ -146,6 +153,41 @@ class SlideshowPluginMain
 	static function getPluginPath()
 	{
 		return dirname(__FILE__);
+	}
+
+	/**
+	 * Tries to retrieve the current post type from either the current $post, $typenow, or $current_screen global
+	 * variable. Returns null when no post type was found.
+	 *
+	 * @since 2.3.0
+	 * @return null|string
+	 */
+	static function getCurrentPostType()
+	{
+		global $post;
+
+		if ($post &&
+			$post->post_type)
+		{
+			return $post->post_type;
+		}
+
+		global $typenow;
+
+		if ($typenow)
+		{
+			return $typenow;
+		}
+
+		global $current_screen;
+
+		if ($current_screen &&
+			$current_screen->post_type)
+		{
+			return $current_screen->post_type;
+		}
+
+		return filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
 	}
 
 	/**
