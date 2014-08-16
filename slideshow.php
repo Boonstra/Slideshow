@@ -65,13 +65,6 @@ class SlideshowPluginMain
 
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
-
-		add_action('current_screen', array(__CLASS__, 'test'));
-	}
-
-	static function test()
-	{
-		var_dump(self::getCurrentPostType());
 	}
 
 	/**
