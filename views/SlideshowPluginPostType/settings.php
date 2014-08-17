@@ -1,3 +1,4 @@
+
 <table>
 	<?php $groups = array(); ?>
 	<?php if(count($settings) > 0): ?>
