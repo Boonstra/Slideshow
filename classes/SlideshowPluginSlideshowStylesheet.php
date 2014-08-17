@@ -58,7 +58,7 @@ class SlideshowPluginSlideshowStylesheet
 			{
 				wp_enqueue_style(
 					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $stylesheetKey,
-					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $stylesheetKey, 'relative'),
+					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $stylesheetKey, 'admin'),
 					array(),
 					$stylesheetValue['version']
 				);
@@ -116,7 +116,7 @@ class SlideshowPluginSlideshowStylesheet
 		{
 			wp_enqueue_style(
 				'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
-				admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'relative'),
+				admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'admin'),
 				array(),
 				$version
 			);
