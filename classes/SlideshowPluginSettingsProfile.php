@@ -5,6 +5,9 @@
  */
 class SlideshowPluginSettingsProfile
 {
+	/** @var WP_Post */
+	public $post = null;
+
 	/** @var string */
 	static $postType = 'slideshow_sett_prof';
 
@@ -14,8 +17,11 @@ class SlideshowPluginSettingsProfile
 	/** @var string */
 	static $nonceName = 'slideshow-jquery-image-gallery-settings-profile-nonce-name';
 
-	/** @var mixed */
-	public $variables = array(
+	/** @var string */
+	static $variablesPostMetaKey = '_slideshow_jquery_image_gallery_settings_profile_variables';
+
+	/** @var array */
+	protected static $variableDefaults = array(
 		'animation'                   => 'slide',
 		'slideSpeed'                  => '1',
 		'descriptionSpeed'            => '0.4',
@@ -43,6 +49,230 @@ class SlideshowPluginSettingsProfile
 		'random'                      => 'false',
 		'avoidFilter'                 => 'true'
 	);
+
+	/** @var array Allows variable definitions to be cached */
+	protected static $variableDefinitions = array();
+
+	/** @var array */
+	public $variables = array();
+
+	/**
+	 * Constructs the settings profile. The $post parameter can either contain a WP_Post instance or an ID to a settings
+	 * profile.
+	 *
+	 * Constructing a settings profile costs no database queries if a WP_Post object is passed. When an ID is passed, a
+	 * single query is run to get the WP_Post object belonging to that ID. The object's variables are lazy loaded when
+	 * they're requested per the $this->getVariables method.
+	 *
+	 * @param WP_Post|int $post (Optional, defaults to null)
+	 */
+	function __construct__($post = null)
+	{
+		if ($post instanceof WP_Post &&
+			$post->post_type === self::$postType)
+		{
+			$this->post = $post;
+		}
+		else if (is_numeric($post))
+		{
+			$this->post = get_post($post);
+		}
+
+		// Return if the post variable was not set to an instance of WP_Post
+		if (!($this->post instanceof WP_Post))
+		{
+			$this->post = new WP_Post(null);
+		}
+	}
+
+	/**
+	 * Set a single variable with the passed variable by the passed key.
+	 *
+	 * @param string $key
+	 * @param mixed  $value
+	 */
+	function setVariable($key, $value)
+	{
+		if (count($this->variables) <= 0)
+		{
+			$this->getVariables();
+		}
+
+		$this->variables[$key] = $value;
+	}
+
+	/**
+	 * Expects an array of variables to be passed. The associative variables array is merged with the passed array,
+	 * which will overwrite any existing keys.
+	 *
+	 * @param array $newVariables
+	 */
+	function setVariables($newVariables)
+	{
+		if (!is_array($newVariables))
+		{
+			return;
+		}
+
+		if (count($this->variables) <= 0)
+		{
+			$this->getVariables();
+		}
+
+		$this->variables = array_merge($this->variables, $newVariables);
+	}
+
+	/**
+	 * Gets the object's variables either from the database or the object itself if the variables have already been set.
+	 *
+	 * @return array
+	 */
+	function getVariables()
+	{
+		if (count($this->$variables) > 0)
+		{
+			return $this->variables;
+		}
+
+		$variables = get_post_meta(
+			$this->post->ID,
+			self::$variablesPostMetaKey,
+			true
+		);
+
+		// The variables variable should always be an array
+		if (!$variables ||
+			!is_array($variables))
+		{
+			$variables = array();
+		}
+
+		$variables = array_merge(self::$variableDefaults, $variables);
+
+		$this->variables = $variables;
+
+		return $variables;
+	}
+
+	/**
+	 * Returns an array of definitions of the variables in the variables array.
+	 *
+	 * The definition array is built up as follows:
+	 * array([settingsKey] => array([settingName] => array('type' => [inputType], 'value' => [value], 'default' => [default], 'description' => [description], 'options' => array([options]), 'dependsOn' => array([dependsOn], [onValue]), 'group' => [groupName])))
+	 *
+	 * @since 2.3.0
+	 * @return array $variableDefinitions
+	 */
+	static function getVariableDefinitions()
+	{
+		if (count(self::$variableDefinitions) > 0)
+		{
+			return self::$variableDefinitions;
+		}
+
+		// Much used data for translation
+		$yes = __('Yes', 'slideshow-plugin');
+		$no  = __('No', 'slideshow-plugin');
+
+		$descriptions = array(
+			'animation'                   => __('Animation used for transition between slides', 'slideshow-plugin'),
+			'slideSpeed'                  => __('Number of seconds the slide takes to slide in', 'slideshow-plugin'),
+			'descriptionSpeed'            => __('Number of seconds the description takes to slide in', 'slideshow-plugin'),
+			'intervalSpeed'               => __('Seconds between changing slides', 'slideshow-plugin'),
+			'slidesPerView'               => __('Number of slides to fit into one slide', 'slideshow-plugin'),
+			'maxWidth'                    => __('Maximum width. When maximum width is 0, maximum width is ignored', 'slideshow-plugin'),
+			'aspectRatio'                 => sprintf('<a href="' . str_replace('%', '%%', __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin')) . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between slideshow\'s width and height (width:height)', 'slideshow-plugin'), '</a>'),
+			'height'                      => __('Slideshow\'s height', 'slideshow-plugin'),
+			'imageBehaviour'              => __('Image behaviour', 'slideshow-plugin'),
+			'preserveSlideshowDimensions' => __('Shrink slideshow\'s height when width shrinks', 'slideshow-plugin'),
+			'enableResponsiveness'        => __('Enable responsiveness (Shrink slideshow\'s width when page\'s width shrinks)', 'slideshow-plugin'),
+			'showDescription'             => __('Show title and description', 'slideshow-plugin'),
+			'hideDescription'             => __('Hide description box, pop up when mouse hovers over', 'slideshow-plugin'),
+			'play'                        => __('Automatically slide to the next slide', 'slideshow-plugin'),
+			'loop'                        => __('Return to the beginning of the slideshow after last slide', 'slideshow-plugin'),
+			'pauseOnHover'                => __('Pause slideshow when mouse hovers over', 'slideshow-plugin'),
+			'controllable'                => __('Activate navigation buttons', 'slideshow-plugin'),
+			'hideNavigationButtons'       => __('Hide navigation buttons, show when mouse hovers over', 'slideshow-plugin'),
+			'showPagination'              => __('Activate pagination', 'slideshow-plugin'),
+			'hidePagination'              => __('Hide pagination, show when mouse hovers over', 'slideshow-plugin'),
+			'controlPanel'                => __('Activate control panel (play and pause button)', 'slideshow-plugin'),
+			'hideControlPanel'            => __('Hide control panel, show when mouse hovers over', 'slideshow-plugin'),
+			'waitUntilLoaded'             => __('Wait until the next slide has loaded before showing it', 'slideshow-plugin'),
+			'showLoadingIcon'             => __('Show a loading icon until the first slide appears', 'slideshow-plugin'),
+			'random'                      => __('Randomize slides', 'slideshow-plugin'),
+			'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-plugin'), SlideshowPluginShortcode::$bookmark)
+		);
+
+		$variableDefinitions = array(
+			'animation'                   => array('type' => 'select', 'default' => self::$variableDefaults['animation']                  , 'description' => $descriptions['animation']                  , 'group' => __('Animation', 'slideshow-plugin')    , 'options' => array('slide' => __('Slide Left', 'slideshow-plugin'), 'slideRight' => __('Slide Right', 'slideshow-plugin'), 'slideUp' => __('Slide Up', 'slideshow-plugin'), 'slideDown' => __('Slide Down', 'slideshow-plugin'), 'crossFade' => __('Cross Fade', 'slideshow-plugin'), 'directFade' => __('Direct Fade', 'slideshow-plugin'), 'fade' => __('Fade', 'slideshow-plugin'), 'random' => __('Random Animation', 'slideshow-plugin'))),
+			'slideSpeed'                  => array('type' => 'text'  , 'default' => self::$variableDefaults['slideSpeed']                 , 'description' => $descriptions['slideSpeed']                 , 'group' => __('Animation', 'slideshow-plugin')),
+			'descriptionSpeed'            => array('type' => 'text'  , 'default' => self::$variableDefaults['descriptionSpeed']           , 'description' => $descriptions['descriptionSpeed']           , 'group' => __('Animation', 'slideshow-plugin')),
+			'intervalSpeed'               => array('type' => 'text'  , 'default' => self::$variableDefaults['intervalSpeed']              , 'description' => $descriptions['intervalSpeed']              , 'group' => __('Animation', 'slideshow-plugin')),
+			'slidesPerView'               => array('type' => 'text'  , 'default' => self::$variableDefaults['slidesPerView']              , 'description' => $descriptions['slidesPerView']              , 'group' => __('Display', 'slideshow-plugin')),
+			'maxWidth'                    => array('type' => 'text'  , 'default' => self::$variableDefaults['maxWidth']                   , 'description' => $descriptions['maxWidth']                   , 'group' => __('Display', 'slideshow-plugin')),
+			'aspectRatio'                 => array('type' => 'text'  , 'default' => self::$variableDefaults['aspectRatio']                , 'description' => $descriptions['aspectRatio']                , 'group' => __('Display', 'slideshow-plugin')                                                           , 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true')),
+			'height'                      => array('type' => 'text'  , 'default' => self::$variableDefaults['height']                     , 'description' => $descriptions['height']                     , 'group' => __('Display', 'slideshow-plugin')                                                           , 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'false')),
+			'imageBehaviour'              => array('type' => 'select', 'default' => self::$variableDefaults['imageBehaviour']             , 'description' => $descriptions['imageBehaviour']             , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('natural' => __('Natural and centered', 'slideshow-plugin'), 'crop' => __('Crop to fit', 'slideshow-plugin'), 'stretch' => __('Stretch to fit', 'slideshow-plugin'))),
+			'preserveSlideshowDimensions' => array('type' => 'radio' , 'default' => self::$variableDefaults['preserveSlideshowDimensions'], 'description' => $descriptions['preserveSlideshowDimensions'], 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[enableResponsiveness]', 'true')),
+			'enableResponsiveness'        => array('type' => 'radio' , 'default' => self::$variableDefaults['enableResponsiveness']       , 'description' => $descriptions['enableResponsiveness']       , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'showDescription'             => array('type' => 'radio' , 'default' => self::$variableDefaults['showDescription']            , 'description' => $descriptions['showDescription']            , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'hideDescription'             => array('type' => 'radio' , 'default' => self::$variableDefaults['hideDescription']            , 'description' => $descriptions['hideDescription']            , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[showDescription]', 'true')),
+			'play'                        => array('type' => 'radio' , 'default' => self::$variableDefaults['play']                       , 'description' => $descriptions['play']                       , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'loop'                        => array('type' => 'radio' , 'default' => self::$variableDefaults['loop']                       , 'description' => $descriptions['loop']                       , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'pauseOnHover'                => array('type' => 'radio' , 'default' => self::$variableDefaults['loop']                       , 'description' => $descriptions['pauseOnHover']               , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'controllable'                => array('type' => 'radio' , 'default' => self::$variableDefaults['controllable']               , 'description' => $descriptions['controllable']               , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'hideNavigationButtons'       => array('type' => 'radio' , 'default' => self::$variableDefaults['hideNavigationButtons']      , 'description' => $descriptions['hideNavigationButtons']      , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[controllable]', 'true')),
+			'showPagination'              => array('type' => 'radio' , 'default' => self::$variableDefaults['showPagination']             , 'description' => $descriptions['showPagination']             , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'hidePagination'              => array('type' => 'radio' , 'default' => self::$variableDefaults['hidePagination']             , 'description' => $descriptions['hidePagination']             , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[showPagination]', 'true')),
+			'controlPanel'                => array('type' => 'radio' , 'default' => self::$variableDefaults['controlPanel']               , 'description' => $descriptions['controlPanel']               , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
+			'hideControlPanel'            => array('type' => 'radio' , 'default' => self::$variableDefaults['hideControlPanel']           , 'description' => $descriptions['hideControlPanel']           , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[controlPanel]', 'true')),
+			'waitUntilLoaded'             => array('type' => 'radio' , 'default' => self::$variableDefaults['waitUntilLoaded']            , 'description' => $descriptions['waitUntilLoaded']            , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no)),
+			'showLoadingIcon'             => array('type' => 'radio' , 'default' => self::$variableDefaults['showLoadingIcon']            , 'description' => $descriptions['showLoadingIcon']            , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[waitUntilLoaded]', 'true')),
+			'random'                      => array('type' => 'radio' , 'default' => self::$variableDefaults['random']                     , 'description' => $descriptions['random']                     , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no)),
+			'avoidFilter'                 => array('type' => 'radio' , 'default' => self::$variableDefaults['avoidFilter']                , 'description' => $descriptions['avoidFilter']                , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no))
+		);
+
+		self::$variableDefinitions = $variableDefinitions;
+
+		return $variableDefinitions;
+	}
+
+	/**
+	 * Returns all settings profiles within the defined offset and limit.
+	 *
+	 * @param int $offset (Optional, defaults to -1)
+	 * @param int $limit  (Optional, defaults to -1)
+	 * @return array
+	 */
+	static function getAll($offset = -1, $limit = -1)
+	{
+		if (!is_numeric($offset) ||
+			$offset < 0)
+		{
+			$offset = -1;
+		}
+
+		if (!is_numeric($limit) ||
+			$limit < 0)
+		{
+			$limit = -1;
+		}
+
+		$query = new WP_Query(array(
+			'post_type'      => self::$postType,
+			'orderby'        => 'post_date',
+			'order'          => 'DESC',
+			'offset'         => $offset,
+			'posts_per_page' => $limit,
+		));
+
+		$settingsProfiles = array();
+
+		foreach ($query->get_posts() as $post)
+		{
+			$settingsProfiles[] = new SlideshowPluginSettingsProfile($post);
+		};
+	}
 
 	/**
 	 * Initialize settings profile post type.
@@ -135,6 +365,23 @@ class SlideshowPluginSettingsProfile
 	}
 
 	/**
+	 * Shows the settings for the current settings profile.
+	 *
+	 * @since 2.3.0
+	 */
+	static function settingsMetaBox()
+	{
+		global $post;
+
+		wp_nonce_field(self::$nonceAction, self::$nonceName);
+
+		$data                  = new stdClass();
+		$data->settingsProfile = new SlideshowPluginSettingsProfile($post);
+
+		SlideshowPluginMain::outputView(__CLASS__ . '/settings.php', $data);
+	}
+
+	/**
 	 * Changes the "Post published/updated" message to a "Settings profile created/updated" message without the link to a
 	 * frontend page.
 	 *
@@ -151,7 +398,7 @@ class SlideshowPluginSettingsProfile
 
 		$currentScreen = get_current_screen();
 
-		// Return when not on a slideshow edit page
+		// Return when not on a settings profile edit page
 		if ($currentScreen->post_type != self::$postType)
 		{
 			return $messages;
@@ -178,154 +425,10 @@ class SlideshowPluginSettingsProfile
 	}
 
 	/**
-	 * Shows the settings for the current settings profile.
-	 *
-	 * TODO Implement
-	 *
-	 * @since 2.3.0
-	 */
-	static function settingsMetaBox()
-	{
-		global $post;
-
-		var_dump($post);
-
-		// Nonce
-		wp_nonce_field(self::$nonceAction, self::$nonceName);
-
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
-
-		// Include
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
-	}
-
-	/**
-	 * Returns an array of setting defaults.
-	 *
-	 * For a full description of the parameters, see getAllDefaults().
-	 *
-	 * @since 2.1.20
-	 * @param boolean $fullDefinition (optional, defaults to false)
-	 * @param boolean $fromDatabase (optional, defaults to true)
-	 * @return mixed $data
-	 */
-	static function getDefaultSettings($fullDefinition = false, $fromDatabase = true)
-	{
-		// Much used data for translation
-		$yes = __('Yes', 'slideshow-plugin');
-		$no  = __('No', 'slideshow-plugin');
-
-		// Default values
-		$data = array(
-			'animation' => 'slide',
-			'slideSpeed' => '1',
-			'descriptionSpeed' => '0.4',
-			'intervalSpeed' => '5',
-			'slidesPerView' => '1',
-			'maxWidth' => '0',
-			'aspectRatio' => '3:1',
-			'height' => '200',
-			'imageBehaviour' => 'natural',
-			'showDescription' => 'true',
-			'hideDescription' => 'true',
-			'preserveSlideshowDimensions' => 'false',
-			'enableResponsiveness' => 'true',
-			'play' => 'true',
-			'loop' => 'true',
-			'pauseOnHover' => 'true',
-			'controllable' => 'true',
-			'hideNavigationButtons' => 'false',
-			'showPagination' => 'true',
-			'hidePagination' => 'true',
-			'controlPanel' => 'false',
-			'hideControlPanel' => 'true',
-			'waitUntilLoaded' => 'true',
-			'showLoadingIcon' => 'true',
-			'random' => 'false',
-			'avoidFilter' => 'true'
-		);
-
-		// Read defaults from database and merge with $data, when $fromDatabase is set to true
-		if ($fromDatabase)
-		{
-			$data = array_merge(
-				$data,
-				$customData = get_option(SlideshowPluginGeneralSettings::$defaultSettings, array())
-			);
-		}
-
-		// Full definition
-		if ($fullDefinition)
-		{
-			$descriptions = array(
-				'animation'                   => __('Animation used for transition between slides', 'slideshow-plugin'),
-				'slideSpeed'                  => __('Number of seconds the slide takes to slide in', 'slideshow-plugin'),
-				'descriptionSpeed'            => __('Number of seconds the description takes to slide in', 'slideshow-plugin'),
-				'intervalSpeed'               => __('Seconds between changing slides', 'slideshow-plugin'),
-				'slidesPerView'               => __('Number of slides to fit into one slide', 'slideshow-plugin'),
-				'maxWidth'                    => __('Maximum width. When maximum width is 0, maximum width is ignored', 'slideshow-plugin'),
-				'aspectRatio'                 => sprintf('<a href="' . str_replace('%', '%%', __('http://en.wikipedia.org/wiki/Aspect_ratio_(image)', 'slideshow-plugin')) . '" title="' . __('More info', 'slideshow-plugin') . '" target="_blank">' . __('Proportional relationship%s between slideshow\'s width and height (width:height)', 'slideshow-plugin'), '</a>'),
-				'height'                      => __('Slideshow\'s height', 'slideshow-plugin'),
-				'imageBehaviour'              => __('Image behaviour', 'slideshow-plugin'),
-				'preserveSlideshowDimensions' => __('Shrink slideshow\'s height when width shrinks', 'slideshow-plugin'),
-				'enableResponsiveness'        => __('Enable responsiveness (Shrink slideshow\'s width when page\'s width shrinks)', 'slideshow-plugin'),
-				'showDescription'             => __('Show title and description', 'slideshow-plugin'),
-				'hideDescription'             => __('Hide description box, pop up when mouse hovers over', 'slideshow-plugin'),
-				'play'                        => __('Automatically slide to the next slide', 'slideshow-plugin'),
-				'loop'                        => __('Return to the beginning of the slideshow after last slide', 'slideshow-plugin'),
-				'pauseOnHover'                => __('Pause slideshow when mouse hovers over', 'slideshow-plugin'),
-				'controllable'                => __('Activate navigation buttons', 'slideshow-plugin'),
-				'hideNavigationButtons'       => __('Hide navigation buttons, show when mouse hovers over', 'slideshow-plugin'),
-				'showPagination'              => __('Activate pagination', 'slideshow-plugin'),
-				'hidePagination'              => __('Hide pagination, show when mouse hovers over', 'slideshow-plugin'),
-				'controlPanel'                => __('Activate control panel (play and pause button)', 'slideshow-plugin'),
-				'hideControlPanel'            => __('Hide control panel, show when mouse hovers over', 'slideshow-plugin'),
-				'waitUntilLoaded'             => __('Wait until the next slide has loaded before showing it', 'slideshow-plugin'),
-				'showLoadingIcon'             => __('Show a loading icon until the first slide appears', 'slideshow-plugin'),
-				'random'                      => __('Randomize slides', 'slideshow-plugin'),
-				'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-plugin'), SlideshowPluginShortcode::$bookmark)
-			);
-
-			$data = array(
-				'animation'                   => array('type' => 'select', 'default' => $data['animation']                  , 'description' => $descriptions['animation']                  , 'group' => __('Animation', 'slideshow-plugin')    , 'options' => array('slide' => __('Slide Left', 'slideshow-plugin'), 'slideRight' => __('Slide Right', 'slideshow-plugin'), 'slideUp' => __('Slide Up', 'slideshow-plugin'), 'slideDown' => __('Slide Down', 'slideshow-plugin'), 'crossFade' => __('Cross Fade', 'slideshow-plugin'), 'directFade' => __('Direct Fade', 'slideshow-plugin'), 'fade' => __('Fade', 'slideshow-plugin'), 'random' => __('Random Animation', 'slideshow-plugin'))),
-				'slideSpeed'                  => array('type' => 'text'  , 'default' => $data['slideSpeed']                 , 'description' => $descriptions['slideSpeed']                 , 'group' => __('Animation', 'slideshow-plugin')),
-				'descriptionSpeed'            => array('type' => 'text'  , 'default' => $data['descriptionSpeed']           , 'description' => $descriptions['descriptionSpeed']           , 'group' => __('Animation', 'slideshow-plugin')),
-				'intervalSpeed'               => array('type' => 'text'  , 'default' => $data['intervalSpeed']              , 'description' => $descriptions['intervalSpeed']              , 'group' => __('Animation', 'slideshow-plugin')),
-				'slidesPerView'               => array('type' => 'text'  , 'default' => $data['slidesPerView']              , 'description' => $descriptions['slidesPerView']              , 'group' => __('Display', 'slideshow-plugin')),
-				'maxWidth'                    => array('type' => 'text'  , 'default' => $data['maxWidth']                   , 'description' => $descriptions['maxWidth']                   , 'group' => __('Display', 'slideshow-plugin')),
-				'aspectRatio'                 => array('type' => 'text'  , 'default' => $data['aspectRatio']                , 'description' => $descriptions['aspectRatio']                , 'group' => __('Display', 'slideshow-plugin')                                                           , 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'true')),
-				'height'                      => array('type' => 'text'  , 'default' => $data['height']                     , 'description' => $descriptions['height']                     , 'group' => __('Display', 'slideshow-plugin')                                                           , 'dependsOn' => array('settings[preserveSlideshowDimensions]', 'false')),
-				'imageBehaviour'              => array('type' => 'select', 'default' => $data['imageBehaviour']             , 'description' => $descriptions['imageBehaviour']             , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('natural' => __('Natural and centered', 'slideshow-plugin'), 'crop' => __('Crop to fit', 'slideshow-plugin'), 'stretch' => __('Stretch to fit', 'slideshow-plugin'))),
-				'preserveSlideshowDimensions' => array('type' => 'radio' , 'default' => $data['preserveSlideshowDimensions'], 'description' => $descriptions['preserveSlideshowDimensions'], 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[enableResponsiveness]', 'true')),
-				'enableResponsiveness'        => array('type' => 'radio' , 'default' => $data['enableResponsiveness']       , 'description' => $descriptions['enableResponsiveness']       , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'showDescription'             => array('type' => 'radio' , 'default' => $data['showDescription']            , 'description' => $descriptions['showDescription']            , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'hideDescription'             => array('type' => 'radio' , 'default' => $data['hideDescription']            , 'description' => $descriptions['hideDescription']            , 'group' => __('Display', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[showDescription]', 'true')),
-				'play'                        => array('type' => 'radio' , 'default' => $data['play']                       , 'description' => $descriptions['play']                       , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'loop'                        => array('type' => 'radio' , 'default' => $data['loop']                       , 'description' => $descriptions['loop']                       , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'pauseOnHover'                => array('type' => 'radio' , 'default' => $data['loop']                       , 'description' => $descriptions['pauseOnHover']               , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'controllable'                => array('type' => 'radio' , 'default' => $data['controllable']               , 'description' => $descriptions['controllable']               , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'hideNavigationButtons'       => array('type' => 'radio' , 'default' => $data['hideNavigationButtons']      , 'description' => $descriptions['hideNavigationButtons']      , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[controllable]', 'true')),
-				'showPagination'              => array('type' => 'radio' , 'default' => $data['showPagination']             , 'description' => $descriptions['showPagination']             , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'hidePagination'              => array('type' => 'radio' , 'default' => $data['hidePagination']             , 'description' => $descriptions['hidePagination']             , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[showPagination]', 'true')),
-				'controlPanel'                => array('type' => 'radio' , 'default' => $data['controlPanel']               , 'description' => $descriptions['controlPanel']               , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no)),
-				'hideControlPanel'            => array('type' => 'radio' , 'default' => $data['hideControlPanel']           , 'description' => $descriptions['hideControlPanel']           , 'group' => __('Control', 'slideshow-plugin')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[controlPanel]', 'true')),
-				'waitUntilLoaded'             => array('type' => 'radio' , 'default' => $data['waitUntilLoaded']            , 'description' => $descriptions['waitUntilLoaded']            , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no)),
-				'showLoadingIcon'             => array('type' => 'radio' , 'default' => $data['showLoadingIcon']            , 'description' => $descriptions['showLoadingIcon']            , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[waitUntilLoaded]', 'true')),
-				'random'                      => array('type' => 'radio' , 'default' => $data['random']                     , 'description' => $descriptions['random']                     , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no)),
-				'avoidFilter'                 => array('type' => 'radio' , 'default' => $data['avoidFilter']                , 'description' => $descriptions['avoidFilter']                , 'group' => __('Miscellaneous', 'slideshow-plugin'), 'options' => array('true' => $yes, 'false' => $no))
-			);
-		}
-
-		// Return
-		return $data;
-	}
-
-	/**
 	 * Hooked on the post_row_actions filter, add a "duplicate" action to each settings profile on the settings profiles
 	 * overview page.
 	 *
-	 * TODO Implement
+	 * TODO Implement - Capabilities need to be implemented first.
 	 *
 	 * @since 2.3.0
 	 * @param array $actions
@@ -352,7 +455,7 @@ class SlideshowPluginSettingsProfile
 	 * Checks if a "duplicate" settings profile action was performed and whether or not the current user has the
 	 * permission to perform this action at all.
 	 *
-	 * TODO Implement
+	 * TODO Implement - Capabilities need to be implemented first.
 	 *
 	 * @since 2.3.0
 	 */
