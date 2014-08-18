@@ -73,15 +73,15 @@ class SlideshowPluginInstaller
 	 */
 	private static function updateCapabilitiesV2_1_22_to_V2_3_0()
 	{
-		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-20-to-v2-3-0'))
+		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-capabilities-from-v2-2-20-to-v2-3-0'))
 		{
 			return;
 		}
 
 		// Capabilities
-		$addSettingsProfiles    = 'slideshow-jquery-image-gallery-add-settings-profile';
-		$editSettingsProfiles   = 'slideshow-jquery-image-gallery-edit-settings-profile';
-		$deleteSettingsProfiles = 'slideshow-jquery-image-gallery-delete-settings-profile';
+		$addSettingsProfiles    = 'slideshow-jquery-image-gallery-add-settings-profiles';
+		$editSettingsProfiles   = 'slideshow-jquery-image-gallery-edit-settings-profiles';
+		$deleteSettingsProfiles = 'slideshow-jquery-image-gallery-delete-settings-profiles';
 
 		// Add capabilities to roles
 		$roles = array('administrator', 'editor', 'author');
