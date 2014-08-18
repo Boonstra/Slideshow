@@ -161,7 +161,59 @@ class SlideshowPluginSettingsProfile
 
 	static function saveThroughEditor($postID)
 	{
+		// Verify nonce, check if user has sufficient rights and return on auto-save.
+		if (get_post_type($postID) != self::$postType ||
+			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['editSlideshows'], $postID) ||
+			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))
+		{
+			return $postId;
+		}
 
+		// Old settings
+		$oldSettings      = self::getSettings($postId);
+		$oldStyleSettings = self::getStyleSettings($postId);
+
+		// Get new settings from $_POST, making sure they're arrays
+		$newPostSettings = $newPostStyleSettings = $newPostSlides = array();
+
+		if (isset($_POST[self::$settingsKey]) &&
+			is_array($_POST[self::$settingsKey]))
+		{
+			$newPostSettings = $_POST[self::$settingsKey];
+		}
+
+		if (isset($_POST[self::$styleSettingsKey]) &&
+			is_array($_POST[self::$styleSettingsKey]))
+		{
+			$newPostStyleSettings = $_POST[self::$styleSettingsKey];
+		}
+
+		if (isset($_POST[self::$slidesKey]) &&
+			is_array($_POST[self::$slidesKey]))
+		{
+			$newPostSlides = $_POST[self::$slidesKey];
+		}
+
+		// Merge new settings with its old values
+		$newSettings = array_merge(
+			$oldSettings,
+			$newPostSettings
+		);
+
+		// Merge new style settings with its old values
+		$newStyleSettings = array_merge(
+			$oldStyleSettings,
+			$newPostStyleSettings
+		);
+
+		// Save settings
+		update_post_meta($postId, self::$settingsKey, $newSettings);
+		update_post_meta($postId, self::$styleSettingsKey, $newStyleSettings);
+		update_post_meta($postId, self::$slidesKey, $newPostSlides);
+
+		// Return
+		return $postId;
 	}
 
 	/**
@@ -332,21 +384,21 @@ class SlideshowPluginSettingsProfile
 				'rewrite'              => true,
 				'capability_type'      => 'post',
 				'capabilities'         => array(
-					'edit_post'              => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'read_post'              => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
-					'delete_post'            => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'edit_posts'             => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'edit_others_posts'      => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'publish_posts'          => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
-					'read_private_posts'     => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_post'              => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'],
+					'read_post'              => SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles'],
+					'delete_post'            => SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'],
+					'edit_posts'             => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'],
+					'edit_others_posts'      => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'],
+					'publish_posts'          => SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles'],
+					'read_private_posts'     => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'],
 
-					'read'                   => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
-					'delete_posts'           => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'delete_private_posts'   => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'delete_published_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'delete_others_posts'    => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'edit_private_posts'     => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'edit_published_posts'   => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'read'                   => SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles'],
+					'delete_posts'           => SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'],
+					'delete_private_posts'   => SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'],
+					'delete_published_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'],
+					'delete_others_posts'    => SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'],
+					'edit_private_posts'     => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'],
+					'edit_published_posts'   => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'],
 				),
 				'has_archive'          => true,
 				'hierarchical'         => false,
@@ -438,8 +490,6 @@ class SlideshowPluginSettingsProfile
 	 * Hooked on the post_row_actions filter, add a "duplicate" action to each settings profile on the settings profiles
 	 * overview page.
 	 *
-	 * TODO Implement - Capabilities need to be implemented first.
-	 *
 	 * @since 2.3.0
 	 * @param array $actions
 	 * @param WP_Post $post
@@ -447,16 +497,16 @@ class SlideshowPluginSettingsProfile
 	 */
 	static function duplicateActionLink($actions, $post)
 	{
-//		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
-//			$post->post_type === self::$postType)
-//		{
-//			$url = add_query_arg(array(
-//				'action' => 'slideshow_jquery_image_gallery_duplicate_slideshow',
-//				'post'   => $post->ID,
-//			));
-//
-//			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-slideshow_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
-//		}
+		if (current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']) &&
+			$post->post_type === self::$postType)
+		{
+			$url = add_query_arg(array(
+				'action' => 'slideshow_jquery_image_gallery_duplicate_settings_profile',
+				'post'   => $post->ID,
+			));
+
+			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-settings-profile_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
+		}
 
 		return $actions;
 	}
@@ -465,89 +515,87 @@ class SlideshowPluginSettingsProfile
 	 * Checks if a "duplicate" settings profile action was performed and whether or not the current user has the
 	 * permission to perform this action at all.
 	 *
-	 * TODO Implement - Capabilities need to be implemented first.
-	 *
 	 * @since 2.3.0
 	 */
 	static function duplicate()
 	{
-//		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
-//		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
-//		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
-//		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
-//
-//		// Check if nonce is correct and user has the correct privileges
-//		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $postID) ||
-//			!current_user_can('slideshow-jquery-image-gallery-add-slideshows') ||
-//			$postType !== self::$postType)
-//		{
-//			wp_redirect($errorRedirectURL);
-//
-//			die();
-//		}
-//
-//		$post = get_post($postID);
-//
-//		// Check if the post was retrieved successfully
-//		if (!$post instanceof WP_Post ||
-//			$post->post_type !== self::$postType)
-//		{
-//			wp_redirect($errorRedirectURL);
-//
-//			die();
-//		}
-//
-//		$current_user = wp_get_current_user();
-//
-//		// Create post duplicate
-//		$newPostID = wp_insert_post(array(
-//			'comment_status' => $post->comment_status,
-//			'ping_status'    => $post->ping_status,
-//			'post_author'    => $current_user->ID,
-//			'post_content'   => $post->post_content,
-//			'post_excerpt'   => $post->post_excerpt,
-//			'post_name'      => $post->post_name,
-//			'post_parent'    => $post->post_parent,
-//			'post_password'  => $post->post_password,
-//			'post_status'    => 'draft',
-//			'post_title'     => $post->post_title . (strlen($post->post_title) > 0 ? ' - ' : '') . __('Copy', 'slideshow-plugin'),
-//			'post_type'      => $post->post_type,
-//			'to_ping'        => $post->to_ping,
-//			'menu_order'     => $post->menu_order,
-//		));
-//
-//		if (is_wp_error($newPostID))
-//		{
-//			wp_redirect($errorRedirectURL);
-//
-//			die();
-//		}
-//
-//		// Get all taxonomies
-//		$taxonomies = get_object_taxonomies($post->post_type);
-//
-//		// Add taxonomies to new post
-//		foreach ($taxonomies as $taxonomy)
-//		{
-//			$postTerms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'slugs'));
-//
-//			wp_set_object_terms($newPostID, $postTerms, $taxonomy, false);
-//		}
-//
-//		// Get all post meta
-//		$postMetaRecords = get_post_meta($post->ID);
-//
-//		// Add post meta records to new post
-//		foreach ($postMetaRecords as $postMetaKey => $postMetaValues)
-//		{
-//			foreach ($postMetaValues as $postMetaValue)
-//			{
-//				update_post_meta($newPostID, $postMetaKey, maybe_unserialize($postMetaValue));
-//			}
-//		}
-//
-//		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
-//
-//		die();
+		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
+		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
+		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
+
+		// Check if nonce is correct and user has the correct privileges
+		if (!wp_verify_nonce($nonce, 'duplicate-settings-profile_' . $postID) ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']) ||
+			$postType !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$post = get_post($postID);
+
+		// Check if the post was retrieved successfully
+		if (!$post instanceof WP_Post ||
+			$post->post_type !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$current_user = wp_get_current_user();
+
+		// Create post duplicate
+		$newPostID = wp_insert_post(array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $current_user->ID,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title . (strlen($post->post_title) > 0 ? ' - ' : '') . __('Copy', 'slideshow-plugin'),
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order,
+		));
+
+		if (is_wp_error($newPostID))
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		// Get all taxonomies
+		$taxonomies = get_object_taxonomies($post->post_type);
+
+		// Add taxonomies to new post
+		foreach ($taxonomies as $taxonomy)
+		{
+			$postTerms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'slugs'));
+
+			wp_set_object_terms($newPostID, $postTerms, $taxonomy, false);
+		}
+
+		// Get all post meta
+		$postMetaRecords = get_post_meta($post->ID);
+
+		// Add post meta records to new post
+		foreach ($postMetaRecords as $postMetaKey => $postMetaValues)
+		{
+			foreach ($postMetaValues as $postMetaValue)
+			{
+				update_post_meta($newPostID, $postMetaKey, maybe_unserialize($postMetaValue));
+			}
+		}
+
+		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
+
+		die();
 	}
 }
