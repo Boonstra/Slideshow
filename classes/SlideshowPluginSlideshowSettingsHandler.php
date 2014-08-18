@@ -622,14 +622,18 @@ class SlideshowPluginSlideshowSettingsHandler
 	 * format that the getDefaults() and getSettings() methods both
 	 * return.
 	 *
+	 * TODO Move this method into another helper class. Also this method should probably be split into multiple more
+	 * TODO specific methods.
+	 *
 	 * @since 2.1.20
 	 * @param string $settingsKey
 	 * @param string $settingsName
-	 * @param mixed $settings
-	 * @param bool $hideDependentValues (optional, defaults to true)
-	 * @return mixed $inputField
+	 * @param mixed  $value
+	 * @param array  $settings
+	 * @param bool   $hideDependentValues (optional, defaults to true)
+	 * @return string $inputField
 	 */
-	static function getInputField($settingsKey, $settingsName, $settings, $hideDependentValues = true)
+	static function getInputField($settingsKey, $settingsName, $value, $settings, $hideDependentValues = true)
 	{
 		if (!is_array($settings) ||
 			empty($settings) ||
@@ -640,7 +644,7 @@ class SlideshowPluginSlideshowSettingsHandler
 
 		$inputField   = '';
 		$name         = $settingsKey . '[' . $settingsName . ']';
-		$displayValue = (!isset($settings['value']) || (empty($settings['value']) && !is_numeric($settings['value'])) ? $settings['default'] : $settings['value']);
+		$displayValue = (!isset($value) || (empty($value) && !is_numeric($value)) ? $settings['default'] : $value);
 		$class        = ((isset($settings['dependsOn']) && $hideDependentValues)? 'depends-on-field-value ' . $settings['dependsOn'][0] . ' ' . $settings['dependsOn'][1] . ' ': '') . $settingsKey . '-' . $settingsName;
 
 		switch($settings['type'])
