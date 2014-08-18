@@ -325,7 +325,7 @@ class SlideshowPluginSlideInserter
 
 		wp_localize_script(
 			'slideshow-jquery-image-gallery-backend-script',
-			'slideshow_jquery_image_gallery_backend_script_editSlideshow',
+			'slideshow_jquery_image_gallery_backend_script_slideshow',
 			array(
 				'data' => array(),
 				'localization' => array(

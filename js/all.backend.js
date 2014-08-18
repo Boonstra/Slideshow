@@ -37,7 +37,8 @@ slideshow_jquery_image_gallery_backend_script = function()
 }();
 
 // @codekit-append backend/generalSettings.js
-// @codekit-append backend/editSlideshow.js
+// @codekit-append backend/slideshow.js
+// @codekit-append backend/settingsProfile.js
 // @codekit-append backend/shortcode.js
 
 ///**

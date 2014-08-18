@@ -1,4 +1,4 @@
-slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = function()
+slideshow_jquery_image_gallery_backend_script.slideshow.slideManager = function()
 {
 	var $    = jQuery,
 		self = { };
@@ -10,7 +10,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	 */
 	self.init = function()
 	{
-		if (slideshow_jquery_image_gallery_backend_script.editSlideshow.isCurrentPage)
+		if (slideshow_jquery_image_gallery_backend_script.slideshow.isCurrentPage)
 		{
 			// New 3.5 uploader
 			self.activateUploader();
@@ -42,7 +42,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 				return;
 			}
 
-			externalData = window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
+			externalData = window.slideshow_jquery_image_gallery_backend_script_slideshow;
 
 			uploaderTitle = '';
 
@@ -215,14 +215,14 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	self.deleteSlide = function($slide)
 	{
 		var confirmMessage = 'Are you sure you want to delete this slide?',
-			extraData      = window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
+			externalData   = window.slideshow_jquery_image_gallery_backend_script_slideshow;
 
-		if (typeof extraData === 'object' &&
-			typeof extraData.localization === 'object' &&
-			extraData.localization.confirm !== undefined &&
-			extraData.localization.confirm.length > 0)
+		if (typeof externalData === 'object' &&
+			typeof externalData.localization === 'object' &&
+			externalData.localization.confirm !== undefined &&
+			externalData.localization.confirm.length > 0)
 		{
-			confirmMessage = extraData.localization.confirm;
+			confirmMessage = externalData.localization.confirm;
 		}
 
 		if(!confirm(confirmMessage))

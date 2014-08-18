@@ -1,4 +1,4 @@
-slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
+slideshow_jquery_image_gallery_backend_script.settingsProfile = function()
 {
 	var $    = jQuery,
 		self = { };
@@ -10,7 +10,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 	 */
 	self.init = function()
 	{
-		if (window.pagenow === 'slideshow')
+		if (window.pagenow === 'slideshow_sett_prof')
 		{
 			self.isCurrentPage = true;
 
@@ -108,5 +108,3 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 
 	return self;
 }();
-
-// @codekit-append editSlideshow.slideManager.js

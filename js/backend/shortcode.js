@@ -21,22 +21,22 @@ slideshow_jquery_image_gallery_backend_script.shortcode = function()
 			var undefinedSlideshowMessage = 'No slideshow selected.',
 				shortcode                 = 'slideshow_deploy',
 				slideshowID               = parseInt($('#insertSlideshowShortcodeSlideshowSelect').val(), 10),
-				extraData                 = window.slideshow_jquery_image_gallery_backend_script_shortcode;
+				externalData              = window.slideshow_jquery_image_gallery_backend_script_shortcode;
 
-			if (typeof extraData === 'object')
+			if (typeof externalData === 'object')
 			{
-				if (typeof extraData.data === 'object' &&
-					extraData.data.shortcode !== undefined &&
-					extraData.data.shortcode.length > 0)
+				if (typeof externalData.data === 'object' &&
+					externalData.data.shortcode !== undefined &&
+					externalData.data.shortcode.length > 0)
 				{
-					shortcode = extraData.data.shortcode;
+					shortcode = externalData.data.shortcode;
 				}
 
-				if (typeof extraData.localization === 'object' &&
-					extraData.localization.undefinedSlideshow !== undefined &&
-					extraData.localization.undefinedSlideshow.length > 0)
+				if (typeof externalData.localization === 'object' &&
+					externalData.localization.undefinedSlideshow !== undefined &&
+					externalData.localization.undefinedSlideshow.length > 0)
 				{
-					undefinedSlideshowMessage = extraData.localization.undefinedSlideshow;
+					undefinedSlideshowMessage = externalData.localization.undefinedSlideshow;
 				}
 			}
 
