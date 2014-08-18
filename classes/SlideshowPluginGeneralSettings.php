@@ -139,6 +139,8 @@ class SlideshowPluginGeneralSettings
 
 	/**
 	 * Localizes the general settings script. Needs to be called on the 'admin_enqueue_scripts' hook.
+	 *
+	 * @since 2.2.12
 	 */
 	static function localizeScript()
 	{

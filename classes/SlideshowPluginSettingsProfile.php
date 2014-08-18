@@ -64,6 +64,7 @@ class SlideshowPluginSettingsProfile
 	 * single query is run to get the WP_Post object belonging to that ID. The object's variables are lazy loaded when
 	 * they're requested per the $this->getVariables method.
 	 *
+	 * @since 2.3.0
 	 * @param WP_Post|int $post (Optional, defaults to null)
 	 */
 	function __construct($post = null)
@@ -88,6 +89,7 @@ class SlideshowPluginSettingsProfile
 	/**
 	 * Set a single variable with the passed variable by the passed key.
 	 *
+	 * @since 2.3.0
 	 * @param string $key
 	 * @param mixed  $value
 	 */
@@ -105,6 +107,7 @@ class SlideshowPluginSettingsProfile
 	 * Expects an array of variables to be passed. The associative variables array is merged with the passed array,
 	 * which will overwrite any existing keys.
 	 *
+	 * @since 2.3.0
 	 * @param array $newVariables
 	 */
 	function setVariables($newVariables)
@@ -125,6 +128,7 @@ class SlideshowPluginSettingsProfile
 	/**
 	 * Gets the object's variables either from the database or the object itself if the variables have already been set.
 	 *
+	 * @since 2.3.0
 	 * @return array
 	 */
 	function getVariables()
@@ -160,6 +164,7 @@ class SlideshowPluginSettingsProfile
 	 * If $savePost is set to true, this method will also update or insert the post in the $post variable. Whether it
 	 * chooses to update or insert the post depends on whether or not the post has an ID.
 	 *
+	 * @since 2.3.0
 	 * @param bool $savePost
 	 * @return bool $success
 	 */
@@ -224,6 +229,7 @@ class SlideshowPluginSettingsProfile
 	/**
 	 * Called whenever a settings profile is saved through the admin user interface.
 	 *
+	 * @since 2.3.0
 	 * @param int $postID
 	 * @return int $postID
 	 */
@@ -250,50 +256,7 @@ class SlideshowPluginSettingsProfile
 		$settingsProfile->setVariables($newVariables);
 
 		$settingsProfile->save();
-//
-//		// Old settings
-//		$oldSettings      = self::getSettings($postID);
-//		$oldStyleSettings = self::getStyleSettings($postID);
-//
-//		// Get new settings from $_POST, making sure they're arrays
-//		$newPostSettings = $newPostStyleSettings = $newPostSlides = array();
-//
-//		if (isset($_POST[self::$settingsKey]) &&
-//			is_array($_POST[self::$settingsKey]))
-//		{
-//			$newPostSettings = $_POST[self::$settingsKey];
-//		}
-//
-//		if (isset($_POST[self::$styleSettingsKey]) &&
-//			is_array($_POST[self::$styleSettingsKey]))
-//		{
-//			$newPostStyleSettings = $_POST[self::$styleSettingsKey];
-//		}
-//
-//		if (isset($_POST[self::$slidesKey]) &&
-//			is_array($_POST[self::$slidesKey]))
-//		{
-//			$newPostSlides = $_POST[self::$slidesKey];
-//		}
-//
-//		// Merge new settings with its old values
-//		$newSettings = array_merge(
-//			$oldSettings,
-//			$newPostSettings
-//		);
-//
-//		// Merge new style settings with its old values
-//		$newStyleSettings = array_merge(
-//			$oldStyleSettings,
-//			$newPostStyleSettings
-//		);
-//
-//		// Save settings
-//		update_post_meta($postID, self::$settingsKey, $newSettings);
-//		update_post_meta($postID, self::$styleSettingsKey, $newStyleSettings);
-//		update_post_meta($postID, self::$slidesKey, $newPostSlides);
-//
-//		// Return
+
 		return $postID;
 	}
 
@@ -383,6 +346,7 @@ class SlideshowPluginSettingsProfile
 	/**
 	 * Returns all settings profiles within the defined offset and limit.
 	 *
+	 * @since 2.3.0
 	 * @param int $offset (Optional, defaults to -1)
 	 * @param int $limit  (Optional, defaults to -1)
 	 * @return array

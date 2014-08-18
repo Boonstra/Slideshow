@@ -22,6 +22,8 @@ class SlideshowPluginSlideshowStylesheet
 
 	/**
 	 * Enqueue stylesheet
+	 *
+	 * @since 2.2.12
 	 */
 	public static function enqueueFrontendStylesheets()
 	{
@@ -75,6 +77,7 @@ class SlideshowPluginSlideshowStylesheet
 	 * Returns the name and version number of the stylesheet that's been enqueued, as this can be different from the
 	 * name passed. This can be this case if a stylesheet does not exist and a default stylesheet is enqueued.
 	 *
+	 * @since 2.2.12
 	 * @param string $name (optional, defaults to null)
 	 * @return array [$name, $version]
 	 */
