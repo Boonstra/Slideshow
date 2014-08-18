@@ -149,6 +149,34 @@ class SlideshowPluginMain
 	}
 
 	/**
+	 * Outputs the passed view. It's good practice to pass an object like an stdClass to the $data variable, as it can
+	 * be easily checked for validity in the view itself using "instanceof".
+	 *
+	 * @param string   $view
+	 * @param stdClass $data (Optional, defaults to null)
+	 */
+	static function outputView($view, $data = null)
+	{
+		include self::getPluginPath() . '/views/' . $view;
+	}
+
+	/**
+	 * Uses self::outputView to render the passed view. Returns the rendered view instead of outputting it.
+	 *
+	 * @param string   $view
+	 * @param stdClass $data (Optional, defaults to null)
+	 * @return string
+	 */
+	static function getView($view, $data = null)
+	{
+		ob_start();
+
+		self::outputView($view, $data);
+
+		return ob_get_clean();
+	}
+
+	/**
 	 * Tries to retrieve the current post type from either the current $post, $typenow, or $current_screen global
 	 * variable. Returns null when no post type was found.
 	 *
