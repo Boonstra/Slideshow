@@ -375,7 +375,7 @@ class SlideshowPluginSlideshowSettingsHandler
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
 		if (get_post_type($postId) != SlideshowPluginPostType::$postType ||
 			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
-			!current_user_can('slideshow-jquery-image-gallery-edit-slideshows', $postId) ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['editSlideshows'], $postId) ||
 			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))
 		{
 			return $postId;

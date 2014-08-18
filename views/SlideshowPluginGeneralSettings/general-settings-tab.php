@@ -10,7 +10,11 @@ global $wp_roles;
 $capabilities = array(
 	SlideshowPluginGeneralSettings::$capabilities['addSlideshows']    => __('Add slideshows', 'slideshow-plugin'),
 	SlideshowPluginGeneralSettings::$capabilities['editSlideshows']   => __('Edit slideshows', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin')
+	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin'),
+
+	SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']    => __('Add settings profiles', 'slideshow-plugin'),
+	SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles']   => __('Edit settings profiles', 'slideshow-plugin'),
+	SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'] => __('Delete settings profiles', 'slideshow-plugin'),
 );
 
 ?>

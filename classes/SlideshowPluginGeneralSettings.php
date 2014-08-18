@@ -21,7 +21,11 @@ class SlideshowPluginGeneralSettings
 	static $capabilities = array(
 		'addSlideshows'    => 'slideshow-jquery-image-gallery-add-slideshows',
 		'editSlideshows'   => 'slideshow-jquery-image-gallery-edit-slideshows',
-		'deleteSlideshows' => 'slideshow-jquery-image-gallery-delete-slideshows'
+		'deleteSlideshows' => 'slideshow-jquery-image-gallery-delete-slideshows',
+
+		'addSettingsProfiles'    => 'slideshow-jquery-image-gallery-add-settings-profile',
+		'editSettingsProfiles'   => 'slideshow-jquery-image-gallery-edit-settings-profile',
+		'deleteSettingsProfiles' => 'slideshow-jquery-image-gallery-delete-settings-profile',
 	);
 
 	/** @var string $defaultSettings */
@@ -120,7 +124,10 @@ class SlideshowPluginGeneralSettings
 		// Register user capability settings, saving capabilities only has to be called once.
 		register_setting(self::$settingsGroup, self::$capabilities['addSlideshows']);
 		register_setting(self::$settingsGroup, self::$capabilities['editSlideshows']);
-		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows'], array(__CLASS__, 'saveCapabilities'));
+		register_setting(self::$settingsGroup, self::$capabilities['deleteSlideshows']);
+		register_setting(self::$settingsGroup, self::$capabilities['addSettingsProfiles']);
+		register_setting(self::$settingsGroup, self::$capabilities['editSettingsProfiles']);
+		register_setting(self::$settingsGroup, self::$capabilities['deleteSettingsProfiles'], array(__CLASS__, 'saveCapabilities'));
 
 		// Register default slideshow settings
 		register_setting(self::$settingsGroup, self::$defaultSettings);

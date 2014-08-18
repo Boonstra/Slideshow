@@ -334,7 +334,7 @@ class SlideshowPluginPostType
 	 */
 	static function duplicateActionLink($actions, $post)
 	{
-		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
+		if (current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSlideshows']) &&
 			$post->post_type === self::$postType)
 		{
 			$url = add_query_arg(array(
@@ -363,7 +363,7 @@ class SlideshowPluginPostType
 
 		// Check if nonce is correct and user has the correct privileges
 		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $postID) ||
-			!current_user_can('slideshow-jquery-image-gallery-add-slideshows') ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSlideshows']) ||
 			$postType !== self::$postType)
 		{
 			wp_redirect($errorRedirectURL);
