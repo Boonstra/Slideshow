@@ -1,8 +1,9 @@
-
+<?php /* DEPRECATED */ ?>
+<?php if ($data instanceof stdClass): ?>
 <table>
 	<?php $groups = array(); ?>
 	<?php if(count($settings) > 0): ?>
-	<?php foreach($settings as $key => $value): ?>
+	<?php foreach($data->settingsProfile->getVariableDefinitions() as $key => $value): ?>
 
 	<?php if( !isset($value, $value['type'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
 
@@ -30,3 +31,4 @@
 	<?php endforeach; ?>
 	<?php endif; ?>
 </table>
+<?php endif; ?>

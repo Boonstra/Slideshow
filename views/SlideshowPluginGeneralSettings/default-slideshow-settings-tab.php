@@ -58,6 +58,7 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 				echo SlideshowPluginSlideshowSettingsHandler::getInputField(
 					SlideshowPluginGeneralSettings::$defaultSettings,
 					$defaultSettingKey,
+					null,
 					$defaultSettingValue,
 					/* hideDependentValues = */ false
 				);
@@ -90,6 +91,7 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 				echo SlideshowPluginSlideshowSettingsHandler::getInputField(
 					SlideshowPluginGeneralSettings::$defaultStyleSettings,
 					$defaultStyleSettingKey,
+					null,
 					$defaultStyleSettingValue,
 					/* hideDependentValues = */ false
 				);
