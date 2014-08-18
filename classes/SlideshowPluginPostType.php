@@ -113,7 +113,7 @@ class SlideshowPluginPostType
 			__('Slides List', 'slideshow-plugin'),
 			array(__CLASS__, 'slidesMetaBox'),
 			self::$postType,
-			'side',
+			'advanced',
 			'default'
 		);
 
@@ -122,8 +122,8 @@ class SlideshowPluginPostType
 			__('Slideshow Style', 'slideshow-plugin'),
 			array(__CLASS__, 'styleMetaBox'),
 			self::$postType,
-			'normal',
-			'low'
+			'side',
+			'default'
 		);
 
 		add_meta_box(
@@ -131,8 +131,8 @@ class SlideshowPluginPostType
 			__('Slideshow Settings', 'slideshow-plugin'),
 			array(__CLASS__, 'settingsMetaBox'),
 			self::$postType,
-			'normal',
-			'low'
+			'side',
+			'default'
 		);
 
 		// Add support plugin message on edit slideshow
@@ -273,6 +273,8 @@ class SlideshowPluginPostType
 	/**
 	 * Shows style used for slideshow
 	 *
+	 * TODO Improve styling for usage in sidebar.
+	 *
 	 * @since 1.3.0
 	 */
 	static function styleMetaBox()
@@ -289,20 +291,24 @@ class SlideshowPluginPostType
 	/**
 	 * Shows settings for particular slideshow
 	 *
+	 * TODO Implement.
+	 *
 	 * @since 1.0.0
 	 */
 	static function settingsMetaBox()
 	{
-		global $post;
+//		global $post;
 
 		// Nonce
 		wp_nonce_field(SlideshowPluginSlideshowSettingsHandler::$nonceAction, SlideshowPluginSlideshowSettingsHandler::$nonceName);
 
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
+		echo 'Placeholder for settings profiles dropdown';
 
-		// Include
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+//		// Get settings
+//		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
+//
+//		// Include
+//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
 	}
 
 	/**
