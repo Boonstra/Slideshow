@@ -66,7 +66,7 @@ class SlideshowPluginSettingsProfile
 	 *
 	 * @param WP_Post|int $post (Optional, defaults to null)
 	 */
-	function __construct__($post = null)
+	function __construct($post = null)
 	{
 		if ($post instanceof WP_Post &&
 			$post->post_type === self::$postType)
@@ -129,7 +129,7 @@ class SlideshowPluginSettingsProfile
 	 */
 	function getVariables()
 	{
-		if (count($this->$variables) > 0)
+		if (count($this->variables) > 0)
 		{
 			return $this->variables;
 		}
@@ -152,6 +152,16 @@ class SlideshowPluginSettingsProfile
 		$this->variables = $variables;
 
 		return $variables;
+	}
+
+	function save()
+	{
+
+	}
+
+	static function saveThroughEditor($postID)
+	{
+
 	}
 
 	/**
@@ -282,7 +292,7 @@ class SlideshowPluginSettingsProfile
 	static function init()
 	{
 		add_action('init', array(__CLASS__, 'registerPostType'));
-//		add_action('save_post'            , array(__CLASS__, 'save')); // TODO Implement a save method
+		add_action('save_post'            , array(__CLASS__, 'saveThroughEditor'));
 
 		add_filter('post_updated_messages', array(__CLASS__, 'alterCRUDMessages'));
 		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateActionLink'), 10, 2);
