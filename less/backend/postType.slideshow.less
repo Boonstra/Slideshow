@@ -1,0 +1,157 @@
+
+// Settings
+#settings.postbox
+{
+  table
+  {
+	tr
+	{
+	  height: 31px;
+	}
+  }
+}
+
+// Slides list
+.sortable-slides-list
+{
+  .sortable-slides-list-item
+  {
+	div.hndle
+	{
+	  padding: 8px 12px;
+	  margin: 0;
+
+	  font-size: 14px;
+	  line-height: 1.4;
+
+	  border-bottom: 1px solid #eee;
+
+	  .slide-icon,
+	  .slide-title
+	  {
+		float: left;
+
+		margin-right: 8px;
+	  }
+
+	  .slide-icon
+	  {
+		width: 1.4em;
+		height: 1.4em;
+
+		&.image-slide-icon
+		{
+		  background: url('../images/SlideshowPluginPostType/fa-camera.svg') no-repeat left center;
+		}
+
+		&.text-slide-icon
+		{
+		  background: url('../images/SlideshowPluginPostType/fa-align-left.svg') no-repeat left center;
+		}
+
+		&.video-slide-icon
+		{
+		  background: url('../images/SlideshowPluginPostType/fa-video-camera.svg') no-repeat left center;
+		}
+	  }
+	}
+
+	div.inside
+	{
+	  width: auto;
+
+	  .slideshow-group
+	  {
+		margin: 5px 0;
+
+		input[type="checkbox"]
+		{
+		  margin-top: 8px;
+		}
+
+		.slideshow-label
+		{
+		  font-style: italic;
+
+		  line-height: 30px;
+		}
+
+		&.slideshow-delete-slide,
+		&.slideshow-delete-new-slide
+		{
+		  color: red;
+		  cursor: pointer;
+		}
+
+		.slideshow-left
+		{
+		  float: left;
+		}
+
+		.slideshow-right
+		{
+		  float: right;
+		}
+	  }
+
+	  &.widefat
+	  {
+		border-color: #dfdfdf;
+	  }
+    }
+  }
+}
+
+// Pre-3.5 uploader popup background
+#slideshow-slide-inserter-popup-background
+{
+  background: #000;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+
+  zoom: 1;
+  filter: ~"alpha(opacity = 50)";
+  opacity: 0.5;
+}
+
+// Pre 3.5 uploader popup
+#slideshow-slide-inserter-popup
+{
+  background: #fff;
+  display: none;
+  position: absolute;
+  padding: 20px;
+  line-height: 23px;
+  z-index: 10001;
+
+  width: 600px;
+
+  #search
+  {
+    float: left;
+    width: 200px;
+  }
+
+  #close
+  {
+    float: right;
+    width: 32px;
+    height: 32px;
+    background: url('../images/SlideshowPluginSlideInserter/close.png') no-repeat;
+
+    &:hover
+    {
+      cursor: pointer;
+    }
+  }
+
+  #search-results
+  {
+    height: 400px;
+    overflow-y: scroll;
+  }
+}
