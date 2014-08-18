@@ -205,7 +205,12 @@ class SlideshowPluginInstaller
 			return;
 		}
 
-		// TODO Implement
+		// TODO Settings profiles: Create a settings profile for every slideshow with unique settings. This can be done
+		// TODO using hashes of all settings.
+
+		// TODO Edit slideshow interface: The interface has a renewed layout, but WordPress has the previous layout
+		// TODO stored for every user as that user's preference. Remove this preference for every user.
+		// TODO (SELECT * FROM  `wp_usermeta` WHERE  `user_id` = 1 AND  `meta_key` LIKE  'meta-box%')
 	}
 
 	/**
