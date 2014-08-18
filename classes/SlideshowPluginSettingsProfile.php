@@ -154,66 +154,147 @@ class SlideshowPluginSettingsProfile
 		return $variables;
 	}
 
-	function save()
+	/**
+	 * Saves the current settings profile.
+	 *
+	 * If $savePost is set to true, this method will also update or insert the post in the $post variable. Whether it
+	 * chooses to update or insert the post depends on whether or not the post has an ID.
+	 *
+	 * @param bool $savePost
+	 * @return bool $success
+	 */
+	function save($savePost = false)
 	{
+		if ($savePost)
+		{
+			$isPostSaved = false;
 
+			$postArray = array(
+				'post_author'           => $this->post->post_author,
+				'post_date'             => $this->post->post_date,
+				'post_date_gmt'         => $this->post->post_date_gmt,
+				'post_content'          => $this->post->post_content,
+				'post_title'            => $this->post->post_title,
+				'post_excerpt'          => $this->post->post_excerpt,
+				'post_status'           => $this->post->post_status,
+				'comment_status'        => $this->post->comment_status,
+				'ping_status'           => $this->post->ping_status,
+				'post_password'         => $this->post->post_password,
+				'post_name'             => $this->post->post_name,
+				'to_ping'               => $this->post->to_ping,
+				'pinged'                => $this->post->pinged,
+				'post_modified'         => $this->post->post_modified,
+				'post_modified_gmt'     => $this->post->post_modified_gmt,
+				'post_content_filtered' => $this->post->post_content_filtered,
+				'post_parent'           => $this->post->post_parent,
+				'guid'                  => $this->post->guid,
+				'menu_order'            => $this->post->menu_order,
+				'post_type'             => $this->post->post_type,
+				'post_mime_type'        => $this->post->post_mime_type,
+				'comment_count'         => $this->post->comment_count,
+			);
+
+			if (is_numeric($this->post->ID) && $this->post->ID > 0)
+			{
+				$postArray['ID'] = $this->post->ID;
+			}
+
+			$postID = wp_insert_post($postArray);
+
+			if ($postID > 0)
+			{
+				$isPostSaved = true;
+
+				$this->post->ID = $postID;
+			}
+		}
+		else
+		{
+			$isPostSaved = true;
+		}
+
+		$updatePostMetaResult = update_post_meta($this->post->ID, self::$variablesPostMetaKey, $this->getVariables());
+
+		// $updatePostMetaResult will be absolutely false on failure
+		$isPostMetaSaved = $updatePostMetaResult !== false;
+
+		return $isPostSaved && $isPostMetaSaved;
 	}
 
+	/**
+	 * Called whenever a settings profile is saved through the admin user interface.
+	 *
+	 * @param int $postID
+	 * @return int $postID
+	 */
 	static function saveThroughEditor($postID)
 	{
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
 		if (get_post_type($postID) != self::$postType ||
 			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
-			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['editSlideshows'], $postID) ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles'], $postID) ||
 			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))
 		{
-			return $postId;
+			return $postID;
 		}
 
-		// Old settings
-		$oldSettings      = self::getSettings($postId);
-		$oldStyleSettings = self::getStyleSettings($postId);
+		$newVariables = array();
 
-		// Get new settings from $_POST, making sure they're arrays
-		$newPostSettings = $newPostStyleSettings = $newPostSlides = array();
-
-		if (isset($_POST[self::$settingsKey]) &&
-			is_array($_POST[self::$settingsKey]))
+		if (isset($_POST[self::$variablesPostMetaKey]) &&
+			is_array($_POST[self::$variablesPostMetaKey]))
 		{
-			$newPostSettings = $_POST[self::$settingsKey];
+			$newVariables = $_POST[self::$variablesPostMetaKey];
 		}
 
-		if (isset($_POST[self::$styleSettingsKey]) &&
-			is_array($_POST[self::$styleSettingsKey]))
-		{
-			$newPostStyleSettings = $_POST[self::$styleSettingsKey];
-		}
+		$settingsProfile = new SlideshowPluginSettingsProfile($postID);
+		$settingsProfile->setVariables($newVariables);
 
-		if (isset($_POST[self::$slidesKey]) &&
-			is_array($_POST[self::$slidesKey]))
-		{
-			$newPostSlides = $_POST[self::$slidesKey];
-		}
-
-		// Merge new settings with its old values
-		$newSettings = array_merge(
-			$oldSettings,
-			$newPostSettings
-		);
-
-		// Merge new style settings with its old values
-		$newStyleSettings = array_merge(
-			$oldStyleSettings,
-			$newPostStyleSettings
-		);
-
-		// Save settings
-		update_post_meta($postId, self::$settingsKey, $newSettings);
-		update_post_meta($postId, self::$styleSettingsKey, $newStyleSettings);
-		update_post_meta($postId, self::$slidesKey, $newPostSlides);
-
-		// Return
-		return $postId;
+		$settingsProfile->save();
+//
+//		// Old settings
+//		$oldSettings      = self::getSettings($postID);
+//		$oldStyleSettings = self::getStyleSettings($postID);
+//
+//		// Get new settings from $_POST, making sure they're arrays
+//		$newPostSettings = $newPostStyleSettings = $newPostSlides = array();
+//
+//		if (isset($_POST[self::$settingsKey]) &&
+//			is_array($_POST[self::$settingsKey]))
+//		{
+//			$newPostSettings = $_POST[self::$settingsKey];
+//		}
+//
+//		if (isset($_POST[self::$styleSettingsKey]) &&
+//			is_array($_POST[self::$styleSettingsKey]))
+//		{
+//			$newPostStyleSettings = $_POST[self::$styleSettingsKey];
+//		}
+//
+//		if (isset($_POST[self::$slidesKey]) &&
+//			is_array($_POST[self::$slidesKey]))
+//		{
+//			$newPostSlides = $_POST[self::$slidesKey];
+//		}
+//
+//		// Merge new settings with its old values
+//		$newSettings = array_merge(
+//			$oldSettings,
+//			$newPostSettings
+//		);
+//
+//		// Merge new style settings with its old values
+//		$newStyleSettings = array_merge(
+//			$oldStyleSettings,
+//			$newPostStyleSettings
+//		);
+//
+//		// Save settings
+//		update_post_meta($postID, self::$settingsKey, $newSettings);
+//		update_post_meta($postID, self::$styleSettingsKey, $newStyleSettings);
+//		update_post_meta($postID, self::$slidesKey, $newPostSlides);
+//
+//		// Return
+		return $postID;
 	}
 
 	/**

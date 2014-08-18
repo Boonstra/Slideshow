@@ -13,11 +13,11 @@ class SlideshowPluginSlideshowSettingsHandler
 	static $nonceName = 'slideshow-jquery-image-gallery-nonceName';
 
 	/** @var string $settingsKey */
-	static $settingsKey = 'settings';
+	static $settingsKey = '_slideshow_jquery_image_gallery_settings_profile';
 	/** @var string $styleSettingsKey */
-	static $styleSettingsKey = 'styleSettings';
+	static $styleSettingsKey = '_slideshow_jquery_image_gallery_style';
 	/** @var string $slidesKey */
-	static $slidesKey = 'slides';
+	static $slidesKey = '_slideshow_jquery_image_gallery_slides';
 
 	/** @var array $settings      Used for caching by slideshow ID */
 	static $settings = array();
