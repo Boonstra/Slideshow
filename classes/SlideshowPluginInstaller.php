@@ -67,8 +67,6 @@ class SlideshowPluginInstaller
 	/**
 	 * Add additional capabilities for the default users.
 	 *
-	 * TODO More PHPDoc
-	 *
 	 * @since 2.3.0
 	 */
 	private static function updateCapabilitiesV2_1_22_to_V2_3_0()

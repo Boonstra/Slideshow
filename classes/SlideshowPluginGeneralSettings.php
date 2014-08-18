@@ -23,9 +23,9 @@ class SlideshowPluginGeneralSettings
 		'editSlideshows'   => 'slideshow-jquery-image-gallery-edit-slideshows',
 		'deleteSlideshows' => 'slideshow-jquery-image-gallery-delete-slideshows',
 
-		'addSettingsProfiles'    => 'slideshow-jquery-image-gallery-add-settings-profile',
-		'editSettingsProfiles'   => 'slideshow-jquery-image-gallery-edit-settings-profile',
-		'deleteSettingsProfiles' => 'slideshow-jquery-image-gallery-delete-settings-profile',
+		'addSettingsProfiles'    => 'slideshow-jquery-image-gallery-add-settings-profiles',
+		'editSettingsProfiles'   => 'slideshow-jquery-image-gallery-edit-settings-profiles',
+		'deleteSettingsProfiles' => 'slideshow-jquery-image-gallery-delete-settings-profiles',
 	);
 
 	/** @var string $defaultSettings */

@@ -47,6 +47,7 @@ $capabilities = array(
 							type="checkbox"
 							name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
 							id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
+							class="general-settings-capability-checkbox"
 							<?php echo $disabled; ?>
 							<?php echo $checked; ?>
 						/>

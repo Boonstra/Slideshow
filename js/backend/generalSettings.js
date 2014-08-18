@@ -24,12 +24,15 @@ slideshow_jquery_image_gallery_backend_script.generalSettings = function()
 	 */
 	self.activateUserCapabilities = function()
 	{
-		$('input').change(function(event)
+		$('.general-settings-capability-checkbox').change(function(event)
 		{
-			var $this                      = $(event.currentTarget),
-				addSlideshowsCapability    = 'slideshow-jquery-image-gallery-add-slideshows',
-				editSlideshowsCapability   = 'slideshow-jquery-image-gallery-edit-slideshows',
-				deleteSlideshowsCapability = 'slideshow-jquery-image-gallery-delete-slideshows',
+			var $this                            = $(event.currentTarget),
+				addSlideshowsCapability          = 'slideshow-jquery-image-gallery-add-slideshows',
+				editSlideshowsCapability         = 'slideshow-jquery-image-gallery-edit-slideshows',
+				deleteSlideshowsCapability       = 'slideshow-jquery-image-gallery-delete-slideshows',
+				addSettingsProfilesCapability    = 'slideshow-jquery-image-gallery-add-settings-profiles',
+				editSettingsProfilesCapability   = 'slideshow-jquery-image-gallery-edit-settings-profiles',
+				deleteSettingsProfilesCapability = 'slideshow-jquery-image-gallery-delete-settings-profiles',
 				idArray,
 				capability,
 				role;
@@ -57,6 +60,20 @@ slideshow_jquery_image_gallery_backend_script.generalSettings = function()
 					 capability === deleteSlideshowsCapability)
 			{
 				$('#' + editSlideshowsCapability + '_' + role).attr('checked', true);
+			}
+			console.log(capability, role, editSettingsProfilesCapability, capability === editSettingsProfilesCapability);
+			// When 'Edit settings profiles' has been un-checked, set 'Add settings profiles' and 'Delete settings profiles' to un-checked as well
+			if (capability === editSettingsProfilesCapability &&
+				!$this.attr('checked'))
+			{
+				$('#' + addSettingsProfilesCapability    + '_' + role).attr('checked', false);
+				$('#' + deleteSettingsProfilesCapability + '_' + role).attr('checked', false);
+			}
+			// When 'Add settings profiles' or 'Delete settings profiles' is checked, 'Edit settings profiles' must be checked as well
+			else if (capability === addSettingsProfilesCapability ||
+				capability === deleteSettingsProfilesCapability)
+			{
+				$('#' + editSettingsProfilesCapability + '_' + role).attr('checked', true);
 			}
 		});
 	};
