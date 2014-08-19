@@ -81,6 +81,10 @@ class SlideshowPluginInstaller
 		$editSettingsProfiles   = 'slideshow-jquery-image-gallery-edit-settings-profiles';
 		$deleteSettingsProfiles = 'slideshow-jquery-image-gallery-delete-settings-profiles';
 
+		$addStyles    = 'slideshow-jquery-image-gallery-add-styles';
+		$editStyles   = 'slideshow-jquery-image-gallery-edit-styles';
+		$deleteStyles = 'slideshow-jquery-image-gallery-delete-styles';
+
 		// Add capabilities to roles
 		$roles = array('administrator', 'editor', 'author');
 
@@ -99,6 +103,10 @@ class SlideshowPluginInstaller
 			$role->add_cap($addSettingsProfiles);
 			$role->add_cap($editSettingsProfiles);
 			$role->add_cap($deleteSettingsProfiles);
+
+			$role->add_cap($addStyles);
+			$role->add_cap($editStyles);
+			$role->add_cap($deleteStyles);
 		}
 	}
 
@@ -1053,7 +1061,7 @@ class SlideshowPluginInstaller
 			return true;
 		}
 
-		add_option($updateName, 'updated', '', false);
+		add_option($updateName, 'updated', '', 'no');
 
 		return false;
 	}

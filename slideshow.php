@@ -48,6 +48,8 @@ class SlideshowPluginMain
 
 		SlideshowPluginSettingsProfile::init();
 
+		SlideshowPluginStyle::init();
+
 		// Add general settings page
 		SlideshowPluginGeneralSettings::init();
 
