@@ -43,7 +43,7 @@ different images, settings and styles for each one of them.
  - English        (100%)
  - Finnish        (83%  - fi    - Translated by A. Nonymous)
  - French         (91%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/))
+ - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/) and A. Nonymous)
  - Hebrew         (53%  - he_IL - Translated by Eli Segev)
  - Italian        (83%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
  - Japanese       (82%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
@@ -187,6 +187,9 @@ personal taste.
 *	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
 *   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
+*   Added Norwegian translation by A. Nonymous.
+*   Updated Persian translation by W3Design.
+*   Updated German translation by A. Nonymous.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
