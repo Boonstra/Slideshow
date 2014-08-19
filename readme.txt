@@ -36,25 +36,26 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Bulgarian	  (88%  - bg_BG - Translated by [Ilko Ivanov](http://software.avalonbg.com/en/index.php))
- - Chinese        (66%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/) and [Leo Newbiesup](http://smallseotips.com/))
- - Czech          (82%  - cs_CZ - Translated by Edhel)
+ - Bulgarian	  (87%  - bg_BG - Translated by [Ilko Ivanov](http://software.avalonbg.com/en/index.php))
+ - Chinese        (65%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/) and [Leo Newbiesup](http://smallseotips.com/))
+ - Czech          (81%  - cs_CZ - Translated by Edhel)
  - Dutch          (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/) (That's me!))
  - English        (100%)
  - Finnish        (83%  - fi    - Translated by A. Nonymous)
  - French         (91%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German         (84%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/))
+ - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/) and A. Nonymous)
  - Hebrew         (53%  - he_IL - Translated by Eli Segev)
  - Italian        (83%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
- - Japanese       (83%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
- - Persian        (91%  - fa_IR - Translated by [W3Design](http://w3design.ir/))
+ - Japanese       (82%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
+ - Norwegian      (99%  - nb_NO - Translated by A. Nonymous)
+ - Persian        (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
  - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
  - Portuguese     (75%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
  - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
- - Spanish        (52%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish        (92%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
+ - Spanish        (51%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
@@ -188,6 +189,10 @@ personal taste.
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
 *	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
+*   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
+*   Added Norwegian translation by A. Nonymous.
+*   Updated Persian translation by W3Design.
+*   Updated German translation by A. Nonymous.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.

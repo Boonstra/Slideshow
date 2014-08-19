@@ -59,21 +59,21 @@
 		}
 
 		// Set width
-		this.$container.css('width', Math.floor(width));
-		this.$content.css('width', Math.floor(width) - (this.$content.outerWidth(true) - this.$content.width()));
+		this.$container.css('width', Math.round(width));
+		this.$content.css('width', Math.round(width) - (this.$content.outerWidth(true) - this.$content.width()));
 
 		// Calculate and set the heights
 		if (this.settings['preserveSlideshowDimensions'])
 		{
 			var height = (width * this.settings['dimensionHeight']) / this.settings['dimensionWidth'];
 
-			this.$container.css('height', Math.floor(height));
-			this.$content.css('height', Math.floor(height) - (this.$content.outerHeight(true) - this.$content.height()));
+			this.$container.css('height', Math.round(height));
+			this.$content.css('height', Math.round(height) - (this.$content.outerHeight(true) - this.$content.height()));
 		}
 		else
 		{
-			this.$container.css('height', Math.floor(this.settings['height']));
-			this.$content.css('height', Math.floor(this.settings['height']));
+			this.$container.css('height', Math.round(this.settings['height']));
+			this.$content.css('height', Math.round(this.settings['height']));
 		}
 
 		// Recalculate hiding position of hidden views

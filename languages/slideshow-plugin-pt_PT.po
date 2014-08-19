@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 20:35+0100\n"
-"PO-Revision-Date: 2014-03-19 20:35+0100\n"
+"POT-Creation-Date: 2014-08-19 12:01+0100\n"
+"PO-Revision-Date: 2014-08-19 12:02+0100\n"
 "Last-Translator: Filipe Catraia <fcatraia@sapo.pt>\n"
 "Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
 "Language: pt_PT\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/SlideshowPluginGeneralSettings.php:82
@@ -418,6 +418,10 @@ msgstr "Deslizar para cima"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Down"
 msgstr "Deslizar para baixo"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Direct Fade"

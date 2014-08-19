@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 20:32+0100\n"
-"PO-Revision-Date: 2014-03-19 20:32+0100\n"
+"POT-Creation-Date: 2014-08-19 11:55+0100\n"
+"PO-Revision-Date: 2014-08-19 11:55+0100\n"
 "Last-Translator: Murat Demir <demir.murat1@gmail.com>\n"
 "Language-Team: EliSegev\n"
 "Language: he_IL\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -408,6 +408,10 @@ msgstr "החלק למעלה"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Down"
 msgstr "החלק למטה"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Direct Fade"

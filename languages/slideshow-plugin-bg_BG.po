@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Slideshow v2.2.19\n"
+"Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 20:31+0100\n"
-"PO-Revision-Date: 2014-03-19 20:31+0100\n"
+"POT-Creation-Date: 2014-08-19 11:47+0100\n"
+"PO-Revision-Date: 2014-08-19 11:49+0100\n"
 "Last-Translator: admin <home@avalonbg.com>\n"
 "Language-Team: \n"
 "Language: bg_BG\n"
@@ -11,10 +11,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -502,6 +501,10 @@ msgstr "Прехвърляй кадрите нагоре"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Down"
 msgstr "Прехвърляй кадрите надолу"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr ""
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547

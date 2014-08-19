@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 20:38+0100\n"
-"PO-Revision-Date: 2014-03-19 20:38+0100\n"
+"POT-Creation-Date: 2014-08-19 12:03+0100\n"
+"PO-Revision-Date: 2014-08-19 12:04+0100\n"
 "Last-Translator: leo <441968345@qq.com>\n"
 "Language-Team: Kevin Tell\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/SlideshowPluginGeneralSettings.php:82
@@ -407,6 +407,10 @@ msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Down"
+msgstr ""
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
 msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
