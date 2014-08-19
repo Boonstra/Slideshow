@@ -185,6 +185,7 @@ personal taste.
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
 *	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
+*   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
