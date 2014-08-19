@@ -4,7 +4,7 @@
 $defaultStyles      = array();
 $defaultStylesheets = array(
 	'style-light.css' => __('Light', 'slideshow-plugin'),
-	'style-dark.css' => __('Dark', 'slideshow-plugin')
+	'style-dark.css'  => __('Dark', 'slideshow-plugin')
 );
 
 $stylesheetsFilePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin';

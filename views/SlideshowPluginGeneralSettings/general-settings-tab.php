@@ -8,13 +8,15 @@ global $wp_roles;
 
 // Capabilities
 $capabilities = array(
-	SlideshowPluginGeneralSettings::$capabilities['addSlideshows']    => __('Add slideshows', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['editSlideshows']   => __('Edit slideshows', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin'),
-
-	SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']    => __('Add settings profiles', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles']   => __('Edit settings profiles', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'] => __('Delete settings profiles', 'slideshow-plugin'),
+	SlideshowPluginGeneralSettings::$capabilities['addSlideshows']          => array('name' => __('Add slideshows', 'slideshow-plugin')          , 'dependsOn' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows']),
+	SlideshowPluginGeneralSettings::$capabilities['editSlideshows']         => array('name' => __('Edit slideshows', 'slideshow-plugin')         , 'dependsOn' => ''),
+	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows']       => array('name' => __('Delete slideshows', 'slideshow-plugin')       , 'dependsOn' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows']),
+	SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']    => array('name' => __('Add settings profiles', 'slideshow-plugin')   , 'dependsOn' => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles']),
+	SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles']   => array('name' => __('Edit settings profiles', 'slideshow-plugin')  , 'dependsOn' => ''),
+	SlideshowPluginGeneralSettings::$capabilities['deleteSettingsProfiles'] => array('name' => __('Delete settings profiles', 'slideshow-plugin'), 'dependsOn' => SlideshowPluginGeneralSettings::$capabilities['editSettingsProfiles']),
+	SlideshowPluginGeneralSettings::$capabilities['addStyles']              => array('name' => __('Add styles', 'slideshow-plugin')              , 'dependsOn' => SlideshowPluginGeneralSettings::$capabilities['editStyles']),
+	SlideshowPluginGeneralSettings::$capabilities['editStyles']             => array('name' => __('Edit styles', 'slideshow-plugin')             , 'dependsOn' => ''),
+	SlideshowPluginGeneralSettings::$capabilities['deleteStyles']           => array('name' => __('Delete styles', 'slideshow-plugin')           , 'dependsOn' => SlideshowPluginGeneralSettings::$capabilities['editStyles']),
 );
 
 ?>
@@ -27,10 +29,10 @@ $capabilities = array(
 
 	<table>
 
-		<?php foreach($capabilities as $capability => $capabilityName): ?>
+		<?php foreach($capabilities as $capability => $capabilityValues): ?>
 
 		<tr valign="top">
-			<th><?php echo $capabilityName; ?></th>
+			<th><?php echo $capabilityValues['name']; ?></th>
 			<td>
 				<?php
 
@@ -48,6 +50,8 @@ $capabilities = array(
 							name="<?php echo htmlspecialchars($capability); ?>[<?php echo htmlspecialchars($roleSlug); ?>]"
 							id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
 							class="general-settings-capability-checkbox"
+							data-role="<?php echo htmlspecialchars($roleSlug); ?>"
+							data-depends-on="<?php echo htmlspecialchars($capabilityValues['dependsOn']); ?>"
 							<?php echo $disabled; ?>
 							<?php echo $checked; ?>
 						/>
