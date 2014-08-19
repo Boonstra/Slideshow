@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 20:32+0100\n"
-"PO-Revision-Date: 2014-03-19 20:32+0100\n"
+"POT-Creation-Date: 2014-08-19 11:53+0100\n"
+"PO-Revision-Date: 2014-08-19 11:54+0100\n"
 "Last-Translator: Maziar Moradpour <info@w3design.ir>\n"
 "Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
 "Language: fa_IR\n"
@@ -12,7 +12,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/SlideshowPluginGeneralSettings.php:82
@@ -251,11 +252,11 @@ msgstr "تنظیمات نمایشگر"
 
 #: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow created"
-msgstr ""
+msgstr "نمایشگر اسلایدی ایجاد شد"
 
 #: classes/SlideshowPluginPostType.php:177
 msgid "Slideshow updated"
-msgstr ""
+msgstr "نمایشگر اسلایدی بروز شد"
 
 #: classes/SlideshowPluginPostType.php:224
 #: classes/SlideshowPluginSlideInserter.php:238
@@ -265,11 +266,11 @@ msgstr "درج"
 
 #: classes/SlideshowPluginPostType.php:232
 msgid "Open all"
-msgstr ""
+msgstr "گشودن همه"
 
 #: classes/SlideshowPluginPostType.php:234
 msgid "Close all"
-msgstr ""
+msgstr "بستن همه"
 
 #: classes/SlideshowPluginPostType.php:240
 #: views/SlideshowPluginPostType/slides.php:10
@@ -278,11 +279,11 @@ msgstr "افزودن اسلاید به این نمایشگر با استفاده
 
 #: classes/SlideshowPluginPostType.php:320
 msgid "Duplicate"
-msgstr ""
+msgstr "تکثیر"
 
 #: classes/SlideshowPluginPostType.php:371
 msgid "Copy"
-msgstr ""
+msgstr "کپی"
 
 #: classes/SlideshowPluginShortcode.php:148
 msgid "No slideshow selected."
@@ -411,6 +412,10 @@ msgid "Slide Down"
 msgstr "کشویی به پائین"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
+msgid "Cross Fade"
+msgstr "محو شدن کروز"
+
+#: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Direct Fade"
 msgstr "محو شدن مستقیم"
 
@@ -449,23 +454,23 @@ msgstr "ابزارک نمایشگر اسلاید"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Play"
-msgstr ""
+msgstr "حرکت"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Pause"
-msgstr ""
+msgstr "توقف"
 
 #: views/SlideshowPlugin/slideshow.php:25
 msgid "Previous"
-msgstr ""
+msgstr "پیشین"
 
 #: views/SlideshowPlugin/slideshow.php:26
 msgid "Next"
-msgstr ""
+msgstr "پسین"
 
 #: views/SlideshowPlugin/slideshow.php:28
 msgid "Go to slide"
-msgstr ""
+msgstr "برو به اسلاید"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:46
 msgid "Default stylesheets"
@@ -511,7 +516,7 @@ msgstr "برای ایجاد یک شیوه نامه جدید بر روی 'سفا�
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:130
 msgid "Select a stylesheet to start customizing it."
-msgstr ""
+msgstr "شیوه نامه ای را جهت شروع سفارشی سازی انتخاب کنید"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:139
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:192
@@ -763,8 +768,8 @@ msgid ""
 msgstr ""
 "درود بر شما. برای توسعه بیشتر و رفع اشکال این افزونه، به انگیزه بیشتری "
 "نیازمندیم. شما می توانید با مراجعه به wordpress.org و اعطای رتبه 5 ستاره به "
-"ما انگیزه بیشتری دهید. بی گمان مهرورزی شما با ارائه زود هنگام نسخه های بعدی "
-"به بهترین شکل پاسخ داده خواهد شد."
+"افزونه این کار را انجام دهید. بی گمان مهرورزی شما با ارائه زود هنگام نسخه "
+"های بعدی به بهترین شکل پاسخ داده خواهد شد."
 
 #: views/SlideshowPluginPostType/support-plugin.php:15
 msgid "Rate on Wordpress.org"
@@ -822,7 +827,7 @@ msgstr "تصاویر جستجو صورت اساس عنوان یا شناسه"
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:58
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:21
 msgid "Click to toggle"
-msgstr ""
+msgstr "برای جابجایی کلیک کنید"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:160
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
