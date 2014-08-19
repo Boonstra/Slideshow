@@ -301,13 +301,13 @@
 								$image.css({
 									'margin': '0px',
 									'width' : maxImageWidth,
-									'height': Math.floor(maxImageWidth / imageDimension)
+									'height': Math.round(maxImageWidth / imageDimension)
 								});
 
 								// Set width to slide's width, keep height in same dimension
 								$image.attr({
 									width : maxImageWidth,
-									height: Math.floor(maxImageWidth / imageDimension)
+									height: Math.round(maxImageWidth / imageDimension)
 								});
 							}
 							else if (this.settings['imageBehaviour'] === 'crop')
@@ -334,13 +334,13 @@
 									'margin-left' : 'auto',
 									'margin-right': 'auto',
 									'display'     : 'block',
-									'width'       : Math.floor(maxImageHeight * imageDimension),
+									'width'       : Math.round(maxImageHeight * imageDimension),
 									'height'      : maxImageHeight
 								});
 
 								// Set height to slide's height, keep width in same dimension
 								$image.attr({
-									width : Math.floor(maxImageHeight * imageDimension),
+									width : Math.round(maxImageHeight * imageDimension),
 									height: maxImageHeight
 								});
 							}
