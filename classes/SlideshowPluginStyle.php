@@ -342,44 +342,46 @@ class SlideshowPluginStyle
 //
 //		return $variableDefinitions;
 //	}
-//
-//	/**
-//	 * Returns all settings profiles within the defined offset and limit.
-//	 *
-//	 * @since 2.3.0
-//	 * @param int $offset (Optional, defaults to -1)
-//	 * @param int $limit  (Optional, defaults to -1)
-//	 * @return array
-//	 */
-//	static function getAll($offset = -1, $limit = -1)
-//	{
-//		if (!is_numeric($offset) ||
-//			$offset < 0)
-//		{
-//			$offset = -1;
-//		}
-//
-//		if (!is_numeric($limit) ||
-//			$limit < 0)
-//		{
-//			$limit = -1;
-//		}
-//
-//		$query = new WP_Query(array(
-//			'post_type'      => self::$postType,
-//			'orderby'        => 'post_date',
-//			'order'          => 'DESC',
-//			'offset'         => $offset,
-//			'posts_per_page' => $limit,
-//		));
-//
-//		$settingsProfiles = array();
-//
-//		foreach ($query->get_posts() as $post)
-//		{
-//			$settingsProfiles[] = new SlideshowPluginSettingsProfile($post);
-//		};
-//	}
+
+	/**
+	 * Returns all styles within the defined offset and limit.
+	 *
+	 * @since 2.3.0
+	 * @param int $offset (Optional, defaults to -1)
+	 * @param int $limit  (Optional, defaults to -1)
+	 * @return array
+	 */
+	static function getAll($offset = -1, $limit = -1)
+	{
+		if (!is_numeric($offset) ||
+			$offset < 0)
+		{
+			$offset = -1;
+		}
+
+		if (!is_numeric($limit) ||
+			$limit < 0)
+		{
+			$limit = -1;
+		}
+
+		$query = new WP_Query(array(
+			'post_type'      => self::$postType,
+			'orderby'        => 'post_date',
+			'order'          => 'DESC',
+			'offset'         => $offset,
+			'posts_per_page' => $limit,
+		));
+
+		$styles = array();
+
+		foreach ($query->get_posts() as $post)
+		{
+			$styles[] = new SlideshowPluginStyle($post);
+		};
+
+		return $styles;
+	}
 
 	/**
 	 * Initialize style post type.
@@ -391,8 +393,8 @@ class SlideshowPluginStyle
 		add_action('init', array(__CLASS__, 'registerPostType'));
 //		add_action('save_post'            , array(__CLASS__, 'saveThroughEditor'));
 
-//		add_filter('post_updated_messages', array(__CLASS__, 'alterCRUDMessages'));
-//		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateActionLink'), 10, 2);
+		add_filter('post_updated_messages', array(__CLASS__, 'alterCRUDMessages'));
+		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateActionLink'), 10, 2);
 	}
 
 	/**
@@ -402,6 +404,7 @@ class SlideshowPluginStyle
 	 */
 	static function registerPostType()
 	{
+		// TODO Use this code in the installer class to convert current custom styles to the new styles
 //		var_dump(SlideshowPluginGeneralSettings::getStylesheets(true));
 //
 //		$customStyleValues = array();
@@ -464,199 +467,163 @@ class SlideshowPluginStyle
 				'has_archive'          => true,
 				'hierarchical'         => false,
 				'menu_position'        => null,
-				'supports'             => array('title'),
-//				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
+				'supports'             => array('title', 'editor'),
 			)
 		);
 	}
 
-//	/**
-//	 * Add custom meta boxes.
-//	 *
-//	 * @since 2.3.0
-//	 */
-//	static function registerMetaBoxes()
-//	{
-//		add_meta_box(
-//			'settings',
-//			__('Settings', 'slideshow-plugin'),
-//			array(__CLASS__, 'settingsMetaBox'),
-//			self::$postType,
-//			'normal',
-//			'default'
-//		);
-//	}
-//
-//	/**
-//	 * Shows the settings for the current settings profile.
-//	 *
-//	 * @since 2.3.0
-//	 */
-//	static function settingsMetaBox()
-//	{
-//		global $post;
-//
-//		wp_nonce_field(self::$nonceAction, self::$nonceName);
-//
-//		$data                  = new stdClass();
-//		$data->settingsProfile = new SlideshowPluginSettingsProfile($post);
-//
-//		SlideshowPluginMain::outputView(__CLASS__ . '/settings.php', $data);
-//	}
-//
-//	/**
-//	 * Changes the "Post published/updated" message to a "Settings profile created/updated" message without the link to a
-//	 * frontend page.
-//	 *
-//	 * @since 2.3.0
-//	 * @param mixed $messages
-//	 * @return mixed $messages
-//	 */
-//	static function alterCRUDMessages($messages)
-//	{
-//		if (!function_exists('get_current_screen'))
-//		{
-//			return $messages;
-//		}
-//
-//		$currentScreen = get_current_screen();
-//
-//		// Return when not on a settings profile edit page
-//		if ($currentScreen->post_type != self::$postType)
-//		{
-//			return $messages;
-//		}
-//
-//		$messageID = filter_input(INPUT_GET, 'message', FILTER_VALIDATE_INT);
-//
-//		if (!$messageID)
-//		{
-//			return $messages;
-//		}
-//
-//		switch ($messageID)
-//		{
-//			case 6:
-//				$messages[$currentScreen->base][$messageID] = __('Settings profile created', 'slideshow-plugin');
-//				break;
-//
-//			default:
-//				$messages[$currentScreen->base][$messageID] = __('Settings profile updated', 'slideshow-plugin');
-//		}
-//
-//		return $messages;
-//	}
-//
-//	/**
-//	 * Hooked on the post_row_actions filter, add a "duplicate" action to each settings profile on the settings profiles
-//	 * overview page.
-//	 *
-//	 * @since 2.3.0
-//	 * @param array $actions
-//	 * @param WP_Post $post
-//	 * @return array $actions
-//	 */
-//	static function duplicateActionLink($actions, $post)
-//	{
-//		if (current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']) &&
-//			$post->post_type === self::$postType)
-//		{
-//			$url = add_query_arg(array(
-//				'action' => 'slideshow_jquery_image_gallery_duplicate_settings_profile',
-//				'post'   => $post->ID,
-//			));
-//
-//			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-settings-profile_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
-//		}
-//
-//		return $actions;
-//	}
-//
-//	/**
-//	 * Checks if a "duplicate" settings profile action was performed and whether or not the current user has the
-//	 * permission to perform this action at all.
-//	 *
-//	 * @since 2.3.0
-//	 */
-//	static function duplicate()
-//	{
-//		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
-//		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
-//		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
-//		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
-//
-//		// Check if nonce is correct and user has the correct privileges
-//		if (!wp_verify_nonce($nonce, 'duplicate-settings-profile_' . $postID) ||
-//			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSettingsProfiles']) ||
-//			$postType !== self::$postType)
-//		{
-//			wp_redirect($errorRedirectURL);
-//
-//			die();
-//		}
-//
-//		$post = get_post($postID);
-//
-//		// Check if the post was retrieved successfully
-//		if (!$post instanceof WP_Post ||
-//			$post->post_type !== self::$postType)
-//		{
-//			wp_redirect($errorRedirectURL);
-//
-//			die();
-//		}
-//
-//		$current_user = wp_get_current_user();
-//
-//		// Create post duplicate
-//		$newPostID = wp_insert_post(array(
-//			'comment_status' => $post->comment_status,
-//			'ping_status'    => $post->ping_status,
-//			'post_author'    => $current_user->ID,
-//			'post_content'   => $post->post_content,
-//			'post_excerpt'   => $post->post_excerpt,
-//			'post_name'      => $post->post_name,
-//			'post_parent'    => $post->post_parent,
-//			'post_password'  => $post->post_password,
-//			'post_status'    => 'draft',
-//			'post_title'     => $post->post_title . (strlen($post->post_title) > 0 ? ' - ' : '') . __('Copy', 'slideshow-plugin'),
-//			'post_type'      => $post->post_type,
-//			'to_ping'        => $post->to_ping,
-//			'menu_order'     => $post->menu_order,
-//		));
-//
-//		if (is_wp_error($newPostID))
-//		{
-//			wp_redirect($errorRedirectURL);
-//
-//			die();
-//		}
-//
-//		// Get all taxonomies
-//		$taxonomies = get_object_taxonomies($post->post_type);
-//
-//		// Add taxonomies to new post
-//		foreach ($taxonomies as $taxonomy)
-//		{
-//			$postTerms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'slugs'));
-//
-//			wp_set_object_terms($newPostID, $postTerms, $taxonomy, false);
-//		}
-//
-//		// Get all post meta
-//		$postMetaRecords = get_post_meta($post->ID);
-//
-//		// Add post meta records to new post
-//		foreach ($postMetaRecords as $postMetaKey => $postMetaValues)
-//		{
-//			foreach ($postMetaValues as $postMetaValue)
-//			{
-//				update_post_meta($newPostID, $postMetaKey, maybe_unserialize($postMetaValue));
-//			}
-//		}
-//
-//		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
-//
-//		die();
-//	}
+	/**
+	 * Changes the "Post published/updated" message to a "Style created/updated" message without the link to a
+	 * frontend page.
+	 *
+	 * @since 2.3.0
+	 * @param mixed $messages
+	 * @return mixed $messages
+	 */
+	static function alterCRUDMessages($messages)
+	{
+		if (!function_exists('get_current_screen'))
+		{
+			return $messages;
+		}
+
+		$currentScreen = get_current_screen();
+
+		// Return when not on a style edit page
+		if ($currentScreen->post_type != self::$postType)
+		{
+			return $messages;
+		}
+
+		$messageID = filter_input(INPUT_GET, 'message', FILTER_VALIDATE_INT);
+
+		if (!$messageID)
+		{
+			return $messages;
+		}
+
+		switch ($messageID)
+		{
+			case 6:
+				$messages[$currentScreen->base][$messageID] = __('Style created', 'slideshow-plugin');
+				break;
+
+			default:
+				$messages[$currentScreen->base][$messageID] = __('Style updated', 'slideshow-plugin');
+		}
+
+		return $messages;
+	}
+
+	/**
+	 * Hooked on the post_row_actions filter, add a "duplicate" action to each style on the styles overview page.
+	 *
+	 * @since 2.3.0
+	 * @param array   $actions
+	 * @param WP_Post $post
+	 * @return array $actions
+	 */
+	static function duplicateActionLink($actions, $post)
+	{
+		if (current_user_can(SlideshowPluginGeneralSettings::$capabilities['addStyles']) &&
+			$post->post_type === self::$postType)
+		{
+			$url = add_query_arg(array(
+				'action' => 'slideshow_jquery_image_gallery_duplicate_style',
+				'post'   => $post->ID,
+			));
+
+			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-style_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
+		}
+
+		return $actions;
+	}
+
+	/**
+	 * Checks if a "duplicate" style action was performed and whether or not the current user has the permission to
+	 * perform this action at all.
+	 *
+	 * @since 2.3.0
+	 */
+	static function duplicate()
+	{
+		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
+		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
+		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
+
+		// Check if nonce is correct and user has the correct privileges
+		if (!wp_verify_nonce($nonce, 'duplicate-style_' . $postID) ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['addStyle']) ||
+			$postType !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$post = get_post($postID);
+
+		// Check if the post was retrieved successfully
+		if (!$post instanceof WP_Post ||
+			$post->post_type !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$current_user = wp_get_current_user();
+
+		// Create post duplicate
+		$newPostID = wp_insert_post(array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $current_user->ID,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title . (strlen($post->post_title) > 0 ? ' - ' : '') . __('Copy', 'slideshow-plugin'),
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order,
+		));
+
+		if ($newPostID <= 0)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		// Get all taxonomies
+		$taxonomies = get_object_taxonomies($post->post_type);
+
+		// Add taxonomies to new post
+		foreach ($taxonomies as $taxonomy)
+		{
+			$postTerms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'slugs'));
+
+			wp_set_object_terms($newPostID, $postTerms, $taxonomy, false);
+		}
+
+		// Get all post meta
+		$postMetaRecords = get_post_meta($post->ID);
+
+		// Add post meta records to new post
+		foreach ($postMetaRecords as $postMetaKey => $postMetaValues)
+		{
+			foreach ($postMetaValues as $postMetaValue)
+			{
+				update_post_meta($newPostID, $postMetaKey, maybe_unserialize($postMetaValue));
+			}
+		}
+
+		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
+
+		die();
+	}
 }
