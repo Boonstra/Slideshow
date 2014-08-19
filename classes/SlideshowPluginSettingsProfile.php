@@ -379,6 +379,8 @@ class SlideshowPluginSettingsProfile
 		{
 			$settingsProfiles[] = new SlideshowPluginSettingsProfile($post);
 		};
+
+		return $settingsProfiles;
 	}
 
 	/**
@@ -609,7 +611,7 @@ class SlideshowPluginSettingsProfile
 			'menu_order'     => $post->menu_order,
 		));
 
-		if (is_wp_error($newPostID))
+		if ($newPostID <= 0)
 		{
 			wp_redirect($errorRedirectURL);
 

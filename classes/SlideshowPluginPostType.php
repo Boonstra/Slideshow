@@ -110,7 +110,7 @@ class SlideshowPluginPostType
 
 		add_meta_box(
 			'slides-list',
-			__('Slides List', 'slideshow-plugin'),
+			__('Slides', 'slideshow-plugin'),
 			array(__CLASS__, 'slidesMetaBox'),
 			self::$postType,
 			'advanced',
@@ -119,7 +119,7 @@ class SlideshowPluginPostType
 
 		add_meta_box(
 			'style',
-			__('Slideshow Style', 'slideshow-plugin'),
+			__('Style', 'slideshow-plugin'),
 			array(__CLASS__, 'styleMetaBox'),
 			self::$postType,
 			'side',
@@ -128,7 +128,7 @@ class SlideshowPluginPostType
 
 		add_meta_box(
 			'settings',
-			__('Slideshow Settings', 'slideshow-plugin'),
+			__('Settings Profile', 'slideshow-plugin'),
 			array(__CLASS__, 'settingsMetaBox'),
 			self::$postType,
 			'side',
@@ -279,13 +279,15 @@ class SlideshowPluginPostType
 	 */
 	static function styleMetaBox()
 	{
-		global $post;
+		echo 'Placeholder for styles dropdown';
 
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
-
-		// Include style settings file
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
+//		global $post;
+//
+//		// Get settings
+//		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
+//
+//		// Include style settings file
+//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
 	}
 
 	/**
@@ -401,7 +403,7 @@ class SlideshowPluginPostType
 			'menu_order'     => $post->menu_order,
 		));
 
-		if (is_wp_error($newPostID))
+		if ($newPostID <= 0)
 		{
 			wp_redirect($errorRedirectURL);
 
