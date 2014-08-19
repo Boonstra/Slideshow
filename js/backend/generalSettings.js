@@ -26,13 +26,7 @@ slideshow_jquery_image_gallery_backend_script.generalSettings = function()
 	{
 		$('.general-settings-capability-checkbox').change(function(event)
 		{
-			var $this                            = $(event.currentTarget),
-				addSlideshowsCapability          = 'slideshow-jquery-image-gallery-add-slideshows',
-				editSlideshowsCapability         = 'slideshow-jquery-image-gallery-edit-slideshows',
-				deleteSlideshowsCapability       = 'slideshow-jquery-image-gallery-delete-slideshows',
-				addSettingsProfilesCapability    = 'slideshow-jquery-image-gallery-add-settings-profiles',
-				editSettingsProfilesCapability   = 'slideshow-jquery-image-gallery-edit-settings-profiles',
-				deleteSettingsProfilesCapability = 'slideshow-jquery-image-gallery-delete-settings-profiles',
+			var $this = $(event.currentTarget),
 				idArray,
 				capability,
 				dependency,
@@ -61,34 +55,6 @@ slideshow_jquery_image_gallery_backend_script.generalSettings = function()
 			{
 				$('[data-depends-on="' + capability + '"][data-role="' + role + '"]').attr('checked', false);
 			}
-
-//			// When 'Edit slideshows' has been un-checked, set 'Add slideshows' and 'Delete slideshows' to un-checked as well
-//			if (capability === editSlideshowsCapability &&
-//				!$this.attr('checked'))
-//			{
-//				$('#' + addSlideshowsCapability    + '_' + role).attr('checked', false);
-//				$('#' + deleteSlideshowsCapability + '_' + role).attr('checked', false);
-//			}
-//			// When 'Add slideshows' or 'Delete slideshows' is checked, 'Edit slideshows' must be checked as well
-//			else if (capability === addSlideshowsCapability ||
-//					 capability === deleteSlideshowsCapability)
-//			{
-//				$('#' + editSlideshowsCapability + '_' + role).attr('checked', true);
-//			}
-//
-//			// When 'Edit settings profiles' has been un-checked, set 'Add settings profiles' and 'Delete settings profiles' to un-checked as well
-//			if (capability === editSettingsProfilesCapability &&
-//				!$this.attr('checked'))
-//			{
-//				$('#' + addSettingsProfilesCapability    + '_' + role).attr('checked', false);
-//				$('#' + deleteSettingsProfilesCapability + '_' + role).attr('checked', false);
-//			}
-//			// When 'Add settings profiles' or 'Delete settings profiles' is checked, 'Edit settings profiles' must be checked as well
-//			else if (capability === addSettingsProfilesCapability ||
-//				capability === deleteSettingsProfilesCapability)
-//			{
-//				$('#' + editSettingsProfilesCapability + '_' + role).attr('checked', true);
-//			}
 		});
 	};
 
