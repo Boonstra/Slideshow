@@ -281,6 +281,8 @@ class SlideshowPluginPostType
 	{
 		echo 'Placeholder for styles dropdown';
 
+		echo '<br /><br />Add "edit style" link';
+
 //		global $post;
 //
 //		// Get settings
@@ -305,6 +307,8 @@ class SlideshowPluginPostType
 		wp_nonce_field(SlideshowPluginSlideshowSettingsHandler::$nonceAction, SlideshowPluginSlideshowSettingsHandler::$nonceName);
 
 		echo 'Placeholder for settings profiles dropdown';
+
+		echo '<br /><br />Add "edit settings profile" link';
 
 //		// Get settings
 //		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
