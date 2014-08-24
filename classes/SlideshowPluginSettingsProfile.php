@@ -12,6 +12,9 @@ class SlideshowPluginSettingsProfile
 	static $postType = 'slideshow_sett_prof';
 
 	/** @var string */
+	static $duplicateAction = 'slideshow_jquery_image_gallery_duplicate_settings_profile';
+
+	/** @var string */
 	static $nonceAction = 'slideshow-jquery-image-gallery-settings-profile-nonce-action';
 
 	/** @var string */
@@ -393,6 +396,8 @@ class SlideshowPluginSettingsProfile
 		add_action('init', array(__CLASS__, 'registerPostType'));
 		add_action('save_post'            , array(__CLASS__, 'saveThroughEditor'));
 
+		add_action('admin_action_' . self::$duplicateAction, array(__CLASS__, 'duplicate'), 11);
+
 		add_filter('post_updated_messages', array(__CLASS__, 'alterCRUDMessages'));
 		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateActionLink'), 10, 2);
 	}
@@ -548,7 +553,7 @@ class SlideshowPluginSettingsProfile
 			$post->post_type === self::$postType)
 		{
 			$url = add_query_arg(array(
-				'action' => 'slideshow_jquery_image_gallery_duplicate_settings_profile',
+				'action' => self::$duplicateAction,
 				'post'   => $post->ID,
 			));
 

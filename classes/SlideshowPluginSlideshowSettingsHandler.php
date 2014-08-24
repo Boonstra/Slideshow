@@ -372,8 +372,6 @@ class SlideshowPluginSlideshowSettingsHandler
 	 */
 	static function save($postId)
 	{
-		var_dump($_POST);
-
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
 		if (get_post_type($postId) != SlideshowPluginPostType::$postType ||
 			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
