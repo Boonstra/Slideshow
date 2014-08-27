@@ -124,7 +124,7 @@ class SlideshowPluginShortcode
 	{
 		// Get slideshows
 		$slideshows = new WP_Query(array(
-			'post_type'      => SlideshowPluginPostType::$postType,
+			'post_type'      => SlideshowPluginSlideshow::$postType,
 			'orderby'        => 'post_date',
 			'posts_per_page' => -1,
 			'order'          => 'DESC'

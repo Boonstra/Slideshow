@@ -16,7 +16,7 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 
 		echo sprintf(__(
 			'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %sclick here.%s', 'slideshow-plugin'),
-			'<a href="' . get_admin_url(null, 'edit.php?post_type=' . SlideshowPluginPostType::$postType) . '">',
+			'<a href="' . get_admin_url(null, 'edit.php?post_type=' . SlideshowPluginSlideshow::$postType) . '">',
 			'</a>'
 		);
 

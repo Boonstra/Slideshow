@@ -79,14 +79,14 @@ class SlideshowPluginGeneralSettings
 	static function addSubMenuPage()
 	{
 		// Return if the slideshow post type does not exist
-		if(!post_type_exists(SlideshowPluginPostType::$postType))
+		if(!post_type_exists(SlideshowPluginSlideshow::$postType))
 		{
 			return;
 		}
 
 		// Add sub menu
 		add_submenu_page(
-			'edit.php?post_type=' . SlideshowPluginPostType::$postType,
+			'edit.php?post_type=' . SlideshowPluginSlideshow::$postType,
 			__('General Settings', 'slideshow-plugin'),
 			__('General Settings', 'slideshow-plugin'),
 			'manage_options',

@@ -57,7 +57,7 @@ class SlideshowPluginSettingsProfile
 	protected static $variableDefinitions = array();
 
 	/** @var array */
-	public $variables = array();
+	protected $variables = array();
 
 	/**
 	 * Constructs the settings profile. The $post parameter can either contain a WP_Post instance or an ID to a settings
@@ -431,7 +431,7 @@ class SlideshowPluginSettingsProfile
 				'public'               => false,
 				'publicly_queryable'   => false,
 				'show_ui'              => true,
-				'show_in_menu'         => 'edit.php?post_type=' . SlideshowPluginPostType::$postType,
+				'show_in_menu'         => 'edit.php?post_type=' . SlideshowPluginSlideshow::$postType,
 				'query_var'            => true,
 				'rewrite'              => true,
 				'capability_type'      => 'post',

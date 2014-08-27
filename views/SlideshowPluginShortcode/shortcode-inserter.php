@@ -5,7 +5,7 @@
     style="padding-left: .4em;"
 >
 	<img
-		src="<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon.png'; ?>"
+		src="<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginSlideshow/adminIcon.png'; ?>"
 		alt="<?php _e('Insert a Slideshow', 'slideshow-plugin'); ?>"
 	    style="vertical-align: text-top;"
 	/>
@@ -65,7 +65,7 @@
 		<p>
 			<?php echo sprintf(
 				__('It seems you haven\'t created any slideshows yet. %sYou can create a slideshow here!%s', 'slideshow-plugin'),
-				'<a href="' . admin_url('post-new.php?post_type=' . SlideshowPluginPostType::$postType) . '" target="_blank">',
+				'<a href="' . admin_url('post-new.php?post_type=' . SlideshowPluginSlideshow::$postType) . '" target="_blank">',
 				'</a>'
 			); ?>
 		</p>

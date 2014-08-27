@@ -25,6 +25,8 @@ class SlideshowPluginInstaller
 			return;
 		}
 
+		self::updateV_2_2_20_to_V2_3_0();
+
 		// Get the current version number
 		$currentVersion = get_option(self::$versionKey, null);
 
@@ -233,13 +235,31 @@ class SlideshowPluginInstaller
 	 */
 	private static function updateV_2_2_20_to_V2_3_0()
 	{
-		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-20-to-v2-3-0'))
-		{
-			return;
-		}
+//		if (self::isUpdateApplied('slideshow-jquery-image-gallery-updated-from-v2-2-20-to-v2-3-0'))
+//		{
+//			return;
+//		}
+
+		// Post meta keys
+		$slideshowSettingsPostMetaKey        = 'settings';
+		$slideshowSlidesPostMetaKey          = 'slides';
+		$slideshowSettingsProfilePostMetaKey = '_slideshow_jquery_image_gallery_settings_profile';
+		$slideshowStylePostMetaKey           = '_slideshow_jquery_image_gallery_style';
+		$slideshowNewSlidesPostMetaKey       = '_slideshow_jquery_image_gallery_slides';
+		$settingsProfileVariablesPostMetaKey = '_slideshow_jquery_image_gallery_settings_profile_variables';
+
+		// Get slideshows
+		$slideshows = get_posts(array(
+			'numberposts' => -1,
+			'offset'      => 0,
+			'post_type'   => 'slideshow'
+		));
 
 		// TODO Settings profiles: Create a settings profile for every slideshow with unique settings. This can be done
 		// TODO using hashes of all settings.
+
+
+		// TODO Styles: Create a style for every custom style.
 
 		// TODO Edit slideshow interface: The interface has a renewed layout, but WordPress has the previous layout
 		// TODO stored for every user as that user's preference. Remove this preference for every user.

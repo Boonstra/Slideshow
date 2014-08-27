@@ -13,11 +13,11 @@ class SlideshowPluginSlideshowSettingsHandler
 	static $nonceName = 'slideshow-jquery-image-gallery-nonceName';
 
 	/** @var string $settingsKey */
-	static $settingsKey = '_slideshow_jquery_image_gallery_settings_profile';
+	static $settingsKey = '_slideshow_jquery_image_gallery_slideshow_settings_profile';
 	/** @var string $styleSettingsKey */
-	static $styleSettingsKey = '_slideshow_jquery_image_gallery_style';
+	static $styleSettingsKey = '_slideshow_jquery_image_gallery_slideshow_style';
 	/** @var string $slidesKey */
-	static $slidesKey = '_slideshow_jquery_image_gallery_slides';
+	static $slidesKey = '_slideshow_jquery_image_gallery_slideshow_slides';
 
 	/** @var array $settings      Used for caching by slideshow ID */
 	static $settings = array();
@@ -373,7 +373,7 @@ class SlideshowPluginSlideshowSettingsHandler
 	static function save($postId)
 	{
 		// Verify nonce, check if user has sufficient rights and return on auto-save.
-		if (get_post_type($postId) != SlideshowPluginPostType::$postType ||
+		if (get_post_type($postId) != SlideshowPluginSlideshow::$postType ||
 			(!isset($_POST[self::$nonceName]) || !wp_verify_nonce($_POST[self::$nonceName], self::$nonceAction)) ||
 			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['editSlideshows'], $postId) ||
 			(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE))

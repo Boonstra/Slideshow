@@ -51,7 +51,7 @@ class SlideshowPlugin
 			!empty($postId))
 		{
 			$query = new WP_Query(array(
-				'post_type'        => SlideshowPluginPostType::$postType,
+				'post_type'        => SlideshowPluginSlideshow::$postType,
 				'name'             => $postId,
 				'orderby'          => 'post_date',
 				'order'            => 'DESC',
@@ -71,7 +71,7 @@ class SlideshowPlugin
 				'numberposts'      => 1,
 				'offset'           => 0,
 				'orderby'          => 'rand',
-				'post_type'        => SlideshowPluginPostType::$postType,
+				'post_type'        => SlideshowPluginSlideshow::$postType,
 				'suppress_filters' => true
 			));
 

@@ -1,31 +1,15 @@
 <?php
 /**
+ * SlideshowPluginSlideshow creates a post type specifically designed for
+ * slideshows and their individual settings
+ *
  * @since 1.0.0
  * @author: Stefan Boonstra
  */
-class SlideshowPluginPostType
+class SlideshowPluginSlideshow
 {
-	/** @var WP_Post */
-	public $post = null;
-
 	/** @var string $postType */
-	static $postType = null;
-
-	/** @var bool */
-	static $isDuplicatable = true;
-
-	// TODO Move to subclass
-	/** @var string */
-	static $duplicateAction = null;
-
-	// TODO Move these keys to the settings profile sub class
-	/** @var string */
-	static $settingsProfilePostMetaKey = '_slideshow_jquery_image_gallery_slideshow_settings_profile';
-	/** @var string @var string */
-	static $stylePostMetaKey = '_slideshow_jquery_image_gallery_slideshow_settings_profile';
-
-	/** @var array */
-	public $postMeta = array();
+	static $postType = 'slideshow';
 
 	/**
 	 * Initialize Slideshow post type.
@@ -33,26 +17,25 @@ class SlideshowPluginPostType
 	 *
 	 * @since 1.3.0
 	 */
-	static function init($postType, $isDuplicatable)
+	static function init()
 	{
-		self::$duplicateAction = 'slideshow_jquery_image_gallery_duplicate_' . self::$postType;
+		add_action('init'                 , array(__CLASS__, 'registerSlideshowPostType'));
+		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
+		add_action('admin_menu'           , array(__CLASS__, 'modifyAdminMenu'));
+		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
 
-		add_action('init'                , array(__CLASS__, 'registerSlideshowPostType'));
-//		add_action('save_post'           , array('SlideshowPluginSlideshowSettingsHandler', 'save')); TODO Implement save method
-		add_action(self::$duplicateAction, array(__CLASS__, 'duplicate'), 11);
+		add_action('admin_action_slideshow_jquery_image_gallery_duplicate_slideshow', array(__CLASS__, 'duplicate'), 11);
 
-		add_filter('post_updated_messages', array(__CLASS__, 'alterCRUDMessages'));
-
-		if (self::$isDuplicatable)
-		{
-			add_filter('post_row_actions', array(__CLASS__, 'duplicateActionLink'), 10, 2);
-		}
+		add_filter('post_updated_messages', array(__CLASS__, 'alterSlideshowMessages'));
+		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateActionLink'), 10, 2);
 	}
 
 	/**
-	 * @since 2.3.0
+	 * Registers new post type slideshow
+	 *
+	 * @since 1.0.0
 	 */
-	static function registerPostType()
+	static function registerSlideshowPostType()
 	{
 		global $wp_version;
 
@@ -161,14 +144,14 @@ class SlideshowPluginPostType
 	}
 
 	/**
-	 * Changes the "Post published/updated" message to a "[Post Type] created/updated" message without the link to a
+	 * Changes the "Post published/updated" message to a "Slideshow created/updated" message without the link to a
 	 * frontend page.
 	 *
-	 * @since 2.3.0
+	 * @since 2.2.20
 	 * @param mixed $messages
 	 * @return mixed $messages
 	 */
-	static function alterCRUDMessages($messages)
+	static function alterSlideshowMessages($messages)
 	{
 		if (!function_exists('get_current_screen'))
 		{
@@ -177,8 +160,8 @@ class SlideshowPluginPostType
 
 		$currentScreen = get_current_screen();
 
-		// Return when not on the right edit page
-		if ($currentScreen->post_type != self::$postType)
+		// Return when not on a slideshow edit page
+		if ($currentScreen->post_type != SlideshowPluginSlideshow::$postType)
 		{
 			return $messages;
 		}
@@ -190,28 +173,165 @@ class SlideshowPluginPostType
 			return $messages;
 		}
 
-		$postTypeObject = get_post_type_object(self::$postType);
-
-		if (!($postTypeObject instanceof stdClass))
-		{
-			return $messages;
-		}
-
 		switch ($messageID)
 		{
 			case 6:
-				$messages[$currentScreen->base][$messageID] = $postTypeObject->labels->name . __('created', 'slideshow-plugin');
+				$messages[$currentScreen->base][$messageID] = __('Slideshow created', 'slideshow-plugin');
 				break;
 
 			default:
-				$messages[$currentScreen->base][$messageID] = $postTypeObject->labels->name . __('updated', 'slideshow-plugin');
+				$messages[$currentScreen->base][$messageID] = __('Slideshow updated', 'slideshow-plugin');
 		}
 
 		return $messages;
 	}
 
 	/**
-	 * Hooked on the post_row_actions filter, adds a "duplicate" action to each post on the post's overview page.
+	 * Shows the support plugin message
+	 *
+	 * @since 2.0.0
+	 */
+	static function supportPluginMessage()
+	{
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
+	}
+
+	/**
+	 * Shows some information about this slideshow
+	 *
+	 * @since 1.0.0
+	 */
+	static function informationMetaBox()
+	{
+		global $post;
+
+		$snippet   = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
+		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
+
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php';
+	}
+
+	/**
+	 * Shows slides currently in slideshow
+	 *
+	 * TODO Tidy up, it's probably best to move all to 'slides.php'
+	 *
+	 * @since 1.0.0
+	 */
+	static function slidesMetaBox()
+	{
+		global $post;
+
+		// Get views
+		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
+
+		// Insert slide buttons
+		echo '<p style="text-align: center;">
+			<i>' . __('Insert', 'slideshow-plugin') . ':</i><br/>' .
+			SlideshowPluginSlideInserter::getImageSlideInsertButton() .
+			SlideshowPluginSlideInserter::getTextSlideInsertButton() .
+			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
+			'</p>';
+
+		// Toggle slides open/closed
+		echo '<p style="text-align: center;">
+			<a href="#" class="open-slides-button">' . __( 'Open all', 'slideshow-plugin' ) . '</a>
+			|
+			<a href="#" class="close-slides-button">' . __( 'Close all', 'slideshow-plugin' ) . '</a>
+		</p>';
+
+		// No views/slides message
+		if (count($views) <= 0)
+		{
+			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
+		}
+
+		// Start list
+		echo '<div class="sortable-slides-list">';
+
+		// Print views
+		if (is_array($views))
+		{
+			foreach($views as $view)
+			{
+				if (!($view instanceof SlideshowPluginSlideshowView))
+				{
+					continue;
+				}
+
+				echo $view->toBackEndHTML();
+			}
+		}
+
+		// End list
+		echo '</div>';
+
+		// Templates
+		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
+	}
+
+	/**
+	 * Shows style used for slideshow
+	 *
+	 * TODO Improve styling for usage in sidebar.
+	 *
+	 * @since 1.3.0
+	 */
+	static function styleMetaBox()
+	{
+		echo 'Placeholder for styles dropdown';
+
+		echo '<br /><br />Add "edit style" link';
+
+//		global $post;
+//
+//		// Get settings
+//		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
+//
+//		// Include style settings file
+//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
+	}
+
+	/**
+	 * Shows settings for particular slideshow
+	 *
+	 * TODO Implement.
+	 *
+	 * @since 1.0.0
+	 */
+	static function settingsMetaBox()
+	{
+//		global $post;
+
+		// Nonce
+		wp_nonce_field(SlideshowPluginSlideshowSettingsHandler::$nonceAction, SlideshowPluginSlideshowSettingsHandler::$nonceName);
+
+		echo 'Placeholder for settings profiles dropdown';
+
+		echo '<br /><br />Add "edit settings profile" link';
+
+//		// Get settings
+//		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
+//
+//		// Include
+//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+	}
+
+	/**
+	 * Modifies the admin menu, removing the "Add New" link from the slideshow menu.
+	 *
+	 * @since 2.3.0
+	 */
+	static function modifyAdminMenu()
+	{
+		global $submenu;
+
+		unset($submenu['edit.php?post_type=' . self::$postType][10]);
+	}
+
+	/**
+	 * Hooked on the post_row_actions filter, adds a "duplicate" action to each slideshow on the slideshow's overview
+	 * page.
 	 *
 	 * @since 2.2.20
 	 * @param array $actions
@@ -220,41 +340,36 @@ class SlideshowPluginPostType
 	 */
 	static function duplicateActionLink($actions, $post)
 	{
-		$postTypeObject     = get_post_type_object(SlideshowPluginMain::getCurrentPostType());
-		$requiredCapability = $postTypeObject instanceof stdClass ? $postTypeObject->cap->publish_posts : null;
-
-		if (current_user_can($requiredCapability) &&
+		if (current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSlideshows']) &&
 			$post->post_type === self::$postType)
 		{
 			$url = add_query_arg(array(
-				'action' => self::$duplicateAction,
+				'action' => 'slideshow_jquery_image_gallery_duplicate_slideshow',
 				'post'   => $post->ID,
 			));
 
-			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-post_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
+			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-slideshow_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-plugin') . '</a>';
 		}
 
 		return $actions;
 	}
 
 	/**
-	 * Checks if a "duplicate" post action was performed and whether or not the current user has the permission to
+	 * Checks if a "duplicate" slideshow action was performed and whether or not the current user has the permission to
 	 * perform this action at all.
 	 *
 	 * @since 2.2.20
 	 */
 	static function duplicate()
 	{
-		$nonce              = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
-		$postType           = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
-		$postID             = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
-		$errorRedirectURL   = remove_query_arg(array('action', 'post', 'nonce'));
-		$postTypeObject     = get_post_type_object($postType);
-		$requiredCapability = $postTypeObject instanceof stdClass ? $postTypeObject->cap->publish_posts : null;
+		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
+		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
+		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
 
 		// Check if nonce is correct and user has the correct privileges
-		if (!wp_verify_nonce($nonce, 'duplicate-post_' . $postID) ||
-			!current_user_can($requiredCapability) ||
+		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $postID) ||
+			!current_user_can(SlideshowPluginGeneralSettings::$capabilities['addSlideshows']) ||
 			$postType !== self::$postType)
 		{
 			wp_redirect($errorRedirectURL);

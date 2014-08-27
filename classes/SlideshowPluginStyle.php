@@ -206,7 +206,7 @@ class SlideshowPluginStyle
 				'public'               => false,
 				'publicly_queryable'   => false,
 				'show_ui'              => true,
-				'show_in_menu'         => 'edit.php?post_type=' . SlideshowPluginPostType::$postType,
+				'show_in_menu'         => 'edit.php?post_type=' . SlideshowPluginSlideshow::$postType,
 				'query_var'            => true,
 				'rewrite'              => true,
 				'capability_type'      => 'post',

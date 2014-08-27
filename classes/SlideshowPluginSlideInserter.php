@@ -220,7 +220,7 @@ class SlideshowPluginSlideInserter
 				if (!$imageSrc ||
 					empty($imageSrc))
 				{
-					$imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/no-img.png';
+					$imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginSlideshow/no-img.png';
 				}
 
 				echo '<tr valign="top" data-attachment-Id="' . $attachment->ID . '" class="result-table-row">
@@ -318,7 +318,7 @@ class SlideshowPluginSlideInserter
         // Return when not on a slideshow edit page
         $currentScreen = get_current_screen();
 
-        if ($currentScreen->post_type != SlideshowPluginPostType::$postType)
+        if ($currentScreen->post_type != SlideshowPluginSlideshow::$postType)
         {
             return;
         }

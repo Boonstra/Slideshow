@@ -43,11 +43,12 @@ class SlideshowPluginMain
 		// Ajax requests
 		SlideshowPluginAJAX::init();
 
-		// Register slideshow post type
-		SlideshowPluginPostType::init();
+//		// Register slideshow post type
+//		SlideshowPluginPostType::init();
 
+		// Initialize post types
+		SlideshowPluginSlideshow::init();
 		SlideshowPluginSettingsProfile::init();
-
 		SlideshowPluginStyle::init();
 
 		// Add general settings page

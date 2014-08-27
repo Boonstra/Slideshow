@@ -104,7 +104,7 @@ class SlideshowPluginWidget extends WP_Widget
 		$slideshows = get_posts(array(
 			'numberposts' => -1,
 			'offset'      => 0,
-			'post_type'   => SlideshowPluginPostType::$postType
+			'post_type'   => SlideshowPluginSlideshow::$postType
 		));
 
 		// Include form
