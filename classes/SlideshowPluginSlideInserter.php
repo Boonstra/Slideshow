@@ -277,7 +277,7 @@ class SlideshowPluginSlideInserter
 	{
 		global $wpdb;
 
-		$searchString = $_POST['search'];
+		$searchString = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
 		$searchString = esc_sql($searchString);
 
 		if (isset($_POST['search']))

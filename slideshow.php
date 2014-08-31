@@ -43,13 +43,11 @@ class SlideshowPluginMain
 		// Ajax requests
 		SlideshowPluginAJAX::init();
 
-//		// Register slideshow post type
-//		SlideshowPluginPostType::init();
-
 		// Initialize post types
+		SlideshowPluginPostType::init();
 		SlideshowPluginSlideshow::init();
-		SlideshowPluginSettingsProfile::init();
-		SlideshowPluginStyle::init();
+//		SlideshowPluginSettingsProfile::init();
+//		SlideshowPluginStyle::init();
 
 		// Add general settings page
 		SlideshowPluginGeneralSettings::init();
@@ -205,12 +203,14 @@ class SlideshowPluginMain
 			return $typenow;
 		}
 
-		global $current_screen;
-
-		if ($current_screen &&
-			$current_screen->post_type)
+		if (function_exists('get_current_screen'))
 		{
-			return $current_screen->post_type;
+			$current_screen = get_current_screen();
+
+			if ($current_screen->post_type)
+			{
+				return $current_screen->post_type;
+			}
 		}
 
 		return filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
