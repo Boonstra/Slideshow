@@ -1,8 +1,8 @@
 <?php if ($data instanceof stdClass): ?>
 <table>
 	<?php $groups = array(); ?>
-	<?php $variables = $data->settingsProfile->getVariables(); ?>
-	<?php foreach($data->settingsProfile->getVariableDefinitions() as $key => $value): ?>
+	<?php $variables = $data->settingsProfile->getSettings(); ?>
+	<?php foreach($data->settingsProfile->getSettingsDefinitions() as $key => $value): ?>
 
 	<?php if( !isset($value, $value['type'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
 
@@ -23,7 +23,7 @@
 		<?php echo !empty($value['dependsOn'])? 'style="display:none;"': ''; ?>
 	>
 		<td><?php echo $value['description']; ?></td>
-		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginSettingsProfile::$variablesPostMetaKey, htmlspecialchars($key), $variables[$key], $value); ?></td>
+		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginSettingsProfile::$settingsPostMetaKey, htmlspecialchars($key), $variables[$key], $value); ?></td>
 		<td><?php _e('Default', 'slideshow-plugin'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
 	</tr>
 

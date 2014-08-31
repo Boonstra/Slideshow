@@ -46,7 +46,7 @@ class SlideshowPluginMain
 		// Initialize post types
 		SlideshowPluginPostType::init();
 		SlideshowPluginSlideshow::init();
-//		SlideshowPluginSettingsProfile::init();
+		SlideshowPluginSettingsProfile::init();
 //		SlideshowPluginStyle::init();
 
 		// Add general settings page
