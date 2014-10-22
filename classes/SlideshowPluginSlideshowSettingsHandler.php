@@ -280,7 +280,26 @@ class SlideshowPluginSlideshowSettingsHandler
 			// Get cached settings
 			$slides = self::$slides[$slideshowId];
 		}
-
+		
+		
+		// 2014.10.22 @jmeler
+                $picasa_album=get_post_meta(
+			$slideshowId,
+			"picasa_album",
+			true
+		);
+		if ($picasa_album){
+                    $content = file_get_contents($picasa_album);
+                    $x = simplexml_load_string($content);
+                    foreach($x->channel->item as $entry => $value){
+                        $title  = $value->title;
+                        $image  = $value->enclosure->attributes()->url;
+                        $urlimg = $image[0];
+                        $slides[]=array("url"=>$urlimg,"title"=>$title,"type"=>"image");
+                    }
+                }
+		// end jmeler
+		
 		// Sort slides by order ID
 		if (is_array($slides))
 		{
