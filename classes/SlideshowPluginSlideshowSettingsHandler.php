@@ -441,6 +441,10 @@ class SlideshowPluginSlideshowSettingsHandler
 		update_post_meta($postId, self::$settingsKey, $newSettings);
 		update_post_meta($postId, self::$styleSettingsKey, $newStyleSettings);
 		update_post_meta($postId, self::$slidesKey, $newPostSlides);
+		
+		// 2014.10.22 @jmeler
+                $picasa_album=isset($_POST["picasa_album"])?$_POST["picasa_album"]:'';
+                update_post_meta($postId, "picasa_album", $picasa_album);
 
 		// Return
 		return $postId;
