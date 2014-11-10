@@ -286,15 +286,20 @@ class SlideshowPluginSlideshowSettingsHandler
                 $picasa_album_rss=get_post_meta($slideshowId,"picasa_album",true);
 +                
 +		if ($picasa_album_rss){
-+                    $picasa_album = fetch_feed($picasa_album_rss);
-+                    $picasa_items = $picasa_album->get_items();
-+                    foreach($picasa_items as $picasa_item){
-+                        $enclosure=$picasa_item->get_enclosure();
-+                        $info=$enclosure->get_description();
-+                        $url_img=$enclosure->get_link();
-+                        $slides[]=array("title"=>$info,"url"=>$url_img,"type"=>"image");
-                     }
-                 }
+                    $picasa_album = fetch_feed($picasa_album_rss);
+                    if ( !is_wp_error( $picasa_album ) ) {
+                        $picasa_items = $picasa_album->get_items();
+                        foreach($picasa_items as $picasa_item){
+                            $enclosure=$picasa_item->get_enclosure();
+                            $info=$enclosure->get_description();
+                            $url_img=$enclosure->get_link();
+                            $slides[]=array("title"=>$info,"url"=>$url_img,"type"=>"image");
+                        }
+                    }
+                    else{
+                        echo "<p>No es pot obtenir l'àlbum de picasa. <a target='_blank' href='http://agora.xtec.cat/nodes/carrusel/#picasa_rss'>Ajuda</a>.</p>";
+                    }    
+                }
 		// end jmeler
 		
 		// Sort slides by order ID
