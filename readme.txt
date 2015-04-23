@@ -50,7 +50,7 @@ different images, settings and styles for each one of them.
  - Norwegian      (99%  - nb_NO - Translated by A. Nonymous)
  - Persian        (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
  - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
- - Portuguese     (75%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
+ - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
  - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
@@ -190,6 +190,7 @@ personal taste.
 *   Added Norwegian translation by A. Nonymous.
 *   Updated Persian translation by W3Design.
 *   Updated German translation by A. Nonymous.
+*	Updated Brazilian Portuguese by A. Nonymous.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.

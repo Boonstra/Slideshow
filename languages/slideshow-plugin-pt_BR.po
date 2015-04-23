@@ -2,18 +2,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow v2.2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-19 12:01+0100\n"
-"PO-Revision-Date: 2014-08-19 12:01+0100\n"
-"Last-Translator: admin <caixat@newer7.com.br>\n"
+"POT-Creation-Date: 2015-04-23 15:01+0100\n"
+"PO-Revision-Date: 2015-04-23 15:01+0100\n"
+"Last-Translator: Carlos Jordao <carlosjordao@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -99,7 +100,7 @@ msgstr "Animação usada para a transição entre os slides"
 # @ slideshow-plugin
 #: classes/SlideshowPluginInstaller.php:805
 msgid "Slide"
-msgstr ""
+msgstr "Deslizar"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginInstaller.php:805
@@ -300,12 +301,12 @@ msgstr "Configurações do slideshow"
 # @ slideshow-plugin
 #: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow created"
-msgstr ""
+msgstr "Slideshow criado"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginPostType.php:177
 msgid "Slideshow updated"
-msgstr ""
+msgstr "Slideshow atualizado"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginPostType.php:224
@@ -316,11 +317,11 @@ msgstr "Inserir"
 
 #: classes/SlideshowPluginPostType.php:232
 msgid "Open all"
-msgstr ""
+msgstr "Abrir todos"
 
 #: classes/SlideshowPluginPostType.php:234
 msgid "Close all"
-msgstr ""
+msgstr "Fechar todos"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginPostType.php:240
@@ -330,11 +331,11 @@ msgstr "Adicione slides para este slideshow usando um dos botões acima."
 
 #: classes/SlideshowPluginPostType.php:320
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: classes/SlideshowPluginPostType.php:371
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginShortcode.php:148
@@ -456,11 +457,11 @@ msgstr "Ocultar painel de controle, exibir apenas quando o mouse passar sobre"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:540
 msgid "Wait until the next slide has loaded before showing it"
-msgstr ""
+msgstr "Esperar até que o próximo slide tenha carregado antes de mostrá-lo"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:541
 msgid "Show a loading icon until the first slide appears"
-msgstr ""
+msgstr "Mostrar um ícone de carregando até o primeiro slide aparecer"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:542
@@ -509,15 +510,15 @@ msgstr "Animação aleatória"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Natural and centered"
-msgstr ""
+msgstr "Natural e centrado"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Crop to fit"
-msgstr ""
+msgstr "Corte para enquadrar"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Stretch to fit"
-msgstr ""
+msgstr "Estique para enquadrar"
 
 # @ slideshow-plugin
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:569
@@ -539,24 +540,24 @@ msgstr ""
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Play"
-msgstr ""
+msgstr "Acionar"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Pause"
-msgstr ""
+msgstr "Pausar"
 
 #: views/SlideshowPlugin/slideshow.php:25
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: views/SlideshowPlugin/slideshow.php:26
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 # @ slideshow-plugin
 #: views/SlideshowPlugin/slideshow.php:28
 msgid "Go to slide"
-msgstr ""
+msgstr "Ir para o slide"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:46
@@ -607,12 +608,12 @@ msgstr "Excluir"
 # @ default
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:110
 msgid "Click 'Customize' to create a new custom stylesheet."
-msgstr ""
+msgstr "Clique 'Customizar' para criar uma nova folha de estilo."
 
 # @ slideshow-plugin
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:130
 msgid "Select a stylesheet to start customizing it."
-msgstr ""
+msgstr "Selecione uma folha de estilo para customizá-la"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:139
@@ -708,15 +709,15 @@ msgstr "Configurações"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:69
 msgid "Stylesheet location"
-msgstr ""
+msgstr "Localização da folha de estilo"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:72
 msgid "top"
-msgstr ""
+msgstr "topo"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:73
 msgid "bottom"
-msgstr ""
+msgstr "base"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginGeneralSettings/general-settings.php:16
@@ -790,7 +791,7 @@ msgstr "Cor de fundo"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:180
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:121
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginPostType/slides.php:70
@@ -967,19 +968,19 @@ msgstr "Procurar imagens por título ou ID"
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:58
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:21
 msgid "Click to toggle"
-msgstr ""
+msgstr "Clique para trocar"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:160
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:190
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:131
 msgid "Don't let search engines follow link"
-msgstr ""
+msgstr "Não permitir aos mecanismos de busca seguirem o link"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:168
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:197
 msgid "Alternative text"
-msgstr ""
+msgstr "Texto alternativo"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:48
@@ -996,11 +997,11 @@ msgstr "(Deixe em branco para um fundo transparente)"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:42
 msgid "Show related videos"
-msgstr ""
+msgstr "Mostrar vídeos relacionados"
 
 #: views/SlideshowPluginUpload/upload-button.php:1
 msgid "Upload/Manage Images"
-msgstr ""
+msgstr "Enviar/Gerenciar Imagens"
 
 # @ slideshow-plugin
 #: views/SlideshowPluginWidget/form.php:9
