@@ -104,7 +104,7 @@ class SlideshowPlugin
 		$styleSettings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID);
 
 		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
-		$sessionID = self::$sessionCounter++;
+		$sessionID = self::$sessionCounter;
 
 		// Only enqueue the functional stylesheet when the 'allStylesheetsRegistered' flag is false
 		if (!SlideshowPluginSlideshowStylesheet::$allStylesheetsRegistered)
@@ -176,6 +176,8 @@ class SlideshowPlugin
 			'slideshow_jquery_image_gallery_script_adminURL',
 			admin_url()
 		);
+
+		self::$sessionCounter++;
 
 		// Return output
 		return $output;
