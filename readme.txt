@@ -4,7 +4,7 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 4.0
+Tested up to: 4.2
 Stable tag: 2.2.22
 License: GPLv2
 
@@ -43,14 +43,14 @@ different images, settings and styles for each one of them.
  - English        (100%)
  - Finnish        (83%  - fi    - Translated by A. Nonymous)
  - French         (91%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
- - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/) and A. Nonymous)
+ - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/) and others)
  - Hebrew         (53%  - he_IL - Translated by Eli Segev)
  - Italian        (83%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
  - Japanese       (82%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
  - Norwegian      (99%  - nb_NO - Translated by A. Nonymous)
  - Persian        (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
  - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
- - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/))
+ - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/) and others)
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
  - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
@@ -188,6 +188,7 @@ personal taste.
 *	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
 *   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
+*	Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.
 *   Added Norwegian translation by A. Nonymous.
 *   Updated Persian translation by W3Design.
 *   Updated German translation by A. Nonymous.
