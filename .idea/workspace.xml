@@ -1,54 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="ffa15d61-e398-4b3b-bd02-9b782c0aeb7a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-bg_BG.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-bg_BG.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fi.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fi.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ja.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ja.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-original.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-original.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pt_BR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_BR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sr_RS.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sr_RS.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.frontend.min.js" afterPath="$PROJECT_DIR$/js/min/all.frontend.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" afterPath="$PROJECT_DIR$/style/SlideshowPlugin/functional.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-bg_BG.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-bg_BG.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-cs_CZ.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-de_DE.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fa_IR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fi.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fi.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-fr_FR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-he_IL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-it_IT.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ja.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ja.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-original.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-original.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pl_PL.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pt_BR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_BR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-pt_PT.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sr_RS.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sr_RS.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-sv_SE.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-tr_TR.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-zh_CN.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
-    </list>
+    <list default="true" readonly="true" id="ffa15d61-e398-4b3b-bd02-9b782c0aeb7a" name="Default" comment="" />
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,7 +26,7 @@
       <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -82,7 +35,7 @@
       <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="174" column="0" selection-start="9654" selection-end="9654" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9095">
+            <state line="37" column="0" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.6981132" vertical-offset="0" max-vertical-offset="9095">
               <folding />
             </state>
           </provider>
@@ -541,6 +494,10 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
@@ -594,30 +551,34 @@
       <created>1396303484120</created>
       <updated>1396303484120</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous.">
+      <created>1429804438115</created>
+      <updated>1429804438115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25239617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25239617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -636,7 +597,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Compatible with WordPress 3.9.&#10;Added &quot;Cross Fade&quot; option to the animation settings.&#10;Updated the API to support retrieving the direction of the animation on the animation event.&#10;Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)&#10;Fixed: HTML5 validation issue.&#10;Fixed: Permission check that checked for &quot;edit_post&quot; instead of &quot;edit_slideshow&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Compatible with WordPress 3.9.&#10;Added &quot;Cross Fade&quot; option to the animation settings.&#10;Updated the API to support retrieving the direction of the animation on the animation event.&#10;Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)&#10;Fixed: HTML5 validation issue.&#10;Fixed: Permission check that checked for &quot;edit_post&quot; instead of &quot;edit_slideshow&quot;." />
+    <MESSAGE value="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous." />
+    <option name="LAST_COMMIT_MESSAGE" value="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -663,9 +625,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style/SlideshowPlugin/functional.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="0" selection-start="9654" selection-end="9654" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9095">
+        <state line="37" column="0" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.6981132" vertical-offset="0" max-vertical-offset="9095">
           <folding />
         </state>
       </provider>
