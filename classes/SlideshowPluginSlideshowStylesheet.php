@@ -187,10 +187,16 @@ class SlideshowPluginSlideshowStylesheet
 	 */
 	public static function getStylesheet($styleName)
 	{
-		// Get custom stylesheet, of the default stylesheet if the custom stylesheet does not exist
-		$stylesheet = get_option($styleName, '');
+		// Get custom style keys
+		$customStyleKeys = array_keys(get_option(SlideshowPluginGeneralSettings::$customStyles, array()));
 
-		if (strlen($stylesheet) <= 0)
+		// Match $styleName against custom style keys
+		if (in_array($styleName, $customStyleKeys))
+		{
+			// Get custom stylesheet
+			$stylesheet = get_option($styleName, '');
+		}
+		else
 		{
 			$stylesheetFile = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin' . DIRECTORY_SEPARATOR . $styleName . '.css';
 
@@ -202,7 +208,7 @@ class SlideshowPluginSlideshowStylesheet
 			// Get contents of stylesheet
 			ob_start();
 			include($stylesheetFile);
-			$stylesheet .= ob_get_clean();
+			$stylesheet = ob_get_clean();
 		}
 
 		// Replace the URL placeholders with actual URLs and add a unique identifier to separate stylesheets
