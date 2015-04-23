@@ -1,0 +1,23 @@
+﻿Revert "Merge remote-tracking branch 'origin/development-2.3'"
+
+This reverts commit 227a023f994d0976a6a2d5f6611f4d19d1a81615, reversing
+changes made to 4516c2e9132fc39f5e729f40772f4f00a2a812e0.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   classes/SlideshowPlugin.php
+#	modified:   classes/SlideshowPluginInstaller.php
+#	modified:   classes/SlideshowPluginPostType.php
+#	deleted:    classes/SlideshowPluginSettingsProfile.php
+#	modified:   js/all.frontend.js
+#	modified:   js/frontend/slideshow/slideshow.base.js
+#	modified:   js/min/all.frontend.min.js
+#	modified:   readme.txt
+#	modified:   slideshow.php
+#	modified:   views/SlideshowPlugin/slideshow.php
+#
+

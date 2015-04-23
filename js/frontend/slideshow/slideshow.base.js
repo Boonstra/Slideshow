@@ -447,17 +447,17 @@
 	};
 
 	/**
-	 * Retrieves slideshow ID from the slideshow container
+	 * Retrieves session ID from the slideshow container
 	 *
 	 * @return int ID
 	 */
 	self.Slideshow.prototype.getID = function()
 	{
-		var ID = this.$container.data('slideshowId');
+		var ID = this.$container.data('sessionId');
 
 		if (isNaN(parseInt(ID, 10)))
 		{
-			ID = this.$container.attr('data-slideshow-id');
+			ID = this.$container.attr('data-session-id');
 		}
 
 		return ID;

@@ -30,7 +30,7 @@ class SlideshowPluginMain
 	 *
 	 * @since 1.0.0
 	 */
-	static function bootstrap()
+	static function bootStrap()
 	{
 		self::autoInclude();
 
@@ -45,8 +45,6 @@ class SlideshowPluginMain
 
 		// Register slideshow post type
 		SlideshowPluginPostType::init();
-
-		SlideshowPluginSettingsProfile::init();
 
 		// Add general settings page
 		SlideshowPluginGeneralSettings::init();
@@ -178,4 +176,4 @@ class SlideshowPluginMain
 /**
  * Activate plugin
  */
-SlideShowPluginMain::bootstrap();
+SlideShowPluginMain::bootStrap();
