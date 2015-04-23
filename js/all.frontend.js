@@ -40,38 +40,56 @@ slideshow_jquery_image_gallery_script = function()
 	/**
 	 * @param searchKey (int|jQuery)
 	 *
-	 * @return self.Slideshow
+	 * @return null|self.Slideshow|[self.Slideshow, ...]
 	 */
 	self.getSlideshowInstance = function(searchKey)
 	{
+		var slideshowInstanceIndex,
+			id;
+
+		// Get by ID. May return an array of slideshows with the same ID if multiple matches are found
 		if (!isNaN(parseInt(searchKey, 10)))
 		{
-			if (self.slideshowInstances[searchKey] instanceof self.Slideshow)
+			if (self.slideshowInstances[searchKey] instanceof self.Slideshow ||
+				$.isArray(self.slideshowInstances[searchKey]))
 			{
 				return self.slideshowInstances[searchKey];
 			}
 		}
+		// Get by element. Returns a single slideshow if a match is found
 		else if (searchKey instanceof $ &&
 				 searchKey.length > 0)
 		{
-			for (var ID in self.slideshowInstances)
+			for (id in self.slideshowInstances)
 			{
-				if (!self.slideshowInstances.hasOwnProperty(ID))
+				if (!self.slideshowInstances.hasOwnProperty(id))
 				{
 					continue;
 				}
 
-				var slideshowInstance = self.slideshowInstances[ID];
-
-				if (slideshowInstance instanceof self.Slideshow &&
-					slideshowInstance.$container.get(0) === searchKey.get(0))
+				if ($.isArray(self.slideshowInstances[id]))
 				{
-					return slideshowInstance;
+					for (slideshowInstanceIndex = 0; slideshowInstanceIndex < self.slideshowInstances[id].length; slideshowInstanceIndex++)
+					{
+						if (self.slideshowInstances[id][slideshowInstanceIndex] instanceof self.Slideshow &&
+							self.slideshowInstances[id][slideshowInstanceIndex].$container.get(0) === searchKey.get(0))
+						{
+							return self.slideshowInstances[id][slideshowInstanceIndex];
+						}
+					}
+				}
+				else
+				{
+					if (self.slideshowInstances[id] instanceof self.Slideshow &&
+						self.slideshowInstances[id].$container.get(0) === searchKey.get(0))
+					{
+						return self.slideshowInstances[id];
+					}
 				}
 			}
 		}
 
-		return new self.Slideshow();
+		return null;
 	};
 
 	/**
@@ -83,17 +101,39 @@ slideshow_jquery_image_gallery_script = function()
 		$.each(jQuery('.slideshow_container'), function(key, slideshowElement)
 		{
 			var $slideshowElement = $(slideshowElement),
-				ID                = $slideshowElement.data('sessionId');
+				isActivated       = $slideshowElement.attr('data-slideshow-activated'),
+				id                = $slideshowElement.data('slideshowId'),
+				newSlideshow;
 
-			if (isNaN(parseInt(ID, 10)))
+			if (isActivated)
 			{
-				ID = $slideshowElement.attr('data-session-id');
+				return;
 			}
 
-			if (!(self.slideshowInstances[ID] instanceof self.Slideshow))
+			if (isNaN(parseInt(id, 10)))
 			{
-				self.slideshowInstances[ID] = new self.Slideshow($slideshowElement);
+				id = $slideshowElement.attr('data-slideshow-id');
 			}
+
+			newSlideshow = new self.Slideshow($slideshowElement);
+
+			if ($.isArray(self.slideshowInstances[id]))
+			{
+				self.slideshowInstances[id].push(newSlideshow);
+			}
+			else
+			{
+				if (self.slideshowInstances[id] instanceof self.Slideshow)
+				{
+					self.slideshowInstances[id] = [self.slideshowInstances[id], newSlideshow];
+				}
+				else
+				{
+					self.slideshowInstances[id] = newSlideshow;
+				}
+			}
+
+			$slideshowElement.attr('data-slideshow-activated', true);
 		});
 	};
 

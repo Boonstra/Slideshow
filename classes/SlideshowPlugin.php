@@ -166,7 +166,7 @@ class SlideshowPlugin
 		// Include slideshow settings by localizing them
 		wp_localize_script(
 			'slideshow-jquery-image-gallery-script',
-			'SlideshowPluginSettings_' . $sessionID,
+			'SlideshowPluginSettings_' . $post->ID,
 			$settings
 		);
 

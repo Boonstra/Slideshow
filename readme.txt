@@ -181,6 +181,9 @@ personal taste.
 
 == Changelog ==
 
+= 2.3.0 =
+*
+
 = 2.2.22 =
 *   Compatible with WordPress 4.0.
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
