@@ -181,6 +181,11 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.23 =
+*   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
+*   Fixed: TODO HTML validation isue
+*   TODO Manuel's translation
+
 = 2.2.22 =
 *   Compatible with WordPress 4.2.
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
