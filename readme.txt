@@ -183,7 +183,7 @@ personal taste.
 
 = 2.2.23 =
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
-*   Fixed: TODO HTML validation isue
+*   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
 *   TODO Manuel's translation
 
 = 2.2.22 =
