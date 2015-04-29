@@ -84,24 +84,30 @@ class SlideshowPluginSlideshowStylesheet
 		{
 			$version = get_option($name . '_version', SlideshowPluginMain::$version);
 
-			wp_enqueue_style(
-				'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
-				admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'admin'),
-				array(),
-				$version
-			);
+			if (!self::$allStylesheetsRegistered)
+			{
+				wp_enqueue_style(
+					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
+					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'admin'),
+					array(),
+					$version
+				);
+			}
 		}
 		else
 		{
 			$name    = str_replace('.css', '', $name);
 			$version = SlideshowPluginMain::$version;
 
-			wp_enqueue_style(
-				'slideshow-jquery-image-gallery-stylesheet_' . $name,
-				SlideshowPluginMain::getPluginUrl() . '/css/' . $name . '.css',
-				array(),
-				$version
-			);
+			if (!self::$allStylesheetsRegistered)
+			{
+				wp_enqueue_style(
+					'slideshow-jquery-image-gallery-stylesheet_' . $name,
+					SlideshowPluginMain::getPluginUrl() . '/css/' . $name . '.css',
+					array(),
+					$version
+				);
+			}
 		}
 
 		return array($name, $version);
