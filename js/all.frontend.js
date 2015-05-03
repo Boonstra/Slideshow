@@ -158,19 +158,14 @@ slideshow_jquery_image_gallery_script = function()
 	};
 
 	/**
-	 * Repairs stylesheet URLs that have been damaged during output.
+	 * Some WordPress websites don't allow for stylesheets to have URL parameters and remove them before they are output
+	 * to the website. When this is the case, AJAX loaded stylesheets can't be loaded and custom styles fail to work.
+	 *
+	 * This method repairs stylesheet URLs that have been broken by the website.
 	 */
 	self.repairStylesheetURLs = function()
 	{
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
-
-		// No AJAX stylesheets found. If there are slideshows on the page, there is something wrong. A slideshow always comes with an AJAX stylesheet
-		if (ajaxStylesheets.length <= 0)
-		{
-			self.generateStylesheetURLs(false);
-
-			return;
-		}
 
 		// Some website disable URL variables, impairing the AJAX loaded stylesheets. Check and fix all slideshow stylesheet related URLs
 		$.each(ajaxStylesheets, function(ajaxStylesheetKey, ajaxStylesheet)
@@ -210,58 +205,6 @@ slideshow_jquery_image_gallery_script = function()
 			URL = URLData.join('?');
 
 			$ajaxStylesheet.attr('href', URL);
-		});
-	};
-
-	/**
-	 * Generates admin AJAX stylesheet URLs for all slideshows.
-	 *
-	 * When forceGenerate is set to true, it will generate stylesheet URLs for slideshows that already have a matching
-	 * stylesheet as well.
-	 *
-	 * @param forceGenerate (boolean, defaults to false)
-	 */
-	self.generateStylesheetURLs = function(forceGenerate)
-	{
-		var $slideshows = $('.slideshow_container'),
-			adminURL    = window.slideshow_jquery_image_gallery_script_adminURL;
-
-		if ($slideshows.length <= 0 ||
-			typeof adminURL !== 'string' ||
-			adminURL.length <= 0)
-		{
-			return;
-		}
-
-		$.each($slideshows, function(key, slideshow)
-		{
-			var $slideshow   = $(slideshow),
-				styleName    = $slideshow.attr('data-style-name'),
-				styleVersion = $slideshow.attr('data-style-version'),
-				styleID      = 'slideshow-jquery-image-gallery-ajax-stylesheet_' + styleName + '-css',
-				$originalStylesheet,
-				stylesheetURL;
-
-			if (typeof styleName === 'string' &&
-				typeof styleVersion === 'string' &&
-				styleName.length > 0 &&
-				styleVersion.length > 0)
-			{
-				if (!forceGenerate &&
-					typeof forceGenerate === 'boolean')
-				{
-					$originalStylesheet = $('#' + styleID);
-
-					if ($originalStylesheet.length > 0)
-					{
-						return;
-					}
-				}
-
-				stylesheetURL = adminURL + 'admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' + styleName + '&ver=' + styleVersion;
-
-				$('head').append('<link rel="stylesheet" id="' + styleID + '" href="' + stylesheetURL + '" type="text/css" media="all">');
-			}
 		});
 	};
 

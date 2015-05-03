@@ -8,9 +8,6 @@
  */
 class SlideshowPlugin
 {
-	/** int $sessionCounter */
-	private static $sessionCounter = 0;
-
 	/**
 	 * Function deploy prints out the prepared html
 	 *
@@ -102,9 +99,6 @@ class SlideshowPlugin
 		// Get settings
 		$settings      = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
 		$styleSettings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID);
-
-		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
-		$sessionID = self::$sessionCounter++;
 
 		// Only enqueue the functional stylesheet when the 'allStylesheetsRegistered' flag is false
 		if (!SlideshowPluginSlideshowStylesheet::$allStylesheetsRegistered)
