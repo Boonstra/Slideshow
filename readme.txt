@@ -54,7 +54,7 @@ different images, settings and styles for each one of them.
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
  - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
- - Spanish        (51%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha)) TODO Add Manuel
+ - Spanish        (100% - es_ES - Translated by [Manuel Ballesta Ruiz](http://mbrsolution.com/) and [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
@@ -187,7 +187,7 @@ personal taste.
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
 *   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
 *	Fixed: HTML5 validation issue when loading stylesheets in the head of the document.
-*   Updated Spanish translation, thanks to TODO
+*   Updated Spanish translation, thanks to Manuel Ballesta Ruiz.
 
 = 2.2.22 =
 *   Compatible with WordPress 4.2.
@@ -197,10 +197,10 @@ personal taste.
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
 *   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
 *	Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.
-*   Added Norwegian translation by A. Nonymous.
-*   Updated Persian translation by W3Design.
-*   Updated German translation by A. Nonymous.
-*	Updated Brazilian Portuguese translation by A. Nonymous.
+*   Added Norwegian translation.
+*   Updated Persian translation, thanks to W3Design.
+*   Updated German translation.
+*	Updated Brazilian Portuguese translation.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
@@ -218,10 +218,10 @@ personal taste.
 *	Post published/updated message doesn't show a link to a non-existant page anymore.
 *	New tags are available for custom stylesheets: %site-url%, %stylesheet-url% and %template-url%
 *	Fixed: When the slideshow would not have any height, slides would not hide outside of the slideshow.
-*	Added Serbo-Croatian translation by Webhosting Hub.
-*	Updated Persian translation by W3Design.
-*	Updated Chinese translation by Leo Newbiesup.
-*	Updated Swedish translation by Wilhelm Svenselius.
+*	Added Serbo-Croatian translation, thanks to Webhosting Hub.
+*	Updated Persian translation, thanks to W3Design.
+*	Updated Chinese translation, thanks to Leo Newbiesup.
+*	Updated Swedish translation, thanks to Wilhelm Svenselius.
 
 = 2.2.19 =
 *	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.
@@ -235,8 +235,8 @@ personal taste.
 *   Improved filter avoiding mechanism.
 *   Disappearing settings now have a more apparent animation.
 *	Fixed: First slide of a slideshow wouldn't show when the slideshow's content had no size on page load.
-*   Added Brazilian Portuguese translation by Piero Luiz.
-*   Updated French translation by Romain Sandri.
+*   Added Brazilian Portuguese translation, thanks to Piero Luiz.
+*   Updated French translation, thanks to Romain Sandri.
 
 = 2.2.17 =
 *   Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'
@@ -269,22 +269,22 @@ personal taste.
 *   Implemented a new algorithm for randomizing slides.
 *   Slideshow can now wait for a slide to load before showing it.
 *   Fixed: The 'Enable responsiveness' setting disappeared when disabling the 'Show title and description' option.
-*   Added Turkish translation by İlker Akdoğan.
-*   Added Polish translation by Wicher Wiater.
-*   Added Finnish translation by an anonymous supporter.
-*   Updated French translation by Romain Sandri.
-*   Added Portuguese translation by Filipe Catraia.
-*   Added Persian translation by W3Design.
-*   Added Italian translation by Tecnikgeek.
-*   Added Japanese translation by Michihide Hotta.
+*   Added Turkish translation, thanks to İlker Akdoğan.
+*   Added Polish translation, thanks to Wicher Wiater.
+*   Added Finnish translation.
+*   Updated French translation, thanks to Romain Sandri.
+*   Added Portuguese translation, thanks to Filipe Catraia.
+*   Added Persian translation, thanks to W3Design.
+*   Added Italian translation, thanks to Tecnikgeek.
+*   Added Japanese translation, thanks to Michihide Hotta.
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.
 *   Fixed: Floating the slideshow resulted in it having no width, therefore being invisible.
 *   Fixed: Sites that don't support URL data weren't able to load a slideshow's stylesheet correctly.
 *   Fixed: Slideshow randomly disappeared in Internet Explorer 8 when absolute positioning was used.
-*   Added Swedish translation by Åke Isacsson.
-*   Added Hebrew translation by Eli Segev.
+*   Added Swedish translation, thanks to Åke Isacsson.
+*   Added Hebrew translation, thanks to Eli Segev.
 
 = 2.2.10 =
 *   Fixed: Auto margin combined with a fixed width will no longer break slideshow's responsiveness.
@@ -330,7 +330,7 @@ personal taste.
 *   Fixed: PHP errors were showing in 'Delete slide' links.
 *   Live width calculations have been halved to improve performance.
 *   Default settings have been tuned to cater better to most users.
-*   Added Czech translation by Edhel.
+*   Added Czech translation, thanks to Edhel.
 
 = 2.2.1 =
 *   Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.
