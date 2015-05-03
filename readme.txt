@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
 Tested up to: 4.2
-Stable tag: 2.2.22
+Stable tag: 2.2.23
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -13,9 +13,9 @@ Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
 
 == Description ==
 
-Slideshow provides an easy way to integrate a slideshow for any WordPress installation.
+Slideshow provides an easy way to integrate multiple slideshows in any WordPress installation.
 
-Any image can be loaded into the slideshow by picking it from the WordPress media page, even images you've already
+Any image can be loaded into a slideshow using the default WordPress media uploader, even images you've already
 uploaded can be inserted into your slideshow right away!
 
 Fancy doing something crazy? You can create and use as many slideshows as you'd like, with
@@ -32,7 +32,7 @@ different images, settings and styles for each one of them.
  - Run multiple slideshows on the same page
  - Change animations and handling
  - Customize to taste
- - Show that visitor who's boss
+ - Show that visitor who's the boss
 
 = Languages =
 
@@ -54,7 +54,7 @@ different images, settings and styles for each one of them.
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
  - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
- - Spanish        (51%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Spanish        (100% - es_ES - Translated by [Manuel Ballesta Ruiz](http://mbrsolution.com/) and [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
 
@@ -81,13 +81,14 @@ uncompressed files can be compiled using [Prepros](http://alphapixels.com/prepro
 
 2. After activating Slideshow, click on 'Slideshows' and create a new slideshow.
 
-3. Click on 'Insert Image Slide' to insert an image slide, a popup will appear where you can search for the desired
-image. Insert the image by clicking 'Insert'. The same goes for text and video slides, don't forget to save!
+3. Click on 'Image slide' to insert an image slide. The WordPress media uploader will appear, which allows you to choose
+or upload the desired image to the slideshow. Insert the image by clicking the 'Select' button. To insert text slides and
+YouTube video slides, click the 'Text slide' or the 'Video slide' button respectively. Don't forget to save your progress!
 
-4. Go to a post or a page and click the 'Insert Slideshow' button above the editor. A popup appears where you can select
-your newly created slideshow to insert. You can also use the shortcode or code snippet visible in your slideshow admin
-panel to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the sidebar
-of your website.
+4. Go to a post or a page and click the 'Insert Slideshow' button above the editor. A screen will appear in which you can
+select your newly created slideshow. You can also use the shortcode or code snippet visible in your slideshow's edit page
+to deploy your slideshow anywhere on your website. Use the widget to show any of your slideshows in the widget area of your
+website.
 
 5. Feel like a sir.
 
@@ -96,20 +97,21 @@ of your website.
 
 = How do I add image slides? =
 
-Click the 'Image slide' button in the 'Slides List' of the slideshow. A screen will pop up where you'll be able to
-search though all images that have already been uploaded to your WordPress website. If you want to add new images to the
-slideshow, or you do not have any images yet, you'll have to upload them to the WordPress media page first.
+Click the 'Image slide' button in the 'Slides List' of the slideshow. The WordPress media uploader will pop up, in which
+you'll be able to search all images that have already been uploaded to your WordPress website. If you'd like to add new
+images to the slideshow, you'll be able to upload them right away from the media uploader. (Provided you're running a
+WordPress installation of version 3.5 or later)
 
 = How do I change a slideshow's settings? =
 
-Just like the posts and pages you're already familiar with, slideshows can be edited. Go to the 'Slideshows' tab in your
-WordPress admin, and you'll see a list of slideshows. If you have not created a slideshow yet, you can do so by clicking
-'Add new' on that same page. If there are slideshows in the list, click on the title of the slideshow you want to change
-the settings of. On the slideshow's edit page you'll be able to find a box titled 'Slideshow Settings', in this box you
-can change the slideshow's settings.
+Just like WordPress' posts and pages you're already familiar with, slideshows can be edited. Go to the 'Slideshows' tab
+in your WordPress admin panel, and you'll see a list of slideshows. If you have not created a slideshow yet, you
+can do so by clicking 'Add new' on that same page. If there are slideshows in the list, click the title of the slideshow
+of which you'd like to change the settings. On the slideshow's edit page you'll be able to find a box titled 'Slideshow Settings',
+in this box you can change the slideshow's settings.
 
-If you're creating multiple slideshows that should have the same settings, but their settings need to be different from
-the default settings, you can change the default settings by going to the 'General Settings' page and clicking on the
+If you're creating multiple slideshows which should have the same settings, but you'd like the settings to be different
+from the default ones, you can change the default settings by going to the 'General Settings' page and clicking on the
 'Default Slideshow Settings' tab. Newly created slideshows will start off with the settings you set there.
 
 = How do I customize the slideshow's style? =
@@ -124,12 +126,12 @@ In the 'Slideshow Style' box you can now find and select your custom stylesheet.
 slideshows.
 
 If you've already created a custom stylesheet, you can edit it by clicking 'Edit'. You can also delete it by clicking
-'Delete'. Be careful with this though, a deleted stylesheet cannot be retrieved and cannot be used by any slideshow
+'Delete'. Careful, a deleted stylesheet cannot be retrieved and cannot be used by any slideshow
 anymore.
 
 = Some users can add, edit or delete slideshows, although I do not want them to. Can I prevent this from happening? =
 
-Yes you can. On your WordPress admin page, go to the 'Slideshows' menu item and click on 'General Settings', then go to
+Yes you can. In your WordPress admin panel, go to the 'Slideshows' menu item and click on 'General Settings', then go to
 the 'User Capabilities' tab (If you're not already there). The privileges that allow user groups to perform certain
 actions are listed here. To allow, for instance, a contributor to add a slideshow, click the box in front of 'Contributor'
 to grant him the right to add slideshows.
@@ -140,13 +142,13 @@ situation.
 
 = The slideshow does not show up =
 
-- The slideshow is mostly called after the `</head>` tag, which means the scripts and stylesheet need to load in the footer
+- The slideshow is often called after the `</head>` tag, which means the scripts and stylesheet need to load in the footer
 of the website. A theme that has no `<?php wp_footer(); ?>` call in it's footer will not be able to load the slideshow's
 scripts.
 
 - Often when the slideshow isn't showing, there's a javascript error somewhere on the page and this error has caused
-javascript to break. For the slideshow to work again, this error needs to be fixed. Check if any errors were thrown by
-opening Google Chrome or Firefox (with Firebug installed) and press the 'F12' key. Errors show in the console tab.
+JavaScript to break. For the slideshow to work again, this error needs to be fixed. Check if any errors were thrown by
+opening Google Chrome or Firefox (with Firebug installed) and opening the console.
 
 = Why does Internet Explorer show a big blank space above the slideshow? =
 
@@ -181,6 +183,12 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.23 =
+*   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
+*   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
+*	Fixed: HTML5 validation issue when loading stylesheets in the head of the document.
+*   Updated Spanish translation, thanks to Manuel Ballesta Ruiz.
+
 = 2.2.22 =
 *   Compatible with WordPress 4.2.
 *	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
@@ -189,10 +197,10 @@ personal taste.
 *	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
 *   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
 *	Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.
-*   Added Norwegian translation by A. Nonymous.
-*   Updated Persian translation by W3Design.
-*   Updated German translation by A. Nonymous.
-*	Updated Brazilian Portuguese by A. Nonymous.
+*   Added Norwegian translation.
+*   Updated Persian translation, thanks to W3Design.
+*   Updated German translation.
+*	Updated Brazilian Portuguese translation.
 
 = 2.2.21 =
 *	Compatible with WordPress 3.9.
@@ -210,10 +218,10 @@ personal taste.
 *	Post published/updated message doesn't show a link to a non-existant page anymore.
 *	New tags are available for custom stylesheets: %site-url%, %stylesheet-url% and %template-url%
 *	Fixed: When the slideshow would not have any height, slides would not hide outside of the slideshow.
-*	Added Serbo-Croatian translation by Webhosting Hub.
-*	Updated Persian translation by W3Design.
-*	Updated Chinese translation by Leo Newbiesup.
-*	Updated Swedish translation by Wilhelm Svenselius.
+*	Added Serbo-Croatian translation, thanks to Webhosting Hub.
+*	Updated Persian translation, thanks to W3Design.
+*	Updated Chinese translation, thanks to Leo Newbiesup.
+*	Updated Swedish translation, thanks to Wilhelm Svenselius.
 
 = 2.2.19 =
 *	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.
@@ -227,8 +235,8 @@ personal taste.
 *   Improved filter avoiding mechanism.
 *   Disappearing settings now have a more apparent animation.
 *	Fixed: First slide of a slideshow wouldn't show when the slideshow's content had no size on page load.
-*   Added Brazilian Portuguese translation by Piero Luiz.
-*   Updated French translation by Romain Sandri.
+*   Added Brazilian Portuguese translation, thanks to Piero Luiz.
+*   Updated French translation, thanks to Romain Sandri.
 
 = 2.2.17 =
 *   Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'
@@ -261,22 +269,22 @@ personal taste.
 *   Implemented a new algorithm for randomizing slides.
 *   Slideshow can now wait for a slide to load before showing it.
 *   Fixed: The 'Enable responsiveness' setting disappeared when disabling the 'Show title and description' option.
-*   Added Turkish translation by İlker Akdoğan.
-*   Added Polish translation by Wicher Wiater.
-*   Added Finnish translation by an anonymous supporter.
-*   Updated French translation by Romain Sandri.
-*   Added Portuguese translation by Filipe Catraia.
-*   Added Persian translation by W3Design.
-*   Added Italian translation by Tecnikgeek.
-*   Added Japanese translation by Michihide Hotta.
+*   Added Turkish translation, thanks to İlker Akdoğan.
+*   Added Polish translation, thanks to Wicher Wiater.
+*   Added Finnish translation.
+*   Updated French translation, thanks to Romain Sandri.
+*   Added Portuguese translation, thanks to Filipe Catraia.
+*   Added Persian translation, thanks to W3Design.
+*   Added Italian translation, thanks to Tecnikgeek.
+*   Added Japanese translation, thanks to Michihide Hotta.
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.
 *   Fixed: Floating the slideshow resulted in it having no width, therefore being invisible.
 *   Fixed: Sites that don't support URL data weren't able to load a slideshow's stylesheet correctly.
 *   Fixed: Slideshow randomly disappeared in Internet Explorer 8 when absolute positioning was used.
-*   Added Swedish translation by Åke Isacsson.
-*   Added Hebrew translation by Eli Segev.
+*   Added Swedish translation, thanks to Åke Isacsson.
+*   Added Hebrew translation, thanks to Eli Segev.
 
 = 2.2.10 =
 *   Fixed: Auto margin combined with a fixed width will no longer break slideshow's responsiveness.
@@ -322,7 +330,7 @@ personal taste.
 *   Fixed: PHP errors were showing in 'Delete slide' links.
 *   Live width calculations have been halved to improve performance.
 *   Default settings have been tuned to cater better to most users.
-*   Added Czech translation by Edhel.
+*   Added Czech translation, thanks to Edhel.
 
 = 2.2.1 =
 *   Fixed: A bug in the width calculations caused slideshows in width-less elements to be hidden.

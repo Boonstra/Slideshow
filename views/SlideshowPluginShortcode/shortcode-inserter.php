@@ -1,14 +1,20 @@
 <a
-	href="#TB_inline?width=450&inlineId=insertSlideshowShortcode"
+	href="#TB_inline?width=450&amp;inlineId=insertSlideshowShortcode"
 	class="button thickbox"
 	title="<?php _e('Insert a Slideshow', 'slideshow-plugin'); ?>"
     style="padding-left: .4em;"
 >
+	<?php global $wp_version; ?>
+	<?php if (version_compare($wp_version, '3.8', '>')) : ?>
+	<span class="dashicons dashicons-format-gallery" style="line-height: 26px;"></span>
+	<?php else: ?>
 	<img
 		src="<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon.png'; ?>"
 		alt="<?php _e('Insert a Slideshow', 'slideshow-plugin'); ?>"
 	    style="vertical-align: text-top;"
 	/>
+	<?php endif; ?>
+
 	<?php _e('Insert Slideshow', 'slideshow-plugin'); ?>
 </a>
 
