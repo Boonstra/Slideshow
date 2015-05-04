@@ -9,7 +9,7 @@ abstract class SlideshowPluginModel
 	protected $modelPostType;
 
 	/** @var WP_Post */
-	protected $post;
+	public $post;
 
 	/** @var array */
 	protected $postMeta = array();
@@ -54,7 +54,15 @@ abstract class SlideshowPluginModel
 	 */
 	function setPostMeta($key, $value)
 	{
-		switch (SlideshowPluginPostType::getPostTypeInformation($this->modelPostType)['postMeta'][$key])
+		$postTypeInformation = SlideshowPluginPostType::getPostTypeInformation($this->modelPostType);
+
+		if (!isset($postTypeInformation['postMeta']) ||
+			!isset($postTypeInformation['postMeta'][$key]))
+		{
+			return false;
+		}
+
+		switch ($postTypeInformation['postMeta'][$key]['dataType'])
 		{
 			case 'array':
 
@@ -298,7 +306,7 @@ abstract class SlideshowPluginModel
 
 		foreach ($query->get_posts() as $post)
 		{
-			$models[] = $reflectionClass->newInstanceArgs($post);
+			$models[] = $reflectionClass->newInstanceArgs(array($post));
 		};
 
 		return $models;

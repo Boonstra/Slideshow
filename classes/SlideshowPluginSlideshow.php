@@ -11,11 +11,20 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	/** @var string */
 	static $postType = 'slideshow';
 
+	/** @var string */
+	const SLIDES_POST_META_KEY = '_slideshow_jquery_image_gallery_slides';
+
+	/** @var string */
+	const STYLE_POST_META_KEY = '_slideshow_jquery_image_gallery_style';
+
+	/** @var string */
+	const SETTINGS_PROFILE_POST_META_KEY = '_slideshow_jquery_image_gallery_settings_profile';
+
 	/** @var array */
 	static $postMetaDefaults = array(
-		'_slideshow_jquery_image_gallery_slides'           => array(),
-		'_slideshow_jquery_image_gallery_style'            => -1,
-		'_slideshow_jquery_image_gallery_settings_profile' => -1,
+		self::SLIDES_POST_META_KEY           => array(),
+		self::STYLE_POST_META_KEY            => -1,
+		self::SETTINGS_PROFILE_POST_META_KEY => -1,
 	);
 
 	/**
@@ -79,7 +88,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 				'supports'             => array('title'),
 			),
 			array(
-				'_slideshow_jquery_image_gallery_information'      => array(
+				'_slideshow_jquery_image_gallery_information'         => array(
 					'dataType'      => null,
 					'title'         => __('Information', 'slideshow-plugin'),
 					'callback'      => array(__CLASS__, 'informationMetaBox'),
@@ -88,7 +97,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 					'priority'      => 'high',
 					'callback_args' => null,
 				),
-				'_slideshow_jquery_image_gallery_slides'           => array(
+				self::SLIDES_POST_META_KEY                            => array(
 					'dataType'      => 'array',
 					'title'         => __('Slides', 'slideshow-plugin'),
 					'callback'      => array(__CLASS__, 'slidesMetaBox'),
@@ -97,7 +106,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 					'priority'      => 'default',
 					'callback_args' => null,
 				),
-				'_slideshow_jquery_image_gallery_style'            => array(
+				self::STYLE_POST_META_KEY                             => array(
 					'dataType'      => 'int',
 					'title'         => __('Style', 'slideshow-plugin'),
 					'callback'      => array(__CLASS__, 'styleMetaBox'),
@@ -106,7 +115,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 					'priority'      => 'default',
 					'callback_args' => null,
 				),
-				'_slideshow_jquery_image_gallery_settings_profile' => array(
+				self::SETTINGS_PROFILE_POST_META_KEY                  => array(
 					'dataType'      => 'int',
 					'title'         => __('Settings Profile', 'slideshow-plugin'),
 					'callback'      => array(__CLASS__, 'settingsMetaBox'),
@@ -153,15 +162,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	 */
 	static function supportPluginMessage()
 	{
-		// TODO Show support message on edit slideshow
-//		// Add support plugin message on edit slideshow
-//		if (isset($_GET['action']) &&
-//			strtolower($_GET['action']) == strtolower('edit'))
-//		{
-//			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
-//		}
-
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
+		SlideshowPluginMain::outputView(__CLASS__ . '/support-plugin.php');
 	}
 
 	/**
@@ -173,16 +174,17 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	{
 		global $post;
 
-		$snippet   = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
-		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
+		$data            = new stdClass();
+		$data->snippet   = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
+		$data->shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
 
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php';
+		SlideshowPluginMain::outputView(__CLASS__ . '/information.php', $data);
 	}
 
 	/**
 	 * Shows slides currently in slideshow
 	 *
-	 * TODO Tidy up, it's probably best to move all to 'slides.php'
+	 * TODO Reimplement, moving as much of the code to slides.php as possible.
 	 *
 	 * @since 1.0.0
 	 */
@@ -247,6 +249,9 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	 */
 	static function styleMetaBox()
 	{
+		// TODO
+//		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'style-settings.php', $data);
+
 		echo 'Placeholder for styles dropdown';
 
 		echo '<br /><br />Add "edit style" link';
@@ -269,21 +274,20 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	 */
 	static function settingsMetaBox()
 	{
-//		global $post;
+		global $post;
 
+		// Nonce
 		$postTypeInformation = SlideshowPluginPostType::getPostTypeInformation(self::$postType);
-
 		wp_nonce_field($postTypeInformation['nonceAction'], $postTypeInformation['nonceName']);
 
-		echo 'Placeholder for settings profiles dropdown';
+		// Get current settings profile ID
+		$slideshow = new SlideshowPluginSlideshow($post);
 
-		echo '<br /><br />Add "edit settings profile" link';
+		$data                           = new stdClass();
+		$data->settingsProfiles         = SlideshowPluginSettingsProfile::getAll(SlideshowPluginSettingsProfile::$postType);
+		$data->currentSettingsProfileID = $slideshow->getPostMeta(self::SETTINGS_PROFILE_POST_META_KEY);
 
-//		// Get settings
-//		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
-//
-//		// Include
-//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'settings.php', $data);
 	}
 
 	/**

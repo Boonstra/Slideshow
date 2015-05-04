@@ -8,6 +8,7 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 	/** @var string */
 	static $postType = 'slideshow_sett_prof';
 
+	/** @var string */
 	static $settingsPostMetaKey = '_slideshow_jquery_image_gallery_settings';
 
 	/** @var array */

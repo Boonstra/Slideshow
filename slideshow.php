@@ -153,7 +153,7 @@ class SlideshowPluginMain
 	 * Outputs the passed view. It's good practice to pass an object like an stdClass to the $data variable, as it can
 	 * be easily checked for validity in the view itself using "instanceof".
 	 *
-	 * @since 1.0.0
+	 * @since 2.3.0
 	 * @param string   $view
 	 * @param stdClass $data (Optional, defaults to null)
 	 */
@@ -165,7 +165,7 @@ class SlideshowPluginMain
 	/**
 	 * Uses self::outputView to render the passed view. Returns the rendered view instead of outputting it.
 	 *
-	 * @since 1.0.0
+	 * @since 2.3.0
 	 * @param string   $view
 	 * @param stdClass $data (Optional, defaults to null)
 	 * @return string

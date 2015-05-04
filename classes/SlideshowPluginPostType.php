@@ -109,6 +109,13 @@ class SlideshowPluginPostType
 				);
 			}
 		}
+
+		// Add support plugin message on edit slideshow
+		if (filter_input(INPUT_GET, 'action') == strtolower('edit') &&
+			SlideshowPluginMain::getCurrentPostType() == SlideshowPluginSlideshow::$postType)
+		{
+			add_action('admin_notices', array('SlideshowPluginSlideshow',  'supportPluginMessage'));
+		}
 	}
 
 	/**
@@ -152,7 +159,7 @@ class SlideshowPluginPostType
 
 		$reflectionClass = new ReflectionClass(self::$postTypes[$postType]['class']);
 
-		$model = $reflectionClass->newInstanceArgs($postID);
+		$model = $reflectionClass->newInstanceArgs(array($postID));
 
 		foreach ($_POST as $postKey => $postVariable)
 		{
@@ -195,11 +202,11 @@ class SlideshowPluginPostType
 		switch ($messageID)
 		{
 			case 6:
-				$messages['post'][$messageID] = $postTypeObject->labels->name . __('created', 'slideshow-plugin');
+				$messages['post'][$messageID] = $postTypeObject->labels->singular_name . ' ' . __('created', 'slideshow-plugin');
 				break;
 
 			default:
-				$messages['post'][$messageID] = $postTypeObject->labels->name . __('updated', 'slideshow-plugin');
+				$messages['post'][$messageID] = $postTypeObject->labels->singular_name . ' ' . __('updated', 'slideshow-plugin');
 		}
 
 		return $messages;
