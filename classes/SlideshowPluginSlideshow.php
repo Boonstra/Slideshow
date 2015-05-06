@@ -1,8 +1,5 @@
 <?php
 /**
- * SlideshowPluginSlideshow creates a post type specifically designed for
- * slideshows and their individual settings
- *
  * @since 1.0.0
  * @author: Stefan Boonstra
  */
@@ -11,13 +8,13 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	/** @var string */
 	static $postType = 'slideshow';
 
-	/** @var string */
+	/** @const string */
 	const SLIDES_POST_META_KEY = '_slideshow_jquery_image_gallery_slides';
 
-	/** @var string */
+	/** @const string */
 	const STYLE_POST_META_KEY = '_slideshow_jquery_image_gallery_style';
 
-	/** @var string */
+	/** @const string */
 	const SETTINGS_PROFILE_POST_META_KEY = '_slideshow_jquery_image_gallery_settings_profile';
 
 	/** @var array */
@@ -267,8 +264,6 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 
 	/**
 	 * Shows settings for particular slideshow
-	 *
-	 * TODO Implement.
 	 *
 	 * @since 1.0.0
 	 */

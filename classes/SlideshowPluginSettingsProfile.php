@@ -8,12 +8,12 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 	/** @var string */
 	static $postType = 'slideshow_sett_prof';
 
-	/** @var string */
-	static $settingsPostMetaKey = '_slideshow_jquery_image_gallery_settings';
+	/** @const string */
+	const SETTINGS_POST_META_KEY = '_slideshow_jquery_image_gallery_settings';
 
 	/** @var array */
 	static $postMetaDefaults = array(
-		'_slideshow_jquery_image_gallery_settings' => array(
+		self::SETTINGS_POST_META_KEY => array(
 			'animation'                   => 'slide',
 			'slideSpeed'                  => '1',
 			'descriptionSpeed'            => '0.4',
@@ -51,6 +51,9 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 	 */
 	static function init()
 	{
+		add_action('wp_trash_post'     , array(__CLASS__, 'beforeDeletePost'), 1);
+		add_action('before_delete_post', array(__CLASS__, 'beforeDeletePost'), 1);
+
 		SlideshowPluginPostType::registerPostType(
 			__CLASS__,
 			self::$postType,
@@ -101,12 +104,21 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 				'supports'             => array('title'),
 			),
 			array(
-				'_slideshow_jquery_image_gallery_settings' => array(
+				self::SETTINGS_POST_META_KEY          => array(
 					'dataType'      => 'array',
 					'title'         => __('Settings', 'slideshow-plugin'),
 					'callback'      => array(__CLASS__, 'settingsMetaBox'),
 					'screen'        => self::$postType,
 					'context'       => 'normal',
+					'priority'      => 'default',
+					'callback_args' => null,
+				),
+				'_slideshow_jquery_image_gallery_parent_slideshows' => array(
+					'dataType'      => null,
+					'title'         => __('Slideshows', 'slideshow-plugin'),
+					'callback'      => array(__CLASS__, 'parentSlideshowsMetaBox'),
+					'screen'        => self::$postType,
+					'context'       => 'side',
 					'priority'      => 'default',
 					'callback_args' => null,
 				),
@@ -146,7 +158,7 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 	 */
 	function getSettings()
 	{
-		return $this->getPostMeta('_slideshow_jquery_image_gallery_settings');
+		return $this->getPostMeta(self::SETTINGS_POST_META_KEY);
 	}
 
 	/**
@@ -198,7 +210,7 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 			'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-plugin'), SlideshowPluginShortcode::$bookmark)
 		);
 
-		$settingsDefaults = self::$postMetaDefaults['_slideshow_jquery_image_gallery_settings'];
+		$settingsDefaults = self::$postMetaDefaults[self::SETTINGS_POST_META_KEY];
 
 		$settingsDefinitions = array(
 			'animation'                   => array('type' => 'select', 'default' => $settingsDefaults['animation']                  , 'description' => $descriptions['animation']                  , 'group' => __('Animation', 'slideshow-plugin')    , 'options' => array('slide' => __('Slide Left', 'slideshow-plugin'), 'slideRight' => __('Slide Right', 'slideshow-plugin'), 'slideUp' => __('Slide Up', 'slideshow-plugin'), 'slideDown' => __('Slide Down', 'slideshow-plugin'), 'crossFade' => __('Cross Fade', 'slideshow-plugin'), 'directFade' => __('Direct Fade', 'slideshow-plugin'), 'fade' => __('Fade', 'slideshow-plugin'), 'random' => __('Random Animation', 'slideshow-plugin'))),
@@ -251,5 +263,68 @@ class SlideshowPluginSettingsProfile extends SlideshowPluginModel
 		$data->settingsProfile = new SlideshowPluginSettingsProfile($post);
 
 		SlideshowPluginMain::outputView(__CLASS__ . '/settings.php', $data);
+	}
+
+	/**
+	 * Shows the parent slideshows of this settings profile.
+	 *
+	 * @since 2.3.0
+	 */
+	static function parentSlideshowsMetaBox()
+	{
+		global $post;
+
+		$data = new stdClass();
+
+		// Get parent slideshows
+		$data->slideshows = SlideshowPluginModel::getAll(SlideshowPluginSlideshow::$postType, array(
+			'meta_key'   => SlideshowPluginSlideshow::SETTINGS_PROFILE_POST_META_KEY,
+			'meta_value' => $post->ID,
+		));
+
+		// Localizations
+		$data->localizations = array(
+			'parent-slideshows'    => __('This settings profile is used by the following slideshows', 'slideshow-plugin') . ':',
+			'no-parent-slideshows' => __('This settings profile is not used by any slideshows.', 'slideshow-plugin'),
+		);
+
+		SlideshowPluginMain::outputView('parent-slideshows.php', $data);
+	}
+
+	/**
+	 * Called upon the WordPress 'before_delete_post' hook. Checks if the passed settings profile can be deleted without
+	 * any slideshows being affected.
+	 *
+	 * @param int $postID
+	 */
+	static function beforeDeletePost($postID)
+	{
+		$postType = SlideshowPluginMain::getCurrentPostType();
+
+		if ($postType != self::$postType)
+		{
+			return;
+		}
+
+		// Get all slideshows that use the settings profile with the passed $postID
+		$slideshows = SlideshowPluginModel::getAll(SlideshowPluginSlideshow::$postType, array(
+			'meta_key'   => SlideshowPluginSlideshow::SETTINGS_PROFILE_POST_META_KEY,
+			'meta_value' => $postID,
+		));
+
+		if (count($slideshows) > 0)
+		{
+			wp_redirect(add_query_arg(
+				array(
+					'slideshow-jquery-image-gallery-message'      =>
+						urlencode(__("This settings profile cannot be deleted, as it's used by one or more slideshows", 'slideshow-plugin')),
+					'slideshow-jquery-image-gallery-message-type' =>
+						urlencode('error')
+				),
+				admin_url() . 'edit.php?post_type=' . self::$postType
+			));
+
+			die();
+		}
 	}
 }

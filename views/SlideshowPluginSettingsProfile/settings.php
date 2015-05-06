@@ -23,7 +23,7 @@
 		<?php echo !empty($value['dependsOn'])? 'style="display:none;"': ''; ?>
 	>
 		<td><?php echo $value['description']; ?></td>
-		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginSettingsProfile::$settingsPostMetaKey, htmlspecialchars($key), $variables[$key], $value); ?></td>
+		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginSettingsProfile::SETTINGS_POST_META_KEY, htmlspecialchars($key), $variables[$key], $value); ?></td>
 		<td><?php _e('Default', 'slideshow-plugin'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
 	</tr>
 

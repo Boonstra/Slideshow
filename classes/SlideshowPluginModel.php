@@ -1,6 +1,6 @@
 <?php
 /**
- * @since 1.0.0
+ * @since 2.3.0
  * @author: Stefan Boonstra
  */
 abstract class SlideshowPluginModel
@@ -263,15 +263,15 @@ abstract class SlideshowPluginModel
 	}
 
 	/**
-	 * Returns all models with the passed post type and within the defined offset and limit.
+	 * Returns all models with the passed post type. More advanced queries can be written through the $arguments
+	 * parameter, for example by defining an offset and a limit.
 	 *
 	 * @since 2.3.0
 	 * @param string $postType
-	 * @param int    $offset   (Optional, defaults to -1)
-	 * @param int    $limit    (Optional, defaults to -1)
+	 * @param array  $arguments (optional, defaults to an empty array)
 	 * @return array
      */
-	static function getAll($postType, $offset = -1, $limit = -1)
+	static function getAll($postType, $arguments = array())
 	{
 		$models = array();
 
@@ -282,24 +282,20 @@ abstract class SlideshowPluginModel
 			return $models;
 		}
 
-		if (!is_numeric($offset) ||
-			$offset < 0)
+		if (!is_array($arguments))
 		{
-			$offset = -1;
+			$arguments = array();
 		}
 
-		if (!is_numeric($limit) ||
-			$limit < 0)
-		{
-			$limit = -1;
-		}
-
-		$query = new WP_Query(array(
-			'post_type'      => $postType,
-			'orderby'        => 'post_date',
-			'order'          => 'DESC',
-			'offset'         => $offset,
-			'posts_per_page' => $limit,
+		$query = new WP_Query(array_merge(
+			array(
+				'post_type'      => $postType,
+				'orderby'        => 'post_date',
+				'order'          => 'DESC',
+				'offset'         => -1,
+				'posts_per_page' => -1,
+			),
+			$arguments
 		));
 
 		$reflectionClass = new ReflectionClass($postTypeInformation['class']);

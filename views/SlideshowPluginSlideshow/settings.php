@@ -3,7 +3,7 @@
 	<select name="<?php echo htmlspecialchars(SlideshowPluginSlideshow::SETTINGS_PROFILE_POST_META_KEY); ?>">
 		<option value="-1">lol</option>
 		<?php foreach ($data->settingsProfiles as $settingsProfile): ?>
-		<option value="<?php echo htmlspecialchars($settingsProfile->post->id); ?>">
+		<option value="<?php echo htmlspecialchars($settingsProfile->post->ID); ?>" <?php selected($data->currentSettingsProfileID, $settingsProfile->post->ID); ?>>
 			<?php echo htmlspecialchars($settingsProfile->post->post_title); ?>
 		</option>
 		<?php endforeach; ?>

@@ -47,7 +47,7 @@ class SlideshowPluginMain
 		SlideshowPluginPostType::init();
 		SlideshowPluginSlideshow::init();
 		SlideshowPluginSettingsProfile::init();
-//		SlideshowPluginStyle::init();
+		SlideshowPluginStyle::init();
 
 		// Add general settings page
 		SlideshowPluginGeneralSettings::init();
@@ -66,6 +66,31 @@ class SlideshowPluginMain
 
 		// Initialize plugin updater
 		SlideshowPluginInstaller::init();
+
+		// Custom admin messages
+		add_action('admin_notices', array(__CLASS__, 'adminNotices'));
+	}
+
+	/**
+	 * Shows custom admin notices from the slideshow plugin.
+	 *
+	 * @since 2.3.0
+	 */
+	static function adminNotices()
+	{
+		$message = filter_input(INPUT_GET, 'slideshow-jquery-image-gallery-message', FILTER_SANITIZE_ENCODED);
+
+		if (strlen($message) > 0)
+		{
+			$messageType = filter_input(INPUT_GET, 'slideshow-jquery-image-gallery-message-type', FILTER_SANITIZE_ENCODED);
+
+			if (strlen($messageType) <= 0)
+			{
+				$messageType = 'updated';
+			}
+
+			echo '<div class="' . htmlspecialchars(urldecode($messageType)) . '"><p>' . htmlspecialchars(urldecode($message)) . '</p></div>';
+		}
 	}
 
 	/**

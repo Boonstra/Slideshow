@@ -1,6 +1,6 @@
 <?php
 /**
- * @since 1.0.0
+ * @since 2.3.0
  * @author: Stefan Boonstra
  */
 class SlideshowPluginPostType
