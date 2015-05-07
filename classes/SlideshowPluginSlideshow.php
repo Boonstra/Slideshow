@@ -91,7 +91,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 					'callback'      => array(__CLASS__, 'informationMetaBox'),
 					'screen'        => self::$postType,
 					'context'       => 'normal',
-					'priority'      => 'high',
+					'priority'      => 'default',
 					'callback_args' => null,
 				),
 				self::SLIDES_POST_META_KEY                            => array(
@@ -100,7 +100,7 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 					'callback'      => array(__CLASS__, 'slidesMetaBox'),
 					'screen'        => self::$postType,
 					'context'       => 'advanced',
-					'priority'      => 'default',
+					'priority'      => 'high',
 					'callback_args' => null,
 				),
 				self::STYLE_POST_META_KEY                             => array(
@@ -189,6 +189,10 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	{
 		global $post;
 
+		// Nonce
+		$postTypeInformation = SlideshowPluginPostType::getPostTypeInformation(self::$postType);
+		wp_nonce_field($postTypeInformation['nonceAction'], $postTypeInformation['nonceName']);
+
 		// Get views
 		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
 
@@ -240,26 +244,20 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	/**
 	 * Shows style used for slideshow
 	 *
-	 * TODO Improve styling for usage in sidebar.
-	 *
 	 * @since 1.3.0
 	 */
 	static function styleMetaBox()
 	{
-		// TODO
-//		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'style-settings.php', $data);
+		global $post;
 
-		echo 'Placeholder for styles dropdown';
+		// Get current settings profile ID
+		$slideshow = new SlideshowPluginSlideshow($post);
 
-		echo '<br /><br />Add "edit style" link';
+		$data                 = new stdClass();
+		$data->styles         = SlideshowPluginSettingsProfile::getAll(SlideshowPluginStyle::$postType);
+		$data->currentStyleID = $slideshow->getPostMeta(self::STYLE_POST_META_KEY);
 
-//		global $post;
-//
-//		// Get settings
-//		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
-//
-//		// Include style settings file
-//		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'style-settings.php', $data);
 	}
 
 	/**
@@ -270,10 +268,6 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 	static function settingsMetaBox()
 	{
 		global $post;
-
-		// Nonce
-		$postTypeInformation = SlideshowPluginPostType::getPostTypeInformation(self::$postType);
-		wp_nonce_field($postTypeInformation['nonceAction'], $postTypeInformation['nonceName']);
 
 		// Get current settings profile ID
 		$slideshow = new SlideshowPluginSlideshow($post);
