@@ -193,8 +193,13 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 		$postTypeInformation = SlideshowPluginPostType::getPostTypeInformation(self::$postType);
 		wp_nonce_field($postTypeInformation['nonceAction'], $postTypeInformation['nonceName']);
 
-		// Get views
-		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
+		$slideshow = new SlideshowPluginSlideshow($post);
+
+		$data         = new stdClass();
+		$data->slides = $slideshow->getPostMeta(self::SLIDES_POST_META_KEY);
+
+//		// Get views
+//		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
 
 		// Insert slide buttons
 		echo '<p style="text-align: center;">
@@ -204,41 +209,107 @@ class SlideshowPluginSlideshow extends SlideshowPluginModel
 			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
 			'</p>';
 
-		// Toggle slides open/closed
-		echo '<p style="text-align: center;">
-			<a href="#" class="open-slides-button">' . __( 'Open all', 'slideshow-plugin' ) . '</a>
-			|
-			<a href="#" class="close-slides-button">' . __( 'Close all', 'slideshow-plugin' ) . '</a>
-		</p>';
+		?>
 
-		// No views/slides message
-		if (count($views) <= 0)
-		{
-			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
-		}
+		<div class="slideshow-slides-grid">
 
-		// Start list
-		echo '<div class="sortable-slides-list">';
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: green; margin: 10px;">
 
-		// Print views
-		if (is_array($views))
-		{
-			foreach($views as $view)
-			{
-				if (!($view instanceof SlideshowPluginSlideshowView))
-				{
-					continue;
-				}
+				</div>
+			</div>
 
-				echo $view->toBackEndHTML();
-			}
-		}
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: red; margin: 10px;">
 
-		// End list
-		echo '</div>';
+				</div>
+			</div>
 
-		// Templates
-		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: yellow; margin: 10px;">
+
+				</div>
+			</div>
+
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: blue; margin: 10px;">
+
+				</div>
+			</div>
+
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: purple; margin: 10px;">
+
+				</div>
+			</div>
+
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: black; margin: 10px;">
+
+				</div>
+			</div>
+
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: grey; margin: 10px;">
+
+				</div>
+			</div>
+
+			<div class="slideshow-slide">
+				<div class="slideshow-slide-border" style="height: 100px; background: orange; margin: 10px;">
+
+				</div>
+			</div>
+
+			<div style="clear: both;"></div>
+
+		</div>
+
+		<div class="slideshow-templates" style="display: none;">
+
+			<div class="slideshow-slide-editor">
+
+			</div>
+
+		</div>
+
+		<?php
+
+//		// Toggle slides open/closed
+//		echo '<p style="text-align: center;">
+//			<a href="#" class="open-slides-button">' . __( 'Open all', 'slideshow-plugin' ) . '</a>
+//			|
+//			<a href="#" class="close-slides-button">' . __( 'Close all', 'slideshow-plugin' ) . '</a>
+//		</p>';
+//
+//		// No views/slides message
+//		if (count($views) <= 0)
+//		{
+//			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
+//		}
+//
+//		// Start list
+//		echo '<div class="sortable-slides-list">';
+//
+//		// Print views
+//		if (is_array($views))
+//		{
+//			foreach($views as $view)
+//			{
+//				if (!($view instanceof SlideshowPluginSlideshowView))
+//				{
+//					continue;
+//				}
+//
+//				echo $view->toBackEndHTML();
+//			}
+//		}
+//
+//		// End list
+//		echo '</div>';
+//
+//		// Templates
+//		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
 	}
 
 	/**
