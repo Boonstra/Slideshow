@@ -4,9 +4,7 @@
 
 # Ignore PHPStorm .idea folder
 .idea/
-.idea\
 .idea/workspace.xml
-.idea\workspace.xml
 
 #############
 ## SVN
@@ -14,7 +12,6 @@
 
 # Ignore SVN folder
 .svn/
-.svn\
 
 ############
 ## Windows
