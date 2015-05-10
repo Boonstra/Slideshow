@@ -38,7 +38,7 @@ slideshow_jquery_image_gallery_backend_script.slideshow.slideManager = function(
 				$slideEditor        = self.$slideshowTemplates.find('.slideshow-slide-editor').clone(true, true),
 				isSlideEditorPlaced = false;
 
-			
+
 
 			// Try to place the slide editor a row below the clicked slide
 			self.$slidesGrid.find('.slideshow-slide').each(function()
