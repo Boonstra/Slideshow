@@ -184,7 +184,16 @@ personal taste.
 == Changelog ==
 
 = 2.3.0 =
-*   TODO
+*   TODO Refactor backend (new post types Settings Profile and Style)
+*	TODO New interface for maintaining slides in a slideshow
+*	TODO More slide sorting options
+*	TODO Auto save slideshows
+*	TODO Selecting image size
+*	TODO Lightbox
+*	TODO Late-loading of slideshows
+*	TODO More YT options (start/end time, option to remove controls, title and description, link)
+*	TODO Automatic removal op 'px' suffix from integer fields
+*	TODO Remove legacy code that allowed WordPress version <3.5 (before media uploader) users to select images.
 
 = 2.2.23 =
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
