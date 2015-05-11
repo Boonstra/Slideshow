@@ -28,7 +28,7 @@
 		this.$loadingIcon      = this.$container.find('.slideshow_loading_icon');
 
 		// Settings
-		this.ID = this.getID();
+		this.ID = this.getSlideshowID();
 
 		if (isNaN(parseInt(this.ID, 10)))
 		{
@@ -36,6 +36,13 @@
 		}
 
 		this.settings = window['SlideshowPluginSettings_' + this.ID];
+
+		if (!this.settings)
+		{
+			self.log('Slideshow (ID: ' + this.ID + ') could not find its settings.');
+
+			return;
+		}
 
 		// Convert 'true' and 'false' to boolean values.
 		$.each(this.settings, $.proxy(function(setting, value)

@@ -9,7 +9,7 @@
 class SlideshowPlugin
 {
 	/** int $sessionCounter */
-	private static $sessionCounter = 0;
+	public static $sessionCounter = 0;
 
 	/**
 	 * Function deploy prints out the prepared html
@@ -103,9 +103,6 @@ class SlideshowPlugin
 		$settings      = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID);
 		$styleSettings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID);
 
-		// The slideshow's session ID, allows JavaScript and CSS to distinguish between multiple slideshows
-		$sessionID = self::$sessionCounter;
-
 		// Only enqueue the functional stylesheet when the 'allStylesheetsRegistered' flag is false
 		if (!SlideshowPluginSlideshowStylesheet::$allStylesheetsRegistered)
 		{
@@ -166,7 +163,7 @@ class SlideshowPlugin
 		// Include slideshow settings by localizing them
 		wp_localize_script(
 			'slideshow-jquery-image-gallery-script',
-			'SlideshowPluginSettings_' . $sessionID,
+			'SlideshowPluginSettings_' . $post->ID,
 			$settings
 		);
 

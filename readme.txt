@@ -187,6 +187,7 @@ personal taste.
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
 *   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
 *	Fixed: HTML5 validation issue when loading stylesheets in the head of the document.
+*   Fixed: Slideshows now load their settings by slideshow ID, instead of the variable session ID.
 *   Updated Spanish translation, thanks to Manuel Ballesta Ruiz.
 
 = 2.2.22 =

@@ -168,6 +168,19 @@ slideshow_jquery_image_gallery_script = function()
 		});
 	};
 
+	/**
+	 * Namespaced log method that is browser safe.
+	 *
+	 * @param message (String)
+	 */
+	self.log = function(message)
+	{
+		if (typeof console == 'object')
+		{
+			console.log('slideshow-jquery-image-gallery:', message);
+		}
+	};
+
 	$(document).ready(function()
 	{
 		self.init();
