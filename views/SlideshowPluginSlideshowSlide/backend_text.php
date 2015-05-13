@@ -38,7 +38,7 @@ if (isset($properties['color']))
 
 if (isset($properties['url']))
 {
-	$url = $properties['url'];
+	$url = htmlspecialchars($properties['url']);
 }
 
 if (isset($properties['urlTarget']))
