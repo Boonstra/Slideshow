@@ -5,6 +5,8 @@ $attachment = get_post($properties['postId']);
 
 if (isset($attachment)):
 
+	$name = htmlspecialchars($name);
+
 	$title = $titleElementTagID = $description = $descriptionElementTagID = $url = $target = $alternativeText = '';
 
     $noFollow = false;
@@ -46,7 +48,7 @@ if (isset($attachment)):
 
 	if (isset($properties['alternativeText']))
 	{
-		$alternativeText = $properties['alternativeText'];
+		$alternativeText = htmlspecialchars($properties['alternativeText']);
 	}
 	else
 	{

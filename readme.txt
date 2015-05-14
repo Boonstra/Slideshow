@@ -183,6 +183,11 @@ personal taste.
 
 == Changelog ==
 
+= 2.2.24 =
+*	Fixed: TODO Session ID / Slideshow ID
+*	Fixed: Unescaped data in slideshow editor.
+*	Fixed: TODO Fixed resizing issue
+
 = 2.2.23 =
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
 *   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
