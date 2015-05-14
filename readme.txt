@@ -184,9 +184,9 @@ personal taste.
 == Changelog ==
 
 = 2.2.24 =
-*	Fixed: TODO Session ID / Slideshow ID
+*	Fixed: Mismatch between session ID and settings ID.
 *	Fixed: Unescaped data in slideshow editor.
-*	Fixed: TODO Fixed resizing issue
+*	Fixed: Resizing issues.
 
 = 2.2.23 =
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
