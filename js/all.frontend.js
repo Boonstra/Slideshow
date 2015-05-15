@@ -177,7 +177,7 @@ slideshow_jquery_image_gallery_script = function()
 	{
 		if (typeof console == 'object')
 		{
-			console.log('slideshow-jquery-image-gallery:', message);
+			console.log('slideshow-jquery-image-gallery', message);
 		}
 	};
 
