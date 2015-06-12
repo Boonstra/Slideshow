@@ -280,7 +280,28 @@ class SlideshowPluginSlideshowSettingsHandler
 			// Get cached settings
 			$slides = self::$slides[$slideshowId];
 		}
-
+		
+		
+		// 2014.11.07 @jmeler
+                $picasa_album_rss=get_post_meta($slideshowId,"picasa_album",true);
++                
++		if ($picasa_album_rss){
+                    $picasa_album = fetch_feed($picasa_album_rss);
+                    if ( !is_wp_error( $picasa_album ) ) {
+                        $picasa_items = $picasa_album->get_items();
+                        foreach($picasa_items as $picasa_item){
+                            $enclosure=$picasa_item->get_enclosure();
+                            $info=$enclosure->get_description();
+                            $url_img=$enclosure->get_link();
+                            $slides[]=array("title"=>$info,"url"=>$url_img,"type"=>"image");
+                        }
+                    }
+                    else{
+                        echo "<p>No es pot obtenir l'àlbum de picasa. <a target='_blank' href='http://agora.xtec.cat/nodes/carrusel/#picasa_rss'>Ajuda</a>.</p>";
+                    }    
+                }
+		// end jmeler
+		
 		// Sort slides by order ID
 		if (is_array($slides))
 		{
@@ -422,6 +443,10 @@ class SlideshowPluginSlideshowSettingsHandler
 		update_post_meta($postId, self::$settingsKey, $newSettings);
 		update_post_meta($postId, self::$styleSettingsKey, $newStyleSettings);
 		update_post_meta($postId, self::$slidesKey, $newPostSlides);
+		
+		// 2014.10.22 @jmeler
+                $picasa_album=isset($_POST["picasa_album"])?$_POST["picasa_album"]:'';
+                update_post_meta($postId, "picasa_album", $picasa_album);
 
 		// Return
 		return $postId;

@@ -259,6 +259,12 @@ class SlideshowPluginPostType
 
 		// End list
 		echo '</div>';
+		
+		// jmeler
+		echo '<hr><p>
+			Picasa album RSS:<input type="text" name="picasa_album" value='.get_post_meta( $post->ID, "picasa_album", true ).'><br>
+                </p>';
+                // end jmeler
 
 		// Templates
 		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
