@@ -24,7 +24,7 @@ class SlideshowPluginWidget extends WP_Widget
 		);
 
 		// Create the widget.
-		$this->WP_Widget(
+		parent::__construct(
 			'slideshowWidget',
 			__('Slideshow Widget', 'slideshow-plugin'),
 			$options

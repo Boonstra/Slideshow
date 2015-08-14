@@ -4,8 +4,8 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 4.2
-Stable tag: 2.2.23
+Tested up to: 4.3
+Stable tag: 2.2.24
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -52,7 +52,8 @@ different images, settings and styles for each one of them.
  - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
  - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/) and others)
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
+ - Russian        (100% - ru_RU - Translated by [Ivanka Skakun](http://www.coupofy.com/) and Dmitry Fatakov)
+ - Russian        (100% - ru_UA - Translated by [Ivanka Skakun](http://www.coupofy.com/))
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
  - Spanish        (100% - es_ES - Translated by [Manuel Ballesta Ruiz](http://mbrsolution.com/) and [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
@@ -184,9 +185,12 @@ personal taste.
 == Changelog ==
 
 = 2.2.24 =
+*   Compatible with WordPress 4.3.
+*   Widget constructor no longer uses deprecated PHP 4 style constructor.
 *	Fixed: Mismatch between session ID and settings ID.
 *	Fixed: Unescaped data in slideshow editor.
 *	Fixed: Resizing issues.
+*   Updated Ukrainian and Russian translations, thanks to Ivanka Skakun.
 
 = 2.2.23 =
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
