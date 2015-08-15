@@ -52,12 +52,12 @@ different images, settings and styles for each one of them.
  - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
  - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/) and others)
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian        (100% - ru_RU - Translated by [Ivanka Skakun](http://www.coupofy.com/) and Dmitry Fatakov)
+ - Russian        (100% - ru_RU - Translated by [Coupofy](http://www.coupofy.com/) and Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
  - Spanish        (100% - es_ES - Translated by [Manuel Ballesta Ruiz](http://mbrsolution.com/) and [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
- - Ukrainian      (100% - uk_UK - Translated by [Ivanka Skakun](http://www.coupofy.com/))
+ - Ukrainian      (100% - uk_UK - Translated by [Coupofy](http://www.coupofy.com/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded
