@@ -1,11 +1,13 @@
 <?php
 
+$name = htmlspecialchars($name);
+
 $videoId           = '';
 $showRelatedVideos = 'false';
 
 if (isset($properties['videoId']))
 {
-	$videoId = $properties['videoId'];
+	$videoId = htmlspecialchars($properties['videoId']);
 }
 
 if (isset($properties['showRelatedVideos']) &&

@@ -2,83 +2,85 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-14 15:40+0200\n"
-"PO-Revision-Date: 2015-08-14 15:40+0200\n"
+"POT-Creation-Date: 2015-08-15 09:45+0200\n"
+"PO-Revision-Date: 2015-08-15 09:45+0200\n"
 "Last-Translator: Dmitry Fatakov <dfatakov@mail.ru>\n"
 "Language-Team: Stefan Boonstra <wordpress@stefanboonstra.com>\n"
-"Language: ru_RU\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: classes/SlideshowPluginGeneralSettings.php:82
 #: classes/SlideshowPluginGeneralSettings.php:83
 #: views/SlideshowPluginGeneralSettings/general-settings.php:14
 msgid "General Settings"
-msgstr "Основные настройки"
+msgstr "Загальні налаштування"
 
 #: classes/SlideshowPluginGeneralSettings.php:150
 msgid "New"
-msgstr "Новый"
+msgstr "Новий"
 
 #: classes/SlideshowPluginGeneralSettings.php:151
 msgid "Are you sure you want to delete this custom style?"
-msgstr "Удалить этот стиль?"
+msgstr "Видалити цей стиль?"
 
 #: classes/SlideshowPluginGeneralSettings.php:196
 #: classes/SlideshowPluginInstaller.php:803
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:6
 msgid "Light"
-msgstr "Светлый"
+msgstr "Світлий"
 
 #: classes/SlideshowPluginGeneralSettings.php:197
 #: classes/SlideshowPluginInstaller.php:803
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:7
 msgid "Dark"
-msgstr "Тёмный"
+msgstr "Темний"
 
 #: classes/SlideshowPluginGeneralSettings.php:353
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:57
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:143
 msgid "Untitled"
-msgstr "Без заголовка"
+msgstr "Без назви"
 
 #: classes/SlideshowPluginInstaller.php:800
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:472
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:111
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:45
 msgid "Yes"
-msgstr "Да"
+msgstr "Так"
 
 #: classes/SlideshowPluginInstaller.php:801
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:473
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:112
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:46
 msgid "No"
-msgstr "Нет"
+msgstr "Ні"
 
 #: classes/SlideshowPluginInstaller.php:803
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:610
 msgid "The style used for this slideshow"
-msgstr "Стиль, используемый в этом слайдшоу"
+msgstr "Стиль що використовується для цього показу слайдів"
 
 #: classes/SlideshowPluginInstaller.php:803
 msgid "Custom"
-msgstr "Собственный"
+msgstr "Власний"
 
 #: classes/SlideshowPluginInstaller.php:804
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:126
 msgid "Custom style editor"
-msgstr "Редактор собственного стиля"
+msgstr "Власний налаштувач стилю "
 
 #: classes/SlideshowPluginInstaller.php:805
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:518
 msgid "Animation used for transition between slides"
-msgstr "Анимация, используемая для перехода между слайдами"
+msgstr "Анімація, що використовується  для переходу між слайдами"
 
 #: classes/SlideshowPluginInstaller.php:805
 msgid "Slide"
@@ -87,7 +89,7 @@ msgstr "Слайд"
 #: classes/SlideshowPluginInstaller.php:805
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Fade"
-msgstr "Затухание"
+msgstr "Загасання"
 
 #: classes/SlideshowPluginInstaller.php:805
 #: classes/SlideshowPluginInstaller.php:806
@@ -98,27 +100,27 @@ msgstr "Затухание"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:549
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:550
 msgid "Animation"
-msgstr "Анимационные"
+msgstr "Анімація"
 
 #: classes/SlideshowPluginInstaller.php:806
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:519
 msgid "Number of seconds the slide takes to slide in"
-msgstr "Число секунд, которое занимает появление слайда"
+msgstr "Кількість секунд, яке займає поява слайда"
 
 #: classes/SlideshowPluginInstaller.php:807
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:520
 msgid "Number of seconds the description takes to slide in"
-msgstr "Число секунд, которое занимает появление текста"
+msgstr "Кількість секунд, яке займає поява тексту"
 
 #: classes/SlideshowPluginInstaller.php:808
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:521
 msgid "Seconds between changing slides"
-msgstr "Секунд между сменой слайдов"
+msgstr "Секунд між зміною слайдів"
 
 #: classes/SlideshowPluginInstaller.php:809
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:522
 msgid "Number of slides to fit into one slide"
-msgstr "Число слайдов, размещённых в одном слайде"
+msgstr "Число слайдів, розміщених в одному слайді"
 
 #: classes/SlideshowPluginInstaller.php:809
 #: classes/SlideshowPluginInstaller.php:810
@@ -137,41 +139,41 @@ msgstr "Число слайдов, размещённых в одном слай
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:558
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:559
 msgid "Display"
-msgstr "Визуальные"
+msgstr "Відобрпажати"
 
 #: classes/SlideshowPluginInstaller.php:810
 msgid "Width of the slideshow, set to parent&#39;s width on 0"
 msgstr ""
-"Ширина слайдшоу. Установите в 0 для определения ширины по родительскому "
-"элементу"
+"Ширина слайдшоу. Встановіть у 0 для визначення ширини по батьківському "
+"елементу"
 
 #: classes/SlideshowPluginInstaller.php:811
 msgid "Height of the slideshow"
-msgstr "Высота слайдшоу"
+msgstr "Висота слайдшоу"
 
 #: classes/SlideshowPluginInstaller.php:812
 msgid "Height of the description boxes"
-msgstr "Высота блока описания"
+msgstr "Висота блоку опису"
 
 #: classes/SlideshowPluginInstaller.php:813
 msgid "Fit image into slide (stretching it)"
-msgstr "Уместить изображение в слайд (растянуть его)"
+msgstr "Умістити зображення в слайд (розтягнути його)"
 
 #: classes/SlideshowPluginInstaller.php:814
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:529
 msgid "Show title and description"
-msgstr "Показать заголовок и описание"
+msgstr "Показати назву і опис"
 
 #: classes/SlideshowPluginInstaller.php:815
 msgid "Hide description box, it will pop up when a mouse hovers over the slide"
 msgstr ""
-"Скрыть блок описания. Он будет появляться при наведении указателя мыши "
-"поверх слайда"
+"Приховати блок опису. Він буде з'являтися при наведенні покажчика миші "
+"поверх слайду"
 
 #: classes/SlideshowPluginInstaller.php:816
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:531
 msgid "Automatically slide to the next slide"
-msgstr "Автоматический переход к следующему слайду"
+msgstr "Автоматичний перехід до наступного слайду"
 
 #: classes/SlideshowPluginInstaller.php:816
 #: classes/SlideshowPluginInstaller.php:817
@@ -187,20 +189,20 @@ msgstr "Автоматический переход к следующему сл
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:567
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:568
 msgid "Control"
-msgstr "Управляющие"
+msgstr "Контроль"
 
 #: classes/SlideshowPluginInstaller.php:817
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:532
 msgid "Return to the beginning of the slideshow after last slide"
-msgstr "Вернуться в начало слайдшоу после последнего слайда"
+msgstr "Назад в початок слайдшоу після останнього слайда"
 
 #: classes/SlideshowPluginInstaller.php:818
 msgid "Activate buttons (so the user can scroll through the slides)"
-msgstr "Активировать кнопки (пользователь сможет пролистывать слайды)"
+msgstr "Активувати кнопки (користувач зможе перегортати слайди)"
 
 #: classes/SlideshowPluginInstaller.php:819
 msgid "Show control panel (play and pause button)"
-msgstr "Отображать панель управления (кнопка воспроизведения и останова)"
+msgstr "Відображати панель управління (кнопка відтворення і зупинки)"
 
 #: classes/SlideshowPluginPostType.php:45
 msgid "Slideshows"
@@ -213,36 +215,36 @@ msgstr "Слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:47
 msgid "Add New Slideshow"
-msgstr "Добавить новое слайдшоу"
+msgstr "Додати нове слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:48
 msgid "Edit slideshow"
-msgstr "Редактировать слайдшоу"
+msgstr "Редагувати слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:49
 msgid "New slideshow"
-msgstr "Новое слайдшоу"
+msgstr "Нове слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:50
 msgid "View slideshow"
-msgstr "Просмотр слайдшоу"
+msgstr "Переглянути слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:51
 msgid "Search slideshows"
-msgstr "Поиск слайдшоу"
+msgstr "Пошук слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:52
 #: classes/SlideshowPluginPostType.php:53
 msgid "No slideshows found"
-msgstr "Ни одного слайдшоу не найдено"
+msgstr "Не знайдено жодного слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:98
 msgid "Information"
-msgstr "Информация"
+msgstr "Інформація"
 
 #: classes/SlideshowPluginPostType.php:107
 msgid "Slides List"
-msgstr "Список слайдов"
+msgstr "Список слайдів"
 
 #: classes/SlideshowPluginPostType.php:116
 msgid "Slideshow Style"
@@ -250,70 +252,70 @@ msgstr "Стиль слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:125
 msgid "Slideshow Settings"
-msgstr "Настройки слайдшоу"
+msgstr "Налаштування слайдшоу"
 
 #: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow created"
-msgstr "Слайдшоу создан"
+msgstr "Слайдшоу створено"
 
 #: classes/SlideshowPluginPostType.php:177
 msgid "Slideshow updated"
-msgstr "Слайдшоу обновлен"
+msgstr "Слайдшоу оновлено"
 
 #: classes/SlideshowPluginPostType.php:224
 #: classes/SlideshowPluginSlideInserter.php:238
 #: views/SlideshowPluginPostType/slides.php:2
 msgid "Insert"
-msgstr "Вставить"
+msgstr "Вставити"
 
 #: classes/SlideshowPluginPostType.php:232
 msgid "Open all"
-msgstr "Открыть все"
+msgstr "Відкрити все"
 
 #: classes/SlideshowPluginPostType.php:234
 msgid "Close all"
-msgstr "Закрыть все"
+msgstr "Закрити все"
 
 #: classes/SlideshowPluginPostType.php:240
 #: views/SlideshowPluginPostType/slides.php:10
 msgid "Add slides to this slideshow by using one of the buttons above."
-msgstr "Добавить слайды к слайдшоу с помощью одной из кнопок ниже"
+msgstr "Додати слайди до слайдшоу за допомогою однієї з кнопок нижче"
 
 #: classes/SlideshowPluginPostType.php:320
 msgid "Duplicate"
-msgstr "Дублировать"
+msgstr "Дублювати"
 
 #: classes/SlideshowPluginPostType.php:371
 msgid "Copy"
-msgstr "Копировать"
+msgstr "Копіювати"
 
 #: classes/SlideshowPluginShortcode.php:148
 msgid "No slideshow selected."
-msgstr "Не выбрано слайдшоу."
+msgstr "Не вибрано слайдшоу."
 
 #: classes/SlideshowPluginSlideInserter.php:194
 msgid "More results loaded"
-msgstr "Другие результаты загружаются"
+msgstr "Інші результати завантажуються"
 
 #: classes/SlideshowPluginSlideInserter.php:249
 msgid "Load more results"
-msgstr "Загрузить больше результатов"
+msgstr "Завантажити більше результатів"
 
 #: classes/SlideshowPluginSlideInserter.php:260
 msgid "No images were found, click here to upload some."
-msgstr "Не найдено изображений, щёлкните здесь для загрузки"
+msgstr "Не знайдено зображень, клацніть тут для завантаження"
 
 #: classes/SlideshowPluginSlideInserter.php:332
 msgid "Are you sure you want to delete this slide?"
-msgstr "Удалить этот слайд?"
+msgstr "Ви впевнені, що хочете видалити цей слайд?"
 
 #: classes/SlideshowPluginSlideInserter.php:333
 msgid "Insert image slide"
-msgstr "Вставить слайд - изображение"
+msgstr "Вставити слайд - зображення"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:523
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
-msgstr "Максимальная ширина. Когда равно 0, параметр игнорируется"
+msgstr "Максимальна ширина. Коли прирівнюється до 0, параметр ігнорується"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
@@ -321,7 +323,7 @@ msgstr "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 msgid "More info"
-msgstr "Далее"
+msgstr "Надалі"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 #, php-format
@@ -329,135 +331,133 @@ msgid ""
 "Proportional relationship%s between slideshow's width and height (width:"
 "height)"
 msgstr ""
-"Пропорциональная зависимость %s между шириной и высотой слайдшоу (ширина:"
-"высота)"
+"Пропорційна залежність %s між шириною і висотою слайдшоу (ширина: висота)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:525
 msgid "Slideshow's height"
-msgstr "Высота слайдшоу"
+msgstr "Висота слайдшоу"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:526
 msgid "Image behaviour"
-msgstr "Показ изображения"
+msgstr "Поведінка зображення"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:527
 msgid "Shrink slideshow's height when width shrinks"
-msgstr "Уменьшать высоту слайдшоу при уменьшении ширины слайдшоу"
+msgstr "Зменшувати висоту слайдшоу при зменшенні ширини слайдшоу"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:528
 msgid ""
 "Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
 msgstr ""
-"Включить отзывчивость (Уменьшать шарану слайдшоу при уменьшении ширины "
-"страницы)"
+"Включити чуйність (Зменшувати ширину слайдшоу при зменшенні ширини сторінки)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:530
 msgid "Hide description box, pop up when mouse hovers over"
-msgstr "Спрятать описание, показать при наведении курсора"
+msgstr "Сховати опис, показати при наведенні курсору"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:533
 msgid "Pause slideshow when mouse hovers over"
-msgstr "Приостанавливать слайдшоу при наведении курсора"
+msgstr "Призупиняти слайдшоу при наведенні курсору"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:534
 msgid "Activate navigation buttons"
-msgstr "Активировать кнопки навигации"
+msgstr "Активувати кнопки навігації"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:535
 msgid "Hide navigation buttons, show when mouse hovers over"
-msgstr "Спрятать кнопки навигации, показать при наведении курсора"
+msgstr "Заховати кнопки навігації, показати при наведенні курсору"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:536
 msgid "Activate pagination"
-msgstr "Активировать постраничную навигацию"
+msgstr "Активувати посторінкову навігацію"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:537
 msgid "Hide pagination, show when mouse hovers over"
-msgstr "Спрятать постраничную навигацию, показать при наведении курсора"
+msgstr "Заховати посторінкову навігацію, показати при наведенні курсору"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:538
 msgid "Activate control panel (play and pause button)"
-msgstr "Активировать панель управления (кнопки запуск и пауза)"
+msgstr "Активувати панель управління (кнопки запуск і пауза)"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:539
 msgid "Hide control panel, show when mouse hovers over"
-msgstr "Спрятать панель управления, показывать при наведении курсора"
+msgstr "Заховати панель управління, показувати при наведенні курсору"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:540
 msgid "Wait until the next slide has loaded before showing it"
-msgstr "Дождитесь загрузки следующего слайда, перед его показом"
+msgstr "Дочекайтеся завантаження наступного слайда, перед його показом"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:541
 msgid "Show a loading icon until the first slide appears"
-msgstr "Показывать иконку загрузки перед тем, как появится следующий слайд"
+msgstr "Показувати іконку завантаження перед тим, як з'явиться наступний слайд"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:542
 msgid "Randomize slides"
-msgstr "Слайды в случайном порядке"
+msgstr "Слайди у випадковому порядку"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:543
 #, php-format
 msgid "Avoid content filter (disable if '%s' is shown)"
-msgstr "Избегать фильтра содержимого (запрещено, если отображается '%s' )"
+msgstr "Уникати фільтру вмісту (заборонено, якщо відображається '%s')"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Left"
-msgstr "Сдвиг влево"
+msgstr "Зрушення вліво"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Right"
-msgstr "Сдвиг вправо"
+msgstr "Зрушення вправо"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Up"
-msgstr "Сдвиг вверх"
+msgstr "Зрушення у верх"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Down"
-msgstr "Сдвиг вниз"
+msgstr "Зрушення вниз"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Cross Fade"
-msgstr "Плавное затухание"
+msgstr "Плавне загасання"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Direct Fade"
-msgstr "Вспышка"
+msgstr "Спалах"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Random Animation"
-msgstr "Произвольная анимация"
+msgstr "Довільна анімація"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Natural and centered"
-msgstr "Естественно и по центру"
+msgstr "Натурально і по центру"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Crop to fit"
-msgstr "Кадрирование"
+msgstr "Кадрування"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Stretch to fit"
-msgstr "Растягивание"
+msgstr "Розтягування"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:569
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:570
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:571
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:572
 msgid "Miscellaneous"
-msgstr "Разные"
+msgstr "Різне"
 
 #: classes/SlideshowPluginWidget.php:23
 msgid "Enables you to show your slideshows in the widget area of your website."
-msgstr "Позволяет отобразить ваше слайдшоу в области виджетов вашего сайта"
+msgstr "Дозволяє відображати ваше слайдшоу в області віджетів вашого сайту"
 
 #: classes/SlideshowPluginWidget.php:29
 msgid "Slideshow Widget"
-msgstr "Виджет слайдшоу"
+msgstr "Віджет слайдшоу"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Play"
-msgstr "Воспроизвести"
+msgstr "Відтворити"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Pause"
@@ -465,61 +465,61 @@ msgstr "Пауза"
 
 #: views/SlideshowPlugin/slideshow.php:25
 msgid "Previous"
-msgstr "Предыдущий"
+msgstr "Попередній"
 
 #: views/SlideshowPlugin/slideshow.php:26
 msgid "Next"
-msgstr "Следующий"
+msgstr "Наступний"
 
 #: views/SlideshowPlugin/slideshow.php:28
 msgid "Go to slide"
-msgstr "Перейти к слайду"
+msgstr "Перейти до слайду"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:46
 msgid "Default stylesheets"
-msgstr "Стили по-умолчанию"
+msgstr "Стилі за замовчуванням"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:60
 msgid "Create a new custom style from this style"
-msgstr "Создать новый стиль"
+msgstr "Створити новий стиль"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:62
 msgid "Customize"
-msgstr "Изменить"
+msgstr "Змінити"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:76
 msgid "Custom stylesheets"
-msgstr "Измененные стили"
+msgstr "Змінені стилі"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:89
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:172
 msgid "Edit this style"
-msgstr "Редактировать стиль"
+msgstr "Редагувати цей стиль"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:91
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:174
 #: views/SlideshowPluginPostType/slides.php:138
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:114
 msgid "Edit"
-msgstr "Редактировать"
+msgstr "Редагувати"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:98
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:181
 msgid "Delete this style"
-msgstr "Удалить этот стиль"
+msgstr "Видалити цей стиль"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:100
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:183
 msgid "Delete"
-msgstr "Удалить"
+msgstr "Видалити"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:110
 msgid "Click 'Customize' to create a new custom stylesheet."
-msgstr "Нажмите 'Изменить', чтобы создать новый стиль"
+msgstr "Натисніть 'Змінити', щоб створити новий стиль"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:130
 msgid "Select a stylesheet to start customizing it."
-msgstr "Выберите стиль перед началом настройки."
+msgstr "Виберіть стиль перед початком налаштування."
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:139
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:192
@@ -533,16 +533,16 @@ msgstr "Выберите стиль перед началом настройки
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:82
 #: views/SlideshowPluginWidget/form.php:2
 msgid "Title"
-msgstr "Заголовок"
+msgstr "Назва"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:148
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:200
 msgid "Style"
-msgstr "Style"
+msgstr "Стиль"
 
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:11
 msgid "Note"
-msgstr "Заметка"
+msgstr "Примітка"
 
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:18
 #, php-format
@@ -551,55 +551,54 @@ msgid ""
 "therefore do not alter any existing ones. To adapt a slideshow's settings, "
 "%sclick here.%s"
 msgstr ""
-"Заданные здесь настройки будут применены только к новым слайдшоу и не "
-"затронут уже существующие. Для изменения существующих, %sнажмите здесь.%s"
+"Задані тут налаштування будуть застосовані тільки до нових слайдшоу і не "
+"торкнуться вже існуючих. Для зміни існуючих,%sнатисніть тут.%s"
 
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:29
 #: views/SlideshowPluginGeneralSettings/general-settings.php:15
 msgid "Default Slideshow Settings"
-msgstr "Настройки слайдшоу по-умолчанию"
+msgstr "Налаштування слайдшоу за-замовчуванням"
 
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:41
 #: views/SlideshowPluginPostType/settings.php:12
 msgid "settings"
-msgstr "настройки"
+msgstr "налаштування"
 
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:77
 msgid "Default Slideshow Stylesheet"
-msgstr "Стили слайдшоу по-умолчанию"
+msgstr "Стиль слайдшоу за-замовчуванням"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:11
 msgid "Add slideshows"
-msgstr "Добавить слайдшоу"
+msgstr "Додати слайдшоу"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:12
 msgid "Edit slideshows"
-msgstr "Редактировать слайдшоу"
+msgstr "Редагувати слайдшоу"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:13
 msgid "Delete slideshows"
-msgstr "Удалить слайдшоу"
+msgstr "Видалити слайдшоу"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:20
 msgid "User Capabilities"
-msgstr "Возможности пользователей"
+msgstr "Можливості користувачів"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:22
 msgid "Select the user roles that will able to perform certain actions."
-msgstr ""
-"Выберите роли пользователей, которым будет разрешены определенные действия."
+msgstr "Виберіть ролі користувачів, яким буде дозволено певні дії."
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:38
 msgid "Untitled role"
-msgstr "Роль без заголовка"
+msgstr "Роль без назви"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:65
 msgid "Settings"
-msgstr "настройки"
+msgstr "Налаштування"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:69
 msgid "Stylesheet location"
-msgstr "Расположение таблицы стилей"
+msgstr "Розташування таблиці стилів"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:72
 msgid "top"
@@ -611,34 +610,33 @@ msgstr "Вниз"
 
 #: views/SlideshowPluginGeneralSettings/general-settings.php:16
 msgid "Custom Styles"
-msgstr "Измененные стили"
+msgstr "Змінені стилі"
 
 #: views/SlideshowPluginPostType/information.php:1
 msgid ""
 "To use this slideshow in your website either add this piece of shortcode to "
 "your posts or pages"
 msgstr ""
-"Для использования слайдшоу на вашем сайте добавьте этот шорткод в ваши "
-"записи или страницы"
+"Для використання слайдшоу на вашому сайті додайте цей шорткод у ваші записи "
+"або сторінки"
 
 #: views/SlideshowPluginPostType/information.php:5
 msgid ""
 "Or add this piece of code to where ever in your website you want to place "
 "the slideshow"
 msgstr ""
-"Или добавьте этот фрагмент кода в том месте, где вы желаете разместить ваше "
+"Або додайте цей фрагмент коду в тому місці, де ви бажаєте розмістити ваше "
 "слайдшоу"
 
 #: views/SlideshowPluginPostType/information.php:9
 #, php-format
 msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
-msgstr ""
-"Или отправьтесь на %sстраницу виджетов%s и отобразите слайдшоу как виджет"
+msgstr "Або рушайте на %sсторінку віджетів%s і покажіть слайдшоу як віджет."
 
 #: views/SlideshowPluginPostType/settings.php:26
 #: views/SlideshowPluginPostType/style-settings.php:11
 msgid "Default"
-msgstr "Исходное"
+msgstr "за замовчуванням"
 
 #: views/SlideshowPluginPostType/slides.php:54
 #: views/SlideshowPluginPostType/slides.php:191
@@ -646,7 +644,7 @@ msgstr "Исходное"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:9
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:71
 msgid "Text slide"
-msgstr "Текстовый слайд"
+msgstr "Текстовий слайд"
 
 #: views/SlideshowPluginPostType/slides.php:61
 #: views/SlideshowPluginPostType/slides.php:150
@@ -657,14 +655,14 @@ msgstr "Текстовый слайд"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:165
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:97
 msgid "Description"
-msgstr "Описание"
+msgstr "Опис"
 
 #: views/SlideshowPluginPostType/slides.php:63
 #: views/SlideshowPluginPostType/slides.php:200
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:51
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:115
 msgid "Background color"
-msgstr "Фоновый цвет"
+msgstr "Фоновий колір"
 
 #: views/SlideshowPluginPostType/slides.php:68
 #: views/SlideshowPluginPostType/slides.php:155
@@ -686,7 +684,7 @@ msgstr "URL"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:183
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:126
 msgid "Open URL in"
-msgstr "Открыть URL в"
+msgstr "Відкрити URL в"
 
 #: views/SlideshowPluginPostType/slides.php:72
 #: views/SlideshowPluginPostType/slides.php:159
@@ -697,7 +695,7 @@ msgstr "Открыть URL в"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:185
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:128
 msgid "Same window"
-msgstr "Текущее окно"
+msgstr "Поточне вікно"
 
 #: views/SlideshowPluginPostType/slides.php:73
 #: views/SlideshowPluginPostType/slides.php:160
@@ -708,7 +706,7 @@ msgstr "Текущее окно"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:186
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:129
 msgid "New window"
-msgstr "Новое окно"
+msgstr "Нове вікно"
 
 #: views/SlideshowPluginPostType/slides.php:90
 #: views/SlideshowPluginPostType/slides.php:230
@@ -716,14 +714,14 @@ msgstr "Новое окно"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:94
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:28
 msgid "Video slide"
-msgstr "Видео слайд"
+msgstr "Відео слайд"
 
 #: views/SlideshowPluginPostType/slides.php:95
 #: views/SlideshowPluginPostType/slides.php:235
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:103
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:37
 msgid "Youtube Video ID"
-msgstr "ID видео на Youtube"
+msgstr "ID відео на Youtube"
 
 #: views/SlideshowPluginPostType/slides.php:133
 #: views/SlideshowPluginPostType/slides.php:255
@@ -732,14 +730,15 @@ msgstr "ID видео на Youtube"
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:103
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:135
 msgid "Image slide"
-msgstr "Слайд с изображением"
+msgstr "Слайд із зображенням"
 
 #: views/SlideshowPluginPostType/slides.php:171
 msgid ""
 "An error occurred while loading this slide, and it will not be present in "
 "the slideshow"
 msgstr ""
-"При загрузке этого слайда произошла ошибка, он не будет отображен в слайдшоу"
+"При завантаженні цього слайда сталася помилка, він не буде відображений у "
+"слайдшоу"
 
 #: views/SlideshowPluginPostType/slides.php:177
 #: views/SlideshowPluginPostType/slides.php:218
@@ -752,16 +751,16 @@ msgstr ""
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:140
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:51
 msgid "Delete slide"
-msgstr "Удалить слайд"
+msgstr "Видалити слайд"
 
 #: views/SlideshowPluginPostType/style-settings.php:22
 #, php-format
 msgid "Custom styles can be created and customized %shere%s."
-msgstr "Стили могут быть созданы и изменены %sздесь%s."
+msgstr "Стилі можуть бути створені й змінені %sтут%s."
 
 #: views/SlideshowPluginPostType/support-plugin.php:3
 msgid "Help to keep this plugin free!"
-msgstr "Помогите сохранить плагин свободным!"
+msgstr "Допоможіть зберегти плагін безкоштовним!"
 
 #: views/SlideshowPluginPostType/support-plugin.php:6
 msgid ""
@@ -770,24 +769,24 @@ msgid ""
 "consider making a small donation to the plugin or rating it as 5-stars on "
 "Wordpress.org. Thank you in advance!"
 msgstr ""
-"Для предоставления вам новейших возможностей, поддержки на форуме, "
-"исправлении ошибок необходима значительная мотивация. Поэтому просим вас "
-"сделать небольшое пожертвование плагину или оценить его в пять баллов на "
-"сайте Wordpress.org. Заранее спасибо!"
+"Для надання вам нових можливостей, підтримки на форумі, виправленні помилок "
+"необхідна значна мотивація. Тому просимо вас зробити невеличкий внесок до "
+"плагіну або оцінити його в п'ять балів на сайті Wordpress.org. Заздалегідь "
+"дякую!"
 
 #: views/SlideshowPluginPostType/support-plugin.php:15
 msgid "Rate on Wordpress.org"
-msgstr "Поставить оценку на Wordpress.org"
+msgstr "Оцінювання та відгук на WordPress.org"
 
 #: views/SlideshowPluginPostType/support-plugin.php:24
 msgid "Frequently Asked Questions (FAQ)"
-msgstr "Часто Задаваемые Вопросы (ЧАВО)"
+msgstr "Часті питання (ЧАВО)"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:13
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:24
 msgid "Insert a Slideshow"
-msgstr "Вставить слайдшоу"
+msgstr "Вставити слайдшоу"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:57
@@ -796,31 +795,31 @@ msgstr "Вставка слайдшоу"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:33
 msgid "Select a slideshow"
-msgstr "Выберите слайдшоу"
+msgstr "Виберіть слайдшоу"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:42
 #: views/SlideshowPluginWidget/form.php:12
 msgid "Untitled slideshow"
-msgstr "Сладйшоу без заголовка"
+msgstr "Сладйшоу без назви"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:62
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Скасування"
 
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:73
 #, php-format
 msgid ""
 "It seems you haven't created any slideshows yet. %sYou can create a "
 "slideshow here!%s"
-msgstr "Нет ни одного слайдшоу. %sВы можете создать слайдшоу здесь!%s"
+msgstr "Немає жодного слайдшоу. %sВи можете створити слайдшоу тут!%s"
 
 #: views/SlideshowPluginSlideInserter/search-popup.php:6
 msgid "Search"
-msgstr "Поиск"
+msgstr "Пошук"
 
 #: views/SlideshowPluginSlideInserter/search-popup.php:7
 msgid "Search images by title or ID"
-msgstr "Поиск изображения по заголовку или ID"
+msgstr "Пошук зображення за назвою або ID"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:92
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:4
@@ -829,42 +828,42 @@ msgstr "Поиск изображения по заголовку или ID"
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:60
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:23
 msgid "Click to toggle"
-msgstr "Переключить"
+msgstr "Переключити"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:162
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:190
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:133
 msgid "Don't let search engines follow link"
-msgstr "Не позволять поисковым системам следовать за ссылкой"
+msgstr "Не дозволяти пошуковим системам слідувати за посиланням"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:170
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:197
 msgid "Alternative text"
-msgstr "Альтернативный текст"
+msgstr "Альтернативний текст"
 
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:48
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:112
 msgid "Text color"
-msgstr "Цвет текста"
+msgstr "Колір тексту"
 
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:53
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:117
 msgid "(Leave empty for a transparent background)"
-msgstr "(Оставить пустым для прозрачного фона)"
+msgstr "(Залишити порожнім для прозорого фону)"
 
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:44
 msgid "Show related videos"
-msgstr "Показать похожие видео"
+msgstr "Показати схожі відео"
 
 #: views/SlideshowPluginUpload/upload-button.php:1
 msgid "Upload/Manage Images"
-msgstr "Загрузка/Управление изображениями"
+msgstr "Завантаження/Управління зображеннями"
 
 #: views/SlideshowPluginWidget/form.php:9
 msgid "Random Slideshow"
-msgstr "Случайный порядок слайдшоу"
+msgstr "Довільне слайдшоу"
 
 #~ msgid "Fit image into slide (Stretch image)"
 #~ msgstr "Вписать изображение в слайд (Растянуть изображение)"

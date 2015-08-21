@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="ffa15d61-e398-4b3b-bd02-9b782c0aeb7a" name="Default" comment="" />
+    <list default="true" readonly="true" id="ffa15d61-e398-4b3b-bd02-9b782c0aeb7a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-original.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-original.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPlugin.php" afterPath="$PROJECT_DIR$/classes/SlideshowPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginSlideshowStylesheet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" afterPath="$PROJECT_DIR$/classes/SlideshowPluginWidget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.frontend.min.js" afterPath="$PROJECT_DIR$/js/min/all.frontend.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_attachment.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_attachment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_video.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginShortcode/shortcode-inserter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-es_ES.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-nl_NL.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-original.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-original.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" afterPath="$PROJECT_DIR$/languages/slideshow-plugin-ru_RU.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" afterPath="$PROJECT_DIR$/views/SlideshowPlugin/slideshow.php" />
+    </list>
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,28 +36,29 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="slideshow-jquery-image-gallery" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="slideshow.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="slideshow.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/slideshow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3128">
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#6#530#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.6981132" vertical-offset="0" max-vertical-offset="9095">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,6 +70,21 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/slideshow.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -69,7 +107,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -81,6 +119,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -477,13 +516,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -491,36 +536,13 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <browser start="false" url="" with-js-debugger="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
-    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true" SSL_PROTOCOLS="all">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
+  <component name="SvnConfiguration" myUseAcceleration="nothing" cleanupOnStartRun="true">
     <configuration useDefault="false">C:\Users\Stefan Boonstra\AppData\Roaming\Subversion</configuration>
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="SvnFileUrlMappingImpl">
@@ -545,14 +567,19 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="ffa15d61-e398-4b3b-bd02-9b782c0aeb7a" name="Default" comment="" />
       <created>1396302930519</created>
+      <option name="number" value="Default" />
       <updated>1396302930519</updated>
     </task>
     <task id="LOCAL-00001" summary="Compatible with WordPress 3.9.&#10;Added &quot;Cross Fade&quot; option to the animation settings.&#10;Updated the API to support retrieving the direction of the animation on the animation event.&#10;Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)&#10;Fixed: HTML5 validation issue.&#10;Fixed: Permission check that checked for &quot;edit_post&quot; instead of &quot;edit_slideshow&quot;.">
       <created>1396303484120</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
       <updated>1396303484120</updated>
     </task>
     <task id="LOCAL-00002" summary="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous.">
       <created>1429804438115</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
       <updated>1429804438115</updated>
     </task>
     <option name="localTasksCounter" value="3" />
@@ -562,26 +589,27 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25239617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -593,52 +621,83 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
     <MESSAGE value="Compatible with WordPress 3.9.&#10;Added &quot;Cross Fade&quot; option to the animation settings.&#10;Updated the API to support retrieving the direction of the animation on the animation event.&#10;Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)&#10;Fixed: HTML5 validation issue.&#10;Fixed: Permission check that checked for &quot;edit_post&quot; instead of &quot;edit_slideshow&quot;." />
     <MESSAGE value="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous." />
     <option name="LAST_COMMIT_MESSAGE" value="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#530#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="0" selection-start="9654" selection-end="9654" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="9095">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2958">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#530#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="174" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/SlideshowPlugin/functional.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2635">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/min/all.frontend.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.6981132" vertical-offset="0" max-vertical-offset="9095">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slideshow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#530#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
 </project>
-

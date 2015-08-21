@@ -174,55 +174,16 @@ slideshow_jquery_image_gallery_script = function()
 	};
 
 	/**
-	 * Generates admin AJAX stylesheet URLs for all slideshows.
+	 * Namespaced log method that is browser safe.
 	 *
-	 * When forceGenerate is set to true, it will generate stylesheet URLs for slideshows that already have a matching
-	 * stylesheet as well.
-	 *
-	 * @param forceGenerate (boolean, defaults to false)
+	 * @param message (String)
 	 */
-	self.generateStylesheetURLs = function(forceGenerate)
+	self.log = function(message)
 	{
-		var $slideshows = $('.slideshow_container'),
-			adminURL    = window.slideshow_jquery_image_gallery_script_adminURL;
-
-		if ($slideshows.length <= 0 ||
-			typeof adminURL !== 'string' ||
-			adminURL.length <= 0)
+		if (typeof console == 'object')
 		{
-			return;
+			console.log('slideshow-jquery-image-gallery', message);
 		}
-
-		$.each($slideshows, function(key, slideshow)
-		{
-			var $slideshow   = $(slideshow),
-				styleName    = $slideshow.attr('data-style-name'),
-				styleVersion = $slideshow.attr('data-style-version'),
-				styleID      = 'slideshow-jquery-image-gallery-ajax-stylesheet_' + styleName + '-css',
-				$originalStylesheet,
-				stylesheetURL;
-
-			if (typeof styleName === 'string' &&
-				typeof styleVersion === 'string' &&
-				styleName.length > 0 &&
-				styleVersion.length > 0)
-			{
-				if (!forceGenerate &&
-					typeof forceGenerate === 'boolean')
-				{
-					$originalStylesheet = $('#' + styleID);
-
-					if ($originalStylesheet.length > 0)
-					{
-						return;
-					}
-				}
-
-				stylesheetURL = adminURL + 'admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' + styleName + '&ver=' + styleVersion;
-
-				$('head').append('<link rel="stylesheet" id="' + styleID + '" href="' + stylesheetURL + '" type="text/css" media="all">');
-			}
-		});
 	};
 
 	$(document).ready(function()

@@ -1,5 +1,7 @@
 <?php
 
+$name = htmlspecialchars($name);
+
 $title = $description = $textColor = $color = $url = $target = '';
 
 $titleElementTagID = $descriptionElementTagID = SlideshowPluginSlideInserter::getElementTag();
@@ -28,17 +30,17 @@ if (isset($properties['descriptionElementTagID']))
 
 if (isset($properties['textColor']))
 {
-	$textColor = $properties['textColor'];
+	$textColor = htmlspecialchars($properties['textColor']);
 }
 
 if (isset($properties['color']))
 {
-	$color = $properties['color'];
+	$color = htmlspecialchars($properties['color']);
 }
 
 if (isset($properties['url']))
 {
-	$url = $properties['url'];
+	$url = htmlspecialchars($properties['url']);
 }
 
 if (isset($properties['urlTarget']))

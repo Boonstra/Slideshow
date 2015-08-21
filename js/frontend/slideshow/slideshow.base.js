@@ -451,13 +451,13 @@
 	 *
 	 * @return int ID
 	 */
-	self.Slideshow.prototype.getID = function()
+	self.Slideshow.prototype.getSlideshowID = function()
 	{
-		var ID = this.$container.data('sessionId');
+		var ID = this.$container.data('slideshowId');
 
 		if (isNaN(parseInt(ID, 10)))
 		{
-			ID = this.$container.attr('data-session-id');
+			ID = this.$container.attr('data-slideshow-id');
 		}
 
 		return ID;

@@ -4,8 +4,8 @@ Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
-Tested up to: 4.2
-Stable tag: 2.2.22
+Tested up to: 4.3
+Stable tag: 2.2.24
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -52,11 +52,12 @@ different images, settings and styles for each one of them.
  - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
  - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/) and others)
  - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
- - Russian        (83%  - ru_RU - Translated by Dmitry Fatakov)
+ - Russian        (100% - ru_RU - Translated by [Coupofy](http://www.coupofy.com/) and Dmitry Fatakov)
  - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
  - Spanish        (51%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
  - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
+ - Ukrainian      (100% - uk_UK - Translated by [Coupofy](http://www.coupofy.com/))
 
 Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
 translation file can be downloaded
@@ -180,6 +181,21 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.24 =
+*   Compatible with WordPress 4.3.
+*   Widget constructor no longer uses deprecated PHP 4 style constructor.
+*	Fixed: Mismatch between session ID and settings ID.
+*	Fixed: Unescaped data in slideshow editor.
+*	Fixed: Resizing issues.
+*   Added Ukrainian translation and updated Russian translation, thanks to Coupofy.
+
+= 2.2.23 =
+*   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
+*   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
+*	Fixed: HTML5 validation issue when loading stylesheets in the head of the document.
+*   Fixed: Slideshows now load their settings by slideshow ID, instead of the variable session ID.
+*   Updated Spanish translation, thanks to Manuel Ballesta Ruiz.
 
 = 2.2.22 =
 *   Compatible with WordPress 4.2.
