@@ -124,14 +124,6 @@ slideshow_jquery_image_gallery_script = function()
 	{
 		var ajaxStylesheets = $('[id*="slideshow-jquery-image-gallery-ajax-stylesheet_"]');
 
-		// No AJAX stylesheets found. If there are slideshows on the page, there is something wrong. A slideshow always comes with an AJAX stylesheet
-		if (ajaxStylesheets.length <= 0)
-		{
-			self.generateStylesheetURLs(false);
-
-			return;
-		}
-
 		// Some website disable URL variables, impairing the AJAX loaded stylesheets. Check and fix all slideshow stylesheet related URLs
 		$.each(ajaxStylesheets, function(ajaxStylesheetKey, ajaxStylesheet)
 		{
