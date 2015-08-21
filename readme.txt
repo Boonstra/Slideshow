@@ -190,8 +190,7 @@ personal taste.
 *	Fixed: Mismatch between session ID and settings ID.
 *	Fixed: Unescaped data in slideshow editor.
 *	Fixed: Resizing issues.
-*   Added Ukrainian translation, thanks to Ivanka Skakun.
-*   Updated Russian translation, thanks to Ivanka Skakun.
+*   Added Ukrainian translation and updated Russian translation, thanks to Coupofy.
 
 = 2.2.23 =
 *   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.

@@ -22,7 +22,7 @@
 class SlideshowPluginMain
 {
 	/** @var string $version */
-	static $version = '2.2.23';
+	static $version = '2.2.24';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
