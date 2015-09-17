@@ -797,26 +797,26 @@ class SlideshowPluginInstaller
 				'setting_hideDescription' => 'true'
 			);
 
-			$yes = __('Yes', 'slideshow-plugin');
-			$no = __('No', 'slideshow-plugin');
+			$yes = __('Yes', 'slideshow-jquery-image-gallery');
+			$no = __('No', 'slideshow-jquery-image-gallery');
 			$data = array( // $data : array([prefix_settingName] => array([inputType], [value], [default], [description], array([options]), array([dependsOn], [onValue]), 'group' => [groupName]))
-				'style_style' => array('select', '', $defaultData['style_style'], __('The style used for this slideshow', 'slideshow-plugin'), array('light' => __('Light', 'slideshow-plugin'), 'dark' => __('Dark', 'slideshow-plugin'), 'custom' => __('Custom', 'slideshow-plugin'))),
-				'style_custom' => array('textarea', '', $defaultData['style_custom'], __('Custom style editor', 'slideshow-plugin'), null, array('style_style', 'custom')),
-				'setting_animation' => array('select', '', $defaultData['setting_animation'], __('Animation used for transition between slides', 'slideshow-plugin'), array('slide' => __('Slide', 'slideshow-plugin'), 'fade' => __('Fade', 'slideshow-plugin')), 'group' => __('Animation', 'slideshow-plugin')),
-				'setting_slideSpeed' => array('text', '', $defaultData['setting_slideSpeed'], __('Number of seconds the slide takes to slide in', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
-				'setting_descriptionSpeed' => array('text', '', $defaultData['setting_descriptionSpeed'], __('Number of seconds the description takes to slide in', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
-				'setting_intervalSpeed' => array('text', '', $defaultData['setting_intervalSpeed'], __('Seconds between changing slides', 'slideshow-plugin'), 'group' => __('Animation', 'slideshow-plugin')),
-				'setting_slidesPerView' => array('text', '', $defaultData['setting_slidesPerView'], __('Number of slides to fit into one slide', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_width' => array('text', '', $defaultData['setting_width'], __('Width of the slideshow, set to parent&#39;s width on 0', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_height' => array('text', '', $defaultData['setting_height'], __('Height of the slideshow', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_descriptionHeight' => array('text', '', $defaultData['setting_descriptionHeight'], __('Height of the description boxes', 'slideshow-plugin'), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_stretchImages' => array('radio', '', $defaultData['setting_stretchImages'], __('Fit image into slide (stretching it)', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_showDescription' => array('radio', '', $defaultData['setting_showDescription'], __('Show title and description', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_hideDescription' => array('radio', '', $defaultData['setting_hideDescription'], __('Hide description box, it will pop up when a mouse hovers over the slide', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), array('setting_showDescription', 'true'), 'group' => __('Display', 'slideshow-plugin')),
-				'setting_play' => array('radio', '', $defaultData['setting_play'], __('Automatically slide to the next slide', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
-				'setting_loop' => array('radio', '', $defaultData['setting_loop'], __('Return to the beginning of the slideshow after last slide', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
-				'setting_controllable' => array('radio', '', $defaultData['setting_controllable'], __('Activate buttons (so the user can scroll through the slides)', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
-				'setting_controlPanel' => array('radio', '', $defaultData['setting_controlPanel'], __('Show control panel (play and pause button)', 'slideshow-plugin'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-plugin')),
+				'style_style' => array('select', '', $defaultData['style_style'], __('The style used for this slideshow', 'slideshow-jquery-image-gallery'), array('light' => __('Light', 'slideshow-jquery-image-gallery'), 'dark' => __('Dark', 'slideshow-jquery-image-gallery'), 'custom' => __('Custom', 'slideshow-jquery-image-gallery'))),
+				'style_custom' => array('textarea', '', $defaultData['style_custom'], __('Custom style editor', 'slideshow-jquery-image-gallery'), null, array('style_style', 'custom')),
+				'setting_animation' => array('select', '', $defaultData['setting_animation'], __('Animation used for transition between slides', 'slideshow-jquery-image-gallery'), array('slide' => __('Slide', 'slideshow-jquery-image-gallery'), 'fade' => __('Fade', 'slideshow-jquery-image-gallery')), 'group' => __('Animation', 'slideshow-jquery-image-gallery')),
+				'setting_slideSpeed' => array('text', '', $defaultData['setting_slideSpeed'], __('Number of seconds the slide takes to slide in', 'slideshow-jquery-image-gallery'), 'group' => __('Animation', 'slideshow-jquery-image-gallery')),
+				'setting_descriptionSpeed' => array('text', '', $defaultData['setting_descriptionSpeed'], __('Number of seconds the description takes to slide in', 'slideshow-jquery-image-gallery'), 'group' => __('Animation', 'slideshow-jquery-image-gallery')),
+				'setting_intervalSpeed' => array('text', '', $defaultData['setting_intervalSpeed'], __('Seconds between changing slides', 'slideshow-jquery-image-gallery'), 'group' => __('Animation', 'slideshow-jquery-image-gallery')),
+				'setting_slidesPerView' => array('text', '', $defaultData['setting_slidesPerView'], __('Number of slides to fit into one slide', 'slideshow-jquery-image-gallery'), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_width' => array('text', '', $defaultData['setting_width'], __('Width of the slideshow, set to parent&#39;s width on 0', 'slideshow-jquery-image-gallery'), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_height' => array('text', '', $defaultData['setting_height'], __('Height of the slideshow', 'slideshow-jquery-image-gallery'), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_descriptionHeight' => array('text', '', $defaultData['setting_descriptionHeight'], __('Height of the description boxes', 'slideshow-jquery-image-gallery'), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_stretchImages' => array('radio', '', $defaultData['setting_stretchImages'], __('Fit image into slide (stretching it)', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_showDescription' => array('radio', '', $defaultData['setting_showDescription'], __('Show title and description', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_hideDescription' => array('radio', '', $defaultData['setting_hideDescription'], __('Hide description box, it will pop up when a mouse hovers over the slide', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), array('setting_showDescription', 'true'), 'group' => __('Display', 'slideshow-jquery-image-gallery')),
+				'setting_play' => array('radio', '', $defaultData['setting_play'], __('Automatically slide to the next slide', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-jquery-image-gallery')),
+				'setting_loop' => array('radio', '', $defaultData['setting_loop'], __('Return to the beginning of the slideshow after last slide', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-jquery-image-gallery')),
+				'setting_controllable' => array('radio', '', $defaultData['setting_controllable'], __('Activate buttons (so the user can scroll through the slides)', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-jquery-image-gallery')),
+				'setting_controlPanel' => array('radio', '', $defaultData['setting_controlPanel'], __('Show control panel (play and pause button)', 'slideshow-jquery-image-gallery'), array('true' => $yes, 'false' => $no), 'group' => __('Control', 'slideshow-jquery-image-gallery')),
 			);
 
 			// Get settings

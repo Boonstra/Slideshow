@@ -20,12 +20,12 @@
 
 	</div>
 
-	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li class="slideshow_togglePlay" data-play-text="<?php _e('Play', 'slideshow-plugin'); ?>" data-pause-text="<?php _e('Pause', 'slideshow-plugin'); ?>"></li></ul></div>
+	<div class="slideshow_controlPanel slideshow_transparent" style="display: none;"><ul><li class="slideshow_togglePlay" data-play-text="<?php _e('Play', 'slideshow-jquery-image-gallery'); ?>" data-pause-text="<?php _e('Pause', 'slideshow-jquery-image-gallery'); ?>"></li></ul></div>
 
-	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-previous-text="<?php _e('Previous', 'slideshow-plugin'); ?>" style="display: none;"></div>
-	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-next-text="<?php _e('Next', 'slideshow-plugin'); ?>" style="display: none;"></div>
+	<div class="slideshow_button slideshow_previous slideshow_transparent" role="button" data-previous-text="<?php _e('Previous', 'slideshow-jquery-image-gallery'); ?>" style="display: none;"></div>
+	<div class="slideshow_button slideshow_next slideshow_transparent" role="button" data-next-text="<?php _e('Next', 'slideshow-jquery-image-gallery'); ?>" style="display: none;"></div>
 
-	<div class="slideshow_pagination" style="display: none;" data-go-to-text="<?php _e('Go to slide', 'slideshow-plugin'); ?>"><div class="slideshow_pagination_center"></div></div>
+	<div class="slideshow_pagination" style="display: none;" data-go-to-text="<?php _e('Go to slide', 'slideshow-jquery-image-gallery'); ?>"><div class="slideshow_pagination_center"></div></div>
 
 	<!-- WordPress Slideshow Version <?php echo SlideshowPluginMain::$version; ?> -->
 

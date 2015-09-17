@@ -11,9 +11,9 @@ $generalSettingsViewsPath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEP
 
 		<div class="icon32" style="background: url('<?php echo SlideshowPluginMain::getPluginUrl() . '/images/SlideshowPluginPostType/adminIcon32.png'; ?>');"></div>
 		<h2 class="nav-tab-wrapper">
-			<a href="#general-settings-tab" class="nav-tab nav-tab-active"><?php _e('General Settings', 'slideshow-plugin'); ?></a>
-			<a href="#default-slideshow-settings-tab" class="nav-tab"><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></a>
-			<a href="#custom-styles-tab" class="nav-tab"><?php _e('Custom Styles', 'slideshow-plugin'); ?></a>
+			<a href="#general-settings-tab" class="nav-tab nav-tab-active"><?php _e('General Settings', 'slideshow-jquery-image-gallery'); ?></a>
+			<a href="#default-slideshow-settings-tab" class="nav-tab"><?php _e('Default Slideshow Settings', 'slideshow-jquery-image-gallery'); ?></a>
+			<a href="#custom-styles-tab" class="nav-tab"><?php _e('Custom Styles', 'slideshow-jquery-image-gallery'); ?></a>
 
 			<?php submit_button(null, 'primary', null, false, 'style="float: right;"'); ?>
 		</h2>

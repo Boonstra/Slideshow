@@ -8,18 +8,18 @@ global $wp_roles;
 
 // Capabilities
 $capabilities = array(
-	SlideshowPluginGeneralSettings::$capabilities['addSlideshows']    => __('Add slideshows', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['editSlideshows']   => __('Edit slideshows', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin')
+	SlideshowPluginGeneralSettings::$capabilities['addSlideshows']    => __('Add slideshows', 'slideshow-jquery-image-gallery'),
+	SlideshowPluginGeneralSettings::$capabilities['editSlideshows']   => __('Edit slideshows', 'slideshow-jquery-image-gallery'),
+	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-jquery-image-gallery')
 );
 
 ?>
 
 <div class="general-settings-tab feature-filter">
 
-	<h4><?php _e('User Capabilities', 'slideshow-plugin'); ?></h4>
+	<h4><?php _e('User Capabilities', 'slideshow-jquery-image-gallery'); ?></h4>
 
-	<p><?php _e('Select the user roles that will able to perform certain actions.', 'slideshow-plugin');  ?></p>
+	<p><?php _e('Select the user roles that will able to perform certain actions.', 'slideshow-jquery-image-gallery');  ?></p>
 
 	<table>
 
@@ -35,7 +35,7 @@ $capabilities = array(
 
 						$disabled = ($roleSlug == 'administrator') ? 'disabled="disabled"' : '';
 						$checked = ((isset($values['capabilities']) && array_key_exists($capability, $values['capabilities']) && $values['capabilities'][$capability] == true) || $roleSlug == 'administrator') ? 'checked="checked"' : '';
-						$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-plugin');
+						$name = (isset($values['name'])) ? htmlspecialchars($values['name']) : __('Untitled role', 'slideshow-jquery-image-gallery');
 
 						?>
 
@@ -62,15 +62,15 @@ $capabilities = array(
 
 <div class="general-settings-tab feature-filter">
 
-	<h4><?php _e('Settings', 'slideshow-plugin'); ?></h4>
+	<h4><?php _e('Settings', 'slideshow-jquery-image-gallery'); ?></h4>
 
 	<table>
 		<tr>
-			<td><?php _e('Stylesheet location', 'slideshow-plugin'); ?></td>
+			<td><?php _e('Stylesheet location', 'slideshow-jquery-image-gallery'); ?></td>
 			<td>
 				<select name="<?php echo SlideshowPluginGeneralSettings::$stylesheetLocation; ?>">
-					<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-plugin'); ?>)</option>
-					<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-plugin'); ?>)</option>
+					<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-jquery-image-gallery'); ?>)</option>
+					<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-jquery-image-gallery'); ?>)</option>
 				</select>
 			</td>
 		</tr>

@@ -1,5 +1,5 @@
 <p style="text-align: center;" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-	<i><?php _e('Insert', 'slideshow-plugin'); ?>:</i><br/>
+	<i><?php _e('Insert', 'slideshow-jquery-image-gallery'); ?>:</i><br/>
 
 	<?php echo SlideshowPluginSlideInserter::getImageSlideInsertButton(); ?>
 	<?php echo SlideshowPluginSlideInserter::getTextSlideInsertButton(); ?>
@@ -7,7 +7,7 @@
 </p>
 
 <?php if(count($slides) <= 0): ?>
-	<p><?php _e('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin'); ?></p>
+	<p><?php _e('Add slides to this slideshow by using one of the buttons above.', 'slideshow-jquery-image-gallery'); ?></p>
 <?php endif; ?>
 
 <style type="text/css">
@@ -51,26 +51,26 @@
 
 				<h3 class="hndle">
 					<span style="font-size: 0.8em;">
-						<?php _e('Text slide', 'slideshow-plugin'); ?>
+						<?php _e('Text slide', 'slideshow-jquery-image-gallery'); ?>
 					</span>
 				</h3>
 
 				<p style="margin: 5px 15px 5px 5px;">
-					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" /><br />
-					<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Description', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
-					<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Background color', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[color]" value="<?php echo $color; ?>" class="color {required:false}" />
 				</p>
 
 				<p style="margin: 5px 15px 5px 5px;">
-					<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('URL', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />
-					<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
+					<i><?php _e('Open URL in', 'slideshow-jquery-image-gallery'); ?></i>
 					<select name="<?php echo $name; ?>[urlTarget]">
-						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
-						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
+						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-jquery-image-gallery'); ?></option>
+						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-jquery-image-gallery'); ?></option>
 					</select>
 				</p>
 
@@ -87,12 +87,12 @@
 
 				<h3 class="hndle">
 					<span style="font-size: 0.8em;">
-						<?php _e('Video slide', 'slideshow-plugin'); ?>
+						<?php _e('Video slide', 'slideshow-jquery-image-gallery'); ?>
 					</span>
 				</h3>
 
 				<p style="margin: 5px 15px 5px 5px;">
-					<i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Youtube Video ID', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" />
 				</p>
 
@@ -130,34 +130,34 @@
 
 				<h3 class="hndle">
 					<span style="font-size: 0.8em;">
-						<?php _e('Image slide', 'slideshow-plugin'); ?>
+						<?php _e('Image slide', 'slideshow-jquery-image-gallery'); ?>
 					</span>
 				</h3>
 
 				<p style="float: left; margin: 5px;">
-					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
+					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-jquery-image-gallery'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
 						<img width="80" height="60" src="<?php echo $imageSrc; ?>" class="attachment-80x60" alt="<?php echo $attachment->post_title; ?>" title="<?php echo $attachment->post_title; ?>" />
 					</a>
 				</p>
 
 				<p style="float: left; margin: 5px 15px 5px 5px;">
-					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" />
 				</p>
 				<p style="clear: both"></p>
 
 				<p style="margin: 5px 15px 5px 5px;">
-					<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Description', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<textarea name="<?php echo $name; ?>[description]" rows="3" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
 				</p>
 
 				<p style="margin: 5px 15px 5px 5px;">
-					<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('URL', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" /><br />
-					<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
+					<i><?php _e('Open URL in', 'slideshow-jquery-image-gallery'); ?></i>
 					<select name="<?php echo $name; ?>[urlTarget]">
-						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
-						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
+						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-jquery-image-gallery'); ?></option>
+						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-jquery-image-gallery'); ?></option>
 					</select>
 				</p>
 
@@ -168,13 +168,13 @@
 			<?php else: ?>
 
 				<p style="margin: 5px 15px 5px 5px;">
-					<?php _e('An error occurred while loading this slide, and it will not be present in the slideshow', 'slideshow-plugin'); ?>
+					<?php _e('An error occurred while loading this slide, and it will not be present in the slideshow', 'slideshow-jquery-image-gallery'); ?>
 				</p>
 
 			<?php endif; ?>
 
 			<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-slide">
-				<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+				<span><?php _e('Delete slide', 'slideshow-jquery-image-gallery'); ?></span>
 				<span style="display: none;" class="<?php echo $id; ?>"></span>
 			</p>
 
@@ -188,26 +188,26 @@
 
 		<h3 class="hndle">
 			<span style="font-size: 0.8em;">
-				<?php _e('Text slide', 'slideshow-plugin'); ?>
+				<?php _e('Text slide', 'slideshow-jquery-image-gallery'); ?>
 			</span>
 		</h3>
 
 		<p style="margin: 5px 15px 5px 5px;">
-			<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<input type="text" class="title" /><br />
-			<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('Description', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<textarea class="description" cols="" rows="7" style="width: 100%;"></textarea><br />
-			<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('Background color', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<input type="text" class="color {required:false}" />
 		</p>
 
 		<p style="margin: 5px 15px 5px 5px;">
-			<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('URL', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<input type="text" class="url" value="" /><br />
-			<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
+			<i><?php _e('Open URL in', 'slideshow-jquery-image-gallery'); ?></i>
 			<select class="urlTarget">
-				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
-				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
+				<option value="_self"><?php _e('Same window', 'slideshow-jquery-image-gallery'); ?></option>
+				<option value="_blank"><?php _e('New window', 'slideshow-jquery-image-gallery'); ?></option>
 			</select>
 		</p>
 
@@ -215,7 +215,7 @@
 		<input type="hidden" class="slide_order" />
 
 		<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
-			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+			<span><?php _e('Delete slide', 'slideshow-jquery-image-gallery'); ?></span>
 			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
 
@@ -227,12 +227,12 @@
 
 		<h3 class="hndle">
 			<span style="font-size: 0.8em;">
-				<?php _e('Video slide', 'slideshow-plugin'); ?>
+				<?php _e('Video slide', 'slideshow-jquery-image-gallery'); ?>
 			</span>
 		</h3>
 
 		<p style="margin: 5px 15px 5px 5px;">
-			<i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('Youtube Video ID', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<input type="text" class="videoId" />
 		</p>
 
@@ -240,7 +240,7 @@
 		<input type="hidden" class="slide_order" />
 
 		<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
-			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+			<span><?php _e('Delete slide', 'slideshow-jquery-image-gallery'); ?></span>
 			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
 
@@ -252,7 +252,7 @@
 
 		<h3 class="hndle">
 			<span style="font-size: 0.8em;">
-				<?php _e('Image slide', 'slideshow-plugin'); ?>
+				<?php _e('Image slide', 'slideshow-jquery-image-gallery'); ?>
 			</span>
 		</h3>
 
@@ -261,23 +261,23 @@
 		</p>
 
 		<p style="float: left; margin: 5px 15px 5px 5px;">
-			<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<input type="text" class="title" />
 		</p>
 		<p style="clear: both"></p>
 
 		<p style="margin: 5px 15px 5px 5px;">
-			<i><?php _e('Description', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('Description', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<textarea class="description" rows="3" cols="" style="width: 100%;"></textarea><br />
 		</p>
 
 		<p style="margin: 5px 15px 5px 5px;">
-			<i><?php _e('URL', 'slideshow-plugin'); ?></i><br />
+			<i><?php _e('URL', 'slideshow-jquery-image-gallery'); ?></i><br />
 			<input type="text" class="url" value="" /><br />
-			<i><?php _e('Open URL in', 'slideshow-plugin'); ?></i>
+			<i><?php _e('Open URL in', 'slideshow-jquery-image-gallery'); ?></i>
 			<select class="urlTarget">
-				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
-				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
+				<option value="_self"><?php _e('Same window', 'slideshow-jquery-image-gallery'); ?></option>
+				<option value="_blank"><?php _e('New window', 'slideshow-jquery-image-gallery'); ?></option>
 			</select>
 		</p>
 
@@ -286,7 +286,7 @@
 		<input type="hidden" value="" class="slide_order" />
 
 		<p style="margin: 5px 15px 5px 5px; color: red; cursor: pointer;" class="slideshow-delete-new-slide">
-			<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+			<span><?php _e('Delete slide', 'slideshow-jquery-image-gallery'); ?></span>
 			<span style="display: none;" class="<?php echo $id; ?>"></span>
 		</p>
 

@@ -5,7 +5,7 @@ Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
 Requires at least: 3.5
 Tested up to: 4.3
-Stable tag: 2.2.24
+Stable tag: 2.2.25
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -58,12 +58,6 @@ different images, settings and styles for each one of them.
  - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
  - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
  - Ukrainian      (100% - uk_UK - Translated by [Coupofy](http://www.coupofy.com/))
-
-Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
-translation file can be downloaded
-[by clicking here](http://plugins.svn.wordpress.org/slideshow-jquery-image-gallery/trunk/languages/slideshow-plugin-original.po)
-and saving the page to your computer. This file can be easily edited with [PoEdit](http://www.poedit.net/), a free
-translation tool. Many thanks in advance!
 
 = Project board =
 
@@ -181,6 +175,9 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.2.25 =
+*   Changed localization domain to match the plugin's slug in order to support language packs.
 
 = 2.2.24 =
 *   Compatible with WordPress 4.3.

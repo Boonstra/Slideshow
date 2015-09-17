@@ -3,8 +3,8 @@
 // Get default stylesheets
 $defaultStyles      = array();
 $defaultStylesheets = array(
-	'style-light.css' => __('Light', 'slideshow-plugin'),
-	'style-dark.css' => __('Dark', 'slideshow-plugin')
+	'style-light.css' => __('Light', 'slideshow-jquery-image-gallery'),
+	'style-dark.css' => __('Dark', 'slideshow-jquery-image-gallery')
 );
 
 $stylesheetsFilePath = SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'style' . DIRECTORY_SEPARATOR . 'SlideshowPlugin';
@@ -43,7 +43,7 @@ if (is_array($customStyleKeys))
 	<div class="styles-list">
 
 		<p>
-			<b><?php _e('Default stylesheets', 'slideshow-plugin'); ?></b>
+			<b><?php _e('Default stylesheets', 'slideshow-jquery-image-gallery'); ?></b>
 		</p>
 
 		<ul class="default-styles-list">
@@ -57,9 +57,9 @@ if (is_array($customStyleKeys))
 					<span class="style-title"><?php echo (isset($defaultStyleValues['name'])) ? htmlspecialchars($defaultStyleValues['name']) : __('Untitled'); ?></span>
 						<span
 							class="style-action style-default <?php htmlspecialchars($defaultStyleKey); ?>"
-							title="<?php _e('Create a new custom style from this style', 'slideshow-plugin'); ?>"
+							title="<?php _e('Create a new custom style from this style', 'slideshow-jquery-image-gallery'); ?>"
 							>
-							<?php _e('Customize', 'slideshow-plugin'); ?> &raquo;
+							<?php _e('Customize', 'slideshow-jquery-image-gallery'); ?> &raquo;
 						</span>
 
 					<p style="clear: both;"></p>
@@ -73,7 +73,7 @@ if (is_array($customStyleKeys))
 		</ul>
 
 		<p>
-			<b><?php _e('Custom stylesheets', 'slideshow-plugin'); ?></b>
+			<b><?php _e('Custom stylesheets', 'slideshow-jquery-image-gallery'); ?></b>
 		</p>
 
 		<ul class="custom-styles-list">
@@ -86,18 +86,18 @@ if (is_array($customStyleKeys))
 
 						<span
 							class="style-action <?php echo htmlspecialchars($customStyleKey); ?>"
-							title="<?php _e('Edit this style', 'slideshow-plugin'); ?>"
+							title="<?php _e('Edit this style', 'slideshow-jquery-image-gallery'); ?>"
 							>
-							<?php _e('Edit', 'slideshow-plugin'); ?> &raquo;
+							<?php _e('Edit', 'slideshow-jquery-image-gallery'); ?> &raquo;
 						</span>
 
 					<span style="float: right;">&#124;</span>
 
 						<span
 							class="style-delete <?php echo htmlspecialchars($customStyleKey); ?>"
-							title="<?php _e('Delete this style', 'slideshow-plugin'); ?>"
+							title="<?php _e('Delete this style', 'slideshow-jquery-image-gallery'); ?>"
 							>
-							<?php _e('Delete', 'slideshow-plugin'); ?>
+							<?php _e('Delete', 'slideshow-jquery-image-gallery'); ?>
 						</span>
 
 					<p style="clear: both;"></p>
@@ -123,11 +123,11 @@ if (is_array($customStyleKeys))
 	<div class="style-editors">
 
 		<p>
-			<b><?php _e('Custom style editor', 'slideshow-plugin'); ?></b>
+			<b><?php _e('Custom style editor', 'slideshow-jquery-image-gallery'); ?></b>
 		</p>
 
 		<p class="style-editor">
-			<?php _e('Select a stylesheet to start customizing it.', 'slideshow-plugin'); ?>
+			<?php _e('Select a stylesheet to start customizing it.', 'slideshow-jquery-image-gallery'); ?>
 		</p>
 
 		<?php if(is_array($customStyleValues)): ?>
@@ -136,16 +136,16 @@ if (is_array($customStyleKeys))
 			<div class="style-editor <?php echo htmlspecialchars($customStyleKey); ?>" style="display: none;">
 
 				<p>
-					<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<input
 						type="text"
 						name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][title]"
-						value="<?php echo (isset($customStyleKeys[$customStyleKey]) && !empty($customStyleKeys[$customStyleKey])) ? $customStyleKeys[$customStyleKey] : __('Untitled', 'slideshow-plugin'); ?>"
+						value="<?php echo (isset($customStyleKeys[$customStyleKey]) && !empty($customStyleKeys[$customStyleKey])) ? $customStyleKeys[$customStyleKey] : __('Untitled', 'slideshow-jquery-image-gallery'); ?>"
 					/>
 				</p>
 
 				<p>
-					<i><?php _e('Style', 'slideshow-plugin'); ?></i><br />
+					<i><?php _e('Style', 'slideshow-jquery-image-gallery'); ?></i><br />
 					<textarea
 						name="<?php echo SlideshowPluginGeneralSettings::$customStyles; ?>[<?php echo htmlspecialchars($customStyleKey); ?>][style]"
 						rows="25"
@@ -169,18 +169,18 @@ if (is_array($customStyleKeys))
 
 					<span
 						class="style-action"
-						title="<?php _e('Edit this style', 'slideshow-plugin'); ?>"
+						title="<?php _e('Edit this style', 'slideshow-jquery-image-gallery'); ?>"
 						>
-						<?php _e('Edit', 'slideshow-plugin'); ?> &raquo;
+						<?php _e('Edit', 'slideshow-jquery-image-gallery'); ?> &raquo;
 					</span>
 
 			<span style="float: right;">&#124;</span>
 
 					<span
 						class="style-delete"
-						title="<?php _e('Delete this style', 'slideshow-plugin'); ?>"
+						title="<?php _e('Delete this style', 'slideshow-jquery-image-gallery'); ?>"
 						>
-						<?php _e('Delete', 'slideshow-plugin'); ?>
+						<?php _e('Delete', 'slideshow-jquery-image-gallery'); ?>
 					</span>
 
 			<p style="clear: both;"></p>
@@ -189,7 +189,7 @@ if (is_array($customStyleKeys))
 		<div class="style-editor" style="display: none;">
 
 			<p>
-				<i><?php _e('Title', 'slideshow-plugin'); ?></i><br />
+				<i><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></i><br />
 				<input
 					type="text"
 					class="new-custom-style-title"
@@ -197,7 +197,7 @@ if (is_array($customStyleKeys))
 			</p>
 
 			<p>
-				<i><?php _e('Style', 'slideshow-plugin'); ?></i><br />
+				<i><?php _e('Style', 'slideshow-jquery-image-gallery'); ?></i><br />
 				<textarea
 					class="new-custom-style-content"
 					rows="25"

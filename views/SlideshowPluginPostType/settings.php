@@ -9,7 +9,7 @@
 	<tr>
 		<td colspan="3" style="border-bottom: 1px solid #e5e5e5; text-align: center;">
 			<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-				<?php echo $value['group']; ?> <?php _e('settings', 'slideshow-plugin'); ?>
+				<?php echo $value['group']; ?> <?php _e('settings', 'slideshow-jquery-image-gallery'); ?>
 			</span>
 		</td>
 	</tr>
@@ -23,7 +23,7 @@
 	>
 		<td><?php echo $value['description']; ?></td>
 		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginSlideshowSettingsHandler::$settingsKey, htmlspecialchars($key), $value); ?></td>
-		<td><?php _e('Default', 'slideshow-plugin'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
+		<td><?php _e('Default', 'slideshow-jquery-image-gallery'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
 	</tr>
 
 	<?php endforeach; ?>

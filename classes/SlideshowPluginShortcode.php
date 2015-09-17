@@ -145,7 +145,7 @@ class SlideshowPluginShortcode
 			'slideshow_jquery_image_gallery_backend_script_shortcode',
 			array(
 				'data' => array('shortcode' => SlideshowPluginShortcode::$shortCode),
-				'localization' => array('undefinedSlideshow' => __('No slideshow selected.', 'slideshow-plugin'))
+				'localization' => array('undefinedSlideshow' => __('No slideshow selected.', 'slideshow-jquery-image-gallery'))
 			)
 		);
 	}

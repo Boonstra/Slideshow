@@ -100,7 +100,7 @@ if (isset($attachment)):
 
 					<?php else : ?>
 
-						<?php _e('Image slide', 'slideshow-plugin'); ?>
+						<?php _e('Image slide', 'slideshow-jquery-image-gallery'); ?>
 
 					<?php endif; ?>
 				</div>
@@ -111,7 +111,7 @@ if (isset($attachment)):
 
 				<div class="slideshow-group">
 
-					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-plugin'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
+					<a href="<?php echo $editUrl; ?>" title="<?php _e('Edit', 'slideshow-jquery-image-gallery'); ?> &#34;<?php echo $attachment->post_title; ?>&#34;">
 						<img width="80" height="60" src="<?php echo $imageSrc; ?>" class="attachment-80x60" alt="<?php echo $attachment->post_title; ?>" title="<?php echo $attachment->post_title; ?>" />
 					</a>
 
@@ -119,7 +119,7 @@ if (isset($attachment)):
 
 				<div class="slideshow-group">
 
-					<div class="slideshow-left slideshow-label"><?php _e('Title', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-left slideshow-label"><?php _e('Title', 'slideshow-jquery-image-gallery'); ?></div>
 					<div class="slideshow-right">
 						<select name="<?php echo $name; ?>[titleElementTagID]">
 							<?php foreach (SlideshowPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
@@ -134,7 +134,7 @@ if (isset($attachment)):
 
 				<div class="slideshow-group">
 
-					<div class="slideshow-left slideshow-label"><?php _e('Description', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-left slideshow-label"><?php _e('Description', 'slideshow-jquery-image-gallery'); ?></div>
 					<div class="slideshow-right">
 						<select name="<?php echo $name; ?>[descriptionElementTagID]">
 							<?php foreach (SlideshowPluginSlideInserter::getElementTags() as $elementTagID => $elementTag): ?>
@@ -149,17 +149,17 @@ if (isset($attachment)):
 
 				<div class="slideshow-group">
 
-					<div class="slideshow-label"><?php _e('URL', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-label"><?php _e('URL', 'slideshow-jquery-image-gallery'); ?></div>
 					<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" />
 
-					<div class="slideshow-label slideshow-left"><?php _e('Open URL in', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-label slideshow-left"><?php _e('Open URL in', 'slideshow-jquery-image-gallery'); ?></div>
 					<select name="<?php echo $name; ?>[urlTarget]" class="slideshow-right">
-						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
-						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
+						<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-jquery-image-gallery'); ?></option>
+						<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-jquery-image-gallery'); ?></option>
 					</select>
 					<div class="clear"></div>
 
-					<div class="slideshow-label slideshow-left"><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-label slideshow-left"><?php _e('Don\'t let search engines follow link', 'slideshow-jquery-image-gallery'); ?></div>
 	                <input type="checkbox" name="<?php echo $name; ?>[noFollow]" value="" <?php checked($noFollow); ?> class="slideshow-right" />
 					<div class="clear"></div>
 
@@ -167,13 +167,13 @@ if (isset($attachment)):
 
 				<div class="slideshow-group">
 
-					<div class="slideshow-label"><?php _e('Alternative text', 'slideshow-plugin'); ?></div>
+					<div class="slideshow-label"><?php _e('Alternative text', 'slideshow-jquery-image-gallery'); ?></div>
 					<input type="text" name="<?php echo $name; ?>[alternativeText]" value="<?php echo $alternativeText; ?>" style="width: 100%;" />
 
 				</div>
 
 				<div class="slideshow-group slideshow-delete-slide">
-					<span><?php _e('Delete slide', 'slideshow-plugin'); ?></span>
+					<span><?php _e('Delete slide', 'slideshow-jquery-image-gallery'); ?></span>
 				</div>
 
 				<input type="hidden" name="<?php echo $name; ?>[type]" value="attachment" />

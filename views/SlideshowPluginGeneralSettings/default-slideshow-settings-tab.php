@@ -8,14 +8,14 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 
 <div class="default-slideshow-settings-tab" style="display: none; float: none;">
 	<p>
-		<strong><?php _e('Note', 'slideshow-plugin'); ?>:</strong>
+		<strong><?php _e('Note', 'slideshow-jquery-image-gallery'); ?>:</strong>
 	</p>
 
 	<p style="width: 500px;">
 		<?php
 
 		echo sprintf(__(
-			'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %sclick here.%s', 'slideshow-plugin'),
+			'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %sclick here.%s', 'slideshow-jquery-image-gallery'),
 			'<a href="' . get_admin_url(null, 'edit.php?post_type=' . SlideshowPluginPostType::$postType) . '">',
 			'</a>'
 		);
@@ -26,7 +26,7 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 
 <div class="default-slideshow-settings-tab feature-filter" style="display: none;">
 
-	<h4><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></h4>
+	<h4><?php _e('Default Slideshow Settings', 'slideshow-jquery-image-gallery'); ?></h4>
 
 	<table>
 
@@ -38,7 +38,7 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 		<tr>
 			<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
 				<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-					<?php echo $defaultSettingValue['group']; ?> <?php _e('settings', 'slideshow-plugin'); ?>
+					<?php echo $defaultSettingValue['group']; ?> <?php _e('settings', 'slideshow-jquery-image-gallery'); ?>
 				</span>
 			</td>
 		</tr>
@@ -74,7 +74,7 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 
 <div class="default-slideshow-settings-tab feature-filter" style="display: none;">
 
-	<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-plugin'); ?></h4>
+	<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-jquery-image-gallery'); ?></h4>
 
 	<table>
 

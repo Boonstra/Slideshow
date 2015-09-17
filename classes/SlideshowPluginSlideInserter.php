@@ -191,7 +191,7 @@ class SlideshowPluginSlideInserter
 			{
 				echo '<tr valign="top">
 					<td colspan="3" style="text-align: center;">
-						<b>' . count($attachments) . ' ' . __('More results loaded', 'slideshow-plugin') . '<b>
+						<b>' . count($attachments) . ' ' . __('More results loaded', 'slideshow-jquery-image-gallery') . '<b>
 					</td>
 				</tr>';
 			}
@@ -235,7 +235,7 @@ class SlideshowPluginSlideInserter
 						<input
 							type="button"
 							class="insert-attachment button-secondary"
-							value="' . __('Insert', 'slideshow-plugin') . '"
+							value="' . __('Insert', 'slideshow-jquery-image-gallery') . '"
 						/>
 					</td>
 				</tr>';
@@ -246,7 +246,7 @@ class SlideshowPluginSlideInserter
 				echo '<tr>
 					<td colspan="3" style="text-align: center;">
 						<button class="button-secondary load-more-results" data-offset="' . ($offset + $numberPosts) . '">
-							' . __('Load more results', 'slideshow-plugin') . '
+							' . __('Load more results', 'slideshow-jquery-image-gallery') . '
 						</button>
 					</td>
 				</tr>';
@@ -257,7 +257,7 @@ class SlideshowPluginSlideInserter
 			echo '<tr>
 				<td colspan="3" style="text-align: center;">
 					<a href="' . admin_url() . 'media-new.php" target="_blank">
-						' . __('No images were found, click here to upload some.', 'slideshow-plugin') . '
+						' . __('No images were found, click here to upload some.', 'slideshow-jquery-image-gallery') . '
 					</a>
 				</td>
 			</tr>';
@@ -329,8 +329,8 @@ class SlideshowPluginSlideInserter
 			array(
 				'data' => array(),
 				'localization' => array(
-					'confirm'       => __('Are you sure you want to delete this slide?', 'slideshow-plugin'),
-					'uploaderTitle' => __('Insert image slide', 'slideshow-plugin')
+					'confirm'       => __('Are you sure you want to delete this slide?', 'slideshow-jquery-image-gallery'),
+					'uploaderTitle' => __('Insert image slide', 'slideshow-jquery-image-gallery')
 				)
 			)
 		);

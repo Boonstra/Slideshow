@@ -1,114 +1,113 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Slideshow v2.2.10\n"
+"Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-23 15:01+0100\n"
-"PO-Revision-Date: 2015-04-23 15:01+0100\n"
-"Last-Translator: Carlos Jordao <carlosjordao@gmail.com>\n"
+"POT-Creation-Date: 2014-08-19 11:47+0100\n"
+"PO-Revision-Date: 2014-08-19 11:49+0100\n"
+"Last-Translator: admin <home@avalonbg.com>\n"
 "Language-Team: \n"
-"Language: pt_BR\n"
+"Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.6\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginGeneralSettings.php:82
 #: classes/SlideshowPluginGeneralSettings.php:83
 #: views/SlideshowPluginGeneralSettings/general-settings.php:14
 msgid "General Settings"
-msgstr "Configurações Gerais"
+msgstr "Настройки"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginGeneralSettings.php:150
 msgid "New"
-msgstr "Novo"
+msgstr "Нов"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginGeneralSettings.php:151
 msgid "Are you sure you want to delete this custom style?"
-msgstr "Tem certeza que quer apagar este estilo personalizado?"
+msgstr "Сигурни ли сте, че искате да изтриете стила?"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginGeneralSettings.php:196
 #: classes/SlideshowPluginInstaller.php:803
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:6
 msgid "Light"
-msgstr ""
+msgstr "Светло"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginGeneralSettings.php:197
 #: classes/SlideshowPluginInstaller.php:803
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:7
 msgid "Dark"
-msgstr ""
+msgstr "Тъмно"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 # @ default
 #: classes/SlideshowPluginGeneralSettings.php:353
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:57
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:143
 msgid "Untitled"
-msgstr "Sem título"
+msgstr "Без заглавие"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:800
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:472
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:111
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:43
 msgid "Yes"
-msgstr "Sim"
+msgstr "Да"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:801
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:473
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:112
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:44
 msgid "No"
-msgstr "Não"
+msgstr "Не"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:803
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:610
 msgid "The style used for this slideshow"
-msgstr "O estilo usado para este slideshow"
+msgstr "Стила използван за галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:803
 msgid "Custom"
-msgstr "Personalizado"
+msgstr "Различен"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:804
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:126
 msgid "Custom style editor"
-msgstr "Editor de estilo personalizado"
+msgstr "Различен редактор на стила"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:805
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:518
 msgid "Animation used for transition between slides"
-msgstr "Animação usada para a transição entre os slides"
+msgstr "Използвана анимация за преминаване между кадрите"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:805
 msgid "Slide"
-msgstr "Deslizar"
+msgstr "Кадър"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:805
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Fade"
 msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:805
 #: classes/SlideshowPluginInstaller.php:806
 #: classes/SlideshowPluginInstaller.php:807
@@ -118,33 +117,33 @@ msgstr ""
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:549
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:550
 msgid "Animation"
-msgstr "Animação"
+msgstr "Анимация"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:806
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:519
 msgid "Number of seconds the slide takes to slide in"
-msgstr "Número de segundos que a imagem leva para deslizar"
+msgstr "Брой секунди за кадър"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:807
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:520
 msgid "Number of seconds the description takes to slide in"
-msgstr "Número de segundos que a descrição leva para deslizar"
+msgstr "Брой секунди за показване на текста"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:808
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:521
 msgid "Seconds between changing slides"
-msgstr "Segundos entre a mudança dos slides"
+msgstr "Брой секунди за смяна на кадрите"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:809
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:522
 msgid "Number of slides to fit into one slide"
-msgstr "Número de slides para caber em um slide"
+msgstr "Брой кадри за запълване"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:809
 #: classes/SlideshowPluginInstaller.php:810
 #: classes/SlideshowPluginInstaller.php:811
@@ -162,48 +161,48 @@ msgstr "Número de slides para caber em um slide"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:558
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:559
 msgid "Display"
-msgstr "Exibir"
+msgstr "Визуални"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:810
 msgid "Width of the slideshow, set to parent&#39;s width on 0"
-msgstr "Largura do slideshow, definir a largura do pai em 0"
+msgstr "Ширина на галерията, вземи от родителя&#39;s ширина или 0"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:811
 msgid "Height of the slideshow"
-msgstr "Altura do slideshow"
+msgstr "Височина на галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:812
 msgid "Height of the description boxes"
-msgstr "Altura da caixa de descrição"
+msgstr "Височина на описателния текст"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:813
 msgid "Fit image into slide (stretching it)"
-msgstr "Ajustar imagem em slides (esticando-o)"
+msgstr "Снимката да заеме цялата площ на кадъра"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:814
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:529
 msgid "Show title and description"
-msgstr "Mostrar título e descrição"
+msgstr "Покажи заглавието и описанието"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:815
 msgid "Hide description box, it will pop up when a mouse hovers over the slide"
 msgstr ""
-"Ocultar caixa de descrição, ele irá aparecer quando o mouse passa sobre o "
-"slide"
+"Скрий описанието, то ще се покаже при преминаване на мишката през мястото му "
+"в кадъра"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:816
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:531
 msgid "Automatically slide to the next slide"
-msgstr "Automaticamente deslizar para o próximo slide"
+msgstr "Автоматично преминавай през кадрите"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:816
 #: classes/SlideshowPluginInstaller.php:817
 #: classes/SlideshowPluginInstaller.php:818
@@ -218,404 +217,417 @@ msgstr "Automaticamente deslizar para o próximo slide"
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:567
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:568
 msgid "Control"
-msgstr "Controlar"
+msgstr "Контролни"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:817
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:532
 msgid "Return to the beginning of the slideshow after last slide"
-msgstr "Volte ao início da apresentação de slides após o último slide"
+msgstr "Премини към първия кадър след като се покаже последния"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:818
 msgid "Activate buttons (so the user can scroll through the slides)"
-msgstr "Ativar botões (para que o usuário consiga percorrer os slides)"
+msgstr "Активирай бутоните за управление"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginInstaller.php:819
 msgid "Show control panel (play and pause button)"
-msgstr "Mostrar painel de controle (botão de reprodução e pausa)"
+msgstr "Покажи контролния панел (бутоните старт и пауза)"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:45
 msgid "Slideshows"
-msgstr ""
+msgstr "Галерии"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:46
 #: views/SlideshowPluginWidget/form.php:7
 msgid "Slideshow"
-msgstr ""
+msgstr "Галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:47
 msgid "Add New Slideshow"
-msgstr "Adicionar novo slideshow"
+msgstr "Добави нова галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:48
 msgid "Edit slideshow"
-msgstr "Editar slideshow"
+msgstr "Редактирай галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:49
 msgid "New slideshow"
-msgstr "Novo slideshow"
+msgstr "Нова галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:50
 msgid "View slideshow"
-msgstr "Ver slideshow"
+msgstr "Разгледай галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:51
 msgid "Search slideshows"
-msgstr "Pesquisar slideshows"
+msgstr "Търси в галериите"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:52
 #: classes/SlideshowPluginPostType.php:53
 msgid "No slideshows found"
-msgstr "Nenhum slideshow encontrado"
+msgstr "Няма налична галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:98
 msgid "Information"
-msgstr "Informações"
+msgstr "Информация"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:107
 msgid "Slides List"
-msgstr "Lista de slides"
+msgstr "Листа с кадрите"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:116
 msgid "Slideshow Style"
-msgstr "Estilo do Slideshow"
+msgstr "Стил на галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:125
 msgid "Slideshow Settings"
-msgstr "Configurações do slideshow"
+msgstr "Настройки на галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow created"
-msgstr "Slideshow criado"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:177
 msgid "Slideshow updated"
-msgstr "Slideshow atualizado"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:224
 #: classes/SlideshowPluginSlideInserter.php:238
 #: views/SlideshowPluginPostType/slides.php:2
 msgid "Insert"
-msgstr "Inserir"
+msgstr "Вмъкни"
 
 #: classes/SlideshowPluginPostType.php:232
 msgid "Open all"
-msgstr "Abrir todos"
+msgstr ""
 
 #: classes/SlideshowPluginPostType.php:234
 msgid "Close all"
-msgstr "Fechar todos"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginPostType.php:240
 #: views/SlideshowPluginPostType/slides.php:10
 msgid "Add slides to this slideshow by using one of the buttons above."
-msgstr "Adicione slides para este slideshow usando um dos botões acima."
+msgstr "Добавете кадри към галерията, като използвате някой от долните бутони."
 
 #: classes/SlideshowPluginPostType.php:320
 msgid "Duplicate"
-msgstr "Duplicar"
+msgstr ""
 
 #: classes/SlideshowPluginPostType.php:371
 msgid "Copy"
-msgstr "Copiar"
-
-# @ slideshow-plugin
-#: classes/SlideshowPluginShortcode.php:148
-msgid "No slideshow selected."
-msgstr "Nenhum slideshow selecionado."
-
-# @ slideshow-plugin
-#: classes/SlideshowPluginSlideInserter.php:194
-msgid "More results loaded"
-msgstr "Mais resultados carregados"
-
-# @ slideshow-plugin
-#: classes/SlideshowPluginSlideInserter.php:249
-msgid "Load more results"
-msgstr "Carregar mais resultados"
-
-# @ slideshow-plugin
-#: classes/SlideshowPluginSlideInserter.php:260
-msgid "No images were found, click here to upload some."
-msgstr "Não foram encontradas imagens, clique aqui para enviar algumas."
-
-# @ slideshow-plugin
-#: classes/SlideshowPluginSlideInserter.php:332
-msgid "Are you sure you want to delete this slide?"
-msgstr "Tem certeza que deseja excluir este slide?"
-
-# @ slideshow-plugin
-#: classes/SlideshowPluginSlideInserter.php:333
-msgid "Insert image slide"
 msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
+#: classes/SlideshowPluginShortcode.php:148
+msgid "No slideshow selected."
+msgstr "Няма избрана галерия."
+
+# @ slideshow-jquery-image-gallery
+#: classes/SlideshowPluginSlideInserter.php:194
+msgid "More results loaded"
+msgstr "Показва още резултати"
+
+# @ slideshow-jquery-image-gallery
+#: classes/SlideshowPluginSlideInserter.php:249
+msgid "Load more results"
+msgstr "Покажи още резултати"
+
+# @ slideshow-jquery-image-gallery
+#: classes/SlideshowPluginSlideInserter.php:260
+msgid "No images were found, click here to upload some."
+msgstr "Няма налична снимка, избери тук за да качиш такава."
+
+# @ slideshow-jquery-image-gallery
+#: classes/SlideshowPluginSlideInserter.php:332
+msgid "Are you sure you want to delete this slide?"
+msgstr "Сигурни ли сте, че искате да изтриете този кадър?"
+
+# @ slideshow-jquery-image-gallery
+#: classes/SlideshowPluginSlideInserter.php:333
+msgid "Insert image slide"
+msgstr "Вмъкнете снимка в кадъра"
+
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:523
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
-msgstr "Largura máxima. Quando for 0, será ignorada."
+msgstr ""
+"Максимална ширина. Когато максималната ширина е 0 то тя не се взема под "
+"влияние"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 msgid "http://en.wikipedia.org/wiki/Aspect_ratio_(image)"
 msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 msgid "More info"
-msgstr "Mais informações"
+msgstr "Още информация"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:524
 #, php-format
 msgid ""
 "Proportional relationship%s between slideshow's width and height (width:"
 "height)"
 msgstr ""
-"Relação proporcional%s entre largura e altura da apresentação de slides "
-"(largura:altura)"
+"Запази пропорциите%s между ширината и височината на снимката (width:height)"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:525
 msgid "Slideshow's height"
-msgstr "Altura dos slideshow's"
+msgstr "Височина на галерията"
 
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:526
 msgid "Image behaviour"
-msgstr ""
+msgstr "Вид на снимката"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:527
 msgid "Shrink slideshow's height when width shrinks"
-msgstr "Encolher a altura quando encolhe a largura"
+msgstr "Намали височината на галерията при намаляне на нейната ширина"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:528
 msgid ""
 "Enable responsiveness (Shrink slideshow's width when page's width shrinks)"
 msgstr ""
-"Ativar resposta (encolher a largura do slideshow quando a página encolhe a "
-"largura)"
+"Следвай големината на страницата. (Намали ширината на галерията ако се "
+"намали ширината на страницата в която се намира галерията)"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:530
 msgid "Hide description box, pop up when mouse hovers over"
-msgstr ""
-"Ocultar a caixa de descrição, exibir apenas quando o mouse passar sobre"
+msgstr "Скрий описанието. Покажи при преминаване на мишката през него."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:533
 msgid "Pause slideshow when mouse hovers over"
-msgstr "Pausar slideshow quando o mouse passar sobre"
+msgstr ""
+"Спирай временно смяната на кадрите при позициониране на мишката върху тях"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:534
 msgid "Activate navigation buttons"
-msgstr "Ativar botões de navegação"
+msgstr "Активирай бутоните за навигация"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:535
 msgid "Hide navigation buttons, show when mouse hovers over"
-msgstr "Ocultar botões de navegação, exibir apenas quando o mouse passar sobre"
+msgstr ""
+"Скрий бутоните за навигация. Показвай ги при преминаване на мишката през "
+"тяхното място"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:536
 msgid "Activate pagination"
-msgstr "Ativar paginação"
+msgstr "Активирай отстоянията от снимките"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:537
 msgid "Hide pagination, show when mouse hovers over"
-msgstr "Ocultar paginação, exibir apenas quando o mouse passar sobre"
+msgstr ""
+"Скрий отстоянията. Показвай ги при преминаване на мишката през тяхното място"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:538
 msgid "Activate control panel (play and pause button)"
-msgstr "Ativar painel de controle (botão de reprodução e pausa)"
+msgstr "Активирай контролния панел (бутоните пусни и спри)"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:539
 msgid "Hide control panel, show when mouse hovers over"
-msgstr "Ocultar painel de controle, exibir apenas quando o mouse passar sobre"
+msgstr ""
+"Скрий контролния панел. Покажи го при преминаване на мишката през неговото "
+"място"
 
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:540
 msgid "Wait until the next slide has loaded before showing it"
-msgstr "Esperar até que o próximo slide tenha carregado antes de mostrá-lo"
+msgstr "Изчакай зареждането на следващия кадър, преди да го покажеш"
 
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:541
 msgid "Show a loading icon until the first slide appears"
-msgstr "Mostrar um ícone de carregando até o primeiro slide aparecer"
+msgstr "Показвай иконата за зареждане докато се появи първия кадър"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:542
 msgid "Randomize slides"
-msgstr ""
+msgstr "Показвай кадрите разбъркано"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:543
 #, php-format
 msgid "Avoid content filter (disable if '%s' is shown)"
-msgstr "Evite filtro de conteúdo (desativar '%s' é mostrado)"
+msgstr "Включи филтър за съдържанието (изключи ако '%s' е показан)"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Left"
-msgstr "Deslize para a esquerda"
+msgstr "Прехвърляй кадрите наляво"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Right"
-msgstr "Deslize para a direita"
+msgstr "Прехвърляй кадрите надясно"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Up"
-msgstr "Deslize para cima"
+msgstr "Прехвърляй кадрите нагоре"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Slide Down"
-msgstr "Deslize para baixo"
+msgstr "Прехвърляй кадрите надолу"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Cross Fade"
 msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Direct Fade"
 msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:547
 msgid "Random Animation"
-msgstr "Animação aleatória"
+msgstr "Анимация избрана по случаен начин"
 
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Natural and centered"
-msgstr "Natural e centrado"
+msgstr "Центрирано"
 
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Crop to fit"
-msgstr "Corte para enquadrar"
+msgstr "Изрежи за да заеме наличното място"
 
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Stretch to fit"
-msgstr "Estique para enquadrar"
+msgstr "Разшири за да заеме наличното място"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:569
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:570
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:571
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:572
 msgid "Miscellaneous"
-msgstr "Diversos"
+msgstr "Допълнителни"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginWidget.php:23
 msgid "Enables you to show your slideshows in the widget area of your website."
-msgstr "Permite mostrar seus slideshows na área de widget."
+msgstr ""
+"Разрешете показването на Вашата галерия в мястото за Джаджи на Вашия сайт."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: classes/SlideshowPluginWidget.php:29
 msgid "Slideshow Widget"
-msgstr ""
+msgstr "Джаджа галерия"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Play"
-msgstr "Acionar"
+msgstr ""
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Pause"
-msgstr "Pausar"
+msgstr ""
 
 #: views/SlideshowPlugin/slideshow.php:25
 msgid "Previous"
-msgstr "Anterior"
+msgstr ""
 
 #: views/SlideshowPlugin/slideshow.php:26
 msgid "Next"
-msgstr "Próximo"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPlugin/slideshow.php:28
 msgid "Go to slide"
-msgstr "Ir para o slide"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:46
 msgid "Default stylesheets"
-msgstr "Padrão stylesheets"
+msgstr "Стил по подрабиране"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:60
 msgid "Create a new custom style from this style"
-msgstr "Criar um novo estilo personalizado"
+msgstr "Създай нов потребителски стил от този"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:62
 msgid "Customize"
-msgstr "Personalize"
+msgstr "Промени"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:76
 msgid "Custom stylesheets"
-msgstr "Stylesheets personalizados"
+msgstr "Собствен стил"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:89
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:172
 msgid "Edit this style"
-msgstr "Editar este estilo"
+msgstr "Редактирай стила"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:91
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:174
 #: views/SlideshowPluginPostType/slides.php:138
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:112
 msgid "Edit"
-msgstr "Editar"
+msgstr "Редакция"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:98
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:181
 msgid "Delete this style"
-msgstr "Excluir este estilo"
+msgstr "Изтрий стила"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:100
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:183
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Изтрий"
 
 # @ default
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:110
 msgid "Click 'Customize' to create a new custom stylesheet."
-msgstr "Clique 'Customizar' para criar uma nova folha de estilo."
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:130
 msgid "Select a stylesheet to start customizing it."
-msgstr "Selecione uma folha de estilo para customizá-la"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:139
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:192
 #: views/SlideshowPluginPostType/slides.php:59
@@ -628,20 +640,20 @@ msgstr "Selecione uma folha de estilo para customizá-la"
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:80
 #: views/SlideshowPluginWidget/form.php:2
 msgid "Title"
-msgstr "Título"
+msgstr "Заглавие"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:148
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:200
 msgid "Style"
-msgstr "Estilo"
+msgstr "Стил"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:11
 msgid "Note"
-msgstr "Nota"
+msgstr "Бележка"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:18
 #, php-format
 msgid ""
@@ -649,119 +661,121 @@ msgid ""
 "therefore do not alter any existing ones. To adapt a slideshow's settings, "
 "%sclick here.%s"
 msgstr ""
-"As configurações definidas nesta página aplicam-se apenas para apresentações "
-"de slides criados recentemente, e portanto, não altera nenhum dos já "
-"existentes. Para adaptar as configurações de um slideshow, %sclique aqui.%s"
+"Настройките в тази страница важат само за нова галерия. За да промените "
+"настройките, %sclick here.%s"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:29
 #: views/SlideshowPluginGeneralSettings/general-settings.php:15
 msgid "Default Slideshow Settings"
-msgstr "Predefinições do Slideshow"
+msgstr "Настройки на галерията по подразбиране"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:41
 #: views/SlideshowPluginPostType/settings.php:12
 msgid "settings"
-msgstr "Configurações"
+msgstr "настройки"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/default-slideshow-settings-tab.php:77
 msgid "Default Slideshow Stylesheet"
-msgstr "Padrão Slideshow Stylesheet"
+msgstr "Настройки на стила на галерията по подразбиране"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:11
 msgid "Add slideshows"
-msgstr "Adicionar slideshows"
+msgstr "Добави галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:12
 msgid "Edit slideshows"
-msgstr "Editar slideshows"
+msgstr "Редактирай галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:13
 msgid "Delete slideshows"
-msgstr "Excluir slideshows"
+msgstr "Изтрий галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:20
 msgid "User Capabilities"
-msgstr "Capacidades do usuário"
+msgstr "Потребителски възможности"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:22
 msgid "Select the user roles that will able to perform certain actions."
-msgstr ""
-"Selecione as funções dos usuários que serão capazes de executar determinadas "
-"ações."
+msgstr "Изберете потребител с права позволяващи необходимите действия."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:38
 msgid "Untitled role"
-msgstr "Papel sem título"
+msgstr "Унифицирани права"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:65
 msgid "Settings"
-msgstr "Configurações"
+msgstr "Настройки"
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:69
 msgid "Stylesheet location"
-msgstr "Localização da folha de estilo"
+msgstr "Местоположение на стиловете"
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:72
 msgid "top"
-msgstr "topo"
+msgstr "горе"
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:73
 msgid "bottom"
-msgstr "base"
+msgstr "долу"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginGeneralSettings/general-settings.php:16
 msgid "Custom Styles"
-msgstr "Estilos personalizados"
+msgstr "Различни стилове"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/information.php:1
 msgid ""
 "To use this slideshow in your website either add this piece of shortcode to "
 "your posts or pages"
 msgstr ""
-"Para usar este slideshow no seu site, adicione este pedaço de shortcode às "
-"suas mensagens ou páginas"
+"За да използвате тази галерия във Вашия сайт, въведете този код във Вашите "
+"публикации или страници"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/information.php:5
 msgid ""
 "Or add this piece of code to where ever in your website you want to place "
 "the slideshow"
-msgstr "Ou adicione este pedaço de código onde você deseja colocar o slideshow"
+msgstr ""
+"Или може да добавите този код където желаете във Вашия сайт за да покажете "
+"галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/information.php:9
 #, php-format
 msgid "Or go to the %swidgets page%s and show the slideshow as a widget."
-msgstr "Ou ir para %spágina de widgets%s e exibir o slideshow como um widget."
+msgstr "Или вървете в %swidgets page%s и покажете галерията като джаджа."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/settings.php:26
 #: views/SlideshowPluginPostType/style-settings.php:11
 msgid "Default"
-msgstr "Padrão"
+msgstr "По подрабиране"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:54
 #: views/SlideshowPluginPostType/slides.php:191
 #: views/SlideshowPluginSlideInserter/insert-text-button.php:2
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:9
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:69
 msgid "Text slide"
-msgstr "Slide de texto"
+msgstr "Текстов кадър"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:61
 #: views/SlideshowPluginPostType/slides.php:150
 #: views/SlideshowPluginPostType/slides.php:198
@@ -771,17 +785,17 @@ msgstr "Slide de texto"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:165
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:95
 msgid "Description"
-msgstr "Descrição"
+msgstr "Описание"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:63
 #: views/SlideshowPluginPostType/slides.php:200
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:51
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:113
 msgid "Background color"
-msgstr "Cor de fundo"
+msgstr "Фон"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:68
 #: views/SlideshowPluginPostType/slides.php:155
 #: views/SlideshowPluginPostType/slides.php:205
@@ -791,9 +805,9 @@ msgstr "Cor de fundo"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:180
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:121
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:70
 #: views/SlideshowPluginPostType/slides.php:157
 #: views/SlideshowPluginPostType/slides.php:207
@@ -803,9 +817,9 @@ msgstr "URL"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:183
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:124
 msgid "Open URL in"
-msgstr "Abrir URL em"
+msgstr "Отвори URL в"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:72
 #: views/SlideshowPluginPostType/slides.php:159
 #: views/SlideshowPluginPostType/slides.php:209
@@ -815,9 +829,9 @@ msgstr "Abrir URL em"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:185
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:126
 msgid "Same window"
-msgstr "Mesma janela"
+msgstr "Същия прозорец"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:73
 #: views/SlideshowPluginPostType/slides.php:160
 #: views/SlideshowPluginPostType/slides.php:210
@@ -827,26 +841,26 @@ msgstr "Mesma janela"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:186
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:127
 msgid "New window"
-msgstr "Nova janela"
+msgstr "Нов прозорец"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:90
 #: views/SlideshowPluginPostType/slides.php:230
 #: views/SlideshowPluginSlideInserter/insert-video-button.php:2
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:94
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:26
 msgid "Video slide"
-msgstr "Slide de vídeo"
+msgstr "Видео кадър"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:95
 #: views/SlideshowPluginPostType/slides.php:235
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:103
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:35
 msgid "Youtube Video ID"
-msgstr "ID do Vídeo no Youtube"
+msgstr ""
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:133
 #: views/SlideshowPluginPostType/slides.php:255
 #: views/SlideshowPluginSlideInserter/insert-image-button.php:2
@@ -854,17 +868,18 @@ msgstr "ID do Vídeo no Youtube"
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:101
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:135
 msgid "Image slide"
-msgstr "Slide de imagem"
+msgstr "Кадър снимка"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:171
 msgid ""
 "An error occurred while loading this slide, and it will not be present in "
 "the slideshow"
 msgstr ""
-"Ocorreu um erro ao carregar este slide, e não vai estar presente no slideshow"
+"Открита е грешка при зареждането на този кадър. Няма да се визуализира в "
+"галерията."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/slides.php:177
 #: views/SlideshowPluginPostType/slides.php:218
 #: views/SlideshowPluginPostType/slides.php:243
@@ -876,20 +891,20 @@ msgstr ""
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:138
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:49
 msgid "Delete slide"
-msgstr "Excluir slide"
+msgstr "Изтрий кадъра."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/style-settings.php:22
 #, php-format
 msgid "Custom styles can be created and customized %shere%s."
-msgstr "Estilos podem ser criados e personalizados %saqui%s."
+msgstr "Различни стилове могат да се създават и променят %sтук%s."
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/support-plugin.php:3
 msgid "Help to keep this plugin free!"
-msgstr "Ajude a manter este plugin grátis!"
+msgstr "Помогнете този модул да остане безплатен!"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/support-plugin.php:6
 msgid ""
 "In order to keep you provided with the newest features, updates and bug "
@@ -897,69 +912,69 @@ msgid ""
 "consider making a small donation to the plugin or rating it as 5-stars on "
 "Wordpress.org. Thank you in advance!"
 msgstr ""
-"A fim de mantê-lo fornecido com os novos recursos, o apoio do fórum, e "
-"correções de erros, muita motivação é necessária. Portanto, eu estou pedindo "
-"gentilmente que você considere fazer uma pequena doação para o plugin ou "
-"classificação como 5 estrelas em Wordpress.org. Obrigado com antecedência!"
+"За да се запази модула с най-новите функции, актуализации и корекции на "
+"грешки, се изисква много мотивация. Затова аз любезно ви моля да направите "
+"малко дарение за модула  или рейтинга му на Wordpress.org. Благодаря Ви "
+"предварително!"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/support-plugin.php:15
 msgid "Rate on Wordpress.org"
-msgstr "Taxa em Wordpress.org"
+msgstr "Гласувай за модула на Wordpress.org"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginPostType/support-plugin.php:24
 msgid "Frequently Asked Questions (FAQ)"
-msgstr "Perguntas Frequentes (FAQ)"
+msgstr "Често Задавани Въпроси"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:4
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:9
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:18
 msgid "Insert a Slideshow"
-msgstr "Insira um slideshow"
+msgstr "Вмъкни галерията"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:12
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:51
 msgid "Insert Slideshow"
-msgstr "Insira slideshow"
+msgstr "Вмъкни галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:27
 msgid "Select a slideshow"
-msgstr "Selecione um slideshow"
+msgstr "Избери галерия"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:36
 #: views/SlideshowPluginWidget/form.php:12
 msgid "Untitled slideshow"
-msgstr "Slideshow sem título"
+msgstr "Галерия без заглавие"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:56
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Откажи"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginShortcode/shortcode-inserter.php:67
 #, php-format
 msgid ""
 "It seems you haven't created any slideshows yet. %sYou can create a "
 "slideshow here!%s"
 msgstr ""
-"Parece que você não criou nenhum slideshow ainda. %sVocê pode criar um "
-"slideshow aqui!%s"
+"Изглежда, че все още не сте създали галерия. %sМожете да го направите от тук!"
+"%s"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideInserter/search-popup.php:6
 msgid "Search"
-msgstr "Pesquisar"
+msgstr "Търси"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideInserter/search-popup.php:7
 msgid "Search images by title or ID"
-msgstr "Procurar imagens por título ou ID"
+msgstr "Търси снимка по заглавие или ID"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:90
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:4
@@ -968,42 +983,46 @@ msgstr "Procurar imagens por título ou ID"
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:58
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:21
 msgid "Click to toggle"
-msgstr "Clique para trocar"
+msgstr ""
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:160
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:190
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:131
 msgid "Don't let search engines follow link"
-msgstr "Não permitir aos mecanismos de busca seguirem o link"
+msgstr "Търсещите машини да не проследяват връзката"
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:168
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:197
 msgid "Alternative text"
-msgstr "Texto alternativo"
+msgstr "Алтернативен текст"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:48
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:110
 msgid "Text color"
-msgstr "Cor do texto"
+msgstr "Цвят на текста"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:53
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:115
 msgid "(Leave empty for a transparent background)"
-msgstr "(Deixe em branco para um fundo transparente)"
+msgstr "(Остави празно за прозрачен фон)"
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:42
 msgid "Show related videos"
-msgstr "Mostrar vídeos relacionados"
+msgstr "Покажи свързани видеа"
 
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginUpload/upload-button.php:1
 msgid "Upload/Manage Images"
-msgstr "Enviar/Gerenciar Imagens"
+msgstr "Качи/Промени снимка"
 
-# @ slideshow-plugin
+# @ slideshow-jquery-image-gallery
 #: views/SlideshowPluginWidget/form.php:9
 msgid "Random Slideshow"
-msgstr "Slideshow aleatório"
+msgstr "Случайно избрана галерия"

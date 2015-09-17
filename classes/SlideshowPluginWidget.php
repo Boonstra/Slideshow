@@ -20,13 +20,13 @@ class SlideshowPluginWidget extends WP_Widget
 		// Settings
 		$options = array(
 			'classname'   => 'SlideshowWidget',
-			'description' => __('Enables you to show your slideshows in the widget area of your website.', 'slideshow-plugin')
+			'description' => __('Enables you to show your slideshows in the widget area of your website.', 'slideshow-jquery-image-gallery')
 		);
 
 		// Create the widget.
 		parent::__construct(
 			'slideshowWidget',
-			__('Slideshow Widget', 'slideshow-plugin'),
+			__('Slideshow Widget', 'slideshow-jquery-image-gallery'),
 			$options
 		);
 	}
@@ -93,7 +93,7 @@ class SlideshowPluginWidget extends WP_Widget
 	{
 		// Defaults
 		$defaults = array(
-			'title'       => __(self::$widgetName, 'slideshow-plugin'),
+			'title'       => __(self::$widgetName, 'slideshow-jquery-image-gallery'),
 			'slideshowId' => -1
 		);
 

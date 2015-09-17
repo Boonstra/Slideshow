@@ -79,8 +79,8 @@ class SlideshowPluginGeneralSettings
 		// Add sub menu
 		add_submenu_page(
 			'edit.php?post_type=' . SlideshowPluginPostType::$postType,
-			__('General Settings', 'slideshow-plugin'),
-			__('General Settings', 'slideshow-plugin'),
+			__('General Settings', 'slideshow-jquery-image-gallery'),
+			__('General Settings', 'slideshow-jquery-image-gallery'),
 			'manage_options',
 			'general_settings',
 			array(__CLASS__, 'generalSettings')
@@ -147,8 +147,8 @@ class SlideshowPluginGeneralSettings
 			array(
 				'data'         => array('customStylesKey' => self::$customStyles),
 				'localization' => array(
-					'newCustomizationPrefix' => __('New', 'slideshow-plugin'),
-					'confirmDeleteMessage'   => __('Are you sure you want to delete this custom style?', 'slideshow-plugin')
+					'newCustomizationPrefix' => __('New', 'slideshow-jquery-image-gallery'),
+					'confirmDeleteMessage'   => __('Are you sure you want to delete this custom style?', 'slideshow-jquery-image-gallery')
 				)
 			)
 		);
@@ -193,8 +193,8 @@ class SlideshowPluginGeneralSettings
 	{
 		// Default styles
 		$defaultStyles = array(
-			'style-light.css' => __('Light', 'slideshow-plugin'),
-			'style-dark.css'  => __('Dark', 'slideshow-plugin')
+			'style-light.css' => __('Light', 'slideshow-jquery-image-gallery'),
+			'style-dark.css'  => __('Dark', 'slideshow-jquery-image-gallery')
 		);
 
 		// Loop through default stylesheets
@@ -350,7 +350,7 @@ class SlideshowPluginGeneralSettings
 			foreach ($customStyles as $customStyleKey => $customStyleValue)
 			{
 				// Put custom style key and name into the $newCustomStyle array
-				$newCustomStyles[$customStyleKey] = isset($customStyleValue['title']) ? $customStyleValue['title'] : __('Untitled', 'slideshow-plugin');
+				$newCustomStyles[$customStyleKey] = isset($customStyleValue['title']) ? $customStyleValue['title'] : __('Untitled', 'slideshow-jquery-image-gallery');
 
 				// Get style
 				$newStyle = isset($customStyleValue['style']) ? $customStyleValue['style'] : '';
