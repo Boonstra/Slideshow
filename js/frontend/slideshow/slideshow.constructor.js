@@ -39,9 +39,22 @@
 
 		if (!this.settings)
 		{
-			self.log('Slideshow (ID: ' + this.ID + ') could not find its settings.');
+			try
+			{
+				this.settings = JSON.parse(this.$container.attr('data-settings'));
 
-			return;
+				if (typeof(this.settings) != 'object')
+				{
+					//noinspection ExceptionCaughtLocallyJS
+					throw "";
+				}
+			}
+			catch (ignored)
+			{
+				self.log('Slideshow (ID: ' + this.ID + ') could not find its settings.');
+
+				return;
+			}
 		}
 
 		// Convert 'true' and 'false' to boolean values.
@@ -183,6 +196,11 @@
 				else
 				{
 					this.viewData[viewID][slideID].loaded = -1;
+				}
+
+				if ($slide.hasClass('slideshow_slide_video'))
+				{
+					slideshow_jquery_image_gallery_script.loadYouTubeAPI();
 				}
 			}, this));
 		}, this));

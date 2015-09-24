@@ -8,9 +8,6 @@
  */
 class SlideshowPlugin
 {
-	/** int $sessionCounter */
-	public static $sessionCounter = 0;
-
 	/**
 	 * Function deploy prints out the prepared html
 	 *
@@ -160,21 +157,22 @@ class SlideshowPlugin
 			}
 		}
 
-		// Include slideshow settings by localizing them
-		wp_localize_script(
-			'slideshow-jquery-image-gallery-script',
-			'SlideshowPluginSettings_' . $post->ID,
-			$settings
-		);
+		if (!SlideshowPluginGeneralSettings::getEnableLazyLoading())
+		{
+			// Include slideshow settings by localizing them
+			wp_localize_script(
+				'slideshow-jquery-image-gallery-script',
+				'SlideshowPluginSettings_' . $post->ID,
+				$settings
+			);
 
-		// Include the location of the admin-ajax.php file
-		wp_localize_script(
-			'slideshow-jquery-image-gallery-script',
-			'slideshow_jquery_image_gallery_script_adminURL',
-			admin_url()
-		);
-
-		self::$sessionCounter++;
+			// Include the location of the admin-ajax.php file
+			wp_localize_script(
+				'slideshow-jquery-image-gallery-script',
+				'slideshow_jquery_image_gallery_script_adminURL',
+				admin_url()
+			);
+		}
 
 		// Return output
 		return $output;

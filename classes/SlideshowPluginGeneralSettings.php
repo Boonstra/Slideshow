@@ -14,8 +14,11 @@ class SlideshowPluginGeneralSettings
 	/** @var string $settingsGroup Settings group */
 	static $settingsGroup = 'slideshow-jquery-image-gallery-general-settings';
 
-	/** @var string $stylesheetLocation General settings */
+	/** @var string $stylesheetLocation Stylesheet location setting */
 	static $stylesheetLocation = 'slideshow-jquery-image-gallery-stylesheet-location';
+
+	/** @var string $enableLazyLoading Lazy loading setting */
+	static $enableLazyLoading = 'slideshow-jquery-image-gallery-enable-lazy-loading';
 
 	/** @var array $capabilities User capability settings */
 	static $capabilities = array(
@@ -116,6 +119,7 @@ class SlideshowPluginGeneralSettings
 
 		// Register general settings
 		register_setting(self::$settingsGroup, self::$stylesheetLocation);
+		register_setting(self::$settingsGroup, self::$enableLazyLoading);
 
 		// Register user capability settings, saving capabilities only has to be called once.
 		register_setting(self::$settingsGroup, self::$capabilities['addSlideshows']);
@@ -163,6 +167,17 @@ class SlideshowPluginGeneralSettings
 	public static function getStylesheetLocation()
 	{
 		return get_option(SlideshowPluginGeneralSettings::$stylesheetLocation, 'footer');
+	}
+
+	/**
+	 * Returns the lazy loading setting, which is disabled (false) by default.
+	 *
+	 * @since 2.3.0
+	 * @return boolean $enableLazyLoading
+	 */
+	public static function getEnableLazyLoading()
+	{
+		return get_option(self::$enableLazyLoading, false) === "true";
 	}
 
 	/**

@@ -14,6 +14,7 @@ slideshow_jquery_image_gallery_script = function()
 	self.slideshowInstances = { };
 	self.initialized        = false;
 	self.youTubeAPIReady    = false;
+	self.sessionIDCounter   = 0;
 
 	/**
 	 * Called by either $(document).ready() or $(window).load() to initialize the slideshow's script.
@@ -30,9 +31,10 @@ slideshow_jquery_image_gallery_script = function()
 
 		$(document).trigger('slideshow_jquery_image_gallery_script_ready');
 
-		self.loadYouTubeAPI();
+		//self.loadYouTubeAPI();
 		self.repairStylesheetURLs();
 		self.activateSlideshows();
+		self.enableLazyLoading();
 
 		$(document).trigger('slideshow_jquery_image_gallery_slideshows_ready');
 	};
@@ -75,26 +77,85 @@ slideshow_jquery_image_gallery_script = function()
 	};
 
 	/**
-	 * Instantiates Slideshow objects on all slideshow elements that have not yet been registered of having a Slideshow
-	 * instance.
+	 * Calls the activateSlideshow method on all slideshows on the page.
 	 */
 	self.activateSlideshows = function()
 	{
-		$.each(jQuery('.slideshow_container'), function(key, slideshowElement)
+		$.each($('.slideshow_container'), function(key, slideshowElement)
 		{
-			var $slideshowElement = $(slideshowElement),
-				ID                = $slideshowElement.data('sessionId');
-
-			if (isNaN(parseInt(ID, 10)))
-			{
-				ID = $slideshowElement.attr('data-session-id');
-			}
-
-			if (!(self.slideshowInstances[ID] instanceof self.Slideshow))
-			{
-				self.slideshowInstances[ID] = new self.Slideshow($slideshowElement);
-			}
+			self.activateSlideshow($(slideshowElement));
 		});
+	};
+
+	/**
+	 * Activate a slideshow instance on the passed slideshow container element, provided it has not yet been activated.
+	 *
+	 * @param $slideshowElement (jQuery)
+	 */
+	self.activateSlideshow = function($slideshowElement)
+	{
+		if ($slideshowElement.hasClass('slideshow_container') &&
+			$slideshowElement.attr('data-slideshow-active') != '1')
+		{
+			$slideshowElement.attr('data-slideshow-active', '1');
+
+			self.slideshowInstances[self.sessionIDCounter] = new self.Slideshow($slideshowElement);
+
+			self.sessionIDCounter++;
+		}
+	};
+
+	/**
+	 * This method starts a MutationObserver to watch for any lazy loaded slideshows. However, MutationObserver is not
+	 * available on older browsers. Therefore a fallback to polling is required on these unsupported browsers.
+	 */
+	self.enableLazyLoading = function()
+	{
+		var observer;
+
+		// Test if there's browser support for finding DOM mutations (most lightweight)
+		if (typeof(MutationObserver) == 'function')
+		{
+			observer = new MutationObserver(function(mutations)
+			{
+				mutations.forEach(function(mutation)
+				{
+					var i;
+
+					if (!mutation.addedNodes)
+					{
+						return;
+					}
+
+					for (i = 0; i < mutation.addedNodes.length; i++)
+					{
+						// Try to find and activate all slideshows in the current node, including the node itself
+						$.each($(mutation.addedNodes[i]).find('.slideshow_container').addBack('.slideshow_container'), function(key, slideshowElement)
+						{
+							self.activateSlideshow($(slideshowElement));
+						});
+					}
+				});
+			});
+
+			observer.observe(document.body, {
+				childList    : true,
+				subtree      : true,
+				attributes   : false,
+				characterData: false
+			});
+		}
+		// Fallback on polling, more resource intensive
+		else
+		{
+			setInterval(function()
+			{
+				$.each($('.slideshow_container:not([data-slideshow-active])'), function(key, slideshowElement)
+				{
+					self.activateSlideshow($(slideshowElement));
+				});
+			}, 2000);
+		}
 	};
 
 	/**
@@ -102,12 +163,12 @@ slideshow_jquery_image_gallery_script = function()
 	 */
 	self.loadYouTubeAPI = function()
 	{
-		self.loadYouTubeAPICalled = true;
-
-		if ($('.slideshow_slide_video').length <= 0)
+		if (self.loadYouTubeAPICalled)
 		{
 			return;
 		}
+
+		self.loadYouTubeAPICalled = true;
 
 		var tag            = document.createElement('script'),
 			firstScriptTag = document.getElementsByTagName('script')[0];

@@ -183,8 +183,10 @@
 
 			var player = this.videoPlayers[playerID].player;
 
+			// Check if player is not unstarted (-1)
 			if (player != null &&
-				typeof player.pauseVideo === 'function')
+				typeof player.pauseVideo === 'function' &&
+				this.videoPlayers[playerID].state != -1)
 			{
 				this.videoPlayers[playerID].state = 2;
 

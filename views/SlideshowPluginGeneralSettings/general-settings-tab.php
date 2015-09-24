@@ -2,6 +2,7 @@
 
 // General settings
 $stylesheetLocation = SlideshowPluginGeneralSettings::getStylesheetLocation();
+$enableLazyLoading  = SlideshowPluginGeneralSettings::getEnableLazyLoading();
 
 // Roles
 global $wp_roles;
@@ -72,6 +73,13 @@ $capabilities = array(
 					<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-jquery-image-gallery'); ?>)</option>
 					<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-jquery-image-gallery'); ?>)</option>
 				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><?php _e('Enable lazy loading', 'slideshow-jquery-image-gallery'); ?></td>
+			<td>
+				<input type="radio" name="<?php echo SlideshowPluginGeneralSettings::$enableLazyLoading; ?>" <?php checked(true, $enableLazyLoading); ?> value="true" /> <?php _e('Yes', 'slideshow-jquery-image-gallery'); ?>
+				<input type="radio" name="<?php echo SlideshowPluginGeneralSettings::$enableLazyLoading; ?>" <?php checked(false, $enableLazyLoading); ?> value="false" /> <?php _e('No', 'slideshow-jquery-image-gallery'); ?>
 			</td>
 		</tr>
 	</table>
