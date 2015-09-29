@@ -1,106 +1,109 @@
 <?php
 
-// Default settings
-$defaultSettings      = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
-$defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
+if ($data instanceof stdClass) :
 
-?>
+	// Default settings
+	$defaultSettings      = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
+	$defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
 
-<div class="default-slideshow-settings-tab" style="display: none; float: none;">
-	<p>
-		<strong><?php _e('Note', 'slideshow-jquery-image-gallery'); ?>:</strong>
-	</p>
+	?>
 
-	<p style="width: 500px;">
-		<?php
+	<div class="default-slideshow-settings-tab" style="display: none; float: none;">
+		<p>
+			<strong><?php _e('Note', 'slideshow-jquery-image-gallery'); ?>:</strong>
+		</p>
 
-		echo sprintf(__(
-			'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %sclick here.%s', 'slideshow-jquery-image-gallery'),
-			'<a href="' . get_admin_url(null, 'edit.php?post_type=' . SlideshowPluginPostType::$postType) . '">',
-			'</a>'
-		);
+		<p style="width: 500px;">
+			<?php
 
-		?>
-	</p>
-</div>
+			echo sprintf(__(
+				'The settings set on this page apply only to newly created slideshows and therefore do not alter any existing ones. To adapt a slideshow\'s settings, %sclick here.%s', 'slideshow-jquery-image-gallery'),
+				'<a href="' . get_admin_url(null, 'edit.php?post_type=' . SlideshowPluginPostType::$postType) . '">',
+				'</a>'
+			);
 
-<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
+			?>
+		</p>
+	</div>
 
-	<h4><?php _e('Default Slideshow Settings', 'slideshow-jquery-image-gallery'); ?></h4>
+	<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
 
-	<table>
+		<h4><?php _e('Default Slideshow Settings', 'slideshow-jquery-image-gallery'); ?></h4>
 
-		<?php $groups = array(); ?>
-		<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
+		<table>
 
-		<?php if(!empty($defaultSettingValue['group']) && !isset($groups[$defaultSettingValue['group']])): $groups[$defaultSettingValue['group']] = true; ?>
+			<?php $groups = array(); ?>
+			<?php foreach($defaultSettings as $defaultSettingKey => $defaultSettingValue): ?>
 
-		<tr>
-			<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
-				<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
-					<?php echo $defaultSettingValue['group']; ?> <?php _e('settings', 'slideshow-jquery-image-gallery'); ?>
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3"></td>
-		</tr>
+			<?php if(!empty($defaultSettingValue['group']) && !isset($groups[$defaultSettingValue['group']])): $groups[$defaultSettingValue['group']] = true; ?>
 
-		<?php endif; ?>
+			<tr>
+				<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
+					<span style="display: inline-block; position: relative; top: 14px; padding: 0 12px; background: #fff;">
+						<?php echo $defaultSettingValue['group']; ?> <?php _e('settings', 'slideshow-jquery-image-gallery'); ?>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"></td>
+			</tr>
 
-		<tr>
-			<td>
-				<?php echo $defaultSettingValue['description']; ?>
-			</td>
-			<td>
-				<?php
+			<?php endif; ?>
 
-				echo SlideshowPluginSlideshowSettingsHandler::getInputField(
-					SlideshowPluginGeneralSettings::$defaultSettings,
-					$defaultSettingKey,
-					$defaultSettingValue,
-					/* hideDependentValues = */ false
-				);
+			<tr>
+				<td>
+					<?php echo $defaultSettingValue['description']; ?>
+				</td>
+				<td>
+					<?php
 
-				?>
-			</td>
-		</tr>
+					echo SlideshowPluginSlideshowSettingsHandler::getInputField(
+						SlideshowPluginGeneralSettings::$defaultSettings,
+						$defaultSettingKey,
+						$defaultSettingValue,
+						/* hideDependentValues = */ false
+					);
 
-		<?php endforeach; ?>
-		<?php unset($groups); ?>
+					?>
+				</td>
+			</tr>
 
-	</table>
-</div>
+			<?php endforeach; ?>
+			<?php unset($groups); ?>
 
-<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
+		</table>
+	</div>
 
-	<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-jquery-image-gallery'); ?></h4>
+	<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
 
-	<table>
+		<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-jquery-image-gallery'); ?></h4>
 
-		<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
+		<table>
 
-		<tr>
-			<td>
-				<?php echo $defaultStyleSettingValue['description']; ?>
-			</td>
-			<td>
-				<?php
+			<?php foreach($defaultStyleSettings as $defaultStyleSettingKey => $defaultStyleSettingValue): ?>
 
-				echo SlideshowPluginSlideshowSettingsHandler::getInputField(
-					SlideshowPluginGeneralSettings::$defaultStyleSettings,
-					$defaultStyleSettingKey,
-					$defaultStyleSettingValue,
-					/* hideDependentValues = */ false
-				);
+			<tr>
+				<td>
+					<?php echo $defaultStyleSettingValue['description']; ?>
+				</td>
+				<td>
+					<?php
 
-				?>
-			</td>
-		</tr>
+					echo SlideshowPluginSlideshowSettingsHandler::getInputField(
+						SlideshowPluginGeneralSettings::$defaultStyleSettings,
+						$defaultStyleSettingKey,
+						$defaultStyleSettingValue,
+						/* hideDependentValues = */ false
+					);
 
-		<?php endforeach; ?>
+					?>
+				</td>
+			</tr>
 
-	</table>
-</div>
+			<?php endforeach; ?>
 
-<div style="clear: both;"></div>
+		</table>
+	</div>
+
+	<div style="clear: both;"></div>
+<?php endif; ?>

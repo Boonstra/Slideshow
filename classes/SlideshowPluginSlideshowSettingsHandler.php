@@ -292,74 +292,7 @@ class SlideshowPluginSlideshowSettingsHandler
 		}
 
 		// Return
-		return $slides;
-	}
-
-	/**
-	 * Returns an array of SlideshowPluginSlideshowView objects if $returnAsObjects is true, otherwise returns an array
-	 * of view arrays that contain slide properties.
-	 *
-	 * To prevent the result from being cached set $enableCache to false. It's set to true by default.
-	 *
-	 * @since 2.2.0
-	 * @param int $slideshowId
-	 * @param bool $returnAsObjects (optional, defaults to true)
-	 * @param bool $enableCache (optional, defaults to true)
-	 * @return mixed $views
-	 */
-	static function getViews($slideshowId, $returnAsObjects = true, $enableCache = true)
-	{
-		// Get slides
-		$slides = self::getSlides($slideshowId, $enableCache);
-
-		// Get settings. Since in version 2.2.X slides aren't put into views yet, this has to be done manually
-		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($slideshowId, false, $enableCache);
-		$slidesPerView = 1;
-
-		if(isset($settings['slidesPerView']))
-		{
-			$slidesPerView = $settings['slidesPerView'];
-		}
-
-		// Loop through slides, forcing them into views
-		$i      = 0;
-		$viewId = -1;
-		$views  = array();
-
-		if (is_array($slides))
-		{
-			foreach ($slides as $slide)
-			{
-				// Create new view when view is full or not yet created
-				if ($i % $slidesPerView == 0)
-				{
-					$viewId++;
-
-					if ($returnAsObjects)
-					{
-						$views[$viewId] = new SlideshowPluginSlideshowView();
-					}
-					else
-					{
-						$views[$viewId] = array();
-					}
-				}
-
-				// Add slide to view
-				if ($returnAsObjects)
-				{
-					$views[$viewId]->addSlide($slide);
-				}
-				else
-				{
-					$views[$viewId][] = $slide;
-				}
-
-				$i++;
-			}
-		}
-
-		return $views;
+		return array_values($slides);
 	}
 
 	/**

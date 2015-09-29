@@ -187,7 +187,7 @@ class SlideshowPluginPostType
 	 */
 	static function supportPluginMessage()
 	{
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'support-plugin.php');
 	}
 
 	/**
@@ -199,16 +199,15 @@ class SlideshowPluginPostType
 	{
 		global $post;
 
-		$snippet   = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
-		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
+		$data            = new stdClass();
+		$data->snippet   = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
+		$data->shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
 
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'information.php', $data);
 	}
 
 	/**
 	 * Shows slides currently in slideshow
-	 *
-	 * TODO Tidy up, it's probably best to move all to 'slides.php'
 	 *
 	 * @since 1.0.0
 	 */
@@ -216,52 +215,10 @@ class SlideshowPluginPostType
 	{
 		global $post;
 
-		// Get views
-		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
+		$data         = new stdClass();
+		$data->slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
 
-		// Insert slide buttons
-		echo '<p style="text-align: center;">
-			<i>' . __('Insert', 'slideshow-jquery-image-gallery') . ':</i><br/>' .
-			SlideshowPluginSlideInserter::getImageSlideInsertButton() .
-			SlideshowPluginSlideInserter::getTextSlideInsertButton() .
-			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
-		'</p>';
-
-		// Toggle slides open/closed
-		echo '<p style="text-align: center;">
-			<a href="#" class="open-slides-button">' . __( 'Open all', 'slideshow-jquery-image-gallery' ) . '</a>
-			|
-			<a href="#" class="close-slides-button">' . __( 'Close all', 'slideshow-jquery-image-gallery' ) . '</a>
-		</p>';
-
-		// No views/slides message
-		if (count($views) <= 0)
-		{
-			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-jquery-image-gallery') . '</p>';
-		}
-
-		// Start list
-		echo '<div class="sortable-slides-list">';
-
-		// Print views
-		if (is_array($views))
-		{
-			foreach($views as $view)
-			{
-				if (!($view instanceof SlideshowPluginSlideshowView))
-				{
-					continue;
-				}
-
-				echo $view->toBackEndHTML();
-			}
-		}
-
-		// End list
-		echo '</div>';
-
-		// Templates
-		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'slides.php', $data);
 	}
 
 	/**
@@ -273,11 +230,10 @@ class SlideshowPluginPostType
 	{
 		global $post;
 
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
+		$data           = new stdClass();
+		$data->settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
 
-		// Include style settings file
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'style-settings.php', $data);
 	}
 
 	/**
@@ -292,11 +248,10 @@ class SlideshowPluginPostType
 		// Nonce
 		wp_nonce_field(SlideshowPluginSlideshowSettingsHandler::$nonceAction, SlideshowPluginSlideshowSettingsHandler::$nonceName);
 
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
+		$data           = new stdClass();
+		$data->settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
 
-		// Include
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'settings.php', $data);
 	}
 
 	/**

@@ -12,143 +12,8 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	{
 		if (slideshow_jquery_image_gallery_backend_script.editSlideshow.isCurrentPage)
 		{
-			// New 3.5 uploader
-			self.activateUploader();
-
 			self.activate();
-
-			// Old pre-3.5 uploader
-			self.activeOldUploader();
 		}
-	};
-
-	/**
-	 * Activates the WordPress 3.5 uploader.
-	 */
-	self.activateUploader = function()
-	{
-		$('.slideshow-insert-image-slide').on('click', function(event)
-		{
-			event.preventDefault();
-
-			var uploaderTitle,
-				externalData;
-
-			// Reopen file frame if it has already been created
-			if (self.uploader)
-			{
-				self.uploader.open();
-
-				return;
-			}
-
-			externalData = window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
-
-			uploaderTitle = '';
-
-			if (typeof externalData === 'object' &&
-				typeof externalData.localization === 'object' &&
-				externalData.localization.uploaderTitle !== undefined &&
-				externalData.localization.uploaderTitle.length > 0)
-			{
-				uploaderTitle = externalData.localization.uploaderTitle;
-			}
-
-			// Create the uploader
-			self.uploader = wp.media.frames.slideshow_jquery_image_galler_uploader = wp.media({
-				frame   : 'select',
-				title   : uploaderTitle,
-				multiple: true,
-				library :
-				{
-					type: 'image'
-				}
-			});
-
-			// Create image slide on select
-			self.uploader.on('select', function()
-			{
-				var attachments = self.uploader.state().get('selection').toJSON(),
-					attachment,
-					attachmentID;
-
-				for (attachmentID in attachments)
-				{
-					if (!attachments.hasOwnProperty(attachmentID))
-					{
-						continue;
-					}
-
-					attachment = attachments[attachmentID];
-
-					self.insertImageSlide(attachment.id, attachment.title, attachment.description, attachment.url, attachment.alt);
-				}
-			});
-
-			self.uploader.open();
-		});
-	};
-
-	/**
-	 * Activates the pre-3.5 uploader for backwards compatibility.
-	 */
-	self.activeOldUploader = function()
-	{
-		var $popup           = $('#slideshow-slide-inserter-popup'),
-			$popupBackground = $('#slideshow-slide-inserter-popup-background'),
-			$searchBar       = $popup.find('#search');
-
-		// Make the black background stretch all the way down the document
-		$popupBackground.height($(document).outerHeight(true));
-
-		// Center the popup in the window
-		$popup.css({
-			'top': parseInt(($(window).height() / 2) - ($popup.outerHeight(true) / 2), 10),
-			'left': parseInt(($(window).width() / 2) - ($popup.outerWidth(true) / 2), 10)
-		});
-
-		// Focus on search bar
-		$searchBar.focus();
-
-		// Preload attachments
-		self.getSearchResults();
-
-		// Close popup when clicked on cross or background
-		$popup.find('#close').click(self.closePopup);
-		$popupBackground     .click(self.closePopup);
-
-		// Send ajax request on click of the search button
-		$popup.find('#search-submit').click(self.getSearchResults);
-
-		// Make the 'enter' key do the same as the search button
-		$searchBar.keypress(function(event)
-		{
-			if (event.which == 13)
-			{
-				event.preventDefault();
-
-				self.getSearchResults();
-			}
-		});
-
-		// Open popup by click on button
-		$('#slideshow-insert-image-slide').click(function()
-		{
-			$popup          .css({ display: 'block' });
-			$popupBackground.css({ display: 'block' });
-		});
-
-		// Insert text slide into the sortable list when the Insert Text Slide button is clicked
-		$('#slideshow-insert-text-slide').click(self.insertTextSlide);
-
-		// Insert video slide into the sortable list when the Insert Video Slide button is clicked
-		$('#slideshow-insert-video-slide').click(self.insertVideoSlide);
-
-		// Call self.deleteSlide on click
-		$('.slideshow-delete-slide').click(function(event)
-		{
-			self.deleteSlide($(event.currentTarget).closest('.sortable-slides-list-item'));
-		});
 	};
 
 	/**
@@ -204,6 +69,17 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 					$listItem.find('.handlediv').trigger('click');
 				}
 			});
+		});
+
+		// Bind insert buttons
+		$('#slideshow-insert-text-slide').on('click' , self.insertTextSlide);
+		$('#slideshow-insert-video-slide').on('click', self.insertVideoSlide);
+		$('.slideshow-insert-image-slide').on('click', self.mediaUploader);
+
+		// Call self.deleteSlide on click
+		$('.slideshow-delete-slide').on('click', function(event)
+		{
+			self.deleteSlide($(event.currentTarget).closest('.sortable-slides-list-item'));
 		});
 	};
 
@@ -263,83 +139,67 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 	};
 
 	/**
-	 * Sends an ajax post request with the search query and print retrieved html to the results table.
-	 *
-	 * If offset is set, append data to data that is already there
-	 *
-	 * @param offset (optional, defaults to 0)
+	 * Opens the WordPress 3.5 media uploader.
 	 */
-	self.getSearchResults = function(offset)
+	self.mediaUploader = function(event)
 	{
-		var $popup        = $('#slideshow-slide-inserter-popup'),
-			$resultsTable = $popup.find('#results'),
-			attachmentIDs = [];
+		event.preventDefault();
 
-		offset = parseInt(offset, 10);
+		var uploaderTitle,
+			externalData;
 
-		if (isNaN(offset))
+		// Reopen file frame if it has already been created
+		if (self.uploader)
 		{
-			offset = 0;
+			self.uploader.open();
 
-			$resultsTable.html('');
+			return;
 		}
 
-		$.each($resultsTable.find('.result-table-row'), function(key, tr)
+		externalData = window.slideshow_jquery_image_gallery_backend_script_editSlideshow;
+
+		uploaderTitle = '';
+
+		if (typeof externalData === 'object' &&
+			typeof externalData.localization === 'object' &&
+			externalData.localization.uploaderTitle !== undefined &&
+			externalData.localization.uploaderTitle.length > 0)
 		{
-			attachmentIDs.push(parseInt($(tr).attr('data-attachment-id'), 10));
+			uploaderTitle = externalData.localization.uploaderTitle;
+		}
+
+		// Create the uploader
+		self.uploader = wp.media.frames.slideshow_jquery_image_galler_uploader = wp.media({
+			frame   : 'select',
+			title   : uploaderTitle,
+			multiple: true,
+			library :
+			{
+				type: 'image'
+			}
 		});
 
-		$.post(
-			window.ajaxurl,
+		// Create image slide on select
+		self.uploader.on('select', function()
+		{
+			var attachments = self.uploader.state().get('selection').toJSON(),
+				attachment,
+				attachmentID;
+
+			for (attachmentID in attachments)
 			{
-				action       : 'slideshow_slide_inserter_search_query',
-				search       : $popup.find('#search').attr('value'),
-				offset       : offset,
-				attachmentIDs: attachmentIDs
-			},
-			function(response)
-			{
-				var $loadMoreResultsButton;
-
-				// Fill table
-				$resultsTable.append(response);
-
-				// When the insert button is clicked, the function to build a slide should be called. Unbind first so old entries don't have the event twice.
-				$resultsTable.find('.insert-attachment').unbind('click').click(function(event)
+				if (!attachments.hasOwnProperty(attachmentID))
 				{
-					var $tr = $(event.currentTarget).closest('tr');
-
-					self.insertImageSlide(
-						$tr.attr('data-attachment-id'),
-						$tr.find('.title').text(),
-						$tr.find('.description').text(),
-						$tr.find('.image img').attr('src'),
-						$tr.find('.title').text()
-					);
-				});
-
-				// Load more results on click of the 'Load more results' button
-				$loadMoreResultsButton = $('.load-more-results');
-				if($loadMoreResultsButton)
-				{
-					$loadMoreResultsButton.click(function(event)
-					{
-						// Get offset
-						var $this     = $(event.currentTarget),
-							newOffset = $this.attr('data-offset');
-
-						$this.closest('tr').hide();
-
-						if (isNaN(parseInt(newOffset, 10)))
-						{
-							return;
-						}
-
-						self.getSearchResults(newOffset);
-					});
+					continue;
 				}
+
+				attachment = attachments[attachmentID];
+
+				self.insertImageSlide(attachment.id, attachment.title, attachment.description, attachment.url, attachment.alt);
 			}
-		);
+		});
+
+		self.uploader.open();
 	};
 
 	/**
@@ -432,14 +292,6 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 
 		// Reindex slide orders
 		self.indexSlidesOrder();
-	};
-
-	/**
-	 * Closes popup
-	 */
-	self.closePopup = function()
-	{
-		$('#slideshow-slide-inserter-popup, #slideshow-slide-inserter-popup-background').css({ display: 'none' });
 	};
 
 	$(document).bind('slideshowBackendReady', self.init);

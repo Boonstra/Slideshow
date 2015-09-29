@@ -175,6 +175,44 @@ class SlideshowPluginMain
 	}
 
 	/**
+	 * Outputs the passed view. It's good practice to pass an object like an stdClass to the $data variable, as it can
+	 * be easily checked for validity in the view itself using "instanceof".
+	 *
+	 * @since 2.3.0
+	 * @param string   $view
+	 * @param stdClass $data (Optional, defaults to stdClass)
+	 */
+	static function outputView($view, $data = null)
+	{
+		if (!($data instanceof stdClass))
+		{
+			$data = new stdClass();
+		}
+
+		$file = self::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $view;
+
+		if (file_exists($file))
+		{
+			include $file;
+		}
+	}
+
+	/**
+	 * Uses self::outputView to render the passed view. Returns the rendered view instead of outputting it.
+	 *
+	 * @since 2.3.0
+	 * @param string   $view
+	 * @param stdClass $data (Optional, defaults to null)
+	 * @return string
+	 */
+	static function getView($view, $data = null)
+	{
+		ob_start();
+		self::outputView($view, $data);
+		return ob_get_clean();
+	}
+
+	/**
 	 * This function will load classes automatically on-call.
 	 *
 	 * @since 1.0.0

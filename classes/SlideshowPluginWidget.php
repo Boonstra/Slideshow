@@ -107,8 +107,13 @@ class SlideshowPluginWidget extends WP_Widget
 			'post_type'   => SlideshowPluginPostType::$postType
 		));
 
+		$data              = new stdClass();
+		$data->widget      = $this;
+		$data->instance   = $instance;
+		$data->slideshows = $slideshows;
+
 		// Include form
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/form.php');
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'form.php', $data);
 	}
 
 	/**

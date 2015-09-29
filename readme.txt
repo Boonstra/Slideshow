@@ -177,7 +177,8 @@ personal taste.
 == Changelog ==
 
 = 2.3.0 =
-*   TODO Autosave
+*   Refactored the slideshow plugin's backend codebase to prepare for a larger backend rewrite.
+*   Removed backwards compatibility on inserting images with pre-3.5 versions of WordPress.
 *   Slideshows now work on infinite scroll and single page websites through the "Enable lazy loading" option.
 *   Fixed: YouTube thumbnail image disappeared after clicking the slideshow's navigation buttons.
 

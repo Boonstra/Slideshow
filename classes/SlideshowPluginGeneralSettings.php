@@ -97,8 +97,7 @@ class SlideshowPluginGeneralSettings
 	 */
 	static function generalSettings()
 	{
-		// Include general settings page
-		include SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'general-settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'general-settings.php');
 	}
 
 	/**

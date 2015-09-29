@@ -59,7 +59,6 @@ class SlideshowPluginShortcode
 			$postId = $attributes['id'];
 		}
 
-		$output   = '';
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($postId);
 
 		if ($settings['avoidFilter'] == 'true' &&
@@ -122,15 +121,15 @@ class SlideshowPluginShortcode
 	 */
 	static function shortcodeInserter()
 	{
-		// Get slideshows
-		$slideshows = new WP_Query(array(
+		$data             = new stdClass();
+		$data->slideshows = new WP_Query(array(
 			'post_type'      => SlideshowPluginPostType::$postType,
 			'orderby'        => 'post_date',
 			'posts_per_page' => -1,
 			'order'          => 'DESC'
 		));
 
-		include(SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'shortcode-inserter.php');
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'shortcode-inserter.php', $data);
 	}
 
 	/**

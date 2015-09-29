@@ -53,44 +53,6 @@
 .sortable-slides-list .sortable-slides-list-item div.inside.widefat {
   border-color: #dfdfdf;
 }
-#slideshow-slide-inserter-popup-background {
-  background: #000;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
-  zoom: 1;
-  filter: alpha(opacity = 50);
-  opacity: 0.5;
-}
-#slideshow-slide-inserter-popup {
-  background: #fff;
-  display: none;
-  position: absolute;
-  padding: 20px;
-  line-height: 23px;
-  z-index: 10001;
-  width: 600px;
-}
-#slideshow-slide-inserter-popup #search {
-  float: left;
-  width: 200px;
-}
-#slideshow-slide-inserter-popup #close {
-  float: right;
-  width: 32px;
-  height: 32px;
-  background: url('../images/SlideshowPluginSlideInserter/close.png') no-repeat;
-}
-#slideshow-slide-inserter-popup #close:hover {
-  cursor: pointer;
-}
-#slideshow-slide-inserter-popup #search-results {
-  height: 400px;
-  overflow-y: scroll;
-}
 .feature-filter {
   padding: 0 10px 10px;
   margin: 10px;
