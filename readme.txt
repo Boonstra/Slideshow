@@ -176,6 +176,9 @@ personal taste.
 
 == Changelog ==
 
+= 2.3.1 =
+*   Fixed: Text and video slides could not be inserted.
+
 = 2.3.0 =
 *   Refactored the slideshow plugin's backend codebase to prepare for a larger backend rewrite.
 *   Removed backwards compatibility on inserting images with pre-3.5 versions of WordPress.

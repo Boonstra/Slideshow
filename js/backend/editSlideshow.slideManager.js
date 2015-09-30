@@ -72,8 +72,8 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 		});
 
 		// Bind insert buttons
-		$('#slideshow-insert-text-slide').on('click' , self.insertTextSlide);
-		$('#slideshow-insert-video-slide').on('click', self.insertVideoSlide);
+		$('.slideshow-insert-text-slide').on('click' , self.insertTextSlide);
+		$('.slideshow-insert-video-slide').on('click', self.insertVideoSlide);
 		$('.slideshow-insert-image-slide').on('click', self.mediaUploader);
 
 		// Call self.deleteSlide on click
