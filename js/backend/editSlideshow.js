@@ -109,4 +109,4 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow = function()
 	return self;
 }();
 
-// @codekit-append editSlideshow.slideManager.js
+// @codekit-append "editSlideshow.slideManager.js"

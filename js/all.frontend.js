@@ -266,8 +266,8 @@ function onYouTubeIframeAPIReady()
 	slideshow_jquery_image_gallery_script.youTubeAPIReady = true;
 }
 
-// @codekit-append frontend/slideshow.js
-// @codekit-append frontend/scriptsLoadedFlag.js
+// @codekit-append "frontend/slideshow.js"
+// @codekit-append "frontend/scriptsLoadedFlag.js"
 
 ///**
 //* Simple logging function for Internet Explorer

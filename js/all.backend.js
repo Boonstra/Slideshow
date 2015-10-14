@@ -36,9 +36,9 @@ slideshow_jquery_image_gallery_backend_script = function()
 	return self;
 }();
 
-// @codekit-append backend/generalSettings.js
-// @codekit-append backend/editSlideshow.js
-// @codekit-append backend/shortcode.js
+// @codekit-append "backend/generalSettings.js"
+// @codekit-append "backend/editSlideshow.js"
+// @codekit-append "backend/shortcode.js"
 
 ///**
 // * Simple logging function for Internet Explorer
