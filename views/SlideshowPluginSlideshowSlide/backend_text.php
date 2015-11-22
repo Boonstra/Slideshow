@@ -6,9 +6,7 @@ if ($data instanceof stdClass) :
 
 	$name = htmlspecialchars($data->name);
 
-	$title = $description = $textColor = $color = $url = $target = '';
-
-	$titleElementTagID = $descriptionElementTagID = SlideshowPluginSlideInserter::getElementTag();
+	$title = $titleElementTagID = $description = $descriptionElementTagID = $textColor = $color = $url = $target = '';
 
 	$noFollow = false;
 
@@ -19,7 +17,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['titleElementTagID']))
 	{
-		$titleElementTag = $properties['titleElementTagID'];
+		$titleElementTagID = $properties['titleElementTagID'];
 	}
 
 	if (isset($properties['description']))
@@ -29,7 +27,7 @@ if ($data instanceof stdClass) :
 
 	if (isset($properties['descriptionElementTagID']))
 	{
-		$descriptionElementTag = $properties['descriptionElementTagID'];
+		$descriptionElementTagID = $properties['descriptionElementTagID'];
 	}
 
 	if (isset($properties['textColor']))

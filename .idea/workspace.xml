@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="ffa15d61-e398-4b3b-bd02-9b782c0aeb7a" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\classes\SlideshowPluginSlideshowSlide.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\classes\SlideshowPluginSlideshowView.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginSlideInserter\insert-image-button.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginSlideInserter\insert-text-button.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginSlideInserter\insert-video-button.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginSlideInserter\search-popup.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginUpload\upload-button.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginSlideInserter" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\wordpress\testenvironment\wp-content\plugins\slideshow-jquery-image-gallery\views\SlideshowPluginUpload" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/min/all.backend.min.js" afterPath="$PROJECT_DIR$/js/min/all.backend.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slideshow.php" afterPath="$PROJECT_DIR$/slideshow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" afterPath="$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php" />
     </list>
     <ignored path="slideshow-jquery-image-gallery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,28 +23,7 @@
     <favorites_list name="slideshow-jquery-image-gallery" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="slideshow.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/slideshow.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09758898">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -94,9 +62,6 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
-  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -110,6 +75,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -453,7 +419,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -550,21 +515,27 @@
       <option name="project" value="LOCAL" />
       <updated>1443614439112</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed: Text and video slides could not be inserted.">
+      <created>1443618515189</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1443618515189</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26599148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26865673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -590,13 +561,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Compatible with WordPress 3.9.&#10;Added &quot;Cross Fade&quot; option to the animation settings.&#10;Updated the API to support retrieving the direction of the animation on the animation event.&#10;Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)&#10;Fixed: HTML5 validation issue.&#10;Fixed: Permission check that checked for &quot;edit_post&quot; instead of &quot;edit_slideshow&quot;." />
     <MESSAGE value="Compatible with WordPress 4.2.&#10;Default stylesheets are no longer dynamically loaded through admin-ajax.php.&#10;Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.&#10;Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)&#10;Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on &quot;Cross Fade&quot; setting.&#10;Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.&#10;Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.&#10;Added Norwegian translation by A. Nonymous.&#10;Updated Persian translation by W3Design.&#10;Updated German translation by A. Nonymous.&#10;Updated Brazilian Portuguese by A. Nonymous." />
     <MESSAGE value="Changed localization domain to match the plugin's slug in order to support language packs." />
     <MESSAGE value="Deleted obsolete translation files." />
     <MESSAGE value="Refactored the slideshow plugin's backend codebase to prepare for a larger backend rewrite.&#10;Removed backwards compatibility on inserting images with pre-3.5 versions of WordPress.&#10;Slideshows now work on infinite scroll and single page websites through the &quot;Enable lazy loading&quot; option.&#10;Fixed: YouTube thumbnail image disappeared after clicking the slideshow's navigation buttons." />
     <MESSAGE value="Removed files that were made obsolete by the version 2.3.0 refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed files that were made obsolete by the version 2.3.0 refactoring." />
+    <MESSAGE value="Fixed: Text and video slides could not be inserted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed: Text and video slides could not be inserted." />
   </component>
   <component name="WordPressConfiguration" doNotAskAgain="true" />
   <component name="XDebuggerManager">
@@ -616,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="174" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,18 +682,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/SlideshowPluginSlideInserter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.71954024">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/slideshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09758898">
+        <state vertical-scroll-proportion="0.09770115">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/SlideshowPluginSlideshowSlide/backend_text.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

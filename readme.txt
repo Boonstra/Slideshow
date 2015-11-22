@@ -176,6 +176,9 @@ personal taste.
 
 == Changelog ==
 
+= 2.3.2 =
+*   Fixed: Element tags could not be set on text slides.
+
 = 2.3.1 =
 *   Fixed: Text and video slides could not be inserted.
 
