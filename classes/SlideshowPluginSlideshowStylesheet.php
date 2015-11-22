@@ -112,23 +112,23 @@ class SlideshowPluginSlideshowStylesheet
 		}
 
 		// Enqueue stylesheet
-		if ($enqueueDynamicStylesheet)
+		if (SlideshowPluginGeneralSettings::getStylesheetLocation() == 'footer')
 		{
-			wp_enqueue_style(
-				'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
-				admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'admin'),
-				array(),
-				$version
-			);
-		}
-		else
-		{
-			wp_enqueue_style(
-				'slideshow-jquery-image-gallery-stylesheet_' . $name,
-				SlideshowPluginMain::getPluginUrl() . '/css/' . $name . '.css',
-				array(),
-				$version
-			);
+			if ($enqueueDynamicStylesheet) {
+				wp_enqueue_style(
+					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
+					admin_url('admin-ajax.php?action=slideshow_jquery_image_gallery_load_stylesheet&style=' . $name, 'admin'),
+					array(),
+					$version
+				);
+			} else {
+				wp_enqueue_style(
+					'slideshow-jquery-image-gallery-stylesheet_' . $name,
+					SlideshowPluginMain::getPluginUrl() . '/css/' . $name . '.css',
+					array(),
+					$version
+				);
+			}
 		}
 
 		return array($name, $version);
