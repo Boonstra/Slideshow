@@ -177,6 +177,7 @@ personal taste.
 == Changelog ==
 
 = 2.3.2 =
+*   Fixed: Setting the "Stylesheet location" setting to "Footer" no longer causes HTML5 validations errors.
 *   Fixed: Setting the "Stylesheet location" setting to "Head" did not prevent the stylesheet from showing up in the footer.
 *   Fixed: Element tags could not be set on text slides.
 

@@ -114,6 +114,8 @@ class SlideshowPluginSlideshowStylesheet
 		// Enqueue stylesheet
 		if (SlideshowPluginGeneralSettings::getStylesheetLocation() == 'footer')
 		{
+			add_filter('style_loader_tag', array(__CLASS__, 'filterStyleLoaderTag'), 10, 3);
+
 			if ($enqueueDynamicStylesheet) {
 				wp_enqueue_style(
 					'slideshow-jquery-image-gallery-ajax-stylesheet_' . $name,
@@ -219,5 +221,35 @@ class SlideshowPluginSlideshowStylesheet
 		$stylesheet = str_replace('.slideshow_container', '.slideshow_container_' . $styleName, $stylesheet);
 
 		return $stylesheet;
+	}
+
+	/**
+	 * Called on "style_loader_tag" filter. Adds property="stylesheet" to HTML tag to allow scripts to be loaded in the
+	 * website's footer.
+	 *
+	 * @since 2.3.2
+	 * @param $tag
+	 * @param $handle
+	 * @param $href
+	 * @return String $tag
+	 */
+	public static function filterStyleLoaderTag($tag, $handle, $href)
+	{
+		if (strpos($tag, "property") !== false)
+		{
+			return $tag;
+		}
+
+		if (preg_match("/slideshow-jquery-image-gallery-(ajax-)?stylesheet_/", $handle))
+		{
+			$position = strpos($tag, 'link') + 4;
+
+			if ($position !== false)
+			{
+				$tag = substr($tag, 0, $position) . ' property="stylesheet" ' . substr($tag, $position);
+			}
+		}
+
+		return $tag;
 	}
 }
