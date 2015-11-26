@@ -16,11 +16,11 @@ slideshow_jquery_image_gallery_backend_script.shortcode = function()
 	 */
 	self.activateShortcodeInserter = function()
 	{
-		$('.insertSlideshowShortcodeSlideshowInsertButton').click(function()
+		$('.insertSlideshowShortcodeSlideshowInsertButton').click(function(event)
 		{
 			var undefinedSlideshowMessage = 'No slideshow selected.',
 				shortcode                 = 'slideshow_deploy',
-				slideshowID               = parseInt($('#insertSlideshowShortcodeSlideshowSelect').val(), 10),
+				slideshowID               = parseInt($(event.target).closest('table').find('select').val(), 10),
 				extraData                 = window.slideshow_jquery_image_gallery_backend_script_shortcode;
 
 			if (typeof extraData === 'object')
