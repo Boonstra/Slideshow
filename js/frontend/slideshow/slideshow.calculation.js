@@ -151,7 +151,7 @@
 
 		// Create jQuery object from view
 		var $view = $(this.$views[viewID]);
-
+		
 		// Return when the slideshow's width or height haven't changed
 		if ((typeof forceCalculation !== 'boolean' || !forceCalculation) &&
 			this.$content.width() == $view.outerWidth(true))
@@ -170,14 +170,51 @@
 		var viewWidth  = this.$content.width() - ($view.outerWidth(true) - $view.width());
 		var viewHeight = this.$content.height() - ($view.outerHeight(true) - $view.height());
 
-		var slideWidth  = Math.floor(viewWidth / $slides.length);
-		var slideHeight = viewHeight;
-		var spareWidth  = viewWidth % $slides.length;
+		if(this.settings['orientation']=='horizontal')
+		{
+			var slideWidth  = Math.floor(viewWidth / $slides.length);
+		}
+		else
+		{
+			var slideWidth  = viewWidth;
+		}
+		
+		if(this.settings['orientation']=='horizontal')
+		{
+			var slideHeight = viewHeight;
+		}
+		else
+		{
+			var slideHeight = Math.floor(viewHeight / $slides.length);
+		}
+		
+		if(this.settings['orientation']=='horizontal')
+		{
+			var spareWidth  = viewWidth % $slides.length;
+			var spareHeight  = 0;
+		}
+		else
+		{
+			var spareWidth  = 0;
+			var spareHeight  = viewHeight % $slides.length;
+		}
+		
 		var totalWidth  = 0;
+		var totalHeight  = 0;
 
-		// Cut off left and right margin of outer slides
-		$($slides[0]).css('margin-left', 0);
-		$($slides[$slides.length - 1]).css('margin-right', 0);
+		
+		if(this.settings['orientation']=='horizontal')
+		{
+			// Cut off left and right margin of outer slides
+			$($slides[0]).css('margin-left', 0);
+			$($slides[$slides.length - 1]).css('margin-right', 0);
+		}
+		else
+		{
+			// Cut off top and bottom margin of outer slides
+			$($slides[0]).css('margin-top', 0);
+			$($slides[$slides.length - 1]).css('margin-bottom', 0);
+		}
 
 		$.each($slides, $.proxy(function(slideID, slide)
 		{
@@ -188,17 +225,34 @@
 			var outerWidth  = $slide.outerWidth(true) - $slide.width();
 			var outerHeight = $slide.outerHeight(true) - $slide.height();
 
-			// Add spare width pixels to the last slide
-			if (slideID == ($slides.length - 1))
+			if(this.settings['orientation']=='horizontal')
 			{
-				$slide.width((slideWidth - outerWidth) + spareWidth);
+				// Add spare width pixels to the last slide
+				if (slideID == ($slides.length - 1))
+				{
+					$slide.width((slideWidth - outerWidth) + spareWidth);
+				}
+				else
+				{
+					$slide.width(slideWidth - outerWidth);
+				}
+				
+				$slide.height(slideHeight - outerHeight);
 			}
 			else
 			{
+				// Add spare height pixels to the last slide
+				if (slideID == ($slides.length - 1))
+				{
+					$slide.height((slideHeight - outerHeight) + spareHeight);
+				}
+				else
+				{
+					$slide.height(slideHeight - outerHeight);
+				}
+				
 				$slide.width(slideWidth - outerWidth);
 			}
-
-			$slide.height(slideHeight - outerHeight);
 
 			// Each slide type has type specific features
 			if ($slide.hasClass('slideshow_slide_text'))
@@ -429,7 +483,8 @@
 			}
 
 			// Add up total width
-			totalWidth += $slide.outerWidth(true);
+			totalWidth  += $slide.outerWidth(true);
+			totalHeight += $slide.outerHeight(true);
 		}, this));
 
 		$view.css({
