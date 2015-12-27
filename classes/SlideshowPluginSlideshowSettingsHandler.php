@@ -432,7 +432,8 @@ class SlideshowPluginSlideshowSettingsHandler
 			'waitUntilLoaded' => 'true',
 			'showLoadingIcon' => 'true',
 			'random' => 'false',
-			'avoidFilter' => 'true'
+			'avoidFilter' => 'true',
+			'orientation' => 'horizontal'
 		);
 
 		// Read defaults from database and merge with $data, when $fromDatabase is set to true
@@ -473,7 +474,8 @@ class SlideshowPluginSlideshowSettingsHandler
 				'waitUntilLoaded'             => __('Wait until the next slide has loaded before showing it', 'slideshow-jquery-image-gallery'),
 				'showLoadingIcon'             => __('Show a loading icon until the first slide appears', 'slideshow-jquery-image-gallery'),
 				'random'                      => __('Randomize slides', 'slideshow-jquery-image-gallery'),
-				'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-jquery-image-gallery'), SlideshowPluginShortcode::$bookmark)
+				'avoidFilter'                 => sprintf(__('Avoid content filter (disable if \'%s\' is shown)', 'slideshow-jquery-image-gallery'), SlideshowPluginShortcode::$bookmark),
+				'orientation'				  => __('Orientation of the whole slideshow', 'slideshow-jquery-image-gallery'),
 			);
 
 			$data = array(
@@ -490,6 +492,7 @@ class SlideshowPluginSlideshowSettingsHandler
 				'enableResponsiveness'        => array('type' => 'radio' , 'default' => $data['enableResponsiveness']       , 'description' => $descriptions['enableResponsiveness']       , 'group' => __('Display', 'slideshow-jquery-image-gallery')      , 'options' => array('true' => $yes, 'false' => $no)),
 				'showDescription'             => array('type' => 'radio' , 'default' => $data['showDescription']            , 'description' => $descriptions['showDescription']            , 'group' => __('Display', 'slideshow-jquery-image-gallery')      , 'options' => array('true' => $yes, 'false' => $no)),
 				'hideDescription'             => array('type' => 'radio' , 'default' => $data['hideDescription']            , 'description' => $descriptions['hideDescription']            , 'group' => __('Display', 'slideshow-jquery-image-gallery')      , 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[showDescription]', 'true')),
+				'orientation'                 => array('type' => 'select', 'default' => $data['orientation']             	, 'description' => $descriptions['orientation']                , 'group' => __('Display', 'slideshow-jquery-image-gallery')      , 'options' => array('horizontal' => __('Horizontal', 'slideshow-jquery-image-gallery'), 'vertical' => __('Vertical', 'slideshow-jquery-image-gallery'))),
 				'play'                        => array('type' => 'radio' , 'default' => $data['play']                       , 'description' => $descriptions['play']                       , 'group' => __('Control', 'slideshow-jquery-image-gallery')      , 'options' => array('true' => $yes, 'false' => $no)),
 				'loop'                        => array('type' => 'radio' , 'default' => $data['loop']                       , 'description' => $descriptions['loop']                       , 'group' => __('Control', 'slideshow-jquery-image-gallery')      , 'options' => array('true' => $yes, 'false' => $no)),
 				'pauseOnHover'                => array('type' => 'radio' , 'default' => $data['loop']                       , 'description' => $descriptions['pauseOnHover']               , 'group' => __('Control', 'slideshow-jquery-image-gallery')      , 'options' => array('true' => $yes, 'false' => $no)),
@@ -502,7 +505,7 @@ class SlideshowPluginSlideshowSettingsHandler
 				'waitUntilLoaded'             => array('type' => 'radio' , 'default' => $data['waitUntilLoaded']            , 'description' => $descriptions['waitUntilLoaded']            , 'group' => __('Miscellaneous', 'slideshow-jquery-image-gallery'), 'options' => array('true' => $yes, 'false' => $no)),
 				'showLoadingIcon'             => array('type' => 'radio' , 'default' => $data['showLoadingIcon']            , 'description' => $descriptions['showLoadingIcon']            , 'group' => __('Miscellaneous', 'slideshow-jquery-image-gallery'), 'options' => array('true' => $yes, 'false' => $no) , 'dependsOn' => array('settings[waitUntilLoaded]', 'true')),
 				'random'                      => array('type' => 'radio' , 'default' => $data['random']                     , 'description' => $descriptions['random']                     , 'group' => __('Miscellaneous', 'slideshow-jquery-image-gallery'), 'options' => array('true' => $yes, 'false' => $no)),
-				'avoidFilter'                 => array('type' => 'radio' , 'default' => $data['avoidFilter']                , 'description' => $descriptions['avoidFilter']                , 'group' => __('Miscellaneous', 'slideshow-jquery-image-gallery'), 'options' => array('true' => $yes, 'false' => $no))
+				'avoidFilter'                 => array('type' => 'radio' , 'default' => $data['avoidFilter']                , 'description' => $descriptions['avoidFilter']                , 'group' => __('Miscellaneous', 'slideshow-jquery-image-gallery'), 'options' => array('true' => $yes, 'false' => $no))				
 			);
 		}
 
