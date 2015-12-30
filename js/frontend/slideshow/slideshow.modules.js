@@ -48,7 +48,14 @@
 		{
 			$.each(this.$container.find('.slideshow_description_box'), $.proxy(function(key, description)
 			{
-				$(description).css('top', this.$container.outerHeight(true));
+				if(this.settings['orientation']=='horizontal')
+				{
+					$(description).css('top', this.$container.outerHeight(true));
+				}
+				else
+				{
+					$(description).css('top', $(description).closest('.slideshow_slide').outerHeight(true));
+				}
 			}, this));
 		}, this));
 
@@ -62,14 +69,22 @@
 
 			$.each($(this.$views[this.visibleViews[1]]).find('.slideshow_description_box'), $.proxy(function(key, description)
 			{
-				$(description).css('top', this.$container.outerHeight(true));
+				if(this.settings['orientation']=='horizontal')
+				{
+					$(description).css('top', this.$container.outerHeight(true));
+				}
+				else
+				{
+					$(description).css('top', $(description).closest('.slideshow_slide').outerHeight(true));
+				}
 			}, this));
 		}, this));
 
 		// Register a mouse enter event to animate showing the description boxes.
 		this.$slides.mouseenter($.proxy(function(event)
-		{
+		{			
 			var $description = $(event.currentTarget).find('.slideshow_description_box');
+			var $slide = $(event.currentTarget).closest('.slideshow_slide');
 
 			// Use a timer, so the description doesn't pop up on fly-over
 			this.descriptionTimer = setTimeout(
@@ -79,9 +94,18 @@
 					this.descriptionTimer = '';
 
 					// Animate pop up
-					$description
-						.stop(true, false)
-						.animate({ 'top': (this.$container.outerHeight(true) - $description.outerHeight(true)) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
+					if(this.settings['orientation']=='horizontal')
+					{
+						$description
+							.stop(true, false)
+							.animate({ 'top': (this.$container.outerHeight(true) - $description.outerHeight(true)) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
+					}
+					else
+					{
+						$description
+							.stop(true, false)
+							.animate({ 'top': ($slide.outerHeight(true) - $description.outerHeight(true)) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
+					}
 				}, this),
 				200
 			);
@@ -99,10 +123,20 @@
 			}
 
 			// Find description and stop its current animation, then start animating it out
-			$(event.currentTarget)
-				.find('.slideshow_description_box')
-				.stop(true, false)
-				.animate({ 'top': this.$container.outerHeight(true) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
+			if(this.settings['orientation']=='horizontal')
+			{
+				$(event.currentTarget)
+					.find('.slideshow_description_box')
+					.stop(true, false)
+					.animate({ 'top': this.$container.outerHeight(true) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
+			}
+			else
+			{
+				$(event.currentTarget)
+					.find('.slideshow_description_box')
+					.stop(true, false)
+					.animate({ 'top': $(event.currentTarget).outerHeight(true) }, parseInt(this.settings['descriptionSpeed'] * 1000, 10));
+			}
 		}, this));
 	};
 
