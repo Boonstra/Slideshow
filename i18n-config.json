@@ -1,0 +1,23 @@
+{"vendor":{"plugins/slideshow-jquery-image-gallery":"1.0"},
+"admin-config": {
+"slideshow-admin": {
+	"pages": { "post.php":"action=edit", "post-new.php": "post_type=slideshow" },
+	"anchors": {
+		"post-body-content": {
+			"where": "first last"
+		}
+	},
+	"forms":{
+		"post":{
+			"fields":{
+				"slide-title":{"jquery": ".slide-title", "encode":"display"},
+				"slide_title":{"jquery": ".slide_title"},
+				"slide_description":{"jquery": ".slide_description"},
+				"slide_url":{"jquery": ".slide_url"},
+				"slide_alternativeText":{"jquery": ".slide_alternativeText"}
+			}
+		}
+	}
+}
+}
+}

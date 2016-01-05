@@ -122,7 +122,7 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 			$.each($(slide).find('input, select, textarea'), function(key, input)
 			{
 				var $input = $(input),
-					name   = $input.attr('name');
+					name   = $input.attr('name'), newName;
 
 				if (name === undefined ||
 					name.length <= 0)
@@ -130,10 +130,24 @@ slideshow_jquery_image_gallery_backend_script.editSlideshow.slideManager = funct
 					return;
 				}
 
-				name = name.replace(/[\[\]']+/g, ' ').split(' ');
+				// Check if this is a qTranslate X hidden input
+				if ($(this).hasClass('hidden')) {
 
-				// Put name with new order ID back on the page
-				$input.attr('name', name[0] + '[' + (slideID + 1) + '][' + name[2] + ']');
+					name = name.split('][');
+					newName = name[0];
+
+					for (var i = 1; i < name.length; i++) {
+						newName += ']['+($.isNumeric(name[i]) ? slideID + 1 : name[i]);
+					}
+
+				} else {
+
+					name = name.replace(/[\[\]']+/g, ' ').split(' ');
+					newName = name[0] + '[' + (slideID + 1) + '][' + name[2] + ']';
+
+				}
+
+				$input.attr('name', newName);
 			});
 		});
 	};

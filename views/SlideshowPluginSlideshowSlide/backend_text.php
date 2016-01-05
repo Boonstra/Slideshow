@@ -90,7 +90,7 @@ if ($data instanceof stdClass) :
 					</select>
 				</div>
 				<div class="clear"></div>
-				<input type="text" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" /><br />
+				<input type="text" class="slide_title" name="<?php echo $name; ?>[title]" value="<?php echo $title; ?>" style="width: 100%;" /><br />
 
 			</div>
 
@@ -105,7 +105,7 @@ if ($data instanceof stdClass) :
 					</select>
 				</div>
 				<div clear="clear"></div>
-				<textarea name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
+				<textarea class="slide_description" name="<?php echo $name; ?>[description]" rows="7" cols="" style="width: 100%;"><?php echo $description; ?></textarea><br />
 
 			</div>
 
@@ -123,7 +123,7 @@ if ($data instanceof stdClass) :
 			<div class="slideshow-group">
 
 				<div class="slideshow-label"><?php _e('URL', 'slideshow-jquery-image-gallery'); ?></div>
-				<input type="text" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" />
+				<input type="text" class="slide_url" name="<?php echo $name; ?>[url]" value="<?php echo $url; ?>" style="width: 100%;" />
 
 				<div class="slideshow-label slideshow-left"><?php _e('Open URL in', 'slideshow-jquery-image-gallery'); ?></div>
 				<select name="<?php echo $name; ?>[urlTarget]" class="slideshow-right">

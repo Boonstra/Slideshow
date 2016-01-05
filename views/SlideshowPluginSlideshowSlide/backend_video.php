@@ -39,7 +39,7 @@ if ($data instanceof stdClass) :
 			<div class="slideshow-group">
 
 				<div class="slideshow-label"><?php _e('Youtube Video ID', 'slideshow-jquery-image-gallery'); ?></div>
-				<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" style="width: 100%;" />
+				<input type="text" class="slide_title" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" style="width: 100%;" />
 
 			</div>
 
