@@ -254,11 +254,11 @@ msgstr "Definições do slideshow"
 
 #: classes/SlideshowPluginPostType.php:173
 msgid "Slideshow created"
-msgstr ""
+msgstr "Slideshow criado"
 
 #: classes/SlideshowPluginPostType.php:177
 msgid "Slideshow updated"
-msgstr ""
+msgstr "Slideshow atualizado"
 
 #: classes/SlideshowPluginPostType.php:224
 #: classes/SlideshowPluginSlideInserter.php:238
@@ -268,11 +268,11 @@ msgstr "Inserir"
 
 #: classes/SlideshowPluginPostType.php:232
 msgid "Open all"
-msgstr ""
+msgstr "Abrir todos"
 
 #: classes/SlideshowPluginPostType.php:234
 msgid "Close all"
-msgstr ""
+msgstr "Fechar todos"
 
 #: classes/SlideshowPluginPostType.php:240
 #: views/SlideshowPluginPostType/slides.php:10
@@ -281,11 +281,11 @@ msgstr "Adicione slides a este slideshow usando um dos botões abaixo."
 
 #: classes/SlideshowPluginPostType.php:320
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: classes/SlideshowPluginPostType.php:371
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: classes/SlideshowPluginShortcode.php:148
 msgid "No slideshow selected."
@@ -309,7 +309,7 @@ msgstr "Tem a certeza de que quer apagar este slide?"
 
 #: classes/SlideshowPluginSlideInserter.php:333
 msgid "Insert image slide"
-msgstr ""
+msgstr "Inserir imagem do slide"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:523
 msgid "Maximum width. When maximum width is 0, maximum width is ignored"
@@ -337,7 +337,7 @@ msgstr "Altura do slideshow"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:526
 msgid "Image behaviour"
-msgstr ""
+msgstr "Comportamento da imagem"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:527
 msgid "Shrink slideshow's height when width shrinks"
@@ -388,15 +388,15 @@ msgstr ""
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:540
 msgid "Wait until the next slide has loaded before showing it"
-msgstr ""
+msgstr "Aguardar que o slide seguinte esteja carregado antes de o apresentar"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:541
 msgid "Show a loading icon until the first slide appears"
-msgstr ""
+msgstr "Apresentar um ícone de carregamento em curso antes de apresentar o primeiro slide"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:542
 msgid "Randomize slides"
-msgstr "Randomizar estilos"
+msgstr "Slides aleatórios"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:543
 #, php-format
@@ -433,15 +433,15 @@ msgstr "Animação aleatória"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Natural and centered"
-msgstr ""
+msgstr "Natural e centrado"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Crop to fit"
-msgstr ""
+msgstr "Cortar para encaixar"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:555
 msgid "Stretch to fit"
-msgstr ""
+msgstr "Esticar para encaixar"
 
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:569
 #: classes/SlideshowPluginSlideshowSettingsHandler.php:570
@@ -460,23 +460,23 @@ msgstr "Slideshow Widget"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Play"
-msgstr ""
+msgstr "Visualizar"
 
 #: views/SlideshowPlugin/slideshow.php:23
 msgid "Pause"
-msgstr ""
+msgstr "Pausar"
 
 #: views/SlideshowPlugin/slideshow.php:25
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: views/SlideshowPlugin/slideshow.php:26
 msgid "Next"
-msgstr ""
+msgstr "Seguinte"
 
 #: views/SlideshowPlugin/slideshow.php:28
 msgid "Go to slide"
-msgstr ""
+msgstr "Ver o slide"
 
 #: views/SlideshowPluginGeneralSettings/custom-styles-tab.php:46
 msgid "Default stylesheets"
@@ -604,15 +604,15 @@ msgstr "Definições"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:69
 msgid "Stylesheet location"
-msgstr ""
+msgstr "Localização da folha de estilos"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:72
 msgid "top"
-msgstr ""
+msgstr "topo"
 
 #: views/SlideshowPluginGeneralSettings/general-settings-tab.php:73
 msgid "bottom"
-msgstr ""
+msgstr "rodapé"
 
 #: views/SlideshowPluginGeneralSettings/general-settings.php:16
 msgid "Custom Styles"
@@ -836,19 +836,19 @@ msgstr "Pesquisar imagens por título ou ID"
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:58
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:21
 msgid "Click to toggle"
-msgstr ""
+msgstr "Clique para trocar"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:160
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:69
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:190
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:131
 msgid "Don't let search engines follow link"
-msgstr ""
+msgstr "Não permitir sites de pesquisa seguir o link"
 
 #: views/SlideshowPluginSlideshowSlide/backend_attachment.php:168
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:197
 msgid "Alternative text"
-msgstr ""
+msgstr "Texto alternativo"
 
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:48
 #: views/SlideshowPluginSlideshowSlide/backend_text.php:110
@@ -863,7 +863,7 @@ msgstr "(Deixar em branco para um fundo transparente)"
 #: views/SlideshowPluginSlideshowSlide/backend_templates.php:110
 #: views/SlideshowPluginSlideshowSlide/backend_video.php:42
 msgid "Show related videos"
-msgstr ""
+msgstr "Apresentar vídeos relacionados"
 
 #: views/SlideshowPluginUpload/upload-button.php:1
 msgid "Upload/Manage Images"
@@ -873,8 +873,8 @@ msgstr "Upload/Gerir Imagens"
 msgid "Random Slideshow"
 msgstr "Slideshow aleatório"
 
-#~ msgid "Fit image into slide (Stretch image)"
-#~ msgstr "Ajustar a imagem ao slide (esticar a imagem)"
+msgid "Fit image into slide (Stretch image)"
+msgstr "Ajustar a imagem ao slide (esticar a imagem)"
 
-#~ msgid "Leave any field open to use default value."
-#~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."
+msgid "Leave any field open to use default value."
+msgstr "Permitir qualquer campo aberto para usar valor padrão."
