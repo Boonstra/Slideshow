@@ -4,7 +4,7 @@ if ($data instanceof stdClass):
 
 	$properties = $data->properties;
 
-	$title = $description = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
+	$title = $description = $descriptionText = $url = $urlTarget = $alternativeText = $noFollow = $postId = '';
 
 	$titleElementTag = $descriptionElementTag = SlideshowPluginSlideInserter::getElementTag();
 
@@ -21,6 +21,7 @@ if ($data instanceof stdClass):
 	if (isset($properties['description']))
 	{
 		$description = trim(SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']));
+		$descriptionText = trim($properties['description']);
 	}
 
 	if (isset($properties['descriptionElementTagID']))
@@ -124,8 +125,12 @@ if ($data instanceof stdClass):
 			if ($imageAvailable): ?>
 
 				<div class="slideshow_slide slideshow_slide_image">
-					<?php echo $anchorTag; ?>
-						<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
+					<?php
+						echo $anchorTag;
+						// do shortcodes in slides...
+						echo !empty($descriptionText) ? do_shortcode($descriptionText): '';
+					?>
+					<img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="<?php echo $alternativeText; ?>" <?php echo ($imageWidth > 0) ? 'width="' . $imageWidth . '"' : ''; ?> <?php echo ($imageHeight > 0) ? 'height="' . $imageHeight . '"' : ''; ?> />
 					<?php echo $endAnchorTag; ?>
 					<div class="slideshow_description_box slideshow_transparent">
 						<?php echo !empty($title) ? '<' . $titleElementTag . ' class="slideshow_title">' . $anchorTag . $title . $endAnchorTag . '</' . $titleElementTag . '>' : ''; ?>
